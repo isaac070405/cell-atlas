@@ -1,0 +1,18 @@
+{
+  "_schema": "Shared link keys across the five projects. Prefixes: anat, tis, cell, pdb, spec, diag, ent. Each key maps to a URL template; {id} is replaced by the part after the colon.",
+  "targets": {
+    "anat": { "label": "3D Anatomy Model", "url": "https://isaac070405.github.io/3D-Anaotmy-Model/?part={id}", "deepLink": false },
+    "tis":  { "label": "Histology", "url": null, "deepLink": false },
+    "cell": { "label": "Cell Atlas · Module A", "url": "./?cell={id}", "deepLink": true },
+    "pdb":  { "label": "Cell Atlas · Module B", "url": "./?pdb={id}", "deepLink": true },
+    "spec": { "label": "Biology Specimen Room", "url": null, "deepLink": false },
+    "diag": { "label": "Diagram Workspace", "url": null, "deepLink": false },
+    "ent":  { "label": "Human Biology entry", "url": null, "deepLink": false }
+  },
+  "edges": [
+    { "from": "pdb:5XTD", "to": ["cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte", "anat:Heart", "anat:Liver", "ent:END-01", "diag:etc-pathway"] },
+    { "from": "pdb:4UG0", "to": ["cell:hepatocyte", "cell:enterocyte", "tis:simple-columnar", "anat:Liver", "anat:Pancreas", "ent:NUT-02", "ent:AMB-02"] },
+    { "from": "cell:enterocyte", "to": ["anat:Jejunum", "tis:simple-columnar", "ent:NUT-01", "spec:lactase"] },
+    { "from": "cell:hepatocyte", "to": ["anat:Liver", "ent:CVS-03", "ent:TOP-01", "spec:aldh2"] }
+  ]
+}

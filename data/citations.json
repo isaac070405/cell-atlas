@@ -1,0 +1,43 @@
+{
+  "_schema": "Shared citation registry for the Human Biology platform. Every number on screen points to one id here. status: verified | pending.",
+  "citations": {
+    "bnid-110373": {
+      "source": "BioNumbers BNID 110373",
+      "detail": { "en": "Hepatocyte compartment volume fractions, from Alberts MBoC 5th ed. Table 12-1", "zh-Hant": "肝細胞各區室體積分數，出自 Alberts MBoC 第 5 版 Table 12-1" },
+      "species": "Rat",
+      "cellType": "Hepatocyte",
+      "method": "EM stereology (compiled)",
+      "url": "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=110373",
+      "status": "pending",
+      "note": "Source verified; individual percentages still to be checked against the book."
+    },
+    "bnid-105782": {
+      "source": "BioNumbers BNID 105782",
+      "detail": { "en": "Mitochondria occupy 22% of rat hepatocyte volume (Weibel et al. 1969, J Cell Biol)", "zh-Hant": "大鼠肝細胞粒線體佔體積 22%（Weibel et al. 1969, J Cell Biol）" },
+      "species": "Rat",
+      "cellType": "Hepatocyte",
+      "method": "EM stereology",
+      "year": 1969,
+      "url": "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=105782",
+      "status": "verified"
+    },
+    "guo-2017": {
+      "source": "Guo et al. (2017) Cell 170:1247–1257",
+      "detail": { "en": "Human respiratory chain Complex I, PDB 5XTD, EMDB EMD-6773", "zh-Hant": "人類呼吸鏈 Complex I，PDB 5XTD，EMDB EMD-6773" },
+      "species": "Human",
+      "method": "Cryo-EM, 3.7 Å",
+      "year": 2017,
+      "url": "https://www.rcsb.org/structure/5XTD",
+      "status": "verified"
+    },
+    "khatter-2015": {
+      "source": "Khatter et al. (2015) Nature 520:640–645",
+      "detail": { "en": "Human 80S ribosome, PDB 4UG0", "zh-Hant": "人類 80S 核糖體，PDB 4UG0" },
+      "species": "Human",
+      "method": "Cryo-EM, average 3.6 Å",
+      "year": 2015,
+      "url": "https://www.rcsb.org/structure/4UG0",
+      "status": "verified"
+    }
+  }
+}

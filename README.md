@@ -1,2 +1,111 @@
-# cell-atlas
-Cell Atlas (細胞圖譜): the cell and molecule section of the Human Biology platform. Zoom from a to-scale schematic cell to experimental PDB structures in Mol*. Every number carries a source with species and method. EN / 繁 / bilingual. Static site on GitHub Pages.
+# Cell Atlas · 細胞圖譜
+
+Cell Atlas is the cell and molecule section of the Human Biology platform. It covers the last two steps of the scale chain: body (3D Anatomy Model) → tissue (Histology) → **cell (Module A)** → **molecule (Module B)**.
+
+Every number on screen carries a source chip with species, cell type and method. Cell models are to-scale schematics. Molecular models are experimental PDB / EMDB structures, never AI predictions.
+
+Live site: https://isaac070405.github.io/cell-atlas/
+
+## Current state
+
+This repo holds the **site shell** (roadmap stage 0):
+
+- Log-scale navigator from 40 µm to 0.6 Å with four levels: cell, organelle, complex, atom.
+- One state controller (`js/state.js`) drives the header readout, viewer pane and three info panels.
+- Language switch EN / 繁 / 雙語, remembered per browser. Strings live in `data/i18n.json`.
+- Light and dark themes from `css/tokens.css`, with fixed organelle colours shared across the platform.
+- Deep links `?cell=enterocyte`, `?pdb=5XTD`, `?level=organelle`.
+- Empty Module A and Module B panes with the first-release queue.
+
+## Files
+
+| Path | Holds |
+| --- | --- |
+| `index.html` | Page layout: HUD, scale ruler, viewer, three panels |
+| `css/tokens.css` | Platform colours, fonts, spacing, organelle colours |
+| `js/state.js` | Scale controller and URL deep links |
+| `js/i18n.js` | Language modes |
+| `js/ruler.js` | Scale navigator |
+| `data/catalog.json` | Cells and structures planned per release |
+| `data/citations.json` | Shared citation registry (`verified` or `pending`) |
+| `data/links.json` | Shared link keys `anat:` `tis:` `cell:` `pdb:` `spec:` `diag:` `ent:` |
+| `data/i18n.json` | All interface text in `en` and `zh-Hant` |
+
+## Run locally
+
+```bash
+python3 -m http.server 8000
+# open http://localhost:8000
+```
+
+The page fetches JSON, so opening `index.html` straight from disk does not work.
+
+## Roadmap
+
+Each stage has a pass condition. The next stage starts only after it passes.
+
+| Stage | Work | Pass condition |
+| --- | --- | --- |
+| 0. Shell | HUD, scale navigator, state controller, i18n, links.json, citations.json | Live on GitHub Pages ✅ |
+| 1. Technical spike | One page loads Mol* with 5XTD; test whether `<sr-mol>` and `<pdb-slot>` read 4UG0 | Displays on GitHub Pages and rotates on a phone |
+| 2. Data | Data tables for the four first-release cell types, cross-layer index, full links.json | "Pending check" count is zero |
+| 3. Module A | Procedural Three.js cell, side-by-side compare, clipping plane, organelle pick, data card | Organelle volume ratios match the data table within 2 percentage points |
+| 4. Module B | Mol* viewer, presets, colouring modes, subunit list with UniProt links; mitochondrion → Complex I and rough ER → ribosome jumps | One full cell → atom → cell round trip without stutter |
+| 5. Platform integration | New section in the Human Biology home page; `?part=` deep link in the 3D model; jump buttons in Histology and Specimen Room | Body → tissue → cell → molecule chain works end to end |
+| 6. Polish | HUD layout, light and dark modes, three language modes, mobile, source cards | Every number on every screen has a citation |
+
+Deadline: claude.ai/design closes on 2026-12-14. The Human Biology home page moves to Claude or GitHub before then.
+
+### Releases
+
+| Release | Cells | Structures |
+| --- | --- | --- |
+| 1 | Hepatocyte, enterocyte, skeletal / cardiac / smooth muscle, plant cell | 5XTD Complex I, 4UG0 80S ribosome; candidates ATP synthase, nuclear pore complex, GLUT / SGLT1 |
+| 2 | Sperm and egg, neurone types | Bcl-2 family, β2 adrenergic receptor |
+| Candidates | Parietal cell, intestinal L cell, brown adipocyte, bone cell, type II pneumocyte | ALDH2, GLP-1, lactase, HMG-CoA reductase, H⁺/K⁺-ATPase, UCP1 |
+
+### Data to collect before stage 2 (18 items)
+
+Cell data
+- [ ] Enterocyte organelle volume fractions (BioNumbers; EM stereology), Isaac
+- [ ] Skeletal, cardiac and smooth muscle organelle volume fractions (BioNumbers; EM stereology), Isaac
+- [ ] Plant mesophyll organelle volume fractions (BioNumbers; plant cell textbook), Isaac
+- [ ] Hepatocyte compartment percentages checked one by one (Alberts MBoC Table 12-1, latest edition)
+- [ ] Organelle size ranges and function text (Alberts, Lodish latest editions)
+- [ ] Protein subcellular location (Human Protein Atlas, subcellular)
+
+Molecular structures
+- [ ] Human ATP synthase PDB ID (RCSB PDB)
+- [ ] GLUT2, GLUT5, SGLT1 PDB IDs (RCSB PDB)
+- [ ] Nuclear pore complex PDB or EMDB ID (RCSB PDB, EMDB)
+- [ ] Bcl-2 family and β2 adrenergic receptor PDB IDs (RCSB PDB)
+- [ ] Lactase, HMG-CoA reductase, H⁺/K⁺-ATPase, UCP1 PDB IDs (RCSB PDB)
+- [ ] Rubisco / photosystem II, voltage-gated sodium channel, dynein PDB IDs (RCSB PDB)
+- [ ] Bacterial 50S ribosome with macrolide bound, to compare with 4UG0 (RCSB PDB)
+- [ ] Literature locations of 5XTD and 4UG0 tour points: Q-site, Fe–S clusters, tRNA sites (Guo 2017 Cell; Khatter 2015 Nature)
+
+Literature
+- [ ] Latest evidence on metformin and Complex I (PubMed review)
+- [ ] SGLT1, GLUT5, GLUT2 apical and basolateral distribution in enterocytes (physiology textbook or review)
+
+Technical
+- [ ] Whether 4UG0 has a legacy .pdb file (RCSB download page)
+- [ ] Latest Mol* version number and bundle size (molstar.org, npm)
+
+## Decisions already made
+
+- Mol* is the only molecule viewer; `<sr-mol>` (3Dmol.js) and `<pdb-slot>` will be replaced.
+- The GitHub repo is the master copy of the 3D Anatomy Model.
+- Human Biology home page TOP-01 is the master ALDH2 content; Specimen Room simplifies it.
+- Final integrated version is edited in Claude and deployed to GitHub Pages.
+
+## Open questions
+
+- Volume fraction sources for enterocyte, muscle and plant cells (Isaac).
+
+## Sources already in use
+
+- BioNumbers BNID 110373, hepatocyte compartment volumes (source verified, values pending).
+- BioNumbers BNID 105782, mitochondria 22% of rat hepatocyte volume, Weibel et al. 1969 (verified).
+- Guo et al. (2017) *Cell* 170:1247–1257, PDB 5XTD, EMD-6773 (verified).
+- Khatter et al. (2015) *Nature* 520:640–645, PDB 4UG0 (verified).

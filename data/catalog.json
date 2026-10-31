@@ -1,0 +1,15 @@
+{
+  "_schema": "What the atlas will hold. Shell stage: entries are listed, no geometry or structures are loaded yet.",
+  "cells": [
+    { "id": "hepatocyte", "name": { "en": "Hepatocyte", "zh-Hant": "肝細胞" }, "release": 1, "sizeUm": [20, 30], "data": "bnid-110373" },
+    { "id": "enterocyte", "name": { "en": "Enterocyte", "zh-Hant": "腸道上皮細胞" }, "release": 1, "data": null },
+    { "id": "skeletal-myocyte", "name": { "en": "Skeletal muscle cell", "zh-Hant": "骨骼肌細胞" }, "release": 1, "data": null },
+    { "id": "cardiomyocyte", "name": { "en": "Cardiac muscle cell", "zh-Hant": "心肌細胞" }, "release": 1, "data": null },
+    { "id": "smooth-myocyte", "name": { "en": "Smooth muscle cell", "zh-Hant": "平滑肌細胞" }, "release": 1, "data": null },
+    { "id": "plant-mesophyll", "name": { "en": "Plant mesophyll cell", "zh-Hant": "植物葉肉細胞" }, "release": 1, "data": null }
+  ],
+  "structures": [
+    { "id": "5XTD", "name": { "en": "Human Complex I", "zh-Hant": "人類呼吸鏈 Complex I" }, "method": "Cryo-EM, 3.7 Å", "from": "mitochondrial inner membrane", "release": 1, "cite": "guo-2017" },
+    { "id": "4UG0", "name": { "en": "Human 80S ribosome", "zh-Hant": "人類 80S 核糖體" }, "method": "Cryo-EM, 3.6 Å", "from": "rough ER / cytosol", "release": 1, "cite": "khatter-2015" }
+  ]
+}
