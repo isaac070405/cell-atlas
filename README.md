@@ -103,6 +103,10 @@ Technical
 
 - Volume fraction sources for enterocyte, muscle and plant cells (Isaac).
 
+## License
+
+Code is released under the MIT License (see `LICENSE`). PDB and EMDB structures keep the terms of their archives and are cited per entry.
+
 ## Sources already in use
 
 - BioNumbers BNID 110373, hepatocyte compartment volumes (source verified, values pending).
