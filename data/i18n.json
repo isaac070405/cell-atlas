@@ -58,8 +58,8 @@
       "zh-Hant": "模組 B：分子結構"
     },
     "moduleB.empty": {
-      "en": "The Mol* viewer arrives in roadmap stage 4. Two first-release structures are queued below.",
-      "zh-Hant": "Mol* 檢視器會喺路線圖第 4 階段加入。下面列出第一版嘅兩個結構。"
+      "en": "Pick a structure below. The Mol* viewer loads the first time you open one.",
+      "zh-Hant": "喺下面揀一個結構。第一次打開時先會載入 Mol* 檢視器。"
     },
     "panel.chart.a": {
       "en": "Volume fractions",
@@ -224,6 +224,42 @@
     "chart.note.basis": {
       "en": "% of whole-cell volume",
       "zh-Hant": "佔整個細胞體積 %"
+    },
+    "mol.loading": {
+      "en": "Loading Mol* and the structure…",
+      "zh-Hant": "載入緊 Mol* 同結構…"
+    },
+    "mol.from.repo": {
+      "en": "Structure file from this site",
+      "zh-Hant": "結構檔來自本網站"
+    },
+    "mol.from.rcsb": {
+      "en": "Structure file from RCSB PDB",
+      "zh-Hant": "結構檔來自 RCSB PDB"
+    },
+    "mol.cartoon": {
+      "en": "cartoon only, to keep it light",
+      "zh-Hant": "只顯示 cartoon，減輕負荷"
+    },
+    "mol.error": {
+      "en": "The structure could not be loaded. Check the connection and pick it again.",
+      "zh-Hant": "結構載入唔到。請檢查網絡，再揀一次。"
+    },
+    "tour.title": {
+      "en": "Guided stops",
+      "zh-Hant": "導覽點"
+    },
+    "tour.reset": {
+      "en": "Reset view",
+      "zh-Hant": "重設視角"
+    },
+    "tour.atoms": {
+      "en": "atoms highlighted",
+      "zh-Hant": "粒原子已標示"
+    },
+    "tour.notfound": {
+      "en": "This stop was not found in the loaded file.",
+      "zh-Hant": "載入嘅檔案入面搵唔到呢個導覽點。"
     }
   }
 }

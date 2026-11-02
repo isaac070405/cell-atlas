@@ -18,6 +18,7 @@ This repo holds the **site shell** (roadmap stage 0) plus the first data views:
 - Empty Module A and Module B panes with the first-release queue.
 - **Compare view** (`?view=compare`): hepatocyte, enterocyte, muscle (skeletal, cardiac or smooth via `&muscle=`) and plant mesophyll side by side, one row per compartment, on one 0–100% scale. Species on every column; ranges drawn as spans; unmeasured compartments shown as a dash.
 - Volume-fraction chart for the selected cell, from `data/catalog.json`.
+- **Module B viewer**: Mol* 5.13.1 loads only when a structure opens. Files come from `data/structures/` first, then the RCSB ModelServer. 4UG0 and phones use cartoon only. Guided stops: 4 for 5XTD (FMN, Fe–S chain, N2/Q-site, membrane arm), 3 for 4UG0 (E-site tRNA, CCA end, intersubunit bridge; Khatter 2015 Fig. 5–6).
 - Two-way links: each card lists its own `links.json` edges grouped by site, plus every item that links to it. Mitochondria and rough ER rows jump to PDB 5XTD and 4UG0.
 
 ## Files
@@ -30,6 +31,10 @@ This repo holds the **site shell** (roadmap stage 0) plus the first data views:
 | `js/i18n.js` | Language modes |
 | `js/ruler.js` | Scale navigator |
 | `js/compare.js` | Four-cell comparison and fraction chart |
+| `js/molview.js` | Mol* viewer for Module B: lazy load, structure loading, guided stops |
+| `js/gl.js` | One WebGL owner at a time (Mol* now, Three.js in stage 3) |
+| `vendor/molstar-5.13.1/` | Pinned Mol* viewer build (MIT) |
+| `data/structures/` | BinaryCIF files; fill with `sh tools/fetch-structures.sh` or the Fetch structures action |
 | `.design/cell-atlas/` | Design brief, information architecture, build tasks |
 | `data/catalog.json` | Cells with volume fractions, compartments, structures |
 | `data/citations.json` | Shared citation registry (`verified` or `pending`) |

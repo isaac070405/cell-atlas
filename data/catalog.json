@@ -1,61 +1,565 @@
 {
-  "_schema": "Cells, compartments and structures. fractions[].value is a % (number) or a range [lo, hi]; approx marks a value the paper gives as 'about'; negligible marks a compartment the paper measured as too small to report. basis is the denominator: cell = whole cell volume. Every fraction has a cite id in citations.json.",
+  "_schema": "Cells, compartments and structures. fractions[].value is a % (number) or a range [lo, hi]; approx marks a value the paper gives as 'about'; negligible marks a compartment the paper measured as too small to report. basis is the denominator: cell = whole cell volume. Every fraction has a cite id in citations.json. structures[].tour: stops whose parts match entities by pdbx_description regex, with optional auth_seq_id residues or ligand comp ids.",
   "compartments": [
-    { "id": "nucleus", "token": "--org-nucleus", "name": { "en": "Nucleus", "zh-Hant": "細胞核" } },
-    { "id": "perinuclear", "token": "--org-perinuclear", "name": { "en": "Perinuclear space", "zh-Hant": "核周間隙" } },
-    { "id": "mito", "token": "--org-mito", "name": { "en": "Mitochondria", "zh-Hant": "粒線體" }, "structure": "5XTD" },
-    { "id": "er-rough", "token": "--org-er-rough", "name": { "en": "Rough ER", "zh-Hant": "粗面內質網" }, "structure": "4UG0" },
-    { "id": "er-smooth", "token": "--org-er-smooth", "name": { "en": "Smooth ER", "zh-Hant": "滑面內質網" } },
-    { "id": "golgi", "token": "--org-golgi", "name": { "en": "Golgi apparatus", "zh-Hant": "高爾基體" } },
-    { "id": "er-smooth-golgi", "token": "--org-er-smooth", "name": { "en": "Smooth ER + Golgi", "zh-Hant": "滑面內質網＋高爾基體" }, "members": ["er-smooth", "golgi"] },
-    { "id": "perox", "token": "--org-perox", "name": { "en": "Peroxisomes", "zh-Hant": "過氧化物酶體" } },
-    { "id": "lyso", "token": "--org-lyso", "name": { "en": "Lysosomes", "zh-Hant": "溶酶體" } },
-    { "id": "endo", "token": "--org-endo", "name": { "en": "Endosomes", "zh-Hant": "內體" } },
-    { "id": "sr", "token": "--org-sr", "name": { "en": "Sarcoplasmic reticulum", "zh-Hant": "肌漿網" } },
-    { "id": "myofibril", "token": "--org-myofibril", "name": { "en": "Myofibrils", "zh-Hant": "肌原纖維" } },
-    { "id": "chloro-stroma", "token": "--org-chloro", "name": { "en": "Chloroplast stroma", "zh-Hant": "葉綠體基質" } },
-    { "id": "vacuole", "token": "--org-vacuole", "name": { "en": "Vacuole", "zh-Hant": "液泡" } },
-    { "id": "cytosol", "token": "--org-cytosol", "name": { "en": "Cytosol", "zh-Hant": "胞質溶膠" } }
+    {
+      "id": "nucleus",
+      "token": "--org-nucleus",
+      "name": {
+        "en": "Nucleus",
+        "zh-Hant": "細胞核"
+      }
+    },
+    {
+      "id": "perinuclear",
+      "token": "--org-perinuclear",
+      "name": {
+        "en": "Perinuclear space",
+        "zh-Hant": "核周間隙"
+      }
+    },
+    {
+      "id": "mito",
+      "token": "--org-mito",
+      "name": {
+        "en": "Mitochondria",
+        "zh-Hant": "粒線體"
+      },
+      "structure": "5XTD"
+    },
+    {
+      "id": "er-rough",
+      "token": "--org-er-rough",
+      "name": {
+        "en": "Rough ER",
+        "zh-Hant": "粗面內質網"
+      },
+      "structure": "4UG0"
+    },
+    {
+      "id": "er-smooth",
+      "token": "--org-er-smooth",
+      "name": {
+        "en": "Smooth ER",
+        "zh-Hant": "滑面內質網"
+      }
+    },
+    {
+      "id": "golgi",
+      "token": "--org-golgi",
+      "name": {
+        "en": "Golgi apparatus",
+        "zh-Hant": "高爾基體"
+      }
+    },
+    {
+      "id": "er-smooth-golgi",
+      "token": "--org-er-smooth",
+      "name": {
+        "en": "Smooth ER + Golgi",
+        "zh-Hant": "滑面內質網＋高爾基體"
+      },
+      "members": [
+        "er-smooth",
+        "golgi"
+      ]
+    },
+    {
+      "id": "perox",
+      "token": "--org-perox",
+      "name": {
+        "en": "Peroxisomes",
+        "zh-Hant": "過氧化物酶體"
+      }
+    },
+    {
+      "id": "lyso",
+      "token": "--org-lyso",
+      "name": {
+        "en": "Lysosomes",
+        "zh-Hant": "溶酶體"
+      }
+    },
+    {
+      "id": "endo",
+      "token": "--org-endo",
+      "name": {
+        "en": "Endosomes",
+        "zh-Hant": "內體"
+      }
+    },
+    {
+      "id": "sr",
+      "token": "--org-sr",
+      "name": {
+        "en": "Sarcoplasmic reticulum",
+        "zh-Hant": "肌漿網"
+      }
+    },
+    {
+      "id": "myofibril",
+      "token": "--org-myofibril",
+      "name": {
+        "en": "Myofibrils",
+        "zh-Hant": "肌原纖維"
+      }
+    },
+    {
+      "id": "chloro-stroma",
+      "token": "--org-chloro",
+      "name": {
+        "en": "Chloroplast stroma",
+        "zh-Hant": "葉綠體基質"
+      }
+    },
+    {
+      "id": "vacuole",
+      "token": "--org-vacuole",
+      "name": {
+        "en": "Vacuole",
+        "zh-Hant": "液泡"
+      }
+    },
+    {
+      "id": "cytosol",
+      "token": "--org-cytosol",
+      "name": {
+        "en": "Cytosol",
+        "zh-Hant": "胞質溶膠"
+      }
+    }
   ],
-  "compareRows": ["nucleus", "mito", "er-rough", "er-smooth-golgi", "perox", "lyso", "endo", "sr", "myofibril", "chloro-stroma", "vacuole", "cytosol"],
-  "compareColumns": ["hepatocyte", "enterocyte", "muscle", "plant-mesophyll"],
-  "muscleTypes": ["skeletal-myocyte", "cardiomyocyte", "smooth-myocyte"],
+  "compareRows": [
+    "nucleus",
+    "mito",
+    "er-rough",
+    "er-smooth-golgi",
+    "perox",
+    "lyso",
+    "endo",
+    "sr",
+    "myofibril",
+    "chloro-stroma",
+    "vacuole",
+    "cytosol"
+  ],
+  "compareColumns": [
+    "hepatocyte",
+    "enterocyte",
+    "muscle",
+    "plant-mesophyll"
+  ],
+  "muscleTypes": [
+    "skeletal-myocyte",
+    "cardiomyocyte",
+    "smooth-myocyte"
+  ],
   "cells": [
-    { "id": "hepatocyte", "name": { "en": "Hepatocyte", "zh-Hant": "肝細胞" }, "release": 1, "sizeUm": [20, 30],
-      "species": { "en": "Rat liver", "zh-Hant": "大鼠肝臟" }, "basis": "cell", "data": "bnid-110373",
+    {
+      "id": "hepatocyte",
+      "name": {
+        "en": "Hepatocyte",
+        "zh-Hant": "肝細胞"
+      },
+      "release": 1,
+      "sizeUm": [
+        20,
+        30
+      ],
+      "species": {
+        "en": "Rat liver",
+        "zh-Hant": "大鼠肝臟"
+      },
+      "basis": "cell",
+      "data": "bnid-110373",
       "fractions": [
-        { "org": "cytosol", "value": 54 }, { "org": "mito", "value": 22 }, { "org": "er-rough", "value": 9 },
-        { "org": "er-smooth-golgi", "value": 6 }, { "org": "nucleus", "value": 6 }, { "org": "perox", "value": 1 },
-        { "org": "lyso", "value": 1 }, { "org": "endo", "value": 1 }
-      ] },
-    { "id": "enterocyte", "name": { "en": "Enterocyte", "zh-Hant": "腸道上皮細胞" }, "release": 1,
-      "size": { "en": "20.8 µm tall, 9.7 µm across at mid-height; 1,452 µm³", "zh-Hant": "高 20.8 µm，中段直徑 9.7 µm；體積 1,452 µm³" },
-      "species": { "en": "Hamster jejunum, fasted", "zh-Hant": "倉鼠空腸（空腹）" }, "basis": "cell", "data": "buschmann-1981",
+        {
+          "org": "cytosol",
+          "value": 54
+        },
+        {
+          "org": "mito",
+          "value": 22
+        },
+        {
+          "org": "er-rough",
+          "value": 9
+        },
+        {
+          "org": "er-smooth-golgi",
+          "value": 6
+        },
+        {
+          "org": "nucleus",
+          "value": 6
+        },
+        {
+          "org": "perox",
+          "value": 1
+        },
+        {
+          "org": "lyso",
+          "value": 1
+        },
+        {
+          "org": "endo",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "enterocyte",
+      "name": {
+        "en": "Enterocyte",
+        "zh-Hant": "腸道上皮細胞"
+      },
+      "release": 1,
+      "size": {
+        "en": "20.8 µm tall, 9.7 µm across at mid-height; 1,452 µm³",
+        "zh-Hant": "高 20.8 µm，中段直徑 9.7 µm；體積 1,452 µm³"
+      },
+      "species": {
+        "en": "Hamster jejunum, fasted",
+        "zh-Hant": "倉鼠空腸（空腹）"
+      },
+      "basis": "cell",
+      "data": "buschmann-1981",
       "fractions": [
-        { "org": "cytosol", "value": 67.8, "note": { "en": "Remaining cytoplasm", "zh-Hant": "其餘細胞質" } },
-        { "org": "mito", "value": 11.7 }, { "org": "nucleus", "value": 10.5 }, { "org": "er-smooth", "value": 6.3 },
-        { "org": "er-rough", "value": 1.8 }, { "org": "golgi", "value": 1.2 }, { "org": "perinuclear", "value": 0.7 },
-        { "org": "lyso", "negligible": true }, { "org": "perox", "negligible": true }
-      ] },
-    { "id": "skeletal-myocyte", "name": { "en": "Skeletal muscle cell", "zh-Hant": "骨骼肌細胞" }, "release": 1,
-      "species": { "en": "Human vastus lateralis, 16 young men", "zh-Hant": "人類股外側肌，16 個年輕男性" }, "basis": "cell", "data": "larsen-2012",
-      "fractions": [ { "org": "mito", "value": [4, 15] } ] },
-    { "id": "cardiomyocyte", "name": { "en": "Cardiac muscle cell", "zh-Hant": "心肌細胞" }, "release": 1,
-      "species": { "en": "10 mammals incl. human", "zh-Hant": "10 種哺乳類，包括人類" }, "basis": "cell", "data": "barth-1992",
-      "fractions": [ { "org": "myofibril", "value": 60, "approx": true }, { "org": "mito", "value": [22, 37] } ] },
-    { "id": "smooth-myocyte", "name": { "en": "Smooth muscle cell", "zh-Hant": "平滑肌細胞" }, "release": 1,
-      "size": { "en": "About 515 µm long; 3,500 µm³", "zh-Hant": "長約 515 µm；體積約 3,500 µm³" },
-      "species": { "en": "Guinea-pig taenia coli", "zh-Hant": "豚鼠結腸帶" }, "basis": "cell", "data": "gabella-1976",
-      "fractions": [ { "org": "mito", "value": [3.5, 4] }, { "org": "sr", "value": 2, "approx": true } ] },
-    { "id": "plant-mesophyll", "name": { "en": "Plant mesophyll cell", "zh-Hant": "植物葉肉細胞" }, "release": 1,
-      "species": { "en": "Spinach leaf", "zh-Hant": "菠菜葉" }, "basis": "cell", "data": "winter-1994",
+        {
+          "org": "cytosol",
+          "value": 67.8,
+          "note": {
+            "en": "Remaining cytoplasm",
+            "zh-Hant": "其餘細胞質"
+          }
+        },
+        {
+          "org": "mito",
+          "value": 11.7
+        },
+        {
+          "org": "nucleus",
+          "value": 10.5
+        },
+        {
+          "org": "er-smooth",
+          "value": 6.3
+        },
+        {
+          "org": "er-rough",
+          "value": 1.8
+        },
+        {
+          "org": "golgi",
+          "value": 1.2
+        },
+        {
+          "org": "perinuclear",
+          "value": 0.7
+        },
+        {
+          "org": "lyso",
+          "negligible": true
+        },
+        {
+          "org": "perox",
+          "negligible": true
+        }
+      ]
+    },
+    {
+      "id": "skeletal-myocyte",
+      "name": {
+        "en": "Skeletal muscle cell",
+        "zh-Hant": "骨骼肌細胞"
+      },
+      "release": 1,
+      "species": {
+        "en": "Human vastus lateralis, 16 young men",
+        "zh-Hant": "人類股外側肌，16 個年輕男性"
+      },
+      "basis": "cell",
+      "data": "larsen-2012",
       "fractions": [
-        { "org": "vacuole", "value": 79 }, { "org": "chloro-stroma", "value": 9.5 },
-        { "org": "cytosol", "value": 3.4, "approx": true }, { "org": "mito", "value": 0.5 }
-      ] }
+        {
+          "org": "mito",
+          "value": [
+            4,
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cardiomyocyte",
+      "name": {
+        "en": "Cardiac muscle cell",
+        "zh-Hant": "心肌細胞"
+      },
+      "release": 1,
+      "species": {
+        "en": "10 mammals incl. human",
+        "zh-Hant": "10 種哺乳類，包括人類"
+      },
+      "basis": "cell",
+      "data": "barth-1992",
+      "fractions": [
+        {
+          "org": "myofibril",
+          "value": 60,
+          "approx": true
+        },
+        {
+          "org": "mito",
+          "value": [
+            22,
+            37
+          ]
+        }
+      ]
+    },
+    {
+      "id": "smooth-myocyte",
+      "name": {
+        "en": "Smooth muscle cell",
+        "zh-Hant": "平滑肌細胞"
+      },
+      "release": 1,
+      "size": {
+        "en": "About 515 µm long; 3,500 µm³",
+        "zh-Hant": "長約 515 µm；體積約 3,500 µm³"
+      },
+      "species": {
+        "en": "Guinea-pig taenia coli",
+        "zh-Hant": "豚鼠結腸帶"
+      },
+      "basis": "cell",
+      "data": "gabella-1976",
+      "fractions": [
+        {
+          "org": "mito",
+          "value": [
+            3.5,
+            4
+          ]
+        },
+        {
+          "org": "sr",
+          "value": 2,
+          "approx": true
+        }
+      ]
+    },
+    {
+      "id": "plant-mesophyll",
+      "name": {
+        "en": "Plant mesophyll cell",
+        "zh-Hant": "植物葉肉細胞"
+      },
+      "release": 1,
+      "species": {
+        "en": "Spinach leaf",
+        "zh-Hant": "菠菜葉"
+      },
+      "basis": "cell",
+      "data": "winter-1994",
+      "fractions": [
+        {
+          "org": "vacuole",
+          "value": 79
+        },
+        {
+          "org": "chloro-stroma",
+          "value": 9.5
+        },
+        {
+          "org": "cytosol",
+          "value": 3.4,
+          "approx": true
+        },
+        {
+          "org": "mito",
+          "value": 0.5
+        }
+      ]
+    }
   ],
   "structures": [
-    { "id": "5XTD", "name": { "en": "Human Complex I", "zh-Hant": "人類呼吸鏈 Complex I" }, "method": "Cryo-EM, 3.7 Å", "from": "mitochondrial inner membrane", "release": 1, "cite": "guo-2017" },
-    { "id": "4UG0", "name": { "en": "Human 80S ribosome", "zh-Hant": "人類 80S 核糖體" }, "method": "Cryo-EM, 3.6 Å", "from": "rough ER / cytosol", "release": 1, "cite": "khatter-2015" }
+    {
+      "id": "5XTD",
+      "name": {
+        "en": "Human Complex I",
+        "zh-Hant": "人類呼吸鏈 Complex I"
+      },
+      "method": "Cryo-EM, 3.7 Å",
+      "from": "mitochondrial inner membrane",
+      "release": 1,
+      "cite": "guo-2017",
+      "tour": [
+        {
+          "id": "fmn",
+          "name": {
+            "en": "NADH entry and FMN",
+            "zh-Hant": "NADH 入口同 FMN"
+          },
+          "note": {
+            "en": "Flavin at the tip of the matrix arm, in NDUFV1. NADH hands over two electrons here.",
+            "zh-Hant": "位於基質臂頂端 NDUFV1 嘅黃素。NADH 喺度交出兩粒電子。"
+          },
+          "parts": [
+            {
+              "comp": [
+                "FMN"
+              ]
+            },
+            {
+              "entity": "flavoprotein 1"
+            }
+          ]
+        },
+        {
+          "id": "fes",
+          "name": {
+            "en": "Fe–S cluster chain",
+            "zh-Hant": "Fe–S 簇電子傳遞鏈"
+          },
+          "note": {
+            "en": "Iron–sulfur clusters carry electrons from NDUFV1 through NDUFS1 and NDUFS8 to NDUFS7.",
+            "zh-Hant": "鐵硫簇將電子由 NDUFV1 經 NDUFS1、NDUFS8 傳去 NDUFS7。"
+          },
+          "parts": [
+            {
+              "comp": [
+                "SF4",
+                "FES"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "n2-q",
+          "name": {
+            "en": "Cluster N2 and the Q-site",
+            "zh-Hant": "簇 N2 同 Q-site"
+          },
+          "note": {
+            "en": "Last cluster N2 sits at the NDUFS2–NDUFS7 interface, at the mouth of the ubiquinone channel.",
+            "zh-Hant": "最後一個簇 N2 喺 NDUFS2 同 NDUFS7 交界，即係泛醌通道入口。"
+          },
+          "parts": [
+            {
+              "entity": "iron-sulfur protein 2"
+            },
+            {
+              "entity": "iron-sulfur protein 7"
+            }
+          ]
+        },
+        {
+          "id": "pump",
+          "name": {
+            "en": "Membrane-arm proton pumps",
+            "zh-Hant": "膜臂質子泵"
+          },
+          "note": {
+            "en": "ND2, ND4 and ND5 are antiporter-like subunits that move protons across the inner membrane.",
+            "zh-Hant": "ND2、ND4、ND5 係類反向轉運蛋白亞基，負責將質子泵過內膜。"
+          },
+          "parts": [
+            {
+              "entity": "chain (2|4|5)\\b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4UG0",
+      "name": {
+        "en": "Human 80S ribosome",
+        "zh-Hant": "人類 80S 核糖體"
+      },
+      "method": "Cryo-EM, 3.6 Å",
+      "from": "rough ER / cytosol",
+      "release": 1,
+      "cite": "khatter-2015",
+      "tour": [
+        {
+          "id": "e-trna",
+          "name": {
+            "en": "E-site tRNA",
+            "zh-Hant": "E 位點 tRNA"
+          },
+          "note": {
+            "en": "tRNA co-purified with the ribosome, in the classical E/E position; it stabilises the L1 stalk (Fig. 6a).",
+            "zh-Hant": "同核糖體一齊純化出嚟嘅 tRNA，處於經典 E/E 位置，穩定住 L1 柄（Fig. 6a）。"
+          },
+          "parts": [
+            {
+              "entity": "tRNA"
+            }
+          ]
+        },
+        {
+          "id": "cca",
+          "name": {
+            "en": "tRNA CCA end",
+            "zh-Hant": "tRNA CCA 末端"
+          },
+          "note": {
+            "en": "C76 stacks between 28S rRNA G4370 and G4371; C75 stacks on eL32 Tyr41. Cycloheximide would clash here (Fig. 6).",
+            "zh-Hant": "C76 插入 28S rRNA G4370 同 G4371 之間；C75 同 eL32 Tyr41 疊合。Cycloheximide 會喺度碰撞（Fig. 6）。"
+          },
+          "parts": [
+            {
+              "entity": "28S",
+              "residues": [
+                4370,
+                4371
+              ]
+            },
+            {
+              "entity": "tRNA",
+              "residues": [
+                75,
+                76
+              ]
+            },
+            {
+              "entity": "protein L32\\b",
+              "residues": [
+                41
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bridge",
+          "name": {
+            "en": "Intersubunit bridge",
+            "zh-Hant": "亞基交界面橋"
+          },
+          "note": {
+            "en": "uL5 Ile113 and Lys118 touch uS13 Arg14 and Gln10 in the pre-translocation state; the bridge remodels on rotation (Fig. 5c).",
+            "zh-Hant": "轉位前狀態下 uL5 Ile113、Lys118 接觸 uS13 Arg14、Gln10；亞基轉動時呢度會重塑（Fig. 5c）。"
+          },
+          "parts": [
+            {
+              "entity": "protein L11\\b",
+              "residues": [
+                113,
+                118
+              ]
+            },
+            {
+              "entity": "protein S18\\b",
+              "residues": [
+                10,
+                14
+              ]
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

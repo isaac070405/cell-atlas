@@ -2,6 +2,7 @@ import { readUrl, setState, onChange, getState, levelInfo } from './state.js';
 import { loadStrings, setLang, getLang, applyStatic, html, text, esc } from './i18n.js';
 import { buildRuler, renderRuler } from './ruler.js';
 import { initCompare, renderCompare, renderChart, columnCells } from './compare.js';
+import { showStructure, closeViewer, focusStop, resetView, refreshTheme } from './molview.js';
 
 const load = p => fetch(p).then(r => r.json());
 const [catalog, { citations }, links] = await Promise.all([
@@ -18,6 +19,7 @@ $('theme-btn').addEventListener('click', () => {
   const next = dark ? 'light' : 'dark';
   document.documentElement.dataset.theme = next;
   try { localStorage.setItem(THEME, next); } catch {}
+  refreshTheme();
 });
 
 // Language
@@ -93,6 +95,8 @@ function render(s) {
     }).join('');
   }
 
+  renderMol(!A && pdb ? pdb : null);
+
   // Panel 1: volume fractions of the selected cell
   $('chart-title').innerHTML = html(A ? 'panel.chart.a' : 'panel.chart.b');
   const chart = A && cell ? renderChart(cell) : '';
@@ -112,6 +116,43 @@ function render(s) {
     ? [...ids].map(id => source(citations[id])).join('')
     : `<li class="muted" style="list-style:none;margin-left:-1.4em">${html('status.nodata')}</li>`;
 }
+
+// Module B viewer. Mol* loads on first use; leaving module B frees its WebGL context.
+let molToken = 0;
+function renderMol(pdb) {
+  const box = $('vp-mol');
+  if (!pdb) { box.hidden = true; delete box.dataset.id; closeViewer(); return; }
+  box.hidden = false;
+  $('vp-empty').hidden = true;
+  const tour = pdb.tour ?? [];
+  $('mol-tour').innerHTML = tour.length ? `<h3 class="tour-title">${html('tour.title')}</h3><ol>${tour.map((t, i) =>
+    `<li><button data-stop="${i}"><span class="tour-name">${html(t.name)}</span><span class="tour-note">${html(t.note)}</span></button></li>`).join('')}</ol>
+    <button class="tour-reset" data-stop="reset">${html('tour.reset')}</button>` : '';
+  if (box.dataset.id === pdb.id) return;
+  box.dataset.id = pdb.id;
+  const token = ++molToken;
+  $('mol-status').innerHTML = html('mol.loading');
+  showStructure($('mol-canvas'), pdb.id).then(r => {
+    if (token !== molToken) return;
+    const parts = [html(r.from === 'repo' ? 'mol.from.repo' : 'mol.from.rcsb')];
+    if (r.preset === 'polymer-cartoon') parts.push(html('mol.cartoon'));
+    $('mol-status').innerHTML = parts.join(' · ');
+  }).catch(err => {
+    if (token !== molToken) return;
+    console.error('[mol]', err);
+    delete box.dataset.id;
+    $('mol-status').innerHTML = html('mol.error');
+  });
+}
+$('mol-tour').addEventListener('click', e => {
+  const b = e.target.closest('button[data-stop]');
+  if (!b) return;
+  if (b.dataset.stop === 'reset') { resetView(); return; }
+  const pdb = catalog.structures.find(p => p.id === getState().pdb);
+  const n = focusStop(pdb.tour[+b.dataset.stop]);
+  $('mol-tour').querySelectorAll('button[data-stop]').forEach(x => x.setAttribute('aria-pressed', x === b));
+  $('mol-status').innerHTML = n ? `${html(pdb.tour[+b.dataset.stop].name)} · ${n} ${html('tour.atoms')}` : html('tour.notfound');
+});
 
 // Links in both directions. Outgoing edges come from the item's own row in links.json;
 // incoming edges are every other row that lists this item.

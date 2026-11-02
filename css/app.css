@@ -184,3 +184,23 @@ body, .stage, .viewport { grid-template-columns: minmax(0, 1fr); }
 .row-label .swatch, .chart-name .swatch { flex: none; margin-right: 0; }
 .row-label .chip-jump { margin-left: var(--s1); }
 .seg button[aria-checked="true"] .t-zh { color: inherit; }
+
+/* Module B: Mol* viewer and tour */
+.mol { display: grid; grid-template-columns: minmax(0, 1fr) 18rem; gap: var(--s4); align-items: start; }
+.mol-canvas { position: relative; height: 58vh; min-height: 360px; border: 1px solid var(--rule); background: var(--paper); }
+.mol-canvas .msp-plugin { position: absolute; inset: 0; }
+.mol-status { grid-column: 1; margin: 0; font: 12px/1.4 var(--font-label); color: var(--ink-soft); }
+.tour { grid-column: 2; grid-row: 1 / span 2; }
+.tour-title { margin: 0 0 var(--s2); font: 500 12px/1.3 var(--font-label); color: var(--ink-soft); }
+.tour ol { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }
+.tour ol button { display: block; width: 100%; text-align: left; background: var(--paper); border: 1px solid var(--rule); border-radius: var(--radius); padding: var(--s2) var(--s3); cursor: pointer; }
+.tour ol button:hover { border-color: var(--stain); }
+.tour button[aria-pressed="true"] { border-color: var(--select); box-shadow: inset 3px 0 0 var(--select); }
+.tour-name { display: block; font-weight: 600; font-size: 14.5px; }
+.tour-note { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+.tour .tour-reset { margin-top: var(--s2); background: none; border: 0; padding: 0; color: var(--stain); font: 12px/1.4 var(--font-label); cursor: pointer; text-decoration: underline; }
+@media (max-width: 760px) {
+  .mol { grid-template-columns: minmax(0, 1fr); }
+  .tour { grid-column: 1; grid-row: auto; }
+  .mol-canvas { height: 52vh; min-height: 300px; }
+}
