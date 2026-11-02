@@ -54,8 +54,6 @@ Each stage has a pass condition. The next stage starts only after it passes.
 | 5. Platform integration | New section in the Human Biology home page; `?part=` deep link in the 3D model; jump buttons in Histology and Specimen Room | Body → tissue → cell → molecule chain works end to end |
 | 6. Polish | HUD layout, light and dark modes, three language modes, mobile, source cards | Every number on every screen has a citation |
 
-Deadline: claude.ai/design closes on 2026-12-14. The Human Biology home page moves to Claude or GitHub before then.
-
 ### Releases
 
 | Release | Cells | Structures |
