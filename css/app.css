@@ -128,5 +128,59 @@ html[data-lang="both"] .ruler-bands button { line-height: 1.1; padding-top: 2px;
   .panel { flex: 0 0 86%; scroll-snap-align: start; }
 }
 
+
+/* Viewport header with the Cells / Compare switch */
+.viewport-head { display: flex; align-items: center; justify-content: space-between; gap: var(--s4); flex-wrap: wrap; }
+[hidden] { display: none !important; }
+
+/* Four-cell comparison: one shared 0-100% scale */
+.compare-lede, .compare-foot { margin: 0; max-width: 72ch; color: var(--ink-soft); font-size: 14px; }
+.compare-foot { font-size: 12.5px; }
+.compare-scroll { overflow-x: auto; margin: 0 calc(-1 * var(--s2)); padding: 0 var(--s2); }
+.compare { width: 100%; min-width: 720px; border-collapse: collapse; table-layout: fixed; font-size: 14px; }
+.compare th, .compare td { padding: 6px var(--s3) 6px 0; text-align: left; vertical-align: middle; }
+.compare thead th { vertical-align: bottom; padding-bottom: var(--s2); border-bottom: 1px solid var(--rule); font-weight: 400; }
+.compare tbody tr + tr th, .compare tbody tr + tr td { border-top: 1px solid color-mix(in srgb, var(--rule) 55%, transparent); }
+.compare .corner { font: 12px/1.3 var(--font-label); color: var(--ink-soft); width: 22%; }
+.compare tbody th { overflow-wrap: anywhere; white-space: normal !important; }
+.compare tbody th { font-weight: 400; white-space: nowrap; }
+.compare tbody th > span:not(.swatch) { margin-right: var(--s1); }
+.compare thead th.on { box-shadow: inset 0 -2px 0 var(--select); }
+.col-head { display: block; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; font-weight: 600; font-size: 15px; }
+.col-head:hover { color: var(--stain); }
+.col-species { display: block; font: 11.5px/1.4 var(--font-label); color: var(--ink-soft); margin-top: 2px; }
+.seg-sm { margin-top: var(--s2); }
+.seg-sm button { padding: 4px 7px; font-size: 11.5px; }
+.compare td .val { display: block; font: 500 12.5px/1.3 var(--font-label); margin-top: 3px; }
+.compare td.nm .val { color: var(--ink-soft); font-weight: 400; }
+.chip-jump { padding: 2px 5px; font-size: 11px; vertical-align: 1px; }
+
+/* Bars */
+.swatch { display: inline-block; width: 9px; height: 9px; border-radius: 2px; background: var(--c); margin-right: var(--s2); vertical-align: 0; }
+.bar-track { position: relative; display: block; height: 8px; border-radius: 2px; background: color-mix(in srgb, var(--rule) 45%, transparent); }
+.bar-fill { position: absolute; left: 0; top: 0; bottom: 0; min-width: 2px; border-radius: 2px; background: var(--c); }
+.bar-range { position: absolute; top: 0; bottom: 0; min-width: 3px; border: 1.5px solid var(--c); border-radius: 2px; background: color-mix(in srgb, var(--c) 30%, transparent); }
+
+/* Chart panel */
+.chart-basis { margin: 0 0 var(--s2) !important; font: 11.5px/1.4 var(--font-label); }
+.chart { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: auto 1fr auto; gap: 6px var(--s3); align-items: center; font-size: 13.5px; }
+.chart li { display: contents; }
+.chart .val { font: 500 12px/1 var(--font-label); text-align: right; }
+
+/* Card links */
+.card-sub { margin: var(--s4) 0 var(--s1); font: 500 12px/1.3 var(--font-label); color: var(--ink-soft); }
+.link-group { display: grid; grid-template-columns: 9.5em 1fr; gap: var(--s2); align-items: start; margin-top: var(--s1); }
+.link-site { font-size: 13px; padding-top: 3px; }
+.link-group .chips { margin-top: 0; }
+@media (max-width: 760px) { .link-group { grid-template-columns: 1fr; gap: 2px; } }
+
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 .ruler-bands button[aria-selected="true"] .t-zh { color: inherit; }
+
+/* Keep wide content (the comparison table) scrolling inside its frame */
+body, .stage, .viewport { grid-template-columns: minmax(0, 1fr); }
+.viewport-frame, #vp-compare { min-width: 0; }
+.row-label, .chart-name { display: flex; align-items: baseline; gap: var(--s2); }
+.row-label .swatch, .chart-name .swatch { flex: none; margin-right: 0; }
+.row-label .chip-jump { margin-left: var(--s1); }
+.seg button[aria-checked="true"] .t-zh { color: inherit; }

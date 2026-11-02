@@ -8,7 +8,7 @@ Live site: https://isaac070405.github.io/cell-atlas/
 
 ## Current state
 
-This repo holds the **site shell** (roadmap stage 0):
+This repo holds the **site shell** (roadmap stage 0) plus the first data views:
 
 - Log-scale navigator from 40 µm to 0.6 Å with four levels: cell, organelle, complex, atom.
 - One state controller (`js/state.js`) drives the header readout, viewer pane and three info panels.
@@ -16,6 +16,9 @@ This repo holds the **site shell** (roadmap stage 0):
 - Light and dark themes from `css/tokens.css`, with fixed organelle colours shared across the platform.
 - Deep links `?cell=enterocyte`, `?pdb=5XTD`, `?level=organelle`.
 - Empty Module A and Module B panes with the first-release queue.
+- **Compare view** (`?view=compare`): hepatocyte, enterocyte, muscle (skeletal, cardiac or smooth via `&muscle=`) and plant mesophyll side by side, one row per compartment, on one 0–100% scale. Species on every column; ranges drawn as spans; unmeasured compartments shown as a dash.
+- Volume-fraction chart for the selected cell, from `data/catalog.json`.
+- Two-way links: each card lists its own `links.json` edges grouped by site, plus every item that links to it. Mitochondria and rough ER rows jump to PDB 5XTD and 4UG0.
 
 ## Files
 
@@ -26,7 +29,9 @@ This repo holds the **site shell** (roadmap stage 0):
 | `js/state.js` | Scale controller and URL deep links |
 | `js/i18n.js` | Language modes |
 | `js/ruler.js` | Scale navigator |
-| `data/catalog.json` | Cells and structures planned per release |
+| `js/compare.js` | Four-cell comparison and fraction chart |
+| `.design/cell-atlas/` | Design brief, information architecture, build tasks |
+| `data/catalog.json` | Cells with volume fractions, compartments, structures |
 | `data/citations.json` | Shared citation registry (`verified` or `pending`) |
 | `data/links.json` | Shared link keys `anat:` `tis:` `cell:` `pdb:` `spec:` `diag:` `ent:` |
 | `data/i18n.json` | All interface text in `en` and `zh-Hant` |

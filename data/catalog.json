@@ -1,12 +1,58 @@
 {
-  "_schema": "What the atlas will hold. Shell stage: entries are listed, no geometry or structures are loaded yet.",
+  "_schema": "Cells, compartments and structures. fractions[].value is a % (number) or a range [lo, hi]; approx marks a value the paper gives as 'about'; negligible marks a compartment the paper measured as too small to report. basis is the denominator: cell = whole cell volume. Every fraction has a cite id in citations.json.",
+  "compartments": [
+    { "id": "nucleus", "token": "--org-nucleus", "name": { "en": "Nucleus", "zh-Hant": "細胞核" } },
+    { "id": "perinuclear", "token": "--org-perinuclear", "name": { "en": "Perinuclear space", "zh-Hant": "核周間隙" } },
+    { "id": "mito", "token": "--org-mito", "name": { "en": "Mitochondria", "zh-Hant": "粒線體" }, "structure": "5XTD" },
+    { "id": "er-rough", "token": "--org-er-rough", "name": { "en": "Rough ER", "zh-Hant": "粗面內質網" }, "structure": "4UG0" },
+    { "id": "er-smooth", "token": "--org-er-smooth", "name": { "en": "Smooth ER", "zh-Hant": "滑面內質網" } },
+    { "id": "golgi", "token": "--org-golgi", "name": { "en": "Golgi apparatus", "zh-Hant": "高爾基體" } },
+    { "id": "er-smooth-golgi", "token": "--org-er-smooth", "name": { "en": "Smooth ER + Golgi", "zh-Hant": "滑面內質網＋高爾基體" }, "members": ["er-smooth", "golgi"] },
+    { "id": "perox", "token": "--org-perox", "name": { "en": "Peroxisomes", "zh-Hant": "過氧化物酶體" } },
+    { "id": "lyso", "token": "--org-lyso", "name": { "en": "Lysosomes", "zh-Hant": "溶酶體" } },
+    { "id": "endo", "token": "--org-endo", "name": { "en": "Endosomes", "zh-Hant": "內體" } },
+    { "id": "sr", "token": "--org-sr", "name": { "en": "Sarcoplasmic reticulum", "zh-Hant": "肌漿網" } },
+    { "id": "myofibril", "token": "--org-myofibril", "name": { "en": "Myofibrils", "zh-Hant": "肌原纖維" } },
+    { "id": "chloro-stroma", "token": "--org-chloro", "name": { "en": "Chloroplast stroma", "zh-Hant": "葉綠體基質" } },
+    { "id": "vacuole", "token": "--org-vacuole", "name": { "en": "Vacuole", "zh-Hant": "液泡" } },
+    { "id": "cytosol", "token": "--org-cytosol", "name": { "en": "Cytosol", "zh-Hant": "胞質溶膠" } }
+  ],
+  "compareRows": ["nucleus", "mito", "er-rough", "er-smooth-golgi", "perox", "lyso", "endo", "sr", "myofibril", "chloro-stroma", "vacuole", "cytosol"],
+  "compareColumns": ["hepatocyte", "enterocyte", "muscle", "plant-mesophyll"],
+  "muscleTypes": ["skeletal-myocyte", "cardiomyocyte", "smooth-myocyte"],
   "cells": [
-    { "id": "hepatocyte", "name": { "en": "Hepatocyte", "zh-Hant": "肝細胞" }, "release": 1, "sizeUm": [20, 30], "data": "bnid-110373" },
-    { "id": "enterocyte", "name": { "en": "Enterocyte", "zh-Hant": "腸道上皮細胞" }, "release": 1, "data": null },
-    { "id": "skeletal-myocyte", "name": { "en": "Skeletal muscle cell", "zh-Hant": "骨骼肌細胞" }, "release": 1, "data": null },
-    { "id": "cardiomyocyte", "name": { "en": "Cardiac muscle cell", "zh-Hant": "心肌細胞" }, "release": 1, "data": null },
-    { "id": "smooth-myocyte", "name": { "en": "Smooth muscle cell", "zh-Hant": "平滑肌細胞" }, "release": 1, "data": null },
-    { "id": "plant-mesophyll", "name": { "en": "Plant mesophyll cell", "zh-Hant": "植物葉肉細胞" }, "release": 1, "data": null }
+    { "id": "hepatocyte", "name": { "en": "Hepatocyte", "zh-Hant": "肝細胞" }, "release": 1, "sizeUm": [20, 30],
+      "species": { "en": "Rat liver", "zh-Hant": "大鼠肝臟" }, "basis": "cell", "data": "bnid-110373",
+      "fractions": [
+        { "org": "cytosol", "value": 54 }, { "org": "mito", "value": 22 }, { "org": "er-rough", "value": 9 },
+        { "org": "er-smooth-golgi", "value": 6 }, { "org": "nucleus", "value": 6 }, { "org": "perox", "value": 1 },
+        { "org": "lyso", "value": 1 }, { "org": "endo", "value": 1 }
+      ] },
+    { "id": "enterocyte", "name": { "en": "Enterocyte", "zh-Hant": "腸道上皮細胞" }, "release": 1,
+      "size": { "en": "20.8 µm tall, 9.7 µm across at mid-height; 1,452 µm³", "zh-Hant": "高 20.8 µm，中段直徑 9.7 µm；體積 1,452 µm³" },
+      "species": { "en": "Hamster jejunum, fasted", "zh-Hant": "倉鼠空腸（空腹）" }, "basis": "cell", "data": "buschmann-1981",
+      "fractions": [
+        { "org": "cytosol", "value": 67.8, "note": { "en": "Remaining cytoplasm", "zh-Hant": "其餘細胞質" } },
+        { "org": "mito", "value": 11.7 }, { "org": "nucleus", "value": 10.5 }, { "org": "er-smooth", "value": 6.3 },
+        { "org": "er-rough", "value": 1.8 }, { "org": "golgi", "value": 1.2 }, { "org": "perinuclear", "value": 0.7 },
+        { "org": "lyso", "negligible": true }, { "org": "perox", "negligible": true }
+      ] },
+    { "id": "skeletal-myocyte", "name": { "en": "Skeletal muscle cell", "zh-Hant": "骨骼肌細胞" }, "release": 1,
+      "species": { "en": "Human vastus lateralis, 16 young men", "zh-Hant": "人類股外側肌，16 個年輕男性" }, "basis": "cell", "data": "larsen-2012",
+      "fractions": [ { "org": "mito", "value": [4, 15] } ] },
+    { "id": "cardiomyocyte", "name": { "en": "Cardiac muscle cell", "zh-Hant": "心肌細胞" }, "release": 1,
+      "species": { "en": "10 mammals incl. human", "zh-Hant": "10 種哺乳類，包括人類" }, "basis": "cell", "data": "barth-1992",
+      "fractions": [ { "org": "myofibril", "value": 60, "approx": true }, { "org": "mito", "value": [22, 37] } ] },
+    { "id": "smooth-myocyte", "name": { "en": "Smooth muscle cell", "zh-Hant": "平滑肌細胞" }, "release": 1,
+      "size": { "en": "About 515 µm long; 3,500 µm³", "zh-Hant": "長約 515 µm；體積約 3,500 µm³" },
+      "species": { "en": "Guinea-pig taenia coli", "zh-Hant": "豚鼠結腸帶" }, "basis": "cell", "data": "gabella-1976",
+      "fractions": [ { "org": "mito", "value": [3.5, 4] }, { "org": "sr", "value": 2, "approx": true } ] },
+    { "id": "plant-mesophyll", "name": { "en": "Plant mesophyll cell", "zh-Hant": "植物葉肉細胞" }, "release": 1,
+      "species": { "en": "Spinach leaf", "zh-Hant": "菠菜葉" }, "basis": "cell", "data": "winter-1994",
+      "fractions": [
+        { "org": "vacuole", "value": 79 }, { "org": "chloro-stroma", "value": 9.5 },
+        { "org": "cytosol", "value": 3.4, "approx": true }, { "org": "mito", "value": 0.5 }
+      ] }
   ],
   "structures": [
     { "id": "5XTD", "name": { "en": "Human Complex I", "zh-Hant": "人類呼吸鏈 Complex I" }, "method": "Cryo-EM, 3.7 Å", "from": "mitochondrial inner membrane", "release": 1, "cite": "guo-2017" },

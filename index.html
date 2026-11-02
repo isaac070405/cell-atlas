@@ -45,9 +45,16 @@
   <main class="stage" id="viewer" tabindex="-1">
     <section class="viewport" aria-live="polite">
       <div class="viewport-frame">
-        <h2 class="viewport-title" id="vp-title"></h2>
+        <div class="viewport-head">
+          <h2 class="viewport-title" id="vp-title"></h2>
+          <div class="seg" role="radiogroup" id="vp-switch" data-i18n-attr="aria-label:view.label">
+            <button role="radio" data-view="cells" data-i18n="view.cells"></button>
+            <button role="radio" data-view="compare" data-i18n="view.compare"></button>
+          </div>
+        </div>
         <p class="viewport-empty" id="vp-empty"></p>
         <ul class="queue" id="vp-queue"></ul>
+        <div id="vp-compare" hidden></div>
       </div>
       <p class="schematic" data-i18n="notice.schematic"></p>
     </section>
