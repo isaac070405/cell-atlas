@@ -20,6 +20,11 @@
   --org-perox: #3E8C8C;
   --org-cytosol: #A9A393;
   --org-chloro: #3E7D3A;
+  --org-perinuclear: #8C97C4;
+  --org-endo: #A27BB0;
+  --org-sr: #6E9A5C;
+  --org-myofibril: #9C3F5A;
+  --org-vacuole: #8FB3C9;
 
   --font-label: "JetBrains Mono", ui-monospace, monospace;
   --font-text: "Source Serif 4", "Noto Serif TC", Georgia, serif;

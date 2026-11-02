@@ -3,17 +3,23 @@
   "citations": {
     "bnid-110373": {
       "source": "BioNumbers BNID 110373",
-      "detail": { "en": "Hepatocyte compartment volume fractions, from Alberts MBoC 5th ed. Table 12-1", "zh-Hant": "肝細胞各區室體積分數，出自 Alberts MBoC 第 5 版 Table 12-1" },
+      "detail": {
+        "en": "Hepatocyte compartment volume fractions, from Alberts MBoC 5th ed. Table 12-1",
+        "zh-Hant": "肝細胞各區室體積分數，出自 Alberts MBoC 第 5 版 Table 12-1"
+      },
       "species": "Rat",
       "cellType": "Hepatocyte",
       "method": "EM stereology (compiled)",
       "url": "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=110373",
-      "status": "pending",
-      "note": "Source verified; individual percentages still to be checked against the book."
+      "status": "verified",
+      "note": "Percentages checked against Alberts MBoC Table 12-1 (資料蒐集 [1], 2026-11-02)."
     },
     "bnid-105782": {
       "source": "BioNumbers BNID 105782",
-      "detail": { "en": "Mitochondria occupy 22% of rat hepatocyte volume (Weibel et al. 1969, J Cell Biol)", "zh-Hant": "大鼠肝細胞粒線體佔體積 22%（Weibel et al. 1969, J Cell Biol）" },
+      "detail": {
+        "en": "Mitochondria occupy 22% of rat hepatocyte volume (Weibel et al. 1969, J Cell Biol)",
+        "zh-Hant": "大鼠肝細胞粒線體佔體積 22%（Weibel et al. 1969, J Cell Biol）"
+      },
       "species": "Rat",
       "cellType": "Hepatocyte",
       "method": "EM stereology",
@@ -23,7 +29,10 @@
     },
     "guo-2017": {
       "source": "Guo et al. (2017) Cell 170:1247–1257",
-      "detail": { "en": "Human respiratory chain Complex I, PDB 5XTD, EMDB EMD-6773", "zh-Hant": "人類呼吸鏈 Complex I，PDB 5XTD，EMDB EMD-6773" },
+      "detail": {
+        "en": "Human respiratory chain Complex I, PDB 5XTD, EMDB EMD-6773",
+        "zh-Hant": "人類呼吸鏈 Complex I，PDB 5XTD，EMDB EMD-6773"
+      },
       "species": "Human",
       "method": "Cryo-EM, 3.7 Å",
       "year": 2017,
@@ -32,11 +41,79 @@
     },
     "khatter-2015": {
       "source": "Khatter et al. (2015) Nature 520:640–645",
-      "detail": { "en": "Human 80S ribosome, PDB 4UG0", "zh-Hant": "人類 80S 核糖體，PDB 4UG0" },
+      "detail": {
+        "en": "Human 80S ribosome, PDB 4UG0",
+        "zh-Hant": "人類 80S 核糖體，PDB 4UG0"
+      },
       "species": "Human",
       "method": "Cryo-EM, average 3.6 Å",
       "year": 2015,
       "url": "https://www.rcsb.org/structure/4UG0",
+      "status": "verified"
+    },
+    "buschmann-1981": {
+      "source": "Buschmann & Manke (1981) J Ultrastruct Res 76:1–14",
+      "detail": {
+        "en": "Enterocyte compartment volumes, Table III; n = 15 tissue blocks, corrected for section thickness",
+        "zh-Hant": "腸道上皮細胞各區室體積，Table III；15 個組織塊，已修正切片厚度"
+      },
+      "species": "Hamster",
+      "cellType": "Enterocyte (jejunum, fasted)",
+      "method": "EM stereology",
+      "year": 1981,
+      "url": "https://doi.org/10.1016/s0022-5320(81)80046-9",
+      "status": "verified"
+    },
+    "larsen-2012": {
+      "source": "Larsen et al. (2012) J Physiol 590:3349–3360",
+      "detail": {
+        "en": "Mitochondrial volume density 4–15% in vastus lateralis of 16 healthy young men",
+        "zh-Hant": "16 個健康年輕男性股外側肌，粒線體體積密度 4–15%"
+      },
+      "species": "Human",
+      "cellType": "Skeletal muscle fibre",
+      "method": "TEM stereology",
+      "year": 2012,
+      "url": "https://doi.org/10.1113/jphysiol.2012.230185",
+      "status": "verified"
+    },
+    "barth-1992": {
+      "source": "Barth et al. (1992) J Mol Cell Cardiol 24(7)",
+      "detail": {
+        "en": "Cardiomyocyte mitochondria 22–37% and myofibrils about 60% of cell volume across 10 mammals",
+        "zh-Hant": "10 種哺乳類心肌細胞：粒線體佔細胞體積 22–37%，肌原纖維約 60%"
+      },
+      "species": "10 mammals incl. human",
+      "cellType": "Cardiomyocyte",
+      "method": "EM stereology",
+      "year": 1992,
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/002228289293381S",
+      "status": "verified"
+    },
+    "gabella-1976": {
+      "source": "Gabella (1976) Cell Tissue Res 170:161–186",
+      "detail": {
+        "en": "Mitochondria 3.5–4% and sarcoplasmic reticulum about 2% of cell volume; cell about 515 µm long, 3,500 µm³",
+        "zh-Hant": "粒線體佔細胞體積 3.5–4%，肌漿網約 2%；細胞長約 515 µm，體積約 3,500 µm³"
+      },
+      "species": "Guinea pig",
+      "cellType": "Smooth muscle (taenia coli)",
+      "method": "EM stereology",
+      "year": 1976,
+      "url": "https://doi.org/10.1007/BF00224297",
+      "status": "verified"
+    },
+    "winter-1994": {
+      "source": "Winter, Robinson & Heldt (1994) Planta 193:530–535",
+      "detail": {
+        "en": "Subcellular volumes in spinach leaf mesophyll: vacuole 79%, chloroplast stroma 9.5%, cytosol about 3.4%, mitochondria 0.5%",
+        "zh-Hant": "菠菜葉肉細胞各區室體積：液泡 79%、葉綠體基質 9.5%、胞質溶膠約 3.4%、粒線體 0.5%"
+      },
+      "species": "Spinach",
+      "cellType": "Leaf mesophyll cell",
+      "method": "EM morphometry",
+      "year": 1994,
+      "url": "https://link.springer.com/article/10.1007/BF02411558",
       "status": "verified"
     }
   }

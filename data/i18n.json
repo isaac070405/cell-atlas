@@ -1,41 +1,229 @@
 {
   "_schema": "Shared UI strings. Every key has en and zh-Hant. Bilingual mode shows en above zh-Hant. Scientific terms keep the English name in brackets in Chinese.",
   "strings": {
-    "site.title": { "en": "Cell Atlas", "zh-Hant": "細胞圖譜" },
-    "site.parent": { "en": "Human Biology", "zh-Hant": "人體生物學" },
-    "hud.cell": { "en": "Cell", "zh-Hant": "細胞" },
-    "hud.scale": { "en": "Scale", "zh-Hant": "尺度" },
-    "hud.viewing": { "en": "Viewing", "zh-Hant": "檢視對象" },
-    "hud.nothing": { "en": "Nothing selected", "zh-Hant": "未選取" },
-    "level.cell": { "en": "Cell", "zh-Hant": "細胞" },
-    "level.organelle": { "en": "Organelle", "zh-Hant": "細胞器" },
-    "level.complex": { "en": "Complex", "zh-Hant": "分子複合體" },
-    "level.atom": { "en": "Atom", "zh-Hant": "原子" },
-    "nav.label": { "en": "Zoom level", "zh-Hant": "放大層級" },
-    "moduleA.title": { "en": "Module A: 3D cell", "zh-Hant": "模組 A：3D 細胞" },
-    "moduleA.empty": { "en": "The procedural cell viewer arrives in roadmap stage 3. Six first-release cells are queued below.", "zh-Hant": "程序化細胞檢視器會喺路線圖第 3 階段加入。下面列出第一版嘅六種細胞。" },
-    "moduleB.title": { "en": "Module B: molecular structure", "zh-Hant": "模組 B：分子結構" },
-    "moduleB.empty": { "en": "The Mol* viewer arrives in roadmap stage 4. Two first-release structures are queued below.", "zh-Hant": "Mol* 檢視器會喺路線圖第 4 階段加入。下面列出第一版嘅兩個結構。" },
-    "panel.chart.a": { "en": "Volume fractions", "zh-Hant": "體積分數" },
-    "panel.chart.b": { "en": "Subunit composition", "zh-Hant": "亞基組成" },
-    "panel.chart.empty": { "en": "No data loaded. Pick a cell with a verified dataset.", "zh-Hant": "未載入數據。請揀一個有已核實數據嘅細胞。" },
-    "panel.chart.empty.b": { "en": "No subunit data loaded. Subunit lists come from UniProt in stage 4.", "zh-Hant": "未載入亞基數據。亞基清單會喺第 4 階段由 UniProt 載入。" },
-    "panel.card": { "en": "Selected object", "zh-Hant": "選中物件" },
-    "panel.card.empty": { "en": "Select an item in the viewer or in the queue to see its size, function and links.", "zh-Hant": "喺檢視器或者清單揀一項，就會顯示大小、功能同連結。" },
-    "panel.sources": { "en": "Sources on this screen", "zh-Hant": "本畫面來源" },
-    "status.verified": { "en": "Verified", "zh-Hant": "已核實" },
-    "status.pending": { "en": "Pending check", "zh-Hant": "待核實" },
-    "status.nodata": { "en": "Data source not found yet", "zh-Hant": "未搵到數據來源" },
-    "release": { "en": "Release", "zh-Hant": "版本" },
-    "notice.schematic": { "en": "To-scale schematic, not a micrograph", "zh-Hant": "比例示意，非顯微影像" },
-    "card.links": { "en": "Links", "zh-Hant": "連結" },
-    "card.species": { "en": "Species", "zh-Hant": "物種" },
-    "card.method": { "en": "Method", "zh-Hant": "方法" },
-    "card.size": { "en": "Size", "zh-Hant": "大小" },
-    "link.soon": { "en": "deep link not built", "zh-Hant": "未有深層連結" },
-    "theme.toggle": { "en": "Switch light or dark", "zh-Hant": "切換淺色或深色" },
-    "lang.en": { "en": "EN", "zh-Hant": "EN" },
-    "lang.zh": { "en": "繁", "zh-Hant": "繁" },
-    "lang.both": { "en": "雙語", "zh-Hant": "雙語" }
+    "site.title": {
+      "en": "Cell Atlas",
+      "zh-Hant": "細胞圖譜"
+    },
+    "site.parent": {
+      "en": "Human Biology",
+      "zh-Hant": "人體生物學"
+    },
+    "hud.cell": {
+      "en": "Cell",
+      "zh-Hant": "細胞"
+    },
+    "hud.scale": {
+      "en": "Scale",
+      "zh-Hant": "尺度"
+    },
+    "hud.viewing": {
+      "en": "Viewing",
+      "zh-Hant": "檢視對象"
+    },
+    "hud.nothing": {
+      "en": "Nothing selected",
+      "zh-Hant": "未選取"
+    },
+    "level.cell": {
+      "en": "Cell",
+      "zh-Hant": "細胞"
+    },
+    "level.organelle": {
+      "en": "Organelle",
+      "zh-Hant": "細胞器"
+    },
+    "level.complex": {
+      "en": "Complex",
+      "zh-Hant": "分子複合體"
+    },
+    "level.atom": {
+      "en": "Atom",
+      "zh-Hant": "原子"
+    },
+    "nav.label": {
+      "en": "Zoom level",
+      "zh-Hant": "放大層級"
+    },
+    "moduleA.title": {
+      "en": "Module A: 3D cell",
+      "zh-Hant": "模組 A：3D 細胞"
+    },
+    "moduleA.empty": {
+      "en": "The procedural cell viewer arrives in roadmap stage 3. Six first-release cells are queued below; Compare puts four types side by side.",
+      "zh-Hant": "程序化細胞檢視器會喺路線圖第 3 階段加入。下面列出第一版嘅六種細胞；揀「並排比較」可以將四類細胞放埋一齊睇。"
+    },
+    "moduleB.title": {
+      "en": "Module B: molecular structure",
+      "zh-Hant": "模組 B：分子結構"
+    },
+    "moduleB.empty": {
+      "en": "The Mol* viewer arrives in roadmap stage 4. Two first-release structures are queued below.",
+      "zh-Hant": "Mol* 檢視器會喺路線圖第 4 階段加入。下面列出第一版嘅兩個結構。"
+    },
+    "panel.chart.a": {
+      "en": "Volume fractions",
+      "zh-Hant": "體積分數"
+    },
+    "panel.chart.b": {
+      "en": "Subunit composition",
+      "zh-Hant": "亞基組成"
+    },
+    "panel.chart.empty": {
+      "en": "No data loaded. Pick a cell with a verified dataset.",
+      "zh-Hant": "未載入數據。請揀一個有已核實數據嘅細胞。"
+    },
+    "panel.chart.empty.b": {
+      "en": "No subunit data loaded. Subunit lists come from UniProt in stage 4.",
+      "zh-Hant": "未載入亞基數據。亞基清單會喺第 4 階段由 UniProt 載入。"
+    },
+    "panel.card": {
+      "en": "Selected object",
+      "zh-Hant": "選中物件"
+    },
+    "panel.card.empty": {
+      "en": "Select an item in the viewer or in the queue to see its size, function and links.",
+      "zh-Hant": "喺檢視器或者清單揀一項，就會顯示大小、功能同連結。"
+    },
+    "panel.sources": {
+      "en": "Sources on this screen",
+      "zh-Hant": "本畫面來源"
+    },
+    "status.verified": {
+      "en": "Verified",
+      "zh-Hant": "已核實"
+    },
+    "status.pending": {
+      "en": "Pending check",
+      "zh-Hant": "待核實"
+    },
+    "status.nodata": {
+      "en": "Data source not found yet",
+      "zh-Hant": "未搵到數據來源"
+    },
+    "release": {
+      "en": "Release",
+      "zh-Hant": "版本"
+    },
+    "notice.schematic": {
+      "en": "To-scale schematic, not a micrograph",
+      "zh-Hant": "比例示意，非顯微影像"
+    },
+    "card.links": {
+      "en": "Links",
+      "zh-Hant": "連結"
+    },
+    "card.species": {
+      "en": "Species",
+      "zh-Hant": "物種"
+    },
+    "card.method": {
+      "en": "Method",
+      "zh-Hant": "方法"
+    },
+    "card.size": {
+      "en": "Size",
+      "zh-Hant": "大小"
+    },
+    "link.soon": {
+      "en": "deep link not built",
+      "zh-Hant": "未有深層連結"
+    },
+    "theme.toggle": {
+      "en": "Switch light or dark",
+      "zh-Hant": "切換淺色或深色"
+    },
+    "lang.en": {
+      "en": "EN",
+      "zh-Hant": "EN"
+    },
+    "lang.zh": {
+      "en": "繁",
+      "zh-Hant": "繁"
+    },
+    "lang.both": {
+      "en": "雙語",
+      "zh-Hant": "雙語"
+    },
+    "view.label": {
+      "en": "Module A view",
+      "zh-Hant": "模組 A 檢視"
+    },
+    "view.cells": {
+      "en": "Cells",
+      "zh-Hant": "細胞清單"
+    },
+    "view.compare": {
+      "en": "Compare",
+      "zh-Hant": "並排比較"
+    },
+    "compare.title": {
+      "en": "Four cell types side by side",
+      "zh-Hant": "四類細胞並排比較"
+    },
+    "compare.lede": {
+      "en": "Share of whole-cell volume on one shared 0–100% scale. A span shows the range between people or species.",
+      "zh-Hant": "佔整個細胞體積嘅百分比，四欄共用同一條 0–100% 比例尺。橫條係範圍，代表個體或者物種之間嘅差異。"
+    },
+    "compare.compartment": {
+      "en": "Compartment",
+      "zh-Hant": "區室"
+    },
+    "compare.muscle": {
+      "en": "Muscle type",
+      "zh-Hant": "肌細胞種類"
+    },
+    "compare.notmeasured": {
+      "en": "not measured",
+      "zh-Hant": "未量度"
+    },
+    "compare.negligible": {
+      "en": "negligible",
+      "zh-Hant": "微不足道"
+    },
+    "compare.derived": {
+      "en": "sum of measured parts",
+      "zh-Hant": "由量度值相加"
+    },
+    "compare.jump": {
+      "en": "Open structure",
+      "zh-Hant": "打開結構"
+    },
+    "compare.select": {
+      "en": "Show this cell in the panels",
+      "zh-Hant": "喺下面資料欄顯示呢個細胞"
+    },
+    "compare.footnote": {
+      "en": "* Sum of the separate smooth ER and Golgi values in the paper. ≈ means the paper gives the value as \"about\". A dash means the source did not measure that compartment.",
+      "zh-Hant": "* 由論文分開量度嘅滑面內質網同高爾基體數值相加。≈ 代表論文寫「約」。橫線代表來源冇量度嗰個區室。"
+    },
+    "muscle.skeletal-myocyte": {
+      "en": "Skeletal",
+      "zh-Hant": "骨骼肌"
+    },
+    "muscle.cardiomyocyte": {
+      "en": "Cardiac",
+      "zh-Hant": "心肌"
+    },
+    "muscle.smooth-myocyte": {
+      "en": "Smooth",
+      "zh-Hant": "平滑肌"
+    },
+    "card.linkedfrom": {
+      "en": "Linked from",
+      "zh-Hant": "由呢度連過嚟"
+    },
+    "card.links.none": {
+      "en": "No links recorded yet",
+      "zh-Hant": "未有連結紀錄"
+    },
+    "chart.select": {
+      "en": "Pick a column head to see one cell in detail.",
+      "zh-Hant": "揀一個欄頭，就會喺度顯示嗰個細胞嘅詳細數據。"
+    },
+    "chart.note.basis": {
+      "en": "% of whole-cell volume",
+      "zh-Hant": "佔整個細胞體積 %"
+    }
   }
 }
