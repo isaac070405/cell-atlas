@@ -50,8 +50,8 @@
       "zh-Hant": "模組 A：3D 細胞"
     },
     "moduleA.empty": {
-      "en": "The procedural cell viewer arrives in roadmap stage 3. Six first-release cells are queued below; Compare puts four types side by side.",
-      "zh-Hant": "程序化細胞檢視器會喺路線圖第 3 階段加入。下面列出第一版嘅六種細胞；揀「並排比較」可以將四類細胞放埋一齊睇。"
+      "en": "Pick a cell to see it in 3D. Compartment volumes follow the published fractions; shapes and positions are schematic. Compare puts four types side by side.",
+      "zh-Hant": "選擇細胞即可查看 3D 模型。區室體積依已發表的體積分數，形狀與位置為示意。「比較」可並排四種細胞。"
     },
     "moduleB.title": {
       "en": "Module B: molecular structure",
@@ -224,6 +224,50 @@
     "chart.note.basis": {
       "en": "% of whole-cell volume",
       "zh-Hant": "佔整個細胞體積 %"
+    },
+    "cell3d.cut": {
+      "en": "Cutting plane",
+      "zh-Hant": "切面"
+    },
+    "cell3d.reset": {
+      "en": "Reset view",
+      "zh-Hant": "重設視角"
+    },
+    "cell3d.hint": {
+      "en": "Drag to rotate, scroll to zoom, click a compartment to read its data.",
+      "zh-Hant": "拖曳旋轉、滾輪縮放，點選區室查看數據。"
+    },
+    "cell3d.crowded": {
+      "en": "Crowded outline: the schematic cannot fit every compartment without overlap, so drawn shares differ from the data for some compartments. Volumes quoted on the card are the data.",
+      "zh-Hant": "輪廓過於擁擠：示意圖無法在不重疊下容納所有區室，部分區室的繪製比例與數據略有出入。卡片上的體積為數據值。"
+    },
+    "cell3d.nowebgl": {
+      "en": "This browser cannot start WebGL, so the 3D cell is unavailable. The chart and comparison still work.",
+      "zh-Hant": "此瀏覽器無法啟動 WebGL，無法顯示 3D 細胞。圖表與比較仍可使用。"
+    },
+    "cell3d.loading": {
+      "en": "Loading 3D cell…",
+      "zh-Hant": "載入 3D 細胞中…"
+    },
+    "cell3d.pick": {
+      "en": "Picked compartment",
+      "zh-Hant": "已選區室"
+    },
+    "card.volume": {
+      "en": "Share of cell volume",
+      "zh-Hant": "佔細胞體積"
+    },
+    "card.structure": {
+      "en": "Structure",
+      "zh-Hant": "結構"
+    },
+    "card.clear": {
+      "en": "Clear selection",
+      "zh-Hant": "取消選取"
+    },
+    "card.noorg": {
+      "en": "Not reported for this cell",
+      "zh-Hant": "此細胞未有報告"
     }
   }
 }

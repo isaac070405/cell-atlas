@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+  <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/"}}</script>
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/app.css">
 </head>
@@ -54,6 +55,15 @@
         </div>
         <p class="viewport-empty" id="vp-empty"></p>
         <ul class="queue" id="vp-queue"></ul>
+        <div id="vp-cell" class="cell3d-wrap" hidden>
+          <div class="cell3d" id="cell3d" tabindex="0"></div>
+          <div class="cell3d-bar">
+            <label class="cut"><span data-i18n="cell3d.cut"></span>
+              <input type="range" id="cut" min="0" max="100" value="0"></label>
+            <button class="chip" id="cell-reset" data-i18n="cell3d.reset"></button>
+          </div>
+          <p class="muted cell3d-note" id="cell3d-note"></p>
+        </div>
         <div id="vp-compare" hidden></div>
       </div>
       <p class="schematic" data-i18n="notice.schematic"></p>

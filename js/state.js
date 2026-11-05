@@ -18,7 +18,9 @@ export const levelInfo = (id = state.level) => LEVELS.find(l => l.id === id);
 export const onChange = fn => bus.addEventListener('change', e => fn(e.detail));
 
 export function setState(patch) {
+  const before = state.cell;
   Object.assign(state, patch);
+  if ('cell' in patch && patch.cell !== before && !('selection' in patch)) state.selection = null;
   // Picking a structure means Module B; picking a cell means Module A.
   if ('pdb' in patch && patch.pdb && levelInfo().module !== 'B') state.level = 'complex';
   if ('cell' in patch && patch.cell && !('level' in patch) && levelInfo().module !== 'A') state.level = 'cell';
@@ -27,7 +29,8 @@ export function setState(patch) {
 }
 
 // Deep links: ?cell=enterocyte, ?pdb=5XTD, ?level=organelle (same keys as links.json),
-// ?view=compare and &muscle=cardiomyocyte for the four-cell comparison
+// ?view=compare and &muscle=cardiomyocyte for the four-cell comparison,
+// ?cell=hepatocyte&org=mito for a picked compartment
 export function readUrl() {
   const q = new URLSearchParams(location.search);
   const patch = {};
@@ -35,6 +38,7 @@ export function readUrl() {
   if (q.get('pdb')) patch.pdb = q.get('pdb').toUpperCase();
   if (LEVELS.some(l => l.id === q.get('level'))) patch.level = q.get('level');
   if (q.get('view') === 'compare') patch.view = 'compare';
+  if (q.get('org')) patch.selection = q.get('org');
   if (MUSCLES.includes(q.get('muscle'))) patch.muscle = q.get('muscle');
   return patch;
 }
@@ -44,6 +48,7 @@ function writeUrl() {
   if (state.cell) q.set('cell', state.cell);
   if (state.pdb) q.set('pdb', state.pdb);
   if (state.level !== 'cell') q.set('level', state.level);
+  if (state.selection && state.cell && !state.pdb) q.set('org', state.selection);
   if (state.view === 'compare' && levelInfo().module === 'A') {
     q.set('view', 'compare');
     if (state.muscle !== MUSCLES[0]) q.set('muscle', state.muscle);
