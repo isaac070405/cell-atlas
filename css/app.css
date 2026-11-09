@@ -184,3 +184,15 @@ body, .stage, .viewport { grid-template-columns: minmax(0, 1fr); }
 .row-label .swatch, .chart-name .swatch { flex: none; margin-right: 0; }
 .row-label .chip-jump { margin-left: var(--s1); }
 .seg button[aria-checked="true"] .t-zh { color: inherit; }
+
+/* 3D cell */
+.cell3d-wrap { display: flex; flex-direction: column; gap: var(--s3); min-width: 0; }
+.cell3d { position: relative; height: clamp(300px, 52vh, 560px); border: 1px solid var(--rule); background: color-mix(in srgb, var(--paper) 70%, transparent); touch-action: none; }
+.cell3d canvas { display: block; width: 100%; height: 100%; }
+.cell3d-bar { display: flex; align-items: center; gap: var(--s4); flex-wrap: wrap; }
+.cut { display: flex; align-items: center; gap: var(--s3); font: 12px/1 var(--font-label); color: var(--ink-soft); }
+.cut input { width: min(240px, 50vw); accent-color: var(--select); }
+.cell3d-note { font: 11.5px/1.5 var(--font-label); max-width: 80ch; }
+button.chip { background: none; cursor: pointer; }
+.org-card { border-left: 3px solid var(--c); padding-left: var(--s3); margin-bottom: var(--s4); }
+.org-card .chips { margin-top: var(--s2); }

@@ -5,7 +5,7 @@ import { html, text, esc } from './i18n.js';
 let cat;
 export const initCompare = catalog => { cat = catalog; };
 
-const comp = id => cat.compartments.find(c => c.id === id);
+export const comp = id => cat.compartments.find(c => c.id === id);
 export const cellById = id => cat.cells.find(c => c.id === id);
 export const columnCells = muscle => cat.compareColumns.map(id => cellById(id === 'muscle' ? muscle : id));
 

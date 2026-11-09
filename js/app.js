@@ -1,7 +1,8 @@
 import { readUrl, setState, onChange, getState, levelInfo } from './state.js';
 import { loadStrings, setLang, getLang, applyStatic, html, text, esc } from './i18n.js';
 import { buildRuler, renderRuler } from './ruler.js';
-import { initCompare, renderCompare, renderChart, columnCells } from './compare.js';
+import { initCompare, renderCompare, renderChart, columnCells, resolve, valueText, comp } from './compare.js';
+import { buildModel, crowded } from './cellmodel.js';
 
 const load = p => fetch(p).then(r => r.json());
 const [catalog, { citations }, links] = await Promise.all([
@@ -58,6 +59,36 @@ document.addEventListener('click', e => {
   setState(a.dataset.pdb ? { pdb: a.dataset.pdb } : { cell: a.dataset.cell, pdb: null });
 });
 
+// 3D cell: Three.js loads the first time a cell is shown
+let view = null, viewFailed = false, shown = null;
+const orgColours = () => Object.fromEntries(catalog.compartments.map(c => [c.id, getComputedStyle(document.documentElement).getPropertyValue(c.token).trim()]));
+async function sync3d(cell, selection) {
+  const vp = $('vp-cell');
+  if (viewFailed) return;
+  try {
+    if (!view) {
+      $('cell3d-note').textContent = text('cell3d.loading');
+      const { createCellView } = await import('./cell3d.js');
+      view = await createCellView($('cell3d'), { onPick: org => setState({ selection: org === getState().selection ? null : org }) });
+      $('cut').addEventListener('input', e => view.setClip(+e.target.value));
+      $('cell-reset').addEventListener('click', () => { shown = null; $('cut').value = 0; sync3d(catalog.cells.find(c => c.id === getState().cell), getState().selection); });
+    }
+    if (shown !== cell.id) {
+      const m = buildModel(cell);
+      const warn = crowded(m);
+      view.show(m, orgColours());
+      $('cut').value = 0;
+      $('cell3d-note').innerHTML = `${html('cell3d.hint')}${warn.length ? `<br>${html('cell3d.crowded')}` : ''}`;
+      shown = cell.id;
+    }
+    view.select(selection && cell.fractions?.some(f => f.org === selection || comp(f.org)?.members?.includes(selection)) ? selection : null);
+  } catch (err) {
+    viewFailed = true;
+    console.warn('3D cell unavailable', err);
+    $('cell3d').hidden = true; $('cell3d-note').innerHTML = html('cell3d.nowebgl');
+  }
+}
+
 function render(s) {
   applyStatic();
   document.querySelectorAll('[data-lang-set]').forEach(b => b.setAttribute('aria-checked', b.dataset.langSet === getLang()));
@@ -80,6 +111,9 @@ function render(s) {
   $('vp-empty').hidden = compare;
   $('vp-queue').hidden = compare;
   $('vp-compare').hidden = !compare;
+  const show3d = A && !compare && !!cell?.fractions?.length;
+  $('vp-cell').hidden = !show3d;
+  if (show3d) sync3d(cell, s.selection);
   document.querySelector('.schematic').hidden = compare;
   if (compare) {
     $('vp-compare').innerHTML = renderCompare(s);
@@ -100,7 +134,8 @@ function render(s) {
 
   // Panel 2: selected object card
   const item = A ? cell : pdb;
-  $('card-body').innerHTML = item ? card(item, A ? 'cell' : 'pdb') : `<p class="muted">${html('panel.card.empty')}</p>`;
+  $('card-body').innerHTML = (A && cell && s.selection ? orgCard(cell, s.selection) : '') +
+    (item ? card(item, A ? 'cell' : 'pdb') : `<p class="muted">${html('panel.card.empty')}</p>`);
 
   // Panel 3: every source behind a number on screen
   const ids = new Set();
@@ -135,6 +170,19 @@ function grouped(keys) {
   }
   return [...by].map(([p, ks]) => `<div class="link-group"><span class="link-site">${esc(links.targets[p]?.label ?? p)}</span>
     <div class="chips">${ks.map(linkChip).join('')}</div></div>`).join('');
+}
+
+// Card for a picked compartment: its share of this cell, the source, and a jump to its structure
+function orgCard(cell, orgId) {
+  const k = comp(orgId), f = k && resolve(cell, orgId);
+  if (!k) return '';
+  const jump = k.structure ? `<div class="chips"><span class="link-site">${html('card.structure')}</span>${linkChip(`pdb:${k.structure}`)}</div>` : '';
+  return `<div class="org-card" style="--c:var(${k.token})">
+    <p><strong>${html(k.name)}</strong></p>
+    <dl class="kv"><dt>${html('card.volume')}</dt><dd>${f ? esc(valueText(f)) : html('card.noorg')}</dd>
+    <dt>${html('card.species')}</dt><dd>${html(cell.species)}</dd></dl>${jump}
+    ${cell.data && f ? `<p class="muted" style="font-size:12.5px;margin-top:6px">${esc(citations[cell.data]?.source ?? '')}</p>` : ''}
+  </div>`;
 }
 
 function card(item, kind) {

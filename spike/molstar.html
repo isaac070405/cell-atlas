@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mol* spike · Cell Atlas</title>
+  <link rel="stylesheet" href="../vendor/molstar/molstar.css">
+  <style>
+    :root { color-scheme: light dark; --ink: #1D232B; --paper: #ECE9DF; --rule: #C9C4B6; --stain: #24489A; }
+    @media (prefers-color-scheme: dark) { :root { --ink: #E3E1D9; --paper: #141A21; --rule: #2E3946; --stain: #7F9FE6; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 15px/1.5 ui-monospace, "JetBrains Mono", monospace; background: var(--paper); color: var(--ink); display: grid; grid-template-rows: auto 1fr auto; height: 100dvh; }
+    header, footer { padding: 10px 14px; border-bottom: 1px solid var(--rule); display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    footer { border: 0; border-top: 1px solid var(--rule); display: block; max-height: 32vh; overflow: auto; }
+    h1 { font-size: 15px; margin: 0 12px 0 0; }
+    button { font: inherit; color: inherit; background: none; border: 1px solid var(--rule); padding: 6px 10px; cursor: pointer; }
+    button[aria-pressed="true"] { border-color: var(--stain); box-shadow: inset 3px 0 0 var(--stain); }
+    #app { position: relative; min-height: 0; }
+    #log { margin: 0; white-space: pre-wrap; font-size: 12.5px; }
+    a { color: var(--stain); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mol* spike</h1>
+    <button data-pdb="5XTD" aria-pressed="true">5XTD Complex I</button>
+    <button data-pdb="4UG0" aria-pressed="false">4UG0 80S ribosome</button>
+    <button id="legacy">Test 4UG0 legacy .pdb</button>
+    <a href="../">Back to Cell Atlas</a>
+  </header>
+  <div id="app"></div>
+  <footer><pre id="log" aria-live="polite"></pre></footer>
+
+  <script src="../vendor/molstar/molstar.js"></script>
+  <script>
+    // Stage 1 spike. Pass condition: 5XTD displays on GitHub Pages and rotates on a phone.
+    // Structures stream as binary CIF from RCSB, so the legacy .pdb question does not block display.
+    const log = m => { const el = document.getElementById('log'); el.textContent += `[${(performance.now() / 1000).toFixed(1)}s] ${m}\n`; el.scrollTop = el.scrollHeight; };
+    let viewer;
+    async function load(id) {
+      document.querySelectorAll('[data-pdb]').forEach(b => b.setAttribute('aria-pressed', b.dataset.pdb === id));
+      const t0 = performance.now();
+      log(`loading ${id}…`);
+      try {
+        await viewer.plugin.clear();
+        await viewer.loadStructureFromUrl(`https://models.rcsb.org/${id}.bcif`, 'mmcif', true);
+        const atoms = viewer.plugin.managers.structure.hierarchy.current.structures[0]?.cell.obj?.data.elementCount;
+        if (!atoms) throw new Error('no structure in the viewer after load');
+        log(`${id} displayed in ${((performance.now() - t0) / 1000).toFixed(1)} s, ${atoms.toLocaleString()} atoms${atoms > 99999 ? ' (over the 99,999-atom legacy .pdb limit, so mmCIF only)' : ''}`);
+      } catch (e) { log(`${id} failed: ${e.message ?? e}`); }
+    }
+    (async () => {
+      log(`Mol* ${molstar.PLUGIN_VERSION ?? ''}, WebGL ${!!document.createElement('canvas').getContext('webgl2') ? '2' : 'unavailable'}, touch ${navigator.maxTouchPoints}`);
+      viewer = await molstar.Viewer.create('app', {
+        layoutIsExpanded: false, layoutShowControls: false, layoutShowRemoteState: false, layoutShowSequence: false,
+        layoutShowLog: false, layoutShowLeftPanel: false, viewportShowExpand: false, viewportShowSelectionMode: false,
+        viewportShowAnimation: false, pdbProvider: 'rcsb', emdbProvider: 'rcsb',
+      });
+      const q = new URLSearchParams(location.search).get('pdb');
+      load(['5XTD', '4UG0'].includes(q?.toUpperCase()) ? q.toUpperCase() : '5XTD');
+    })();
+    document.querySelectorAll('[data-pdb]').forEach(b => b.addEventListener('click', () => load(b.dataset.pdb)));
+    document.getElementById('legacy').addEventListener('click', async () => {
+      try {
+        const r = await fetch('https://files.rcsb.org/download/4UG0.pdb', { method: 'HEAD' });
+        log(`4UG0.pdb: HTTP ${r.status}${r.ok ? ' (legacy file exists)' : ' (no legacy file)'}`);
+      } catch (e) { log(`4UG0.pdb: request blocked or failed (${e.message})`); }
+    });
+  </script>
+</body>
+</html>

@@ -18,6 +18,8 @@ This repo holds the **site shell** (roadmap stage 0) plus the first data views:
 - Empty Module A and Module B panes with the first-release queue.
 - **Compare view** (`?view=compare`): hepatocyte, enterocyte, muscle (skeletal, cardiac or smooth via `&muscle=`) and plant mesophyll side by side, one row per compartment, on one 0–100% scale. Species on every column; ranges drawn as spans; unmeasured compartments shown as a dash.
 - Volume-fraction chart for the selected cell, from `data/catalog.json`.
+- **3D cell** (Module A): procedural Three.js cell for each of the six cells. Compartment volumes sum to the published fractions (`js/cellmodel.js`); shapes and positions are schematic. Orbit, cutting plane, click a compartment for its data card (`?cell=hepatocyte&org=mito`). Three.js r187 is self-hosted in `vendor/three/`.
+- **Mol\* spike** (`spike/molstar.html`): loads 5XTD or 4UG0 as binary CIF from RCSB with Mol* 5.13.1, self-hosted in `vendor/molstar/`.
 - Two-way links: each card lists its own `links.json` edges grouped by site, plus every item that links to it. Mitochondria and rough ER rows jump to PDB 5XTD and 4UG0.
 
 ## Files
@@ -30,11 +32,22 @@ This repo holds the **site shell** (roadmap stage 0) plus the first data views:
 | `js/i18n.js` | Language modes |
 | `js/ruler.js` | Scale navigator |
 | `js/compare.js` | Four-cell comparison and fraction chart |
+| `js/cellmodel.js` | Procedural cell layout from the data table (pure maths) |
+| `js/cell3d.js` | Three.js view: orbit, cutting plane, organelle pick |
+| `spike/molstar.html` | Stage 1 Mol* spike page |
+| `scripts/check-data.mjs` | Stage 2 and 3 gate: citations resolve, none pending, model volumes within 2 points |
+| `vendor/` | Self-hosted Three.js and Mol* builds |
 | `.design/cell-atlas/` | Design brief, information architecture, build tasks |
 | `data/catalog.json` | Cells with volume fractions, compartments, structures |
 | `data/citations.json` | Shared citation registry (`verified` or `pending`) |
 | `data/links.json` | Shared link keys `anat:` `tis:` `cell:` `pdb:` `spec:` `diag:` `ent:` |
 | `data/i18n.json` | All interface text in `en` and `zh-Hant` |
+
+## Check the data
+
+```bash
+node scripts/check-data.mjs
+```
 
 ## Run locally
 
@@ -52,9 +65,9 @@ Each stage has a pass condition. The next stage starts only after it passes.
 | Stage | Work | Pass condition |
 | --- | --- | --- |
 | 0. Shell | HUD, scale navigator, state controller, i18n, links.json, citations.json | Live on GitHub Pages ✅ |
-| 1. Technical spike | One page loads Mol* with 5XTD; test whether `<sr-mol>` and `<pdb-slot>` read 4UG0 | Displays on GitHub Pages and rotates on a phone |
-| 2. Data | Data tables for the four first-release cell types, cross-layer index, full links.json | "Pending check" count is zero |
-| 3. Module A | Procedural Three.js cell, side-by-side compare, clipping plane, organelle pick, data card | Organelle volume ratios match the data table within 2 percentage points |
+| 1. Technical spike | One page loads Mol* with 5XTD; test whether `<sr-mol>` and `<pdb-slot>` read 4UG0 | Displays on GitHub Pages and rotates on a phone. Built; needs a check on the live site and a phone (RCSB is unreachable from the build sandbox) |
+| 2. Data | Data tables for the four first-release cell types, cross-layer index, full links.json | "Pending check" count is zero. The 9 citations are verified; the 18 data items below stay open |
+| 3. Module A | Procedural Three.js cell, side-by-side compare, clipping plane, organelle pick, data card | Organelle volume ratios match the data table within 2 percentage points. Passes in `node scripts/check-data.mjs`; cardiomyocyte and plant outlines are too crowded to draw without overlap |
 | 4. Module B | Mol* viewer, presets, colouring modes, subunit list with UniProt links; mitochondrion → Complex I and rough ER → ribosome jumps | One full cell → atom → cell round trip without stutter |
 | 5. Platform integration | New section in the Human Biology home page; `?part=` deep link in the 3D model; jump buttons in Histology and Specimen Room | Body → tissue → cell → molecule chain works end to end |
 | 6. Polish | HUD layout, light and dark modes, three language modes, mobile, source cards | Every number on every screen has a citation |
@@ -116,3 +129,5 @@ Code is released under the MIT License (see `LICENSE`). PDB and EMDB structures 
 - BioNumbers BNID 105782, mitochondria 22% of rat hepatocyte volume, Weibel et al. 1969 (verified).
 - Guo et al. (2017) *Cell* 170:1247–1257, PDB 5XTD, EMD-6773 (verified).
 - Khatter et al. (2015) *Nature* 520:640–645, PDB 4UG0 (verified).
+
+- Mol* 5.13.1 (npm, 2026-11-05): `molstar.js` 5.27 MB raw, about 1.5 MB gzipped; `molstar.css` 73 KB. Loaded only on the spike page.
