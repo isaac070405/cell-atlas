@@ -95,6 +95,9 @@ async function sync3d(cell, selection) {
   }
 }
 
+// Layer numbers follow anatomy/layers.js: 0 skin, 9 anterior organs, 11 deep nerves and vessels
+const ANATOMY_LAYER = { system: 0, organ: 9, tissue: 11 };
+
 function render(s) {
   applyStatic();
   document.querySelectorAll('[data-lang-set]').forEach(b => b.setAttribute('aria-checked', b.dataset.langSet === getLang()));
@@ -122,7 +125,13 @@ function render(s) {
   document.body.classList.toggle('level-c', C);
   const fr = $('vp-anatomy');
   fr.hidden = !C;
-  if (C && !fr.getAttribute('src')) fr.src = 'anatomy/index.html';
+  if (C) {
+    // each level opens the model at its own depth: whole body, organs, deep tissues
+    const layer = ANATOMY_LAYER[s.level];
+    if (!fr.getAttribute('src')) fr.src = `anatomy/index.html?layer=${layer}`;
+    else if (fr.dataset.layer !== String(layer)) fr.contentWindow?.postMessage({ type: 'layer', value: layer }, location.origin);
+    fr.dataset.layer = layer;
+  }
   $('vp-mol').hidden = !showMol;
   $('vp-queue').hidden = compare || C;
   $('vp-compare').hidden = !compare;
