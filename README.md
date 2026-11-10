@@ -47,6 +47,7 @@ This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3
 | `anatomy/` | Imported 3D Anatomy Model (stage 5), served at `/anatomy/`, no design system; see `anatomy/NOTICE.md` for licences |
 | `.design/cell-atlas/` | Design brief, information architecture, build tasks |
 | `docs/DATA.md` | Schema of the data files and how to add a value |
+| `docs/4UG0-summary.md` | Structural summary of the human 80S ribosome (4UG0): validation, per-chain fit, nomenclature |
 | `THIRD_PARTY_NOTICES.md` | Licences of vendored libraries and models |
 | `data/catalog.json` | Cells with volume fractions, compartments, structures |
 | `data/citations.json` | Shared citation registry (`verified` or `pending`) |

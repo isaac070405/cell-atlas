@@ -38,7 +38,7 @@ export async function showStructure(el, pdbId, point) {
   if (point?.select) {
     viewer.structureInteractivity({
       elements: point.select, action: ['select', 'focus'],
-      focusOptions: { minRadius: point.kind === 'trna' ? 30 : 12, extraRadius: 4 },
+      focusOptions: { minRadius: point.kind === 'rrna' ? 80 : point.kind === 'trna' ? 30 : 12, extraRadius: 4 },
     });
   } else {
     viewer.structureInteractivity({ action: ['select', 'highlight'] });
