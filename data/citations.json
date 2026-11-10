@@ -427,6 +427,19 @@
       "year": 1968,
       "url": "https://doi.org/10.1083/JCB.37.1.27",
       "status": "verified"
+    },
+    "tao-2013": {
+      "source": "Tao et al. (2013) PNAS 110:5846–5851",
+      "detail": {
+        "en": "Phage T4 packages its 56 µm long, 170 kb genome into a 120 nm × 86 nm head to near crystalline density (abstract)",
+        "zh-Hant": "噬菌體 T4 將長 56 µm、170 kb 嘅基因組包裝入 120 nm × 86 nm 嘅頭部，密度接近結晶（摘要）"
+      },
+      "species": "Bacteriophage T4",
+      "cellType": "Virion",
+      "method": "Reported in a phage T4 packaging study",
+      "year": 2013,
+      "url": "https://doi.org/10.1073/pnas.1300867110",
+      "status": "verified"
     }
   }
 }

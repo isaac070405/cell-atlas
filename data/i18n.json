@@ -133,10 +133,6 @@
       "en": "Type",
       "zh-Hant": "類型"
     },
-    "compare.nodata": {
-      "en": "No volume data: a virus has no compartments",
-      "zh-Hant": "冇體積數據：病毒冇區室"
-    },
     "moduleB.title": {
       "en": "Module B: molecular structure",
       "zh-Hant": "模組 B：分子結構"
@@ -278,8 +274,8 @@
       "zh-Hant": "喺下面資料欄顯示呢個細胞"
     },
     "compare.footnote": {
-      "en": "* Sum of the separate smooth ER and Golgi values in the paper. ≈ means the paper gives the value as \"about\". A dash means the source did not measure that compartment.",
-      "zh-Hant": "* 由論文分開量度嘅滑面內質網同高爾基體數值相加。≈ 代表論文寫「約」。橫線代表來源冇量度嗰個區室。"
+      "en": "* Sum of the separate smooth ER and Golgi values in the paper. ≈ means the paper gives the value as \"about\". A dash means the source did not measure that compartment. Text in a cell is a size or length, not a volume share.",
+      "zh-Hant": "* 由論文分開量度嘅滑面內質網同高爾基體數值相加。≈ 代表論文寫「約」。橫線代表來源冇量度嗰個區室。文字代表大小或長度，唔係體積比例。"
     },
     "muscle.skeletal-myocyte": {
       "en": "Skeletal",

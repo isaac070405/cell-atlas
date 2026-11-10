@@ -16,9 +16,11 @@
     { "id": "chloro-stroma", "token": "--org-chloro", "name": { "en": "Chloroplast stroma", "zh-Hant": "葉綠體基質" }, "sizes": [{ "cite": "knoblauch-2023", "text": { "en": "Whole chloroplast about 93 µm³", "zh-Hant": "整個葉綠體體積約 93 µm³" } }], "function": { "cite": "johnson-2025" } },
     { "id": "vacuole", "token": "--org-vacuole", "name": { "en": "Vacuole", "zh-Hant": "液泡" }, "function": { "cite": "jiang-2021" } },
     { "id": "cytosol", "token": "--org-cytosol", "name": { "en": "Cytosol", "zh-Hant": "胞質溶膠" }, "function": { "cite": "wang-2013" } },
-    { "id": "periplasm", "token": "--org-periplasm", "name": { "en": "Periplasm", "zh-Hant": "周質空間" } }
+    { "id": "periplasm", "token": "--org-periplasm", "name": { "en": "Periplasm", "zh-Hant": "周質空間" } },
+    { "id": "capsid", "token": "--org-capsid", "name": { "en": "Capsid (head)", "zh-Hant": "衣殼（頭部）" } },
+    { "id": "genome", "token": "--org-genome", "name": { "en": "Genome", "zh-Hant": "基因組" } }
   ],
-  "compareRows": ["nucleus", "mito", "er-rough", "er-smooth-golgi", "perox", "lyso", "endo", "sr", "myofibril", "chloro-stroma", "vacuole", "periplasm", "cytosol"],
+  "compareRows": ["nucleus", "mito", "er-rough", "er-smooth-golgi", "perox", "lyso", "endo", "sr", "myofibril", "chloro-stroma", "vacuole", "periplasm", "capsid", "genome", "cytosol"],
   "compareColumns": ["hepatocyte", "enterocyte", "muscle", "plant-mesophyll", "ecoli", "bacteriophage"],
   "muscleTypes": ["skeletal-myocyte", "cardiomyocyte", "smooth-myocyte"],
   "cells": [
@@ -55,7 +57,12 @@
         { "org": "cytosol", "value": [60, 80], "note": { "en": "Whole cytoplasm: the remainder after the periplasm, including nucleoid, ribosomes and inner membrane", "zh-Hant": "整個細胞質：扣除周質空間後嘅餘下部分，包括擬核、核糖體同內膜" } }
       ] },
     { "id": "bacteriophage", "kind": "virus", "schematic": true, "name": { "en": "Bacteriophage (T4)", "zh-Hant": "噬菌體（T4）" }, "release": 2,
-      "species": { "en": "Enterobacteria phage T4, infects E. coli", "zh-Hant": "腸道細菌噬菌體 T4，感染大腸桿菌" } },
+      "species": { "en": "Enterobacteria phage T4, infects E. coli", "zh-Hant": "腸道細菌噬菌體 T4，感染大腸桿菌" }, "basis": "virion", "data": "tao-2013",
+      "compareNote": { "en": "Sizes and lengths, not volume shares", "zh-Hant": "大小同長度，唔係體積比例" },
+      "fractions": [
+        { "org": "capsid", "text": { "en": "120 nm × 86 nm head", "zh-Hant": "頭部 120 nm × 86 nm" } },
+        { "org": "genome", "text": { "en": "170 kb, 56 µm long, near crystalline density", "zh-Hant": "170 kb，長 56 µm，密度接近結晶" } }
+      ] },
     { "id": "plant-mesophyll", "kind": "plant", "name": { "en": "Plant mesophyll cell", "zh-Hant": "植物葉肉細胞" }, "release": 1,
       "species": { "en": "Spinach leaf", "zh-Hant": "菠菜葉" }, "basis": "cell", "data": "winter-1994",
       "fractions": [

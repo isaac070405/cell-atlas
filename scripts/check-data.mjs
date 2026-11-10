@@ -17,7 +17,7 @@ pending.forEach(([id]) => bad(`citation ${id} is pending`));
 for (const c of cat.cells.filter(c => !c.schematic || c.fractions)) {
   if (c.data && !citations[c.data]) bad(`${c.id}: data cite ${c.data} missing`);
   if (!c.fractions?.length) bad(`${c.id}: no fractions`);
-  const sum = (c.fractions ?? []).filter(f => !f.negligible).reduce((s, f) => s + target(f), 0);
+  const sum = (c.fractions ?? []).filter(f => !f.negligible && !f.text).reduce((s, f) => s + target(f), 0);
   if (sum > 100.5) bad(`${c.id}: fractions sum to ${sum.toFixed(1)}%`);
 }
 for (const s of cat.structures) if (!citations[s.cite]) bad(`${s.id}: cite ${s.cite} missing`);
