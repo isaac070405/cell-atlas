@@ -2,7 +2,7 @@
   "_schema": "Cells, compartments and structures. fractions[].value is a % (number) or a range [lo, hi]; approx marks a value the paper gives as 'about'; negligible marks a compartment the paper measured as too small to report. basis is the denominator: cell = whole cell volume. Every fraction has a cite id in citations.json.",
   "compartments": [
     { "id": "nucleus", "token": "--org-nucleus", "name": { "en": "Nucleus", "zh-Hant": "細胞核" }, "sizes": [{ "cite": "wiener-1968", "text": { "en": "Mean diameter 7.1 µm", "zh-Hant": "平均直徑 7.1 µm" } }], "function": { "cite": "kundu-2026" } },
-    { "id": "perinuclear", "token": "--org-perinuclear", "name": { "en": "Perinuclear space", "zh-Hant": "核周間隙" } },
+    { "id": "perinuclear", "token": "--org-perinuclear", "name": { "en": "Perinuclear space", "zh-Hant": "核周間隙" }, "sizes": [{ "cite": "lanzano-2020", "text": { "en": "30–50 nm wide", "zh-Hant": "寬 30–50 nm" } }] },
     { "id": "mito", "token": "--org-mito", "name": { "en": "Mitochondria", "zh-Hant": "粒線體" }, "structure": "5XTD", "sizes": [{ "cite": "gear-1972", "text": { "en": "Mean volume 0.42 µm³, equivalent diameter 0.93 µm", "zh-Hant": "平均體積 0.42 µm³，等效直徑 0.93 µm" } }], "function": { "cite": "akinkunmi-2026" } },
     { "id": "er-rough", "token": "--org-er-rough", "name": { "en": "Rough ER", "zh-Hant": "粗面內質網" }, "structure": "4UG0", "sizes": [{ "cite": "schroeder-2019", "text": { "en": "Sheets about 30–50 nm thick", "zh-Hant": "片層厚約 30–50 nm" } }], "function": { "cite": "mustakim-2024" } },
     { "id": "er-smooth", "token": "--org-er-smooth", "name": { "en": "Smooth ER", "zh-Hant": "滑面內質網" }, "sizes": [{ "cite": "schroeder-2019", "text": { "en": "Tubules 96 ± 17 nm in diameter", "zh-Hant": "小管直徑 96 ± 17 nm" } }], "function": { "cite": "mustakim-2024" } },
@@ -15,7 +15,7 @@
     { "id": "myofibril", "token": "--org-myofibril", "name": { "en": "Myofibrils", "zh-Hant": "肌原纖維" }, "sizes": [{ "cite": "eisenberg-1974", "text": { "en": "Mean width 1.05 ± 0.04 µm", "zh-Hant": "平均寬度 1.05 ± 0.04 µm" } }], "function": { "cite": "herzog-2022" } },
     { "id": "chloro-stroma", "token": "--org-chloro", "name": { "en": "Chloroplast stroma", "zh-Hant": "葉綠體基質" }, "sizes": [{ "cite": "knoblauch-2023", "text": { "en": "Whole chloroplast about 93 µm³", "zh-Hant": "整個葉綠體體積約 93 µm³" } }], "function": { "cite": "johnson-2025" } },
     { "id": "vacuole", "token": "--org-vacuole", "name": { "en": "Vacuole", "zh-Hant": "液泡" }, "function": { "cite": "jiang-2021" } },
-    { "id": "cytosol", "token": "--org-cytosol", "name": { "en": "Cytosol", "zh-Hant": "胞質溶膠" } }
+    { "id": "cytosol", "token": "--org-cytosol", "name": { "en": "Cytosol", "zh-Hant": "胞質溶膠" }, "function": { "cite": "wang-2013" } }
   ],
   "compareRows": ["nucleus", "mito", "er-rough", "er-smooth-golgi", "perox", "lyso", "endo", "sr", "myofibril", "chloro-stroma", "vacuole", "cytosol"],
   "compareColumns": ["hepatocyte", "enterocyte", "muscle", "plant-mesophyll"],

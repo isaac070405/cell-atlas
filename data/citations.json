@@ -377,6 +377,30 @@
       "year": 1981,
       "url": "https://doi.org/10.2170/JJPHYSIOL.31.29",
       "status": "verified"
+    },
+    "lanzano-2020": {
+      "source": "Lanzano (2020) Biophys J",
+      "detail": {
+        "en": "Perinuclear space between the inner and outer nuclear membranes is 30–50 nm wide and contiguous with the ER lumen",
+        "zh-Hant": "內、外核膜之間的核周間隙寬 30–50 nm，與內質網腔相連"
+      },
+      "species": "Mammalian cells (general statement)",
+      "method": "Commentary citing EM measurements of the nuclear envelope",
+      "year": 2020,
+      "url": "https://doi.org/10.1016/J.BPJ.2020.01.007",
+      "status": "verified"
+    },
+    "wang-2013": {
+      "source": "Wang, Smith & Davis (2013) The cytosol and cytoskeleton, Oxford University Press",
+      "detail": {
+        "en": "The cytosol is the gel-like, semifluid material around the organelles, where many metabolic reactions, protein synthesis and signal transduction take place and metabolites are transported",
+        "zh-Hant": "胞質溶膠是圍繞細胞器的凝膠狀半流體物質，許多代謝反應、蛋白質合成和訊號傳遞在此進行，代謝物也在此運輸"
+      },
+      "species": "Eukaryotic cells (textbook chapter)",
+      "method": "Book chapter",
+      "year": 2013,
+      "url": "https://doi.org/10.1093/hesc/9780199697328.003.0007",
+      "status": "verified"
     }
   }
 }
