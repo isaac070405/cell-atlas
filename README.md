@@ -15,11 +15,14 @@ This repo holds the **site shell** (roadmap stage 0) plus the first data views:
 - Language switch EN / 繁 / 雙語, remembered per browser. Strings live in `data/i18n.json`.
 - Light and dark themes from `css/tokens.css`, with fixed organelle colours shared across the platform.
 - Deep links `?cell=enterocyte`, `?pdb=5XTD`, `?level=organelle`.
-- Empty Module A and Module B panes with the first-release queue.
+- Module B pane with the first-release queue; the Mol* viewer loads in it (see tour points below).
 - **Compare view** (`?view=compare`): hepatocyte, enterocyte, muscle (skeletal, cardiac or smooth via `&muscle=`) and plant mesophyll side by side, one row per compartment, on one 0–100% scale. Species on every column; ranges drawn as spans; unmeasured compartments shown as a dash.
 - Volume-fraction chart for the selected cell, from `data/catalog.json`.
 - **3D cell** (Module A): procedural Three.js cell for each of the six cells. Compartment volumes sum to the published fractions (`js/cellmodel.js`); shapes and positions are schematic. Orbit, cutting plane, click a compartment for its data card (`?cell=hepatocyte&org=mito`). Three.js r187 is self-hosted in `vendor/three/`.
 - **Mol\* spike** (`spike/molstar.html`): loads 5XTD or 4UG0 as binary CIF from RCSB with Mol* 5.13.1, self-hosted in `vendor/molstar/`.
+- **Module B tour points** (`data/tour-points.json`): preset views for 5XTD (FMN, Fe–S clusters, Q-site) and 4UG0 (tRNA sites), each with a source chip and a `computed` or `literature` basis. A tour bar in the Module B pane focuses each point in Mol*.
+- **Organelle size and function text**: the cell card shows size ranges and function text from PubMed and SciSpace sources, 34 citations in `data/citations.json`.
+- **`@isaac070405/cell-3d`** (`packages/cell-3d/`): the 3D cell model and view as an npm package, published to GitHub Packages by `.github/workflows/publish-cell-3d.yml`.
 - Two-way links: each card lists its own `links.json` edges grouped by site, plus every item that links to it. Mitochondria and rough ER rows jump to PDB 5XTD and 4UG0.
 
 ## Files
