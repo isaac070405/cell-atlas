@@ -262,6 +262,290 @@
      }
     }
    ]
+  },
+  {
+   "id": "lyso",
+   "compartment": "lyso",
+   "name": {
+    "en": "Lysosome",
+    "zh-Hant": "溶酶體"
+   },
+   "summary": {
+    "en": "Membrane-bound sac of digestive enzymes that breaks down worn-out organelles and material taken up from outside.",
+    "zh-Hant": "膜包圍嘅消化酵素囊，分解老化嘅細胞器同由外界攝入嘅物質。"
+   },
+   "parts": [
+    {
+     "id": "membrane",
+     "color": "#7A4A8C",
+     "name": {
+      "en": "Membrane",
+      "zh-Hant": "膜"
+     },
+     "text": {
+      "en": "Single membrane that keeps the enzymes away from the rest of the cell.",
+      "zh-Hant": "單層膜，令酵素同細胞其餘部分隔開。"
+     }
+    },
+    {
+     "id": "lumen",
+     "color": "#C9B0D6",
+     "name": {
+      "en": "Acidic lumen",
+      "zh-Hant": "酸性內腔"
+     },
+     "text": {
+      "en": "Acidic interior where the hydrolases work.",
+      "zh-Hant": "酸性內部，水解酵素喺此運作。"
+     }
+    },
+    {
+     "id": "enzymes",
+     "color": "#E8A33D",
+     "name": {
+      "en": "Hydrolases",
+      "zh-Hant": "水解酵素"
+     },
+     "text": {
+      "en": "Enzymes that digest proteins, lipids, sugars and nucleic acids.",
+      "zh-Hant": "消化蛋白質、脂質、糖同核酸嘅酵素。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "perox",
+   "compartment": "perox",
+   "name": {
+    "en": "Peroxisome",
+    "zh-Hant": "過氧化物酶體"
+   },
+   "summary": {
+    "en": "Small single-membrane organelle that oxidises fatty acids and other substrates and breaks down the hydrogen peroxide this produces.",
+    "zh-Hant": "細小嘅單層膜細胞器，氧化脂肪酸同其他底物，並分解由此產生嘅過氧化氫。"
+   },
+   "parts": [
+    {
+     "id": "membrane",
+     "color": "#3E8C8C",
+     "name": {
+      "en": "Membrane",
+      "zh-Hant": "膜"
+     },
+     "text": {
+      "en": "Single membrane around the matrix.",
+      "zh-Hant": "包住基質嘅單層膜。"
+     }
+    },
+    {
+     "id": "matrix",
+     "color": "#A8D5D5",
+     "name": {
+      "en": "Matrix",
+      "zh-Hant": "基質"
+     },
+     "text": {
+      "en": "Holds oxidases and catalase.",
+      "zh-Hant": "含氧化酶同過氧化氫酶。"
+     }
+    },
+    {
+     "id": "core",
+     "color": "#1F5C5C",
+     "name": {
+      "en": "Dense core",
+      "zh-Hant": "致密核心"
+     },
+     "text": {
+      "en": "Crystalline core of enzyme in some species and cell types.",
+      "zh-Hant": "部分物種同細胞類型有酵素結晶核心。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "microfilament",
+   "name": {
+    "en": "Microfilament (actin)",
+    "zh-Hant": "微絲（肌動蛋白）"
+   },
+   "summary": {
+    "en": "Thinnest cytoskeletal fibre: two strands of actin subunits twisted together. Drives cell shape, crawling and muscle contraction.",
+    "zh-Hant": "最幼嘅細胞骨架纖維：兩條肌動蛋白亞基鏈互相扭成。負責細胞形狀、爬行同肌肉收縮。"
+   },
+   "parts": [
+    {
+     "id": "actin",
+     "color": "#D9534F",
+     "name": {
+      "en": "Actin subunits",
+      "zh-Hant": "肌動蛋白亞基"
+     },
+     "text": {
+      "en": "Globular subunits stacked into a helical filament.",
+      "zh-Hant": "球狀亞基堆疊成螺旋纖維。"
+     }
+    },
+    {
+     "id": "plus",
+     "color": "#F0AD4E",
+     "name": {
+      "en": "Plus end",
+      "zh-Hant": "正端"
+     },
+     "text": {
+      "en": "Fast-growing end where subunits are added.",
+      "zh-Hant": "生長較快、加入亞基嘅一端。"
+     }
+    },
+    {
+     "id": "minus",
+     "color": "#5BC0DE",
+     "name": {
+      "en": "Minus end",
+      "zh-Hant": "負端"
+     },
+     "text": {
+      "en": "Slow-growing end where subunits come off.",
+      "zh-Hant": "生長較慢、亞基脫離嘅一端。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "intermediate",
+   "name": {
+    "en": "Intermediate filament",
+    "zh-Hant": "中間絲"
+   },
+   "summary": {
+    "en": "Rope-like fibre of twisted strands. Gives cells mechanical strength; keratins and lamins are examples.",
+    "zh-Hant": "由扭合鏈組成嘅繩狀纖維，賦予細胞機械強度；角蛋白同核纖層蛋白就係例子。"
+   },
+   "parts": [
+    {
+     "id": "strand",
+     "color": "#8E6FB0",
+     "name": {
+      "en": "Coiled strands",
+      "zh-Hant": "盤繞鏈"
+     },
+     "text": {
+      "en": "Elongated protein strands wound around each other like a rope.",
+      "zh-Hant": "細長蛋白鏈互相盤繞，似繩索。"
+     }
+    },
+    {
+     "id": "overlap",
+     "color": "#C9B0D6",
+     "name": {
+      "en": "Staggered overlaps",
+      "zh-Hant": "交錯重疊"
+     },
+     "text": {
+      "en": "Where neighbouring units overlap and lock together.",
+      "zh-Hant": "相鄰單位重疊並鎖合嘅位置。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "microtubule",
+   "name": {
+    "en": "Microtubule",
+    "zh-Hant": "微管"
+   },
+   "summary": {
+    "en": "Hollow tube built from α- and β-tubulin dimers. Forms tracks for transport and the spindle for cell division.",
+    "zh-Hant": "由 α-微管蛋白同 β-微管蛋白二聚體組成嘅中空管，構成運輸軌道同細胞分裂嘅紡錘體。"
+   },
+   "parts": [
+    {
+     "id": "alpha",
+     "color": "#2E7D9A",
+     "name": {
+      "en": "α-tubulin",
+      "zh-Hant": "α-微管蛋白"
+     },
+     "text": {
+      "en": "One half of each tubulin dimer.",
+      "zh-Hant": "每個微管蛋白二聚體嘅一半。"
+     }
+    },
+    {
+     "id": "beta",
+     "color": "#E8A33D",
+     "name": {
+      "en": "β-tubulin",
+      "zh-Hant": "β-微管蛋白"
+     },
+     "text": {
+      "en": "The other half; exposed at the plus end.",
+      "zh-Hant": "另一半；暴露喺正端。"
+     }
+    },
+    {
+     "id": "lumen",
+     "color": "#BFD9E6",
+     "name": {
+      "en": "Hollow lumen",
+      "zh-Hant": "中空內腔"
+     },
+     "text": {
+      "en": "Empty core running along the tube.",
+      "zh-Hant": "沿管伸延嘅空心中軸。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "centrosome",
+   "name": {
+    "en": "Centrosome",
+    "zh-Hant": "中心體"
+   },
+   "summary": {
+    "en": "Main microtubule-organising centre of an animal cell: a pair of centrioles inside a cloud of protein.",
+    "zh-Hant": "動物細胞主要嘅微管組織中心：一對中心粒被蛋白質團包圍。"
+   },
+   "parts": [
+    {
+     "id": "centriole",
+     "color": "#C0392B",
+     "name": {
+      "en": "Centrioles",
+      "zh-Hant": "中心粒"
+     },
+     "text": {
+      "en": "Two short barrels at right angles, each a ring of microtubule blades.",
+      "zh-Hant": "兩個互相垂直嘅短桶，各由一圈微管片組成。"
+     }
+    },
+    {
+     "id": "pcm",
+     "color": "#F3C6C0",
+     "name": {
+      "en": "Pericentriolar material",
+      "zh-Hant": "中心粒周圍物質"
+     },
+     "text": {
+      "en": "Protein cloud around the centrioles that nucleates microtubules.",
+      "zh-Hant": "圍繞中心粒、啟動微管形成嘅蛋白質團。"
+     }
+    },
+    {
+     "id": "mt",
+     "color": "#2E7D9A",
+     "name": {
+      "en": "Emerging microtubules",
+      "zh-Hant": "伸出嘅微管"
+     },
+     "text": {
+      "en": "Microtubules growing out from the cloud.",
+      "zh-Hant": "由蛋白質團向外生長嘅微管。"
+     }
+    }
+   ]
   }
  ]
 }

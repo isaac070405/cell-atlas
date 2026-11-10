@@ -496,6 +496,10 @@
     "card.group": {
       "en": "Group",
       "zh-Hant": "類別"
+    },
+    "model.link": {
+      "en": "Related structure",
+      "zh-Hant": "相關結構"
     }
   }
 }

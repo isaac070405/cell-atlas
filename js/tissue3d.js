@@ -225,6 +225,70 @@ export async function createTissueView(host, { onPick, elements }) {
       }
     },
 
+    lyso() {
+      put(new THREE.SphereGeometry(1.4, 36, 24), '#7A4A8C', 'membrane', { opacity: 0.3 });
+      put(new THREE.SphereGeometry(1.32, 32, 20), '#C9B0D6', 'lumen', { opacity: 0.18 });
+      const r = rng(31);
+      for (let i = 0; i < 70; i++) { const v = V(r() - 0.5, r() - 0.5, r() - 0.5).normalize().multiplyScalar(Math.cbrt(r()) * 1.1); ball(v.toArray(), 0.07, '#E8A33D', 'enzymes'); }
+    },
+
+    perox() {
+      put(new THREE.SphereGeometry(1.25, 36, 24), '#3E8C8C', 'membrane', { opacity: 0.3 });
+      put(new THREE.SphereGeometry(1.18, 32, 20), '#A8D5D5', 'matrix', { opacity: 0.2 });
+      const c = put(new THREE.BoxGeometry(0.75, 0.75, 0.75), '#1F5C5C', 'core'); c.rotation.set(0.5, 0.6, 0.2);
+      const r = rng(33);
+      for (let i = 0; i < 40; i++) { const v = V(r() - 0.5, r() - 0.5, r() - 0.5).normalize().multiplyScalar(0.6 + r() * 0.5); ball(v.toArray(), 0.05, '#A8D5D5', 'matrix'); }
+    },
+
+    microfilament() {   // two strands of beads twisted into a double helix
+      const n = 46, R = 0.34, step = 0.17, strand = off => Array.from({ length: n }, (_, k) => { const a = k * 0.55 + off; return V(Math.cos(a) * R, (k - n / 2) * step * 0.55 * 1.0, Math.sin(a) * R); });
+      for (const off of [0, Math.PI]) strand(off).forEach((p, k) => ball(p.toArray(), 0.16, '#D9534F', 'actin'));
+      ball([0, (n / 2) * step * 0.55 + 0.25, 0], 0.16, '#F0AD4E', 'plus'); ball([0, -(n / 2) * step * 0.55 - 0.3, 0], 0.16, '#5BC0DE', 'minus');
+      group.rotation.z = Math.PI / 2;
+    },
+
+    intermediate() {    // three coiled strands twisted into a rope, with bands where units overlap
+      const n = 90, len = 7;
+      for (let s = 0; s < 3; s++) {
+        const pts = Array.from({ length: n }, (_, k) => { const t = k / (n - 1), a = t * Math.PI * 9 + s * Math.PI * 2 / 3; return V((t - 0.5) * len, Math.cos(a) * 0.22, Math.sin(a) * 0.22); });
+        tube(pts.map(p => p.toArray()), 0.09, '#8E6FB0', 'strand');
+      }
+      for (let k = 0; k < 6; k++) { const b = put(new THREE.CylinderGeometry(0.42, 0.42, 0.1, 20, 1, true), '#C9B0D6', 'overlap', { opacity: 0.55 }); b.rotation.z = Math.PI / 2; b.position.x = (k - 2.5) * 1.1; }
+    },
+
+    microtubule() {     // 13 protofilaments of alternating alpha and beta tubulin
+      const N = 13, rows = 14, R = 0.9, dim = 0.26, geo = new THREE.SphereGeometry(0.13, 12, 8);
+      const mats = { alpha: new THREE.MeshStandardMaterial({ color: '#2E7D9A', roughness: 0.5 }), beta: new THREE.MeshStandardMaterial({ color: '#E8A33D', roughness: 0.5 }) };
+      const inst = { alpha: new THREE.InstancedMesh(geo, mats.alpha, N * rows), beta: new THREE.InstancedMesh(geo, mats.beta, N * rows) }, d = new THREE.Object3D();
+      let ia = 0, ib = 0;
+      for (let p = 0; p < N; p++) for (let k = 0; k < rows * 2; k++) {
+        const a = p / N * Math.PI * 2 + k * 0.0, y = (k - rows) * dim * 0.5 + p * 0.01;
+        d.position.set(Math.cos(a) * R, y + (p / N) * dim * 1.0, Math.sin(a) * R); d.scale.set(1, 1.1, 1); d.updateMatrix();
+        if (k % 2 === 0 && ia < N * rows) inst.alpha.setMatrixAt(ia++, d.matrix); else if (ib < N * rows) inst.beta.setMatrixAt(ib++, d.matrix);
+      }
+      for (const [k, m] of Object.entries(inst)) { m.userData.part = k; m.userData.base = 1; m.instanceMatrix.needsUpdate = true; group.add(m); meshes.push(m); }
+      const l = put(new THREE.CylinderGeometry(0.62, 0.62, rows * dim, 24, 1, true), '#BFD9E6', 'lumen', { opacity: 0.2 });
+      group.rotation.z = Math.PI / 2;
+    },
+
+    centrosome() {
+      const cen = (pos, rotZ) => {
+        const g = new THREE.Group(); g.position.set(...pos); g.rotation.z = rotZ; group.add(g);
+        for (let k = 0; k < 9; k++) {
+          const a = k / 9 * Math.PI * 2, t = put(new THREE.CylinderGeometry(0.07, 0.07, 1.4, 8), '#C0392B', 'centriole');
+          group.remove(t); g.add(t); t.position.set(Math.cos(a) * 0.32, 0, Math.sin(a) * 0.32); t.rotation.y = a + 0.5;
+        }
+      };
+      cen([0, 0, 0], 0); cen([0.95, -0.3, 0], Math.PI / 2);
+      put(new THREE.SphereGeometry(1.5, 32, 20), '#F3C6C0', 'pcm', { opacity: 0.16 });
+      const r = rng(41);
+      for (let i = 0; i < 60; i++) { const v = V(r() - 0.5, r() - 0.5, r() - 0.5).normalize().multiplyScalar(1.15 + r() * 0.3); ball(v.toArray(), 0.05, '#E8A8A0', 'pcm'); }
+      for (let k = 0; k < 9; k++) {
+        const v = V(r() - 0.5, r() - 0.5, r() - 0.5).normalize(), w = v.clone().multiplyScalar(1.4), e = v.clone().multiplyScalar(3.2 + r() * 0.8);
+        tube([w.toArray(), w.clone().lerp(e, 0.5).add(V(0, 0.1, 0)).toArray(), e.toArray()], 0.04, '#2E7D9A', 'mt');
+      }
+    },
+
     // Bacterial cell (E. coli): capsule envelope, nucleoid, plasmids, ribosomes, pili and flagella. Adapted from the supplied procedural model.
     ecoli() {
       const r = rng(7), R = 2, L = 4;
@@ -282,10 +346,10 @@ export async function createTissueView(host, { onPick, elements }) {
   // Atom models are data-driven: balls at 25% of the van der Waals radius, sticks between bonded atoms
   function buildAtoms(m, elements) {
     const pos = m.atoms.map(a => V(...a.xyz));
-    m.atoms.forEach((a, i) => { const e = elements[a.el]; ball(pos[i].toArray(), e.vdw * 0.25, e.color, a.el, [1, 1, 1], { roughness: 0.35 }); });
+    m.atoms.forEach((a, i) => { const e = elements[a.el]; ball(pos[i].toArray(), e.vdw ? e.vdw * 0.25 : e.covalent * 0.35, e.color, a.part ?? a.el, [1, 1, 1], { roughness: 0.35 }); });
     for (const [i, j] of m.bonds) {
       const d = pos[j].clone().sub(pos[i]), g = new THREE.CylinderGeometry(0.06, 0.06, d.length(), 10);
-      const c = put(g, '#b8bcc4', m.atoms[i].el === 'H' ? m.atoms[j].el : m.atoms[i].el);
+      const c = put(g, '#b8bcc4', (m.atoms[i].el === 'H' ? m.atoms[j] : m.atoms[i]).part ?? m.atoms[i].el);
       c.position.copy(pos[i].clone().add(pos[j]).multiplyScalar(0.5)); c.quaternion.setFromUnitVectors(V(0, 1, 0), d.normalize());
     }
   }
@@ -299,7 +363,7 @@ export async function createTissueView(host, { onPick, elements }) {
 
   function show(id, model) {
     group.traverse(o => { o.geometry?.dispose(); o.material?.map?.dispose(); o.material?.dispose?.(); });
-    group.clear(); meshes = []; picked = null;
+    group.clear(); group.rotation.set(0, 0, 0); meshes = []; picked = null;
     if (model?.atoms) buildAtoms(model, elements); else BUILD[id]();
     const box = new THREE.Box3().setFromObject(group), c = box.getCenter(V(0, 0, 0)), reach = box.getSize(V(0, 0, 0)).length() / 2;
     controls.target.copy(c);

@@ -1,5 +1,5 @@
 {
- "_note": "Ball-and-stick models. Bond length = sum of Cordero 2008 single-bond covalent radii; angles are textbook values. Ball radius = 25% of the Bondi 1964 van der Waals radius. Radii are in the element table below.",
+ "_note": "Ball-and-stick models. Small molecules (water, ammonia, methane): bond length = sum of Cordero 2008 single-bond covalent radii, angles are textbook values. Larger molecules marked geometry=computed: lowest-energy conformer of 40 ETKDG starts, relaxed with MMFF94 (computed, not experimental). Fe–S cluster: idealised cube, Fe–S = sum of covalent radii (Fe low-spin). Ball radius = 25% of the Bondi 1964 van der Waals radius; Fe has no Bondi value, so its ball is 35% of its covalent radius.",
  "elements": {
   "H": {
    "z": 1,
@@ -24,6 +24,24 @@
    "covalent": 0.66,
    "vdw": 1.52,
    "color": "#e03030"
+  },
+  "P": {
+   "z": 15,
+   "covalent": 1.07,
+   "vdw": 1.8,
+   "color": "#ff8000"
+  },
+  "S": {
+   "z": 16,
+   "covalent": 1.05,
+   "vdw": 1.8,
+   "color": "#e6c800"
+  },
+  "Fe": {
+   "z": 26,
+   "covalent": 1.32,
+   "vdw": null,
+   "color": "#e06633"
   }
  },
  "models": [
@@ -290,6 +308,3274 @@
      "text": {
       "en": "Atomic number 1. 4 atoms in this molecule. Covalent radius 0.31 Å, van der Waals radius 1.2 Å.",
       "zh-Hant": "原子序 1。呢個分子有 4 個。共價半徑 0.31 Å，范德華半徑 1.2 Å。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "atp",
+   "name": {
+    "en": "ATP (C10H16N5O13P3)",
+    "zh-Hant": "ATP (C10H16N5O13P3)"
+   },
+   "summary": {
+    "en": "Adenosine triphosphate, the cell's energy carrier. Hydrolysis of its terminal phosphate releases energy for work. Computed conformer, drawn neutral with all hydrogens.",
+    "zh-Hant": "三磷酸腺苷，細胞嘅能量載體。水解末端磷酸會釋出能量作功。計算所得構象，以中性形式連同所有氫原子繪出。"
+   },
+   "geometry": "computed",
+   "cites": [
+    "halgren-1996",
+    "riniker-2015",
+    "cordero-2008",
+    "bondi-1964"
+   ],
+   "atoms": [
+    {
+     "el": "C",
+     "xyz": [
+      -5.401,
+      0.547,
+      2.131
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -5.902,
+      -0.7,
+      2.272
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -5.413,
+      -1.685,
+      1.483
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -4.39,
+      -1.368,
+      0.575
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -3.975,
+      -0.047,
+      0.546
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -4.429,
+      0.972,
+      1.294
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -2.988,
+      -0.008,
+      -0.402
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -2.847,
+      -1.271,
+      -0.904
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -3.668,
+      -2.124,
+      -0.325
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -2.268,
+      1.194,
+      -0.774
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -1.351,
+      1.718,
+      0.342
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      0.019,
+      1.239,
+      -0.109
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -0.101,
+      1.351,
+      -1.627
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      -1.441,
+      0.922,
+      -1.932
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      0.913,
+      0.505,
+      -2.397
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      2.22,
+      1.012,
+      -2.205
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "P",
+     "xyz": [
+      3.369,
+      0.058,
+      -1.625
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      4.705,
+      0.701,
+      -1.417
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      3.43,
+      -1.157,
+      -2.667
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      2.731,
+      -0.64,
+      -0.353
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "P",
+     "xyz": [
+      3.075,
+      -0.353,
+      1.168
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      1.964,
+      -0.708,
+      2.105
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      3.398,
+      1.211,
+      1.2
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      4.455,
+      -1.067,
+      1.479
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "P",
+     "xyz": [
+      5.638,
+      -1.404,
+      0.49
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      5.261,
+      -2.067,
+      -0.799
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      6.659,
+      -2.265,
+      1.364
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      6.447,
+      -0.043,
+      0.312
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      1.064,
+      2.04,
+      0.449
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      -1.322,
+      3.16,
+      0.375
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -5.935,
+      -2.963,
+      1.627
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -5.836,
+      1.303,
+      2.779
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -2.14,
+      -1.519,
+      -1.687
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -3.016,
+      1.937,
+      -1.074
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -1.594,
+      1.378,
+      1.353
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.161,
+      0.195,
+      0.19
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.008,
+      2.399,
+      -1.936
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.835,
+      -0.549,
+      -2.109
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.688,
+      0.545,
+      -3.468
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      4.175,
+      -1.752,
+      -2.414
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      2.551,
+      1.72,
+      1.183
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      7.426,
+      -2.555,
+      0.838
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      6.017,
+      0.537,
+      -0.367
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.676,
+      2.946,
+      0.479
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -2.177,
+      3.45,
+      0.75
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -6.37,
+      -3.103,
+      2.529
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -5.324,
+      -3.693,
+      1.278
+     ],
+     "part": "adenine"
+    }
+   ],
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     9,
+     10
+    ],
+    [
+     10,
+     11
+    ],
+    [
+     11,
+     12
+    ],
+    [
+     12,
+     13
+    ],
+    [
+     12,
+     14
+    ],
+    [
+     14,
+     15
+    ],
+    [
+     15,
+     16
+    ],
+    [
+     16,
+     17
+    ],
+    [
+     16,
+     18
+    ],
+    [
+     16,
+     19
+    ],
+    [
+     19,
+     20
+    ],
+    [
+     20,
+     21
+    ],
+    [
+     20,
+     22
+    ],
+    [
+     20,
+     23
+    ],
+    [
+     23,
+     24
+    ],
+    [
+     24,
+     25
+    ],
+    [
+     24,
+     26
+    ],
+    [
+     24,
+     27
+    ],
+    [
+     11,
+     28
+    ],
+    [
+     10,
+     29
+    ],
+    [
+     2,
+     30
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     13,
+     9
+    ],
+    [
+     0,
+     31
+    ],
+    [
+     7,
+     32
+    ],
+    [
+     9,
+     33
+    ],
+    [
+     10,
+     34
+    ],
+    [
+     11,
+     35
+    ],
+    [
+     12,
+     36
+    ],
+    [
+     14,
+     37
+    ],
+    [
+     14,
+     38
+    ],
+    [
+     18,
+     39
+    ],
+    [
+     22,
+     40
+    ],
+    [
+     26,
+     41
+    ],
+    [
+     27,
+     42
+    ],
+    [
+     28,
+     43
+    ],
+    [
+     29,
+     44
+    ],
+    [
+     30,
+     45
+    ],
+    [
+     30,
+     46
+    ]
+   ],
+   "parts": [
+    {
+     "id": "adenine",
+     "color": "#7C8FB0",
+     "name": {
+      "en": "Adenine",
+      "zh-Hant": "腺嘌呤"
+     },
+     "text": {
+      "en": "Purine base that gives the nucleotide its name. The ring system is flat.",
+      "zh-Hant": "賦予核苷酸名稱嘅嘌呤鹼基，環系統係平面。"
+     }
+    },
+    {
+     "id": "ribose",
+     "color": "#C9A66B",
+     "name": {
+      "en": "Ribose",
+      "zh-Hant": "核糖"
+     },
+     "text": {
+      "en": "Five-carbon sugar joining the base to the phosphate chain.",
+      "zh-Hant": "五碳糖，連接鹼基同磷酸鏈。"
+     }
+    },
+    {
+     "id": "phosphate",
+     "color": "#ff8000",
+     "name": {
+      "en": "Phosphate chain",
+      "zh-Hant": "磷酸鏈"
+     },
+     "text": {
+      "en": "Triphosphate tail. The anhydride bonds between phosphates are the ones that release energy when broken.",
+      "zh-Hant": "三磷酸尾。磷酸之間嘅酸酐鍵斷開時會釋出能量。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "adp",
+   "name": {
+    "en": "ADP (C10H15N5O10P2)",
+    "zh-Hant": "ADP (C10H15N5O10P2)"
+   },
+   "summary": {
+    "en": "Adenosine diphosphate, the product of ATP hydrolysis. ATP synthase in the mitochondrial inner membrane adds a phosphate back. Computed conformer.",
+    "zh-Hant": "二磷酸腺苷，ATP 水解嘅產物。粒線體內膜嘅 ATP 合成酶會再加上一個磷酸。計算所得構象。"
+   },
+   "geometry": "computed",
+   "cites": [
+    "halgren-1996",
+    "riniker-2015",
+    "cordero-2008",
+    "bondi-1964"
+   ],
+   "atoms": [
+    {
+     "el": "C",
+     "xyz": [
+      -3.621,
+      1.571,
+      -0.851
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -3.488,
+      2.642,
+      -0.041
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -2.602,
+      2.575,
+      0.979
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -1.861,
+      1.392,
+      1.145
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -2.093,
+      0.379,
+      0.226
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -2.962,
+      0.392,
+      -0.801
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -1.221,
+      -0.617,
+      0.574
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -0.601,
+      -0.23,
+      1.733
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -0.891,
+      1.015,
+      2.06
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -0.986,
+      -1.854,
+      -0.153
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -0.948,
+      -1.686,
+      -1.678
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      0.059,
+      -2.743,
+      -2.087
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      1.05,
+      -2.75,
+      -0.928
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      0.298,
+      -2.381,
+      0.254
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      2.22,
+      -1.769,
+      -1.088
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      1.746,
+      -0.471,
+      -1.409
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "P",
+     "xyz": [
+      2.383,
+      0.818,
+      -0.687
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      1.859,
+      2.112,
+      -1.205
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      3.957,
+      0.623,
+      -0.906
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      2.171,
+      0.546,
+      0.861
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "P",
+     "xyz": [
+      2.58,
+      1.615,
+      1.953
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      3.872,
+      2.313,
+      1.697
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      2.598,
+      0.799,
+      3.327
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      1.305,
+      2.545,
+      2.167
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      -0.609,
+      -4.014,
+      -2.158
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      -2.209,
+      -1.921,
+      -2.313
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -2.461,
+      3.691,
+      1.794
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -4.351,
+      1.675,
+      -1.649
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.088,
+      -0.877,
+      2.267
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -1.767,
+      -2.555,
+      0.166
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -0.599,
+      -0.692,
+      -1.979
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.514,
+      -2.562,
+      -3.065
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      1.45,
+      -3.755,
+      -0.749
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      2.803,
+      -1.742,
+      -0.162
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      2.876,
+      -2.096,
+      -1.901
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      4.445,
+      1.44,
+      -0.67
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      3.121,
+      1.276,
+      3.998
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.489,
+      2.015,
+      2.333
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -1.463,
+      -3.827,
+      -2.603
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -2.789,
+      -1.181,
+      -2.027
+     ],
+     "part": "ribose"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -2.806,
+      4.526,
+      1.337
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -1.555,
+      3.764,
+      2.241
+     ],
+     "part": "adenine"
+    }
+   ],
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     9,
+     10
+    ],
+    [
+     10,
+     11
+    ],
+    [
+     11,
+     12
+    ],
+    [
+     12,
+     13
+    ],
+    [
+     12,
+     14
+    ],
+    [
+     14,
+     15
+    ],
+    [
+     15,
+     16
+    ],
+    [
+     16,
+     17
+    ],
+    [
+     16,
+     18
+    ],
+    [
+     16,
+     19
+    ],
+    [
+     19,
+     20
+    ],
+    [
+     20,
+     21
+    ],
+    [
+     20,
+     22
+    ],
+    [
+     20,
+     23
+    ],
+    [
+     11,
+     24
+    ],
+    [
+     10,
+     25
+    ],
+    [
+     2,
+     26
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     13,
+     9
+    ],
+    [
+     0,
+     27
+    ],
+    [
+     7,
+     28
+    ],
+    [
+     9,
+     29
+    ],
+    [
+     10,
+     30
+    ],
+    [
+     11,
+     31
+    ],
+    [
+     12,
+     32
+    ],
+    [
+     14,
+     33
+    ],
+    [
+     14,
+     34
+    ],
+    [
+     18,
+     35
+    ],
+    [
+     22,
+     36
+    ],
+    [
+     23,
+     37
+    ],
+    [
+     24,
+     38
+    ],
+    [
+     25,
+     39
+    ],
+    [
+     26,
+     40
+    ],
+    [
+     26,
+     41
+    ]
+   ],
+   "parts": [
+    {
+     "id": "adenine",
+     "color": "#7C8FB0",
+     "name": {
+      "en": "Adenine",
+      "zh-Hant": "腺嘌呤"
+     },
+     "text": {
+      "en": "Purine base that gives the nucleotide its name. The ring system is flat.",
+      "zh-Hant": "賦予核苷酸名稱嘅嘌呤鹼基，環系統係平面。"
+     }
+    },
+    {
+     "id": "ribose",
+     "color": "#C9A66B",
+     "name": {
+      "en": "Ribose",
+      "zh-Hant": "核糖"
+     },
+     "text": {
+      "en": "Five-carbon sugar joining the base to the phosphate chain.",
+      "zh-Hant": "五碳糖，連接鹼基同磷酸鏈。"
+     }
+    },
+    {
+     "id": "phosphate",
+     "color": "#ff8000",
+     "name": {
+      "en": "Phosphate chain",
+      "zh-Hant": "磷酸鏈"
+     },
+     "text": {
+      "en": "Diphosphate tail, one phosphate shorter than ATP.",
+      "zh-Hant": "二磷酸尾，比 ATP 少一個磷酸。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "nadh",
+   "name": {
+    "en": "NADH (C21H29N7O14P2)",
+    "zh-Hant": "NADH (C21H29N7O14P2)"
+   },
+   "summary": {
+    "en": "Reduced nicotinamide adenine dinucleotide, an electron carrier. Complex I (PDB 5XTD) takes electrons from NADH. Computed conformer.",
+    "zh-Hant": "還原型菸鹼醯胺腺嘌呤二核苷酸，電子載體。Complex I（PDB 5XTD）由 NADH 取走電子。計算所得構象。"
+   },
+   "geometry": "computed",
+   "cites": [
+    "halgren-1996",
+    "riniker-2015",
+    "cordero-2008",
+    "bondi-1964"
+   ],
+   "atoms": [
+    {
+     "el": "C",
+     "xyz": [
+      3.273,
+      0.024,
+      3.021
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      3.221,
+      1.421,
+      2.452
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      3.311,
+      1.637,
+      1.13
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      3.448,
+      0.618,
+      0.19
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      3.47,
+      -0.697,
+      0.656
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      3.375,
+      -1.032,
+      1.954
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      3.233,
+      -2.465,
+      2.276
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      2.621,
+      -3.237,
+      1.544
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      3.784,
+      -2.868,
+      3.448
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      3.491,
+      0.879,
+      -1.273
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      2.159,
+      0.504,
+      -1.948
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      2.133,
+      1.462,
+      -3.123
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      2.827,
+      2.709,
+      -2.583
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      3.753,
+      2.266,
+      -1.563
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      1.867,
+      3.73,
+      -1.961
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      1.015,
+      3.091,
+      -1.029
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "P",
+     "xyz": [
+      -0.002,
+      3.978,
+      -0.173
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      0.637,
+      5.027,
+      0.676
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      -0.988,
+      4.611,
+      -1.262
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      -0.894,
+      2.924,
+      0.603
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "P",
+     "xyz": [
+      -1.702,
+      1.747,
+      -0.087
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      -1.241,
+      1.28,
+      -1.427
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      -3.207,
+      2.292,
+      -0.093
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      -1.763,
+      0.597,
+      1.032
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -0.537,
+      0.096,
+      1.555
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -0.496,
+      -1.436,
+      1.512
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -0.45,
+      -1.993,
+      0.088
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -1.322,
+      -3.236,
+      0.165
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -2.327,
+      -2.884,
+      1.266
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      -1.663,
+      -1.971,
+      2.17
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -3.586,
+      -2.272,
+      0.897
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -4.663,
+      -2.172,
+      1.748
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -5.648,
+      -1.473,
+      1.226
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -5.178,
+      -1.079,
+      -0.005
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -5.719,
+      -0.254,
+      -1.004
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -4.995,
+      -0.037,
+      -2.127
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -3.806,
+      -0.66,
+      -2.258
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -3.191,
+      -1.456,
+      -1.366
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -3.921,
+      -1.609,
+      -0.251
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -6.944,
+      0.387,
+      -0.883
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      -0.522,
+      -4.36,
+      0.58
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      0.875,
+      -2.29,
+      -0.366
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      2.907,
+      0.903,
+      -4.2
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      2.089,
+      -0.851,
+      -2.418
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      2.367,
+      -0.143,
+      3.615
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      4.135,
+      -0.041,
+      3.694
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      3.125,
+      2.257,
+      3.137
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      3.289,
+      2.647,
+      0.73
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      3.537,
+      -1.451,
+      -0.127
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      4.418,
+      -2.293,
+      3.984
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      3.759,
+      -3.858,
+      3.654
+     ],
+     "part": "nicotinamide"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      4.318,
+      0.301,
+      -1.706
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      1.312,
+      0.679,
+      -1.28
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      1.129,
+      1.644,
+      -3.515
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      3.422,
+      3.206,
+      -3.358
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      1.255,
+      4.192,
+      -2.742
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      2.434,
+      4.509,
+      -1.441
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -1.46,
+      5.385,
+      -0.899
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -3.805,
+      1.729,
+      -0.624
+     ],
+     "part": "phosphate"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.318,
+      0.514,
+      1.015
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -0.483,
+      0.433,
+      2.595
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.372,
+      -1.77,
+      2.086
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -0.865,
+      -1.275,
+      -0.619
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -1.775,
+      -3.519,
+      -0.788
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -2.581,
+      -3.781,
+      1.844
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -4.657,
+      -2.609,
+      2.739
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -3.27,
+      -0.478,
+      -3.186
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -7.552,
+      -0.039,
+      -0.191
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -7.351,
+      0.617,
+      -1.78
+     ],
+     "part": "adenine"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.163,
+      -4.476,
+      -0.107
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      1.329,
+      -2.795,
+      0.351
+     ],
+     "part": "ribose-ade"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      2.694,
+      -0.055,
+      -4.185
+     ],
+     "part": "ribose-nic"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      1.698,
+      -1.379,
+      -1.685
+     ],
+     "part": "ribose-nic"
+    }
+   ],
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     9,
+     10
+    ],
+    [
+     10,
+     11
+    ],
+    [
+     11,
+     12
+    ],
+    [
+     12,
+     13
+    ],
+    [
+     12,
+     14
+    ],
+    [
+     14,
+     15
+    ],
+    [
+     15,
+     16
+    ],
+    [
+     16,
+     17
+    ],
+    [
+     16,
+     18
+    ],
+    [
+     16,
+     19
+    ],
+    [
+     19,
+     20
+    ],
+    [
+     20,
+     21
+    ],
+    [
+     20,
+     22
+    ],
+    [
+     20,
+     23
+    ],
+    [
+     23,
+     24
+    ],
+    [
+     24,
+     25
+    ],
+    [
+     25,
+     26
+    ],
+    [
+     26,
+     27
+    ],
+    [
+     27,
+     28
+    ],
+    [
+     28,
+     29
+    ],
+    [
+     28,
+     30
+    ],
+    [
+     30,
+     31
+    ],
+    [
+     31,
+     32
+    ],
+    [
+     32,
+     33
+    ],
+    [
+     33,
+     34
+    ],
+    [
+     34,
+     35
+    ],
+    [
+     35,
+     36
+    ],
+    [
+     36,
+     37
+    ],
+    [
+     37,
+     38
+    ],
+    [
+     34,
+     39
+    ],
+    [
+     27,
+     40
+    ],
+    [
+     26,
+     41
+    ],
+    [
+     11,
+     42
+    ],
+    [
+     10,
+     43
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     13,
+     9
+    ],
+    [
+     29,
+     25
+    ],
+    [
+     38,
+     30
+    ],
+    [
+     38,
+     33
+    ],
+    [
+     0,
+     44
+    ],
+    [
+     0,
+     45
+    ],
+    [
+     1,
+     46
+    ],
+    [
+     2,
+     47
+    ],
+    [
+     4,
+     48
+    ],
+    [
+     8,
+     49
+    ],
+    [
+     8,
+     50
+    ],
+    [
+     9,
+     51
+    ],
+    [
+     10,
+     52
+    ],
+    [
+     11,
+     53
+    ],
+    [
+     12,
+     54
+    ],
+    [
+     14,
+     55
+    ],
+    [
+     14,
+     56
+    ],
+    [
+     18,
+     57
+    ],
+    [
+     22,
+     58
+    ],
+    [
+     24,
+     59
+    ],
+    [
+     24,
+     60
+    ],
+    [
+     25,
+     61
+    ],
+    [
+     26,
+     62
+    ],
+    [
+     27,
+     63
+    ],
+    [
+     28,
+     64
+    ],
+    [
+     31,
+     65
+    ],
+    [
+     36,
+     66
+    ],
+    [
+     39,
+     67
+    ],
+    [
+     39,
+     68
+    ],
+    [
+     40,
+     69
+    ],
+    [
+     41,
+     70
+    ],
+    [
+     42,
+     71
+    ],
+    [
+     43,
+     72
+    ]
+   ],
+   "parts": [
+    {
+     "id": "nicotinamide",
+     "color": "#3FA7A7",
+     "name": {
+      "en": "Nicotinamide ring",
+      "zh-Hant": "菸鹼醯胺環"
+     },
+     "text": {
+      "en": "The ring that carries the electrons. It gains a hydride when NAD⁺ is reduced to NADH.",
+      "zh-Hant": "攜帶電子嘅環。NAD⁺ 還原成 NADH 時會得到一個氫負離子。"
+     }
+    },
+    {
+     "id": "ribose-nic",
+     "color": "#C9A66B",
+     "name": {
+      "en": "Ribose (nicotinamide side)",
+      "zh-Hant": "核糖（菸鹼醯胺一側）"
+     },
+     "text": {
+      "en": "Five-carbon sugar joining the base to the phosphate chain.",
+      "zh-Hant": "五碳糖，連接鹼基同磷酸鏈。"
+     }
+    },
+    {
+     "id": "phosphate",
+     "color": "#ff8000",
+     "name": {
+      "en": "Phosphate chain",
+      "zh-Hant": "磷酸鏈"
+     },
+     "text": {
+      "en": "Diphosphate bridge linking the two nucleotides.",
+      "zh-Hant": "連接兩個核苷酸嘅二磷酸橋。"
+     }
+    },
+    {
+     "id": "ribose-ade",
+     "color": "#B08D4F",
+     "name": {
+      "en": "Ribose (adenine side)",
+      "zh-Hant": "核糖（腺嘌呤一側）"
+     },
+     "text": {
+      "en": "Five-carbon sugar joining the base to the phosphate chain.",
+      "zh-Hant": "五碳糖，連接鹼基同磷酸鏈。"
+     }
+    },
+    {
+     "id": "adenine",
+     "color": "#7C8FB0",
+     "name": {
+      "en": "Adenine",
+      "zh-Hant": "腺嘌呤"
+     },
+     "text": {
+      "en": "Purine base that gives the nucleotide its name. The ring system is flat.",
+      "zh-Hant": "賦予核苷酸名稱嘅嘌呤鹼基，環系統係平面。"
+     }
+    }
+   ],
+   "link": "pdb:5XTD"
+  },
+  {
+   "id": "xanthine",
+   "name": {
+    "en": "Xanthine (C5H4N4O2)",
+    "zh-Hant": "黃嘌呤 (C5H4N4O2)"
+   },
+   "summary": {
+    "en": "A purine with two carbonyl groups. Xanthine oxidase turns it into uric acid, the end product of purine breakdown in humans. Computed conformer, drawn neutral.",
+    "zh-Hant": "帶兩個羰基嘅嘌呤。黃嘌呤氧化酶將佢變成尿酸，即係人類嘌呤分解嘅最終產物。計算所得構象，以中性形式繪出。"
+   },
+   "geometry": "computed",
+   "cites": [
+    "halgren-1996",
+    "riniker-2015",
+    "cordero-2008",
+    "bondi-1964"
+   ],
+   "atoms": [
+    {
+     "el": "O",
+     "xyz": [
+      -3.086,
+      -1.224,
+      0.034
+     ],
+     "part": "O"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -1.976,
+      -0.699,
+      0.007
+     ],
+     "part": "C"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -1.835,
+      0.658,
+      -0.217
+     ],
+     "part": "N"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -0.65,
+      1.364,
+      -0.271
+     ],
+     "part": "C"
+    },
+    {
+     "el": "O",
+     "xyz": [
+      -0.599,
+      2.57,
+      -0.474
+     ],
+     "part": "O"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      0.483,
+      0.533,
+      -0.064
+     ],
+     "part": "C"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      1.818,
+      0.804,
+      -0.034
+     ],
+     "part": "N"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      2.453,
+      -0.391,
+      0.207
+     ],
+     "part": "C"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      1.598,
+      -1.39,
+      0.329
+     ],
+     "part": "N"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      0.388,
+      -0.807,
+      0.16
+     ],
+     "part": "C"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -0.824,
+      -1.423,
+      0.197
+     ],
+     "part": "N"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -2.686,
+      1.18,
+      -0.355
+     ],
+     "part": "H"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      2.253,
+      1.709,
+      -0.164
+     ],
+     "part": "H"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      3.53,
+      -0.466,
+      0.281
+     ],
+     "part": "H"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -0.868,
+      -2.417,
+      0.364
+     ],
+     "part": "H"
+    }
+   ],
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     10
+    ],
+    [
+     10,
+     1
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     2,
+     11
+    ],
+    [
+     6,
+     12
+    ],
+    [
+     7,
+     13
+    ],
+    [
+     10,
+     14
+    ]
+   ],
+   "parts": [
+    {
+     "id": "O",
+     "color": "#e03030",
+     "name": {
+      "en": "Oxygen (O)",
+      "zh-Hant": "氧 (O)"
+     },
+     "text": {
+      "en": "Atomic number 8. 2 atoms in this molecule. Covalent radius 0.66 Å, van der Waals radius 1.52 Å.",
+      "zh-Hant": "原子序 8。呢個分子有 2 個。共價半徑 0.66 Å，范德華半徑 1.52 Å。"
+     }
+    },
+    {
+     "id": "C",
+     "color": "#4a4a4a",
+     "name": {
+      "en": "Carbon (C)",
+      "zh-Hant": "碳 (C)"
+     },
+     "text": {
+      "en": "Atomic number 6. 5 atoms in this molecule. Covalent radius 0.76 Å, van der Waals radius 1.7 Å.",
+      "zh-Hant": "原子序 6。呢個分子有 5 個。共價半徑 0.76 Å，范德華半徑 1.7 Å。"
+     }
+    },
+    {
+     "id": "N",
+     "color": "#3050f8",
+     "name": {
+      "en": "Nitrogen (N)",
+      "zh-Hant": "氮 (N)"
+     },
+     "text": {
+      "en": "Atomic number 7. 4 atoms in this molecule. Covalent radius 0.71 Å, van der Waals radius 1.55 Å.",
+      "zh-Hant": "原子序 7。呢個分子有 4 個。共價半徑 0.71 Å，范德華半徑 1.55 Å。"
+     }
+    },
+    {
+     "id": "H",
+     "color": "#cfd3d8",
+     "name": {
+      "en": "Hydrogen (H)",
+      "zh-Hant": "氫 (H)"
+     },
+     "text": {
+      "en": "Atomic number 1. 4 atoms in this molecule. Covalent radius 0.31 Å, van der Waals radius 1.2 Å.",
+      "zh-Hant": "原子序 1。呢個分子有 4 個。共價半徑 0.31 Å，范德華半徑 1.2 Å。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "purine",
+   "name": {
+    "en": "Purine (C5H4N4)",
+    "zh-Hant": "嘌呤 (C5H4N4)"
+   },
+   "summary": {
+    "en": "A flat two-ring base: a six-membered ring fused to a five-membered ring. Adenine and guanine are purines. Computed conformer, drawn neutral.",
+    "zh-Hant": "由六元環同五元環稠合而成嘅平面雙環鹼基。腺嘌呤同鳥嘌呤都係嘌呤。計算所得構象，以中性形式繪出。"
+   },
+   "geometry": "computed",
+   "cites": [
+    "halgren-1996",
+    "riniker-2015",
+    "cordero-2008",
+    "bondi-1964"
+   ],
+   "atoms": [
+    {
+     "el": "C",
+     "xyz": [
+      -2.121,
+      -0.564,
+      -0.602
+     ],
+     "part": "C"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -2.139,
+      0.647,
+      -0.001
+     ],
+     "part": "N"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -0.969,
+      1.16,
+      0.431
+     ],
+     "part": "C"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      0.167,
+      0.41,
+      0.23
+     ],
+     "part": "C"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      1.494,
+      0.574,
+      0.512
+     ],
+     "part": "N"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      2.15,
+      -0.539,
+      0.057
+     ],
+     "part": "C"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      1.326,
+      -1.4,
+      -0.497
+     ],
+     "part": "N"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      0.089,
+      -0.822,
+      -0.396
+     ],
+     "part": "C"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      -1.065,
+      -1.355,
+      -0.836
+     ],
+     "part": "N"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -3.083,
+      -0.943,
+      -0.935
+     ],
+     "part": "H"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -0.99,
+      2.129,
+      0.911
+     ],
+     "part": "H"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      1.921,
+      1.366,
+      0.971
+     ],
+     "part": "H"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      3.221,
+      -0.663,
+      0.156
+     ],
+     "part": "H"
+    }
+   ],
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     2,
+     10
+    ],
+    [
+     4,
+     11
+    ],
+    [
+     5,
+     12
+    ]
+   ],
+   "parts": [
+    {
+     "id": "C",
+     "color": "#4a4a4a",
+     "name": {
+      "en": "Carbon (C)",
+      "zh-Hant": "碳 (C)"
+     },
+     "text": {
+      "en": "Atomic number 6. 5 atoms in this molecule. Covalent radius 0.76 Å, van der Waals radius 1.7 Å.",
+      "zh-Hant": "原子序 6。呢個分子有 5 個。共價半徑 0.76 Å，范德華半徑 1.7 Å。"
+     }
+    },
+    {
+     "id": "N",
+     "color": "#3050f8",
+     "name": {
+      "en": "Nitrogen (N)",
+      "zh-Hant": "氮 (N)"
+     },
+     "text": {
+      "en": "Atomic number 7. 4 atoms in this molecule. Covalent radius 0.71 Å, van der Waals radius 1.55 Å.",
+      "zh-Hant": "原子序 7。呢個分子有 4 個。共價半徑 0.71 Å，范德華半徑 1.55 Å。"
+     }
+    },
+    {
+     "id": "H",
+     "color": "#cfd3d8",
+     "name": {
+      "en": "Hydrogen (H)",
+      "zh-Hant": "氫 (H)"
+     },
+     "text": {
+      "en": "Atomic number 1. 4 atoms in this molecule. Covalent radius 0.31 Å, van der Waals radius 1.2 Å.",
+      "zh-Hant": "原子序 1。呢個分子有 4 個。共價半徑 0.31 Å，范德華半徑 1.2 Å。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "pyrimidine",
+   "name": {
+    "en": "Pyrimidine (C4H4N2)",
+    "zh-Hant": "嘧啶 (C4H4N2)"
+   },
+   "summary": {
+    "en": "A flat one-ring base with two nitrogens. Cytosine, thymine and uracil are pyrimidines. Computed conformer, drawn neutral.",
+    "zh-Hant": "帶兩個氮原子嘅平面單環鹼基。胞嘧啶、胸腺嘧啶同尿嘧啶都係嘧啶。計算所得構象，以中性形式繪出。"
+   },
+   "geometry": "computed",
+   "cites": [
+    "halgren-1996",
+    "riniker-2015",
+    "cordero-2008",
+    "bondi-1964"
+   ],
+   "atoms": [
+    {
+     "el": "C",
+     "xyz": [
+      -1.148,
+      0.044,
+      -0.004
+     ],
+     "part": "C"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -0.372,
+      1.179,
+      0.008
+     ],
+     "part": "C"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      0.974,
+      1.16,
+      0.013
+     ],
+     "part": "N"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      1.537,
+      -0.058,
+      0.005
+     ],
+     "part": "C"
+    },
+    {
+     "el": "N",
+     "xyz": [
+      0.883,
+      -1.231,
+      -0.007
+     ],
+     "part": "N"
+    },
+    {
+     "el": "C",
+     "xyz": [
+      -0.46,
+      -1.148,
+      -0.011
+     ],
+     "part": "C"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -2.228,
+      0.084,
+      -0.008
+     ],
+     "part": "H"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -0.822,
+      2.168,
+      0.015
+     ],
+     "part": "H"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      2.621,
+      -0.099,
+      0.009
+     ],
+     "part": "H"
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -0.984,
+      -2.099,
+      -0.021
+     ],
+     "part": "H"
+    }
+   ],
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     5,
+     9
+    ]
+   ],
+   "parts": [
+    {
+     "id": "C",
+     "color": "#4a4a4a",
+     "name": {
+      "en": "Carbon (C)",
+      "zh-Hant": "碳 (C)"
+     },
+     "text": {
+      "en": "Atomic number 6. 4 atoms in this molecule. Covalent radius 0.76 Å, van der Waals radius 1.7 Å.",
+      "zh-Hant": "原子序 6。呢個分子有 4 個。共價半徑 0.76 Å，范德華半徑 1.7 Å。"
+     }
+    },
+    {
+     "id": "N",
+     "color": "#3050f8",
+     "name": {
+      "en": "Nitrogen (N)",
+      "zh-Hant": "氮 (N)"
+     },
+     "text": {
+      "en": "Atomic number 7. 2 atoms in this molecule. Covalent radius 0.71 Å, van der Waals radius 1.55 Å.",
+      "zh-Hant": "原子序 7。呢個分子有 2 個。共價半徑 0.71 Å，范德華半徑 1.55 Å。"
+     }
+    },
+    {
+     "id": "H",
+     "color": "#cfd3d8",
+     "name": {
+      "en": "Hydrogen (H)",
+      "zh-Hant": "氫 (H)"
+     },
+     "text": {
+      "en": "Atomic number 1. 4 atoms in this molecule. Covalent radius 0.31 Å, van der Waals radius 1.2 Å.",
+      "zh-Hant": "原子序 1。呢個分子有 4 個。共價半徑 0.31 Å，范德華半徑 1.2 Å。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "fes",
+   "name": {
+    "en": "[4Fe-4S] cluster (Fe₄S₄ core)",
+    "zh-Hant": "[4Fe-4S] 簇（Fe₄S₄ 核心）"
+   },
+   "summary": {
+    "en": "Four iron and four sulfide atoms at alternate corners of a cube, held in proteins by four cysteine sulfurs. Fe–S clusters pass electrons along Complex I (PDB 5XTD). Idealised cube, not a measured structure.",
+    "zh-Hant": "四個鐵原子同四個硫離子排在立方體交替嘅頂點，由四個半胱氨酸硫原子固定喺蛋白質內。Fe–S 簇沿 Complex I（PDB 5XTD）傳遞電子。呢個係理想化立方體，並非量度所得結構。"
+   },
+   "geometry": "radii",
+   "link": "pdb:5XTD",
+   "cites": [
+    "cordero-2008",
+    "beinert-1997"
+   ],
+   "atoms": [
+    {
+     "el": "Fe",
+     "xyz": [
+      1.185,
+      1.185,
+      1.185
+     ],
+     "part": "Fe"
+    },
+    {
+     "el": "Fe",
+     "xyz": [
+      1.185,
+      -1.185,
+      -1.185
+     ],
+     "part": "Fe"
+    },
+    {
+     "el": "Fe",
+     "xyz": [
+      -1.185,
+      1.185,
+      -1.185
+     ],
+     "part": "Fe"
+    },
+    {
+     "el": "Fe",
+     "xyz": [
+      -1.185,
+      -1.185,
+      1.185
+     ],
+     "part": "Fe"
+    },
+    {
+     "el": "S",
+     "xyz": [
+      1.185,
+      1.185,
+      -1.185
+     ],
+     "part": "S-core"
+    },
+    {
+     "el": "S",
+     "xyz": [
+      1.185,
+      -1.185,
+      1.185
+     ],
+     "part": "S-core"
+    },
+    {
+     "el": "S",
+     "xyz": [
+      -1.185,
+      1.185,
+      1.185
+     ],
+     "part": "S-core"
+    },
+    {
+     "el": "S",
+     "xyz": [
+      -1.185,
+      -1.185,
+      -1.185
+     ],
+     "part": "S-core"
+    },
+    {
+     "el": "S",
+     "xyz": [
+      2.553,
+      2.553,
+      2.553
+     ],
+     "part": "S-cys"
+    },
+    {
+     "el": "S",
+     "xyz": [
+      2.553,
+      -2.553,
+      -2.553
+     ],
+     "part": "S-cys"
+    },
+    {
+     "el": "S",
+     "xyz": [
+      -2.553,
+      2.553,
+      -2.553
+     ],
+     "part": "S-cys"
+    },
+    {
+     "el": "S",
+     "xyz": [
+      -2.553,
+      -2.553,
+      2.553
+     ],
+     "part": "S-cys"
+    }
+   ],
+   "bonds": [
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     10
+    ],
+    [
+     3,
+     11
+    ]
+   ],
+   "parts": [
+    {
+     "id": "Fe",
+     "color": "#e06633",
+     "name": {
+      "en": "Iron (Fe)",
+      "zh-Hant": "鐵 (Fe)"
+     },
+     "text": {
+      "en": "Atomic number 26. 4 atoms. Covalent radius 1.32 Å (low-spin), no Bondi van der Waals radius. Redox-active: cycles between Fe²⁺ and Fe³⁺.",
+      "zh-Hant": "原子序 26。有 4 個。共價半徑 1.32 Å（低自旋），冇 Bondi 范德華半徑。可氧化還原：喺 Fe²⁺ 同 Fe³⁺ 之間轉換。"
+     }
+    },
+    {
+     "id": "S-core",
+     "color": "#e6c800",
+     "name": {
+      "en": "Sulfide (S²⁻)",
+      "zh-Hant": "硫離子 (S²⁻)"
+     },
+     "text": {
+      "en": "The four inorganic sulfur atoms of the cube. Covalent radius 1.05 Å, van der Waals radius 1.80 Å.",
+      "zh-Hant": "立方體內四個無機硫原子。共價半徑 1.05 Å，范德華半徑 1.80 Å。"
+     }
+    },
+    {
+     "id": "S-cys",
+     "color": "#f0e060",
+     "name": {
+      "en": "Cysteine sulfur",
+      "zh-Hant": "半胱氨酸硫"
+     },
+     "text": {
+      "en": "Terminal sulfur from a cysteine side chain, one per iron. The rest of the cysteine is not drawn.",
+      "zh-Hant": "來自半胱氨酸側鏈嘅末端硫原子，每個鐵一個。半胱氨酸其餘部分未有繪出。"
      }
     }
    ]

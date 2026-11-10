@@ -477,6 +477,42 @@
       "year": 1964,
       "url": "https://doi.org/10.1021/j100785a001",
       "status": "verified"
+    },
+    "halgren-1996": {
+      "source": "Halgren (1996) J Comput Chem 17:490–519",
+      "detail": {
+        "en": "MMFF94 force field used to relax the computed geometries",
+        "zh-Hant": "用嚟優化計算幾何結構嘅 MMFF94 力場"
+      },
+      "species": "n/a",
+      "method": "Force-field parameterisation",
+      "year": 1996,
+      "url": "https://doi.org/10.1002/(SICI)1096-987X(199604)17:5/6<490::AID-JCC1>3.0.CO;2-P",
+      "status": "verified"
+    },
+    "riniker-2015": {
+      "source": "Riniker & Landrum (2015) J Chem Inf Model 55:2562–2574",
+      "detail": {
+        "en": "ETKDG method used to generate the 3D conformers",
+        "zh-Hant": "用嚟產生 3D 構象嘅 ETKDG 方法"
+      },
+      "species": "n/a",
+      "method": "Distance-geometry conformer generation",
+      "year": 2015,
+      "url": "https://doi.org/10.1021/acs.jcim.5b00654",
+      "status": "verified"
+    },
+    "beinert-1997": {
+      "source": "Beinert, Holm & Münck (1997) Science 277:653–659",
+      "detail": {
+        "en": "Review of Fe2S2, Fe3S4 and Fe4S4 clusters in proteins",
+        "zh-Hant": "蛋白質內 Fe2S2、Fe3S4、Fe4S4 簇嘅綜述"
+      },
+      "species": "n/a",
+      "method": "Review",
+      "year": 1997,
+      "url": "https://doi.org/10.1126/science.277.5326.653",
+      "status": "verified"
     }
   }
 }

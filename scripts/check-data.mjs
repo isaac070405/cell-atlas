@@ -26,16 +26,17 @@ for (const e of links.edges) for (const k of [e.from, ...e.to]) if (!links.targe
 // Organelle and atom models: citations resolve, parts unique, bond indices valid, bond length matches the covalent-radius sum
 const orgs = read('organelles.json'), atoms = read('atoms.json');
 for (const m of orgs.models) {
-  if (!cat.compartments.some(c => c.id === m.compartment)) bad(`organelle ${m.id}: compartment ${m.compartment} missing`);
+  if (m.compartment && !cat.compartments.some(c => c.id === m.compartment)) bad(`organelle ${m.id}: compartment ${m.compartment} missing`);
   if (new Set(m.parts.map(p => p.id)).size !== m.parts.length) bad(`organelle ${m.id}: duplicate part id`);
 }
 for (const m of atoms.models) {
   for (const c of m.cites) if (!citations[c]) bad(`atom ${m.id}: cite ${c} missing`);
   const ids = new Set(m.parts.map(p => p.id));
-  m.atoms.forEach(a => { if (!ids.has(a.el) || !atoms.elements[a.el]) bad(`atom ${m.id}: element ${a.el} has no part`); });
+  m.atoms.forEach(a => { if (!ids.has(a.part ?? a.el) || !atoms.elements[a.el]) bad(`atom ${m.id}: ${a.part ?? a.el} has no part or element`); });
   for (const [i, j] of m.bonds) {
     const a = m.atoms[i], b = m.atoms[j];
     if (!a || !b) { bad(`atom ${m.id}: bond ${i}-${j}`); continue; }
+    if (m.geometry === 'computed') continue;   // computed conformers are not radius sums
     const len = Math.hypot(...a.xyz.map((v, k) => v - b.xyz[k])), want = atoms.elements[a.el].covalent + atoms.elements[b.el].covalent;
     if (Math.abs(len - want) > 0.01) bad(`atom ${m.id}: bond ${a.el}-${b.el} ${len.toFixed(3)} vs ${want.toFixed(3)}`);
   }

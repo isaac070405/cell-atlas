@@ -168,12 +168,13 @@ const modelCites = (m, level) => level === 'atom' ? m.cites : (() => { const k =
 function modelCard(m, sel, level) {
   const p = m.parts.find(x => x.id === sel);
   const link = p?.link ? `<div class="chips"><span class="link-site">${html('model.opensite')}</span>${linkChip(p.link)}</div>` : '';
+  const mlink = !p && m.link ? `<div class="chips"><span class="link-site">${html('model.link')}</span>${linkChip(m.link)}</div>` : '';
   if (p) return `<p><strong>${html(p.name)}</strong></p><p>${html(p.text)}</p>${link}<p class="muted" style="font-size:12.5px">${html(m.name)}</p>`;
   const k = level === 'organelle' ? comp(m.compartment) : null;
   const sizes = (k?.sizes ?? []).map(z => `<dl class="kv"><dt>${html('card.sizeref')}</dt><dd>${html(z.text)}</dd></dl><p class="muted" style="font-size:12.5px;margin-top:2px">${esc([citations[z.cite]?.species, citations[z.cite]?.cellType, citations[z.cite]?.source].filter(Boolean).join(', '))}</p>`).join('');
   const fn = k?.function && citations[k.function.cite];
   const fnBlock = fn ? `<dl class="kv"><dt>${html('card.function')}</dt><dd>${html(fn.detail)}</dd></dl>` : '';
-  return `<p><strong>${html(m.name)}</strong></p><p>${html(m.summary)}</p>${sizes}${fnBlock}<p class="muted" style="font-size:12.5px">${html('model.pick')}</p>`;
+  return `<p><strong>${html(m.name)}</strong></p><p>${html(m.summary)}</p>${sizes}${fnBlock}${mlink}<p class="muted" style="font-size:12.5px">${html('model.pick')}</p>`;
 }
 const tissueParts = (t, sel) => `<ul class="queue parts">${t.parts.map(p => `<li><button data-kind="tpart" data-id="${p.id}" aria-pressed="${p.id === sel}"><span class="sw" style="background:${p.color}"></span><span>${html(p.name)}</span></button></li>`).join('')}</ul>`;
 function tissueCard(t, sel) {
