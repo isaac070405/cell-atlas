@@ -19,7 +19,7 @@
     { "id": "periplasm", "token": "--org-periplasm", "name": { "en": "Periplasm", "zh-Hant": "周質空間" } }
   ],
   "compareRows": ["nucleus", "mito", "er-rough", "er-smooth-golgi", "perox", "lyso", "endo", "sr", "myofibril", "chloro-stroma", "vacuole", "periplasm", "cytosol"],
-  "compareColumns": ["hepatocyte", "enterocyte", "muscle", "plant-mesophyll", "ecoli"],
+  "compareColumns": ["hepatocyte", "enterocyte", "muscle", "plant-mesophyll", "ecoli", "bacteriophage"],
   "muscleTypes": ["skeletal-myocyte", "cardiomyocyte", "smooth-myocyte"],
   "cells": [
     { "id": "hepatocyte", "kind": "animal", "name": { "en": "Hepatocyte", "zh-Hant": "肝細胞" }, "release": 1, "sizeUm": [20, 30],

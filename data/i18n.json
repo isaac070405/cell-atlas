@@ -62,8 +62,8 @@
       "zh-Hant": "模組 A：3D 細胞"
     },
     "moduleA.empty": {
-      "en": "Pick a cell to see it in 3D. Compartment volumes follow the published fractions; shapes and positions are schematic. Compare puts five types side by side.",
-      "zh-Hant": "選擇細胞即可查看 3D 模型。區室體積依已發表的體積分數，形狀與位置為示意。「比較」可並排五種細胞。"
+      "en": "Pick a cell to see it in 3D. Compartment volumes follow the published fractions; shapes and positions are schematic. Compare puts six types side by side.",
+      "zh-Hant": "選擇細胞即可查看 3D 模型。區室體積依已發表的體積分數，形狀與位置為示意。「比較」可並排六種細胞。"
     },
     "hud.anatomy": {
       "en": "3D Anatomy Model",
@@ -132,6 +132,10 @@
     "card.kind": {
       "en": "Type",
       "zh-Hant": "類型"
+    },
+    "compare.nodata": {
+      "en": "No volume data: a virus has no compartments",
+      "zh-Hant": "冇體積數據：病毒冇區室"
     },
     "moduleB.title": {
       "en": "Module B: molecular structure",
@@ -238,8 +242,8 @@
       "zh-Hant": "並排比較"
     },
     "compare.title": {
-      "en": "Five cell types side by side",
-      "zh-Hant": "五類細胞並排比較"
+      "en": "Six cell types side by side",
+      "zh-Hant": "六類細胞並排比較"
     },
     "compare.lede": {
       "en": "Share of whole-cell volume on one shared 0–100% scale. A span shows the range between people or species.",

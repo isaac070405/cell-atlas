@@ -56,7 +56,7 @@ export function renderCompare(s) {
     }</div>` : '';
     return `<th scope="col" class="${on ? 'on' : ''}">
       <button class="col-head" data-cell="${c.id}" aria-pressed="${on}" title="${esc(text('compare.select'))}">${html(c.name)}</button>
-      <span class="col-species">${html(c.species)}</span>${sw}</th>`;
+      <span class="col-species">${html(c.species)}</span>${c.fractions ? '' : `<span class="col-species">${html('compare.nodata')}</span>`}${sw}</th>`;
   }).join('');
 
   const rows = cat.compareRows
