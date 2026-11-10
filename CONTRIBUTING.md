@@ -48,6 +48,7 @@ node scripts/check-data.mjs
 ## Pull requests
 
 1. Branch from `main` and keep one topic per pull request.
+   The pull request template in `.github/pull_request_template.md` lists the checks.
 2. Run the checks above and state the result in the description.
 3. Update the README when a change adds a feature, file or data item.
 4. Report vulnerabilities through `SECURITY.md`, not in a pull request.
