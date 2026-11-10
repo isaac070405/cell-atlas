@@ -206,6 +206,19 @@
       "year": 2003,
       "url": "https://doi.org/10.1080/01913120309920",
       "status": "verified"
+    },
+    "schroeder-2019": {
+      "source": "Schroeder et al. (2019) J Cell Biol 218:83",
+      "detail": {
+        "en": "Peripheral ER tubules 96 ± 17 nm in diameter (n = 300, range 48–144 nm); ER sheets about 30–50 nm thick, estimated from luminal signal intensity",
+        "zh-Hant": "周邊內質網小管直徑 96 ± 17 nm（n = 300，範圍 48–144 nm）；內質網片層厚約 30–50 nm（由內腔訊號強度估算）"
+      },
+      "species": "Monkey (African green)",
+      "cellType": "COS-7 cell line (live)",
+      "method": "STED microscopy, about 49 nm resolution",
+      "year": 2019,
+      "url": "https://doi.org/10.1083/JCB.201809107",
+      "status": "verified"
     }
   }
 }
