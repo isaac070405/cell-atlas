@@ -47,6 +47,8 @@ node scripts/check-data.mjs
 
 ## Issues
 
+Questions and setup help are covered in `SUPPORT.md`.
+
 Use the issue forms for a bug, a data or citation error, or a feature request. Report vulnerabilities through `SECURITY.md`.
 
 ## Pull requests
