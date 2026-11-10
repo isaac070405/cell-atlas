@@ -14,7 +14,7 @@
 
 ## Eye meshes
 
-The eyeball (sclera, choroid, retina, vitreous body, cornea, iris and ciliary body, lens, suspensory ligament) uses meshes from feelpp/mesh.eye v1.1 (Zenodo 10.5281/zenodo.15630998, GPL-3.0-only; Chabannes, Prud'homme, Saigre, Sala, Szopos, Trophime). They load from `assets/eye.glb`, scaled to the sclera radius of the model, and the left eye is mirrored for the right. Solid names were matched from geometry (`scripts/eye_names.json`). The two retinal vessels in the source are not shown.
+The eyeball (sclera, choroid, retina, vitreous body, cornea, iris and ciliary body, lens, suspensory ligament) used meshes from feelpp/mesh.eye v1.1 (Zenodo 10.5281/zenodo.15630998, GPL-3.0-only; Chabannes, Prud'homme, Saigre, Sala, Szopos, Trophime). That file, `assets/eye.glb`, was removed for licence reasons and the page now draws the procedural eye. When present, it loaded from `assets/eye.glb`, scaled to the sclera radius of the model, and the left eye is mirrored for the right. Solid names were matched from geometry (`scripts/eye_names.json`). The two retinal vessels in the source are not shown.
 
 ## Brain from the MNI template
 

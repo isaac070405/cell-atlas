@@ -137,7 +137,19 @@ GitHub reads `CITATION.cff` and shows a "Cite this repository" button. The data 
 
 ## License
 
-Code is released under the MIT License (see `LICENSE`). PDB and EMDB structures keep the terms of their archives and are cited per entry.
+Code and data written for this repository are released under the MIT License (see `LICENSE`). Other material keeps its own terms, listed in `THIRD_PARTY_NOTICES.md`.
+
+| Material | Terms |
+| --- | --- |
+| Site code, `data/` tables, `@isaac070405/cell-3d` | MIT |
+| Three.js (`vendor/three/`, `anatomy/vendor/three/`) | MIT, licence text beside each copy |
+| Mol* (`vendor/molstar/`) | MIT |
+| PDB and EMDB structures loaded from RCSB | Archive terms, cited per entry in `data/citations.json` |
+| `anatomy/assets/mni_brain*` | MNI template, licence not yet confirmed |
+| Eye mesh | Removed (GPL-3.0-only source); the page draws a procedural eye |
+| `CODE_OF_CONDUCT.md` | Adapted from the Contributor Covenant 2.1, CC BY 4.0 |
+
+Published numbers belong to their authors. The site shows each value with its source and does not copy the papers' text or figures.
 
 ## Sources already in use
 
