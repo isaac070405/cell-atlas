@@ -129,6 +129,10 @@ Technical
 
 - None on volume fractions. All six cells cite a verified source in `data/citations.json`.
 
+## Cite
+
+GitHub reads `CITATION.cff` and shows a "Cite this repository" button. The data sources are listed in `data/citations.json`.
+
 ## License
 
 Code is released under the MIT License (see `LICENSE`). PDB and EMDB structures keep the terms of their archives and are cited per entry.

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use Cell Atlas, please cite it as below."
+title: "Cell Atlas (細胞圖譜)"
+type: software
+abstract: >-
+  The cell and molecule section of the Human Biology platform. A to-scale
+  schematic cell links to experimental PDB structures viewed in Mol*. Every
+  number carries a source with species and method. Interface in English and
+  Traditional Chinese.
+authors:
+  - alias: "isaac070405"
+repository-code: "https://github.com/isaac070405/cell-atlas"
+url: "https://isaac070405.github.io/cell-atlas/"
+license: MIT
+date-released: "2026-11-10"
+keywords:
+  - cell biology
+  - organelles
+  - volume fractions
+  - Mol*
+  - PDB
+  - education
