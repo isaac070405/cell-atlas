@@ -129,10 +129,6 @@
       "en": "Bacterial cell",
       "zh-Hant": "細菌細胞"
     },
-    "kind.virus": {
-      "en": "Virus",
-      "zh-Hant": "病毒"
-    },
     "card.kind": {
       "en": "Type",
       "zh-Hant": "類型"
@@ -464,6 +460,42 @@
     "atom.source": {
       "en": "Radii and geometry rules cited below.",
       "zh-Hant": "半徑同幾何規則引用如下。"
+    },
+    "kind.archaeal": {
+      "en": "Archaeal cell",
+      "zh-Hant": "古菌細胞"
+    },
+    "kind.virus": {
+      "en": "Viral particle",
+      "zh-Hant": "病毒顆粒"
+    },
+    "kind.fungal": {
+      "en": "Fungal cell",
+      "zh-Hant": "真菌細胞"
+    },
+    "kind.protist": {
+      "en": "Protist cell",
+      "zh-Hant": "原生生物細胞"
+    },
+    "group.noncellular": {
+      "en": "Non-cellular",
+      "zh-Hant": "非細胞"
+    },
+    "group.prokaryote": {
+      "en": "Prokaryote",
+      "zh-Hant": "原核生物"
+    },
+    "group.eukaryote": {
+      "en": "Eukaryote",
+      "zh-Hant": "真核生物"
+    },
+    "legend.title": {
+      "en": "Cell type colours",
+      "zh-Hant": "細胞類型顏色"
+    },
+    "card.group": {
+      "en": "Group",
+      "zh-Hant": "類別"
     }
   }
 }

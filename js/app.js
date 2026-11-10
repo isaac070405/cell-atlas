@@ -10,6 +10,13 @@ const [catalog, { citations }, links, tours, anatomy, tissues, organelles, atoms
   load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'), load('data/anatomy.json'), load('data/tissues.json'), load('data/organelles.json'), load('data/atoms.json'),
 ]);
 const $ = id => document.getElementById(id);
+// Cell types: colour is the --kind-* token, group is the domain-level class
+const KINDS = [
+  { id: 'animal', hex: '#C62828', group: 'eukaryote' }, { id: 'plant', hex: '#2E7D32', group: 'eukaryote' }, { id: 'fungal', hex: '#795548', group: 'eukaryote' }, { id: 'protist', hex: '#FFB300', group: 'eukaryote' },
+  { id: 'bacterial', hex: '#00ACC1', group: 'prokaryote' }, { id: 'archaeal', hex: '#E64A19', group: 'prokaryote' }, { id: 'virus', hex: '#8E24AA', group: 'noncellular' },
+];
+const GROUPS = ['noncellular', 'prokaryote', 'eukaryote'];
+const kindLegend = () => `<h4>${html('legend.title')}</h4>` + GROUPS.map(g => `<div class="kl-group"><span>${html('group.' + g)}</span>${KINDS.filter(k => k.group === g).map(k => `<span class="kl-item" style="--k:var(--kind-${k.id})"><span class="sw"></span>${html('kind.' + k.id)} <code>${k.hex}</code></span>`).join('')}</div>`).join('');
 initCompare(catalog);
 
 // Theme: follows the system until the person picks one
@@ -65,9 +72,10 @@ $('vp-compare').addEventListener('click', e => {
 });
 // Card and compare chips that point inside this site change state instead of reloading
 document.addEventListener('click', e => {
-  const a = e.target.closest('a[data-pdb], a[data-cell]');
+  const a = e.target.closest('a[data-pdb], a[data-cell], a[data-anat]');
   if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
   e.preventDefault();
+  if (a.dataset.anat) return setState({ level: 'organ', anat: a.dataset.anat });
   setState(a.dataset.pdb ? { pdb: a.dataset.pdb } : { cell: a.dataset.cell, pdb: null });
 });
 
@@ -221,6 +229,8 @@ function render(s) {
   renderDirections(sm);
   if (sm) syncTissue(sm, s.selection);
   $('vp-queue').hidden = compare;
+  $('kind-legend').hidden = !A;
+  if (A) $('kind-legend').innerHTML = kindLegend();
   $('vp-compare').hidden = !compare;
   const show3d = A && !compare && !cell?.schematic && !!cell?.fractions?.length;
   $('vp-cell').hidden = !show3d;
@@ -272,16 +282,22 @@ function linkChip(k) {
   const p = k.slice(0, i), id = k.slice(i + 1);
   if (p === 'pdb') return `<a class="chip" href="?pdb=${encodeURIComponent(id)}" data-pdb="${esc(id)}">${esc(k)}</a>`;
   if (p === 'cell') return `<a class="chip" href="?cell=${encodeURIComponent(id)}" data-cell="${esc(id)}">${esc(k)}</a>`;
+  if (p === 'anat') {   // organs and systems built into the in-site 3D Anatomy Model open at the Organ level
+    const organ = anatomy.organs.find(o => o.id === id.toLowerCase());
+    if (organ) return `<a class="chip" href="?level=organ&part=${organ.id}" data-anat="${organ.id}">${esc(k)}</a>`;
+  }
   const t = links.targets[p];
   const url = t?.deepLink && t.url ? t.url.replace('{id}', encodeURIComponent(id)) : null;
   return url
     ? `<a class="chip" href="${esc(url)}">${esc(k)}</a>`
     : `<span class="chip" aria-disabled="true" title="${esc(text('link.soon'))}">${esc(k)}</span>`;
 }
+const HIDDEN_LINKS = ['ent', 'spec'];  // Human Biology entries and the Specimen Room are not linked yet
 function grouped(keys) {
   const by = new Map();
   for (const k of keys) {
     const p = k.slice(0, k.indexOf(':'));
+    if (HIDDEN_LINKS.includes(p)) continue;
     if (!by.has(p)) by.set(p, []);
     by.get(p).push(k);
   }
@@ -339,13 +355,14 @@ function tourCard(p) {
 
 function card(item, kind) {
   const key = `${kind}:${item.id}`;
-  const out = links.edges.find(e => e.from === key)?.to ?? [];
-  const inc = links.edges.filter(e => e.to.includes(key) && !out.includes(e.from)).map(e => e.from);
+  const shown = k => !HIDDEN_LINKS.includes(k.slice(0, k.indexOf(':')));
+  const out = (links.edges.find(e => e.from === key)?.to ?? []).filter(shown);
+  const inc = links.edges.filter(e => e.to.includes(key) && !out.includes(e.from)).map(e => e.from).filter(shown);
   let rows = '';
   if (kind === 'pdb') rows = `<dt>${html('card.method')}</dt><dd>${esc(item.method)}</dd>`;
   else if (item.size) rows = `<dt>${html('card.size')}</dt><dd>${html(item.size)}</dd>`;
   else if (item.sizeUm) rows = `<dt>${html('card.size')}</dt><dd>${item.sizeUm[0]}–${item.sizeUm[1]} µm</dd>`;
-  if (kind === 'cell' && item.kind) rows += `<dt>${html('card.kind')}</dt><dd>${html('kind.' + item.kind)}</dd>`;
+  if (kind === 'cell' && item.kind) rows += `<dt>${html('card.kind')}</dt><dd>${html('kind.' + item.kind)}</dd><dt>${html('card.group')}</dt><dd>${html('group.' + (KINDS.find(k => k.id === item.kind)?.group ?? 'eukaryote'))}</dd>`;
   if (kind === 'cell' && item.species) rows += `<dt>${html('card.species')}</dt><dd>${html(item.species)}</dd>`;
   const status = kind === 'cell' && !item.data ? `<p class="muted" style="margin-top:8px">${html('status.nodata')}</p>` : '';
   const linkBlock = out.length || inc.length

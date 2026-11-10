@@ -7,10 +7,8 @@
   --rule: #C9C4B6;
   --stain: #24489A;        /* methylene blue: structure, links, active level */
   --select: #B8336A;       /* eosin: the one selection highlight */
-  --kind-animal: #C0392B;  /* cell kind marks: animal red, plant green, bacterial purple */
-  --kind-plant: #2F8F4E;
-  --kind-bacterial: #7A4A9C;
-  --kind-virus: #0E8FA8;
+  /* cell kind marks, one per cell type in the legend */
+  --kind-animal: #C62828; --kind-plant: #2E7D32; --kind-bacterial: #00ACC1; --kind-archaeal: #E64A19; --kind-virus: #8E24AA; --kind-fungal: #795548; --kind-protist: #FFB300;
   --ok: #2F6B4F;
   --warn: #8A5A12;
 
@@ -45,12 +43,12 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --paper: #141A21; --paper-raised: #1B232C; --ink: #E3E1D9; --ink-soft: #98A0AC;
-    --rule: #2E3946; --stain: #7F9FE6; --select: #E77AA4; --ok: #6FBF96; --kind-animal: #E8695B; --kind-plant: #5FBF7E; --kind-bacterial: #B48AD6; --kind-virus: #4FC3DA; --warn: #D9A75A;
+    --rule: #2E3946; --stain: #7F9FE6; --select: #E77AA4; --ok: #6FBF96; --kind-animal: #EF6B6B; --kind-plant: #66BB6A; --kind-bacterial: #4DD0E1; --kind-archaeal: #FF8A65; --kind-virus: #BA68C8; --kind-fungal: #A1887F; --kind-protist: #FFC947; --warn: #D9A75A;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --paper: #141A21; --paper-raised: #1B232C; --ink: #E3E1D9; --ink-soft: #98A0AC;
-  --rule: #2E3946; --stain: #7F9FE6; --select: #E77AA4; --ok: #6FBF96; --kind-animal: #E8695B; --kind-plant: #5FBF7E; --kind-bacterial: #B48AD6; --kind-virus: #4FC3DA; --warn: #D9A75A;
+  --rule: #2E3946; --stain: #7F9FE6; --select: #E77AA4; --ok: #6FBF96; --kind-animal: #EF6B6B; --kind-plant: #66BB6A; --kind-bacterial: #4DD0E1; --kind-archaeal: #FF8A65; --kind-virus: #BA68C8; --kind-fungal: #A1887F; --kind-protist: #FFC947; --warn: #D9A75A;
   color-scheme: dark;
 }

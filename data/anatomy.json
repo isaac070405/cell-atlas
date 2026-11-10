@@ -87,6 +87,40 @@
    "match": [
     "^Biceps brachii"
    ]
+  },
+  {
+   "id": "liver",
+   "keys": [
+    "digestive"
+   ],
+   "match": [
+    "^Liver"
+   ],
+   "name": {
+    "en": "Liver",
+    "zh-Hant": "肝臟"
+   },
+   "frame": [
+    "^Liver"
+   ]
+  },
+  {
+   "id": "pancreas",
+   "keys": [
+    "digestive"
+   ],
+   "match": [
+    "^Pancrea",
+    "^Uncinate process",
+    "^Accessory pancreatic duct"
+   ],
+   "name": {
+    "en": "Pancreas",
+    "zh-Hant": "胰臟"
+   },
+   "frame": [
+    "^Pancreas"
+   ]
   }
  ]
 }

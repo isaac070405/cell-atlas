@@ -218,10 +218,10 @@ body.level-c .queue:empty { display: none; }
 .queue.parts button { width: 100%; font-size: 14px; padding: 6px 10px; align-items: center; }
 .queue .sw { width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--rule); flex: none; }
 
-/* Cell kind marks: animal red, plant green, bacterial purple (selected cell button and the Cell band on the ruler) */
+/* Cell kind marks (see the legend under the cell list) (selected cell button and the Cell band on the ruler) */
 .queue button[data-kind="cell"][aria-pressed="true"] { border-color: var(--k); box-shadow: inset 3px 0 0 var(--k); }
 html[data-kind] #ruler-svg .band[data-level="cell"].on { fill: var(--k-now); }
-html[data-kind="animal"] { --k-now: var(--kind-animal); } html[data-kind="plant"] { --k-now: var(--kind-plant); } html[data-kind="bacterial"] { --k-now: var(--kind-bacterial); } html[data-kind="virus"] { --k-now: var(--kind-virus); }
+html[data-kind="animal"] { --k-now: var(--kind-animal); } html[data-kind="plant"] { --k-now: var(--kind-plant); } html[data-kind="bacterial"] { --k-now: var(--kind-bacterial); } html[data-kind="archaeal"] { --k-now: var(--kind-archaeal); } html[data-kind="virus"] { --k-now: var(--kind-virus); } html[data-kind="fungal"] { --k-now: var(--kind-fungal); } html[data-kind="protist"] { --k-now: var(--kind-protist); } 
 /* Six compare columns are narrow: let the muscle-type switch wrap instead of overflowing */
 .compare .seg-sm { flex-wrap: wrap; max-width: 100%; }
 .compare .seg-sm button { padding: 3px 6px; font-size: 11px; }
@@ -248,3 +248,12 @@ html[data-kind="animal"] { --k-now: var(--kind-animal); } html[data-kind="plant"
 .xsec-opt { display: flex; align-items: center; gap: var(--s2); font: 12px/1.3 var(--font-label); cursor: pointer; }
 .xsec .chip { align-self: flex-start; cursor: pointer; background: none; }
 body.bare .panels { display: none; }
+
+/* Cell type legend: one row per group */
+.kind-legend { display: grid; gap: var(--s2); padding: var(--s3) 0 0; font-size: 13px; }
+.kind-legend h4 { margin: 0; font: 11px/1 var(--font-label); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.kind-legend .kl-group { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s1) var(--s4); }
+.kind-legend .kl-group > span:first-child { min-width: 7.5em; font: 12px/1.4 var(--font-label); color: var(--ink-soft); }
+.kind-legend .kl-item { display: inline-flex; align-items: center; gap: 6px; }
+.kind-legend .sw { width: 12px; height: 12px; border-radius: 2px; background: var(--k); flex: none; }
+.kind-legend code { font: 11.5px var(--font-label); color: var(--ink-soft); }
