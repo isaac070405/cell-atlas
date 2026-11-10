@@ -219,6 +219,19 @@
       "year": 2019,
       "url": "https://doi.org/10.1083/JCB.201809107",
       "status": "verified"
+    },
+    "eisenberg-1974": {
+      "source": "Eisenberg, Kuda & Peter (1974) J Cell Biol 60:732",
+      "detail": {
+        "en": "Myofibril width 1.05 ± 0.04 µm in cross sections (direct measurement of 53 myofibrils; 1.06 ± 0.08 µm by mean profile length); fibre diameter about 34 µm",
+        "zh-Hant": "橫切面肌原纖維寬度 1.05 ± 0.04 µm（直接量度 53 條；以平均剖面長度估算為 1.06 ± 0.08 µm）；肌纖維直徑約 34 µm"
+      },
+      "species": "Guinea pig",
+      "cellType": "Skeletal muscle fibre (soleus)",
+      "method": "EM stereology",
+      "year": 1974,
+      "url": "https://doi.org/10.1083/JCB.60.3.732",
+      "status": "verified"
     }
   }
 }
