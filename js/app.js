@@ -119,6 +119,7 @@ function render(s) {
   const point = points.find(p => p.id === s.tour);
   const showMol = !A && !C && !!pdb;
   $('vp-empty').hidden = compare || showMol || C;
+  document.body.classList.toggle('level-c', C);
   const fr = $('vp-anatomy');
   fr.hidden = !C;
   if (C && !fr.getAttribute('src')) fr.src = 'anatomy/index.html';

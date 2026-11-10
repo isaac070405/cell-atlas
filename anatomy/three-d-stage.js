@@ -67,14 +67,14 @@
       bottom: 16px;
       display: flex;
       gap: 8px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: var(--font-label, ui-monospace, monospace);
     }
     .toolbar button {
       appearance: none;
-      border: 1px solid rgba(20, 20, 19, 0.18);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.92);
-      color: #1a1915;
+      border: 1px solid var(--rule, rgba(20, 20, 19, 0.18));
+      border-radius: var(--radius, 3px);
+      background: var(--paper, rgba(255, 255, 255, 0.92));
+      color: var(--ink, #1a1915);
       font-family: inherit;
       font-size: 12.5px;
       font-weight: 500;
@@ -82,7 +82,7 @@
       padding: 9px 12px;
       cursor: default;
     }
-    .toolbar button:hover { background: #fff; }
+    .toolbar button:hover { border-color: var(--stain, #1a1915); }
     .toolbar button:active { transform: translateY(1px); }
     .toolbar button[disabled] { opacity: 0.5; pointer-events: none; }
     .note {
@@ -90,8 +90,8 @@
       left: 16px;
       bottom: 16px;
       max-width: 60%;
-      font: 400 12px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: rgba(26, 25, 21, 0.55);
+      font: 400 11px/1.5 var(--font-label, ui-monospace, monospace);
+      color: var(--ink-soft, rgba(26, 25, 21, 0.55));
       user-select: none;
     }
     .err {

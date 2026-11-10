@@ -120,8 +120,7 @@ html[data-lang="both"] .ruler-bands button { line-height: 1.1; padding-top: 2px;
   .ruler-bands { left: var(--s4); right: var(--s4); }
   .ruler-ticklabels span { font-size: 10px; }
   .ruler-ticklabels span:nth-child(even) { display: none; }
-  .ruler-bands button { font-size: 10px; padding: 0; overflow: hidden; }
-  #lvl-cell { font-size: 8px; }
+  .ruler-bands button { font-size: 12px; }
   .viewport { padding: var(--s3); min-height: 52vh; }
   .viewport-frame { padding: var(--s4); }
   .schematic { right: var(--s5); bottom: var(--s4); }
@@ -205,5 +204,9 @@ button.chip { background: none; cursor: pointer; }
 .tour .tour-group { flex-basis: 100%; font: 11.5px/1 var(--font-label); color: var(--ink-soft); margin-top: var(--s1); }
 
 /* 3D Anatomy Model (system, organ, tissue levels) */
-.anatomy-frame { width: 100%; height: min(70vh, 760px); min-height: 420px; border: 1px solid var(--rule); border-radius: 4px; background: var(--paper); }
+.anatomy-frame { display: block; width: 100%; height: calc(100vh - 200px); min-height: 640px; border: 0; background: var(--paper); }
+/* System, organ and tissue levels: the model fills the stage and carries its own docked panels */
+body.level-c .panels, body.level-c .viewport-head { display: none; }
+body.level-c .viewport { padding: 0; }
+body.level-c .viewport-frame { padding: 0; border: 0; background: none; gap: 0; }
 .anatomy-frame[hidden] { display: none; }

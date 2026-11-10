@@ -57,8 +57,8 @@ function init() {
   #exbar{position:fixed;left:372px;right:16px;top:12px;z-index:5;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:flex-start;pointer-events:none}
   #exbar>*{pointer-events:auto}
   #exbar .chips{display:flex;flex-wrap:wrap;gap:6px}
-  #exbar .chip{font:inherit;font-size:12.5px;padding:5px 11px;border-radius:999px;border:1px solid var(--color-divider,#d8d2c4);background:rgba(255,255,255,.88);color:#3a3328;cursor:pointer}
-  #exbar .chip.on{background:var(--color-accent-200,#f3d9a8);border-color:var(--color-accent-600,#a8741a)}
+  #exbar .chip{font:500 12px/1 var(--font-label,monospace);padding:8px 12px;border-radius:var(--radius,3px);border:1px solid var(--rule,#d8d2c4);background:var(--paper,#fff);color:var(--ink,#3a3328);cursor:pointer}
+  #exbar .chip.on{background:var(--paper,#fff);border-color:var(--select,#a8741a);box-shadow:inset 3px 0 0 var(--select,#a8741a)}
   #exbar .chip:disabled{opacity:.4;cursor:default}
   #exhead{display:none;flex:1 1 100%;justify-content:space-between;align-items:flex-end;color:#f2f2f2;pointer-events:none}
   #exhead h2{margin:0;font-size:28px;font-weight:700;letter-spacing:-.01em;text-transform:none;color:#f2f2f2;font-family:inherit}
@@ -70,7 +70,7 @@ function init() {
   #exlabels{position:fixed;inset:0;pointer-events:none;z-index:4;overflow:hidden}
   #exlabels button{position:absolute;transform:translate(-50%,0);pointer-events:auto;font:inherit;font-size:15px;padding:9px 16px;border-radius:10px;border:1px solid #2a303b;background:#121722;box-shadow:0 2px 8px rgba(0,0,0,.45);cursor:pointer;white-space:nowrap}
   #exlabels button:hover{background:#1b2232}
-  #sbar{position:fixed;left:372px;bottom:16px;width:340px;z-index:6;display:none;background:rgba(255,255,255,.96);border:1px solid var(--color-divider,#d8d2c4);border-radius:10px;padding:12px 14px;box-shadow:0 4px 18px rgba(0,0,0,.18);font-size:13px}
+  #sbar{position:fixed;left:372px;bottom:16px;width:340px;z-index:6;display:none;background:var(--paper-raised,#fff);color:var(--ink,#222);border:1px solid var(--rule,#d8d2c4);border-radius:var(--radius,3px);padding:12px 14px;font-size:13px}
   #sbar.open{display:block}
   #sbar h3{margin:0 24px 2px 0;font-size:15px}
   #sbar .sys{font-size:11.5px;color:#6b6252;margin-bottom:8px}

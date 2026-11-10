@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Human Anatomy · Body Systems</title>
+<link rel="stylesheet" href="../css/tokens.css">
 <link rel="stylesheet" href="tokens.css">
 <script type="importmap">
 {
@@ -16,14 +17,16 @@
   }
 }
 </script>
+<script>
+// follow the Cell Atlas light/dark choice when embedded; otherwise the system setting applies
+try { const r = parent.document.documentElement, sync = () => { const t = r.getAttribute('data-theme'); t ? document.documentElement.setAttribute('data-theme', t) : document.documentElement.removeAttribute('data-theme'); };
+  if (parent !== window) { sync(); new MutationObserver(sync).observe(r, { attributes: true, attributeFilter: ['data-theme'] }); } } catch (e) {}
+</script>
 <style>
   three-d-stage:not(:defined){visibility:hidden}
   html,body{margin:0;height:100%;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)}
   a{color:var(--color-accent-700)} a:hover{color:var(--color-accent-800)}
-  three-d-stage{position:fixed;inset:0;width:100vw;height:100vh}
-  .panel{position:fixed;top:24px;left:24px;width:min(330px,calc(100vw - 48px));max-height:calc(100vh - 110px);overflow:auto;box-sizing:border-box;
-    background:color-mix(in oklab,var(--color-bg) 94%,transparent);border:1px solid var(--color-divider);border-radius:var(--radius-md,4px);
-    padding:20px 20px 16px;box-shadow:var(--shadow-sm);z-index:2}
+  three-d-stage{position:fixed;inset:0 0 var(--dock-h) 0;width:100%;height:auto}
   .kicker{font-family:var(--font-heading);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);font-feature-settings:"tnum"}
   h1{font-family:var(--font-heading);font-weight:400;font-size:32px;line-height:1.05;margin:6px 0 8px}
   .lede{font-size:13px;line-height:1.5;margin:0 0 14px;text-align:justify;hyphens:auto}
@@ -93,8 +96,6 @@
   .tick{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-neutral-700);margin-top:2px}
   .dz{font-size:13px;line-height:1.45;border:1px dashed var(--color-accent-500);border-radius:var(--radius-md,4px);padding:8px 10px;margin-bottom:8px}
   #dcount{font-size:12px;color:var(--color-neutral-700);margin-bottom:2px}
-  #slicebox{position:fixed;right:24px;bottom:76px;width:300px;max-height:calc(100vh - 92px);overflow:auto;box-sizing:border-box;z-index:2;background:color-mix(in oklab,var(--color-bg) 94%,transparent);
-    border:1px solid var(--color-divider);border-radius:var(--radius-md,4px);padding:12px;box-shadow:var(--shadow-sm)}
   #slicebox .hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
   #slicebox .hd{gap:8px}
   #slicebox .hd b{font-family:var(--font-heading);font-size:18px;font-weight:600;white-space:nowrap;flex-shrink:0}
@@ -129,24 +130,40 @@
   .sx{display:flex;gap:6px} .sx .b{flex:1} .sx .b.on{background:var(--color-accent-200)}
   .tones{display:flex;gap:6px;flex-wrap:wrap} .tones .t{width:30px;height:30px;padding:0;border:1px solid var(--color-neutral-700);border-radius:2px;cursor:pointer} .tones .t:hover{border-color:var(--color-accent-600)} .tones .t.on{outline:2px solid var(--color-accent);outline-offset:2px}
   #sexnote{font-size:12px;line-height:1.45;color:var(--color-neutral-700);margin:6px 0 0}
-  /* phones and small tablets: the side panel becomes a drawer opened from a bottom dock, so the 3D view keeps the whole screen */
-  #dock{display:none;position:fixed;left:0;right:0;bottom:0;z-index:7;gap:6px;padding:8px 8px calc(8px + env(safe-area-inset-bottom));box-sizing:border-box;background:color-mix(in oklab,var(--color-bg) 96%,transparent);border-top:1px solid var(--color-divider)}
-  #dock .b{flex:1;padding:10px 6px;font-size:12px}
-  #dock .b.on{background:var(--color-accent-200)}
-  @media (max-width:900px){
-    #dock{display:flex}
-    .panel{z-index:6;top:auto!important;left:8px!important;right:8px;bottom:62px;width:auto!important;max-height:calc(100vh - 150px);visibility:hidden;transform:translateY(calc(100% + 80px));transition:transform .25s ease,visibility 0s linear .25s}
-    body.drawer-open .panel{visibility:visible;transform:none;transition-delay:0s}
-    body.present .panel{display:none}
-    #sliceopen{display:none!important}
-    #slicebox{left:8px;right:8px;bottom:62px;width:auto!important;max-height:calc(100vh - 150px)}
-    #slice{margin-left:auto;margin-right:auto}
-    #camtools{top:8px!important;right:8px!important;max-width:calc(100vw - 16px)!important}
-    #exbar{left:8px!important;right:8px!important;top:128px!important}
-    #sbar{left:8px!important;right:8px;width:auto!important;bottom:62px!important}
-    #brainbox{left:8px;right:8px;max-height:calc(100vh - 80px)}
-    #tip{display:none!important}
-  }
+  /* Cell Atlas look: mono labels, hairline rules, blue structure, pink selection */
+  :root{--dock-h:44vh}
+  body{font:15px/1.55 var(--font-text);background:var(--paper);color:var(--ink)}
+  .dockpanels{position:fixed;left:0;right:0;bottom:0;height:var(--dock-h);display:grid;grid-template-columns:1fr 1fr 1.2fr;border-top:1px solid var(--rule);background:var(--paper);z-index:3}
+  .cpanel{padding:var(--s4) var(--s5) var(--s5);min-width:0;overflow:auto}
+  .cpanel+.cpanel{border-left:1px solid var(--rule)}
+  .cpanel>h3{margin:0 0 var(--s3);font:500 12px/1.3 var(--font-label);color:var(--ink-soft)}
+  h2,h3.sub,.ptitle,details>summary{font:500 12px/1.3 var(--font-label);letter-spacing:0;text-transform:none;color:var(--ink-soft)}
+  h2{margin:0 0 var(--s2)}
+  .sec{border-top:1px solid var(--rule);padding:var(--s3) 0}
+  .cpanel>h3+.sec{border-top:0;padding-top:0}
+  .b{font:500 12px/1 var(--font-label);letter-spacing:0;text-transform:none;background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:var(--radius);padding:var(--s2) var(--s3)}
+  .b:hover{border-color:var(--stain);background:var(--paper)} .b:active{background:var(--paper-raised)}
+  .b.on,.vb .b.on,.vr .b.on,.sx .b.on{background:var(--paper);border-color:var(--select);box-shadow:inset 3px 0 0 var(--select)}
+  .inp{background:var(--paper);border:1px solid var(--rule);color:var(--ink);font:14px var(--font-text)}
+  input[type=checkbox],input[type=range]{accent-color:var(--stain)}
+  a{color:var(--stain)}
+  .tones .t.on{outline:2px solid var(--select)}
+  .sname,.info h3,.rowl b,.ph{font-family:var(--font-text)}
+  .info h3{font-size:22px;font-weight:600}
+  .ph{color:var(--stain);font-weight:600}
+  .sys:hover{background:var(--paper-raised)} .sys.sel{background:var(--paper-raised);box-shadow:inset 3px 0 0 var(--select)}
+  #camtools .chk,#camtools .chk span,label.chk{font-family:var(--font-label);font-size:11px}
+  .tick,.ends,.zm,.bxrow{font-family:var(--font-label);font-size:11px;letter-spacing:0;text-transform:none}
+  .info p,.lede,.plist{text-align:left;hyphens:none}
+  #slicebox{position:static;width:auto;max-height:none;overflow:visible;border:1px solid var(--rule);border-radius:var(--radius);padding:var(--s3);margin:var(--s3) 0;background:var(--paper-raised)}
+  #slicebox .hd b{font:500 12px/1.3 var(--font-label);color:var(--ink-soft)}
+  #slicemin,#slicebig,#sliceclose,#sliceopen{display:none!important}
+  #slice{width:100%;height:auto;max-width:274px}
+  #slicebox{width:auto!important}
+  #camtools{right:var(--s4)!important;top:var(--s4)!important;max-width:calc(100vw - 32px)!important}
+  #exbar{left:var(--s4)!important;right:var(--s4)!important}
+  #sbar{left:var(--s4)!important;bottom:calc(var(--dock-h) + var(--s4))!important}
+  #tip,#pinlbl{background:var(--paper-raised);border-color:var(--rule);border-radius:var(--radius);font:500 13px/1.3 var(--font-label);color:var(--ink)}
 </style>
 </head>
 <body>
@@ -159,32 +176,15 @@
 <div id="tip"></div>
 <div id="live" role="status" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap"></div>
 
-<aside class="panel" data-comment-anchor="e05a1aae89-aside">
-  <div class="kicker">Plate II · Systems of the body</div>
-  <h1>Human anatomy</h1>
-  <p class="lede">A simplified model in anatomical position. Search for a part, peel the layers from skin to bone, explode the body into systems, click a structure to isolate it, and cut through the body with the slice view.</p>
-
-  <p class="disc">This model does not exactly reflect the real body arrangement; <a href="known-limitations.html" target="_blank" rel="noopener">a few positional or displacement errors</a> may exist.</p>
-
+<div class="dockpanels" id="dockpanels">
+<section class="cpanel" aria-label="Find and browse">
+  <h3>Find and browse</h3>
   <div class="sec">
     <h2>Body</h2>
     <div class="sx" id="p-sex" role="group" aria-label="Sex of the body"><button class="b on" data-v="male" aria-pressed="true">Male</button><button class="b" data-v="female" aria-pressed="false">Female</button></div>
     <p id="sexnote" style="display:none"></p>
     <h2 style="margin-top:12px">Skin tone</h2>
     <div class="tones" id="p-tone" role="group" aria-label="Skin tone"><button class="t on" data-v="plate" title="Plate (atlas)" aria-label="Plate (atlas)" style="background:#e7ddd2"></button><button class="t" data-v="3b2219" title="#3B2219" aria-label="Skin tone 1, darkest" style="background:#3b2219"></button><button class="t" data-v="8d5524" title="#8D5524" aria-label="Skin tone 2" style="background:#8d5524"></button><button class="t" data-v="c68642" title="#C68642" aria-label="Skin tone 3" style="background:#c68642"></button><button class="t" data-v="e0ac69" title="#E0AC69" aria-label="Skin tone 4" style="background:#e0ac69"></button><button class="t" data-v="f1c27d" title="#F1C27D" aria-label="Skin tone 5" style="background:#f1c27d"></button><button class="t" data-v="ffdbac" title="#FFDBAC" aria-label="Skin tone 6, lightest" style="background:#ffdbac"></button></div>
-  </div>
-
-  <div class="sec">
-    <h2>Anatomical directions</h2>
-    <label class="chk" style="display:flex;gap:8px;align-items:center;font-size:13px;cursor:pointer"><input type="checkbox" id="dirshow"> Show direction arrows on the body</label>
-    <ul class="plist" id="dirlist" style="display:none;columns:1;margin-top:8px">
-      <li><b>Superior / Cranial</b> <span>toward the head.</span> <b>Inferior / Caudal</b> <span>toward the feet.</span></li>
-      <li><b>Anterior / Ventral</b> <span>toward the front.</span> <b>Posterior / Dorsal</b> <span>toward the back.</span></li>
-      <li><b>Medial</b> <span>toward the midline.</span> <b>Lateral</b> <span>away from the midline.</span></li>
-      <li><b>Proximal</b> <span>nearer the limb's attachment.</span> <b>Distal</b> <span>farther from it.</span></li>
-      <li><b>Superficial</b> <span>toward the surface.</span> <b>Deep</b> <span>away from the surface.</span></li>
-      <li><b>Afferent</b> <span>carried toward a centre, such as sensory nerves to the CNS.</span> <b>Efferent</b> <span>carried away from it, such as motor nerves.</span></li>
-    </ul>
   </div>
 
   <div class="sec">
@@ -209,6 +209,76 @@
     <input type="range" id="rough" min="0" max="1" step="0.01" value="0.55" aria-label="Surface roughness">
   </div>
 
+</section>
+<section class="cpanel" aria-label="Layers and view">
+  <h3>Layers and view</h3>
+  <div class="sec" id="layerssec">
+    <h2>Body layers, skin to bone</h2>
+    <input type="range" id="lyslider" min="0" max="13" step="1" value="0" aria-label="Peel body layers from skin to bone">
+    <div class="tick"><span>Skin</span><span>Muscles</span><span>Organs</span><span>Bone</span></div>
+    <p id="lycur">Outermost visible: Skin</p>
+    <div class="vb"><button class="b" id="lyall">Show all layers</button><button class="b" id="lyreset">Reset</button></div>
+    <div id="lylist"></div>
+  </div>
+
+  <div class="sec">
+    <h2>Peel layers</h2>
+    <input type="range" id="peel" min="0" max="3" step="1" value="0" aria-label="Peel layers from skin to bone">
+    <div class="tick"><span>Skin</span><span>Muscle</span><span>Organs</span><span>Bone</span></div>
+  </div>
+
+  <div class="sec" id="expsec">
+    <h2>Exploded view</h2>
+    <div class="rowl"><span>Spread parts apart</span><b id="expn">0%</b></div>
+    <input type="range" id="expsl" min="0" max="100" step="1" value="0" aria-label="Exploded view amount">
+    <div class="tick"><span>Assembled</span><span>Spread</span></div>
+    <p class="parts" id="expnote" style="margin-top:6px">Every structure moves away from the midline in proportion to its distance from it, and from front to back as well. Skin and fat stay in place.</p>
+  </div>
+
+  <div class="sec" id="viewsec">
+    <h2>Rendering</h2>
+    <div class="vb" id="p-render"><button class="b" data-v="atlas">Atlas</button><button class="b" data-v="xray">X-ray</button></div>
+    <h2>Presentation</h2>
+    <div class="vb" id="p-present" style="margin-bottom:0"><button class="b" data-v="off">Explore</button><button class="b" data-v="on">Turntable</button></div>
+  </div>
+
+  <div class="sec">
+    <h2>Anatomical directions</h2>
+    <label class="chk" style="display:flex;gap:8px;align-items:center;font-size:13px;cursor:pointer"><input type="checkbox" id="dirshow"> Show direction arrows on the body</label>
+    <ul class="plist" id="dirlist" style="display:none;columns:1;margin-top:8px">
+      <li><b>Superior / Cranial</b> <span>toward the head.</span> <b>Inferior / Caudal</b> <span>toward the feet.</span></li>
+      <li><b>Anterior / Ventral</b> <span>toward the front.</span> <b>Posterior / Dorsal</b> <span>toward the back.</span></li>
+      <li><b>Medial</b> <span>toward the midline.</span> <b>Lateral</b> <span>away from the midline.</span></li>
+      <li><b>Proximal</b> <span>nearer the limb's attachment.</span> <b>Distal</b> <span>farther from it.</span></li>
+      <li><b>Superficial</b> <span>toward the surface.</span> <b>Deep</b> <span>away from the surface.</span></li>
+      <li><b>Afferent</b> <span>carried toward a centre, such as sensory nerves to the CNS.</span> <b>Efferent</b> <span>carried away from it, such as motor nerves.</span></li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h2>Dissect</h2>
+    <div class="dz">Click any structure to select it. Its tab can hide it, and Undo brings hidden structures back.</div>
+    <div id="dcount">Nothing removed</div>
+    <div class="btns"><button class="b" id="undo">Undo</button><button class="b" id="restore">Put all back</button></div>
+  </div>
+
+</section>
+<section class="cpanel" aria-label="Selected part and cross-section">
+  <h3>Selected part</h3>
+  <div class="sec info" id="info"></div>
+  <div id="slicebox">
+  <div class="hd" data-comment-anchor="8b0d1f82aa-div"><b>Cross-section</b><span style="display:flex;gap:6px;align-items:center"><button class="b hb" id="slicemin" aria-label="Minimise cross-section" title="Minimise">−</button><button class="b hb" id="slicebig" aria-label="Enlarge cross-section" title="Enlarge">⤢</button><button class="b hb" id="sliceclose" aria-label="Close cross-section" title="Close">×</button></span></div>
+  <div id="slicebody">
+  <div style="margin-bottom:8px"><select class="inp" id="axis" style="width:100%;padding:4px 8px;font-size:13px" aria-label="Cut axis"><option value="transverse">Transverse</option><option value="coronal">Coronal</option><option value="sagittal">Sagittal</option></select></div>
+  <canvas id="slice" width="548" height="400" aria-label="Cross-section colour map" title="Click a colour to select it, drag to move, scroll to zoom" data-comment-anchor="70aab8c984-canvas"></canvas>
+  <div class="zm"><button class="b" id="zout" aria-label="Zoom out">−</button><span id="zlab">100%</span><button class="b" id="zin" aria-label="Zoom in">+</button><button class="b" id="zfit" style="font-size:12px">Fit</button></div>
+  <input type="range" id="sl" min="0" max="1" step="0.002" value="0.28" aria-label="Cut position" data-comment-anchor="bc0b8afe99-input">
+  <div class="tick" id="slends" data-comment-anchor="a243fc1359-div"><span>Head</span><span>Foot</span></div>
+  <div id="legend"></div>
+  <label class="chk"><input type="checkbox" id="showplane" checked> Show cutting plane in the model</label>
+  </div>
+</div>
+  <details class="sec regions"><summary>Regional views</summary>
   <div id="bodyparts">
   <div id="viewnote" aria-live="polite" style="display:none;font-size:12px;line-height:1.4;color:var(--color-neutral-700);margin:12px 0 0;padding:6px 8px;border:1px solid var(--color-divider);border-radius:var(--radius-md,4px)"></div>
   <div class="sec" id="g-brain">
@@ -276,61 +346,14 @@
   </div>
   </div>
 
-  <div class="sec" id="viewsec">
-    <h2>Rendering</h2>
-    <div class="vb" id="p-render"><button class="b" data-v="atlas">Atlas</button><button class="b" data-v="xray">X-ray</button></div>
-    <h2>Presentation</h2>
-    <div class="vb" id="p-present" style="margin-bottom:0"><button class="b" data-v="off">Explore</button><button class="b" data-v="on">Turntable</button></div>
-  </div>
-
-  <div class="sec" id="layerssec">
-    <h2>Body layers, skin to bone</h2>
-    <input type="range" id="lyslider" min="0" max="13" step="1" value="0" aria-label="Peel body layers from skin to bone">
-    <div class="tick"><span>Skin</span><span>Muscles</span><span>Organs</span><span>Bone</span></div>
-    <p id="lycur">Outermost visible: Skin</p>
-    <div class="vb"><button class="b" id="lyall">Show all layers</button><button class="b" id="lyreset">Reset</button></div>
-    <div id="lylist"></div>
-  </div>
-
-  <div class="sec">
-    <h2>Peel layers</h2>
-    <input type="range" id="peel" min="0" max="3" step="1" value="0" aria-label="Peel layers from skin to bone">
-    <div class="tick"><span>Skin</span><span>Muscle</span><span>Organs</span><span>Bone</span></div>
-  </div>
-
-  <div class="sec" id="expsec">
-    <h2>Exploded view</h2>
-    <div class="rowl"><span>Spread parts apart</span><b id="expn">0%</b></div>
-    <input type="range" id="expsl" min="0" max="100" step="1" value="0" aria-label="Exploded view amount">
-    <div class="tick"><span>Assembled</span><span>Spread</span></div>
-    <p class="parts" id="expnote" style="margin-top:6px">Every structure moves away from the midline in proportion to its distance from it, and from front to back as well. Skin and fat stay in place.</p>
-  </div>
-
-  <div class="sec">
-    <h2>Dissect</h2>
-    <div class="dz">Click any structure to select it. Its tab can hide it, and Undo brings hidden structures back.</div>
-    <div id="dcount">Nothing removed</div>
-    <div class="btns"><button class="b" id="undo">Undo</button><button class="b" id="restore">Put all back</button></div>
-  </div>
-
-  <div class="sec info" id="info"></div>
-
+  </details>
   <div class="foot">Left and right are the figure's own. Drag to turn, scroll to zoom. Downloads include the systems currently shown, minus removed parts.</div>
   <div class="foot" style="border-top:0;padding-top:4px"><b>Keys:</b> Space resets the view, H hides the selected part, U undoes, X toggles X-ray, 1 2 3 set the cut to transverse, coronal or sagittal. Double-click a surface to leave a note on it.</div>
-</aside>
-
-<div id="slicebox">
-  <div class="hd" data-comment-anchor="8b0d1f82aa-div"><b>Cross-section</b><span style="display:flex;gap:6px;align-items:center"><button class="b hb" id="slicemin" aria-label="Minimise cross-section" title="Minimise">−</button><button class="b hb" id="slicebig" aria-label="Enlarge cross-section" title="Enlarge">⤢</button><button class="b hb" id="sliceclose" aria-label="Close cross-section" title="Close">×</button></span></div>
-  <div id="slicebody">
-  <div style="margin-bottom:8px"><select class="inp" id="axis" style="width:100%;padding:4px 8px;font-size:13px" aria-label="Cut axis"><option value="transverse">Transverse</option><option value="coronal">Coronal</option><option value="sagittal">Sagittal</option></select></div>
-  <canvas id="slice" width="548" height="400" aria-label="Cross-section colour map" title="Click a colour to select it, drag to move, scroll to zoom" data-comment-anchor="70aab8c984-canvas"></canvas>
-  <div class="zm"><button class="b" id="zout" aria-label="Zoom out">−</button><span id="zlab">100%</span><button class="b" id="zin" aria-label="Zoom in">+</button><button class="b" id="zfit" style="font-size:12px">Fit</button></div>
-  <input type="range" id="sl" min="0" max="1" step="0.002" value="0.28" aria-label="Cut position" data-comment-anchor="bc0b8afe99-input">
-  <div class="tick" id="slends" data-comment-anchor="a243fc1359-div"><span>Head</span><span>Foot</span></div>
-  <div id="legend"></div>
-  <label class="chk"><input type="checkbox" id="showplane" checked> Show cutting plane in the model</label>
-  </div>
+  <div class="foot" style="border-top:0;padding-top:4px">This model does not exactly reflect the real body arrangement; <a href="known-limitations.html" target="_blank" rel="noopener">a few positional or displacement errors</a> may exist.</div>
+</section>
 </div>
+
+
 <svg id="pinsvg"><line id="pinline" stroke="currentColor" stroke-width="1.2" style="color:var(--color-accent-700)"/><circle id="pindot" r="4" fill="var(--color-bg)" stroke="currentColor" stroke-width="1.5" style="color:var(--color-accent-700)"/></svg>
 <button class="b" id="sliceopen" style="position:fixed;right:24px;bottom:76px;z-index:2;display:none;background:var(--color-bg)">Cross-section</button>
 <div id="pinlbl"><span id="pintxt"></span><button id="pinx" aria-label="Clear pin">×</button></div>
@@ -354,7 +377,6 @@
 <script type="module" src="search.js"></script>
 <script type="module" src="tree.js"></script>
 <script type="module" src="regions.js"></script>
-<script type="module" src="dock.js"></script>
 <script type="module" src="snapshot.js"></script>
 <script type="module" src="pins.js"></script>
 </body>
