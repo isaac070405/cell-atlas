@@ -1,5 +1,7 @@
 # Contributing to Cell Atlas
 
+Participation is covered by `CODE_OF_CONDUCT.md`.
+
 Thank you for helping. This guide covers setup, the data rules and the pull request steps.
 
 ## Set up
