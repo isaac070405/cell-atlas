@@ -74,9 +74,9 @@ Each stage has a pass condition. The next stage starts only after it passes.
 | --- | --- | --- |
 | 0. Shell | HUD, scale navigator, state controller, i18n, links.json, citations.json | Live on GitHub Pages ✅ |
 | 1. Technical spike | One page loads Mol* with 5XTD; test whether `<sr-mol>` and `<pdb-slot>` read 4UG0 | Displays on GitHub Pages and rotates on a phone. Built; needs a check on the live site and a phone (RCSB is unreachable from the build sandbox) |
-| 2. Data | Data tables for the four first-release cell types, cross-layer index, full links.json | "Pending check" count is zero. The 30 citations are verified; the open data items below stay open |
+| 2. Data | Data tables for the four first-release cell types, cross-layer index, full links.json | "Pending check" count is zero. The 36 citations are verified; the open data items below stay open |
 | 3. Module A | Procedural Three.js cell, side-by-side compare, clipping plane, organelle pick, data card | Organelle volume ratios match the data table within 2 percentage points. Passes in `node scripts/check-data.mjs`; cardiomyocyte and plant outlines are too crowded to draw without overlap |
-| 4. Module B | Mol* viewer, presets, colouring modes, subunit list with UniProt links; mitochondrion → Complex I and rough ER → ribosome jumps | One full cell → atom → cell round trip without stutter |
+| 4. Module B | Mol* viewer, preset tour points, mitochondrion → Complex I and rough ER → ribosome jumps | One full cell → atom → cell round trip without stutter. Viewer, tour points and jumps are built. Colouring modes and a subunit list with UniProt links are not built |
 | 5. Platform integration | New section in the Human Biology home page; `?part=` deep link in the 3D model; jump buttons in Histology and Specimen Room | Body → tissue → cell → molecule chain works end to end. 3D model copied into `anatomy/`. Home page section and Histology / Specimen Room jumps dropped; only the 3D model and a `?part=` link from the cell views remain |
 | 6. Polish | HUD layout, light and dark modes, three language modes, mobile, source cards | Every number on every screen has a citation |
 
