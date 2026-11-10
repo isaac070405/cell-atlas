@@ -66,7 +66,7 @@ Each stage has a pass condition. The next stage starts only after it passes.
 | --- | --- | --- |
 | 0. Shell | HUD, scale navigator, state controller, i18n, links.json, citations.json | Live on GitHub Pages ✅ |
 | 1. Technical spike | One page loads Mol* with 5XTD; test whether `<sr-mol>` and `<pdb-slot>` read 4UG0 | Displays on GitHub Pages and rotates on a phone. Built; needs a check on the live site and a phone (RCSB is unreachable from the build sandbox) |
-| 2. Data | Data tables for the four first-release cell types, cross-layer index, full links.json | "Pending check" count is zero. The 9 citations are verified; the 18 data items below stay open |
+| 2. Data | Data tables for the four first-release cell types, cross-layer index, full links.json | "Pending check" count is zero. The 30 citations are verified; the open data items below stay open |
 | 3. Module A | Procedural Three.js cell, side-by-side compare, clipping plane, organelle pick, data card | Organelle volume ratios match the data table within 2 percentage points. Passes in `node scripts/check-data.mjs`; cardiomyocyte and plant outlines are too crowded to draw without overlap |
 | 4. Module B | Mol* viewer, presets, colouring modes, subunit list with UniProt links; mitochondrion → Complex I and rough ER → ribosome jumps | One full cell → atom → cell round trip without stutter |
 | 5. Platform integration | New section in the Human Biology home page; `?part=` deep link in the 3D model; jump buttons in Histology and Specimen Room | Body → tissue → cell → molecule chain works end to end |
@@ -87,7 +87,7 @@ Cell data
 - [ ] Skeletal, cardiac and smooth muscle organelle volume fractions (BioNumbers; EM stereology), Isaac
 - [ ] Plant mesophyll organelle volume fractions (BioNumbers; plant cell textbook), Isaac
 - [x] Hepatocyte compartment percentages checked one by one (Alberts MBoC Table 12-1, latest edition)
-- [ ] Organelle size ranges and function text (Alberts, Lodish latest editions)
+- [x] Organelle size ranges and function text (PubMed and SciSpace sources in place of Alberts and Lodish, which were not reachable). Open gaps: absolute vacuole size, function text for cytosol and perinuclear space
 - [ ] Protein subcellular location (Human Protein Atlas, subcellular)
 
 Molecular structures
