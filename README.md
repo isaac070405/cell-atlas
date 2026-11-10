@@ -98,14 +98,14 @@ Molecular structures
 - [ ] Lactase, HMG-CoA reductase, H⁺/K⁺-ATPase, UCP1 PDB IDs (RCSB PDB)
 - [ ] Rubisco / photosystem II, voltage-gated sodium channel, dynein PDB IDs (RCSB PDB)
 - [ ] Bacterial 50S ribosome with macrolide bound, to compare with 4UG0 (RCSB PDB)
-- [ ] Literature locations of 5XTD and 4UG0 tour points: Q-site, Fe–S clusters, tRNA sites (Guo 2017 Cell; Khatter 2015 Nature)
+- [x] Literature locations of 5XTD and 4UG0 tour points: Q-site, Fe–S clusters, tRNA sites (Guo 2017 Cell; Khatter 2015 Nature)
 
 Literature
 - [ ] Latest evidence on metformin and Complex I (PubMed review)
 - [ ] SGLT1, GLUT5, GLUT2 apical and basolateral distribution in enterocytes (physiology textbook or review)
 
 Technical
-- [ ] Whether 4UG0 has a legacy .pdb file (RCSB download page)
+- [x] Whether 4UG0 has a legacy .pdb file (RCSB download page): no, legacy PDB is disabled; use BinaryCIF
 - [ ] Latest Mol* version number and bundle size (molstar.org, npm)
 
 ## Decisions already made
