@@ -1780,6 +1780,7 @@ function renderSlice() {
 }
 function setAxis(a) { axis = a; VW.x = 0; VW.y = 0; VW.z = 1; $('zlab').textContent = '100%'; $('sl').value = AX[a].x; const e = AX[a].ends; $('slends').innerHTML = '<span>' + e[0] + '</span><span>' + e[1] + '</span>'; renderSlice(); }
 $('axis').onchange = e => setAxis(e.target.value);
+window.__slice = { VW, AX, zset, renderSlice, setAxis };
 $('sl').addEventListener('input', e => { AX[axis].x = +e.target.value; renderSlice(); });
 $('showplane').onchange = () => renderSlice();
 // click a coloured region of the cut to select that structure in the 3D view.

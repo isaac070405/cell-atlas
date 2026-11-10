@@ -399,7 +399,43 @@
       "zh-Hant": "軸突末端膨大成球，將訊號傳給下一個細胞。"
      }
     }
-   ]
+   ],
+   "directions": {
+    "title": {
+     "en": "Directional terminology",
+     "zh-Hant": "方向術語"
+    },
+    "items": [
+     {
+      "id": "afferent",
+      "arrow": "→",
+      "name": {
+       "en": "Afferent",
+       "zh-Hant": "傳入"
+      },
+      "text": {
+       "en": "Carries signals toward the central nervous system (CNS). Sensory nerves are afferent.",
+       "zh-Hant": "將訊號傳向中樞神經系統（CNS）。感覺神經屬傳入。"
+      }
+     },
+     {
+      "id": "efferent",
+      "arrow": "←",
+      "name": {
+       "en": "Efferent",
+       "zh-Hant": "傳出"
+      },
+      "text": {
+       "en": "Carries signals away from the CNS to muscles or glands. Motor nerves are efferent.",
+       "zh-Hant": "將訊號由中樞神經系統傳向肌肉或腺體。運動神經屬傳出。"
+      }
+     }
+    ],
+    "note": {
+     "en": "In this neuron the signal passes from the dendrites to the cell body, then along the axon to the terminals.",
+     "zh-Hant": "喺呢個神經元，訊號由樹突傳到細胞體，再沿軸突傳到末端。"
+    }
+   }
   }
  ],
  "cellModels": [

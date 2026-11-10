@@ -83,14 +83,19 @@ async function sync3d(cell, selection) {
       const { createCellView } = await import('./cell3d.js');
       const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
       view = await createCellView($('cell3d'), { membraneColor: css('--org-cytosol') || undefined, selectColor: css('--select') || undefined, onPick: org => setState({ selection: org === getState().selection ? null : org }) });
-      $('cut').addEventListener('input', e => view.setClip(+e.target.value));
-      $('cell-reset').addEventListener('click', () => { shown = null; $('cut').value = 0; sync3d(catalog.cells.find(c => c.id === getState().cell), getState().selection); });
+      view.attachSlice($('xsec-canvas'), { background: css('--paper-raised') || undefined });
+      const cutNow = () => view.setClip(+$('cut').value, $('xsec-3d').checked);
+      $('cut').addEventListener('input', cutNow);
+      $('xsec-3d').addEventListener('change', cutNow);
+      $('cell-reset').addEventListener('click', () => { shown = null; $('cut').value = 50; $('xsec-3d').checked = true; sync3d(catalog.cells.find(c => c.id === getState().cell), getState().selection); });
     }
     if (shown !== cell.id) {
       const m = buildModel(cell);
       const warn = crowded(m);
       view.show(m, orgColours());
-      $('cut').value = 0;
+      $('cut').value = 50;
+      view.setClip(50, $('xsec-3d').checked);
+      $('xsec-legend').innerHTML = view.legend().map(l => `<li><span class="sw" style="background:${l.color}"></span><span>${html(comp(l.org)?.name ?? l.org)}</span></li>`).join('');
       $('cell3d-note').innerHTML = `${html('cell3d.hint')}${warn.length ? `<br>${html('cell3d.crowded')}` : ''}`;
       shown = cell.id;
     }
@@ -112,9 +117,10 @@ addEventListener('message', e => {
 $('vp-anatomy').addEventListener('load', () => { modelReady = false; });
 function showInModel(s) {
   const part = partsFor(s.level).find(p => p.id === s.anat);
-  const msg = !part ? { type: 'show', systems: null, match: null }
-    : s.level === 'system' ? { type: 'show', systems: part.keys, match: null }
-    : { type: 'show', systems: part.keys, match: part.match };
+  // No pick, or the Body item: the whole body with every original panel
+  const msg = !part || !part.keys ? { type: 'show', systems: null, match: null, mode: 'body' }
+    : s.level === 'system' ? { type: 'show', systems: part.keys, match: null, mode: 'system' }
+    : { type: 'show', systems: part.keys, match: part.match, mode: 'organ', frame: part.frame ?? null };
   if (JSON.stringify(msg) === JSON.stringify(lastShow)) return;
   lastShow = msg;
   if (modelReady) $('vp-anatomy').contentWindow.postMessage(msg, location.origin);
@@ -139,6 +145,13 @@ async function syncTissue(t, sel) {
     tfailed = true; console.warn('3D tissue unavailable', err);
     $('tissue3d').hidden = true; $('tissue-note').innerHTML = html('cell3d.nowebgl');
   }
+}
+// Directional terminology shown beside the model (nervous tissue: afferent and efferent)
+function renderDirections(sm) {
+  const d = sm?.directions, el = $('tissue-dir');
+  el.hidden = !d;
+  if (!d) return;
+  el.innerHTML = `<h4>${html(d.title)}</h4>${d.items.map(i => `<div class="dir-row"><span class="dir-arrow" aria-hidden="true">${i.arrow}</span><div><strong>${html(i.name)}</strong><br><span class="muted">${html(i.text)}</span></div></div>`).join('')}<p class="muted dir-note">${html(d.note)}</p>`;
 }
 const tissueParts = (t, sel) => `<ul class="queue parts">${t.parts.map(p => `<li><button data-kind="tpart" data-id="${p.id}" aria-pressed="${p.id === sel}"><span class="sw" style="background:${p.color}"></span><span>${html(p.name)}</span></button></li>`).join('')}</ul>`;
 function tissueCard(t, sel) {
@@ -185,6 +198,7 @@ function render(s) {
   $('vp-mol').hidden = !showMol;
   const sm = modelOf(s, cell);
   $('vp-tissue').hidden = !sm;
+  renderDirections(sm);
   if (sm) syncTissue(sm, s.selection);
   $('vp-queue').hidden = compare;
   $('vp-compare').hidden = !compare;
@@ -201,7 +215,7 @@ function render(s) {
     $('vp-compare').innerHTML = renderCompare(s);
   } else {
     $('vp-empty').innerHTML = html(A ? 'moduleA.empty' : C ? 'moduleC.empty' : T ? 'moduleT.empty' : 'moduleB.empty');
-    $('vp-queue').innerHTML = C || T ? partsFor(s.level).map(p => `<li><button data-kind="part" data-id="${p.id}" aria-pressed="${p.id === s.anat}"><span>${html(p.name)}</span></button></li>`).join('') : (A ? catalog.cells : catalog.structures).map(item => {
+    $('vp-queue').innerHTML = C || T ? partsFor(s.level).map(p => `<li><button data-kind="part" data-id="${p.id}" aria-pressed="${p.id === s.anat || (C && p.id === 'body' && !s.anat)}"><span>${html(p.name)}</span></button></li>`).join('') : (A ? catalog.cells : catalog.structures).map(item => {
       const kind = A ? 'cell' : 'pdb';
       const on = A ? item.id === s.cell : item.id === s.pdb;
       return `<li><button data-kind="${kind}" data-id="${item.id}" aria-pressed="${on}"${A ? ` style="--k:var(--kind-${item.kind ?? 'animal'})"` : ''}>

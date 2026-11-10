@@ -9,7 +9,20 @@ function init() {
   model.traverse(o => { if (o.isMesh && o.userData.sys) original.set(o, o.visible); });
   const box = new THREE.Box3(), tmp = new THREE.Box3();
 
-  function show({ systems = null, match = null }) {
+  let frameRes = [];
+  const slicebox = $('slicebox'), home = document.querySelector('.regions');
+  const sliceTo = () => {
+    // centre the cross-section on what is left and zoom to it
+    const S = window.__slice; if (!S || box.isEmpty()) return;
+    const off = new THREE.Vector3().setFromMatrixPosition(model.matrixWorld), c = box.getCenter(new THREE.Vector3()).sub(off), sz = box.getSize(new THREE.Vector3());
+    S.setAxis('transverse');
+    const x = Math.min(1, Math.max(0, (1.72 - c.y) / 1.69)); S.AX.transverse.x = x; $('sl').value = x;
+    S.VW.x = c.x; S.VW.y = c.z + 0.015; S.zset(Math.min(12, Math.max(0.5, 0.21 / (Math.max(sz.x, sz.z, 0.04) * 0.65))));
+  };
+
+  // mode: 'body' (whole body, every panel), 'system' (only that system's parts), 'organ' (only that organ's parts and a cross-section)
+  function show({ systems = null, match = null, mode = 'body', frame: fr = null }) {
+    frameRes = (fr || []).map(s => new RegExp(s));
     document.getElementById('lyreset').click();
     original.forEach((v, o) => { o.visible = v; });
     const res = (match || []).map(s => new RegExp(s));
@@ -17,15 +30,23 @@ function init() {
     keys.forEach(k => { const on = !systems || systems.includes(k); G[k].visible = on; const cb = document.querySelector(`#systems [data-k="${k}"] input`); if (cb) cb.checked = on; });
     if (res.length) original.forEach((v, o) => { if (v && systems.includes(o.userData.sys)) o.visible = res.some(re => re.test(o.userData.label || o.name || '')); });
     if (window.__clearSelection) window.__clearSelection();
-    // the cutting plane hides small parts, so it stays off while one system or organ is isolated
-    const pl = $('showplane'); if (pl && pl.checked === !!systems) pl.click();
-    frame();
+    // focus modes hide every panel and control; the cross-section floats over the stage for an organ
+    const focus = mode !== 'body';
+    document.body.classList.toggle('focus', focus);
+    document.body.classList.toggle('slice', mode === 'organ');
+    stage.classList.toggle('focus', focus);
+    if (mode === 'organ') { slicebox.classList.add('floating'); document.body.appendChild(slicebox); }
+    else { slicebox.classList.remove('floating'); if (home) home.before(slicebox); }
+    // the cutting plane hides small parts, so it is on only for the whole body (tick the box to show it for an organ)
+    const pl = $('showplane'); if (pl && pl.checked !== (mode === 'body')) pl.click();
+    requestAnimationFrame(() => { frame(); if (mode === 'organ') sliceTo(); else if (window.__slice) window.__slice.renderSlice(); });
   }
 
   function frame() {
     box.makeEmpty();
     original.forEach((v, o) => {
       if (!o.visible || !o.geometry) return;
+      if (frameRes.length && !frameRes.some(re => re.test(o.userData.label || ''))) return;
       for (let p = o.parent; p; p = p.parent) if (!p.visible) return;
       o.updateWorldMatrix(true, false); if (!o.geometry.boundingBox) o.geometry.computeBoundingBox();
       box.union(tmp.copy(o.geometry.boundingBox).applyMatrix4(o.matrixWorld));
