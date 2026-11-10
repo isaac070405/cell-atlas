@@ -26,6 +26,8 @@ node scripts/check-data.mjs
 
 ## Data rules
 
+The file schemas are in `docs/DATA.md`. Licences of copied libraries and models are in `THIRD_PARTY_NOTICES.md`.
+
 - Every number on screen needs an entry in `data/citations.json` with `source`, `detail` and a `status` of `verified` or `pending`.
 - Set `verified` only after reading the cited paper or database record. The check script fails on `pending`.
 - Give species, cell type and method for each value.

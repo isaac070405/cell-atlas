@@ -8,7 +8,8 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 
 ### Added
 - Issue forms for bug reports, data or citation errors and feature requests, plus `config.yml` that turns blank issues off (#40).
-- `CITATION.cff`, `SUPPORT.md` and a LICENSE badge in the README (#40).
+- `CITATION.cff`, `SUPPORT.md`, `CHANGELOG.md` and a LICENSE badge in the README (#40).
+- `THIRD_PARTY_NOTICES.md`, `docs/DATA.md`, `.editorconfig`, `.github/CODEOWNERS` and `.github/dependabot.yml` (#40).
 
 ## 2026-11-11
 
