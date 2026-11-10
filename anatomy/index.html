@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Human Anatomy · Body Systems</title>
+<link rel="stylesheet" href="_ds/classical-a5417205-2c01-4d08-baab-1aba9163c8fb/styles.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.184.0/build/three.module.js",
+    "three/addons/controls/OrbitControls.js": "https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+    "three/addons/loaders/GLTFLoader.js": "https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+    "three/addons/exporters/OBJExporter.js": "https://unpkg.com/three@0.184.0/examples/jsm/exporters/OBJExporter.js",
+    "three/addons/exporters/GLTFExporter.js": "https://unpkg.com/three@0.184.0/examples/jsm/exporters/GLTFExporter.js"
+  },
+  "integrity": {
+    "https://unpkg.com/three@0.184.0/build/three.module.js": "sha384-8FCZ1eVO6it4+pbec2aDtnTrwjWXZLJRC+MAGCIPDgsYnUrl/E0A2YlF8ioMKI/J",
+    "https://unpkg.com/three@0.184.0/build/three.core.js": "sha384-dw2ooPewaEIrAgl6oFDBmmBWCE9oW9LxRGcfwZ0hLvEprzo202wXl7vCYHRlSnOT",
+    "https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js": "sha384-4rziNxOBZKQ69i+w+f89KJ55TCYquwchVbByQwmaOeIOXdOU2PLDn3kOfXHwIJC9",
+    "https://unpkg.com/three@0.184.0/examples/jsm/exporters/OBJExporter.js": "sha384-nbwtoZENJD3Vq+ACK0CuGQdPMuDWHkamC2KJD70EV5nfg6jQjfppKOea07YJN+N3",
+    "https://unpkg.com/three@0.184.0/examples/jsm/exporters/GLTFExporter.js": "sha384-VofkvpG6HERhFCYbsUOHeNXBCqID2nfqkQqnVzE1jc/oPcz+qJ13ADdXH08hE+cQ"
+  }
+}
+</script>
+<style>
+  three-d-stage:not(:defined){visibility:hidden}
+  html,body{margin:0;height:100%;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)}
+  a{color:var(--color-accent-700)} a:hover{color:var(--color-accent-800)}
+  three-d-stage{position:fixed;inset:0;width:100vw;height:100vh}
+  .panel{position:fixed;top:24px;left:24px;width:min(330px,calc(100vw - 48px));max-height:calc(100vh - 110px);overflow:auto;box-sizing:border-box;
+    background:color-mix(in oklab,var(--color-bg) 94%,transparent);border:1px solid var(--color-divider);border-radius:var(--radius-md,4px);
+    padding:20px 20px 16px;box-shadow:var(--shadow-sm);z-index:2}
+  .kicker{font-family:var(--font-heading);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);font-feature-settings:"tnum"}
+  h1{font-family:var(--font-heading);font-weight:400;font-size:32px;line-height:1.05;margin:6px 0 8px}
+  .lede{font-size:13px;line-height:1.5;margin:0 0 14px;text-align:justify;hyphens:auto}
+  h2{font-family:var(--font-heading);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700);margin:0 0 6px}
+  .disc{font-size:11px;line-height:1.4;color:var(--color-neutral-700);margin:-4px 0 10px}
+  .disc a{color:var(--color-accent-600);text-decoration:underline}
+  .sec{border-top:1px solid var(--color-divider);padding:12px 0}
+  #layerssec.hl{outline:2px solid var(--color-accent-200);outline-offset:4px;border-radius:6px}
+  #lycur{font-size:12px;margin:6px 0 8px;color:var(--color-neutral-700)}
+  .ly{display:grid;grid-template-columns:18px 12px 1fr auto;gap:8px;align-items:start;padding:5px 0;border-top:1px solid var(--color-divider);cursor:pointer;font-size:13px}
+  .ly .lyn{font-size:11px;color:var(--color-neutral-700);padding-top:2px}
+  .ly .sw{width:12px;height:12px;border-radius:50%;margin-top:3px;border:1px solid rgba(0,0,0,.15)}
+  .ly .lyt small{display:block;font-size:11px;line-height:1.35;color:var(--color-neutral-700);margin-top:1px}
+  .ly.off{opacity:.55}
+  .sys{display:flex;align-items:center;gap:10px;padding:5px 6px;border-radius:2px;cursor:pointer}
+  .sys:hover{background:var(--color-accent-100)}
+  .sys.sel{background:var(--color-accent-200)}
+  .sys .sw{width:12px;height:12px;border-radius:50%;border:1px solid var(--color-neutral-700);flex:none}
+  .sname{font-family:var(--font-heading);font-size:20px;font-weight:600;flex:1;line-height:1.1}
+  input[type=checkbox]{accent-color:var(--color-accent-600);width:16px;height:16px;margin:0;cursor:pointer}
+  input[type=range]{accent-color:var(--color-accent-600);width:100%;margin:0;cursor:pointer}
+  input:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--color-accent);outline-offset:2px}
+  .btns{display:flex;gap:8px;margin-top:10px}
+  .b{font:inherit;font-size:12px;letter-spacing:.06em;text-transform:uppercase;background:transparent;color:var(--color-accent-700);border:1px solid var(--color-accent-500);
+    border-radius:var(--radius-md,4px);padding:6px 10px;cursor:pointer}
+  .b:hover{background:var(--color-accent-100)} .b:active{background:var(--color-accent-200)}
+  .info h3{font-family:var(--font-heading);font-weight:400;font-size:26px;margin:0 0 4px;line-height:1.05}
+  .info p{font-size:13px;line-height:1.5;margin:0 0 8px;text-align:justify;hyphens:auto}
+  .ptitle{font-family:var(--font-heading);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700);margin:10px 0 4px}
+  .plist{list-style:none;margin:0;padding:0;columns:2;column-gap:14px;font-size:12.5px;line-height:1.35}
+  .plist li{break-inside:avoid;margin:0 0 2px}
+  .plist span{color:var(--color-neutral-700)}
+  .ph{font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--color-accent-700);margin:8px 0 2px;column-span:all}
+  .pi{font:inherit;font-size:12.5px;text-align:left;background:transparent;border:0;border-bottom:1px solid transparent;color:var(--color-text);padding:1px 0;cursor:pointer}
+  .pi:hover{color:var(--color-accent-700);border-bottom-color:var(--color-accent-500)}
+  .vb{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+  .vb .b.on,.vr .b.on{background:var(--color-accent-200)}
+  .vr{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+  h3.sub{font-family:var(--font-heading);font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-neutral-700);margin:12px 0 6px}
+  #brainbox{overflow:auto;max-height:calc(100vh - 48px);position:fixed;left:380px;right:24px;top:24px;max-width:736px;margin:0 auto;display:none;z-index:4;box-sizing:border-box;background:color-mix(in oklab,var(--color-bg) 97%,transparent);border:1px solid var(--color-divider);border-radius:var(--radius-md,4px);padding:14px 16px 12px;box-shadow:var(--shadow-md)}
+  #brainbox .hd{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+  #brainbox .hd b{font-family:var(--font-heading);font-size:22px;font-weight:600}
+  #brainbox .hd .b.on{background:var(--color-accent-200)}
+  .bxwrap{position:relative;width:680px;height:470px;margin:0 auto}
+  #bxcv{position:absolute;left:150px;top:0;width:380px;height:470px;border:1px solid var(--color-neutral-500);background:#000;display:block}
+  #bxsvg{position:absolute;left:0;top:0;width:680px;height:470px;pointer-events:none;color:var(--color-neutral-700);font-family:var(--font-body);font-size:13px}
+  #bxsvg text{fill:var(--color-text)}
+  .bxrow{display:flex;align-items:center;gap:12px;margin-top:10px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-neutral-700)}
+  .bxrow input{flex:1}
+  .bxkey{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:12px;color:var(--color-neutral-700)}
+  .bxkey i{display:inline-block;width:10px;height:10px;border:1px solid var(--color-neutral-700);margin-right:5px;vertical-align:-1px}
+  .parts{font-size:12px;line-height:1.55;color:var(--color-neutral-700);margin:0}
+  .rowl{display:flex;justify-content:space-between;align-items:center;font-size:13px;margin-bottom:4px}
+  .rowl b{font-family:var(--font-heading);font-size:18px;font-weight:600}
+  .pl{display:grid;gap:4px;padding:8px 0;border-top:1px solid var(--color-divider)}
+  .pl:first-of-type{border-top:0}
+  .ends{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-neutral-700)}
+  details>summary{cursor:pointer;list-style:none;font-family:var(--font-heading);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700)}
+  details>summary::-webkit-details-marker{display:none}
+  details>summary::after{content:"+";float:right} details[open]>summary::after{content:"–"}
+  .foot{font-size:11px;color:var(--color-neutral-700);line-height:1.5;border-top:1px solid var(--color-divider);padding-top:10px}
+  .inp{width:100%;box-sizing:border-box;font:inherit;font-size:14px;color:var(--color-text);background:transparent;border:1px solid var(--color-accent-500);border-radius:var(--radius-md,4px);padding:7px 10px}
+  .inp:focus-visible{outline:2px solid var(--color-accent);outline-offset:2px}
+  .res{display:flex;justify-content:space-between;width:100%;font:inherit;font-size:14px;text-align:left;background:transparent;color:var(--color-text);border:0;border-bottom:1px solid var(--color-divider);padding:6px 4px;cursor:pointer}
+  .res small{color:var(--color-neutral-700);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  .res:hover{background:var(--color-accent-100)} .res:active{background:var(--color-accent-200)}
+  .tick{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-neutral-700);margin-top:2px}
+  .dz{font-size:13px;line-height:1.45;border:1px dashed var(--color-accent-500);border-radius:var(--radius-md,4px);padding:8px 10px;margin-bottom:8px}
+  #dcount{font-size:12px;color:var(--color-neutral-700);margin-bottom:2px}
+  #slicebox{position:fixed;right:24px;bottom:76px;width:300px;max-height:calc(100vh - 92px);overflow:auto;box-sizing:border-box;z-index:2;background:color-mix(in oklab,var(--color-bg) 94%,transparent);
+    border:1px solid var(--color-divider);border-radius:var(--radius-md,4px);padding:12px;box-shadow:var(--shadow-sm)}
+  #slicebox .hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  #slicebox .hd{gap:8px}
+  #slicebox .hd b{font-family:var(--font-heading);font-size:18px;font-weight:600;white-space:nowrap;flex-shrink:0}
+  #slicebox .hd>span{flex-shrink:0}
+  #slice{display:block;width:274px;height:200px;border:1px solid var(--color-neutral-500);margin-bottom:6px;cursor:grab;touch-action:none}
+  #slice:active{cursor:grabbing}
+  #slicebox.min #slicebody{display:none}
+  #slicebox.min .hd{margin-bottom:0}
+  #slicebox .zm{display:flex;gap:6px;align-items:center;margin-bottom:10px;font-size:12px;color:var(--color-neutral-700)}
+  #slicebox .zm .b{padding:3px 9px;font-size:14px;line-height:1}
+  #slicebox .zm #zlab{min-width:38px;text-align:center}
+  #slicebox .hb{padding:4px 9px;font-size:14px;line-height:1}
+  #slicebox label.chk{display:flex;gap:8px;align-items:center;font-size:12px;margin-top:8px;cursor:pointer}
+  #legend{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11px;color:var(--color-neutral-700);margin-top:8px}
+  #legend i{display:inline-block;width:9px;height:9px;border:1px solid var(--color-neutral-700);margin-right:4px;vertical-align:-1px}
+  #pinsvg{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:2;display:none}
+  #pinlbl{position:fixed;z-index:3;display:none;align-items:center;gap:8px;background:var(--color-bg);border:1px solid var(--color-accent-500);border-radius:2px;padding:3px 4px 3px 10px;font-family:var(--font-heading);font-size:18px;font-weight:600;box-shadow:var(--shadow-sm);white-space:nowrap}
+  #pinlbl button{font:inherit;font-size:14px;line-height:1;background:transparent;border:0;color:var(--color-accent-700);cursor:pointer;padding:2px 6px}
+  #pinlbl button:hover{background:var(--color-accent-100)}
+  #tip{position:fixed;pointer-events:none;z-index:3;display:none;background:var(--color-bg);border:1px solid var(--color-accent-500);border-radius:2px;
+    padding:3px 9px;font-family:var(--font-heading);font-size:17px;font-weight:600;box-shadow:var(--shadow-sm);white-space:nowrap}
+  #tweaks{position:fixed;right:24px;top:24px;width:244px;z-index:5;display:none;box-sizing:border-box;background:color-mix(in oklab,var(--color-bg) 96%,transparent);border:1px solid var(--color-divider);border-radius:var(--radius-md,4px);padding:12px 14px 14px;box-shadow:var(--shadow-md)}
+  #tweaks .hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+  #tweaks .hd b{font-family:var(--font-heading);font-size:20px;font-weight:600}
+  #tweaks .tw{padding:8px 0;border-top:1px solid var(--color-divider)}
+  #tweaks .seg{display:flex;gap:4px;margin-top:6px}
+  #tweaks .seg .b{flex:1;padding:5px 4px}
+  #tweaks .seg .b.on{background:var(--color-accent-200)}
+  #tweaks .note{font-size:11.5px;line-height:1.4;color:var(--color-neutral-700);margin-top:6px}
+  body.present .panel>*:not(#viewsec),body.present #slicebox{display:none}
+  #viewsec .vb{margin-bottom:8px} #viewsec .vb .b{flex:1}
+  .sx{display:flex;gap:6px} .sx .b{flex:1} .sx .b.on{background:var(--color-accent-200)}
+  .tones{display:flex;gap:6px;flex-wrap:wrap} .tones .t{width:30px;height:30px;padding:0;border:1px solid var(--color-neutral-700);border-radius:2px;cursor:pointer} .tones .t:hover{border-color:var(--color-accent-600)} .tones .t.on{outline:2px solid var(--color-accent);outline-offset:2px}
+  #sexnote{font-size:12px;line-height:1.45;color:var(--color-neutral-700);margin:6px 0 0}
+  /* phones and small tablets: the side panel becomes a drawer opened from a bottom dock, so the 3D view keeps the whole screen */
+  #dock{display:none;position:fixed;left:0;right:0;bottom:0;z-index:7;gap:6px;padding:8px 8px calc(8px + env(safe-area-inset-bottom));box-sizing:border-box;background:color-mix(in oklab,var(--color-bg) 96%,transparent);border-top:1px solid var(--color-divider)}
+  #dock .b{flex:1;padding:10px 6px;font-size:12px}
+  #dock .b.on{background:var(--color-accent-200)}
+  @media (max-width:900px){
+    #dock{display:flex}
+    .panel{z-index:6;top:auto!important;left:8px!important;right:8px;bottom:62px;width:auto!important;max-height:calc(100vh - 150px);visibility:hidden;transform:translateY(calc(100% + 80px));transition:transform .25s ease,visibility 0s linear .25s}
+    body.drawer-open .panel{visibility:visible;transform:none;transition-delay:0s}
+    body.present .panel{display:none}
+    #sliceopen{display:none!important}
+    #slicebox{left:8px;right:8px;bottom:62px;width:auto!important;max-height:calc(100vh - 150px)}
+    #slice{margin-left:auto;margin-right:auto}
+    #camtools{top:8px!important;right:8px!important;max-width:calc(100vw - 16px)!important}
+    #exbar{left:8px!important;right:8px!important;top:128px!important}
+    #sbar{left:8px!important;right:8px;width:auto!important;bottom:62px!important}
+    #brainbox{left:8px;right:8px;max-height:calc(100vh - 80px)}
+    #tip{display:none!important}
+  }
+</style>
+</head>
+<body>
+<three-d-stage name="human-anatomy" data-comment-anchor="bb154c8264-three-d-stage"></three-d-stage>
+<div id="tweaks" role="dialog" aria-label="Tweaks">
+  <div class="hd"><b>Tweaks</b><button class="b" id="twx" aria-label="Close tweaks" style="padding:3px 8px">×</button></div>
+  <div class="tw"><h2>Rendering</h2><div class="seg" id="tw-render"><button class="b" data-v="atlas">Atlas</button><button class="b" data-v="xray">X-ray</button></div><div class="note">Atlas keeps the plate colours, X-ray shows every system through the others.</div></div>
+  <div class="tw"><h2>Presentation</h2><div class="seg" id="tw-present"><button class="b" data-v="off">Explore</button><button class="b" data-v="on">Turntable</button></div><div class="note">Turntable hides the panels and slowly rotates the body.</div></div>
+</div>
+<div id="tip"></div>
+<div id="live" role="status" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap"></div>
+
+<aside class="panel" data-comment-anchor="e05a1aae89-aside">
+  <div class="kicker">Plate II · Systems of the body</div>
+  <h1>Human anatomy</h1>
+  <p class="lede">A simplified model in anatomical position. Search for a part, peel the layers from skin to bone, explode the body into systems, click a structure to isolate it, and cut through the body with the slice view.</p>
+
+  <p class="disc">This model does not exactly reflect the real body arrangement; <a href="known-limitations.html" target="_blank" rel="noopener">a few positional or displacement errors</a> may exist.</p>
+
+  <div class="sec">
+    <h2>Body</h2>
+    <div class="sx" id="p-sex" role="group" aria-label="Sex of the body"><button class="b on" data-v="male" aria-pressed="true">Male</button><button class="b" data-v="female" aria-pressed="false">Female</button></div>
+    <p id="sexnote" style="display:none"></p>
+    <h2 style="margin-top:12px">Skin tone</h2>
+    <div class="tones" id="p-tone" role="group" aria-label="Skin tone"><button class="t on" data-v="plate" title="Plate (atlas)" aria-label="Plate (atlas)" style="background:#e7ddd2"></button><button class="t" data-v="3b2219" title="#3B2219" aria-label="Skin tone 1, darkest" style="background:#3b2219"></button><button class="t" data-v="8d5524" title="#8D5524" aria-label="Skin tone 2" style="background:#8d5524"></button><button class="t" data-v="c68642" title="#C68642" aria-label="Skin tone 3" style="background:#c68642"></button><button class="t" data-v="e0ac69" title="#E0AC69" aria-label="Skin tone 4" style="background:#e0ac69"></button><button class="t" data-v="f1c27d" title="#F1C27D" aria-label="Skin tone 5" style="background:#f1c27d"></button><button class="t" data-v="ffdbac" title="#FFDBAC" aria-label="Skin tone 6, lightest" style="background:#ffdbac"></button></div>
+  </div>
+
+  <div class="sec">
+    <h2>Anatomical directions</h2>
+    <label class="chk" style="display:flex;gap:8px;align-items:center;font-size:13px;cursor:pointer"><input type="checkbox" id="dirshow"> Show direction arrows on the body</label>
+    <ul class="plist" id="dirlist" style="display:none;columns:1;margin-top:8px">
+      <li><b>Superior / Cranial</b> <span>toward the head.</span> <b>Inferior / Caudal</b> <span>toward the feet.</span></li>
+      <li><b>Anterior / Ventral</b> <span>toward the front.</span> <b>Posterior / Dorsal</b> <span>toward the back.</span></li>
+      <li><b>Medial</b> <span>toward the midline.</span> <b>Lateral</b> <span>away from the midline.</span></li>
+      <li><b>Proximal</b> <span>nearer the limb's attachment.</span> <b>Distal</b> <span>farther from it.</span></li>
+      <li><b>Superficial</b> <span>toward the surface.</span> <b>Deep</b> <span>away from the surface.</span></li>
+      <li><b>Afferent</b> <span>carried toward a centre, such as sensory nerves to the CNS.</span> <b>Efferent</b> <span>carried away from it, such as motor nerves.</span></li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h2>Find a part</h2>
+    <input class="inp" id="q" type="search" placeholder="Search a part, e.g. femur" aria-label="Search a part" autocomplete="off">
+    <div id="qres" style="margin-top:6px"></div>
+  </div>
+
+  <div class="sec" id="treesec">
+    <h2>Browse by system</h2>
+    <div id="crumb" aria-live="polite">Nothing selected</div>
+    <div id="tree" role="tree" aria-label="Anatomy by system, group and part"></div>
+  </div>
+
+  <div class="sec">
+    <h2>Systems</h2>
+    <div id="systems"></div>
+    <div class="btns"><button class="b" id="all">Show all</button><button class="b" id="none">Clear</button></div>
+    <div class="rowl" style="margin-top:12px"><span>Skin opacity</span></div>
+    <input type="range" id="skinop" min="0" max="1" step="0.01" value="0.12" aria-label="Skin opacity">
+    <div class="rowl" style="margin-top:12px"><span>Surface roughness</span></div>
+    <input type="range" id="rough" min="0" max="1" step="0.01" value="0.55" aria-label="Surface roughness">
+  </div>
+
+  <div id="bodyparts">
+  <div id="viewnote" aria-live="polite" style="display:none;font-size:12px;line-height:1.4;color:var(--color-neutral-700);margin:12px 0 0;padding:6px 8px;border:1px solid var(--color-divider);border-radius:var(--radius-md,4px)"></div>
+  <div class="sec" id="g-brain">
+    <h2>1. Brain and spine views</h2>
+    <div class="vb"><button class="b" data-v="lateral">Lateral</button><button class="b" data-v="medial">Medial</button><button class="b" data-v="inferior">Inferior</button><button class="b" data-v="spine">Spine</button><button class="b" id="axialopen">Brain axial</button><button class="b" data-r="reset">Reset</button></div>
+    <div class="rowl"><span>Cortex opacity</span></div>
+    <input type="range" id="cortexop" min="0.1" max="1" step="0.01" value="1" aria-label="Cortex opacity">
+    <div class="vb" hidden><button class="b" data-v="reset" id="oldreset">Reset</button></div>
+  </div>
+
+  <div class="sec" id="g-head">
+    <h2>2. Head: eye, ear, nose, mouth, skull</h2>
+    <h3 class="sub">Eye and ear</h3>
+    <div class="vr"><button class="b" data-r="eye">Eye</button><button class="b" data-r="earouter">Ear: outer</button><button class="b" data-r="earmiddle">Ear: middle</button><button class="b" data-r="earinner">Ear: inner</button><button class="b" data-r="earall">Ear: all</button></div>
+    <h3 class="sub">Nose and mouth</h3>
+    <div class="vr"><button class="b" data-r="nasal">Nasal cavity</button><button class="b" data-r="oral">Oral cavity</button><button class="b" data-r="teeth">Teeth</button><button class="b" data-r="tooth">Single tooth</button><button class="b" data-r="oralall">Oral cavity with teeth</button><button class="b" data-r="salivary">Salivary glands</button></div>
+    <h3 class="sub">Skull</h3>
+    <div class="vr"><button class="b" data-r="skull">Skull and teeth</button><button class="b" data-r="reset">Reset</button></div>
+  </div>
+
+  <div class="sec" id="g-neck">
+    <h2>3. Neck</h2>
+    <div class="vr"><button class="b" data-r="neck">Neck: organs, vessels, nerves</button><button class="b" data-r="neckmuscle">Neck muscles</button><button class="b" data-r="neckdeep">Deep neck muscles</button><button class="b" data-r="thyroid">Thyroid and parathyroid</button><button class="b" data-r="reset">Reset</button></div>
+  </div>
+
+  <div class="sec" id="g-trunk">
+    <h2>4. Thoracic and abdominal cavity</h2>
+    <h3 class="sub">Heart</h3>
+    <div class="vr"><button class="b" data-r="greatvessels">Eight great vessels</button><button class="b" data-r="chambers">Chambers and valves</button><button class="b" data-r="coronary">Coronary arteries and veins</button></div>
+    <label class="chk" style="display:flex;gap:8px;align-items:center;font-size:13px;margin:8px 0 6px"><input type="checkbox" id="hcut"> Heart cutaway (open the chambers)</label>
+    <div class="rowl"><span>Cut depth</span></div>
+    <input type="range" id="hdepth" min="-0.01" max="0.095" step="0.002" value="0.05" aria-label="Heart cut depth">
+    <h3 class="sub">Lungs and diaphragm</h3>
+    <div class="vb"><button class="b" data-v="thorax">Lungs and diaphragm</button></div>
+    <div class="vr"><button class="b" data-r="alveolus" id="alvbtn" aria-pressed="false">Single alveolar unit</button></div>
+    <input type="checkbox" id="alvshow" hidden aria-hidden="true">
+    <div class="rowl" style="margin-top:8px"><span>Lung opacity</span></div>
+    <input type="range" id="lungop" min="0.1" max="1" step="0.01" value="0.82" aria-label="Lung opacity">
+    <h3 class="sub">The airway tubes</h3>
+    <div class="vr"><button class="b" data-r="trachea">Trachea</button><button class="b" data-r="bronchus">Bronchus</button><button class="b" data-r="bronchi">Bronchi</button><button class="b" data-r="larynx">Larynx</button><button class="b" data-r="pharynx">Pharynx</button><button class="b" data-r="oropharynx">Oropharynx</button><button class="b" data-r="nasopharynx">Nasopharynx</button><button class="b" data-r="nasal">Nasal cavity</button></div>
+    <h3 class="sub">Renal</h3>
+    <div class="vb"><button class="b" data-v="kidneys">Kidney</button><button class="b" data-v="kidneysback">Kidney from behind</button><button class="b" data-v="pelvis">Bladder and pelvis</button></div>
+    <h3 class="sub">Reproductive organs</h3>
+    <div class="vb"><button class="b" data-v="repro">Reproductive organs</button><button class="b" data-v="reproside">Reproductive pelvis from the side</button><button class="b" data-v="cycle">Ovaries and uterus close-up (female)</button><button class="b" data-v="breast">Breast (female)</button><button class="b" data-v="breastside">Breast from the side (female)</button></div>
+    <div id="cyclebox" style="display:none">
+      <label for="cycleday" style="font-size:12px">Menstrual cycle, day <b id="cycledayn">1</b> of 28: <span id="cyclephase">Menstruation</span></label>
+      <input type="range" id="cycleday" min="1" max="28" step="1" value="1" aria-label="Menstrual cycle day">
+      <p id="cyclenote" style="font-size:12px;line-height:1.45;margin:6px 0 0"></p>
+    </div>
+    <h3 class="sub">Digestive</h3>
+    <div class="vr"><button class="b" data-r="oesophagus">Oesophagus</button><button class="b" data-r="stomach">Stomach</button><button class="b" data-r="smallint">Small intestine</button><button class="b" data-r="largeint">Large intestine</button><button class="b" data-r="liver">Liver, gallbladder, bile duct</button><button class="b" data-r="pancreas">Pancreas and pancreatic duct</button><button class="b" data-r="digestall">All digestive</button></div>
+    <h3 class="sub">Tonsils and lymphatic system</h3>
+    <div class="vr"><button class="b" data-r="tonsils">Tonsils</button><button class="b" data-r="lymphatic">Lymphatic system</button><button class="b" data-r="cervnodes">Cervical nodes</button><button class="b" data-r="peyer">Peyer's patches</button><button class="b" data-r="appendix">Appendix</button><button class="b" data-r="cisterna">Cisterna chyli</button><button class="b" data-r="nodes">Lymph nodes</button><button class="b" data-r="lymphvessels">Lymphatic vessels</button></div>
+    <div class="vr" style="margin-top:8px"><button class="b" data-r="reset">Reset</button></div>
+  </div>
+
+  <div class="sec" id="g-arm">
+    <h2>5. Upper limb</h2>
+    <div class="vb"><button class="b" data-v="arm">Shoulder and arm</button><button class="b" data-v="hand">Forearm and hand</button><button class="b" data-r="reset">Reset</button></div>
+  </div>
+
+  <div class="sec" id="g-leg">
+    <h2>6. Lower limb</h2>
+    <div class="vb"><button class="b" data-v="thigh">Hip and thigh</button><button class="b" data-v="foot">Leg and foot</button><button class="b" data-r="reset">Reset</button></div>
+  </div>
+  </div>
+
+  <div class="sec" id="viewsec">
+    <h2>Rendering</h2>
+    <div class="vb" id="p-render"><button class="b" data-v="atlas">Atlas</button><button class="b" data-v="xray">X-ray</button></div>
+    <h2>Presentation</h2>
+    <div class="vb" id="p-present" style="margin-bottom:0"><button class="b" data-v="off">Explore</button><button class="b" data-v="on">Turntable</button></div>
+  </div>
+
+  <div class="sec" id="layerssec">
+    <h2>Body layers, skin to bone</h2>
+    <input type="range" id="lyslider" min="0" max="13" step="1" value="0" aria-label="Peel body layers from skin to bone">
+    <div class="tick"><span>Skin</span><span>Muscles</span><span>Organs</span><span>Bone</span></div>
+    <p id="lycur">Outermost visible: Skin</p>
+    <div class="vb"><button class="b" id="lyall">Show all layers</button><button class="b" id="lyreset">Reset</button></div>
+    <div id="lylist"></div>
+  </div>
+
+  <div class="sec">
+    <h2>Peel layers</h2>
+    <input type="range" id="peel" min="0" max="3" step="1" value="0" aria-label="Peel layers from skin to bone">
+    <div class="tick"><span>Skin</span><span>Muscle</span><span>Organs</span><span>Bone</span></div>
+  </div>
+
+  <div class="sec" id="expsec">
+    <h2>Exploded view</h2>
+    <div class="rowl"><span>Spread parts apart</span><b id="expn">0%</b></div>
+    <input type="range" id="expsl" min="0" max="100" step="1" value="0" aria-label="Exploded view amount">
+    <div class="tick"><span>Assembled</span><span>Spread</span></div>
+    <p class="parts" id="expnote" style="margin-top:6px">Every structure moves away from the midline in proportion to its distance from it, and from front to back as well. Skin and fat stay in place.</p>
+  </div>
+
+  <div class="sec">
+    <h2>Dissect</h2>
+    <div class="dz">Click any structure to select it. Its tab can hide it, and Undo brings hidden structures back.</div>
+    <div id="dcount">Nothing removed</div>
+    <div class="btns"><button class="b" id="undo">Undo</button><button class="b" id="restore">Put all back</button></div>
+  </div>
+
+  <div class="sec info" id="info"></div>
+
+  <div class="foot">Left and right are the figure's own. Drag to turn, scroll to zoom. Downloads include the systems currently shown, minus removed parts.</div>
+  <div class="foot" style="border-top:0;padding-top:4px"><b>Keys:</b> Space resets the view, H hides the selected part, U undoes, X toggles X-ray, 1 2 3 set the cut to transverse, coronal or sagittal. Double-click a surface to leave a note on it.</div>
+</aside>
+
+<div id="slicebox">
+  <div class="hd" data-comment-anchor="8b0d1f82aa-div"><b>Cross-section</b><span style="display:flex;gap:6px;align-items:center"><button class="b hb" id="slicemin" aria-label="Minimise cross-section" title="Minimise">−</button><button class="b hb" id="slicebig" aria-label="Enlarge cross-section" title="Enlarge">⤢</button><button class="b hb" id="sliceclose" aria-label="Close cross-section" title="Close">×</button></span></div>
+  <div id="slicebody">
+  <div style="margin-bottom:8px"><select class="inp" id="axis" style="width:100%;padding:4px 8px;font-size:13px" aria-label="Cut axis"><option value="transverse">Transverse</option><option value="coronal">Coronal</option><option value="sagittal">Sagittal</option></select></div>
+  <canvas id="slice" width="548" height="400" aria-label="Cross-section colour map" title="Click a colour to select it, drag to move, scroll to zoom" data-comment-anchor="70aab8c984-canvas"></canvas>
+  <div class="zm"><button class="b" id="zout" aria-label="Zoom out">−</button><span id="zlab">100%</span><button class="b" id="zin" aria-label="Zoom in">+</button><button class="b" id="zfit" style="font-size:12px">Fit</button></div>
+  <input type="range" id="sl" min="0" max="1" step="0.002" value="0.28" aria-label="Cut position" data-comment-anchor="bc0b8afe99-input">
+  <div class="tick" id="slends" data-comment-anchor="a243fc1359-div"><span>Head</span><span>Foot</span></div>
+  <div id="legend"></div>
+  <label class="chk"><input type="checkbox" id="showplane" checked> Show cutting plane in the model</label>
+  </div>
+</div>
+<svg id="pinsvg"><line id="pinline" stroke="currentColor" stroke-width="1.2" style="color:var(--color-accent-700)"/><circle id="pindot" r="4" fill="var(--color-bg)" stroke="currentColor" stroke-width="1.5" style="color:var(--color-accent-700)"/></svg>
+<button class="b" id="sliceopen" style="position:fixed;right:24px;bottom:76px;z-index:2;display:none;background:var(--color-bg)">Cross-section</button>
+<div id="pinlbl"><span id="pintxt"></span><button id="pinx" aria-label="Clear pin">×</button></div>
+
+<div id="brainbox">
+  <div class="hd"><b>Brain axial series</b><span style="display:flex;gap:6px;align-items:center"><button class="b on" id="bxmri">MRI</button><button class="b" id="bxatlas">Atlas</button><button class="b" id="bxclose" aria-label="Close brain axial series" style="font-size:14px;line-height:1;padding:4px 9px">×</button></span></div>
+  <div class="bxwrap"><canvas id="bxcv" aria-label="Axial brain section"></canvas><svg id="bxsvg"></svg></div>
+  <div class="bxrow"><span>Inferior</span><input type="range" id="bxsl" min="0" max="1" step="0.002" value="0.728" aria-label="Axial level"><span>Superior</span><span id="bxclock" style="min-width:150px;text-align:right"></span></div>
+  <div class="bxkey"><span><i style="background:#a9d9c0"></i>Frontal</span><span><i style="background:#e8e5b4"></i>Parietal</span><span><i style="background:#a9c4de"></i>Temporal</span><span><i style="background:#e9b3bf"></i>Occipital</span><span><i style="background:#d4b6a2"></i>Limbic</span><span><i style="background:#a07aa4"></i>Insula</span><span style="margin-left:auto">Anterior up · patient's right on the left</span></div>
+</div>
+
+<script src="three-d-stage.js"></script>
+<script type="module" src="anatomy-part1.js"></script>
+<script type="module" src="anatomy-part2.js"></script>
+<script type="module" src="layers.js"></script>
+<script type="module" src="explode.js"></script>
+<script type="module" src="camera-tools.js"></script>
+<script type="module" src="explode-slider.js"></script>
+<script type="module" src="shortcuts.js"></script>
+<script type="module" src="perf.js"></script>
+<script type="module" src="search.js"></script>
+<script type="module" src="tree.js"></script>
+<script type="module" src="regions.js"></script>
+<script type="module" src="dock.js"></script>
+<script type="module" src="snapshot.js"></script>
+<script type="module" src="pins.js"></script>
+</body>
+</html>

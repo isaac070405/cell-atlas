@@ -37,6 +37,7 @@ This repo holds the **site shell** (roadmap stage 0) plus the first data views:
 | `spike/molstar.html` | Stage 1 Mol* spike page |
 | `scripts/check-data.mjs` | Stage 2 and 3 gate: citations resolve, none pending, model volumes within 2 points |
 | `vendor/` | Self-hosted Three.js and Mol* builds |
+| `anatomy/` | Imported 3D Anatomy Model (stage 5), served at `/anatomy/`; see `anatomy/NOTICE.md` for licences |
 | `.design/cell-atlas/` | Design brief, information architecture, build tasks |
 | `data/catalog.json` | Cells with volume fractions, compartments, structures |
 | `data/citations.json` | Shared citation registry (`verified` or `pending`) |
@@ -69,7 +70,7 @@ Each stage has a pass condition. The next stage starts only after it passes.
 | 2. Data | Data tables for the four first-release cell types, cross-layer index, full links.json | "Pending check" count is zero. The 30 citations are verified; the open data items below stay open |
 | 3. Module A | Procedural Three.js cell, side-by-side compare, clipping plane, organelle pick, data card | Organelle volume ratios match the data table within 2 percentage points. Passes in `node scripts/check-data.mjs`; cardiomyocyte and plant outlines are too crowded to draw without overlap |
 | 4. Module B | Mol* viewer, presets, colouring modes, subunit list with UniProt links; mitochondrion → Complex I and rough ER → ribosome jumps | One full cell → atom → cell round trip without stutter |
-| 5. Platform integration | New section in the Human Biology home page; `?part=` deep link in the 3D model; jump buttons in Histology and Specimen Room | Body → tissue → cell → molecule chain works end to end |
+| 5. Platform integration | New section in the Human Biology home page; `?part=` deep link in the 3D model; jump buttons in Histology and Specimen Room | Body → tissue → cell → molecule chain works end to end. Step 1 done: 3D model copied into `anatomy/`; `?part=` deep link and jump buttons still to build |
 | 6. Polish | HUD layout, light and dark modes, three language modes, mobile, source cards | Every number on every screen has a citation |
 
 ### Releases
