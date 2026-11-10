@@ -257,3 +257,14 @@ body.bare .panels { display: none; }
 .kind-legend .kl-item { display: inline-flex; align-items: center; gap: 6px; }
 .kind-legend .sw { width: 12px; height: 12px; border-radius: 2px; background: var(--k); flex: none; }
 .kind-legend code { font: 11.5px var(--font-label); color: var(--ink-soft); }
+
+/* Tissue viewer: view buttons and cross-section (same panel style as the cell view) */
+.tview { display: flex; flex-wrap: wrap; gap: var(--s2); padding: var(--s2); border: 1px solid var(--rule); background: var(--paper-raised); border-radius: var(--radius); align-self: flex-start; }
+.tview[hidden] { display: none; }
+.tview button { font: 500 12px/1 var(--font-label); background: var(--paper); color: var(--ink); border: 1px solid var(--rule); border-radius: var(--radius); padding: var(--s2) var(--s3); cursor: pointer; }
+.tview button:hover { border-color: var(--stain); }
+.tview button[aria-pressed="true"] { border-color: var(--select); box-shadow: inset 3px 0 0 var(--select); }
+.cell3d-stage { position: relative; min-width: 0; }
+#tissue-main:has(#tissue-xsec[hidden]) { grid-template-columns: minmax(0, 1fr); }
+#txsec-canvas { display: block; width: 100%; aspect-ratio: 4 / 3; border: 1px solid var(--rule); background: var(--paper-raised); }
+.xsec-sel { font: 12px var(--font-label); background: var(--paper); color: var(--ink); border: 1px solid var(--rule); border-radius: var(--radius); padding: var(--s1) var(--s2); }

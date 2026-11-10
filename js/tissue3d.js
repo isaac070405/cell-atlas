@@ -363,6 +363,8 @@ export async function createTissueView(host, { onPick, elements }) {
 
   function show(id, model) {
     group.traverse(o => { o.geometry?.dispose(); o.material?.map?.dispose(); o.material?.dispose?.(); });
+    if (sl.scene) for (const o of [...sl.scene.children]) if (o.userData.isClone) sl.scene.remove(o);
+    renderer.clippingPlanes = []; sl.pct = 50; sl.cut3d = false;
     group.clear(); group.rotation.set(0, 0, 0); meshes = []; picked = null;
     if (model?.atoms) buildAtoms(model, elements); else BUILD[id]();
     const box = new THREE.Box3().setFromObject(group), c = box.getCenter(V(0, 0, 0)), reach = box.getSize(V(0, 0, 0)).length() / 2;
@@ -374,7 +376,7 @@ export async function createTissueView(host, { onPick, elements }) {
     camera.position.copy(c).add(V(0.35, 0.28, 1).normalize().multiplyScalar(d));
     controls.minDistance = reach * 0.6; controls.maxDistance = reach * 6;
     controls.update(); renderer.domElement.setAttribute('aria-label', `${id} model, schematic`);
-    resize();
+    resize(); cloneIntoSlice(); drawSlice();
   }
 
   function select(part) {
@@ -388,8 +390,62 @@ export async function createTissueView(host, { onPick, elements }) {
       m.material.transparent = m.material.opacity < 1;
       m.material.depthWrite = m.material.opacity >= 1;
     }
-    draw();
+    draw(); drawSlice();
   }
+
+
+  // ── camera views and cross-section ──
+  const VIEWS = { ant: [0, 0, 1], post: [0, 0, -1], r: [-1, 0, 0], l: [1, 0, 0], sup: [0, 1, 0.02], inf: [0, -1, 0.02] };
+  const AXES = { transverse: [1, 'y'], sagittal: [0, 'x'], coronal: [2, 'z'] };   // [component index, name]
+  let viewDone = null;
+  controls.addEventListener('start', () => viewDone?.(null));
+  function setView(name, mark) {
+    const d = V(...VIEWS[name]).normalize(), dist = camera.position.distanceTo(controls.target);
+    camera.position.copy(controls.target).addScaledVector(d, dist); controls.update(); draw(); mark?.(name); viewDone = mark;
+  }
+  const sl = { axis: 'transverse', pct: 50, cut3d: false, canvas: null, r: null, scene: null, cam: null, bg: '#F5F3EC' };
+  function slabPlanes(th) {
+    const b = new THREE.Box3().setFromObject(group), i = AXES[sl.axis][0], lo = b.min.getComponent(i), hi = b.max.getComponent(i), pos = lo + (hi - lo) * sl.pct / 100;
+    const n = V(0, 0, 0).setComponent(i, 1);
+    return { n, pos, box: b, i, planes: [new THREE.Plane(n.clone(), -(pos - th)), new THREE.Plane(n.clone().negate(), pos + th)] };
+  }
+  function applyClip() {
+    if (!group.children.length) return;
+    const { n, pos } = slabPlanes(0);
+    renderer.clippingPlanes = sl.cut3d ? [new THREE.Plane(n, -pos)] : [];
+    draw(); drawSlice();
+  }
+  function attachSlice(canvas, { background } = {}) {
+    sl.canvas = canvas; if (background) sl.bg = background;
+    sl.r = new THREE.WebGLRenderer({ canvas, antialias: true });
+    sl.r.setPixelRatio(Math.min(devicePixelRatio, 2));
+    sl.scene = new THREE.Scene(); sl.cam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.01, 100);
+    sl.scene.add(new THREE.HemisphereLight(0xffffff, 0x445566, 2.2)); sl.scene.add(new THREE.DirectionalLight(0xffffff, 1.2));
+    cloneIntoSlice();
+  }
+  function cloneIntoSlice() {
+    if (!sl.scene) return;
+    for (const o of [...sl.scene.children]) if (o.userData.isClone) sl.scene.remove(o);
+    const c = group.clone(true); c.userData.isClone = true; sl.scene.add(c);
+  }
+  function drawSlice() {
+    if (!sl.r || !group.children.length) return;
+    const b = new THREE.Box3().setFromObject(group), size = b.getSize(V(0, 0, 0)), ctr = b.getCenter(V(0, 0, 0)), i = AXES[sl.axis][0];
+    const th = size.getComponent(i) * 0.012, { n, pos, planes } = slabPlanes(th);
+    const w = Math.max(canvas0().clientWidth, 120), h = Math.round(w * 3 / 4);
+    sl.r.setSize(w, h, false); sl.r.setClearColor(new THREE.Color(sl.bg)); sl.r.clippingPlanes = planes;
+    const others = [0, 1, 2].filter(k => k !== i), half = Math.max(size.getComponent(others[0]), size.getComponent(others[1])) * 0.55 || 1;
+    sl.cam.left = -half * w / h; sl.cam.right = half * w / h; sl.cam.top = half; sl.cam.bottom = -half; sl.cam.updateProjectionMatrix();
+    sl.cam.up.set(0, i === 1 ? 0 : 1, i === 1 ? 1 : 0);
+    sl.cam.position.copy(ctr).setComponent(i, pos + size.getComponent(i)); sl.cam.lookAt(ctr.clone().setComponent(i, pos));
+    sl.scene.children.find(o => o.isDirectionalLight)?.position.copy(sl.cam.position);
+    sl.r.render(sl.scene, sl.cam);
+  }
+  const canvas0 = () => sl.canvas;
+  function setAxis(a) { sl.axis = a; applyClip(); }
+  function setSlice(pct) { sl.pct = pct; applyClip(); }
+  function setCut3d(on) { sl.cut3d = on; applyClip(); }
+  function resetSlice() { sl.pct = 50; sl.cut3d = false; sl.axis = 'transverse'; applyClip(); }
 
   let down = null;
   renderer.domElement.addEventListener('pointerdown', e => { down = [e.clientX, e.clientY]; });
@@ -401,5 +457,5 @@ export async function createTissueView(host, { onPick, elements }) {
     onPick(solid ? solid.object.userData.part : null);
   });
 
-  return { show, select, resize, redraw: draw, get selected() { return picked; } };
+  return { show, select, resize, redraw: draw, setView, attachSlice, setAxis, setSlice, setCut3d, resetSlice, drawSlice, get selected() { return picked; } };
 }

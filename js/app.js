@@ -16,7 +16,7 @@ const KINDS = [
   { id: 'bacterial', hex: '#00ACC1', group: 'prokaryote' }, { id: 'archaeal', hex: '#E64A19', group: 'prokaryote' }, { id: 'virus', hex: '#8E24AA', group: 'noncellular' },
 ];
 const GROUPS = ['noncellular', 'prokaryote', 'eukaryote'];
-const kindLegend = () => `<h4>${html('legend.title')}</h4>` + GROUPS.map(g => `<div class="kl-group"><span>${html('group.' + g)}</span>${KINDS.filter(k => k.group === g).map(k => `<span class="kl-item" style="--k:var(--kind-${k.id})"><span class="sw"></span>${html('kind.' + k.id)} <code>${k.hex}</code></span>`).join('')}</div>`).join('');
+const kindLegend = () => `<h4>${html('legend.title')}</h4>` + GROUPS.map(g => `<div class="kl-group"><span>${html('group.' + g)}</span>${KINDS.filter(k => k.group === g).map(k => `<span class="kl-item" style="--k:var(--kind-${k.id})"><span class="sw"></span>${html('kind.' + k.id)}</span>`).join('')}</div>`).join('');
 initCompare(catalog);
 
 // Theme: follows the system until the person picks one
@@ -149,7 +149,8 @@ async function syncTissue(t, sel) {
       tview = await createTissueView($('tissue3d'), { elements: atoms.elements, onPick: part => setState({ selection: part === getState().selection ? null : part }) });
     }
     const key = `${getState().level}:${t.id}`;
-    if (tshown !== key) { tview.show(t.id, t); tshown = key; }
+    wireTissueTools();
+    if (tshown !== key) { tview.show(t.id, t); tshown = key; $('txsec-cut').value = 50; $('txsec-3d').checked = false; }
     tview.select(t.parts.some(p => p.id === sel) ? sel : null);
   } catch (err) {
     tfailed = true; console.warn('3D tissue unavailable', err);
@@ -175,6 +176,30 @@ function modelCard(m, sel, level) {
   const fn = k?.function && citations[k.function.cite];
   const fnBlock = fn ? `<dl class="kv"><dt>${html('card.function')}</dt><dd>${html(fn.detail)}</dd></dl>` : '';
   return `<p><strong>${html(m.name)}</strong></p><p>${html(m.summary)}</p>${sizes}${fnBlock}${mlink}<p class="muted" style="font-size:12.5px">${html('model.pick')}</p>`;
+}
+// Tissue level: view buttons and cross-section around the tissue viewer
+const VIEW_KEYS = ['ant', 'post', 'r', 'l', 'sup', 'inf'], AXIS_KEYS = ['transverse', 'sagittal', 'coronal'];
+let tviewWired = false;
+function wireTissueTools() {
+  if (tviewWired || !tview) return;
+  tviewWired = true;
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const mark = name => $('tissue-views').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === name));
+  $('tissue-views').addEventListener('click', e => { const b = e.target.closest('button[data-v]'); if (b) { tview.setView(b.dataset.v, mark); mark(b.dataset.v); } });
+  tview.attachSlice($('txsec-canvas'), { background: css('--paper-raised') || undefined });
+  const ends = () => { $('txsec-ends').innerHTML = html('tview.ends.' + $('txsec-axis').value); };
+  $('txsec-axis').addEventListener('change', () => { tview.setAxis($('txsec-axis').value); ends(); });
+  $('txsec-cut').addEventListener('input', () => tview.setSlice(+$('txsec-cut').value));
+  $('txsec-3d').addEventListener('change', () => tview.setCut3d($('txsec-3d').checked));
+  $('txsec-reset').addEventListener('click', () => { $('txsec-cut').value = 50; $('txsec-3d').checked = false; $('txsec-axis').value = 'transverse'; tview.resetSlice(); ends(); mark(null); });
+}
+function renderTissueTools(on) {
+  $('tissue-views').hidden = !on; $('tissue-xsec').hidden = !on;
+  if (!on) return;
+  $('tissue-views').innerHTML = VIEW_KEYS.map(k => `<button data-v="${k}" aria-pressed="false">${html('tview.' + k)}</button>`).join('');
+  const cur = $('txsec-axis').value || 'transverse';
+  $('txsec-axis').innerHTML = AXIS_KEYS.map(k => `<option value="${k}"${k === cur ? ' selected' : ''}>${text('tview.ax.' + k)}</option>`).join('');
+  $('txsec-ends').innerHTML = html('tview.ends.' + cur);
 }
 const tissueParts = (t, sel) => `<ul class="queue parts">${t.parts.map(p => `<li><button data-kind="tpart" data-id="${p.id}" aria-pressed="${p.id === sel}"><span class="sw" style="background:${p.color}"></span><span>${html(p.name)}</span></button></li>`).join('')}</ul>`;
 function tissueCard(t, sel) {
@@ -228,6 +253,7 @@ function render(s) {
   $('tissue-note').innerHTML = html(O ? 'organelle.note' : M ? 'atom.note' : 'tissue.note');
   $('vp-tissue').hidden = !sm;
   renderDirections(sm);
+  renderTissueTools(T && !!sm);
   if (sm) syncTissue(sm, s.selection);
   $('vp-queue').hidden = compare;
   $('kind-legend').hidden = !A;

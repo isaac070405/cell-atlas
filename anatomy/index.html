@@ -132,8 +132,11 @@ try { const r = parent.document.documentElement, sync = () => { const t = r.getA
   #sexnote{font-size:12px;line-height:1.45;color:var(--color-neutral-700);margin:6px 0 0}
   /* Focus modes (system or organ picked in the host page): only the isolated parts, no panels or controls */
   body.focus{--dock-h:0px}
-  body.focus .dockpanels, body.focus #exbar, body.focus #camtools, body.focus #sbar, body.focus #exhead, body.focus #exlabels, body.focus #pinsvg, body.focus #pinlbl{display:none!important}
+  body.focus .dockpanels, body.focus #exbar, body.focus #sbar, body.focus #exhead, body.focus #exlabels, body.focus #pinsvg, body.focus #pinlbl{display:none!important}
   body.focus:not(.slice) #slicebox{display:none!important}
+  body.focus #camtools .chk{display:none}
+  /* explode labels stay inside the stage, above the dock */
+  #exlabels{bottom:var(--dock-h)!important}
   #slicebox.floating{position:fixed;right:var(--s4);bottom:var(--s4);z-index:5;margin:0;background:var(--paper-raised)}
   /* Cell Atlas look: mono labels, hairline rules, blue structure, pink selection */
   :root{--dock-h:44vh}
