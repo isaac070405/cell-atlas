@@ -32,8 +32,8 @@ This repo holds the **site shell** (roadmap stage 0) plus the first data views:
 | `js/i18n.js` | Language modes |
 | `js/ruler.js` | Scale navigator |
 | `js/compare.js` | Four-cell comparison and fraction chart |
-| `js/cellmodel.js` | Procedural cell layout from the data table (pure maths) |
-| `js/cell3d.js` | Three.js view: orbit, cutting plane, organelle pick |
+| `packages/cell-3d/` | Reusable npm package `@isaac070405/cell-3d`: cell layout (`src/model.js`, pure maths) and Three.js view (`src/view.js`) |
+| `js/cellmodel.js`, `js/cell3d.js` | Re-exports of the package, so site imports keep working |
 | `spike/molstar.html` | Stage 1 Mol* spike page |
 | `scripts/check-data.mjs` | Stage 2 and 3 gate: citations resolve, none pending, model volumes within 2 points |
 | `vendor/` | Self-hosted Three.js and Mol* builds |
