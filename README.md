@@ -86,7 +86,7 @@ Cell data
 - [ ] Enterocyte organelle volume fractions (BioNumbers; EM stereology), Isaac
 - [ ] Skeletal, cardiac and smooth muscle organelle volume fractions (BioNumbers; EM stereology), Isaac
 - [ ] Plant mesophyll organelle volume fractions (BioNumbers; plant cell textbook), Isaac
-- [ ] Hepatocyte compartment percentages checked one by one (Alberts MBoC Table 12-1, latest edition)
+- [x] Hepatocyte compartment percentages checked one by one (Alberts MBoC Table 12-1, latest edition)
 - [ ] Organelle size ranges and function text (Alberts, Lodish latest editions)
 - [ ] Protein subcellular location (Human Protein Atlas, subcellular)
 

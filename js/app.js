@@ -192,10 +192,18 @@ function orgCard(cell, orgId) {
   const k = comp(orgId), f = k && resolve(cell, orgId);
   if (!k) return '';
   const jump = k.structure ? `<div class="chips"><span class="link-site">${html('card.structure')}</span>${linkChip(`pdb:${k.structure}`)}</div>` : '';
+  const sizes = (k.sizes ?? []).map(z => {
+    const c = citations[z.cite] ?? {};
+    return `<dl class="kv"><dt>${html('card.sizeref')}</dt><dd>${html(z.text)}</dd></dl>
+    <p class="muted" style="font-size:12.5px;margin-top:2px">${esc([c.species, c.cellType, c.source].filter(Boolean).join(', '))}</p>`;
+  }).join('');
+  const fn = k.function && citations[k.function.cite];
+  const fnBlock = fn ? `<dl class="kv"><dt>${html('card.function')}</dt><dd>${html(fn.detail)}</dd></dl>
+    <p class="muted" style="font-size:12.5px;margin-top:2px">${esc(fn.source)}</p>` : '';
   return `<div class="org-card" style="--c:var(${k.token})">
     <p><strong>${html(k.name)}</strong></p>
     <dl class="kv"><dt>${html('card.volume')}</dt><dd>${f ? esc(valueText(f)) : html('card.noorg')}</dd>
-    <dt>${html('card.species')}</dt><dd>${html(cell.species)}</dd></dl>${jump}
+    <dt>${html('card.species')}</dt><dd>${html(cell.species)}</dd></dl>${fnBlock}${sizes}${jump}
     ${cell.data && f ? `<p class="muted" style="font-size:12.5px;margin-top:6px">${esc(citations[cell.data]?.source ?? '')}</p>` : ''}
   </div>`;
 }
