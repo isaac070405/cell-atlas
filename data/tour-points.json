@@ -276,6 +276,90 @@
           "select": {
             "label_asym_id": "VA"
           }
+        },
+        {
+          "id": "rrna-28s",
+          "label": {
+            "en": "28S rRNA (60S scaffold)",
+            "zh-Hant": "28S rRNA（60S 骨架）"
+          },
+          "kind": "rrna",
+          "chain": "A",
+          "authChain": "L5",
+          "subunit": "60S",
+          "xyz": [
+            126.0,
+            176.2,
+            145.6
+          ],
+          "basis": "computed",
+          "support": "Centroid of 80,333 modelled atoms; per-chain Q-score 0.46 (wwPDB validation report for 4UG0, cryo-EM 3.6 Å).",
+          "select": {
+            "label_asym_id": "A"
+          }
+        },
+        {
+          "id": "rrna-58s",
+          "label": {
+            "en": "5.8S rRNA (60S)",
+            "zh-Hant": "5.8S rRNA（60S）"
+          },
+          "kind": "rrna",
+          "chain": "C",
+          "authChain": "L8",
+          "subunit": "60S",
+          "xyz": [
+            80.0,
+            181.2,
+            183.1
+          ],
+          "basis": "computed",
+          "support": "Centroid of 3,316 modelled atoms; per-chain Q-score 0.49 (wwPDB validation report for 4UG0, cryo-EM 3.6 Å).",
+          "select": {
+            "label_asym_id": "C"
+          }
+        },
+        {
+          "id": "rrna-5s",
+          "label": {
+            "en": "5S rRNA (central protuberance)",
+            "zh-Hant": "5S rRNA（中央突起）"
+          },
+          "kind": "rrna",
+          "chain": "B",
+          "authChain": "L7",
+          "subunit": "60S",
+          "xyz": [
+            186.3,
+            218.6,
+            101.3
+          ],
+          "basis": "computed",
+          "support": "Centroid of 2,563 modelled atoms; per-chain Q-score 0.49 (wwPDB validation report for 4UG0, cryo-EM 3.6 Å).",
+          "select": {
+            "label_asym_id": "B"
+          }
+        },
+        {
+          "id": "rrna-18s",
+          "label": {
+            "en": "18S rRNA (40S scaffold)",
+            "zh-Hant": "18S rRNA（40S 骨架）"
+          },
+          "kind": "rrna",
+          "chain": "UA",
+          "authChain": "S2",
+          "subunit": "40S",
+          "xyz": [
+            208.7,
+            130.9,
+            201.7
+          ],
+          "basis": "computed",
+          "support": "Centroid of 36,966 modelled atoms; per-chain Q-score 0.43 (wwPDB validation report for 4UG0, cryo-EM 3.6 Å).",
+          "select": {
+            "label_asym_id": "UA"
+          }
         }
       ]
     }
