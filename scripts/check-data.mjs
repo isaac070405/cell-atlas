@@ -14,7 +14,7 @@ const pending = Object.entries(citations).filter(([, c]) => c.status !== 'verifi
 console.log(`citations: ${Object.keys(citations).length}, pending: ${pending.length}`);
 pending.forEach(([id]) => bad(`citation ${id} is pending`));
 
-for (const c of cat.cells) {
+for (const c of cat.cells.filter(c => !c.schematic)) {
   if (c.data && !citations[c.data]) bad(`${c.id}: data cite ${c.data} missing`);
   if (!c.fractions?.length) bad(`${c.id}: no fractions`);
   const sum = (c.fractions ?? []).filter(f => !f.negligible).reduce((s, f) => s + target(f), 0);
@@ -24,7 +24,7 @@ for (const s of cat.structures) if (!citations[s.cite]) bad(`${s.id}: cite ${s.c
 for (const e of links.edges) for (const k of [e.from, ...e.to]) if (!links.targets[k.split(':')[0]]) bad(`link key ${k}`);
 
 console.log('\nstage 3: model volume vs data (percentage points)');
-for (const cell of cat.cells) {
+for (const cell of cat.cells.filter(c => !c.schematic)) {
   const m = buildModel(cell);
   const share = renderedShare(m);
   const cr = crowded(m);

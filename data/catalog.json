@@ -47,6 +47,7 @@
       "size": { "en": "About 515 µm long; 3,500 µm³", "zh-Hant": "長約 515 µm；體積約 3,500 µm³" },
       "species": { "en": "Guinea-pig taenia coli", "zh-Hant": "豚鼠結腸帶" }, "basis": "cell", "data": "gabella-1976",
       "fractions": [ { "org": "mito", "value": [3.5, 4] }, { "org": "sr", "value": 2, "approx": true } ] },
+    { "id": "ecoli", "kind": "bacterial", "schematic": true, "name": { "en": "Bacterial cell (E. coli)", "zh-Hant": "細菌細胞（大腸桿菌）" }, "release": 2, "species": { "en": "Escherichia coli", "zh-Hant": "大腸桿菌" } },
     { "id": "plant-mesophyll", "kind": "plant", "name": { "en": "Plant mesophyll cell", "zh-Hant": "植物葉肉細胞" }, "release": 1,
       "species": { "en": "Spinach leaf", "zh-Hant": "菠菜葉" }, "basis": "cell", "data": "winter-1994",
       "fractions": [

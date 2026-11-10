@@ -121,6 +121,9 @@ function showInModel(s) {
 
 // Tissue view: schematic models drawn in js/tissue3d.js from textbook-style figures. No measured values.
 const tissueOf = s => s.level === 'tissue' ? tissues.tissues.find(t => t.id === s.anat) : null;
+// Schematic cells (no volume data, e.g. the bacterial cell) use the same viewer, parts list and card as tissues
+const schematicOf = (s, cell) => levelInfo(s.level).module === 'A' && s.view !== 'compare' && cell?.schematic ? tissues.cellModels.find(m => m.id === cell.id) : null;
+const modelOf = (s, cell) => tissueOf(s) ?? schematicOf(s, cell);
 let tview = null, tshown = null, tfailed = false;
 async function syncTissue(t, sel) {
   if (tfailed) return;
@@ -179,14 +182,15 @@ function render(s) {
     showInModel(s);
   }
   $('vp-mol').hidden = !showMol;
-  $('vp-tissue').hidden = !(T && tissueOf(s));
-  if (T && tissueOf(s)) syncTissue(tissueOf(s), s.selection);
+  const sm = modelOf(s, cell);
+  $('vp-tissue').hidden = !sm;
+  if (sm) syncTissue(sm, s.selection);
   $('vp-queue').hidden = compare;
   $('vp-compare').hidden = !compare;
   const show3d = A && !compare && !!cell?.fractions?.length;
   $('vp-cell').hidden = !show3d;
   if (show3d) sync3d(cell, s.selection);
-  document.querySelector('.schematic').hidden = compare || showMol || C || T;
+  document.querySelector('.schematic').hidden = compare || showMol || C || T || !!sm;
   if (showMol) {
     $('tour-bar').innerHTML = [{ id: '', label: { en: text('tour.whole') } }, ...points].map(p =>
       `<li><button data-tour="${esc(p.id)}" aria-pressed="${(p.id || null) === (s.tour || null) || (!p.id && !point)}">${p.id ? html(p.label) : html('tour.whole')}</button></li>`).join('');
@@ -205,13 +209,13 @@ function render(s) {
   }
 
   // Panel 1: volume fractions of the selected cell
-  $('chart-title').innerHTML = html(A ? 'panel.chart.a' : C ? 'panel.chart.c' : T ? 'panel.chart.t' : 'panel.chart.b');
-  const chart = A && cell ? renderChart(cell) : T && tissueOf(s) ? tissueParts(tissueOf(s), s.selection) : '';
+  $('chart-title').innerHTML = html(sm ? 'panel.chart.t' : A ? 'panel.chart.a' : C ? 'panel.chart.c' : T ? 'panel.chart.t' : 'panel.chart.b');
+  const chart = sm ? tissueParts(sm, s.selection) : A && cell ? renderChart(cell) : '';
   $('chart-body').innerHTML = chart || `<p class="muted">${html(C ? 'panel.chart.empty.c' : T ? 'panel.chart.empty.t' : !A ? 'panel.chart.empty.b' : compare ? 'chart.select' : 'panel.chart.empty')}</p>`;
 
   // Panel 2: selected object card
   const item = C || T ? null : A ? cell : pdb;
-  $('card-body').innerHTML = T && tissueOf(s) ? tissueCard(tissueOf(s), s.selection) : (A && cell && s.selection ? orgCard(cell, s.selection) : '') + (point ? tourCard(point) : '') +
+  $('card-body').innerHTML = sm ? tissueCard(sm, s.selection) : (A && cell && s.selection ? orgCard(cell, s.selection) : '') + (point ? tourCard(point) : '') +
     (item ? card(item, A ? 'cell' : 'pdb') : `<p class="muted">${html('panel.card.empty')}</p>`);
 
   // Panel 3: every source behind a number on screen
@@ -220,7 +224,7 @@ function render(s) {
   if (A && cell?.data) ids.add(cell.data);
   if (B && pdb?.cite) ids.add(pdb.cite);
   if (A && !compare && cell?.id === 'hepatocyte') ids.add('bnid-105782');
-  $('sources-body').innerHTML = T && tissueOf(s) ? `<li class="muted" style="list-style:none;margin-left:-1.4em">${html('tissue.source')}</li>` : ids.size
+  $('sources-body').innerHTML = sm ? `<li class="muted" style="list-style:none;margin-left:-1.4em">${html('tissue.source')}</li>` : ids.size
     ? [...ids].map(id => source(citations[id])).join('')
     : `<li class="muted" style="list-style:none;margin-left:-1.4em">${html('status.nodata')}</li>`;
 }

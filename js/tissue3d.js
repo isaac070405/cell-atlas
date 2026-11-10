@@ -168,6 +168,35 @@ export async function createTissueView(host, { onPick }) {
         ball([to.x, to.y, to.z], 0.13, gold, 'synapse');
       }
     },
+
+    // Bacterial cell (E. coli): capsule envelope, nucleoid, plasmids, ribosomes, pili and flagella. Adapted from the supplied procedural model.
+    ecoli() {
+      const r = rng(7), R = 2, L = 4;
+      const body = new THREE.CapsuleGeometry(R, L, 24, 48); body.rotateZ(Math.PI / 2);
+      put(body, '#4ade80', 'envelope', { opacity: 0.35 });
+      const cy = new THREE.CapsuleGeometry(R * 0.95, L * 0.95, 24, 48); cy.rotateZ(Math.PI / 2);
+      put(cy, '#22c55e', 'cytoplasm', { opacity: 0.14 });
+      const pts = [];
+      for (let i = 0; i < 300; i++) { const a = (i / 300) * Math.PI * 24; pts.push(V((i / 300 - 0.5) * 3.2, Math.sin(a) * 0.6 + (r() - 0.5) * 0.4, Math.cos(a * 1.3) * 0.6 + (r() - 0.5) * 0.4)); }
+      put(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts, true), 300, 0.05, 6, true), '#f87171', 'nucleoid');
+      for (let k = 0; k < 3; k++) {
+        const p = put(new THREE.TorusGeometry(0.3, 0.03, 8, 24), '#facc15', 'plasmid');
+        p.position.set((r() - 0.5) * 3.0, (r() - 0.5) * 1.2, (r() - 0.5) * 1.2); p.rotation.set(r() * Math.PI, r() * Math.PI, 0);
+      }
+      const ribo = new THREE.InstancedMesh(new THREE.SphereGeometry(0.06, 8, 6), new THREE.MeshStandardMaterial({ color: '#60a5fa', roughness: 0.5 }), 150), d = new THREE.Object3D();
+      for (let k = 0; k < 150; k++) { d.position.set((r() - 0.5) * 3.4, (r() - 0.5) * 1.5, (r() - 0.5) * 1.5); d.updateMatrix(); ribo.setMatrixAt(k, d.matrix); }
+      ribo.userData.part = 'ribosome'; ribo.userData.base = 1; group.add(ribo); meshes.push(ribo);
+      const pos = body.attributes.position, nor = body.attributes.normal, up = V(0, 1, 0), n = V(0, 0, 0);
+      for (let k = 0; k < 160; k++) {
+        const i = Math.floor(r() * pos.count); n.fromBufferAttribute(nor, i).normalize();
+        const g = new THREE.CylinderGeometry(0.02, 0.02, 0.5 * (0.8 + r() * 0.5), 5); g.translate(0, 0.25, 0);
+        const m = put(g, '#16a34a', 'pilus'); m.position.set(pos.getX(i), pos.getY(i), pos.getZ(i)); m.quaternion.setFromUnitVectors(up, n);
+      }
+      for (let f = 0; f < 4; f++) {
+        const fp = []; for (let k = 0; k <= 40; k++) { const s = k / 40; fp.push([-(R + L / 2) + 0.2 - s * 6, Math.sin(s * 14 + f * 1.6) * 0.22 * s, (f - 1.5) * 0.45 + Math.cos(s * 14 + f * 1.6) * 0.22 * s]); }
+        tube(fp, 0.06, '#15803d', 'flagellum');
+      }
+    },
   };
 
   function draw() { renderer.render(scene, camera); }

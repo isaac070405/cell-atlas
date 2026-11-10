@@ -401,5 +401,104 @@
     }
    ]
   }
+ ],
+ "cellModels": [
+  {
+   "id": "ecoli",
+   "name": {
+    "en": "Bacterial cell (E. coli)",
+    "zh-Hant": "細菌細胞（大腸桿菌）"
+   },
+   "summary": {
+    "en": "A rod-shaped bacterium with no nucleus and no membrane-bound organelles. Schematic: no measured volume fractions yet.",
+    "zh-Hant": "桿狀細菌，冇細胞核，亦冇膜包圍嘅細胞器。示意圖：暫時未有量度嘅體積比例。"
+   },
+   "parts": [
+    {
+     "id": "envelope",
+     "color": "#4ade80",
+     "name": {
+      "en": "Cell envelope",
+      "zh-Hant": "細胞包膜"
+     },
+     "text": {
+      "en": "Outer membrane, thin cell wall and inner membrane enclose the cell. Drawn as one translucent shell.",
+      "zh-Hant": "外膜、薄細胞壁同內膜包圍住細胞。圖中以一層半透明外殼表示。"
+     }
+    },
+    {
+     "id": "cytoplasm",
+     "color": "#22c55e",
+     "name": {
+      "en": "Cytoplasm",
+      "zh-Hant": "細胞質"
+     },
+     "text": {
+      "en": "Gel-like interior with no membrane-bound organelles. Metabolism and protein synthesis happen here.",
+      "zh-Hant": "膠狀內部，冇膜包圍嘅細胞器。代謝同蛋白質合成喺度進行。"
+     }
+    },
+    {
+     "id": "nucleoid",
+     "color": "#f87171",
+     "name": {
+      "en": "Nucleoid (chromosome)",
+      "zh-Hant": "擬核（染色體）"
+     },
+     "text": {
+      "en": "The circular chromosome, folded into a tangle in a region with no nuclear envelope.",
+      "zh-Hant": "環狀染色體，摺疊成一團，所在區域冇核膜。"
+     }
+    },
+    {
+     "id": "plasmid",
+     "color": "#facc15",
+     "name": {
+      "en": "Plasmids",
+      "zh-Hant": "質體"
+     },
+     "text": {
+      "en": "Small circular DNA rings separate from the chromosome. They often carry genes such as antibiotic resistance.",
+      "zh-Hant": "同染色體分開嘅小型環狀 DNA，常帶有例如抗生素抗藥性嘅基因。"
+     }
+    },
+    {
+     "id": "ribosome",
+     "color": "#60a5fa",
+     "name": {
+      "en": "Ribosomes",
+      "zh-Hant": "核糖體"
+     },
+     "text": {
+      "en": "Make proteins. Smaller than eukaryotic ribosomes, so some antibiotics block them without harming the host's own.",
+      "zh-Hant": "製造蛋白質。比真核生物嘅核糖體細，所以部分抗生素可阻斷佢哋而唔傷害宿主自己嘅核糖體。"
+     }
+    },
+    {
+     "id": "pilus",
+     "color": "#16a34a",
+     "name": {
+      "en": "Pili (fimbriae)",
+      "zh-Hant": "菌毛"
+     },
+     "text": {
+      "en": "Short surface hairs that attach the cell to surfaces and to other cells.",
+      "zh-Hant": "表面短毛，令細胞附著於表面或其他細胞。"
+     }
+    },
+    {
+     "id": "flagellum",
+     "color": "#15803d",
+     "name": {
+      "en": "Flagella",
+      "zh-Hant": "鞭毛"
+     },
+     "text": {
+      "en": "Long helical filaments turned by a motor in the envelope. They push the cell through liquid.",
+      "zh-Hant": "長螺旋絲，由包膜上嘅馬達帶動旋轉，推動細胞喺液體中游動。"
+     }
+    }
+   ]
+  }
  ]
 }
