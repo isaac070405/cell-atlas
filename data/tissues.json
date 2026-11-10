@@ -499,6 +499,115 @@
      }
     }
    ]
+  },
+  {
+   "id": "bacteriophage",
+   "name": {
+    "en": "Bacteriophage (T4)",
+    "zh-Hant": "噬菌體（T4）"
+   },
+   "summary": {
+    "en": "A virus that infects bacteria. It is not a cell: it has no cytoplasm and cannot grow or divide on its own. Schematic with no data table.",
+    "zh-Hant": "感染細菌嘅病毒。佢唔係細胞：冇細胞質，亦唔能獨立生長或分裂。示意圖，冇數據表。"
+   },
+   "parts": [
+    {
+     "id": "head",
+     "color": "#06b6d4",
+     "name": {
+      "en": "Head (capsid)",
+      "zh-Hant": "頭部（衣殼）"
+     },
+     "text": {
+      "en": "Icosahedral protein shell that protects the genome.",
+      "zh-Hant": "二十面體蛋白質外殼，保護基因組。"
+     }
+    },
+    {
+     "id": "dna",
+     "color": "#ef4444",
+     "name": {
+      "en": "Genome (DNA)",
+      "zh-Hant": "基因組（DNA）"
+     },
+     "text": {
+      "en": "Double-stranded DNA packed tightly inside the head. It is injected into the host bacterium during infection.",
+      "zh-Hant": "緊密包裝於頭部內嘅雙鏈 DNA，感染時注入宿主細菌。"
+     }
+    },
+    {
+     "id": "collar",
+     "color": "#38bdf8",
+     "name": {
+      "en": "Collar",
+      "zh-Hant": "頸環"
+     },
+     "text": {
+      "en": "Joins the head to the tail.",
+      "zh-Hant": "連接頭部同尾部。"
+     }
+    },
+    {
+     "id": "sheath",
+     "color": "#64748b",
+     "name": {
+      "en": "Contractile sheath",
+      "zh-Hant": "收縮鞘"
+     },
+     "text": {
+      "en": "Protein sleeve around the tail tube. It contracts to drive the tube through the host's envelope.",
+      "zh-Hant": "包住尾管嘅蛋白質套筒，收縮時將尾管推穿宿主嘅包膜。"
+     }
+    },
+    {
+     "id": "tube",
+     "color": "#94a3b8",
+     "name": {
+      "en": "Tail tube",
+      "zh-Hant": "尾管"
+     },
+     "text": {
+      "en": "Hollow core through which the DNA passes into the host.",
+      "zh-Hant": "中空嘅核心管道，DNA 經此進入宿主。"
+     }
+    },
+    {
+     "id": "baseplate",
+     "color": "#22d3ee",
+     "name": {
+      "en": "Baseplate",
+      "zh-Hant": "基板"
+     },
+     "text": {
+      "en": "Hexagonal plate at the tail tip. It binds the host surface and triggers sheath contraction.",
+      "zh-Hant": "尾端嘅六角形板，結合宿主表面並觸發鞘收縮。"
+     }
+    },
+    {
+     "id": "spike",
+     "color": "#475569",
+     "name": {
+      "en": "Receptor-binding spikes",
+      "zh-Hant": "受體結合刺突"
+     },
+     "text": {
+      "en": "Short pins under the baseplate that anchor the phage to the host.",
+      "zh-Hant": "基板下方嘅短刺，將噬菌體固定於宿主。"
+     }
+    },
+    {
+     "id": "fiber",
+     "color": "#0891b2",
+     "name": {
+      "en": "Long tail fibres",
+      "zh-Hant": "長尾絲"
+     },
+     "text": {
+      "en": "Jointed fibres that recognise receptors on the host surface and hold the phage in place.",
+      "zh-Hant": "有關節嘅纖維，識別宿主表面嘅受體並將噬菌體固定。"
+     }
+    }
+   ]
   }
  ]
 }

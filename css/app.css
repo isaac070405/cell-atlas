@@ -221,4 +221,4 @@ body.level-c .queue:empty { display: none; }
 /* Cell kind marks: animal red, plant green, bacterial purple (selected cell button and the Cell band on the ruler) */
 .queue button[data-kind="cell"][aria-pressed="true"] { border-color: var(--k); box-shadow: inset 3px 0 0 var(--k); }
 html[data-kind] #ruler-svg .band[data-level="cell"].on { fill: var(--k-now); }
-html[data-kind="animal"] { --k-now: var(--kind-animal); } html[data-kind="plant"] { --k-now: var(--kind-plant); } html[data-kind="bacterial"] { --k-now: var(--kind-bacterial); }
+html[data-kind="animal"] { --k-now: var(--kind-animal); } html[data-kind="plant"] { --k-now: var(--kind-plant); } html[data-kind="bacterial"] { --k-now: var(--kind-bacterial); } html[data-kind="virus"] { --k-now: var(--kind-virus); }

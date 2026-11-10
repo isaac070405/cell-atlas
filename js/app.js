@@ -187,7 +187,7 @@ function render(s) {
   if (sm) syncTissue(sm, s.selection);
   $('vp-queue').hidden = compare;
   $('vp-compare').hidden = !compare;
-  const show3d = A && !compare && !!cell?.fractions?.length;
+  const show3d = A && !compare && !cell?.schematic && !!cell?.fractions?.length;
   $('vp-cell').hidden = !show3d;
   if (show3d) sync3d(cell, s.selection);
   document.querySelector('.schematic').hidden = compare || showMol || C || T || !!sm;
@@ -309,6 +309,7 @@ function card(item, kind) {
   if (kind === 'pdb') rows = `<dt>${html('card.method')}</dt><dd>${esc(item.method)}</dd>`;
   else if (item.size) rows = `<dt>${html('card.size')}</dt><dd>${html(item.size)}</dd>`;
   else if (item.sizeUm) rows = `<dt>${html('card.size')}</dt><dd>${item.sizeUm[0]}–${item.sizeUm[1]} µm</dd>`;
+  if (kind === 'cell' && item.kind) rows += `<dt>${html('card.kind')}</dt><dd>${html('kind.' + item.kind)}</dd>`;
   if (kind === 'cell' && item.species) rows += `<dt>${html('card.species')}</dt><dd>${html(item.species)}</dd>`;
   const status = kind === 'cell' && !item.data ? `<p class="muted" style="margin-top:8px">${html('status.nodata')}</p>` : '';
   const linkBlock = out.length || inc.length

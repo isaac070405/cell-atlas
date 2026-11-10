@@ -401,6 +401,19 @@
       "year": 2013,
       "url": "https://doi.org/10.1093/hesc/9780199697328.003.0007",
       "status": "verified"
+    },
+    "stock-1977": {
+      "source": "Stock, Rauch & Roseman (1977) J Biol Chem 252:7850–7861",
+      "detail": {
+        "en": "Periplasmic space measured at 20 to 40% of total cell volume in E. coli and Salmonella typhimurium grown under routine conditions (abstract)",
+        "zh-Hant": "常規培養條件下，大腸桿菌同鼠傷寒沙門氏菌嘅周質空間佔細胞總體積 20 至 40%（摘要）"
+      },
+      "species": "E. coli and Salmonella typhimurium",
+      "cellType": "Bacterial cell",
+      "method": "Periplasmic space volume measurement",
+      "year": 1977,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/334768/",
+      "status": "verified"
     }
   }
 }

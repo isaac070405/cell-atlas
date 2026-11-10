@@ -197,6 +197,29 @@ export async function createTissueView(host, { onPick }) {
         tube(fp, 0.06, '#15803d', 'flagellum');
       }
     },
+
+    // T4-type bacteriophage: icosahedral head with DNA, collar, contractile sheath on a tube, baseplate, spikes and six jointed tail fibres.
+    // Adapted from the supplied model (static pose, original proportions).
+    bacteriophage() {
+      const H = put(new THREE.IcosahedronGeometry(1.6, 0), '#06b6d4', 'head', { opacity: 0.5, flatShading: true, metalness: 0.4, roughness: 0.2 });
+      H.scale.set(1, 1.5, 1); H.position.y = 4.0;
+      const D = put(new THREE.TorusKnotGeometry(0.7, 0.25, 120, 16, 3, 4), '#ef4444', 'dna', { wireframe: true }); D.scale.set(1, 1.2, 1); D.position.y = 4.0;
+      const col = put(new THREE.CylinderGeometry(0.4, 0.5, 0.2, 6), '#38bdf8', 'collar', { flatShading: true }); col.position.y = 1.7;
+      put(new THREE.CylinderGeometry(0.12, 0.12, 2.4, 8), '#94a3b8', 'tube').position.y = 1.6;
+      for (let k = 0; k < 12; k++) put(new THREE.CylinderGeometry(0.35, 0.35, 0.18, 6), '#64748b', 'sheath', { metalness: 0.5 }).position.y = 1.6 - 1.1 + k * 0.2;
+      const bp = put(new THREE.CylinderGeometry(0.6, 0.7, 0.25, 6), '#22d3ee', 'baseplate', { flatShading: true }); bp.position.y = 0.3;
+      for (let k = 0; k < 6; k++) {
+        const a = (k / 6) * Math.PI * 2;
+        const sp = put(new THREE.ConeGeometry(0.06, 0.3, 4), '#475569', 'spike'); sp.position.set(Math.cos(a) * 0.55, 0.1, Math.sin(a) * 0.55); sp.rotation.x = Math.PI;
+        const anchor = new THREE.Group(); anchor.position.set(Math.cos(a) * 0.5, 0.3, Math.sin(a) * 0.5); anchor.rotation.y = -a; group.add(anchor);
+        const upper = new THREE.Group(); upper.rotation.z = -Math.PI / 4; anchor.add(upper);
+        const ug = new THREE.CylinderGeometry(0.06, 0.04, 1.8, 4); ug.translate(0, -0.9, 0);
+        upper.add(put(ug, '#0891b2', 'fiber', { flatShading: true }));
+        const lower = new THREE.Group(); lower.position.set(0, -1.8, 0); lower.rotation.z = Math.PI / 2.2; upper.add(lower);
+        const lg = new THREE.CylinderGeometry(0.03, 0.015, 2.2, 4); lg.translate(0, -1.1, 0);
+        lower.add(put(lg, '#0891b2', 'fiber'));
+      }
+    },
   };
 
   function draw() { renderer.render(scene, camera); }
@@ -212,7 +235,11 @@ export async function createTissueView(host, { onPick }) {
     BUILD[id]();
     const box = new THREE.Box3().setFromObject(group), c = box.getCenter(V(0, 0, 0)), reach = box.getSize(V(0, 0, 0)).length() / 2;
     controls.target.copy(c);
-    camera.position.copy(c).add(V(reach * 0.8, reach * 0.65, reach * 1.75));
+    // distance that fits the model's height and width in the view, so tall models (the phage) are not cropped
+    resize();
+    const sz = box.getSize(V(0, 0, 0)), t = Math.tan(camera.fov * Math.PI / 360);
+    const d = Math.max(sz.y / (2 * t), sz.x / (2 * t * camera.aspect)) * 1.3 + sz.z / 2;
+    camera.position.copy(c).add(V(0.35, 0.28, 1).normalize().multiplyScalar(d));
     controls.minDistance = reach * 0.6; controls.maxDistance = reach * 6;
     controls.update(); renderer.domElement.setAttribute('aria-label', `${id} tissue, schematic`);
     resize();
