@@ -45,6 +45,10 @@ node scripts/check-data.mjs
 - Keep controls keyboard reachable and labelled (see `ACCESSIBILITY.md`).
 - Libraries in `vendor/` and `anatomy/vendor/` are self-hosted builds. Update them by replacing the whole build and noting the version in the README.
 
+## Issues
+
+Use the issue forms for a bug, a data or citation error, or a feature request. Report vulnerabilities through `SECURITY.md`.
+
 ## Pull requests
 
 1. Branch from `main` and keep one topic per pull request.

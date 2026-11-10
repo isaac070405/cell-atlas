@@ -1,0 +1,20 @@
+name: Feature or data request
+description: Suggest a new cell, structure, view or improvement
+labels: [enhancement]
+body:
+  - type: textarea
+    id: want
+    attributes:
+      label: What you would like
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it helps
+      description: For a new cell or structure, name the course or topic it supports.
+  - type: textarea
+    id: sources
+    attributes:
+      label: Possible sources
+      description: Papers, PDB or EMDB IDs, or datasets.
