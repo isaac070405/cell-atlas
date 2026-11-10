@@ -124,13 +124,6 @@ function init() {
     if (touched) { Object.entries(touched).forEach(([k, v]) => { G[k].visible = v; const cb = document.querySelector(`#systems [data-k="${k}"] input`); if (cb) cb.checked = v; }); touched = null; }
   };
   sync();
-  // Start layer: ?layer=N in the URL, or a {type:'layer', value:N} message from the embedding page (same origin only)
-  const setLayer = n => { n = Math.max(0, Math.min(LAYERS.length - 1, Math.round(+n) || 0)); slider.value = n; slider.dispatchEvent(new Event('input')); };
-  window.__setLayer = setLayer;
-  const q = /[?&]layer=(\d+)/.exec(location.search); if (q) setLayer(q[1]);
-  window.removeEventListener('message', window.__layerMsg);
-  window.__layerMsg = e => { if (e.origin === location.origin && e.data && e.data.type === 'layer') setLayer(e.data.value); };
-  window.addEventListener('message', window.__layerMsg);
   window.__layers = { LAYERS, meshes, layerOf, counts: () => meshes.map(m => m.length) };
   if (/[?&]view=layers/.test(location.search)) { const s = $('layerssec'); s.scrollIntoView(); s.classList.add('hl'); }
 }

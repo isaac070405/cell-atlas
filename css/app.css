@@ -204,9 +204,11 @@ button.chip { background: none; cursor: pointer; }
 .tour .tour-group { flex-basis: 100%; font: 11.5px/1 var(--font-label); color: var(--ink-soft); margin-top: var(--s1); }
 
 /* 3D Anatomy Model (system, organ, tissue levels) */
-.anatomy-frame { display: block; width: 100%; height: calc(100vh - 200px); min-height: 640px; border: 0; background: var(--paper); }
+.anatomy-frame { display: block; width: 100%; height: calc(100vh - 260px); min-height: 600px; border: 0; background: var(--paper); }
 /* System, organ and tissue levels: the model fills the stage and carries its own docked panels */
 body.level-c .panels, body.level-c .viewport-head { display: none; }
 body.level-c .viewport { padding: 0; }
 body.level-c .viewport-frame { padding: 0; border: 0; background: none; gap: 0; }
+body.level-c .queue { padding: var(--s3) var(--s5); border-bottom: 1px solid var(--rule); }
+body.level-c .queue:empty { display: none; }
 .anatomy-frame[hidden] { display: none; }

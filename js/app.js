@@ -6,8 +6,8 @@ import { buildModel, crowded } from './cellmodel.js';
 import { showStructure } from './molview.js';
 
 const load = p => fetch(p).then(r => r.json());
-const [catalog, { citations }, links, tours] = await Promise.all([
-  load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'),
+const [catalog, { citations }, links, tours, anatomy] = await Promise.all([
+  load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'), load('data/anatomy.json'),
 ]);
 const $ = id => document.getElementById(id);
 initCompare(catalog);
@@ -40,6 +40,7 @@ $('tour-bar').addEventListener('click', e => {
 $('vp-queue').addEventListener('click', e => {
   const b = e.target.closest('button[data-kind]');
   if (!b) return;
+  if (b.dataset.kind === 'part') return setState({ anat: getState().anat === b.dataset.id ? null : b.dataset.id });
   setState(b.dataset.kind === 'cell' ? { cell: b.dataset.id, pdb: null } : { pdb: b.dataset.id });
 });
 $('vp-switch').addEventListener('click', e => {
@@ -95,8 +96,23 @@ async function sync3d(cell, selection) {
   }
 }
 
-// Layer numbers follow anatomy/layers.js: 0 skin, 9 anterior organs, 11 deep nerves and vessels
-const ANATOMY_LAYER = { system: 0, organ: 9, tissue: 11 };
+// System and organ levels: the picker sets s.anat; the model shows only that system or organ.
+// Tissue has no classification yet, so it shows the whole body.
+const partsFor = level => level === 'system' ? anatomy.systems : level === 'organ' ? anatomy.organs : [];
+let modelReady = false, lastShow = null;
+addEventListener('message', e => {
+  if (e.origin === location.origin && e.data?.type === 'embed-ready') { modelReady = true; if (lastShow) $('vp-anatomy').contentWindow.postMessage(lastShow, location.origin); }
+});
+$('vp-anatomy').addEventListener('load', () => { modelReady = false; });
+function showInModel(s) {
+  const part = partsFor(s.level).find(p => p.id === s.anat);
+  const msg = !part ? { type: 'show', systems: null, match: null }
+    : s.level === 'system' ? { type: 'show', systems: [part.key], match: null }
+    : { type: 'show', systems: [part.key], match: part.match };
+  if (JSON.stringify(msg) === JSON.stringify(lastShow)) return;
+  lastShow = msg;
+  if (modelReady) $('vp-anatomy').contentWindow.postMessage(msg, location.origin);
+}
 
 function render(s) {
   applyStatic();
@@ -112,7 +128,7 @@ function render(s) {
 
   $('ro-cell').innerHTML = cell ? html(cell.name) : '–';
   $('ro-scale').textContent = lv.unit;
-  $('ro-view').innerHTML = C ? html('hud.anatomy') : !A && pdb ? `PDB ${esc(pdb.id)}` : compare ? html('view.compare') : cell && A ? html(cell.name) : html('hud.nothing');
+  $('ro-view').innerHTML = C ? (partsFor(s.level).find(p => p.id === s.anat) ? html(partsFor(s.level).find(p => p.id === s.anat).name) : html('hud.anatomy')) : !A && pdb ? `PDB ${esc(pdb.id)}` : compare ? html('view.compare') : cell && A ? html(cell.name) : html('hud.nothing');
 
   // Viewport: queue or comparison for module A, queue for module B
   $('vp-title').innerHTML = html(compare ? 'compare.title' : A ? 'moduleA.title' : C ? 'moduleC.title' : 'moduleB.title');
@@ -126,14 +142,11 @@ function render(s) {
   const fr = $('vp-anatomy');
   fr.hidden = !C;
   if (C) {
-    // each level opens the model at its own depth: whole body, organs, deep tissues
-    const layer = ANATOMY_LAYER[s.level];
-    if (!fr.getAttribute('src')) fr.src = `anatomy/index.html?layer=${layer}`;
-    else if (fr.dataset.layer !== String(layer)) fr.contentWindow?.postMessage({ type: 'layer', value: layer }, location.origin);
-    fr.dataset.layer = layer;
+    if (!fr.getAttribute('src')) fr.src = 'anatomy/index.html';
+    showInModel(s);
   }
   $('vp-mol').hidden = !showMol;
-  $('vp-queue').hidden = compare || C;
+  $('vp-queue').hidden = compare;
   $('vp-compare').hidden = !compare;
   const show3d = A && !compare && !!cell?.fractions?.length;
   $('vp-cell').hidden = !show3d;
@@ -148,7 +161,7 @@ function render(s) {
     $('vp-compare').innerHTML = renderCompare(s);
   } else {
     $('vp-empty').innerHTML = html(A ? 'moduleA.empty' : C ? 'moduleC.empty' : 'moduleB.empty');
-    $('vp-queue').innerHTML = C ? '' : (A ? catalog.cells : catalog.structures).map(item => {
+    $('vp-queue').innerHTML = C ? partsFor(s.level).map(p => `<li><button data-kind="part" data-id="${p.id}" aria-pressed="${p.id === s.anat}"><span>${html(p.name)}</span></button></li>`).join('') : (A ? catalog.cells : catalog.structures).map(item => {
       const kind = A ? 'cell' : 'pdb';
       const on = A ? item.id === s.cell : item.id === s.pdb;
       return `<li><button data-kind="${kind}" data-id="${item.id}" aria-pressed="${on}">

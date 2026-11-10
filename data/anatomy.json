@@ -1,0 +1,218 @@
+{
+ "_note": "Classification for the 3D Anatomy Model levels. key is the model's system key; match is a list of regular expressions tested against part labels in the model.",
+ "systems": [
+  {
+   "id": "cardiovascular",
+   "key": "circulatory",
+   "name": {
+    "en": "Cardiovascular System",
+    "zh-Hant": "心血管系統"
+   }
+  },
+  {
+   "id": "respiratory",
+   "key": "respiratory",
+   "name": {
+    "en": "Respiratory System",
+    "zh-Hant": "呼吸系統"
+   }
+  },
+  {
+   "id": "digestive",
+   "key": "digestive",
+   "name": {
+    "en": "Digestive System",
+    "zh-Hant": "消化系統"
+   }
+  },
+  {
+   "id": "urinary",
+   "key": "urinary",
+   "name": {
+    "en": "Urinary System",
+    "zh-Hant": "泌尿系統"
+   }
+  },
+  {
+   "id": "reproductive",
+   "key": "reproductive",
+   "name": {
+    "en": "Reproductive System",
+    "zh-Hant": "生殖系統"
+   }
+  },
+  {
+   "id": "nervous",
+   "key": "nervous",
+   "name": {
+    "en": "Nervous System",
+    "zh-Hant": "神經系統"
+   }
+  },
+  {
+   "id": "skeletal",
+   "key": "skeletal",
+   "name": {
+    "en": "Skeletal System",
+    "zh-Hant": "骨骼系統"
+   }
+  },
+  {
+   "id": "muscular",
+   "key": "muscular",
+   "name": {
+    "en": "Muscular System",
+    "zh-Hant": "肌肉系統"
+   }
+  },
+  {
+   "id": "lymphatic",
+   "key": "lymphatic",
+   "name": {
+    "en": "Lymphatic System",
+    "zh-Hant": "淋巴系統"
+   }
+  },
+  {
+   "id": "endocrine",
+   "key": "endocrine",
+   "name": {
+    "en": "Endocrine System",
+    "zh-Hant": "內分泌系統"
+   }
+  },
+  {
+   "id": "sensory",
+   "key": "senses",
+   "name": {
+    "en": "Sensory Organs (eye and ear)",
+    "zh-Hant": "感覺器官（眼與耳）"
+   }
+  },
+  {
+   "id": "integumentary",
+   "key": "skin",
+   "name": {
+    "en": "Integumentary System",
+    "zh-Hant": "皮膚系統"
+   }
+  }
+ ],
+ "organs": [
+  {
+   "id": "lung",
+   "system": "respiratory",
+   "key": "respiratory",
+   "name": {
+    "en": "Lung",
+    "zh-Hant": "肺"
+   },
+   "match": [
+    "^(Right|Left) (superior|inferior|middle) lobe",
+    "^Lingula",
+    "segmental bronchi",
+    "^Alveoli",
+    "^Pleura"
+   ]
+  },
+  {
+   "id": "trachea",
+   "system": "respiratory",
+   "key": "respiratory",
+   "name": {
+    "en": "Trachea",
+    "zh-Hant": "氣管"
+   },
+   "match": [
+    "^Trachea",
+    "^Tracheal cartilage",
+    "^Trachealis",
+    "^Carina"
+   ]
+  },
+  {
+   "id": "large-intestine",
+   "system": "digestive",
+   "key": "digestive",
+   "name": {
+    "en": "Large Intestine",
+    "zh-Hant": "大腸"
+   },
+   "match": [
+    "^(Cecum|Vermiform appendix|Ascending colon|Transverse colon|Descending colon|Sigmoid colon|Rectum|Rectal mucosa|Transverse rectal fold|Anal canal|Anal columns|Pectinate|Anal pecten|Anocutaneous|Anal verge|Internal anal sphincter|External anal sphincter|Taenia|Omental appendices|Ileocecal valve)"
+   ]
+  },
+  {
+   "id": "pancreas",
+   "system": "digestive",
+   "key": "digestive",
+   "name": {
+    "en": "Pancreas",
+    "zh-Hant": "胰臟"
+   },
+   "match": [
+    "^(Pancreas|Uncinate process|Pancreatic duct|Accessory pancreatic duct)"
+   ]
+  },
+  {
+   "id": "liver",
+   "system": "digestive",
+   "key": "digestive",
+   "name": {
+    "en": "Liver",
+    "zh-Hant": "肝臟"
+   },
+   "match": [
+    "^Liver"
+   ]
+  },
+  {
+   "id": "heart",
+   "system": "cardiovascular",
+   "key": "circulatory",
+   "name": {
+    "en": "Heart",
+    "zh-Hant": "心臟"
+   },
+   "match": [
+    "^(Left|Right) (ventricle|atrium|auricle)",
+    "^Interventricular",
+    "^Interatrial",
+    "^Fossa ovalis",
+    "^Conus arteriosus",
+    "^Aortic vestibule",
+    "^Trabeculae carneae",
+    "^Crista terminalis",
+    "^Musculi pectinati",
+    "^(Tricuspid|Mitral|Aortic|Pulmonary) valve",
+    "papillary muscle",
+    "^Chordae tendineae",
+    "^Left anterior descending",
+    "^Left coronary",
+    "^Circumflex artery",
+    "^Right coronary",
+    "^(Great|Middle) cardiac vein",
+    "^Coronary sinus",
+    "^Epicardial fat",
+    "^Sinoatrial",
+    "^Internodal",
+    "^Atrioventricular",
+    "^(Right|Left) bundle branch",
+    "^Purkinje",
+    "^Fibrous pericardium"
+   ]
+  },
+  {
+   "id": "superior-vena-cava",
+   "system": "cardiovascular",
+   "key": "circulatory",
+   "name": {
+    "en": "Superior Vena Cava",
+    "zh-Hant": "上腔靜脈"
+   },
+   "match": [
+    "^Superior vena cava"
+   ]
+  }
+ ]
+}
