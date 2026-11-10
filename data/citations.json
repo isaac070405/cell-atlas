@@ -116,6 +116,45 @@
       "year": 1994,
       "url": "https://link.springer.com/article/10.1007/BF02411558",
       "status": "verified"
+    },
+    "gear-1972": {
+      "source": "Gear & Bednarek (1972) J Cell Biol 54:325–345",
+      "detail": {
+        "en": "Mean volume of rat liver mitochondria 0.42 µm³, equivalent diameter 0.93 µm",
+        "zh-Hant": "大鼠肝臟粒線體平均體積 0.42 µm³，等效直徑 0.93 µm"
+      },
+      "species": "Rat",
+      "cellType": "Hepatocyte (isolated liver mitochondria)",
+      "method": "Resistive particle counting; agrees within 15% with EM of whole tissue",
+      "year": 1972,
+      "url": "https://doi.org/10.1083/JCB.54.2.325",
+      "status": "verified"
+    },
+    "wiener-1968": {
+      "source": "Wiener, Loud, Kimberg & Spiro (1968) J Cell Biol 37:47–61",
+      "detail": {
+        "en": "Average nuclear diameter of rat hepatic parenchymal cells 7.1 µm (saline controls)",
+        "zh-Hant": "大鼠肝實質細胞平均核直徑 7.1 µm（生理食鹽水對照組）"
+      },
+      "species": "Rat",
+      "cellType": "Hepatocyte",
+      "method": "Stereology (light and electron microscopy)",
+      "year": 1968,
+      "url": "https://doi.org/10.1083/JCB.37.1.47",
+      "status": "verified"
+    },
+    "knoblauch-2023": {
+      "source": "Knoblauch, Waadt, Cousins & Kunz (2023) Plant J",
+      "detail": {
+        "en": "Mature Col-0 mesophyll chloroplast about 93 µm³ in situ",
+        "zh-Hant": "野生型 Col-0 成熟葉肉葉綠體原位體積約 93 µm³"
+      },
+      "species": "Arabidopsis thaliana",
+      "cellType": "Leaf mesophyll cell",
+      "method": "Confocal microscopy and serial block-face SEM",
+      "year": 2023,
+      "url": "https://doi.org/10.1111/tpj.16554",
+      "status": "verified"
     }
   }
 }

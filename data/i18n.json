@@ -253,6 +253,10 @@
       "en": "Picked compartment",
       "zh-Hant": "已選區室"
     },
+    "card.sizeref": {
+      "en": "Reported size",
+      "zh-Hant": "文獻報告大小"
+    },
     "card.volume": {
       "en": "Share of cell volume",
       "zh-Hant": "佔細胞體積"
