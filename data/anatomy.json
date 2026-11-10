@@ -1,6 +1,14 @@
 {
- "_note": "Classification for the 3D Anatomy Model levels. key is the model's system key; match is a list of regular expressions tested against part labels in the model.",
+ "_note": "Classification for the 3D Anatomy Model levels. keys is the model's system keys (null shows the whole body with every panel); match is a list of regular expressions tested against part labels.",
  "systems": [
+  {
+   "id": "body",
+   "keys": null,
+   "name": {
+    "en": "Body",
+    "zh-Hant": "全身"
+   }
+  },
   {
    "id": "cardiovascular",
    "keys": [
@@ -35,6 +43,14 @@
  ],
  "organs": [
   {
+   "id": "body",
+   "keys": null,
+   "name": {
+    "en": "Body",
+    "zh-Hant": "全身"
+   }
+  },
+  {
    "id": "heart",
    "name": {
     "en": "Heart",
@@ -42,33 +58,24 @@
    },
    "match": [
     "^(Left|Right) (ventricle|atrium|auricle)",
-    "^Interventricular",
-    "^Interatrial",
-    "^Fossa ovalis",
-    "^Conus arteriosus",
-    "^Aortic vestibule",
-    "^Trabeculae carneae",
-    "^Crista terminalis",
-    "^Musculi pectinati",
+    "^Interventricular septum",
+    "^Interatrial septum",
     "^(Tricuspid|Mitral|Aortic|Pulmonary) valve",
-    "papillary muscle",
-    "^Chordae tendineae",
-    "^Left anterior descending",
-    "^Left coronary",
-    "^Circumflex artery",
-    "^Right coronary",
-    "^(Great|Middle) cardiac vein",
-    "^Coronary sinus",
-    "^Epicardial fat",
+    "^(Ascending aorta|Aortic arch|Pulmonary trunk|Superior vena cava|Inferior vena cava|Superior pulmonary vein|Inferior pulmonary vein)",
     "^Sinoatrial",
     "^Internodal",
-    "^Atrioventricular",
+    "^Atrioventricular \\(AV\\) node",
+    "^Atrioventricular bundle",
     "^(Right|Left) bundle branch",
+    "^Left posterior fascicle",
     "^Purkinje",
-    "^Fibrous pericardium"
+    "^Bachmann"
    ],
    "keys": [
     "circulatory"
+   ],
+   "frame": [
+    "^(Left|Right) (ventricle|atrium)"
    ]
   },
   {

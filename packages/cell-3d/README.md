@@ -31,6 +31,9 @@ const view = await createCellView(document.getElementById('host'), {
 });
 view.show(buildModel(cell), { nucleus: '#4C6EF5', mito: '#E8590C' }); // org id to colour
 view.setClip(40); // 0 = whole cell, 100 = cut through
+view.attachSlice(document.getElementById('slice')); // cross-section map in a canvas, follows setClip
+view.setClip(40, false); // move the cross-section without cutting the 3D cell
+view.legend(); // [{ org, color }] for the compartments in the model
 ```
 
 `buildModel` is pure maths and runs in Node. A `cell` is `{ id, fractions: [{ org, value }] }` where `value` is a percent or a `[lo, hi]` range.

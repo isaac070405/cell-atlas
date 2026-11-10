@@ -305,9 +305,25 @@
       "en": "% of whole-cell volume",
       "zh-Hant": "佔整個細胞體積 %"
     },
+    "cell3d.xsec": {
+      "en": "Cross-section",
+      "zh-Hant": "橫切面"
+    },
+    "cell3d.xsec.end1": {
+      "en": "One end",
+      "zh-Hant": "一端"
+    },
+    "cell3d.xsec.end2": {
+      "en": "Other end",
+      "zh-Hant": "另一端"
+    },
+    "cell3d.xsec.cut3d": {
+      "en": "Cut the 3D cell open",
+      "zh-Hant": "喺 3D 細胞切開"
+    },
     "cell3d.cut": {
-      "en": "Cutting plane",
-      "zh-Hant": "切面"
+      "en": "Cross-section position",
+      "zh-Hant": "橫切面位置"
     },
     "cell3d.reset": {
       "en": "Reset view",

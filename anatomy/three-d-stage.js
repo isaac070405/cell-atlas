@@ -69,6 +69,7 @@
       gap: 8px;
       font-family: var(--font-label, ui-monospace, monospace);
     }
+    :host(.focus) .toolbar, :host(.focus) .note { display: none; }
     .toolbar button {
       appearance: none;
       border: 1px solid var(--rule, rgba(20, 20, 19, 0.18));
