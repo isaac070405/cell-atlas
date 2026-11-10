@@ -58,8 +58,8 @@
       "zh-Hant": "模組 B：分子結構"
     },
     "moduleB.empty": {
-      "en": "The Mol* viewer arrives in roadmap stage 4. Two first-release structures are queued below.",
-      "zh-Hant": "Mol* 檢視器會喺路線圖第 4 階段加入。下面列出第一版嘅兩個結構。"
+      "en": "Pick a structure to open it in Mol*. Preset views jump to the cofactors and sites read from the deposited coordinates.",
+      "zh-Hant": "選擇結構即可用 Mol* 開啟。預設視角會跳到由已存檔座標讀出嘅輔因子同位點。"
     },
     "panel.chart.a": {
       "en": "Volume fractions",
@@ -276,6 +276,46 @@
     "card.noorg": {
       "en": "Not reported for this cell",
       "zh-Hant": "此細胞未有報告"
+    },
+    "tour.label": {
+      "en": "Preset views",
+      "zh-Hant": "預設視角"
+    },
+    "tour.whole": {
+      "en": "Whole structure",
+      "zh-Hant": "整個結構"
+    },
+    "mol.loading": {
+      "en": "Streaming the structure from RCSB PDB…",
+      "zh-Hant": "正在由 RCSB PDB 載入結構……"
+    },
+    "mol.failed": {
+      "en": "The structure could not be loaded. Mol* needs WebGL 2 and a connection to models.rcsb.org.",
+      "zh-Hant": "結構載入失敗。Mol* 需要 WebGL 2，並要連線至 models.rcsb.org。"
+    },
+    "card.tour": {
+      "en": "Preset view",
+      "zh-Hant": "預設視角"
+    },
+    "card.tour.subunit": {
+      "en": "Subunit",
+      "zh-Hant": "亞基"
+    },
+    "card.tour.chain": {
+      "en": "Chain (label)",
+      "zh-Hant": "鏈（label）"
+    },
+    "card.tour.pos": {
+      "en": "Position (Å)",
+      "zh-Hant": "位置（Å）"
+    },
+    "card.tour.basis.computed": {
+      "en": "Read from the deposited coordinates",
+      "zh-Hant": "由已存檔座標讀出"
+    },
+    "card.tour.names": {
+      "en": "Cluster names follow standard Complex I nomenclature; Guo et al. 2017 does not name them.",
+      "zh-Hant": "簇嘅名稱依 Complex I 標準命名；Guo et al. 2017 並無逐一命名。"
     }
   }
 }

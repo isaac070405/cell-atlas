@@ -3,10 +3,11 @@ import { loadStrings, setLang, getLang, applyStatic, html, text, esc } from './i
 import { buildRuler, renderRuler } from './ruler.js';
 import { initCompare, renderCompare, renderChart, columnCells, resolve, valueText, comp } from './compare.js';
 import { buildModel, crowded } from './cellmodel.js';
+import { showStructure } from './molview.js';
 
 const load = p => fetch(p).then(r => r.json());
-const [catalog, { citations }, links] = await Promise.all([
-  load('data/catalog.json'), load('data/citations.json'), load('data/links.json'),
+const [catalog, { citations }, links, tours] = await Promise.all([
+  load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'),
 ]);
 const $ = id => document.getElementById(id);
 initCompare(catalog);
@@ -30,6 +31,11 @@ document.querySelectorAll('[data-lang-set]').forEach(b => b.addEventListener('cl
 
 buildRuler();
 onChange(render);
+
+$('tour-bar').addEventListener('click', e => {
+  const b = e.target.closest('button[data-tour]');
+  if (b) setState({ tour: b.dataset.tour || null });
+});
 
 $('vp-queue').addEventListener('click', e => {
   const b = e.target.closest('button[data-kind]');
@@ -108,13 +114,22 @@ function render(s) {
   $('vp-title').innerHTML = html(compare ? 'compare.title' : A ? 'moduleA.title' : 'moduleB.title');
   $('vp-switch').hidden = !A;
   $('vp-switch').querySelectorAll('button').forEach(b => b.setAttribute('aria-checked', b.dataset.view === (compare ? 'compare' : 'cells')));
-  $('vp-empty').hidden = compare;
+  const points = !A && pdb ? tours.structures[pdb.id]?.points ?? [] : [];
+  const point = points.find(p => p.id === s.tour);
+  const showMol = !A && !!pdb;
+  $('vp-empty').hidden = compare || showMol;
+  $('vp-mol').hidden = !showMol;
   $('vp-queue').hidden = compare;
   $('vp-compare').hidden = !compare;
   const show3d = A && !compare && !!cell?.fractions?.length;
   $('vp-cell').hidden = !show3d;
   if (show3d) sync3d(cell, s.selection);
-  document.querySelector('.schematic').hidden = compare;
+  document.querySelector('.schematic').hidden = compare || showMol;
+  if (showMol) {
+    $('tour-bar').innerHTML = [{ id: '', label: { en: text('tour.whole') } }, ...points].map(p =>
+      `<li><button data-tour="${esc(p.id)}" aria-pressed="${(p.id || null) === (s.tour || null) || (!p.id && !point)}">${p.id ? html(p.label) : html('tour.whole')}</button></li>`).join('');
+    sync3dMol(pdb.id, point);
+  }
   if (compare) {
     $('vp-compare').innerHTML = renderCompare(s);
   } else {
@@ -134,7 +149,7 @@ function render(s) {
 
   // Panel 2: selected object card
   const item = A ? cell : pdb;
-  $('card-body').innerHTML = (A && cell && s.selection ? orgCard(cell, s.selection) : '') +
+  $('card-body').innerHTML = (A && cell && s.selection ? orgCard(cell, s.selection) : '') + (point ? tourCard(point) : '') +
     (item ? card(item, A ? 'cell' : 'pdb') : `<p class="muted">${html('panel.card.empty')}</p>`);
 
   // Panel 3: every source behind a number on screen
@@ -190,6 +205,33 @@ function orgCard(cell, orgId) {
     <dl class="kv"><dt>${html('card.volume')}</dt><dd>${f ? esc(valueText(f)) : html('card.noorg')}</dd>
     <dt>${html('card.species')}</dt><dd>${html(cell.species)}</dd></dl>${fnBlock}${sizes}${jump}
     ${cell.data && f ? `<p class="muted" style="font-size:12.5px;margin-top:6px">${esc(citations[cell.data]?.source ?? '')}</p>` : ''}
+  </div>`;
+}
+
+// Preset view: show the structure in Mol* and select and focus the point, once per change
+let molKey = null;
+async function sync3dMol(id, point) {
+  const key = `${id}|${point?.id ?? ''}`;
+  if (key === molKey) return;
+  molKey = key;
+  $('mol-note').innerHTML = html('mol.loading');
+  try {
+    if (await showStructure($('mol'), id, point)) $('mol-note').textContent = '';
+  } catch (err) {
+    molKey = null;
+    console.warn('Mol* unavailable', err);
+    $('mol-note').innerHTML = html('mol.failed');
+  }
+}
+
+function tourCard(p) {
+  const rows = `<dt>${html('card.tour.subunit')}</dt><dd>${esc(p.subunit ?? p.id)}</dd>
+    <dt>${html('card.tour.chain')}</dt><dd>${esc(p.chain)}${p.authChain || p.subunitAuthChain ? ` (auth ${esc(p.authChain ?? p.subunitAuthChain)})` : ''}</dd>
+    <dt>${html('card.tour.pos')}</dt><dd>${p.xyz.join(', ')}</dd>`;
+  return `<div class="org-card" style="--c:var(--select)">
+    <p><strong>${html(p.label)}</strong></p>
+    <dl class="kv">${rows}</dl>
+    <p class="muted" style="font-size:12.5px">${html('card.tour.basis.' + p.basis)}.${p.support ? ' ' + esc(p.support) : ''}${p.names ? ' ' + html('card.tour.names') : ''}${p.note ? ' ' + esc(p.note) : ''}</p>
   </div>`;
 }
 

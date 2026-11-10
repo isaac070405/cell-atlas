@@ -196,3 +196,9 @@ body, .stage, .viewport { grid-template-columns: minmax(0, 1fr); }
 button.chip { background: none; cursor: pointer; }
 .org-card { border-left: 3px solid var(--c); padding-left: var(--s3); margin-bottom: var(--s4); }
 .org-card .chips { margin-top: var(--s2); }
+
+/* Module B */
+.mol-wrap { display: flex; flex-direction: column; gap: var(--s3); min-width: 0; }
+.mol { position: relative; height: clamp(320px, 56vh, 600px); border: 1px solid var(--rule); background: var(--paper); touch-action: none; }
+.tour button { font-size: 12.5px; padding: 6px 8px; }
+.tour .tour-group { flex-basis: 100%; font: 11.5px/1 var(--font-label); color: var(--ink-soft); margin-top: var(--s1); }

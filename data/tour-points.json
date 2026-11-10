@@ -1,32 +1,239 @@
 {
-  "_schema": "Preset views for Module B. Coordinates are Å in the deposited PDB frame (model 1, label_asym_id = mmCIF chain used by Mol*). cite points to data/citations.json. basis: computed = centroid or atom position read from the deposited coordinates; literature = stated in the cited paper. names: standard = usual Complex I cluster nomenclature, not named in Guo 2017.",
+  "_schema": "Preset views for Module B. Coordinates are Å in the deposited PDB frame (model 1, label_asym_id = mmCIF chain used by Mol*). cite points to data/citations.json. basis: computed = centroid or atom position read from the deposited coordinates; literature = stated in the cited paper. names: standard = usual Complex I cluster nomenclature, not named in Guo 2017. select = Mol* loci schema (label_asym_id, optional auth_seq_id) used to select and focus the point.",
   "structures": {
     "5XTD": {
       "cite": "guo-2017",
       "points": [
-        { "id": "fmn", "label": { "en": "FMN (NADH oxidation)", "zh-Hant": "FMN（氧化 NADH）" }, "kind": "cofactor", "comp": "FMN", "chain": "UA", "subunit": "NDUFV1", "subunitChain": "A", "xyz": [208.8, 141.3, 364.1], "basis": "computed" },
-        { "id": "fes-n3", "label": { "en": "4Fe–4S, N3", "zh-Hant": "4Fe–4S，N3" }, "kind": "fe-s", "comp": "SF4", "chain": "TA", "subunit": "NDUFV1", "subunitChain": "A", "xyz": [206.8, 147.6, 352.5], "basis": "computed", "names": "standard" },
-        { "id": "fes-n1a", "label": { "en": "2Fe–2S, N1a", "zh-Hant": "2Fe–2S，N1a" }, "kind": "fe-s", "comp": "FES", "chain": "EB", "subunit": "NDUFV2", "subunitChain": "N", "subunitAuthChain": "O", "xyz": [196.4, 130.0, 359.2], "basis": "computed", "names": "standard" },
-        { "id": "fes-n1b", "label": { "en": "2Fe–2S, N1b", "zh-Hant": "2Fe–2S，N1b" }, "kind": "fe-s", "comp": "FES", "chain": "DB", "subunit": "NDUFS1", "subunitChain": "L", "subunitAuthChain": "M", "xyz": [213.3, 159.5, 347.2], "basis": "computed", "names": "standard" },
-        { "id": "fes-n4", "label": { "en": "4Fe–4S, N4", "zh-Hant": "4Fe–4S，N4" }, "kind": "fe-s", "comp": "SF4", "chain": "CB", "subunit": "NDUFS1", "subunitChain": "L", "subunitAuthChain": "M", "xyz": [200.7, 161.9, 342.1], "basis": "computed", "names": "standard" },
-        { "id": "fes-n5", "label": { "en": "4Fe–4S, N5", "zh-Hant": "4Fe–4S，N5" }, "kind": "fe-s", "comp": "SF4", "chain": "BB", "subunit": "NDUFS1", "subunitChain": "L", "subunitAuthChain": "M", "xyz": [203.6, 159.8, 330.7], "basis": "computed", "names": "standard" },
-        { "id": "fes-n6a", "label": { "en": "4Fe–4S, N6a or N6b", "zh-Hant": "4Fe–4S，N6a 或 N6b" }, "kind": "fe-s", "comp": "SF4", "chain": "VA", "subunit": "NDUFS8", "subunitChain": "B", "xyz": [199.7, 163.0, 314.3], "basis": "computed", "names": "standard, order of VA and WA unresolved" },
-        { "id": "fes-n6b", "label": { "en": "4Fe–4S, N6a or N6b", "zh-Hant": "4Fe–4S，N6a 或 N6b" }, "kind": "fe-s", "comp": "SF4", "chain": "WA", "subunit": "NDUFS8", "subunitChain": "B", "xyz": [207.2, 164.6, 305.7], "basis": "computed", "names": "standard, order of VA and WA unresolved" },
-        { "id": "fes-n2", "label": { "en": "4Fe–4S, N2 (last cluster before Q)", "zh-Hant": "4Fe–4S，N2（傳予 Q 前最後一個簇）" }, "kind": "fe-s", "comp": "SF4", "chain": "YA", "subunit": "NDUFS7", "subunitChain": "C", "xyz": [215.2, 168.6, 295.3], "basis": "computed", "names": "standard" },
+        {
+          "id": "fmn",
+          "label": {
+            "en": "FMN (NADH oxidation)",
+            "zh-Hant": "FMN（氧化 NADH）"
+          },
+          "kind": "cofactor",
+          "comp": "FMN",
+          "chain": "UA",
+          "subunit": "NDUFV1",
+          "subunitChain": "A",
+          "xyz": [
+            208.8,
+            141.3,
+            364.1
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "UA"
+          }
+        },
+        {
+          "id": "fes-n3",
+          "label": {
+            "en": "4Fe–4S, N3",
+            "zh-Hant": "4Fe–4S，N3"
+          },
+          "kind": "fe-s",
+          "comp": "SF4",
+          "chain": "TA",
+          "subunit": "NDUFV1",
+          "subunitChain": "A",
+          "xyz": [
+            206.8,
+            147.6,
+            352.5
+          ],
+          "basis": "computed",
+          "names": "standard",
+          "select": {
+            "label_asym_id": "TA"
+          }
+        },
+        {
+          "id": "fes-n1a",
+          "label": {
+            "en": "2Fe–2S, N1a",
+            "zh-Hant": "2Fe–2S，N1a"
+          },
+          "kind": "fe-s",
+          "comp": "FES",
+          "chain": "EB",
+          "subunit": "NDUFV2",
+          "subunitChain": "N",
+          "subunitAuthChain": "O",
+          "xyz": [
+            196.4,
+            130.0,
+            359.2
+          ],
+          "basis": "computed",
+          "names": "standard",
+          "select": {
+            "label_asym_id": "EB"
+          }
+        },
+        {
+          "id": "fes-n1b",
+          "label": {
+            "en": "2Fe–2S, N1b",
+            "zh-Hant": "2Fe–2S，N1b"
+          },
+          "kind": "fe-s",
+          "comp": "FES",
+          "chain": "DB",
+          "subunit": "NDUFS1",
+          "subunitChain": "L",
+          "subunitAuthChain": "M",
+          "xyz": [
+            213.3,
+            159.5,
+            347.2
+          ],
+          "basis": "computed",
+          "names": "standard",
+          "select": {
+            "label_asym_id": "DB"
+          }
+        },
+        {
+          "id": "fes-n4",
+          "label": {
+            "en": "4Fe–4S, N4",
+            "zh-Hant": "4Fe–4S，N4"
+          },
+          "kind": "fe-s",
+          "comp": "SF4",
+          "chain": "CB",
+          "subunit": "NDUFS1",
+          "subunitChain": "L",
+          "subunitAuthChain": "M",
+          "xyz": [
+            200.7,
+            161.9,
+            342.1
+          ],
+          "basis": "computed",
+          "names": "standard",
+          "select": {
+            "label_asym_id": "CB"
+          }
+        },
+        {
+          "id": "fes-n5",
+          "label": {
+            "en": "4Fe–4S, N5",
+            "zh-Hant": "4Fe–4S，N5"
+          },
+          "kind": "fe-s",
+          "comp": "SF4",
+          "chain": "BB",
+          "subunit": "NDUFS1",
+          "subunitChain": "L",
+          "subunitAuthChain": "M",
+          "xyz": [
+            203.6,
+            159.8,
+            330.7
+          ],
+          "basis": "computed",
+          "names": "standard",
+          "select": {
+            "label_asym_id": "BB"
+          }
+        },
+        {
+          "id": "fes-n6a",
+          "label": {
+            "en": "4Fe–4S, N6a or N6b",
+            "zh-Hant": "4Fe–4S，N6a 或 N6b"
+          },
+          "kind": "fe-s",
+          "comp": "SF4",
+          "chain": "VA",
+          "subunit": "NDUFS8",
+          "subunitChain": "B",
+          "xyz": [
+            199.7,
+            163.0,
+            314.3
+          ],
+          "basis": "computed",
+          "names": "standard, order of VA and WA unresolved",
+          "select": {
+            "label_asym_id": "VA"
+          }
+        },
+        {
+          "id": "fes-n6b",
+          "label": {
+            "en": "4Fe–4S, N6a or N6b",
+            "zh-Hant": "4Fe–4S，N6a 或 N6b"
+          },
+          "kind": "fe-s",
+          "comp": "SF4",
+          "chain": "WA",
+          "subunit": "NDUFS8",
+          "subunitChain": "B",
+          "xyz": [
+            207.2,
+            164.6,
+            305.7
+          ],
+          "basis": "computed",
+          "names": "standard, order of VA and WA unresolved",
+          "select": {
+            "label_asym_id": "WA"
+          }
+        },
+        {
+          "id": "fes-n2",
+          "label": {
+            "en": "4Fe–4S, N2 (last cluster before Q)",
+            "zh-Hant": "4Fe–4S，N2（傳予 Q 前最後一個簇）"
+          },
+          "kind": "fe-s",
+          "comp": "SF4",
+          "chain": "YA",
+          "subunit": "NDUFS7",
+          "subunitChain": "C",
+          "xyz": [
+            215.2,
+            168.6,
+            295.3
+          ],
+          "basis": "computed",
+          "names": "standard",
+          "select": {
+            "label_asym_id": "YA"
+          }
+        },
         {
           "id": "q-site",
-          "label": { "en": "Q-site anchor (NDUFS2 His59, mature numbering)", "zh-Hant": "Q 位點錨點（NDUFS2 His59，成熟蛋白編號）" },
+          "label": {
+            "en": "Q-site anchor (NDUFS2 His59, mature numbering)",
+            "zh-Hant": "Q 位點錨點（NDUFS2 His59，成熟蛋白編號）"
+          },
           "kind": "q-site",
           "comp": "HIS",
           "chain": "P",
           "authChain": "Q",
           "subunit": "NDUFS2",
-          "residue": { "authSeqId": 88, "matureNumber": 59, "atom": "NE2" },
-          "xyz": [228.1, 179.1, 278.0],
+          "residue": {
+            "authSeqId": 88,
+            "matureNumber": 59,
+            "atom": "NE2"
+          },
+          "xyz": [
+            228.1,
+            179.1,
+            278.0
+          ],
           "distanceToN2": 24.1,
           "basis": "computed",
           "support": "Fiedorczuk et al. (2016) Nature 538:406 (ovine, Extended Data Fig. 9 legend): Tyr108 and His59 of the 49-kDa subunit lie near the Q position bound in bacteria. No ubiquinone is bound at this site in 5XTD.",
-          "note": "File residue 88 = mature His59 (offset 29). Tyr108 (file residue 137) not checked."
+          "note": "File residue 88 = mature His59 (offset 29). Tyr108 (file residue 137) not checked.",
+          "select": {
+            "label_asym_id": "P",
+            "auth_seq_id": 88
+          }
         }
       ]
     },
@@ -35,15 +242,40 @@
       "points": [
         {
           "id": "trna-e",
-          "label": { "en": "E-site tRNA (initiator Met-tRNA, E/E state)", "zh-Hant": "E 位點 tRNA（起始 Met-tRNA，E/E 狀態）" },
+          "label": {
+            "en": "E-site tRNA (initiator Met-tRNA, E/E state)",
+            "zh-Hant": "E 位點 tRNA（起始 Met-tRNA，E/E 狀態）"
+          },
           "kind": "trna",
           "chain": "VA",
           "authChain": "S6",
-          "residues": { "firstAuthSeqId": 2, "lastAuthSeqId": 76, "modelled": 75 },
-          "xyz": [185.5, 216.2, 180.1],
-          "cca3": { "C75": [143.5, 213.1, 163.9], "A76": [147.3, 215.1, 157.5] },
+          "residues": {
+            "firstAuthSeqId": 2,
+            "lastAuthSeqId": 76,
+            "modelled": 75
+          },
+          "xyz": [
+            185.5,
+            216.2,
+            180.1
+          ],
+          "cca3": {
+            "C75": [
+              143.5,
+              213.1,
+              163.9
+            ],
+            "A76": [
+              147.3,
+              215.1,
+              157.5
+            ]
+          },
           "basis": "computed",
-          "support": "Khatter et al. (2015) Nature 520:640 reports a co-purified tRNA in the E site (E/E). No A-site or P-site tRNA is modelled in 4UG0."
+          "support": "Khatter et al. (2015) Nature 520:640 reports a co-purified tRNA in the E site (E/E). No A-site or P-site tRNA is modelled in 4UG0.",
+          "select": {
+            "label_asym_id": "VA"
+          }
         }
       ]
     }
