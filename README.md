@@ -1,5 +1,7 @@
 # Cell Atlas · 細胞圖譜
 
+[![License: MIT](https://img.shields.io/github/license/isaac070405/cell-atlas)](LICENSE)
+
 Cell Atlas is the cell and molecule section of the Human Biology platform. It covers the last two steps of the scale chain: body (3D Anatomy Model) → tissue (Histology) → **cell (Module A)** → **molecule (Module B)**.
 
 Every number on screen carries a source chip with species, cell type and method. Cell models are to-scale schematics. Molecular models are experimental PDB / EMDB structures, never AI predictions.
