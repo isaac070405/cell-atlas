@@ -125,7 +125,7 @@ Code is released under the MIT License (see `LICENSE`). PDB and EMDB structures 
 
 ## Sources already in use
 
-- BioNumbers BNID 110373, hepatocyte compartment volumes (source verified, values pending).
+- BioNumbers BNID 110373, hepatocyte compartment volumes (values checked against Alberts MBoC; edition and table number to confirm).
 - BioNumbers BNID 105782, mitochondria 22% of rat hepatocyte volume, Weibel et al. 1969 (verified).
 - Guo et al. (2017) *Cell* 170:1247–1257, PDB 5XTD, EMD-6773 (verified).
 - Khatter et al. (2015) *Nature* 520:640–645, PDB 4UG0 (verified).
