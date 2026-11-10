@@ -253,6 +253,10 @@
       "en": "Picked compartment",
       "zh-Hant": "已選區室"
     },
+    "card.function": {
+      "en": "Function",
+      "zh-Hant": "功能"
+    },
     "card.sizeref": {
       "en": "Reported size",
       "zh-Hant": "文獻報告大小"

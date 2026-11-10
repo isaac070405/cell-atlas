@@ -232,6 +232,138 @@
       "year": 1974,
       "url": "https://doi.org/10.1083/JCB.60.3.732",
       "status": "verified"
+    },
+    "kundu-2026": {
+      "source": "Kundu (2026) Mol Biol Rep 53(1)",
+      "detail": {
+        "en": "The spatial organization of the genome in the nucleus determines gene regulation, genome stability and cell identity; lamins of the nuclear envelope maintain nuclear integrity and organize chromatin",
+        "zh-Hant": "細胞核內基因組的空間組織決定基因調控、基因組穩定性和細胞身分；核膜的核纖層蛋白維持細胞核完整並組織染色質"
+      },
+      "species": "Human and mammalian cells (review)",
+      "method": "Review of nuclear architecture and lamins (cancer focus)",
+      "year": 2026,
+      "url": "https://doi.org/10.1007/s11033-026-12602-3",
+      "status": "verified"
+    },
+    "akinkunmi-2026": {
+      "source": "Akinkunmi et al. (2026) Front Cell Dev Biol 14:1929130",
+      "detail": {
+        "en": "Mitochondria are the cellular powerhouse and also regulate metabolism, reactive oxygen species and redox state, calcium balance, apoptosis and mitophagy",
+        "zh-Hant": "粒線體是細胞的能量工廠，並調控代謝、活性氧與氧化還原狀態、鈣平衡、細胞凋亡和粒線體自噬"
+      },
+      "species": "Mammalian cells (review)",
+      "method": "Review of mitochondrial function in health and disease",
+      "year": 2026,
+      "url": "https://doi.org/10.3389/fcell.2026.1929130",
+      "status": "verified"
+    },
+    "mustakim-2024": {
+      "source": "Mustakim, Eo & Kim (2024) J Korean Assoc Oral Maxillofac Surg 50(4):177–188",
+      "detail": {
+        "en": "The ER is crucial for protein synthesis, transport and folding, as well as calcium storage, lipid and steroid synthesis, and carbohydrate metabolism",
+        "zh-Hant": "內質網對蛋白質的合成、運輸和摺疊至為重要，並負責鈣儲存、脂質與類固醇合成，以及碳水化合物代謝"
+      },
+      "species": "Mammalian cells (review)",
+      "method": "Systematic review of ER stress (MEDLINE); first sentence of abstract used for ER function",
+      "year": 2024,
+      "url": "https://doi.org/10.5125/jkaoms.2024.50.4.177",
+      "status": "verified"
+    },
+    "agliarulo-2022": {
+      "source": "Agliarulo & Parashuraman (2022) Cells 11(3):368",
+      "detail": {
+        "en": "The Golgi is the central component of the mammalian secretory pathway: it processes protein and lipid cargo and sorts proteins and lipids at the trans-Golgi network to their destinations, shaping plasma membrane composition",
+        "zh-Hant": "高爾基體是哺乳類分泌途徑的核心：加工蛋白質和脂質貨物，並在反面高爾基網絡把蛋白質和脂質分選至目的地，從而塑造質膜組成"
+      },
+      "species": "Mammalian cells (review)",
+      "method": "Review of Golgi functions in the mammalian secretory pathway",
+      "year": 2022,
+      "url": "https://doi.org/10.3390/cells11030368",
+      "status": "verified"
+    },
+    "kleiboeker-2022": {
+      "source": "Kleiboeker & Lodhi (2022) Mol Metab 65:101577",
+      "detail": {
+        "en": "Peroxisomes are single-membrane organelles that produce and break down hydrogen peroxide, oxidize fatty acids that mitochondria cannot catabolize, and synthesize ether lipids and bile acids",
+        "zh-Hant": "過氧化物酶體是單層膜細胞器，負責產生和分解過氧化氫，氧化粒線體無法分解的脂肪酸，並合成醚脂和膽汁酸"
+      },
+      "species": "Mammalian cells (review)",
+      "method": "Review of peroxisomal roles in energy metabolism",
+      "year": 2022,
+      "url": "https://doi.org/10.1016/j.molmet.2022.101577",
+      "status": "verified"
+    },
+    "ferrari-2024": {
+      "source": "Ferrari et al. (2024) Cell Mol Biol Lett 29(1):116",
+      "detail": {
+        "en": "Lysosomes are acidic organelles that degrade proteins and organelles and take part in membrane repair, phagocytosis, endocytosis and nutrient sensing",
+        "zh-Hant": "溶酶體是酸性細胞器，降解蛋白質和細胞器，並參與膜修復、吞噬作用、內吞作用和營養感應"
+      },
+      "species": "Mammalian cells (review)",
+      "method": "Review of lysosome quality control",
+      "year": 2024,
+      "url": "https://doi.org/10.1186/s11658-024-00633-2",
+      "status": "verified"
+    },
+    "scott-2014": {
+      "source": "Scott, Vacca & Gruenberg (2014) Semin Cell Dev Biol 31:2–10",
+      "detail": {
+        "en": "Early and late endosomes are the two main sorting stations of the endocytic pathway: the early endosome routes cargo to recycling endosomes, the trans-Golgi network or late endosomes, and the late endosome is a hub toward lysosomes, Golgi or plasma membrane and a nutrient-sensing platform",
+        "zh-Hant": "早期和晚期內體是內吞途徑的兩個主要分選站：早期內體把貨物送往回收內體、反面高爾基網絡或晚期內體；晚期內體是通往溶酶體、高爾基體或質膜的樞紐，亦是營養感應平台"
+      },
+      "species": "Mammalian cells (review)",
+      "method": "Review of endosome maturation and functions",
+      "year": 2014,
+      "url": "https://doi.org/10.1016/j.semcdb.2014.03.034",
+      "status": "verified"
+    },
+    "rossi-2022": {
+      "source": "Rossi et al. (2022) Biomolecules 12(4):488",
+      "detail": {
+        "en": "The sarcoplasmic reticulum is a network of tubules and cisternae that regulates calcium homeostasis during muscle contraction, storing and releasing calcium for excitation-contraction coupling and taking it back up",
+        "zh-Hant": "肌漿網是由小管和池組成的網絡，在肌肉收縮時調節鈣平衡，負責儲存、釋放和回收鈣，以進行興奮收縮偶聯"
+      },
+      "species": "Mammalian skeletal muscle (review)",
+      "method": "Review of skeletal muscle sarcoplasmic reticulum",
+      "year": 2022,
+      "url": "https://doi.org/10.3390/biom12040488",
+      "status": "verified"
+    },
+    "herzog-2022": {
+      "source": "Herzog (2022) Front Physiol 13:837611",
+      "detail": {
+        "en": "Myofibrils are striated muscle organelles made of sarcomeres, the smallest functional contractile unit of muscle, aligned in series",
+        "zh-Hant": "肌原纖維是橫紋肌的細胞器，由串聯排列的肌節組成，肌節是肌肉最小的功能收縮單位"
+      },
+      "species": "Striated muscle (review)",
+      "method": "Review of single sarcomere and myofibril preparations",
+      "year": 2022,
+      "url": "https://doi.org/10.3389/fphys.2022.837611",
+      "status": "verified"
+    },
+    "johnson-2025": {
+      "source": "Johnson (2025) Nat Rev Mol Cell Biol 26(9):667–690",
+      "detail": {
+        "en": "The stroma hosts the Calvin-Benson-Bassham cycle, which uses NADPH and ATP from the thylakoid electron chain to fix carbon dioxide into biomass",
+        "zh-Hant": "基質是卡爾文-本森-巴沙循環的場所，利用類囊體電子傳遞鏈產生的 NADPH 和 ATP 把二氧化碳固定為生物質"
+      },
+      "species": "Plants (review)",
+      "method": "Review of the photosynthetic electron transport chain (angiosperm focus)",
+      "year": 2025,
+      "url": "https://doi.org/10.1038/s41580-025-00847-y",
+      "status": "verified"
+    },
+    "jiang-2021": {
+      "source": "Jiang et al. (2021) Mol Hortic 1(1):4",
+      "detail": {
+        "en": "The vacuole maintains cell acidity and turgor pressure, regulates storage and transport of substances, and responds to biotic and abiotic stress",
+        "zh-Hant": "液泡維持細胞酸度和膨壓，調節物質的儲存與運輸，並回應生物和非生物逆境"
+      },
+      "species": "Plants (review)",
+      "method": "Review of plant vacuole functions",
+      "year": 2021,
+      "url": "https://doi.org/10.1186/s43897-021-00008-7",
+      "status": "verified"
     }
   }
 }
