@@ -133,12 +133,12 @@
     "wiener-1968": {
       "source": "Wiener, Loud, Kimberg & Spiro (1968) J Cell Biol 37:47–61",
       "detail": {
-        "en": "Average nuclear diameter of rat hepatic parenchymal cells 7.1 µm (saline controls)",
-        "zh-Hant": "大鼠肝實質細胞平均核直徑 7.1 µm（生理食鹽水對照組）"
+        "en": "Rat hepatocyte control values: nuclear diameter 7.09 ± 1.18 µm (698 nuclei, light microscopy); mitochondria 0.39–0.60 µm in diameter and 2.5–4.3 µm long by lobular zone; peroxisomes 0.68–0.70 µm in diameter",
+        "zh-Hant": "大鼠肝細胞對照組數值：核直徑 7.09 ± 1.18 µm（698 個細胞核，光學顯微鏡）；粒線體直徑 0.39–0.60 µm、長 2.5–4.3 µm（依肝小葉區域）；過氧化物酶體直徑 0.68–0.70 µm"
       },
       "species": "Rat",
-      "cellType": "Hepatocyte",
-      "method": "Stereology (light and electron microscopy)",
+      "cellType": "Hepatocyte (saline-injected controls, 125 g male)",
+      "method": "Stereology (light and electron microscopy); mitochondria modelled as cylinders, peroxisomes as spheres",
       "year": 1968,
       "url": "https://doi.org/10.1083/JCB.37.1.47",
       "status": "verified"
@@ -413,6 +413,19 @@
       "method": "Live-cell confocal fluorescence microscopy",
       "year": 2014,
       "url": "https://doi.org/10.1371/JOURNAL.PONE.0086847",
+      "status": "verified"
+    },
+    "loud-1968": {
+      "source": "Loud (1968) J Cell Biol 37:27–46",
+      "detail": {
+        "en": "Mean nuclear diameter 8.1 ± 1.0 µm (744 nuclear sections); hepatocyte cytoplasm about 5,100–5,400 µm³ per nucleus; mitochondrial length to diameter ratios 7, 9 and 16 in peripheral, midzonal and central cells",
+        "zh-Hant": "平均核直徑 8.1 ± 1.0 µm（744 個核切面）；每個細胞核對應的肝細胞胞質約 5,100–5,400 µm³；粒線體長徑比在外周、中間和中央區分別為 7、9 和 16"
+      },
+      "species": "Rat",
+      "cellType": "Hepatocyte (normal, 5-month-old females)",
+      "method": "Stereology (light and electron microscopy)",
+      "year": 1968,
+      "url": "https://doi.org/10.1083/JCB.37.1.27",
       "status": "verified"
     }
   }
