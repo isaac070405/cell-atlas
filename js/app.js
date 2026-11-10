@@ -75,7 +75,8 @@ async function sync3d(cell, selection) {
     if (!view) {
       $('cell3d-note').textContent = text('cell3d.loading');
       const { createCellView } = await import('./cell3d.js');
-      view = await createCellView($('cell3d'), { onPick: org => setState({ selection: org === getState().selection ? null : org }) });
+      const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+      view = await createCellView($('cell3d'), { membraneColor: css('--org-cytosol') || undefined, selectColor: css('--select') || undefined, onPick: org => setState({ selection: org === getState().selection ? null : org }) });
       $('cut').addEventListener('input', e => view.setClip(+e.target.value));
       $('cell-reset').addEventListener('click', () => { shown = null; $('cut').value = 0; sync3d(catalog.cells.find(c => c.id === getState().cell), getState().selection); });
     }

@@ -1,0 +1,19 @@
+{
+  "name": "@isaac070405/cell-3d",
+  "version": "0.1.0",
+  "description": "Procedural 3D cell model sized from published organelle volume fractions, with a Three.js view.",
+  "type": "module",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/isaac070405/cell-atlas.git", "directory": "packages/cell-3d" },
+  "exports": {
+    ".": "./src/index.js",
+    "./model": "./src/model.js",
+    "./view": "./src/view.js"
+  },
+  "files": ["src", "README.md"],
+  "sideEffects": false,
+  "peerDependencies": { "three": ">=0.160.0" },
+  "peerDependenciesMeta": { "three": { "optional": true } },
+  "publishConfig": { "registry": "https://npm.pkg.github.com", "access": "restricted" },
+  "scripts": { "test": "node --test test/*.test.js" }
+}
