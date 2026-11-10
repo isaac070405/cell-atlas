@@ -4,15 +4,16 @@
     "bnid-110373": {
       "source": "BioNumbers BNID 110373",
       "detail": {
-        "en": "Hepatocyte compartment volume fractions, from Alberts MBoC 5th ed. Table 12-1",
-        "zh-Hant": "肝細胞各區室體積分數，出自 Alberts MBoC 第 5 版 Table 12-1"
+        "en": "Hepatocyte compartment volume fractions, Alberts MBoC hepatocyte volume table; data from Blouin, Bolender & Weibel (1977) J Cell Biol 72:441–455",
+        "zh-Hant": "肝細胞各區室體積分數，出自 Alberts MBoC 肝細胞體積表；數據來源 Blouin, Bolender & Weibel (1977) J Cell Biol 72:441–455"
       },
       "species": "Rat",
       "cellType": "Hepatocyte",
-      "method": "EM stereology (compiled)",
+      "method": "EM stereology (textbook compilation)",
+      "year": 1977,
       "url": "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=110373",
       "status": "verified",
-      "note": "Percentages checked against Alberts MBoC Table 12-1 (資料蒐集 [1], 2026-11-02)."
+      "note": "Percentages (54/22/9/6/6/1/1/1, sum 100) checked against Alberts MBoC (資料蒐集 [1], 2026-11-02). Edition and table number to confirm from the book."
     },
     "bnid-105782": {
       "source": "BioNumbers BNID 105782",
