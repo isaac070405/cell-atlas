@@ -8,7 +8,7 @@ Live site: https://isaac070405.github.io/cell-atlas/
 
 ## Current state
 
-This repo holds the **site shell** (roadmap stage 0) plus the first data views:
+This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3), the Module B Mol* viewer (stage 4) and the embedded 3D Anatomy Model (stage 5):
 
 - Log-scale navigator from 2 m to 0.6 Å with seven levels: system, organ, tissue (the 3D Anatomy Model, embedded from `anatomy/` with its controls docked in the Cell Atlas panel style; desktop only). System and organ levels list the systems and organs in `data/anatomy.json`; picking one isolates it in the model (`?level=organ&part=heart`). Tissue level has four schematic 3D models (`js/tissue3d.js`, `data/tissues.json`, `?level=tissue&part=nervous`). The bacterial cell (E. coli) and the virus (bacteriophage T4) are schematic models; E. coli has a periplasm range (Stock 1977) in the compare view, the phage has no data table. Selected cell buttons and the Cell band on the ruler are red for animal, green for plant, purple for bacterial cells, cell, organelle, complex, atom.
 - One state controller (`js/state.js`) drives the header readout, viewer pane and three info panels.
@@ -21,7 +21,7 @@ This repo holds the **site shell** (roadmap stage 0) plus the first data views:
 - **3D cell** (Module A): procedural Three.js cell for each of the six cells. Compartment volumes sum to the published fractions (`js/cellmodel.js`); shapes and positions are schematic. Orbit, cutting plane, click a compartment for its data card (`?cell=hepatocyte&org=mito`). Three.js r187 is self-hosted in `vendor/three/`.
 - **Mol\* spike** (`spike/molstar.html`): loads 5XTD or 4UG0 as binary CIF from RCSB with Mol* 5.13.1, self-hosted in `vendor/molstar/`.
 - **Module B tour points** (`data/tour-points.json`): preset views for 5XTD (FMN, Fe–S clusters, Q-site) and 4UG0 (tRNA sites), each with a source chip and a `computed` or `literature` basis. A tour bar in the Module B pane focuses each point in Mol*.
-- **Organelle size and function text**: the cell card shows size ranges and function text from PubMed and SciSpace sources, 34 citations in `data/citations.json`.
+- **Organelle size and function text**: the cell card shows size ranges and function text from PubMed and SciSpace sources, 36 citations in `data/citations.json`.
 - **`@isaac070405/cell-3d`** (`packages/cell-3d/`): the 3D cell model and view as an npm package, published to GitHub Packages by `.github/workflows/publish-cell-3d.yml`.
 - Two-way links: each card lists its own `links.json` edges grouped by site, plus every item that links to it. Mitochondria and rough ER rows jump to PDB 5XTD and 4UG0.
 
@@ -35,6 +35,8 @@ This repo holds the **site shell** (roadmap stage 0) plus the first data views:
 | `js/i18n.js` | Language modes |
 | `js/ruler.js` | Scale navigator |
 | `js/compare.js` | Four-cell comparison and fraction chart |
+| `js/molview.js` | Module B: Mol* loader and tour-point focus |
+| `js/tissue3d.js` | Four schematic tissue models |
 | `packages/cell-3d/` | Reusable npm package `@isaac070405/cell-3d`: cell layout (`src/model.js`, pure maths) and Three.js view (`src/view.js`) |
 | `js/cellmodel.js`, `js/cell3d.js` | Re-exports of the package, so site imports keep working |
 | `spike/molstar.html` | Stage 1 Mol* spike page |
@@ -44,6 +46,8 @@ This repo holds the **site shell** (roadmap stage 0) plus the first data views:
 | `.design/cell-atlas/` | Design brief, information architecture, build tasks |
 | `data/catalog.json` | Cells with volume fractions, compartments, structures |
 | `data/citations.json` | Shared citation registry (`verified` or `pending`) |
+| `data/tour-points.json` | Module B preset views for 5XTD and 4UG0, with citations |
+| `data/anatomy.json`, `data/tissues.json` | System, organ and tissue lists for the anatomy levels |
 | `data/links.json` | Shared link keys `anat:` `tis:` `cell:` `pdb:` `spec:` `diag:` `ent:` |
 | `data/i18n.json` | All interface text in `en` and `zh-Hant` |
 
