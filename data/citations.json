@@ -133,12 +133,12 @@
     "wiener-1968": {
       "source": "Wiener, Loud, Kimberg & Spiro (1968) J Cell Biol 37:47–61",
       "detail": {
-        "en": "Average nuclear diameter of rat hepatic parenchymal cells 7.1 µm (saline controls)",
-        "zh-Hant": "大鼠肝實質細胞平均核直徑 7.1 µm（生理食鹽水對照組）"
+        "en": "Rat hepatocyte control values: nuclear diameter 7.09 ± 1.18 µm (698 nuclei, light microscopy); mitochondria 0.39–0.60 µm in diameter and 2.5–4.3 µm long by lobular zone; peroxisomes 0.68–0.70 µm in diameter",
+        "zh-Hant": "大鼠肝細胞對照組數值：核直徑 7.09 ± 1.18 µm（698 個細胞核，光學顯微鏡）；粒線體直徑 0.39–0.60 µm、長 2.5–4.3 µm（依肝小葉區域）；過氧化物酶體直徑 0.68–0.70 µm"
       },
       "species": "Rat",
-      "cellType": "Hepatocyte",
-      "method": "Stereology (light and electron microscopy)",
+      "cellType": "Hepatocyte (saline-injected controls, 125 g male)",
+      "method": "Stereology (light and electron microscopy); mitochondria modelled as cylinders, peroxisomes as spheres",
       "year": 1968,
       "url": "https://doi.org/10.1083/JCB.37.1.47",
       "status": "verified"
@@ -231,18 +231,6 @@
       "method": "EM stereology",
       "year": 1974,
       "url": "https://doi.org/10.1083/JCB.60.3.732",
-      "status": "verified"
-    },
-    "kundu-2026": {
-      "source": "Kundu (2026) Mol Biol Rep 53(1)",
-      "detail": {
-        "en": "The spatial organization of the genome in the nucleus determines gene regulation, genome stability and cell identity; lamins of the nuclear envelope maintain nuclear integrity and organize chromatin",
-        "zh-Hant": "細胞核內基因組的空間組織決定基因調控、基因組穩定性和細胞身分；核膜的核纖層蛋白維持細胞核完整並組織染色質"
-      },
-      "species": "Human and mammalian cells (review)",
-      "method": "Review of nuclear architecture and lamins (cancer focus)",
-      "year": 2026,
-      "url": "https://doi.org/10.1007/s11033-026-12602-3",
       "status": "verified"
     },
     "akinkunmi-2026": {
@@ -402,17 +390,42 @@
       "url": "https://doi.org/10.1093/hesc/9780199697328.003.0007",
       "status": "verified"
     },
-    "stock-1977": {
-      "source": "Stock, Rauch & Roseman (1977) J Biol Chem 252:7850–7861",
+    "fahrenkrog-2023": {
+      "source": "Fahrenkrog & Gasser (2023) FEBS Lett, special issue editorial",
       "detail": {
-        "en": "Periplasmic space measured at 20 to 40% of total cell volume in E. coli and Salmonella typhimurium grown under routine conditions (abstract)",
-        "zh-Hant": "常規培養條件下，大腸桿菌同鼠傷寒沙門氏菌嘅周質空間佔細胞總體積 20 至 40%（摘要）"
+        "en": "The nucleus houses the genome and is the site of DNA and RNA synthesis, transcription, processing and repair, and ribosome biogenesis",
+        "zh-Hant": "細胞核容納基因組，是 DNA 和 RNA 合成、轉錄、加工與修復，以及核糖體生物合成的場所"
       },
-      "species": "E. coli and Salmonella typhimurium",
-      "cellType": "Bacterial cell",
-      "method": "Periplasmic space volume measurement",
-      "year": 1977,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/334768/",
+      "species": "Eukaryotic cells (general)",
+      "method": "Editorial introducing a review series",
+      "year": 2023,
+      "url": "https://doi.org/10.1002/1873-3468.14769",
+      "status": "verified"
+    },
+    "bandyopadhyay-2014": {
+      "source": "Bandyopadhyay et al. (2014) PLOS ONE 9:e86847",
+      "detail": {
+        "en": "Untreated lysosomes had a median diameter of 520 nm in confocal images of 50 lysosomes in 3 cells, near the 300 nm resolution limit; the canonical range cited is 50–500 nm",
+        "zh-Hant": "未處理的溶酶體在共聚焦影像中位直徑為 520 nm（3 個細胞共 50 個溶酶體），接近 300 nm 解析度極限；文中引用的典型範圍為 50–500 nm"
+      },
+      "species": "Monkey (African green)",
+      "cellType": "BS-C-1 kidney epithelial cell line (LAMP1-EYFP)",
+      "method": "Live-cell confocal fluorescence microscopy",
+      "year": 2014,
+      "url": "https://doi.org/10.1371/JOURNAL.PONE.0086847",
+      "status": "verified"
+    },
+    "loud-1968": {
+      "source": "Loud (1968) J Cell Biol 37:27–46",
+      "detail": {
+        "en": "Mean nuclear diameter 8.1 ± 1.0 µm (744 nuclear sections); hepatocyte cytoplasm about 5,100–5,400 µm³ per nucleus; mitochondrial length to diameter ratios 7, 9 and 16 in peripheral, midzonal and central cells",
+        "zh-Hant": "平均核直徑 8.1 ± 1.0 µm（744 個核切面）；每個細胞核對應的肝細胞胞質約 5,100–5,400 µm³；粒線體長徑比在外周、中間和中央區分別為 7、9 和 16"
+      },
+      "species": "Rat",
+      "cellType": "Hepatocyte (normal, 5-month-old females)",
+      "method": "Stereology (light and electron microscopy)",
+      "year": 1968,
+      "url": "https://doi.org/10.1083/JCB.37.1.27",
       "status": "verified"
     }
   }
