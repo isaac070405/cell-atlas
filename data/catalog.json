@@ -72,6 +72,8 @@
   ],
   "structures": [
     { "id": "5XTD", "name": { "en": "Human Complex I", "zh-Hant": "人類呼吸鏈 Complex I" }, "method": "Cryo-EM, 3.7 Å", "from": "mitochondrial inner membrane", "release": 1, "cite": "guo-2017" },
-    { "id": "4UG0", "name": { "en": "Human 80S ribosome", "zh-Hant": "人類 80S 核糖體" }, "method": "Cryo-EM, 3.6 Å", "from": "rough ER / cytosol", "release": 1, "cite": "khatter-2015" }
+    { "id": "4UG0", "name": { "en": "Human 80S ribosome", "zh-Hant": "人類 80S 核糖體" }, "method": "Cryo-EM, 3.6 Å", "from": "rough ER / cytosol", "release": 1, "cite": "khatter-2015" },
+    {"id": "1TQN", "name": {"en": "Human cytochrome P450 3A4", "zh-Hant": "人類細胞色素 P450 3A4"}, "method": "X-ray, 2.05 Å", "from": "endoplasmic reticulum (microsomal)", "release": 1, "cite": "yano-2004"},
+    {"id": "1ZUM", "name": {"en": "Human ALDH2*2 (Asian variant)", "zh-Hant": "人類 ALDH2*2（亞洲變異體）"}, "method": "X-ray, 2.10 Å", "from": "mitochondrial matrix", "release": 1, "cite": "larson-2005"}
   ]
 }

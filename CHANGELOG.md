@@ -9,6 +9,7 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 ### Added
 - Organelle level: schematic 3D models of mitochondrion, nucleus, rough ER and Golgi apparatus, with parts, cited sizes and links to PDB 5XTD and 4UG0.
 - Atom level: ball-and-stick water, ammonia and methane with element radii (Cordero 2008, Bondi 1964).
+- Module B structures 1TQN (human cytochrome P450 3A4, 2.05 Å) and 1ZUM (human ALDH2*2, 2.10 Å) with tour points read from the deposited coordinates.
 - Organelle models: lysosome, peroxisome, microfilament, intermediate filament, microtubule, centrosome.
 - Atom models: ATP, ADP, NADH, xanthine, purine, pyrimidine (computed conformers) and a [4Fe-4S] cluster; NADH and the cluster link to PDB 5XTD.
 - `scripts/check-data.mjs` checks the new models.

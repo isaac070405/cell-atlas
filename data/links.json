@@ -101,6 +101,22 @@
         "anat:Taenia libera",
         "tis:smooth-muscle"
       ]
+    },
+    {
+      "from": "pdb:1TQN",
+      "to": [
+        "cell:hepatocyte",
+        "cell:enterocyte"
+      ]
+    },
+    {
+      "from": "pdb:1ZUM",
+      "to": [
+        "cell:hepatocyte",
+        "anat:Liver",
+        "ent:TOP-01",
+        "spec:aldh2"
+      ]
     }
   ]
 }

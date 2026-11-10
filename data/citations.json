@@ -513,6 +513,30 @@
       "year": 1997,
       "url": "https://doi.org/10.1126/science.277.5326.653",
       "status": "verified"
+    },
+    "yano-2004": {
+      "source": "Yano et al. (2004) J Biol Chem 279:38091–38094",
+      "detail": {
+        "en": "Human microsomal cytochrome P450 3A4, PDB 1TQN, 2.05 Å",
+        "zh-Hant": "人類微粒體細胞色素 P450 3A4，PDB 1TQN，2.05 Å"
+      },
+      "species": "Human",
+      "method": "X-ray crystallography, 2.05 Å",
+      "year": 2004,
+      "url": "https://www.rcsb.org/structure/1TQN",
+      "status": "verified"
+    },
+    "larson-2005": {
+      "source": "Larson, Weiner & Hurley (2005) J Biol Chem 280:30550–30556",
+      "detail": {
+        "en": "Human mitochondrial aldehyde dehydrogenase Asian variant ALDH2*2 (Glu487Lys), apo form, PDB 1ZUM, 2.1 Å",
+        "zh-Hant": "人類粒線體醛脫氫酶亞洲變異體 ALDH2*2（Glu487Lys），無輔酶形式，PDB 1ZUM，2.1 Å"
+      },
+      "species": "Human",
+      "method": "X-ray crystallography, 2.1 Å",
+      "year": 2005,
+      "url": "https://www.rcsb.org/structure/1ZUM",
+      "status": "verified"
     }
   }
 }

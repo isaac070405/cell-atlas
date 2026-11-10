@@ -500,6 +500,10 @@
     "model.link": {
       "en": "Related structure",
       "zh-Hant": "相關結構"
+    },
+    "card.tour.basis.literature": {
+      "en": "Literature: stated in the cited paper",
+      "zh-Hant": "文獻：引述自所引論文"
     }
   }
 }
