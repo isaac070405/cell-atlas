@@ -1373,10 +1373,12 @@ let femaleOK = false;
         const ps = g.attributes.position, ns = g.attributes.normal; for (let i = 0; i < ps.count; i++) ps.setXYZ(i, ps.getX(i) + ns.getX(i) * 0.0012, ps.getY(i) + ns.getY(i) * 0.0012, ps.getZ(i) + ns.getZ(i) * 0.0012); g.computeVertexNormals();
         const m = reg('skin', tag + '_auricle_skin_' + sd, new THREE.Mesh(g, mat.skin), { label: 'Head' }); punch(m, c => (c.y - ey) ** 2 + (c.z - ez) ** 2 < 0.0038 ** 2); grp.add(m); });
       const xi = Math.min(HX - 0.006, 0.07); lining(tag + '_meatus_' + sd, 'External acoustic meatus (opening)', [[s * 0.096, ey, ez], [s * (0.096 + xi) / 2, ey + 0.001, ez - 0.0005], [s * xi, ey + 0.002, ez - 0.001]], 0.0036, grp); } };
-  try { const ms = await fitBody('uploads/Male_Muscular_BaseMesh/Male/Male_Muscular_BaseMesh.glb', 'male_body');
+  // Optional body meshes: not shipped in this repo, so nothing is requested and the built skin is used. Set a path to load one.
+  const BODY_MESH = { male: null, female: null };
+  if (BODY_MESH.male) try { const ms = await fitBody(BODY_MESH.male, 'male_body');
     SEXG.male.children.slice().forEach(o => { if (!GEN.has(o.name)) SEXG.male.remove(o); }); ms.skin.forEach(m => SEXG.male.add(m)); coverMuscles(ms.skin); coverMuscles(ms.skin); ms.fat.forEach(m => FATG.male.add(m)); openings(ms.skin, SEXG.male, 'male');
   } catch (e) { console.warn('Male body could not be loaded; keeping the built skin', e); }
-  try { const fs = await fitBody('uploads/Female_Muscular_BaseMesh/Female/Female_Muscular_BaseMesh.glb', 'female_body'); fs.skin.forEach(m => SEXG.female.add(m)); fs.fat.forEach(m => FATG.female.add(m)); openings(fs.skin, SEXG.female, 'female'); femaleOK = true;
+  if (BODY_MESH.female) try { const fs = await fitBody(BODY_MESH.female, 'female_body'); fs.skin.forEach(m => SEXG.female.add(m)); fs.fat.forEach(m => FATG.female.add(m)); openings(fs.skin, SEXG.female, 'female'); femaleOK = true;
   } catch (e) { console.warn('Female body could not be loaded', e); }
 }
 buildHead();
