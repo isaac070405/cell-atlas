@@ -453,6 +453,30 @@
       "year": 1977,
       "url": "https://pubmed.ncbi.nlm.nih.gov/334768/",
       "status": "verified"
+    },
+    "cordero-2008": {
+      "source": "Cordero et al. (2008) Dalton Trans 2832–2838",
+      "detail": {
+        "en": "Covalent radii of the elements, from crystal structures (Cambridge Structural Database)",
+        "zh-Hant": "各元素嘅共價半徑，由晶體結構（劍橋結構數據庫）得出"
+      },
+      "species": "n/a",
+      "method": "Statistical analysis of crystal structures",
+      "year": 2008,
+      "url": "https://doi.org/10.1039/B801115J",
+      "status": "verified"
+    },
+    "bondi-1964": {
+      "source": "Bondi (1964) J Phys Chem 68:441–451",
+      "detail": {
+        "en": "van der Waals radii of H, C, N and O",
+        "zh-Hant": "H、C、N、O 嘅范德華半徑"
+      },
+      "species": "n/a",
+      "method": "Compilation from crystal packing and gas-kinetic data",
+      "year": 1964,
+      "url": "https://doi.org/10.1021/j100785a001",
+      "status": "verified"
     }
   }
 }

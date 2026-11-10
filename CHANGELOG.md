@@ -6,6 +6,11 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 
 ## Unreleased
 
+### Added
+- Organelle level: schematic 3D models of mitochondrion, nucleus, rough ER and Golgi apparatus, with parts, cited sizes and links to PDB 5XTD and 4UG0.
+- Atom level: ball-and-stick water, ammonia and methane with element radii (Cordero 2008, Bondi 1964).
+- `scripts/check-data.mjs` checks the new models.
+
 ### Changed
 - Removed `anatomy/assets/eye.glb` (GPL-3.0-only, incompatible with the MIT licence); the procedural eye is drawn instead.
 - Added the Three.js MIT licence text to `vendor/three/LICENSE`.

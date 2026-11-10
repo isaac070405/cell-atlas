@@ -13,6 +13,8 @@ Live site: https://isaac070405.github.io/cell-atlas/
 This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3), the Module B Mol* viewer (stage 4) and the embedded 3D Anatomy Model (stage 5):
 
 - Log-scale navigator from 2 m to 0.6 Å with seven levels: system, organ, tissue (the 3D Anatomy Model, embedded from `anatomy/` with its controls docked in the Cell Atlas panel style; desktop only). System and organ levels list a Body item (the whole model with every panel) plus the systems and organs in `data/anatomy.json`; picking a system or organ isolates its parts, hides every panel and, for an organ, shows the model's cross-section (`?level=organ&part=heart`). The Organelle-level cell view has a cross-section panel in place of the cutting slider. Tissue level has four schematic 3D models (nervous tissue shows afferent and efferent beside the model) (`js/tissue3d.js`, `data/tissues.json`, `?level=tissue&part=nervous`). The bacterial cell (E. coli) and the virus (bacteriophage T4) are schematic models; E. coli has a periplasm range (Stock 1977) in the compare view, the phage has no data table. Selected cell buttons and the Cell band on the ruler are red for animal, green for plant, purple for bacterial cells, cell, organelle, complex, atom.
+- **Organelle level** (`data/organelles.json`): schematic 3D models of the mitochondrion, nucleus, rough ER and Golgi apparatus with clickable parts. Sizes and function text come from the catalog compartment; the inner membrane and ribosome parts link to PDB 5XTD and 4UG0 (`?level=organelle&part=mito&sel=cristae`).
+- **Atom level** (`data/atoms.json`): ball-and-stick water, ammonia and methane. Bond length is the sum of Cordero 2008 covalent radii, ball radius is 25% of the Bondi 1964 van der Waals radius; click an element for its radii (`?level=atom&part=water&sel=O`).
 - One state controller (`js/state.js`) drives the header readout, viewer pane and three info panels.
 - Language switch EN / 繁 / 雙語, remembered per browser. Strings live in `data/i18n.json`.
 - Light and dark themes from `css/tokens.css`, with fixed organelle colours shared across the platform.
@@ -52,6 +54,7 @@ This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3
 | `data/citations.json` | Shared citation registry (`verified` or `pending`) |
 | `data/tour-points.json` | Module B preset views for 5XTD and 4UG0, with citations |
 | `data/anatomy.json`, `data/tissues.json` | System, organ and tissue lists for the anatomy levels |
+| `data/organelles.json`, `data/atoms.json` | Organelle and atom models for the Organelle and Atom levels |
 | `data/links.json` | Shared link keys `anat:` `tis:` `cell:` `pdb:` `spec:` `diag:` `ent:` |
 | `data/i18n.json` | All interface text in `en` and `zh-Hant` |
 

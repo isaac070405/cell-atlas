@@ -1,0 +1,267 @@
+{
+ "_note": "Schematic organelle models. Shapes are illustrative. Sizes and function text come from the catalog compartment named in `compartment`.",
+ "models": [
+  {
+   "id": "mito",
+   "compartment": "mito",
+   "name": {
+    "en": "Mitochondrion",
+    "zh-Hant": "粒線體"
+   },
+   "summary": {
+    "en": "Double-membrane organelle that makes most of the cell's ATP by oxidative phosphorylation.",
+    "zh-Hant": "雙層膜細胞器，經氧化磷酸化製造細胞大部分 ATP。"
+   },
+   "parts": [
+    {
+     "id": "outer",
+     "color": "#D98A6B",
+     "name": {
+      "en": "Outer membrane",
+      "zh-Hant": "外膜"
+     },
+     "text": {
+      "en": "Smooth membrane with porins, permeable to small molecules.",
+      "zh-Hant": "平滑嘅膜，含孔蛋白，小分子可以通過。"
+     }
+    },
+    {
+     "id": "ims",
+     "color": "#EAC9B8",
+     "name": {
+      "en": "Intermembrane space",
+      "zh-Hant": "膜間隙"
+     },
+     "text": {
+      "en": "Narrow gap between the two membranes where protons accumulate.",
+      "zh-Hant": "兩層膜之間嘅窄間隙，質子喺此積聚。"
+     }
+    },
+    {
+     "id": "inner",
+     "color": "#B0563A",
+     "name": {
+      "en": "Inner membrane",
+      "zh-Hant": "內膜"
+     },
+     "text": {
+      "en": "Holds the respiratory complexes and ATP synthase. Complex I (PDB 5XTD) sits here.",
+      "zh-Hant": "載有呼吸鏈複合體同 ATP 合成酶。Complex I（PDB 5XTD）位於此處。"
+     },
+     "link": "pdb:5XTD"
+    },
+    {
+     "id": "cristae",
+     "color": "#8C3A22",
+     "name": {
+      "en": "Cristae",
+      "zh-Hant": "嵴"
+     },
+     "text": {
+      "en": "Folds of the inner membrane that raise its surface area.",
+      "zh-Hant": "內膜嘅摺疊，增加表面積。"
+     }
+    },
+    {
+     "id": "matrix",
+     "color": "#F3E0A8",
+     "name": {
+      "en": "Matrix",
+      "zh-Hant": "基質"
+     },
+     "text": {
+      "en": "Enzymes of the citric acid cycle and fatty acid oxidation, plus mitochondrial DNA.",
+      "zh-Hant": "含檸檬酸循環同脂肪酸氧化嘅酵素，以及粒線體 DNA。"
+     }
+    },
+    {
+     "id": "mtdna",
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Mitochondrial DNA",
+      "zh-Hant": "粒線體 DNA"
+     },
+     "text": {
+      "en": "Small circular genome in the matrix.",
+      "zh-Hant": "基質內嘅小型環狀基因組。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "nucleus",
+   "compartment": "nucleus",
+   "name": {
+    "en": "Nucleus",
+    "zh-Hant": "細胞核"
+   },
+   "summary": {
+    "en": "Holds the chromosomes inside a double membrane studded with pores.",
+    "zh-Hant": "染色體藏於佈滿核孔嘅雙層膜之內。"
+   },
+   "parts": [
+    {
+     "id": "envelope",
+     "color": "#8C97C4",
+     "name": {
+      "en": "Nuclear envelope",
+      "zh-Hant": "核膜"
+     },
+     "text": {
+      "en": "Two membranes with the perinuclear space between them, continuous with the rough ER.",
+      "zh-Hant": "兩層膜，中間係核周間隙，同粗面內質網相連。"
+     }
+    },
+    {
+     "id": "pore",
+     "color": "#C39A2E",
+     "name": {
+      "en": "Nuclear pores",
+      "zh-Hant": "核孔"
+     },
+     "text": {
+      "en": "Large protein channels that control traffic between nucleus and cytoplasm.",
+      "zh-Hant": "大型蛋白通道，控制細胞核同細胞質之間嘅運輸。"
+     }
+    },
+    {
+     "id": "chromatin",
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Chromatin",
+      "zh-Hant": "染色質"
+     },
+     "text": {
+      "en": "DNA wound on histones, filling the nuclear interior.",
+      "zh-Hant": "DNA 纏繞組織蛋白，充滿核內。"
+     }
+    },
+    {
+     "id": "nucleolus",
+     "color": "#6B3A7A",
+     "name": {
+      "en": "Nucleolus",
+      "zh-Hant": "核仁"
+     },
+     "text": {
+      "en": "Dense region where ribosomal RNA is made and ribosomes begin to assemble.",
+      "zh-Hant": "致密區域，製造核糖體 RNA，並開始組裝核糖體。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "er-rough",
+   "compartment": "er-rough",
+   "name": {
+    "en": "Rough ER",
+    "zh-Hant": "粗面內質網"
+   },
+   "summary": {
+    "en": "Stacked flattened sacs coated with ribosomes. Makes secreted and membrane proteins.",
+    "zh-Hant": "由扁平囊疊成，表面佈滿核糖體。合成分泌蛋白同膜蛋白。"
+   },
+   "parts": [
+    {
+     "id": "cisternae",
+     "color": "#6C7F3A",
+     "name": {
+      "en": "Cisternae",
+      "zh-Hant": "扁囊"
+     },
+     "text": {
+      "en": "Flattened membrane sheets enclosing the lumen.",
+      "zh-Hant": "包住內腔嘅扁平膜片。"
+     }
+    },
+    {
+     "id": "lumen",
+     "color": "#D6DEB0",
+     "name": {
+      "en": "Lumen",
+      "zh-Hant": "內腔"
+     },
+     "text": {
+      "en": "Space inside the sheets where new proteins fold.",
+      "zh-Hant": "片層內部，新合成嘅蛋白質喺此摺疊。"
+     }
+    },
+    {
+     "id": "ribosome",
+     "color": "#2F5FA8",
+     "name": {
+      "en": "Ribosomes",
+      "zh-Hant": "核糖體"
+     },
+     "text": {
+      "en": "Bound to the outer face. The 80S ribosome (PDB 4UG0) can be opened in Module B.",
+      "zh-Hant": "附於外表面。80S 核糖體（PDB 4UG0）可喺模組 B 開啟。"
+     },
+     "link": "pdb:4UG0"
+    }
+   ]
+  },
+  {
+   "id": "golgi",
+   "compartment": "golgi",
+   "name": {
+    "en": "Golgi apparatus",
+    "zh-Hant": "高爾基體"
+   },
+   "summary": {
+    "en": "Stack of cisternae that modifies and sorts proteins from the ER.",
+    "zh-Hant": "一疊扁囊，修飾並分揀來自內質網嘅蛋白質。"
+   },
+   "parts": [
+    {
+     "id": "cis",
+     "color": "#E3C36A",
+     "name": {
+      "en": "Cis face",
+      "zh-Hant": "順面"
+     },
+     "text": {
+      "en": "Receives vesicles from the ER.",
+      "zh-Hant": "接收來自內質網嘅囊泡。"
+     }
+    },
+    {
+     "id": "medial",
+     "color": "#C39A2E",
+     "name": {
+      "en": "Medial cisternae",
+      "zh-Hant": "中間囊"
+     },
+     "text": {
+      "en": "Enzymes here trim and add sugars to proteins.",
+      "zh-Hant": "此處嘅酵素修剪並為蛋白質加上糖基。"
+     }
+    },
+    {
+     "id": "trans",
+     "color": "#8F6D14",
+     "name": {
+      "en": "Trans face",
+      "zh-Hant": "反面"
+     },
+     "text": {
+      "en": "Sorts finished proteins into vesicles leaving the stack.",
+      "zh-Hant": "將完成嘅蛋白質分揀入離開高爾基體嘅囊泡。"
+     }
+    },
+    {
+     "id": "vesicles",
+     "color": "#E8A33D",
+     "name": {
+      "en": "Transport vesicles",
+      "zh-Hant": "運輸囊泡"
+     },
+     "text": {
+      "en": "Small vesicles carrying cargo between compartments.",
+      "zh-Hant": "喺各區室之間運送貨物嘅小囊泡。"
+     }
+    }
+   ]
+  }
+ ]
+}

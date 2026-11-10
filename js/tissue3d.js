@@ -1,7 +1,7 @@
 // Three.js view of one schematic tissue: orbit, click a part to pick it.
 // Shapes are drawn from textbook-style reference figures, not measured data. Three.js loads from vendor/three on first use.
 
-export async function createTissueView(host, { onPick }) {
+export async function createTissueView(host, { onPick, elements }) {
   const THREE = await import('three');
   const { OrbitControls } = await import('three/addons/OrbitControls.js');
 
@@ -169,6 +169,62 @@ export async function createTissueView(host, { onPick }) {
       }
     },
 
+    // Organelle models: shapes are illustrative, proportions follow textbook figures
+    mito() {
+      const cap = (r, len) => { const g = new THREE.CapsuleGeometry(r, len, 24, 32); g.rotateZ(Math.PI / 2); return g; };
+      put(cap(1.0, 2.2), '#D98A6B', 'outer', { opacity: 0.28 });
+      put(cap(0.88, 2.1), '#B0563A', 'inner', { opacity: 0.3 });
+      put(cap(0.8, 2.0), '#F3E0A8', 'matrix', { opacity: 0.22 });
+      put(cap(0.94, 2.15), '#EAC9B8', 'ims', { opacity: 0.12 });
+      for (let k = 0; k < 7; k++) {   // cristae: thin plates across the matrix, alternately offset up and down
+        const c = put(new THREE.CylinderGeometry(0.68, 0.68, 0.06, 28), '#8C3A22', 'cristae');
+        c.rotation.z = Math.PI / 2; c.position.set(-1.6 + k * 0.53, (k % 2 ? 0.14 : -0.14), 0); c.scale.set(1, 1, 1);
+      }
+      const dna = put(new THREE.TorusGeometry(0.2, 0.04, 8, 24), '#3B4F9C', 'mtdna'); dna.position.set(0.5, -0.15, 0.2); dna.rotation.set(1, 0.4, 0);
+    },
+
+    nucleus() {
+      put(new THREE.SphereGeometry(1.7, 40, 28), '#8C97C4', 'envelope', { opacity: 0.25 });
+      put(new THREE.SphereGeometry(1.62, 32, 24), '#3B4F9C', 'chromatin', { opacity: 0.16 });
+      const r = rng(9), pts = [];
+      for (let i = 0; i < 260; i++) { const a = i / 260 * Math.PI * 30, rr = 0.5 + 0.7 * r(); pts.push(V(Math.sin(a) * rr, Math.cos(a * 1.3) * rr, Math.sin(a * 0.7 + 1) * rr)); }
+      put(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts, true), 400, 0.035, 5, true), '#3B4F9C', 'chromatin');
+      ball([0.55, 0.2, 0.35], 0.38, '#6B3A7A', 'nucleolus');
+      const gold = 2.399963;
+      for (let i = 0; i < 40; i++) {   // pores spread evenly over the surface (Fibonacci sphere)
+        const y = 1 - (i + 0.5) / 20, rad = Math.sqrt(Math.max(0, 1 - y * y)), th = i * gold, n = V(Math.cos(th) * rad, y, Math.sin(th) * rad);
+        const t = put(new THREE.TorusGeometry(0.11, 0.035, 8, 16), '#C39A2E', 'pore');
+        t.position.copy(n.clone().multiplyScalar(1.7)); t.quaternion.setFromUnitVectors(V(0, 0, 1), n);
+      }
+    },
+
+    'er-rough'() {
+      const r = rng(4);
+      for (let k = 0; k < 5; k++) {   // stacked, slightly wavy sheets
+        const g = new THREE.PlaneGeometry(3.4, 2.2, 24, 16), pos = g.attributes.position;
+        for (let i = 0; i < pos.count; i++) pos.setZ(i, Math.sin(pos.getX(i) * 1.6 + k) * 0.08 + Math.cos(pos.getY(i) * 2 + k) * 0.06);
+        g.computeVertexNormals();
+        const m = put(g, '#6C7F3A', 'cisternae'); m.rotation.x = -Math.PI / 2; m.position.y = k * 0.38 - 0.76;
+        if (k < 4) { const l = put(new THREE.BoxGeometry(3.3, 0.22, 2.1), '#D6DEB0', 'lumen', { opacity: 0.18 }); l.position.y = k * 0.38 - 0.57; }
+        const ribo = new THREE.InstancedMesh(new THREE.SphereGeometry(0.055, 8, 6), new THREE.MeshStandardMaterial({ color: '#2F5FA8', roughness: 0.5 }), 90), d = new THREE.Object3D();
+        for (let i = 0; i < 90; i++) { d.position.set((r() - 0.5) * 3.2, k * 0.38 - 0.76 + 0.09, (r() - 0.5) * 2.0); d.updateMatrix(); ribo.setMatrixAt(i, d.matrix); }
+        ribo.userData.part = 'ribosome'; ribo.userData.base = 1; group.add(ribo); meshes.push(ribo);
+      }
+    },
+
+    golgi() {
+      const cols = ['#E3C36A', '#D4AC45', '#C39A2E', '#A98121', '#8F6D14'], part = ['cis', 'medial', 'medial', 'medial', 'trans'];
+      cols.forEach((c, k) => {   // curved stack of flattened discs, widest in the middle
+        const w = 1.5 - Math.abs(k - 2) * 0.12, m = put(new THREE.SphereGeometry(1, 32, 12), c, part[k]);
+        m.scale.set(w, 0.07, w * 0.65); m.position.set(0, k * 0.3 - 0.6, 0);
+      });
+      const r = rng(15);
+      for (let i = 0; i < 14; i++) {
+        const low = i < 7, a = r() * Math.PI * 2, d = 0.8 + r() * 0.5;
+        ball([Math.cos(a) * d, low ? -0.95 + r() * 0.2 : 0.75 + r() * 0.5, Math.sin(a) * d * 0.7], 0.08, '#E8A33D', 'vesicles');
+      }
+    },
+
     // Bacterial cell (E. coli): capsule envelope, nucleoid, plasmids, ribosomes, pili and flagella. Adapted from the supplied procedural model.
     ecoli() {
       const r = rng(7), R = 2, L = 4;
@@ -222,6 +278,18 @@ export async function createTissueView(host, { onPick }) {
     },
   };
 
+
+  // Atom models are data-driven: balls at 25% of the van der Waals radius, sticks between bonded atoms
+  function buildAtoms(m, elements) {
+    const pos = m.atoms.map(a => V(...a.xyz));
+    m.atoms.forEach((a, i) => { const e = elements[a.el]; ball(pos[i].toArray(), e.vdw * 0.25, e.color, a.el, [1, 1, 1], { roughness: 0.35 }); });
+    for (const [i, j] of m.bonds) {
+      const d = pos[j].clone().sub(pos[i]), g = new THREE.CylinderGeometry(0.06, 0.06, d.length(), 10);
+      const c = put(g, '#b8bcc4', m.atoms[i].el === 'H' ? m.atoms[j].el : m.atoms[i].el);
+      c.position.copy(pos[i].clone().add(pos[j]).multiplyScalar(0.5)); c.quaternion.setFromUnitVectors(V(0, 1, 0), d.normalize());
+    }
+  }
+
   function draw() { renderer.render(scene, camera); }
   function resize() {
     const w = host.clientWidth || 600, h = host.clientHeight || 400;
@@ -229,10 +297,10 @@ export async function createTissueView(host, { onPick }) {
   }
   new ResizeObserver(resize).observe(host);
 
-  function show(id) {
+  function show(id, model) {
     group.traverse(o => { o.geometry?.dispose(); o.material?.map?.dispose(); o.material?.dispose?.(); });
     group.clear(); meshes = []; picked = null;
-    BUILD[id]();
+    if (model?.atoms) buildAtoms(model, elements); else BUILD[id]();
     const box = new THREE.Box3().setFromObject(group), c = box.getCenter(V(0, 0, 0)), reach = box.getSize(V(0, 0, 0)).length() / 2;
     controls.target.copy(c);
     // distance that fits the model's height and width in the view, so tall models (the phage) are not cropped
@@ -241,7 +309,7 @@ export async function createTissueView(host, { onPick }) {
     const d = Math.max(sz.y / (2 * t), sz.x / (2 * t * camera.aspect)) * 1.3 + sz.z / 2;
     camera.position.copy(c).add(V(0.35, 0.28, 1).normalize().multiplyScalar(d));
     controls.minDistance = reach * 0.6; controls.maxDistance = reach * 6;
-    controls.update(); renderer.domElement.setAttribute('aria-label', `${id} tissue, schematic`);
+    controls.update(); renderer.domElement.setAttribute('aria-label', `${id} model, schematic`);
     resize();
   }
 

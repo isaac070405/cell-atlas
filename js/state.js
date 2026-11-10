@@ -2,15 +2,15 @@
 // Viewers and panels read state and listen for "change"; they never write each other.
 
 export const LEVELS = [
-  // log10(metres) range covered by each level on the ruler. Module C is the 3D Anatomy Model (body, system, organ); module T is the schematic tissue models.
+  // log10(metres) range covered by each level on the ruler. Module C is the 3D Anatomy Model (body, system, organ); module T is the schematic tissue models; O (organelle) and M (atom) are schematic models drawn by js/tissue3d.js.
   { id: 'body',      module: 'C', unit: 'm',  from: 0.3,  to: -0.3 },
   { id: 'system',    module: 'C', unit: 'm',  from: -0.3, to: -1 },
   { id: 'organ',     module: 'C', unit: 'cm', from: -1,   to: -2.7 },
   { id: 'tissue',    module: 'T', unit: 'mm', from: -2.7, to: -4.4 },
   { id: 'cell',      module: 'A', unit: 'µm', from: -4.4, to: -5 },
-  { id: 'organelle', module: 'A', unit: 'µm', from: -5,   to: -7 },
+  { id: 'organelle', module: 'O', unit: 'µm', from: -5,   to: -7 },
   { id: 'complex',   module: 'B', unit: 'nm', from: -7,   to: -9 },
-  { id: 'atom',      module: 'B', unit: 'Å',  from: -9,   to: -10.2 },
+  { id: 'atom',      module: 'M', unit: 'Å',  from: -9,   to: -10.2 },
 ];
 
 const bus = new EventTarget();
@@ -32,13 +32,14 @@ export function setState(patch) {
   if ('cell' in patch && patch.cell && !('level' in patch) && levelInfo().module !== 'A') state.level = 'cell';
   // a system or organ belongs to one level; changing level clears it unless the same call names a new one
   if (state.level !== beforeLevel && !('anat' in patch)) state.anat = null;
+  if (state.level !== beforeLevel && !('selection' in patch)) state.selection = null;
   writeUrl();
   bus.dispatchEvent(new CustomEvent('change', { detail: getState() }));
 }
 
 // Deep links: ?cell=enterocyte, ?pdb=5XTD, ?level=organelle (same keys as links.json),
 // ?view=compare and &muscle=cardiomyocyte for the four-cell comparison,
-// ?level=organ&part=liver for a system or organ in the 3D Anatomy Model, ?cell=hepatocyte&org=mito for a picked compartment, ?pdb=5XTD&tour=fes-n2 for a preset view
+// ?level=organ&part=liver for a system or organ in the 3D Anatomy Model, ?level=organelle&part=mito&sel=cristae and ?level=atom&part=water&sel=O for the organelle and atom models, ?cell=hepatocyte&org=mito for a picked compartment, ?pdb=5XTD&tour=fes-n2 for a preset view
 export function readUrl() {
   const q = new URLSearchParams(location.search);
   const patch = {};
@@ -48,7 +49,8 @@ export function readUrl() {
   if (LEVELS.some(l => l.id === q.get('level'))) patch.level = q.get('level');
   if (q.get('view') === 'compare') patch.view = 'compare';
   if (q.get('part')) patch.anat = q.get('part');
-  if (q.get('org')) patch.selection = q.get('org');
+  if (q.get('org') && q.get('level') !== 'organelle') patch.selection = q.get('org');
+  if (q.get('org') && q.get('level') === 'organelle' && !q.get('part')) patch.anat = q.get('org');  // old ?level=organelle&org=mito links
   if (q.get('sel')) patch.selection = q.get('sel');
   if (MUSCLES.includes(q.get('muscle'))) patch.muscle = q.get('muscle');
   return patch;
@@ -60,8 +62,8 @@ function writeUrl() {
   if (state.pdb) q.set('pdb', state.pdb);
   if (state.pdb && state.tour) q.set('tour', state.tour);
   if (state.level !== 'cell') q.set('level', state.level);
-  if (state.anat && ['C', 'T'].includes(levelInfo().module)) q.set('part', state.anat);
-  if (state.selection && state.anat && levelInfo().module === 'T') q.set('sel', state.selection);
+  if (state.anat && ['C', 'T', 'O', 'M'].includes(levelInfo().module)) q.set('part', state.anat);
+  if (state.selection && state.anat && ['T', 'O', 'M'].includes(levelInfo().module)) q.set('sel', state.selection);
   if (state.selection && state.cell && !state.pdb && levelInfo().module === 'A') q.set('org', state.selection);
   if (state.view === 'compare' && levelInfo().module === 'A') {
     q.set('view', 'compare');

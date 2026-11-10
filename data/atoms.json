@@ -1,0 +1,298 @@
+{
+ "_note": "Ball-and-stick models. Bond length = sum of Cordero 2008 single-bond covalent radii; angles are textbook values. Ball radius = 25% of the Bondi 1964 van der Waals radius. Radii are in the element table below.",
+ "elements": {
+  "H": {
+   "z": 1,
+   "covalent": 0.31,
+   "vdw": 1.2,
+   "color": "#cfd3d8"
+  },
+  "C": {
+   "z": 6,
+   "covalent": 0.76,
+   "vdw": 1.7,
+   "color": "#4a4a4a"
+  },
+  "N": {
+   "z": 7,
+   "covalent": 0.71,
+   "vdw": 1.55,
+   "color": "#3050f8"
+  },
+  "O": {
+   "z": 8,
+   "covalent": 0.66,
+   "vdw": 1.52,
+   "color": "#e03030"
+  }
+ },
+ "models": [
+  {
+   "id": "water",
+   "name": {
+    "en": "Water (H₂O)",
+    "zh-Hant": "水 (H₂O)"
+   },
+   "summary": {
+    "en": "The solvent of every cell. Two O–H bonds at about 104.5°. Bond length 0.97 Å, taken as the sum of the single-bond covalent radii; angles are textbook values.",
+    "zh-Hant": "細胞內所有反應嘅溶劑。兩條 O–H 鍵，夾角約 104.5°。 鍵長 0.97 Å，取單鍵共價半徑之和；角度為教科書數值。"
+   },
+   "cites": [
+    "cordero-2008",
+    "bondi-1964"
+   ],
+   "atoms": [
+    {
+     "el": "O",
+     "xyz": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.767,
+      -0.594,
+      0
+     ]
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -0.767,
+      -0.594,
+      0
+     ]
+    }
+   ],
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "parts": [
+    {
+     "id": "O",
+     "color": "#e03030",
+     "name": {
+      "en": "Oxygen (O)",
+      "zh-Hant": "氧 (O)"
+     },
+     "text": {
+      "en": "Atomic number 8. 1 atom in this molecule. Covalent radius 0.66 Å, van der Waals radius 1.52 Å.",
+      "zh-Hant": "原子序 8。呢個分子有 1 個。共價半徑 0.66 Å，范德華半徑 1.52 Å。"
+     }
+    },
+    {
+     "id": "H",
+     "color": "#cfd3d8",
+     "name": {
+      "en": "Hydrogen (H)",
+      "zh-Hant": "氫 (H)"
+     },
+     "text": {
+      "en": "Atomic number 1. 2 atoms in this molecule. Covalent radius 0.31 Å, van der Waals radius 1.2 Å.",
+      "zh-Hant": "原子序 1。呢個分子有 2 個。共價半徑 0.31 Å，范德華半徑 1.2 Å。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ammonia",
+   "name": {
+    "en": "Ammonia (NH₃)",
+    "zh-Hant": "氨 (NH₃)"
+   },
+   "summary": {
+    "en": "Nitrogen waste from amino acid breakdown. Three N–H bonds in a pyramid, H–N–H about 107°. Bond length 1.02 Å, taken as the sum of the single-bond covalent radii; angles are textbook values.",
+    "zh-Hant": "氨基酸分解產生嘅含氮廢物。三條 N–H 鍵成錐形，H–N–H 約 107°。 鍵長 1.02 Å，取單鍵共價半徑之和；角度為教科書數值。"
+   },
+   "cites": [
+    "cordero-2008",
+    "bondi-1964"
+   ],
+   "atoms": [
+    {
+     "el": "N",
+     "xyz": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.947,
+      0.0,
+      -0.379
+     ]
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -0.473,
+      0.82,
+      -0.379
+     ]
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -0.473,
+      -0.82,
+      -0.379
+     ]
+    }
+   ],
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "parts": [
+    {
+     "id": "N",
+     "color": "#3050f8",
+     "name": {
+      "en": "Nitrogen (N)",
+      "zh-Hant": "氮 (N)"
+     },
+     "text": {
+      "en": "Atomic number 7. 1 atom in this molecule. Covalent radius 0.71 Å, van der Waals radius 1.55 Å.",
+      "zh-Hant": "原子序 7。呢個分子有 1 個。共價半徑 0.71 Å，范德華半徑 1.55 Å。"
+     }
+    },
+    {
+     "id": "H",
+     "color": "#cfd3d8",
+     "name": {
+      "en": "Hydrogen (H)",
+      "zh-Hant": "氫 (H)"
+     },
+     "text": {
+      "en": "Atomic number 1. 3 atoms in this molecule. Covalent radius 0.31 Å, van der Waals radius 1.2 Å.",
+      "zh-Hant": "原子序 1。呢個分子有 3 個。共價半徑 0.31 Å，范德華半徑 1.2 Å。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "methane",
+   "name": {
+    "en": "Methane (CH₄)",
+    "zh-Hant": "甲烷 (CH₄)"
+   },
+   "summary": {
+    "en": "The simplest organic molecule. Four C–H bonds point to the corners of a tetrahedron, 109.5° apart. Bond length 1.07 Å, taken as the sum of the single-bond covalent radii; angles are textbook values.",
+    "zh-Hant": "最簡單嘅有機分子。四條 C–H 鍵指向正四面體嘅四個頂點，夾角 109.5°。 鍵長 1.07 Å，取單鍵共價半徑之和；角度為教科書數值。"
+   },
+   "cites": [
+    "cordero-2008",
+    "bondi-1964"
+   ],
+   "atoms": [
+    {
+     "el": "C",
+     "xyz": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.618,
+      0.618,
+      0.618
+     ]
+    },
+    {
+     "el": "H",
+     "xyz": [
+      0.618,
+      -0.618,
+      -0.618
+     ]
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -0.618,
+      0.618,
+      -0.618
+     ]
+    },
+    {
+     "el": "H",
+     "xyz": [
+      -0.618,
+      -0.618,
+      0.618
+     ]
+    }
+   ],
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ]
+   ],
+   "parts": [
+    {
+     "id": "C",
+     "color": "#4a4a4a",
+     "name": {
+      "en": "Carbon (C)",
+      "zh-Hant": "碳 (C)"
+     },
+     "text": {
+      "en": "Atomic number 6. 1 atom in this molecule. Covalent radius 0.76 Å, van der Waals radius 1.7 Å.",
+      "zh-Hant": "原子序 6。呢個分子有 1 個。共價半徑 0.76 Å，范德華半徑 1.7 Å。"
+     }
+    },
+    {
+     "id": "H",
+     "color": "#cfd3d8",
+     "name": {
+      "en": "Hydrogen (H)",
+      "zh-Hant": "氫 (H)"
+     },
+     "text": {
+      "en": "Atomic number 1. 4 atoms in this molecule. Covalent radius 0.31 Å, van der Waals radius 1.2 Å.",
+      "zh-Hant": "原子序 1。呢個分子有 4 個。共價半徑 0.31 Å，范德華半徑 1.2 Å。"
+     }
+    }
+   ]
+  }
+ ]
+}
