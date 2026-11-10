@@ -15,20 +15,23 @@
     { "id": "myofibril", "token": "--org-myofibril", "name": { "en": "Myofibrils", "zh-Hant": "肌原纖維" }, "sizes": [{ "cite": "eisenberg-1974", "text": { "en": "Mean width 1.05 ± 0.04 µm", "zh-Hant": "平均寬度 1.05 ± 0.04 µm" } }], "function": { "cite": "herzog-2022" } },
     { "id": "chloro-stroma", "token": "--org-chloro", "name": { "en": "Chloroplast stroma", "zh-Hant": "葉綠體基質" }, "sizes": [{ "cite": "knoblauch-2023", "text": { "en": "Whole chloroplast about 93 µm³", "zh-Hant": "整個葉綠體體積約 93 µm³" } }], "function": { "cite": "johnson-2025" } },
     { "id": "vacuole", "token": "--org-vacuole", "name": { "en": "Vacuole", "zh-Hant": "液泡" }, "function": { "cite": "jiang-2021" } },
-    { "id": "cytosol", "token": "--org-cytosol", "name": { "en": "Cytosol", "zh-Hant": "胞質溶膠" }, "function": { "cite": "wang-2013" } }
+    { "id": "cytosol", "token": "--org-cytosol", "name": { "en": "Cytosol", "zh-Hant": "胞質溶膠" }, "function": { "cite": "wang-2013" } },
+    { "id": "periplasm", "token": "--org-periplasm", "name": { "en": "Periplasm", "zh-Hant": "周質空間" } },
+    { "id": "capsid", "token": "--org-capsid", "name": { "en": "Capsid (head)", "zh-Hant": "衣殼（頭部）" } },
+    { "id": "genome", "token": "--org-genome", "name": { "en": "Genome", "zh-Hant": "基因組" } }
   ],
-  "compareRows": ["nucleus", "mito", "er-rough", "er-smooth-golgi", "perox", "lyso", "endo", "sr", "myofibril", "chloro-stroma", "vacuole", "cytosol"],
-  "compareColumns": ["hepatocyte", "enterocyte", "muscle", "plant-mesophyll"],
+  "compareRows": ["nucleus", "mito", "er-rough", "er-smooth-golgi", "perox", "lyso", "endo", "sr", "myofibril", "chloro-stroma", "vacuole", "periplasm", "capsid", "genome", "cytosol"],
+  "compareColumns": ["hepatocyte", "enterocyte", "muscle", "plant-mesophyll", "ecoli", "bacteriophage"],
   "muscleTypes": ["skeletal-myocyte", "cardiomyocyte", "smooth-myocyte"],
   "cells": [
-    { "id": "hepatocyte", "name": { "en": "Hepatocyte", "zh-Hant": "肝細胞" }, "release": 1, "sizeUm": [20, 30],
+    { "id": "hepatocyte", "kind": "animal", "name": { "en": "Hepatocyte", "zh-Hant": "肝細胞" }, "release": 1, "sizeUm": [20, 30],
       "species": { "en": "Rat liver", "zh-Hant": "大鼠肝臟" }, "basis": "cell", "data": "bnid-110373",
       "fractions": [
         { "org": "cytosol", "value": 54 }, { "org": "mito", "value": 22 }, { "org": "er-rough", "value": 9 },
         { "org": "er-smooth-golgi", "value": 6 }, { "org": "nucleus", "value": 6 }, { "org": "perox", "value": 1 },
         { "org": "lyso", "value": 1 }, { "org": "endo", "value": 1 }
       ] },
-    { "id": "enterocyte", "name": { "en": "Enterocyte", "zh-Hant": "腸道上皮細胞" }, "release": 1,
+    { "id": "enterocyte", "kind": "animal", "name": { "en": "Enterocyte", "zh-Hant": "腸道上皮細胞" }, "release": 1,
       "size": { "en": "20.8 µm tall, 9.7 µm across at mid-height; 1,452 µm³", "zh-Hant": "高 20.8 µm，中段直徑 9.7 µm；體積 1,452 µm³" },
       "species": { "en": "Hamster jejunum, fasted", "zh-Hant": "倉鼠空腸（空腹）" }, "basis": "cell", "data": "buschmann-1981",
       "fractions": [
@@ -37,17 +40,30 @@
         { "org": "er-rough", "value": 1.8 }, { "org": "golgi", "value": 1.2 }, { "org": "perinuclear", "value": 0.7 },
         { "org": "lyso", "negligible": true }, { "org": "perox", "negligible": true }
       ] },
-    { "id": "skeletal-myocyte", "name": { "en": "Skeletal muscle cell", "zh-Hant": "骨骼肌細胞" }, "release": 1,
+    { "id": "skeletal-myocyte", "kind": "animal", "name": { "en": "Skeletal muscle cell", "zh-Hant": "骨骼肌細胞" }, "release": 1,
       "species": { "en": "Human vastus lateralis, 16 young men", "zh-Hant": "人類股外側肌，16 個年輕男性" }, "basis": "cell", "data": "larsen-2012",
       "fractions": [ { "org": "mito", "value": [4, 15] } ] },
-    { "id": "cardiomyocyte", "name": { "en": "Cardiac muscle cell", "zh-Hant": "心肌細胞" }, "release": 1,
+    { "id": "cardiomyocyte", "kind": "animal", "name": { "en": "Cardiac muscle cell", "zh-Hant": "心肌細胞" }, "release": 1,
       "species": { "en": "10 mammals incl. human", "zh-Hant": "10 種哺乳類，包括人類" }, "basis": "cell", "data": "barth-1992",
       "fractions": [ { "org": "myofibril", "value": 60, "approx": true }, { "org": "mito", "value": [22, 37] } ] },
-    { "id": "smooth-myocyte", "name": { "en": "Smooth muscle cell", "zh-Hant": "平滑肌細胞" }, "release": 1,
+    { "id": "smooth-myocyte", "kind": "animal", "name": { "en": "Smooth muscle cell", "zh-Hant": "平滑肌細胞" }, "release": 1,
       "size": { "en": "About 515 µm long; 3,500 µm³", "zh-Hant": "長約 515 µm；體積約 3,500 µm³" },
       "species": { "en": "Guinea-pig taenia coli", "zh-Hant": "豚鼠結腸帶" }, "basis": "cell", "data": "gabella-1976",
       "fractions": [ { "org": "mito", "value": [3.5, 4] }, { "org": "sr", "value": 2, "approx": true } ] },
-    { "id": "plant-mesophyll", "name": { "en": "Plant mesophyll cell", "zh-Hant": "植物葉肉細胞" }, "release": 1,
+    { "id": "ecoli", "kind": "bacterial", "schematic": true, "name": { "en": "Bacterial cell (E. coli)", "zh-Hant": "細菌細胞（大腸桿菌）" }, "release": 2,
+      "species": { "en": "E. coli and Salmonella", "zh-Hant": "大腸桿菌同沙門氏菌" }, "basis": "cell", "data": "stock-1977",
+      "fractions": [
+        { "org": "periplasm", "value": [20, 40] },
+        { "org": "cytosol", "value": [60, 80], "note": { "en": "Whole cytoplasm: the remainder after the periplasm, including nucleoid, ribosomes and inner membrane", "zh-Hant": "整個細胞質：扣除周質空間後嘅餘下部分，包括擬核、核糖體同內膜" } }
+      ] },
+    { "id": "bacteriophage", "kind": "virus", "schematic": true, "name": { "en": "Bacteriophage (T4)", "zh-Hant": "噬菌體（T4）" }, "release": 2,
+      "species": { "en": "Enterobacteria phage T4, infects E. coli", "zh-Hant": "腸道細菌噬菌體 T4，感染大腸桿菌" }, "basis": "virion", "data": "tao-2013",
+      "compareNote": { "en": "Sizes and lengths, not volume shares", "zh-Hant": "大小同長度，唔係體積比例" },
+      "fractions": [
+        { "org": "capsid", "text": { "en": "120 nm × 86 nm head", "zh-Hant": "頭部 120 nm × 86 nm" } },
+        { "org": "genome", "text": { "en": "170 kb, 56 µm long, near crystalline density", "zh-Hant": "170 kb，長 56 µm，密度接近結晶" } }
+      ] },
+    { "id": "plant-mesophyll", "kind": "plant", "name": { "en": "Plant mesophyll cell", "zh-Hant": "植物葉肉細胞" }, "release": 1,
       "species": { "en": "Spinach leaf", "zh-Hant": "菠菜葉" }, "basis": "cell", "data": "winter-1994",
       "fractions": [
         { "org": "vacuole", "value": 79 }, { "org": "chloro-stroma", "value": 9.5 },

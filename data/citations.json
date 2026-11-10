@@ -427,6 +427,32 @@
       "year": 1968,
       "url": "https://doi.org/10.1083/JCB.37.1.27",
       "status": "verified"
+    },
+    "tao-2013": {
+      "source": "Tao et al. (2013) PNAS 110:5846–5851",
+      "detail": {
+        "en": "Phage T4 packages its 56 µm long, 170 kb genome into a 120 nm × 86 nm head to near crystalline density (abstract)",
+        "zh-Hant": "噬菌體 T4 將長 56 µm、170 kb 嘅基因組包裝入 120 nm × 86 nm 嘅頭部，密度接近結晶（摘要）"
+      },
+      "species": "Bacteriophage T4",
+      "cellType": "Virion",
+      "method": "Reported in a phage T4 packaging study",
+      "year": 2013,
+      "url": "https://doi.org/10.1073/pnas.1300867110",
+      "status": "verified"
+    },
+    "stock-1977": {
+      "source": "Stock, Rauch & Roseman (1977) J Biol Chem 252:7850–7861",
+      "detail": {
+        "en": "Periplasmic space measured at 20 to 40% of total cell volume in E. coli and Salmonella typhimurium grown under routine conditions (abstract)",
+        "zh-Hant": "常規培養條件下，大腸桿菌同鼠傷寒沙門氏菌嘅周質空間佔細胞總體積 20 至 40%（摘要）"
+      },
+      "species": "E. coli and Salmonella typhimurium",
+      "cellType": "Bacterial cell",
+      "method": "Periplasmic space volume measurement",
+      "year": 1977,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/334768/",
+      "status": "verified"
     }
   }
 }

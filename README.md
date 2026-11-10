@@ -10,7 +10,7 @@ Live site: https://isaac070405.github.io/cell-atlas/
 
 This repo holds the **site shell** (roadmap stage 0) plus the first data views:
 
-- Log-scale navigator from 40 µm to 0.6 Å with four levels: cell, organelle, complex, atom.
+- Log-scale navigator from 2 m to 0.6 Å with seven levels: system, organ, tissue (the 3D Anatomy Model, embedded from `anatomy/` with its controls docked in the Cell Atlas panel style; desktop only). System and organ levels list the systems and organs in `data/anatomy.json`; picking one isolates it in the model (`?level=organ&part=heart`). Tissue level has four schematic 3D models (`js/tissue3d.js`, `data/tissues.json`, `?level=tissue&part=nervous`). The bacterial cell (E. coli) and the virus (bacteriophage T4) are schematic models; E. coli has a periplasm range (Stock 1977) in the compare view, the phage has no data table. Selected cell buttons and the Cell band on the ruler are red for animal, green for plant, purple for bacterial cells, cell, organelle, complex, atom.
 - One state controller (`js/state.js`) drives the header readout, viewer pane and three info panels.
 - Language switch EN / 繁 / 雙語, remembered per browser. Strings live in `data/i18n.json`.
 - Light and dark themes from `css/tokens.css`, with fixed organelle colours shared across the platform.
@@ -37,6 +37,7 @@ This repo holds the **site shell** (roadmap stage 0) plus the first data views:
 | `spike/molstar.html` | Stage 1 Mol* spike page |
 | `scripts/check-data.mjs` | Stage 2 and 3 gate: citations resolve, none pending, model volumes within 2 points |
 | `vendor/` | Self-hosted Three.js and Mol* builds |
+| `anatomy/` | Imported 3D Anatomy Model (stage 5), served at `/anatomy/`, no design system; see `anatomy/NOTICE.md` for licences |
 | `.design/cell-atlas/` | Design brief, information architecture, build tasks |
 | `data/catalog.json` | Cells with volume fractions, compartments, structures |
 | `data/citations.json` | Shared citation registry (`verified` or `pending`) |
@@ -69,7 +70,7 @@ Each stage has a pass condition. The next stage starts only after it passes.
 | 2. Data | Data tables for the four first-release cell types, cross-layer index, full links.json | "Pending check" count is zero. The 30 citations are verified; the open data items below stay open |
 | 3. Module A | Procedural Three.js cell, side-by-side compare, clipping plane, organelle pick, data card | Organelle volume ratios match the data table within 2 percentage points. Passes in `node scripts/check-data.mjs`; cardiomyocyte and plant outlines are too crowded to draw without overlap |
 | 4. Module B | Mol* viewer, presets, colouring modes, subunit list with UniProt links; mitochondrion → Complex I and rough ER → ribosome jumps | One full cell → atom → cell round trip without stutter |
-| 5. Platform integration | New section in the Human Biology home page; `?part=` deep link in the 3D model; jump buttons in Histology and Specimen Room | Body → tissue → cell → molecule chain works end to end |
+| 5. Platform integration | New section in the Human Biology home page; `?part=` deep link in the 3D model; jump buttons in Histology and Specimen Room | Body → tissue → cell → molecule chain works end to end. 3D model copied into `anatomy/`. Home page section and Histology / Specimen Room jumps dropped; only the 3D model and a `?part=` link from the cell views remain |
 | 6. Polish | HUD layout, light and dark modes, three language modes, mobile, source cards | Every number on every screen has a citation |
 
 ### Releases

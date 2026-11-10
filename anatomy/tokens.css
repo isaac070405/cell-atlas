@@ -1,0 +1,24 @@
+/* Maps the anatomy model's variable names onto the Cell Atlas platform tokens (../css/tokens.css),
+   so colours, fonts, spacing and light/dark mode come from one place. */
+:root {
+  --color-bg: var(--paper);
+  --color-surface: var(--paper-raised);
+  --color-text: var(--ink);
+  --color-accent: var(--stain);
+  --color-accent-100: color-mix(in srgb, var(--stain) 8%, var(--paper));
+  --color-accent-200: color-mix(in srgb, var(--stain) 16%, var(--paper));
+  --color-accent-500: var(--rule);
+  --color-accent-600: var(--stain);
+  --color-accent-700: var(--stain);
+  --color-accent-800: var(--stain);
+  --color-neutral-500: var(--rule);
+  --color-neutral-700: var(--ink-soft);
+  --color-divider: var(--rule);
+  --radius-md: var(--radius);
+  --shadow-sm: none;
+  --shadow-md: none;
+  --font-heading: var(--font-text);
+  --font-body: var(--font-text);
+  --stage-bg: var(--paper-raised);
+  --dock-h: 44vh;
+}

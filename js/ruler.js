@@ -1,11 +1,11 @@
-// Log-scale ruler from 40 µm to 0.6 Å. Each level is a band; clicking a band changes level.
+// Log-scale ruler from 2 m to 0.6 Å. Each level is a band; clicking a band changes level.
 import { LEVELS, getState, setState } from './state.js';
 import { html } from './i18n.js';
 
-const LEFT = -4.4, RIGHT = -10.2;            // log10(metres) at the ruler ends
+const LEFT = 0.3, RIGHT = -10.2;            // log10(metres) at the ruler ends
 const x = v => ((LEFT - v) / (LEFT - RIGHT)) * 1000;
 const DECADES = [
-  [-5, '10 µm'], [-6, '1 µm'], [-7, '100 nm'], [-8, '10 nm'], [-9, '1 nm'], [-10, '1 Å'],
+  [0, '1 m'], [-1, '10 cm'], [-2, '1 cm'], [-3, '1 mm'], [-4, '100 µm'], [-5, '10 µm'], [-6, '1 µm'], [-7, '100 nm'], [-8, '10 nm'], [-9, '1 nm'], [-10, '1 Å'],
 ];
 
 export function buildRuler() {
@@ -16,10 +16,10 @@ export function buildRuler() {
     s += `<rect class="band" data-level="${l.id}" x="${x(l.from) + 1}" y="0" width="${x(l.to) - x(l.from) - 2}" height="34" rx="2"/>`;
   }
   s += `<line class="base" x1="0" x2="1000" y1="40" y2="40"/>`;
-  for (let d = -5; d >= -10; d--) {
+  for (let d = 0; d >= -10; d--) {
     s += `<line class="tick" x1="${x(d)}" x2="${x(d)}" y1="36" y2="52"/>`;
   }
-  for (let d = -4; d > -11; d--) {
+  for (let d = 1; d > -11; d--) {
     for (let m = 2; m <= 9; m++) {
       const v = d - 1 + Math.log10(m);
       if (v <= LEFT && v >= RIGHT) s += `<line class="tick-minor" x1="${x(v)}" x2="${x(v)}" y1="40" y2="45"/>`;
