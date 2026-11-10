@@ -364,6 +364,19 @@
       "year": 2021,
       "url": "https://doi.org/10.1186/s43897-021-00008-7",
       "status": "verified"
+    },
+    "yoshioka-1981": {
+      "source": "Yoshioka, Ohmori & Sakai (1981) Jpn J Physiol 31:29",
+      "detail": {
+        "en": "Terminal cisternae of the sarcoplasmic reticulum about 0.19 µm in diameter at rest (0.21 ± 0.07 µm at peak tetanus; swollen to 0.29–0.35 µm by caffeine contracture)",
+        "zh-Hant": "肌漿網終池靜止時直徑約 0.19 µm（強直收縮峰值 0.21 ± 0.07 µm；咖啡因收縮可腫脹至 0.29–0.35 µm）"
+      },
+      "species": "Frog",
+      "cellType": "Skeletal muscle fibre",
+      "method": "EM of fixed muscle",
+      "year": 1981,
+      "url": "https://doi.org/10.2170/JJPHYSIOL.31.29",
+      "status": "verified"
     }
   }
 }
