@@ -1,6 +1,6 @@
 {
   "name": "@isaac070405/cell-3d",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Procedural 3D cell model sized from published organelle volume fractions, with a Three.js view.",
   "type": "module",
   "license": "MIT",
