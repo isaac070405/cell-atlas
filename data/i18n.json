@@ -504,6 +504,62 @@
     "card.tour.basis.literature": {
       "en": "Literature: stated in the cited paper",
       "zh-Hant": "文獻：引述自所引論文"
+    },
+    "tview.ant": {
+      "en": "Anterior",
+      "zh-Hant": "前面"
+    },
+    "tview.post": {
+      "en": "Posterior",
+      "zh-Hant": "後面"
+    },
+    "tview.r": {
+      "en": "Right",
+      "zh-Hant": "右側"
+    },
+    "tview.l": {
+      "en": "Left",
+      "zh-Hant": "左側"
+    },
+    "tview.sup": {
+      "en": "Superior",
+      "zh-Hant": "上方"
+    },
+    "tview.inf": {
+      "en": "Inferior",
+      "zh-Hant": "下方"
+    },
+    "tview.ax.transverse": {
+      "en": "Transverse",
+      "zh-Hant": "橫切面"
+    },
+    "tview.ax.sagittal": {
+      "en": "Sagittal",
+      "zh-Hant": "矢狀面"
+    },
+    "tview.ax.coronal": {
+      "en": "Coronal",
+      "zh-Hant": "冠狀面"
+    },
+    "tview.label": {
+      "en": "Camera views",
+      "zh-Hant": "鏡頭視角"
+    },
+    "tview.ends.transverse": {
+      "en": "Superior ⟷ Inferior",
+      "zh-Hant": "上 ⟷ 下"
+    },
+    "tview.ends.sagittal": {
+      "en": "Right ⟷ Left",
+      "zh-Hant": "右 ⟷ 左"
+    },
+    "tview.ends.coronal": {
+      "en": "Anterior ⟷ Posterior",
+      "zh-Hant": "前 ⟷ 後"
+    },
+    "tview.plane": {
+      "en": "Show cutting plane in the model",
+      "zh-Hant": "喺模型內顯示切割面"
     }
   }
 }

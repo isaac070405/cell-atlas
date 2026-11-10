@@ -20,7 +20,7 @@ function init() {
     S.VW.x = c.x; S.VW.y = c.z + 0.015; S.zset(Math.min(12, Math.max(0.5, 0.21 / (Math.max(sz.x, sz.z, 0.04) * 0.65))));
   };
 
-  // mode: 'body' (whole body, every panel), 'system' (only that system's parts), 'organ' (only that organ's parts and a cross-section)
+  // mode: 'body' (whole body, every panel), 'system' (only that system's parts), 'organ' (only that organ's parts); system and organ both float a cross-section and the view buttons over the stage
   function show({ systems = null, match = null, mode = 'body', frame: fr = null }) {
     frameRes = (fr || []).map(s => new RegExp(s));
     document.getElementById('lyreset').click();
@@ -30,16 +30,16 @@ function init() {
     keys.forEach(k => { const on = !systems || systems.includes(k); G[k].visible = on; const cb = document.querySelector(`#systems [data-k="${k}"] input`); if (cb) cb.checked = on; });
     if (res.length) original.forEach((v, o) => { if (v && systems.includes(o.userData.sys)) o.visible = res.some(re => re.test(o.userData.label || o.name || '')); });
     if (window.__clearSelection) window.__clearSelection();
-    // focus modes hide every panel and control; the cross-section floats over the stage for an organ
+    // focus modes hide every panel and control; the cross-section and view buttons float over the stage for a system or organ
     const focus = mode !== 'body';
     document.body.classList.toggle('focus', focus);
-    document.body.classList.toggle('slice', mode === 'organ');
+    document.body.classList.toggle('slice', focus);
     stage.classList.toggle('focus', focus);
-    if (mode === 'organ') { slicebox.classList.add('floating'); document.body.appendChild(slicebox); }
+    if (focus) { slicebox.classList.add('floating'); document.body.appendChild(slicebox); }
     else { slicebox.classList.remove('floating'); if (home) home.before(slicebox); }
     // the cutting plane hides small parts, so it is on only for the whole body (tick the box to show it for an organ)
     const pl = $('showplane'); if (pl && pl.checked !== (mode === 'body')) pl.click();
-    requestAnimationFrame(() => { frame(); if (mode === 'organ') sliceTo(); else if (window.__slice) window.__slice.renderSlice(); });
+    requestAnimationFrame(() => { frame(); if (focus) sliceTo(); else if (window.__slice) window.__slice.renderSlice(); });
   }
 
   function frame() {

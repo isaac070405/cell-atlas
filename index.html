@@ -77,8 +77,22 @@
           <p class="muted cell3d-note" id="mol-note"></p>
         </div>
         <div id="vp-tissue" class="cell3d-wrap" hidden>
-          <div class="cell3d" id="tissue3d" tabindex="0"></div>
-          <aside class="tissue-dir" id="tissue-dir" hidden></aside>
+          <div class="tview" id="tissue-views" role="group" data-i18n-attr="aria-label:tview.label" hidden></div>
+          <div class="cell3d-main" id="tissue-main">
+            <div class="cell3d-stage">
+              <div class="cell3d" id="tissue3d" tabindex="0"></div>
+              <aside class="tissue-dir" id="tissue-dir" hidden></aside>
+            </div>
+            <aside class="xsec" id="tissue-xsec" aria-labelledby="txsec-title" hidden>
+              <h4 id="txsec-title" data-i18n="cell3d.xsec"></h4>
+              <select id="txsec-axis" class="xsec-sel" data-i18n-attr="aria-label:cell3d.xsec"></select>
+              <canvas id="txsec-canvas" aria-hidden="true"></canvas>
+              <input type="range" id="txsec-cut" min="0" max="100" value="50" data-i18n-attr="aria-label:cell3d.cut">
+              <div class="xsec-ends"><span id="txsec-ends"></span></div>
+              <label class="xsec-opt"><input type="checkbox" id="txsec-3d"> <span data-i18n="tview.plane"></span></label>
+              <button class="chip" id="txsec-reset" data-i18n="cell3d.reset"></button>
+            </aside>
+          </div>
           <p class="muted cell3d-note" id="tissue-note"></p>
         </div>
         <iframe id="vp-anatomy" class="anatomy-frame" title="3D Anatomy Model" loading="lazy" hidden></iframe>
