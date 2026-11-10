@@ -118,14 +118,17 @@ function render(s) {
   const points = !A && !C && pdb ? tours.structures[pdb.id]?.points ?? [] : [];
   const point = points.find(p => p.id === s.tour);
   const showMol = !A && !C && !!pdb;
-  $('vp-empty').hidden = compare || showMol;
+  $('vp-empty').hidden = compare || showMol || C;
+  const fr = $('vp-anatomy');
+  fr.hidden = !C;
+  if (C && !fr.getAttribute('src')) fr.src = 'anatomy/index.html';
   $('vp-mol').hidden = !showMol;
   $('vp-queue').hidden = compare || C;
   $('vp-compare').hidden = !compare;
   const show3d = A && !compare && !!cell?.fractions?.length;
   $('vp-cell').hidden = !show3d;
   if (show3d) sync3d(cell, s.selection);
-  document.querySelector('.schematic').hidden = compare || showMol;
+  document.querySelector('.schematic').hidden = compare || showMol || C;
   if (showMol) {
     $('tour-bar').innerHTML = [{ id: '', label: { en: text('tour.whole') } }, ...points].map(p =>
       `<li><button data-tour="${esc(p.id)}" aria-pressed="${(p.id || null) === (s.tour || null) || (!p.id && !point)}">${p.id ? html(p.label) : html('tour.whole')}</button></li>`).join('');

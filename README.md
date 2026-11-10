@@ -10,7 +10,7 @@ Live site: https://isaac070405.github.io/cell-atlas/
 
 This repo holds the **site shell** (roadmap stage 0) plus the first data views:
 
-- Log-scale navigator from 2 m to 0.6 Å with seven levels: system, organ, tissue (placeholders for the 3D Anatomy Model), cell, organelle, complex, atom.
+- Log-scale navigator from 2 m to 0.6 Å with seven levels: system, organ, tissue (the 3D Anatomy Model, embedded from `anatomy/`), cell, organelle, complex, atom.
 - One state controller (`js/state.js`) drives the header readout, viewer pane and three info panels.
 - Language switch EN / 繁 / 雙語, remembered per browser. Strings live in `data/i18n.json`.
 - Light and dark themes from `css/tokens.css`, with fixed organelle colours shared across the platform.

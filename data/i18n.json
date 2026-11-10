@@ -74,8 +74,8 @@
       "zh-Hant": "3D 解剖模型：身體、器官、組織"
     },
     "moduleC.empty": {
-      "en": "The body, organ and tissue levels belong to the 3D Anatomy Model, which is not connected to this page yet.",
-      "zh-Hant": "身體、器官同組織層級屬於 3D 解剖模型，暫時未接駁到呢頁。"
+      "en": "The body, organ and tissue levels belong to the 3D Anatomy Model.",
+      "zh-Hant": "身體、器官同組織層級屬於 3D 解剖模型。"
     },
     "panel.chart.c": {
       "en": "Anatomy",

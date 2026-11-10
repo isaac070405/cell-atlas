@@ -203,3 +203,7 @@ button.chip { background: none; cursor: pointer; }
 .mol { position: relative; height: clamp(320px, 56vh, 600px); border: 1px solid var(--rule); background: var(--paper); touch-action: none; }
 .tour button { font-size: 12.5px; padding: 6px 8px; }
 .tour .tour-group { flex-basis: 100%; font: 11.5px/1 var(--font-label); color: var(--ink-soft); margin-top: var(--s1); }
+
+/* 3D Anatomy Model (system, organ, tissue levels) */
+.anatomy-frame { width: 100%; height: min(70vh, 760px); min-height: 420px; border: 1px solid var(--rule); border-radius: 4px; background: var(--paper); }
+.anatomy-frame[hidden] { display: none; }
