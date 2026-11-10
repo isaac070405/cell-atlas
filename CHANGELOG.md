@@ -6,6 +6,10 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 
 ## Unreleased
 
+### Changed
+- Removed `anatomy/assets/eye.glb` (GPL-3.0-only, incompatible with the MIT licence); the procedural eye is drawn instead.
+- Added the Three.js MIT licence text to `vendor/three/LICENSE`.
+
 ### Added
 - Issue forms for bug reports, data or citation errors and feature requests, plus `config.yml` that turns blank issues off (#40).
 - `CITATION.cff`, `SUPPORT.md`, `CHANGELOG.md` and a LICENSE badge in the README (#40).
