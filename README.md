@@ -114,7 +114,7 @@ Literature
 
 Technical
 - [x] Whether 4UG0 has a legacy .pdb file (RCSB download page): no, legacy PDB is disabled; use BinaryCIF
-- [ ] Latest Mol* version number and bundle size (molstar.org, npm)
+- [x] Latest Mol* version number and bundle size: npm `latest` is 5.13.1, the version in `vendor/molstar/`; bundle size under Sources already in use
 
 ## Decisions already made
 
