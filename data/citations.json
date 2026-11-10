@@ -155,6 +155,57 @@
       "year": 2023,
       "url": "https://doi.org/10.1111/tpj.16554",
       "status": "verified"
+    },
+    "hughes-1993": {
+      "source": "Hughes, Bourne & Poulos (1993) Virchows Archiv A",
+      "detail": {
+        "en": "Mean peroxisome diameter 0.56 µm in 16 control paediatric liver biopsies (aged 3 months to 18 years)",
+        "zh-Hant": "16 個對照兒童肝臟切片（3 個月至 18 歲）過氧化物酶體平均直徑 0.56 µm"
+      },
+      "species": "Human",
+      "cellType": "Hepatocyte (paediatric liver)",
+      "method": "EM morphometry",
+      "year": 1993,
+      "url": "https://doi.org/10.1007/BF01606535",
+      "status": "verified"
+    },
+    "marsh-1986": {
+      "source": "Marsh, Griffiths, Dean, Mellman & Helenius (1986) PNAS 83:2899–2903",
+      "detail": {
+        "en": "Endosomal central vesicles up to 0.5 µm in diameter; radiating tubules 60–100 nm in diameter and up to 4 µm long",
+        "zh-Hant": "內體中央囊泡直徑最大 0.5 µm；放射狀小管直徑 60–100 nm，長最多 4 µm"
+      },
+      "species": "Hamster",
+      "cellType": "BHK-21 cell line",
+      "method": "HRP tracer with serial-section 3D reconstruction",
+      "year": 1986,
+      "url": "https://doi.org/10.1073/PNAS.83.9.2899",
+      "status": "verified"
+    },
+    "dematteis-2008": {
+      "source": "De Matteis, Mironov & Beznoussenko (2008) in The Golgi Apparatus, Springer, ch. 2.15",
+      "detail": {
+        "en": "Golgi ribbon in most mammalian cells occupies 5–7 µm length, 1–2 µm width, 3–5 µm depth (cites Storrie & Kreis 1996)",
+        "zh-Hant": "大多數哺乳類細胞的高爾基帶長 5–7 µm、寬 1–2 µm、深 3–5 µm（引用 Storrie & Kreis 1996）"
+      },
+      "species": "Mammalian cells (general)",
+      "method": "Immunofluorescence (secondary citation in a book chapter)",
+      "year": 2008,
+      "url": "https://doi.org/10.1007/978-3-211-76310-0_15",
+      "status": "verified"
+    },
+    "pippin-2003": {
+      "source": "Pippin & Pippin (2003) Ultrastruct Pathol",
+      "detail": {
+        "en": "Ellipsoidal azurophil lysosomes 335 nm, SD 97 nm",
+        "zh-Hant": "橢球形嗜天青溶酶體 335 nm，標準差 97 nm"
+      },
+      "species": "Human",
+      "cellType": "Neutrophil (PMN)",
+      "method": "EM stereological morphometry",
+      "year": 2003,
+      "url": "https://doi.org/10.1080/01913120309920",
+      "status": "verified"
     }
   }
 }
