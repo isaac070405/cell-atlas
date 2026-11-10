@@ -378,7 +378,7 @@ function source(c) {
   return `<li><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.source)}</a>
     <span class="badge ${c.status}">${esc(text(`status.${c.status}`))}</span><br>
     <span>${html(c.detail)}</span><br>
-    <span class="muted">${esc(c.species)}${c.method ? `, ${esc(c.method)}` : ''}</span></li>`;
+    <span class="muted">${esc([c.species === 'n/a' ? '' : c.species, c.method].filter(Boolean).join(', '))}</span></li>`;
 }
 
 setState(readUrl());
