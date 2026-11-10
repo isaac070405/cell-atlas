@@ -4,17 +4,48 @@ Procedural 3D cell. Each compartment becomes capsules or an ellipsoid whose volu
 
 ## Install
 
-Add to the host repo's `.npmrc`, then install:
+GitHub Packages serves npm packages only with a token, even for public packages. Setup takes four steps, tested with npm 10 and Node 22.
 
-```
-@isaac070405:registry=https://npm.pkg.github.com
-```
+1. Create a classic personal access token at https://github.com/settings/tokens with the `read:packages` scope only.
+2. Store the token outside the repo, in your user-level `~/.npmrc`:
+
+   ```
+   //npm.pkg.github.com/:_authToken=YOUR_TOKEN
+   ```
+
+3. Point the `@isaac070405` scope at GitHub Packages in the host repo's `.npmrc`, which is safe to commit because it holds no token:
+
+   ```
+   @isaac070405:registry=https://npm.pkg.github.com
+   ```
+
+4. Install the package and its peer dependency:
+
+   ```bash
+   npm install @isaac070405/cell-3d three
+   ```
+
+For CI, set the token as a secret and write the auth line in a step before `npm ci`:
 
 ```bash
-npm install @isaac070405/cell-3d three
+echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
 ```
 
-GitHub Packages needs a token with `read:packages` even for reading (`//npm.pkg.github.com/:_authToken=...`).
+Inside GitHub Actions in the same account, `secrets.GITHUB_TOKEN` works as `NPM_TOKEN` when the job has `packages: read`.
+
+### Check the install
+
+```bash
+node --input-type=module -e "import { buildModel } from '@isaac070405/cell-3d'; console.log(typeof buildModel)"
+```
+
+The command prints `function`.
+
+### Troubleshooting
+
+- `401 Unauthorized`: the token is missing, expired or lacks `read:packages`. Check `~/.npmrc`.
+- `404 Not Found`: the `@isaac070405:registry` line is missing, so npm asks npmjs.org. Add it to the host repo's `.npmrc`.
+- `E403`: the token owner has no access to the repository's package. Ask the owner to grant read access.
 
 ## Use
 
