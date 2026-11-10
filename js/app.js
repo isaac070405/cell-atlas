@@ -117,8 +117,9 @@ addEventListener('message', e => {
 $('vp-anatomy').addEventListener('load', () => { modelReady = false; });
 function showInModel(s) {
   const part = partsFor(s.level).find(p => p.id === s.anat);
-  // No pick, or the Body item: the whole body with every original panel
-  const msg = !part || !part.keys ? { type: 'show', systems: null, match: null, mode: 'body' }
+  // Body level: the whole body with every original panel. System or organ with nothing picked: the whole body, panels hidden.
+  const msg = s.level === 'body' ? { type: 'show', systems: null, match: null, mode: 'body' }
+    : !part ? { type: 'show', systems: null, match: null, mode: 'system' }
     : s.level === 'system' ? { type: 'show', systems: part.keys, match: null, mode: 'system' }
     : { type: 'show', systems: part.keys, match: part.match, mode: 'organ', frame: part.frame ?? null };
   if (JSON.stringify(msg) === JSON.stringify(lastShow)) return;
@@ -197,6 +198,8 @@ function render(s) {
   }
   $('vp-mol').hidden = !showMol;
   const sm = modelOf(s, cell);
+  // Tissue level with no tissue picked: hide the three empty panels
+  document.body.classList.toggle('bare', T && !sm);
   $('vp-tissue').hidden = !sm;
   renderDirections(sm);
   if (sm) syncTissue(sm, s.selection);
@@ -215,7 +218,7 @@ function render(s) {
     $('vp-compare').innerHTML = renderCompare(s);
   } else {
     $('vp-empty').innerHTML = html(A ? 'moduleA.empty' : C ? 'moduleC.empty' : T ? 'moduleT.empty' : 'moduleB.empty');
-    $('vp-queue').innerHTML = C || T ? partsFor(s.level).map(p => `<li><button data-kind="part" data-id="${p.id}" aria-pressed="${p.id === s.anat || (C && p.id === 'body' && !s.anat)}"><span>${html(p.name)}</span></button></li>`).join('') : (A ? catalog.cells : catalog.structures).map(item => {
+    $('vp-queue').innerHTML = C || T ? partsFor(s.level).map(p => `<li><button data-kind="part" data-id="${p.id}" aria-pressed="${p.id === s.anat}"><span>${html(p.name)}</span></button></li>`).join('') : (A ? catalog.cells : catalog.structures).map(item => {
       const kind = A ? 'cell' : 'pdb';
       const on = A ? item.id === s.cell : item.id === s.pdb;
       return `<li><button data-kind="${kind}" data-id="${item.id}" aria-pressed="${on}"${A ? ` style="--k:var(--kind-${item.kind ?? 'animal'})"` : ''}>

@@ -1,14 +1,6 @@
 {
- "_note": "Classification for the 3D Anatomy Model levels. keys is the model's system keys (null shows the whole body with every panel); match is a list of regular expressions tested against part labels.",
+ "_note": "Classification for the 3D Anatomy Model levels. keys is the model's system keys; match is a list of regular expressions tested against part labels.",
  "systems": [
-  {
-   "id": "body",
-   "keys": null,
-   "name": {
-    "en": "Body",
-    "zh-Hant": "全身"
-   }
-  },
   {
    "id": "cardiovascular",
    "keys": [
@@ -42,14 +34,6 @@
   }
  ],
  "organs": [
-  {
-   "id": "body",
-   "keys": null,
-   "name": {
-    "en": "Body",
-    "zh-Hant": "全身"
-   }
-  },
   {
    "id": "heart",
    "name": {
