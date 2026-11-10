@@ -453,6 +453,90 @@
       "year": 1977,
       "url": "https://pubmed.ncbi.nlm.nih.gov/334768/",
       "status": "verified"
+    },
+    "cordero-2008": {
+      "source": "Cordero et al. (2008) Dalton Trans 2832–2838",
+      "detail": {
+        "en": "Covalent radii of the elements, from crystal structures (Cambridge Structural Database)",
+        "zh-Hant": "各元素嘅共價半徑，由晶體結構（劍橋結構數據庫）得出"
+      },
+      "species": "n/a",
+      "method": "Statistical analysis of crystal structures",
+      "year": 2008,
+      "url": "https://doi.org/10.1039/B801115J",
+      "status": "verified"
+    },
+    "bondi-1964": {
+      "source": "Bondi (1964) J Phys Chem 68:441–451",
+      "detail": {
+        "en": "van der Waals radii of H, C, N and O",
+        "zh-Hant": "H、C、N、O 嘅范德華半徑"
+      },
+      "species": "n/a",
+      "method": "Compilation from crystal packing and gas-kinetic data",
+      "year": 1964,
+      "url": "https://doi.org/10.1021/j100785a001",
+      "status": "verified"
+    },
+    "halgren-1996": {
+      "source": "Halgren (1996) J Comput Chem 17:490–519",
+      "detail": {
+        "en": "MMFF94 force field used to relax the computed geometries",
+        "zh-Hant": "用嚟優化計算幾何結構嘅 MMFF94 力場"
+      },
+      "species": "n/a",
+      "method": "Force-field parameterisation",
+      "year": 1996,
+      "url": "https://doi.org/10.1002/(SICI)1096-987X(199604)17:5/6<490::AID-JCC1>3.0.CO;2-P",
+      "status": "verified"
+    },
+    "riniker-2015": {
+      "source": "Riniker & Landrum (2015) J Chem Inf Model 55:2562–2574",
+      "detail": {
+        "en": "ETKDG method used to generate the 3D conformers",
+        "zh-Hant": "用嚟產生 3D 構象嘅 ETKDG 方法"
+      },
+      "species": "n/a",
+      "method": "Distance-geometry conformer generation",
+      "year": 2015,
+      "url": "https://doi.org/10.1021/acs.jcim.5b00654",
+      "status": "verified"
+    },
+    "beinert-1997": {
+      "source": "Beinert, Holm & Münck (1997) Science 277:653–659",
+      "detail": {
+        "en": "Review of Fe2S2, Fe3S4 and Fe4S4 clusters in proteins",
+        "zh-Hant": "蛋白質內 Fe2S2、Fe3S4、Fe4S4 簇嘅綜述"
+      },
+      "species": "n/a",
+      "method": "Review",
+      "year": 1997,
+      "url": "https://doi.org/10.1126/science.277.5326.653",
+      "status": "verified"
+    },
+    "yano-2004": {
+      "source": "Yano et al. (2004) J Biol Chem 279:38091–38094",
+      "detail": {
+        "en": "Human microsomal cytochrome P450 3A4, PDB 1TQN, 2.05 Å",
+        "zh-Hant": "人類微粒體細胞色素 P450 3A4，PDB 1TQN，2.05 Å"
+      },
+      "species": "Human",
+      "method": "X-ray crystallography, 2.05 Å",
+      "year": 2004,
+      "url": "https://www.rcsb.org/structure/1TQN",
+      "status": "verified"
+    },
+    "larson-2005": {
+      "source": "Larson, Weiner & Hurley (2005) J Biol Chem 280:30550–30556",
+      "detail": {
+        "en": "Human mitochondrial aldehyde dehydrogenase Asian variant ALDH2*2 (Glu487Lys), apo form, PDB 1ZUM, 2.1 Å",
+        "zh-Hant": "人類粒線體醛脫氫酶亞洲變異體 ALDH2*2（Glu487Lys），無輔酶形式，PDB 1ZUM，2.1 Å"
+      },
+      "species": "Human",
+      "method": "X-ray crystallography, 2.1 Å",
+      "year": 2005,
+      "url": "https://www.rcsb.org/structure/1ZUM",
+      "status": "verified"
     }
   }
 }

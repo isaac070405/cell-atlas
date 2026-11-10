@@ -129,10 +129,6 @@
       "en": "Bacterial cell",
       "zh-Hant": "細菌細胞"
     },
-    "kind.virus": {
-      "en": "Virus",
-      "zh-Hant": "病毒"
-    },
     "card.kind": {
       "en": "Type",
       "zh-Hant": "類型"
@@ -416,6 +412,98 @@
     "card.tour.names": {
       "en": "Cluster names follow standard Complex I nomenclature; Guo et al. 2017 does not name them.",
       "zh-Hant": "簇嘅名稱依 Complex I 標準命名；Guo et al. 2017 並無逐一命名。"
+    },
+    "moduleO.title": {
+      "en": "Organelle models",
+      "zh-Hant": "細胞器模型"
+    },
+    "moduleO.empty": {
+      "en": "Pick an organelle to see a schematic 3D model. Orbit to turn it, click a part to read about it.",
+      "zh-Hant": "揀一種細胞器就會顯示示意 3D 模型。拖曳旋轉，點擊部件可閱讀說明。"
+    },
+    "moduleM.title": {
+      "en": "Atomic models",
+      "zh-Hant": "原子模型"
+    },
+    "moduleM.empty": {
+      "en": "Pick a small molecule to see its atoms and bonds. Click an element to read its radii.",
+      "zh-Hant": "揀一個小分子就會顯示原子同化學鍵。點擊元素可閱讀其半徑。"
+    },
+    "organelle.note": {
+      "en": "Schematic. Shapes are illustrative; sizes in the card come from the cited sources.",
+      "zh-Hant": "示意圖。形狀僅供說明；卡片內嘅大小來自所引文獻。"
+    },
+    "atom.note": {
+      "en": "Ball-and-stick. Ball radius is 25% of the van der Waals radius; bond lengths are covalent-radius sums.",
+      "zh-Hant": "球棍模型。球半徑為范德華半徑嘅 25%；鍵長為共價半徑之和。"
+    },
+    "panel.chart.empty.o": {
+      "en": "Pick an organelle to list its parts.",
+      "zh-Hant": "揀一種細胞器就會列出部件。"
+    },
+    "panel.chart.empty.m": {
+      "en": "Pick a molecule to list its elements.",
+      "zh-Hant": "揀一個分子就會列出元素。"
+    },
+    "panel.chart.m": {
+      "en": "Elements",
+      "zh-Hant": "元素"
+    },
+    "model.pick": {
+      "en": "Click a part in the model or the list.",
+      "zh-Hant": "喺模型或清單點擊一個部件。"
+    },
+    "model.opensite": {
+      "en": "Open structure",
+      "zh-Hant": "開啟結構"
+    },
+    "atom.source": {
+      "en": "Radii and geometry rules cited below.",
+      "zh-Hant": "半徑同幾何規則引用如下。"
+    },
+    "kind.archaeal": {
+      "en": "Archaeal cell",
+      "zh-Hant": "古菌細胞"
+    },
+    "kind.virus": {
+      "en": "Viral particle",
+      "zh-Hant": "病毒顆粒"
+    },
+    "kind.fungal": {
+      "en": "Fungal cell",
+      "zh-Hant": "真菌細胞"
+    },
+    "kind.protist": {
+      "en": "Protist cell",
+      "zh-Hant": "原生生物細胞"
+    },
+    "group.noncellular": {
+      "en": "Non-cellular",
+      "zh-Hant": "非細胞"
+    },
+    "group.prokaryote": {
+      "en": "Prokaryote",
+      "zh-Hant": "原核生物"
+    },
+    "group.eukaryote": {
+      "en": "Eukaryote",
+      "zh-Hant": "真核生物"
+    },
+    "legend.title": {
+      "en": "Cell type colours",
+      "zh-Hant": "細胞類型顏色"
+    },
+    "card.group": {
+      "en": "Group",
+      "zh-Hant": "類別"
+    },
+    "model.link": {
+      "en": "Related structure",
+      "zh-Hant": "相關結構"
+    },
+    "card.tour.basis.literature": {
+      "en": "Literature: stated in the cited paper",
+      "zh-Hant": "文獻：引述自所引論文"
     }
   }
 }

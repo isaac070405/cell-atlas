@@ -12,7 +12,9 @@ Live site: https://isaac070405.github.io/cell-atlas/
 
 This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3), the Module B Mol* viewer (stage 4) and the embedded 3D Anatomy Model (stage 5):
 
-- Log-scale navigator from 2 m to 0.6 Å with seven levels: system, organ, tissue (the 3D Anatomy Model, embedded from `anatomy/` with its controls docked in the Cell Atlas panel style; desktop only). System and organ levels list a Body item (the whole model with every panel) plus the systems and organs in `data/anatomy.json`; picking a system or organ isolates its parts, hides every panel and, for an organ, shows the model's cross-section (`?level=organ&part=heart`). The Organelle-level cell view has a cross-section panel in place of the cutting slider. Tissue level has four schematic 3D models (nervous tissue shows afferent and efferent beside the model) (`js/tissue3d.js`, `data/tissues.json`, `?level=tissue&part=nervous`). The bacterial cell (E. coli) and the virus (bacteriophage T4) are schematic models; E. coli has a periplasm range (Stock 1977) in the compare view, the phage has no data table. Selected cell buttons and the Cell band on the ruler are red for animal, green for plant, purple for bacterial cells, cell, organelle, complex, atom.
+- Log-scale navigator from 2 m to 0.6 Å with seven levels: system, organ, tissue (the 3D Anatomy Model, embedded from `anatomy/` with its controls docked in the Cell Atlas panel style; desktop only). System and organ levels list a Body item (the whole model with every panel) plus the systems and organs in `data/anatomy.json`; picking a system or organ isolates its parts, hides every panel and, for an organ, shows the model's cross-section (`?level=organ&part=heart`). The Organelle-level cell view has a cross-section panel in place of the cutting slider. Tissue level has four schematic 3D models (nervous tissue shows afferent and efferent beside the model) (`js/tissue3d.js`, `data/tissues.json`, `?level=tissue&part=nervous`). The bacterial cell (E. coli) and the virus (bacteriophage T4) are schematic models; E. coli has a periplasm range (Stock 1977) in the compare view, the phage has no data table. Selected cell buttons and the Cell band on the ruler use the cell type colour, listed in a legend under the cell list: animal #C62828, plant #2E7D32, fungal #795548, protist #FFB300 (eukaryote); bacterial #00ACC1, archaeal #E64A19 (prokaryote); viral #8E24AA (non-cellular). Dark mode uses lighter tones. `anat:` chips for heart, jejunum, biceps, liver and pancreas open the Organ level; `ent:` and `spec:` links are hidden until those sites are linked.
+- **Organelle level** (`data/organelles.json`): schematic 3D models of the mitochondrion, nucleus, rough ER, Golgi apparatus, lysosome, peroxisome, microfilament, intermediate filament, microtubule and centrosome, with clickable parts. Sizes and function text come from the catalog compartment; the inner membrane and ribosome parts link to PDB 5XTD and 4UG0 (`?level=organelle&part=mito&sel=cristae`).
+- **Atom level** (`data/atoms.json`): ball-and-stick water, ammonia, methane, ATP, ADP, NADH, xanthine, purine, pyrimidine and a [4Fe-4S] cluster. ATP, ADP, NADH, xanthine, purine and pyrimidine are computed conformers (ETKDG, relaxed with MMFF94), not experimental structures. For the small molecules, bond length is the sum of Cordero 2008 covalent radii, ball radius is 25% of the Bondi 1964 van der Waals radius; click an element for its radii (`?level=atom&part=water&sel=O`).
 - One state controller (`js/state.js`) drives the header readout, viewer pane and three info panels.
 - Language switch EN / 繁 / 雙語, remembered per browser. Strings live in `data/i18n.json`.
 - Light and dark themes from `css/tokens.css`, with fixed organelle colours shared across the platform.
@@ -22,7 +24,7 @@ This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3
 - Volume-fraction chart for the selected cell, from `data/catalog.json`.
 - **3D cell** (Module A): procedural Three.js cell for each of the six cells. Compartment volumes sum to the published fractions (`js/cellmodel.js`); shapes and positions are schematic. Orbit, cutting plane, click a compartment for its data card (`?cell=hepatocyte&org=mito`). Three.js r187 is self-hosted in `vendor/three/`.
 - **Mol\* spike** (`spike/molstar.html`): loads 5XTD or 4UG0 as binary CIF from RCSB with Mol* 5.13.1, self-hosted in `vendor/molstar/`.
-- **Module B tour points** (`data/tour-points.json`): preset views for 5XTD (FMN, Fe–S clusters, Q-site) and 4UG0 (tRNA sites), each with a source chip and a `computed` or `literature` basis. A tour bar in the Module B pane focuses each point in Mol*.
+- **Module B tour points** (`data/tour-points.json`): preset views for 5XTD (FMN, Fe–S clusters, Q-site), 4UG0 (tRNA sites), 1TQN (heme, Cys442) and 1ZUM (Cys302, Glu268, Lys487), each with a source chip and a `computed` or `literature` basis. A tour bar in the Module B pane focuses each point in Mol*.
 - **Organelle size and function text**: the cell card shows size ranges and function text from PubMed and SciSpace sources, 36 citations in `data/citations.json`.
 - **`@isaac070405/cell-3d`** (`packages/cell-3d/`): the 3D cell model and view as an npm package, published to GitHub Packages by `.github/workflows/publish-cell-3d.yml`.
 - Two-way links: each card lists its own `links.json` edges grouped by site, plus every item that links to it. Mitochondria and rough ER rows jump to PDB 5XTD and 4UG0.
@@ -53,6 +55,7 @@ This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3
 | `data/citations.json` | Shared citation registry (`verified` or `pending`) |
 | `data/tour-points.json` | Module B preset views for 5XTD and 4UG0, with citations |
 | `data/anatomy.json`, `data/tissues.json` | System, organ and tissue lists for the anatomy levels |
+| `data/organelles.json`, `data/atoms.json` | Organelle and atom models for the Organelle and Atom levels |
 | `data/links.json` | Shared link keys `anat:` `tis:` `cell:` `pdb:` `spec:` `diag:` `ent:` |
 | `data/i18n.json` | All interface text in `en` and `zh-Hant` |
 
@@ -89,7 +92,7 @@ Each stage has a pass condition. The next stage starts only after it passes.
 
 | Release | Cells | Structures |
 | --- | --- | --- |
-| 1 | Hepatocyte, enterocyte, skeletal / cardiac / smooth muscle, plant cell | 5XTD Complex I, 4UG0 80S ribosome; candidates ATP synthase, nuclear pore complex, GLUT / SGLT1 |
+| 1 | Hepatocyte, enterocyte, skeletal / cardiac / smooth muscle, plant cell | 5XTD Complex I, 4UG0 80S ribosome, 1TQN cytochrome P450 3A4, 1ZUM ALDH2*2; candidates ATP synthase, nuclear pore complex, GLUT / SGLT1 |
 | 2 | Sperm and egg, neurone types | Bcl-2 family, β2 adrenergic receptor |
 | Candidates | Parietal cell, intestinal L cell, brown adipocyte, bone cell, type II pneumocyte | ALDH2, GLP-1, lactase, HMG-CoA reductase, H⁺/K⁺-ATPase, UCP1 |
 

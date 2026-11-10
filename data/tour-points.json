@@ -362,6 +362,141 @@
           }
         }
       ]
+    },
+    "1TQN": {
+      "cite": "yano-2004",
+      "points": [
+        {
+          "id": "heme",
+          "label": {
+            "en": "Heme (substrate oxidation)",
+            "zh-Hant": "血基質（氧化底物）"
+          },
+          "kind": "cofactor",
+          "comp": "HEM",
+          "chain": "B",
+          "authChain": "A",
+          "subunit": "CYP3A4",
+          "xyz": [
+            -15.5,
+            -22.0,
+            -11.1
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "B"
+          }
+        },
+        {
+          "id": "cys442",
+          "label": {
+            "en": "Cys442 (heme iron ligand)",
+            "zh-Hant": "Cys442（血基質鐵配位體）"
+          },
+          "kind": "ligand",
+          "comp": "CYS",
+          "chain": "A",
+          "subunit": "CYP3A4",
+          "residue": {
+            "authSeqId": 442,
+            "atom": "SG"
+          },
+          "xyz": [
+            -13.6,
+            -23.6,
+            -11.6
+          ],
+          "basis": "computed",
+          "support": "The deposited file lists a Cys442 SG to heme Fe bond of 2.355 Å.",
+          "select": {
+            "label_asym_id": "A",
+            "auth_seq_id": 442
+          }
+        }
+      ]
+    },
+    "1ZUM": {
+      "cite": "larson-2005",
+      "points": [
+        {
+          "id": "cys302",
+          "label": {
+            "en": "Cys302 (catalytic nucleophile)",
+            "zh-Hant": "Cys302（催化親核基）"
+          },
+          "kind": "active-site",
+          "comp": "CYS",
+          "chain": "A",
+          "subunit": "ALDH2*2 chain A",
+          "residue": {
+            "authSeqId": 302,
+            "atom": "SG"
+          },
+          "xyz": [
+            0.5,
+            19.0,
+            -22.3
+          ],
+          "basis": "literature",
+          "support": "Larson et al. (2005) call Cys302 the catalytic nucleophile; in ALDH2*2 it stays well ordered. Position read from chain A.",
+          "select": {
+            "label_asym_id": "A",
+            "auth_seq_id": 302
+          }
+        },
+        {
+          "id": "glu268",
+          "label": {
+            "en": "Glu268 (general base)",
+            "zh-Hant": "Glu268（一般鹼）"
+          },
+          "kind": "active-site",
+          "comp": "GLU",
+          "chain": "A",
+          "subunit": "ALDH2*2 chain A",
+          "residue": {
+            "authSeqId": 268,
+            "atom": "OE1/OE2 midpoint"
+          },
+          "xyz": [
+            -4.5,
+            12.9,
+            -19.1
+          ],
+          "basis": "literature",
+          "support": "Larson et al. (2005): the general base Glu268 is not stably positioned for catalysis in ALDH2*2.",
+          "select": {
+            "label_asym_id": "A",
+            "auth_seq_id": 268
+          }
+        },
+        {
+          "id": "lys487",
+          "label": {
+            "en": "Lys487 (Asian variant site)",
+            "zh-Hant": "Lys487（亞洲變異體位點）"
+          },
+          "kind": "variant",
+          "comp": "LYS",
+          "chain": "A",
+          "subunit": "ALDH2*2 chain A",
+          "residue": {
+            "authSeqId": 487,
+            "atom": "NZ"
+          },
+          "xyz": [
+            -17.2,
+            0.3,
+            -15.0
+          ],
+          "basis": "literature",
+          "support": "ALDH2*2 carries Lys in place of Glu487. Larson et al. (2005): Lys487 cannot form the hydrogen bonds that Glu487 makes with Arg264 and Arg475 of the neighbouring subunit.",
+          "select": {
+            "label_asym_id": "A",
+            "auth_seq_id": 487
+          }
+        }
+      ]
     }
   }
 }
