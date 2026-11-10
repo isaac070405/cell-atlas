@@ -91,9 +91,9 @@ Each stage has a pass condition. The next stage starts only after it passes.
 ### Data to collect before stage 2 (18 items)
 
 Cell data
-- [ ] Enterocyte organelle volume fractions (BioNumbers; EM stereology), Isaac
-- [ ] Skeletal, cardiac and smooth muscle organelle volume fractions (BioNumbers; EM stereology), Isaac
-- [ ] Plant mesophyll organelle volume fractions (BioNumbers; plant cell textbook), Isaac
+- [x] Enterocyte organelle volume fractions (Buschmann & Manke 1981, hamster jejunum, EM stereology)
+- [x] Skeletal, cardiac and smooth muscle organelle volume fractions (Larsen 2012; Barth 1992; Gabella 1976, EM stereology)
+- [x] Plant mesophyll organelle volume fractions (Winter, Robinson & Heldt 1994, spinach leaf)
 - [x] Hepatocyte compartment percentages checked one by one (Alberts MBoC Table 12-1, latest edition)
 - [x] Organelle size ranges and function text (PubMed and SciSpace sources in place of Alberts and Lodish, which were not reachable). Open gaps: absolute vacuole size, function text for perinuclear space (tracked in #27)
 - [ ] Protein subcellular location (Human Protein Atlas, subcellular)
@@ -125,7 +125,7 @@ Technical
 
 ## Open questions
 
-- Volume fraction sources for enterocyte, muscle and plant cells (Isaac).
+- None on volume fractions. All six cells cite a verified source in `data/citations.json`.
 
 ## License
 
