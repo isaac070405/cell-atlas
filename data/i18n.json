@@ -85,6 +85,34 @@
       "en": "No data at this level yet.",
       "zh-Hant": "呢個層級暫時未有數據。"
     },
+    "moduleT.title": {
+      "en": "Tissue models",
+      "zh-Hant": "組織模型"
+    },
+    "moduleT.empty": {
+      "en": "Pick a tissue to see a schematic 3D model. Orbit to turn it, click a part to read about it.",
+      "zh-Hant": "揀一種組織就會顯示示意 3D 模型。拖曳旋轉，點擊部件可閱讀說明。"
+    },
+    "panel.chart.t": {
+      "en": "Parts",
+      "zh-Hant": "部件"
+    },
+    "panel.chart.empty.t": {
+      "en": "Pick a tissue to list its parts.",
+      "zh-Hant": "揀一種組織就會列出部件。"
+    },
+    "tissue.note": {
+      "en": "Schematic drawn from textbook figures. Shapes and positions are illustrative; no measured values.",
+      "zh-Hant": "根據教科書圖示繪製嘅示意圖。形狀同位置僅供說明，並無量度數值。"
+    },
+    "tissue.source": {
+      "en": "Textbook-style schematic. No measured values on this screen.",
+      "zh-Hant": "教科書式示意圖。呢個畫面冇量度數值。"
+    },
+    "tissue.pick": {
+      "en": "Click a part in the model or the list.",
+      "zh-Hant": "喺模型或清單點擊一個部件。"
+    },
     "moduleB.title": {
       "en": "Module B: molecular structure",
       "zh-Hant": "模組 B：分子結構"
