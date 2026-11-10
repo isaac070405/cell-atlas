@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Known gaps and unclear areas</title>
+<style>
+  body{font:16px/1.55 Georgia,"Times New Roman",serif;color:#2d2a24;background:#f4f1ea;margin:0}
+  main{max-width:760px;margin:0 auto;padding:32px 20px 64px}
+  h1{font-size:28px;margin:0 0 4px}
+  h2{font-size:19px;margin:30px 0 6px;border-top:1px solid #d8d2c4;padding-top:16px}
+  p.lede{color:#5c5547;margin:0 0 8px}
+  ul{margin:6px 0 0;padding-left:20px}
+  li{margin:5px 0}
+  code{font-size:.92em;background:#ebe6da;padding:1px 4px;border-radius:3px}
+  a{color:#8a5a12}
+</style>
+</head>
+<body>
+<main>
+<h1>Known gaps and unclear areas</h1>
+<p class="lede">This model is a simplified teaching model. Positions, sizes and shapes are approximate, and the areas below are the ones most likely to be off, thin or missing. <a href="index.html">Back to the model</a></p>
+
+<h2>Body surface and proportions</h2>
+<ul>
+  <li>The male and female body surface meshes (<code>uploads/…BaseMesh.glb</code>) are not in the repository. Without them the generic built skin is shown for both sexes, with no subcutaneous fat layer.</li>
+  <li>Organ sizes run about 60 to 80% of textbook measurements so neighbouring structures fit without overlap.</li>
+  <li>Fine surface textures (gastric pits, papillae, skin micro-rugae) are left out.</li>
+</ul>
+
+<h2>Vessels and lymphatics</h2>
+<ul>
+  <li>The femoral artery and vein run from the aortic end through the pelvis and down the limb as one tube. The iliac and popliteal vessels are drawn over that course, so the pelvic part lies deeper than in a real body, and the course through the knee passes through bone.</li>
+  <li>Only the larger named vessels are modelled. Smaller branches, the dorsal venous networks of the hand and foot, and most of the foot and hand vessels are missing or schematic.</li>
+  <li>The lymphatic system is sparse: lymph nodes, the thymus, the spleen, the thoracic duct and a few vessels only.</li>
+  <li>The saphenous veins follow the surface of the fascial sleeves, so their depth is approximate.</li>
+</ul>
+
+<h2>Muscles and fascia</h2>
+<ul>
+  <li>Fascial sleeves are see-through shells fitted to the outer surface of the muscles they wrap. They do not show septa, compartments or thickness.</li>
+  <li>Rotatores, intertransversarii and other small deep back muscles are not modelled. Multifidus is a single strip per side.</li>
+  <li>The levator ani (pubococcygeus and iliococcygeus) is drawn as two flat sheets, not a full funnel, and the rest of the pelvic floor and perineum is simplified.</li>
+  <li>Psoas major, iliacus and quadratus lumborum are placed by landmarks and may sit slightly off the bone surfaces they use.</li>
+</ul>
+
+<h2>Joints and ligaments</h2>
+<ul>
+  <li>The knee is built from two spheres, a cartilage disc and a tibial plateau. The cruciate ligaments and menisci are placed inside that simplified joint, so the cruciates are hidden by bone. Select one and lower the Surrounding anatomy slider to see it.</li>
+  <li>Spinal ligaments (anterior and posterior longitudinal, ligamentum flavum) are thin continuous strips, not one band per vertebral level.</li>
+  <li>The glenoid labrum, glenohumeral ligaments and iliofemoral ligament are approximate bands on a simplified shoulder and hip.</li>
+  <li>Most other joint capsules are not modelled.</li>
+</ul>
+
+<h2>Female reproductive system and breast</h2>
+<ul>
+  <li>Female structures are schematic. The uterus, ovaries and tubes are simple forms, and the 16 breast lobes, acini and ducts are regular patterns, not a dissection.</li>
+  <li>The menstrual cycle slider changes endometrial thickness, the follicle and the corpus luteum on the right ovary only.</li>
+</ul>
+
+<h2>Mouth, throat and neck</h2>
+  <ul>
+    <li>The cervical oesophagus, the laryngopharynx and the middle and inferior constrictors are flattened against the front of the spine, so their back walls are squashed instead of round. The oropharynx and nasopharynx above C2 still overlap the atlas by a few millimetres.</li>
+    <li>The lips, the labial and buccal mucosa and the salivary glands are placed against the teeth, mandible and masseter of this model. The vestibule is about 10 mm deep at the front and the parotid gland lies partly over the masseter, because the masseter and the skull surface are drawn close together.</li>
+    <li>The tongue's intrinsic muscles are drawn as bundles of fibres inside the tongue surface, not as continuous layers. Filiform papillae and the minor salivary glands are left out.</li>
+    <li>The palatine tonsil is a lumpy almond with 15 crypts. Tonsil size varies a great deal between people.</li>
+    <li>The carotid sheath contents, the vagus nerve and the phrenic nerve run where the older model put them, a little in front of the scalenes. The brachial plexus roots pass through the scalene muscles instead of between anterior and middle scalene.</li>
+  </ul>
+  <h2>Layers and explode mode</h2>
+<ul>
+  <li>Structures named in the reference list sit in the layer it gives. Structures it does not name are placed by depth, and some of those placements are judgement calls.</li>
+  <li>Explode mode sorts each structure into a region by its centre point, so very long structures (the aorta, long nerves) can appear cut off or missing in a regional view.</li>
+  <li>The Lymphatics column in explode mode holds only the few lymphatic structures above.</li>
+</ul>
+
+<h2>Other</h2>
+<ul>
+  <li>The cross-section view is flat-coloured and approximate, and is hidden in explode mode.</li>
+  <li>This model is for study and illustration. It is not for clinical or surgical planning.</li>
+</ul>
+</main>
+</body>
+</html>

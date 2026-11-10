@@ -1,0 +1,613 @@
+{
+ "_note": "Schematic tissues. No measured values; shapes follow textbook figures.",
+ "tissues": [
+  {
+   "id": "epithelial",
+   "name": {
+    "en": "Epithelial Tissue",
+    "zh-Hant": "上皮組織"
+   },
+   "summary": {
+    "en": "Sheets of tightly packed cells that line surfaces and cavities. Drawn here as simple columnar epithelium over connective tissue.",
+    "zh-Hant": "緊密排列嘅細胞層，覆蓋體表同襯貼腔道。圖中為單層柱狀上皮，下面係結締組織。"
+   },
+   "parts": [
+    {
+     "id": "apical",
+     "color": "#7C8FB0",
+     "name": {
+      "en": "Microvilli and cilia",
+      "zh-Hant": "微絨毛與纖毛"
+     },
+     "text": {
+      "en": "Projections on the free (apical) surface. Microvilli enlarge the absorbing surface. Cilia move mucus or fluid along the surface.",
+      "zh-Hant": "游離面（頂端）嘅突起。微絨毛增加吸收面積，纖毛推動黏液或液體沿表面移動。"
+     }
+    },
+    {
+     "id": "cell",
+     "color": "#E8A33D",
+     "name": {
+      "en": "Epithelial cell",
+      "zh-Hant": "上皮細胞"
+     },
+     "text": {
+      "en": "Columnar cells packed with very little space between them. Each cell has an apical side facing the lumen and a basal side on the basement membrane.",
+      "zh-Hant": "柱狀細胞，排列緊密，細胞之間幾乎冇空隙。每個細胞有朝向腔道嘅頂端同貼住基底膜嘅基底端。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E5DB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Sits in the basal half of a columnar cell.",
+      "zh-Hant": "柱狀細胞嘅細胞核位於基底半部。"
+     }
+    },
+    {
+     "id": "junction",
+     "color": "#3FA7A7",
+     "name": {
+      "en": "Cell junctions",
+      "zh-Hant": "細胞連接"
+     },
+     "text": {
+      "en": "Tight junctions seal the gap near the apical side. Adhesive belts and desmosomes hold neighbouring cells together. Gap junctions let small molecules pass between cells.",
+      "zh-Hant": "緊密連接封住頂端附近嘅空隙；黏著帶同橋粒將相鄰細胞固定；間隙連接容許小分子穿過。"
+     }
+    },
+    {
+     "id": "basal",
+     "color": "#B7A7C9",
+     "name": {
+      "en": "Basal lamina (basement membrane)",
+      "zh-Hant": "基底層（基底膜）"
+     },
+     "text": {
+      "en": "A thin sheet of matrix and reticular fibres that anchors the epithelium to the connective tissue below.",
+      "zh-Hant": "一層薄薄嘅基質同網狀纖維，將上皮固定於下面嘅結締組織。"
+     }
+    },
+    {
+     "id": "connective",
+     "color": "#E7A99E",
+     "name": {
+      "en": "Underlying connective tissue",
+      "zh-Hant": "下層結締組織"
+     },
+     "text": {
+      "en": "Supports the epithelium. Epithelium has no blood vessels of its own, so nutrients reach it from here.",
+      "zh-Hant": "支持上皮。上皮本身冇血管，養分由呢層供應。"
+     }
+    },
+    {
+     "id": "capillary",
+     "color": "#B23A3A",
+     "name": {
+      "en": "Capillary",
+      "zh-Hant": "微血管"
+     },
+     "text": {
+      "en": "Supplies the epithelium by diffusion across the basement membrane.",
+      "zh-Hant": "養分擴散穿過基底膜，供應上皮。"
+     }
+    },
+    {
+     "id": "nerve",
+     "color": "#E6C34A",
+     "name": {
+      "en": "Nerve ending",
+      "zh-Hant": "神經末梢"
+     },
+     "text": {
+      "en": "Sensory endings run up into the epithelium.",
+      "zh-Hant": "感覺神經末梢伸入上皮。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "connective",
+   "name": {
+    "en": "Connective Tissue",
+    "zh-Hant": "結締組織"
+   },
+   "summary": {
+    "en": "Cells scattered in an extracellular matrix of fibres and ground substance. Drawn here as loose connective tissue.",
+    "zh-Hant": "細胞散佈於由纖維同基質組成嘅細胞外基質之中。圖中為疏鬆結締組織。"
+   },
+   "parts": [
+    {
+     "id": "matrix",
+     "color": "#6B5B8C",
+     "name": {
+      "en": "Ground substance",
+      "zh-Hant": "基質"
+     },
+     "text": {
+      "en": "Gel-like material that fills the space between cells and fibres.",
+      "zh-Hant": "填滿細胞同纖維之間空間嘅膠狀物質。"
+     }
+    },
+    {
+     "id": "collagen",
+     "color": "#8C9BE8",
+     "name": {
+      "en": "Collagen fibres and bundles",
+      "zh-Hant": "膠原纖維與纖維束"
+     },
+     "text": {
+      "en": "Strong, rope-like fibres grouped into bundles. They resist pulling.",
+      "zh-Hant": "堅韌如繩嘅纖維，聚成纖維束，抵抗拉力。"
+     }
+    },
+    {
+     "id": "elastic",
+     "color": "#E0399A",
+     "name": {
+      "en": "Elastic fibres",
+      "zh-Hant": "彈性纖維"
+     },
+     "text": {
+      "en": "Thin branching fibres that stretch and recoil.",
+      "zh-Hant": "幼細分支嘅纖維，可伸展及回彈。"
+     }
+    },
+    {
+     "id": "reticular",
+     "color": "#4CC36A",
+     "name": {
+      "en": "Reticular fibres",
+      "zh-Hant": "網狀纖維"
+     },
+     "text": {
+      "en": "Fine fibres forming a supporting mesh around cells and vessels.",
+      "zh-Hant": "幼細纖維，喺細胞同血管周圍形成支持網。"
+     }
+    },
+    {
+     "id": "fibroblast",
+     "color": "#E4A15C",
+     "name": {
+      "en": "Fibroblast",
+      "zh-Hant": "纖維母細胞"
+     },
+     "text": {
+      "en": "Flat, spindle-shaped cell that makes the fibres and ground substance.",
+      "zh-Hant": "扁平梭形細胞，製造纖維同基質。"
+     }
+    },
+    {
+     "id": "macrophage",
+     "color": "#C96F5A",
+     "name": {
+      "en": "Macrophage",
+      "zh-Hant": "巨噬細胞"
+     },
+     "text": {
+      "en": "Engulfs debris and microbes.",
+      "zh-Hant": "吞噬碎屑同微生物。"
+     }
+    },
+    {
+     "id": "plasma",
+     "color": "#7B5FB5",
+     "name": {
+      "en": "Plasma cell",
+      "zh-Hant": "漿細胞"
+     },
+     "text": {
+      "en": "Makes antibodies.",
+      "zh-Hant": "製造抗體。"
+     }
+    },
+    {
+     "id": "fat",
+     "color": "#F3E27A",
+     "name": {
+      "en": "Fat cells (adipocytes)",
+      "zh-Hant": "脂肪細胞"
+     },
+     "text": {
+      "en": "Store lipid in one large droplet.",
+      "zh-Hant": "以一個大脂滴貯存脂質。"
+     }
+    },
+    {
+     "id": "capillary",
+     "color": "#C8312E",
+     "name": {
+      "en": "Capillary",
+      "zh-Hant": "微血管"
+     },
+     "text": {
+      "en": "Brings nutrients and takes away waste.",
+      "zh-Hant": "運送養分及帶走廢物。"
+     }
+    },
+    {
+     "id": "nerve",
+     "color": "#E8C93C",
+     "name": {
+      "en": "Nerve fibre",
+      "zh-Hant": "神經纖維"
+     },
+     "text": {
+      "en": "Carries signals to and from the tissue.",
+      "zh-Hant": "向組織傳入及傳出訊號。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "muscular",
+   "name": {
+    "en": "Muscular Tissue",
+    "zh-Hant": "肌肉組織"
+   },
+   "summary": {
+    "en": "Cells specialised to contract. The three types are skeletal, cardiac and smooth muscle.",
+    "zh-Hant": "專門收縮嘅細胞。三種類型為骨骼肌、心肌同平滑肌。"
+   },
+   "parts": [
+    {
+     "id": "skeletal",
+     "color": "#E8645A",
+     "name": {
+      "en": "Skeletal muscle",
+      "zh-Hant": "骨骼肌"
+     },
+     "text": {
+      "en": "Long, cylindrical, striated fibres with many nuclei pushed to the edge. Voluntary control.",
+      "zh-Hant": "長圓柱形有橫紋嘅肌纖維，多個細胞核靠近邊緣。受意識控制。"
+     }
+    },
+    {
+     "id": "cardiac",
+     "color": "#C9453F",
+     "name": {
+      "en": "Cardiac muscle",
+      "zh-Hant": "心肌"
+     },
+     "text": {
+      "en": "Striated, branched fibres with one central nucleus. Dark intercalated discs join the cells end to end. Involuntary.",
+      "zh-Hant": "有橫紋、有分支，一個中央細胞核。深色嘅閏盤將細胞首尾相連。不受意識控制。"
+     }
+    },
+    {
+     "id": "smooth",
+     "color": "#F4A39B",
+     "name": {
+      "en": "Smooth muscle",
+      "zh-Hant": "平滑肌"
+     },
+     "text": {
+      "en": "Short spindle-shaped cells with one central nucleus and no striations. Found in walls of hollow organs and vessels. Involuntary.",
+      "zh-Hant": "短梭形細胞，一個中央細胞核，冇橫紋。見於空腔器官同血管壁。不受意識控制。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "nervous",
+   "name": {
+    "en": "Nervous Tissue",
+    "zh-Hant": "神經組織"
+   },
+   "summary": {
+    "en": "Neurons carry electrical signals and supporting glial cells insulate and protect them. Drawn here as one neuron with a myelinated axon.",
+    "zh-Hant": "神經元傳遞電訊號，支持嘅神經膠質細胞負責絕緣同保護。圖中為一個有髓鞘軸突嘅神經元。"
+   },
+   "parts": [
+    {
+     "id": "soma",
+     "color": "#E3A23A",
+     "name": {
+      "en": "Cell body (soma)",
+      "zh-Hant": "細胞體"
+     },
+     "text": {
+      "en": "Contains the nucleus and most organelles of the neuron.",
+      "zh-Hant": "包含神經元嘅細胞核同大部分細胞器。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E6FB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Holds the neuron's DNA.",
+      "zh-Hant": "載有神經元嘅 DNA。"
+     }
+    },
+    {
+     "id": "dendrite",
+     "color": "#E3A23A",
+     "name": {
+      "en": "Dendrites",
+      "zh-Hant": "樹突"
+     },
+     "text": {
+      "en": "Branched extensions that receive signals from other neurons.",
+      "zh-Hant": "分支狀突起，接收其他神經元嘅訊號。"
+     }
+    },
+    {
+     "id": "axon",
+     "color": "#E8B04A",
+     "name": {
+      "en": "Axon",
+      "zh-Hant": "軸突"
+     },
+     "text": {
+      "en": "Long extension that carries signals away from the cell body.",
+      "zh-Hant": "長突起，將訊號由細胞體傳出。"
+     }
+    },
+    {
+     "id": "myelin",
+     "color": "#9AE0DC",
+     "name": {
+      "en": "Myelin sheath",
+      "zh-Hant": "髓鞘"
+     },
+     "text": {
+      "en": "Insulating layers wrapped around the axon in segments. They speed up signal conduction.",
+      "zh-Hant": "分段包裹軸突嘅絕緣層，加快訊號傳導。"
+     }
+    },
+    {
+     "id": "node",
+     "color": "#F5D36B",
+     "name": {
+      "en": "Node of Ranvier",
+      "zh-Hant": "蘭氏結"
+     },
+     "text": {
+      "en": "Gap between myelin segments where the axon is exposed and the signal is regenerated.",
+      "zh-Hant": "髓鞘分段之間嘅縫隙，軸突外露，訊號喺此再生。"
+     }
+    },
+    {
+     "id": "oligodendrocyte",
+     "color": "#5FC4BF",
+     "name": {
+      "en": "Oligodendrocyte",
+      "zh-Hant": "寡突膠質細胞"
+     },
+     "text": {
+      "en": "Glial cell of the central nervous system. Its processes wrap axons in myelin.",
+      "zh-Hant": "中樞神經系統嘅膠質細胞，其突起以髓鞘包裹軸突。"
+     }
+    },
+    {
+     "id": "synapse",
+     "color": "#E3A23A",
+     "name": {
+      "en": "Synapse (axon terminals)",
+      "zh-Hant": "突觸（軸突末端）"
+     },
+     "text": {
+      "en": "Axon ends in bulbs that pass the signal to the next cell.",
+      "zh-Hant": "軸突末端膨大成球，將訊號傳給下一個細胞。"
+     }
+    }
+   ]
+  }
+ ],
+ "cellModels": [
+  {
+   "id": "ecoli",
+   "name": {
+    "en": "Bacterial cell (E. coli)",
+    "zh-Hant": "細菌細胞（大腸桿菌）"
+   },
+   "summary": {
+    "en": "A rod-shaped bacterium with no nucleus and no membrane-bound organelles. Schematic: no measured volume fractions yet.",
+    "zh-Hant": "桿狀細菌，冇細胞核，亦冇膜包圍嘅細胞器。示意圖：暫時未有量度嘅體積比例。"
+   },
+   "parts": [
+    {
+     "id": "envelope",
+     "color": "#4ade80",
+     "name": {
+      "en": "Cell envelope",
+      "zh-Hant": "細胞包膜"
+     },
+     "text": {
+      "en": "Outer membrane, thin cell wall and inner membrane enclose the cell. Drawn as one translucent shell.",
+      "zh-Hant": "外膜、薄細胞壁同內膜包圍住細胞。圖中以一層半透明外殼表示。"
+     }
+    },
+    {
+     "id": "cytoplasm",
+     "color": "#22c55e",
+     "name": {
+      "en": "Cytoplasm",
+      "zh-Hant": "細胞質"
+     },
+     "text": {
+      "en": "Gel-like interior with no membrane-bound organelles. Metabolism and protein synthesis happen here.",
+      "zh-Hant": "膠狀內部，冇膜包圍嘅細胞器。代謝同蛋白質合成喺度進行。"
+     }
+    },
+    {
+     "id": "nucleoid",
+     "color": "#f87171",
+     "name": {
+      "en": "Nucleoid (chromosome)",
+      "zh-Hant": "擬核（染色體）"
+     },
+     "text": {
+      "en": "The circular chromosome, folded into a tangle in a region with no nuclear envelope.",
+      "zh-Hant": "環狀染色體，摺疊成一團，所在區域冇核膜。"
+     }
+    },
+    {
+     "id": "plasmid",
+     "color": "#facc15",
+     "name": {
+      "en": "Plasmids",
+      "zh-Hant": "質體"
+     },
+     "text": {
+      "en": "Small circular DNA rings separate from the chromosome. They often carry genes such as antibiotic resistance.",
+      "zh-Hant": "同染色體分開嘅小型環狀 DNA，常帶有例如抗生素抗藥性嘅基因。"
+     }
+    },
+    {
+     "id": "ribosome",
+     "color": "#60a5fa",
+     "name": {
+      "en": "Ribosomes",
+      "zh-Hant": "核糖體"
+     },
+     "text": {
+      "en": "Make proteins. Smaller than eukaryotic ribosomes, so some antibiotics block them without harming the host's own.",
+      "zh-Hant": "製造蛋白質。比真核生物嘅核糖體細，所以部分抗生素可阻斷佢哋而唔傷害宿主自己嘅核糖體。"
+     }
+    },
+    {
+     "id": "pilus",
+     "color": "#16a34a",
+     "name": {
+      "en": "Pili (fimbriae)",
+      "zh-Hant": "菌毛"
+     },
+     "text": {
+      "en": "Short surface hairs that attach the cell to surfaces and to other cells.",
+      "zh-Hant": "表面短毛，令細胞附著於表面或其他細胞。"
+     }
+    },
+    {
+     "id": "flagellum",
+     "color": "#15803d",
+     "name": {
+      "en": "Flagella",
+      "zh-Hant": "鞭毛"
+     },
+     "text": {
+      "en": "Long helical filaments turned by a motor in the envelope. They push the cell through liquid.",
+      "zh-Hant": "長螺旋絲，由包膜上嘅馬達帶動旋轉，推動細胞喺液體中游動。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "bacteriophage",
+   "name": {
+    "en": "Bacteriophage (T4)",
+    "zh-Hant": "噬菌體（T4）"
+   },
+   "summary": {
+    "en": "A virus that infects bacteria. It is not a cell: it has no cytoplasm and cannot grow or divide on its own. Schematic with no data table.",
+    "zh-Hant": "感染細菌嘅病毒。佢唔係細胞：冇細胞質，亦唔能獨立生長或分裂。示意圖，冇數據表。"
+   },
+   "parts": [
+    {
+     "id": "head",
+     "color": "#06b6d4",
+     "name": {
+      "en": "Head (capsid)",
+      "zh-Hant": "頭部（衣殼）"
+     },
+     "text": {
+      "en": "Icosahedral protein shell that protects the genome.",
+      "zh-Hant": "二十面體蛋白質外殼，保護基因組。"
+     }
+    },
+    {
+     "id": "dna",
+     "color": "#ef4444",
+     "name": {
+      "en": "Genome (DNA)",
+      "zh-Hant": "基因組（DNA）"
+     },
+     "text": {
+      "en": "Double-stranded DNA packed tightly inside the head. It is injected into the host bacterium during infection.",
+      "zh-Hant": "緊密包裝於頭部內嘅雙鏈 DNA，感染時注入宿主細菌。"
+     }
+    },
+    {
+     "id": "collar",
+     "color": "#38bdf8",
+     "name": {
+      "en": "Collar",
+      "zh-Hant": "頸環"
+     },
+     "text": {
+      "en": "Joins the head to the tail.",
+      "zh-Hant": "連接頭部同尾部。"
+     }
+    },
+    {
+     "id": "sheath",
+     "color": "#64748b",
+     "name": {
+      "en": "Contractile sheath",
+      "zh-Hant": "收縮鞘"
+     },
+     "text": {
+      "en": "Protein sleeve around the tail tube. It contracts to drive the tube through the host's envelope.",
+      "zh-Hant": "包住尾管嘅蛋白質套筒，收縮時將尾管推穿宿主嘅包膜。"
+     }
+    },
+    {
+     "id": "tube",
+     "color": "#94a3b8",
+     "name": {
+      "en": "Tail tube",
+      "zh-Hant": "尾管"
+     },
+     "text": {
+      "en": "Hollow core through which the DNA passes into the host.",
+      "zh-Hant": "中空嘅核心管道，DNA 經此進入宿主。"
+     }
+    },
+    {
+     "id": "baseplate",
+     "color": "#22d3ee",
+     "name": {
+      "en": "Baseplate",
+      "zh-Hant": "基板"
+     },
+     "text": {
+      "en": "Hexagonal plate at the tail tip. It binds the host surface and triggers sheath contraction.",
+      "zh-Hant": "尾端嘅六角形板，結合宿主表面並觸發鞘收縮。"
+     }
+    },
+    {
+     "id": "spike",
+     "color": "#475569",
+     "name": {
+      "en": "Receptor-binding spikes",
+      "zh-Hant": "受體結合刺突"
+     },
+     "text": {
+      "en": "Short pins under the baseplate that anchor the phage to the host.",
+      "zh-Hant": "基板下方嘅短刺，將噬菌體固定於宿主。"
+     }
+    },
+    {
+     "id": "fiber",
+     "color": "#0891b2",
+     "name": {
+      "en": "Long tail fibres",
+      "zh-Hant": "長尾絲"
+     },
+     "text": {
+      "en": "Jointed fibres that recognise receptors on the host surface and hold the phage in place.",
+      "zh-Hant": "有關節嘅纖維，識別宿主表面嘅受體並將噬菌體固定。"
+     }
+    }
+   ]
+  }
+ ]
+}

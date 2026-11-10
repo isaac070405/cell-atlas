@@ -6,8 +6,8 @@ import { buildModel, crowded } from './cellmodel.js';
 import { showStructure } from './molview.js';
 
 const load = p => fetch(p).then(r => r.json());
-const [catalog, { citations }, links, tours] = await Promise.all([
-  load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'),
+const [catalog, { citations }, links, tours, anatomy, tissues] = await Promise.all([
+  load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'), load('data/anatomy.json'), load('data/tissues.json'),
 ]);
 const $ = id => document.getElementById(id);
 initCompare(catalog);
@@ -40,7 +40,13 @@ $('tour-bar').addEventListener('click', e => {
 $('vp-queue').addEventListener('click', e => {
   const b = e.target.closest('button[data-kind]');
   if (!b) return;
+  if (b.dataset.kind === 'tpart') return setState({ selection: getState().selection === b.dataset.id ? null : b.dataset.id });
+  if (b.dataset.kind === 'part') return setState({ anat: getState().anat === b.dataset.id ? null : b.dataset.id });
   setState(b.dataset.kind === 'cell' ? { cell: b.dataset.id, pdb: null } : { pdb: b.dataset.id });
+});
+$('chart-body').addEventListener('click', e => {
+  const b = e.target.closest('button[data-kind="tpart"]');
+  if (b) setState({ selection: getState().selection === b.dataset.id ? null : b.dataset.id });
 });
 $('vp-switch').addEventListener('click', e => {
   const b = e.target.closest('button[data-view]');
@@ -96,6 +102,51 @@ async function sync3d(cell, selection) {
   }
 }
 
+// System and organ levels: the picker sets s.anat; the model shows only that system or organ.
+// Tissue level: the picker sets s.anat to a tissue id and s.selection to a part of it; js/tissue3d.js draws it.
+const partsFor = level => level === 'system' ? anatomy.systems : level === 'organ' ? anatomy.organs : level === 'tissue' ? tissues.tissues : [];
+let modelReady = false, lastShow = null;
+addEventListener('message', e => {
+  if (e.origin === location.origin && e.data?.type === 'embed-ready') { modelReady = true; if (lastShow) $('vp-anatomy').contentWindow.postMessage(lastShow, location.origin); }
+});
+$('vp-anatomy').addEventListener('load', () => { modelReady = false; });
+function showInModel(s) {
+  const part = partsFor(s.level).find(p => p.id === s.anat);
+  const msg = !part ? { type: 'show', systems: null, match: null }
+    : s.level === 'system' ? { type: 'show', systems: part.keys, match: null }
+    : { type: 'show', systems: part.keys, match: part.match };
+  if (JSON.stringify(msg) === JSON.stringify(lastShow)) return;
+  lastShow = msg;
+  if (modelReady) $('vp-anatomy').contentWindow.postMessage(msg, location.origin);
+}
+
+// Tissue view: schematic models drawn in js/tissue3d.js from textbook-style figures. No measured values.
+const tissueOf = s => s.level === 'tissue' ? tissues.tissues.find(t => t.id === s.anat) : null;
+// Schematic cells (no volume data, e.g. the bacterial cell) use the same viewer, parts list and card as tissues
+const schematicOf = (s, cell) => levelInfo(s.level).module === 'A' && s.view !== 'compare' && cell?.schematic ? tissues.cellModels.find(m => m.id === cell.id) : null;
+const modelOf = (s, cell) => tissueOf(s) ?? schematicOf(s, cell);
+let tview = null, tshown = null, tfailed = false;
+async function syncTissue(t, sel) {
+  if (tfailed) return;
+  try {
+    if (!tview) {
+      const { createTissueView } = await import('./tissue3d.js');
+      tview = await createTissueView($('tissue3d'), { onPick: part => setState({ selection: part === getState().selection ? null : part }) });
+    }
+    if (tshown !== t.id) { tview.show(t.id); tshown = t.id; }
+    tview.select(t.parts.some(p => p.id === sel) ? sel : null);
+  } catch (err) {
+    tfailed = true; console.warn('3D tissue unavailable', err);
+    $('tissue3d').hidden = true; $('tissue-note').innerHTML = html('cell3d.nowebgl');
+  }
+}
+const tissueParts = (t, sel) => `<ul class="queue parts">${t.parts.map(p => `<li><button data-kind="tpart" data-id="${p.id}" aria-pressed="${p.id === sel}"><span class="sw" style="background:${p.color}"></span><span>${html(p.name)}</span></button></li>`).join('')}</ul>`;
+function tissueCard(t, sel) {
+  const p = t.parts.find(x => x.id === sel);
+  return p ? `<p><strong>${html(p.name)}</strong></p><p>${html(p.text)}</p><p class="muted" style="font-size:12.5px">${html(t.name)}</p>`
+    : `<p><strong>${html(t.name)}</strong></p><p>${html(t.summary)}</p><p class="muted" style="font-size:12.5px">${html('tissue.pick')}</p>`;
+}
+
 function render(s) {
   applyStatic();
   document.querySelectorAll('[data-lang-set]').forEach(b => b.setAttribute('aria-checked', b.dataset.langSet === getLang()));
@@ -105,27 +156,42 @@ function render(s) {
   const cell = catalog.cells.find(c => c.id === s.cell);
   const pdb = catalog.structures.find(p => p.id === s.pdb);
   const A = lv.module === 'A';
+  const C = lv.module === 'C';
+  const T = lv.module === 'T';
+  const B = lv.module === 'B';
   const compare = A && s.view === 'compare';
 
+  // Cell kind sets the colour of the Cell band: animal red, plant green, bacterial purple
+  if (cell && lv.id === 'cell') document.documentElement.dataset.kind = cell.kind ?? 'animal'; else delete document.documentElement.dataset.kind;
   $('ro-cell').innerHTML = cell ? html(cell.name) : '–';
   $('ro-scale').textContent = lv.unit;
-  $('ro-view').innerHTML = !A && pdb ? `PDB ${esc(pdb.id)}` : compare ? html('view.compare') : cell && A ? html(cell.name) : html('hud.nothing');
+  $('ro-view').innerHTML = T ? (tissueOf(s) ? html(tissueOf(s).name) : html('hud.nothing')) : C ? (partsFor(s.level).find(p => p.id === s.anat) ? html(partsFor(s.level).find(p => p.id === s.anat).name) : html('hud.anatomy')) : !A && pdb ? `PDB ${esc(pdb.id)}` : compare ? html('view.compare') : cell && A ? html(cell.name) : html('hud.nothing');
 
   // Viewport: queue or comparison for module A, queue for module B
-  $('vp-title').innerHTML = html(compare ? 'compare.title' : A ? 'moduleA.title' : 'moduleB.title');
+  $('vp-title').innerHTML = html(compare ? 'compare.title' : A ? 'moduleA.title' : C ? 'moduleC.title' : T ? 'moduleT.title' : 'moduleB.title');
   $('vp-switch').hidden = !A;
   $('vp-switch').querySelectorAll('button').forEach(b => b.setAttribute('aria-checked', b.dataset.view === (compare ? 'compare' : 'cells')));
-  const points = !A && pdb ? tours.structures[pdb.id]?.points ?? [] : [];
+  const points = B && pdb ? tours.structures[pdb.id]?.points ?? [] : [];
   const point = points.find(p => p.id === s.tour);
-  const showMol = !A && !!pdb;
-  $('vp-empty').hidden = compare || showMol;
+  const showMol = B && !!pdb;
+  $('vp-empty').hidden = compare || showMol || C;
+  document.body.classList.toggle('level-c', C);
+  const fr = $('vp-anatomy');
+  fr.hidden = !C;
+  if (C) {
+    if (!fr.getAttribute('src')) fr.src = 'anatomy/index.html';
+    showInModel(s);
+  }
   $('vp-mol').hidden = !showMol;
+  const sm = modelOf(s, cell);
+  $('vp-tissue').hidden = !sm;
+  if (sm) syncTissue(sm, s.selection);
   $('vp-queue').hidden = compare;
   $('vp-compare').hidden = !compare;
-  const show3d = A && !compare && !!cell?.fractions?.length;
+  const show3d = A && !compare && !cell?.schematic && !!cell?.fractions?.length;
   $('vp-cell').hidden = !show3d;
   if (show3d) sync3d(cell, s.selection);
-  document.querySelector('.schematic').hidden = compare || showMol;
+  document.querySelector('.schematic').hidden = compare || showMol || C || T || !!sm;
   if (showMol) {
     $('tour-bar').innerHTML = [{ id: '', label: { en: text('tour.whole') } }, ...points].map(p =>
       `<li><button data-tour="${esc(p.id)}" aria-pressed="${(p.id || null) === (s.tour || null) || (!p.id && !point)}">${p.id ? html(p.label) : html('tour.whole')}</button></li>`).join('');
@@ -134,32 +200,32 @@ function render(s) {
   if (compare) {
     $('vp-compare').innerHTML = renderCompare(s);
   } else {
-    $('vp-empty').innerHTML = html(A ? 'moduleA.empty' : 'moduleB.empty');
-    $('vp-queue').innerHTML = (A ? catalog.cells : catalog.structures).map(item => {
+    $('vp-empty').innerHTML = html(A ? 'moduleA.empty' : C ? 'moduleC.empty' : T ? 'moduleT.empty' : 'moduleB.empty');
+    $('vp-queue').innerHTML = C || T ? partsFor(s.level).map(p => `<li><button data-kind="part" data-id="${p.id}" aria-pressed="${p.id === s.anat}"><span>${html(p.name)}</span></button></li>`).join('') : (A ? catalog.cells : catalog.structures).map(item => {
       const kind = A ? 'cell' : 'pdb';
       const on = A ? item.id === s.cell : item.id === s.pdb;
-      return `<li><button data-kind="${kind}" data-id="${item.id}" aria-pressed="${on}">
+      return `<li><button data-kind="${kind}" data-id="${item.id}" aria-pressed="${on}"${A ? ` style="--k:var(--kind-${item.kind ?? 'animal'})"` : ''}>
         ${A ? '' : `<span class="id">${item.id}</span>`}<span>${html(item.name)}</span></button></li>`;
     }).join('');
   }
 
   // Panel 1: volume fractions of the selected cell
-  $('chart-title').innerHTML = html(A ? 'panel.chart.a' : 'panel.chart.b');
-  const chart = A && cell ? renderChart(cell) : '';
-  $('chart-body').innerHTML = chart || `<p class="muted">${html(!A ? 'panel.chart.empty.b' : compare ? 'chart.select' : 'panel.chart.empty')}</p>`;
+  $('chart-title').innerHTML = html(sm ? 'panel.chart.t' : A ? 'panel.chart.a' : C ? 'panel.chart.c' : T ? 'panel.chart.t' : 'panel.chart.b');
+  const chart = sm ? tissueParts(sm, s.selection) : A && cell ? renderChart(cell) : '';
+  $('chart-body').innerHTML = chart || `<p class="muted">${html(C ? 'panel.chart.empty.c' : T ? 'panel.chart.empty.t' : !A ? 'panel.chart.empty.b' : compare ? 'chart.select' : 'panel.chart.empty')}</p>`;
 
   // Panel 2: selected object card
-  const item = A ? cell : pdb;
-  $('card-body').innerHTML = (A && cell && s.selection ? orgCard(cell, s.selection) : '') + (point ? tourCard(point) : '') +
+  const item = C || T ? null : A ? cell : pdb;
+  $('card-body').innerHTML = sm ? tissueCard(sm, s.selection) : (A && cell && s.selection ? orgCard(cell, s.selection) : '') + (point ? tourCard(point) : '') +
     (item ? card(item, A ? 'cell' : 'pdb') : `<p class="muted">${html('panel.card.empty')}</p>`);
 
   // Panel 3: every source behind a number on screen
   const ids = new Set();
   if (compare) columnCells(s.muscle).forEach(c => c.data && ids.add(c.data));
   if (A && cell?.data) ids.add(cell.data);
-  if (!A && pdb?.cite) ids.add(pdb.cite);
+  if (B && pdb?.cite) ids.add(pdb.cite);
   if (A && !compare && cell?.id === 'hepatocyte') ids.add('bnid-105782');
-  $('sources-body').innerHTML = ids.size
+  $('sources-body').innerHTML = sm ? `<li class="muted" style="list-style:none;margin-left:-1.4em">${html('tissue.source')}</li>` : ids.size
     ? [...ids].map(id => source(citations[id])).join('')
     : `<li class="muted" style="list-style:none;margin-left:-1.4em">${html('status.nodata')}</li>`;
 }
@@ -244,6 +310,7 @@ function card(item, kind) {
   if (kind === 'pdb') rows = `<dt>${html('card.method')}</dt><dd>${esc(item.method)}</dd>`;
   else if (item.size) rows = `<dt>${html('card.size')}</dt><dd>${html(item.size)}</dd>`;
   else if (item.sizeUm) rows = `<dt>${html('card.size')}</dt><dd>${item.sizeUm[0]}–${item.sizeUm[1]} µm</dd>`;
+  if (kind === 'cell' && item.kind) rows += `<dt>${html('card.kind')}</dt><dd>${html('kind.' + item.kind)}</dd>`;
   if (kind === 'cell' && item.species) rows += `<dt>${html('card.species')}</dt><dd>${html(item.species)}</dd>`;
   const status = kind === 'cell' && !item.data ? `<p class="muted" style="margin-top:8px">${html('status.nodata')}</p>` : '';
   const linkBlock = out.length || inc.length

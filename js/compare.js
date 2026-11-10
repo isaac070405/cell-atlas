@@ -25,6 +25,7 @@ const fmt = n => String(n);
 export function valueText(f) {
   if (!f) return '—';
   if (f.negligible) return text('compare.negligible');
+  if (f.text) return text(f.text);
   const v = Array.isArray(f.value) ? `${fmt(f.value[0])}–${fmt(f.value[1])}%` : `${fmt(f.value)}%`;
   return `${f.approx ? '≈ ' : ''}${v}${f.derived ? ' *' : ''}`;
 }
@@ -33,7 +34,7 @@ export function valueText(f) {
 export function bar(f, orgId) {
   const colour = `var(${comp(orgId)?.token ?? '--org-cytosol'})`;
   let mark = '';
-  if (f && !f.negligible) {
+  if (f && !f.negligible && !f.text) {
     if (Array.isArray(f.value)) {
       const [lo, hi] = f.value;
       mark = `<span class="bar-range" style="left:${lo}%;width:${hi - lo}%;--c:${colour}"></span>`;
@@ -56,7 +57,7 @@ export function renderCompare(s) {
     }</div>` : '';
     return `<th scope="col" class="${on ? 'on' : ''}">
       <button class="col-head" data-cell="${c.id}" aria-pressed="${on}" title="${esc(text('compare.select'))}">${html(c.name)}</button>
-      <span class="col-species">${html(c.species)}</span>${sw}</th>`;
+      <span class="col-species">${html(c.species)}</span>${c.compareNote ? `<span class="col-species">${html(c.compareNote)}</span>` : ''}${sw}</th>`;
   }).join('');
 
   const rows = cat.compareRows
@@ -89,4 +90,4 @@ export function renderChart(cell) {
       <span class="chart-name">${swatch(f.org)}${html(f.note ?? comp(f.org).name)}</span>
       ${bar(f, f.org)}<span class="val">${esc(valueText(f))}</span></li>`).join('')}</ul>`;
 }
-const num = f => f.negligible ? -1 : Array.isArray(f.value) ? f.value[1] : f.value;
+const num = f => f.negligible || f.text ? -1 : Array.isArray(f.value) ? f.value[1] : f.value;

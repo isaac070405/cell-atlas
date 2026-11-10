@@ -25,6 +25,18 @@
       "en": "Nothing selected",
       "zh-Hant": "未選取"
     },
+    "level.system": {
+      "en": "System",
+      "zh-Hant": "系統"
+    },
+    "level.organ": {
+      "en": "Organ",
+      "zh-Hant": "器官"
+    },
+    "level.tissue": {
+      "en": "Tissue",
+      "zh-Hant": "組織"
+    },
     "level.cell": {
       "en": "Cell",
       "zh-Hant": "細胞"
@@ -50,8 +62,76 @@
       "zh-Hant": "模組 A：3D 細胞"
     },
     "moduleA.empty": {
-      "en": "Pick a cell to see it in 3D. Compartment volumes follow the published fractions; shapes and positions are schematic. Compare puts four types side by side.",
-      "zh-Hant": "選擇細胞即可查看 3D 模型。區室體積依已發表的體積分數，形狀與位置為示意。「比較」可並排四種細胞。"
+      "en": "Pick a cell to see it in 3D. Compartment volumes follow the published fractions; shapes and positions are schematic. Compare puts six types side by side.",
+      "zh-Hant": "選擇細胞即可查看 3D 模型。區室體積依已發表的體積分數，形狀與位置為示意。「比較」可並排六種細胞。"
+    },
+    "hud.anatomy": {
+      "en": "3D Anatomy Model",
+      "zh-Hant": "3D 解剖模型"
+    },
+    "moduleC.title": {
+      "en": "3D Anatomy Model: body, organ, tissue",
+      "zh-Hant": "3D 解剖模型：身體、器官、組織"
+    },
+    "moduleC.empty": {
+      "en": "The body, organ and tissue levels belong to the 3D Anatomy Model.",
+      "zh-Hant": "身體、器官同組織層級屬於 3D 解剖模型。"
+    },
+    "panel.chart.c": {
+      "en": "Anatomy",
+      "zh-Hant": "解剖"
+    },
+    "panel.chart.empty.c": {
+      "en": "No data at this level yet.",
+      "zh-Hant": "呢個層級暫時未有數據。"
+    },
+    "moduleT.title": {
+      "en": "Tissue models",
+      "zh-Hant": "組織模型"
+    },
+    "moduleT.empty": {
+      "en": "Pick a tissue to see a schematic 3D model. Orbit to turn it, click a part to read about it.",
+      "zh-Hant": "揀一種組織就會顯示示意 3D 模型。拖曳旋轉，點擊部件可閱讀說明。"
+    },
+    "panel.chart.t": {
+      "en": "Parts",
+      "zh-Hant": "部件"
+    },
+    "panel.chart.empty.t": {
+      "en": "Pick a tissue to list its parts.",
+      "zh-Hant": "揀一種組織就會列出部件。"
+    },
+    "tissue.note": {
+      "en": "Schematic drawn from textbook figures. Shapes and positions are illustrative; no measured values.",
+      "zh-Hant": "根據教科書圖示繪製嘅示意圖。形狀同位置僅供說明，並無量度數值。"
+    },
+    "tissue.source": {
+      "en": "Textbook-style schematic. No measured values on this screen.",
+      "zh-Hant": "教科書式示意圖。呢個畫面冇量度數值。"
+    },
+    "tissue.pick": {
+      "en": "Click a part in the model or the list.",
+      "zh-Hant": "喺模型或清單點擊一個部件。"
+    },
+    "kind.animal": {
+      "en": "Animal cell",
+      "zh-Hant": "動物細胞"
+    },
+    "kind.plant": {
+      "en": "Plant cell",
+      "zh-Hant": "植物細胞"
+    },
+    "kind.bacterial": {
+      "en": "Bacterial cell",
+      "zh-Hant": "細菌細胞"
+    },
+    "kind.virus": {
+      "en": "Virus",
+      "zh-Hant": "病毒"
+    },
+    "card.kind": {
+      "en": "Type",
+      "zh-Hant": "類型"
     },
     "moduleB.title": {
       "en": "Module B: molecular structure",
@@ -158,8 +238,8 @@
       "zh-Hant": "並排比較"
     },
     "compare.title": {
-      "en": "Four cell types side by side",
-      "zh-Hant": "四類細胞並排比較"
+      "en": "Six cell types side by side",
+      "zh-Hant": "六類細胞並排比較"
     },
     "compare.lede": {
       "en": "Share of whole-cell volume on one shared 0–100% scale. A span shows the range between people or species.",
@@ -194,8 +274,8 @@
       "zh-Hant": "喺下面資料欄顯示呢個細胞"
     },
     "compare.footnote": {
-      "en": "* Sum of the separate smooth ER and Golgi values in the paper. ≈ means the paper gives the value as \"about\". A dash means the source did not measure that compartment.",
-      "zh-Hant": "* 由論文分開量度嘅滑面內質網同高爾基體數值相加。≈ 代表論文寫「約」。橫線代表來源冇量度嗰個區室。"
+      "en": "* Sum of the separate smooth ER and Golgi values in the paper. ≈ means the paper gives the value as \"about\". A dash means the source did not measure that compartment. Text in a cell is a size or length, not a volume share.",
+      "zh-Hant": "* 由論文分開量度嘅滑面內質網同高爾基體數值相加。≈ 代表論文寫「約」。橫線代表來源冇量度嗰個區室。文字代表大小或長度，唔係體積比例。"
     },
     "muscle.skeletal-myocyte": {
       "en": "Skeletal",

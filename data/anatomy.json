@@ -1,0 +1,101 @@
+{
+ "_note": "Classification for the 3D Anatomy Model levels. key is the model's system key; match is a list of regular expressions tested against part labels in the model.",
+ "systems": [
+  {
+   "id": "cardiovascular",
+   "keys": [
+    "circulatory"
+   ],
+   "name": {
+    "en": "Cardiovascular System",
+    "zh-Hant": "心血管系統"
+   }
+  },
+  {
+   "id": "musculoskeletal",
+   "keys": [
+    "skeletal",
+    "muscular"
+   ],
+   "name": {
+    "en": "Musculoskeletal System",
+    "zh-Hant": "肌肉骨骼系統"
+   }
+  },
+  {
+   "id": "digestive",
+   "keys": [
+    "digestive"
+   ],
+   "name": {
+    "en": "Digestive System",
+    "zh-Hant": "消化系統"
+   }
+  }
+ ],
+ "organs": [
+  {
+   "id": "heart",
+   "name": {
+    "en": "Heart",
+    "zh-Hant": "心臟"
+   },
+   "match": [
+    "^(Left|Right) (ventricle|atrium|auricle)",
+    "^Interventricular",
+    "^Interatrial",
+    "^Fossa ovalis",
+    "^Conus arteriosus",
+    "^Aortic vestibule",
+    "^Trabeculae carneae",
+    "^Crista terminalis",
+    "^Musculi pectinati",
+    "^(Tricuspid|Mitral|Aortic|Pulmonary) valve",
+    "papillary muscle",
+    "^Chordae tendineae",
+    "^Left anterior descending",
+    "^Left coronary",
+    "^Circumflex artery",
+    "^Right coronary",
+    "^(Great|Middle) cardiac vein",
+    "^Coronary sinus",
+    "^Epicardial fat",
+    "^Sinoatrial",
+    "^Internodal",
+    "^Atrioventricular",
+    "^(Right|Left) bundle branch",
+    "^Purkinje",
+    "^Fibrous pericardium"
+   ],
+   "keys": [
+    "circulatory"
+   ]
+  },
+  {
+   "id": "jejunum",
+   "keys": [
+    "digestive"
+   ],
+   "name": {
+    "en": "Jejunum",
+    "zh-Hant": "空腸"
+   },
+   "match": [
+    "^Jejun"
+   ]
+  },
+  {
+   "id": "biceps",
+   "keys": [
+    "muscular"
+   ],
+   "name": {
+    "en": "Biceps",
+    "zh-Hant": "肱二頭肌"
+   },
+   "match": [
+    "^Biceps brachii"
+   ]
+  }
+ ]
+}
