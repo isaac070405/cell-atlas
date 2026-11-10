@@ -25,6 +25,10 @@
       "en": "Nothing selected",
       "zh-Hant": "未選取"
     },
+    "level.body": {
+      "en": "Body",
+      "zh-Hant": "全身"
+    },
     "level.system": {
       "en": "System",
       "zh-Hant": "系統"
@@ -70,7 +74,7 @@
       "zh-Hant": "3D 解剖模型"
     },
     "moduleC.title": {
-      "en": "3D Anatomy Model: body, organ, tissue",
+      "en": "3D Anatomy Model: body, system, organ, tissue",
       "zh-Hant": "3D 解剖模型：身體、器官、組織"
     },
     "moduleC.empty": {

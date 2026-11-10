@@ -247,3 +247,4 @@ html[data-kind="animal"] { --k-now: var(--kind-animal); } html[data-kind="plant"
 .xsec-legend .sw { width: 10px; height: 10px; border: 1px solid var(--rule); flex: none; }
 .xsec-opt { display: flex; align-items: center; gap: var(--s2); font: 12px/1.3 var(--font-label); cursor: pointer; }
 .xsec .chip { align-self: flex-start; cursor: pointer; background: none; }
+body.bare .panels { display: none; }
