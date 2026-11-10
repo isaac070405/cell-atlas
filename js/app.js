@@ -104,22 +104,23 @@ function render(s) {
   const cell = catalog.cells.find(c => c.id === s.cell);
   const pdb = catalog.structures.find(p => p.id === s.pdb);
   const A = lv.module === 'A';
+  const C = lv.module === 'C';
   const compare = A && s.view === 'compare';
 
   $('ro-cell').innerHTML = cell ? html(cell.name) : '–';
   $('ro-scale').textContent = lv.unit;
-  $('ro-view').innerHTML = !A && pdb ? `PDB ${esc(pdb.id)}` : compare ? html('view.compare') : cell && A ? html(cell.name) : html('hud.nothing');
+  $('ro-view').innerHTML = C ? html('hud.anatomy') : !A && pdb ? `PDB ${esc(pdb.id)}` : compare ? html('view.compare') : cell && A ? html(cell.name) : html('hud.nothing');
 
   // Viewport: queue or comparison for module A, queue for module B
-  $('vp-title').innerHTML = html(compare ? 'compare.title' : A ? 'moduleA.title' : 'moduleB.title');
+  $('vp-title').innerHTML = html(compare ? 'compare.title' : A ? 'moduleA.title' : C ? 'moduleC.title' : 'moduleB.title');
   $('vp-switch').hidden = !A;
   $('vp-switch').querySelectorAll('button').forEach(b => b.setAttribute('aria-checked', b.dataset.view === (compare ? 'compare' : 'cells')));
-  const points = !A && pdb ? tours.structures[pdb.id]?.points ?? [] : [];
+  const points = !A && !C && pdb ? tours.structures[pdb.id]?.points ?? [] : [];
   const point = points.find(p => p.id === s.tour);
-  const showMol = !A && !!pdb;
+  const showMol = !A && !C && !!pdb;
   $('vp-empty').hidden = compare || showMol;
   $('vp-mol').hidden = !showMol;
-  $('vp-queue').hidden = compare;
+  $('vp-queue').hidden = compare || C;
   $('vp-compare').hidden = !compare;
   const show3d = A && !compare && !!cell?.fractions?.length;
   $('vp-cell').hidden = !show3d;
@@ -133,8 +134,8 @@ function render(s) {
   if (compare) {
     $('vp-compare').innerHTML = renderCompare(s);
   } else {
-    $('vp-empty').innerHTML = html(A ? 'moduleA.empty' : 'moduleB.empty');
-    $('vp-queue').innerHTML = (A ? catalog.cells : catalog.structures).map(item => {
+    $('vp-empty').innerHTML = html(A ? 'moduleA.empty' : C ? 'moduleC.empty' : 'moduleB.empty');
+    $('vp-queue').innerHTML = C ? '' : (A ? catalog.cells : catalog.structures).map(item => {
       const kind = A ? 'cell' : 'pdb';
       const on = A ? item.id === s.cell : item.id === s.pdb;
       return `<li><button data-kind="${kind}" data-id="${item.id}" aria-pressed="${on}">
@@ -143,12 +144,12 @@ function render(s) {
   }
 
   // Panel 1: volume fractions of the selected cell
-  $('chart-title').innerHTML = html(A ? 'panel.chart.a' : 'panel.chart.b');
+  $('chart-title').innerHTML = html(A ? 'panel.chart.a' : C ? 'panel.chart.c' : 'panel.chart.b');
   const chart = A && cell ? renderChart(cell) : '';
-  $('chart-body').innerHTML = chart || `<p class="muted">${html(!A ? 'panel.chart.empty.b' : compare ? 'chart.select' : 'panel.chart.empty')}</p>`;
+  $('chart-body').innerHTML = chart || `<p class="muted">${html(C ? 'panel.chart.empty.c' : !A ? 'panel.chart.empty.b' : compare ? 'chart.select' : 'panel.chart.empty')}</p>`;
 
   // Panel 2: selected object card
-  const item = A ? cell : pdb;
+  const item = C ? null : A ? cell : pdb;
   $('card-body').innerHTML = (A && cell && s.selection ? orgCard(cell, s.selection) : '') + (point ? tourCard(point) : '') +
     (item ? card(item, A ? 'cell' : 'pdb') : `<p class="muted">${html('panel.card.empty')}</p>`);
 
@@ -156,7 +157,7 @@ function render(s) {
   const ids = new Set();
   if (compare) columnCells(s.muscle).forEach(c => c.data && ids.add(c.data));
   if (A && cell?.data) ids.add(cell.data);
-  if (!A && pdb?.cite) ids.add(pdb.cite);
+  if (!A && !C && pdb?.cite) ids.add(pdb.cite);
   if (A && !compare && cell?.id === 'hepatocyte') ids.add('bnid-105782');
   $('sources-body').innerHTML = ids.size
     ? [...ids].map(id => source(citations[id])).join('')

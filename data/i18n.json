@@ -25,6 +25,18 @@
       "en": "Nothing selected",
       "zh-Hant": "未選取"
     },
+    "level.system": {
+      "en": "System",
+      "zh-Hant": "系統"
+    },
+    "level.organ": {
+      "en": "Organ",
+      "zh-Hant": "器官"
+    },
+    "level.tissue": {
+      "en": "Tissue",
+      "zh-Hant": "組織"
+    },
     "level.cell": {
       "en": "Cell",
       "zh-Hant": "細胞"
@@ -52,6 +64,26 @@
     "moduleA.empty": {
       "en": "Pick a cell to see it in 3D. Compartment volumes follow the published fractions; shapes and positions are schematic. Compare puts four types side by side.",
       "zh-Hant": "選擇細胞即可查看 3D 模型。區室體積依已發表的體積分數，形狀與位置為示意。「比較」可並排四種細胞。"
+    },
+    "hud.anatomy": {
+      "en": "3D Anatomy Model",
+      "zh-Hant": "3D 解剖模型"
+    },
+    "moduleC.title": {
+      "en": "3D Anatomy Model: body, organ, tissue",
+      "zh-Hant": "3D 解剖模型：身體、器官、組織"
+    },
+    "moduleC.empty": {
+      "en": "The body, organ and tissue levels belong to the 3D Anatomy Model, which is not connected to this page yet.",
+      "zh-Hant": "身體、器官同組織層級屬於 3D 解剖模型，暫時未接駁到呢頁。"
+    },
+    "panel.chart.c": {
+      "en": "Anatomy",
+      "zh-Hant": "解剖"
+    },
+    "panel.chart.empty.c": {
+      "en": "No data at this level yet.",
+      "zh-Hant": "呢個層級暫時未有數據。"
     },
     "moduleB.title": {
       "en": "Module B: molecular structure",

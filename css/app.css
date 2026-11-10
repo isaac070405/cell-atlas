@@ -120,7 +120,8 @@ html[data-lang="both"] .ruler-bands button { line-height: 1.1; padding-top: 2px;
   .ruler-bands { left: var(--s4); right: var(--s4); }
   .ruler-ticklabels span { font-size: 10px; }
   .ruler-ticklabels span:nth-child(even) { display: none; }
-  .ruler-bands button { font-size: 12px; }
+  .ruler-bands button { font-size: 10px; padding: 0; overflow: hidden; }
+  #lvl-cell { font-size: 8px; }
   .viewport { padding: var(--s3); min-height: 52vh; }
   .viewport-frame { padding: var(--s4); }
   .schematic { right: var(--s5); bottom: var(--s4); }

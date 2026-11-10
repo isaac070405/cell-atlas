@@ -2,7 +2,10 @@
 // Viewers and panels read state and listen for "change"; they never write each other.
 
 export const LEVELS = [
-  // log10(metres) range covered by each level on the ruler
+  // log10(metres) range covered by each level on the ruler. Module C is the 3D Anatomy Model (body, organ, tissue).
+  { id: 'system',    module: 'C', unit: 'm',  from: 0.3,  to: -1 },
+  { id: 'organ',     module: 'C', unit: 'cm', from: -1,   to: -2.7 },
+  { id: 'tissue',    module: 'C', unit: 'mm', from: -2.7, to: -4.4 },
   { id: 'cell',      module: 'A', unit: 'µm', from: -4.4, to: -5 },
   { id: 'organelle', module: 'A', unit: 'µm', from: -5,   to: -7 },
   { id: 'complex',   module: 'B', unit: 'nm', from: -7,   to: -9 },
