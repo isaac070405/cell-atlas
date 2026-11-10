@@ -1,0 +1,25 @@
+name: Data or citation error
+description: A number, unit, source or translation is wrong
+labels: [data]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: Cell, organelle, structure or tour point, with a URL if you have one.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+      description: Quote the value shown and the value you expect.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source for the correct value
+      description: DOI, PMID, PDB ID or database record, with the table or page number.
+    validations:
+      required: true

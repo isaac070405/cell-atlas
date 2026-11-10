@@ -26,6 +26,8 @@ node scripts/check-data.mjs
 
 ## Data rules
 
+The file schemas are in `docs/DATA.md`. Licences of copied libraries and models are in `THIRD_PARTY_NOTICES.md`.
+
 - Every number on screen needs an entry in `data/citations.json` with `source`, `detail` and a `status` of `verified` or `pending`.
 - Set `verified` only after reading the cited paper or database record. The check script fails on `pending`.
 - Give species, cell type and method for each value.
@@ -45,12 +47,19 @@ node scripts/check-data.mjs
 - Keep controls keyboard reachable and labelled (see `ACCESSIBILITY.md`).
 - Libraries in `vendor/` and `anatomy/vendor/` are self-hosted builds. Update them by replacing the whole build and noting the version in the README.
 
+## Issues
+
+Questions and setup help are covered in `SUPPORT.md`.
+
+Use the issue forms for a bug, a data or citation error, or a feature request. Report vulnerabilities through `SECURITY.md`.
+
 ## Pull requests
 
 1. Branch from `main` and keep one topic per pull request.
    The pull request template in `.github/pull_request_template.md` lists the checks.
 2. Run the checks above and state the result in the description.
 3. Update the README when a change adds a feature, file or data item.
+   Add a line to `CHANGELOG.md` under Unreleased.
 4. Report vulnerabilities through `SECURITY.md`, not in a pull request.
 
 By contributing, you agree that your code is released under the MIT License (see `LICENSE`).

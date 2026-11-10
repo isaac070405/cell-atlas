@@ -1,0 +1,40 @@
+name: Bug report
+description: Something on the site is broken or looks wrong
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected and what you saw.
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Page URL
+      description: Include the query string, for example `?cell=hepatocyte&org=mito`.
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      placeholder: Safari 18 on iPhone 15
+    validations:
+      required: true
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Theme and language
+      options:
+        - Light, English
+        - Light, 繁體中文
+        - Light, bilingual
+        - Dark, English
+        - Dark, 繁體中文
+        - Dark, bilingual
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshot or console error
