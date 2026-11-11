@@ -15,6 +15,9 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 - `scripts/check-data.mjs` checks the new models.
 
 ### Changed
+- Body level on the ruler (2 m to 0.5 m, 全身): shows the whole body with every anatomy panel. System now spans 0.5 m to 10 cm (#47).
+- System and Organ pick lists no longer have a "Body" item. With nothing picked, both show the whole body with panels hidden (#47).
+- Tissue level hides the empty Parts, Selected object and Sources panels until a tissue is picked (#47).
 - Removed `anatomy/assets/eye.glb` (GPL-3.0-only, incompatible with the MIT licence); the procedural eye is drawn instead.
 - Added the Three.js MIT licence text to `vendor/three/LICENSE`.
 
