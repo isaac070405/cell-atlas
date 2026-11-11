@@ -7,9 +7,9 @@
       "deepLink": false
     },
     "tis": {
-      "label": "Histology",
-      "url": null,
-      "deepLink": false
+      "label": "Tissue",
+      "url": "./?level=tissue&part={id}",
+      "deepLink": true
     },
     "cell": {
       "label": "Cell Atlas · Module A",

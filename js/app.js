@@ -72,10 +72,11 @@ $('vp-compare').addEventListener('click', e => {
 });
 // Card and compare chips that point inside this site change state instead of reloading
 document.addEventListener('click', e => {
-  const a = e.target.closest('a[data-pdb], a[data-cell], a[data-anat]');
+  const a = e.target.closest('a[data-pdb], a[data-cell], a[data-anat], a[data-tissue]');
   if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
   e.preventDefault();
   if (a.dataset.anat) return setState({ level: 'organ', anat: a.dataset.anat });
+  if (a.dataset.tissue) return setState({ level: 'tissue', anat: a.dataset.tissue, selection: a.dataset.sel || null });
   setState(a.dataset.pdb ? { pdb: a.dataset.pdb } : { cell: a.dataset.cell, pdb: null });
 });
 
@@ -201,7 +202,21 @@ function renderTissueTools(on) {
   $('txsec-axis').innerHTML = AXIS_KEYS.map(k => `<option value="${k}"${k === cur ? ' selected' : ''}>${text('tview.ax.' + k)}</option>`).join('');
   $('txsec-ends').innerHTML = html('tview.ends.' + cur);
 }
-const tissueParts = (t, sel) => `<ul class="queue parts">${t.parts.map(p => `<li><button data-kind="tpart" data-id="${p.id}" aria-pressed="${p.id === sel}"><span class="sw" style="background:${p.color}"></span><span>${html(p.name)}</span></button></li>`).join('')}</ul>`;
+// Tissue picker: grouped by tissue type, nervous tissue split into neuroglia and neurons
+function tissueQueue(s) {
+  let cat = null, sub = null, out = '';
+  for (const t of tissues.tissues) {
+    if (t.category !== cat) { cat = t.category; sub = null; out += `<li class="qh">${html('tissue.cat.' + cat)}</li>`; }
+    if ((t.subgroup ?? null) !== sub && t.subgroup) { sub = t.subgroup; out += `<li class="qh qh2">${html('tissue.cat.sub.' + sub)}</li>`; }
+    out += `<li><button data-kind="part" data-id="${t.id}" aria-pressed="${t.id === s.anat}"><span>${html(t.name)}</span></button></li>`;
+  }
+  return out;
+}
+const tissueParts = (t, sel) => {
+  let g = null;
+  const li = p => `<li><button data-kind="tpart" data-id="${p.id}" aria-pressed="${p.id === sel}"><span class="sw" style="background:${p.color}"></span><span>${html(p.name)}</span></button></li>`;
+  return `<ul class="queue parts">${t.parts.map(p => (p.group && p.group !== g ? (g = p.group, `<li class="qh">${html('tissue.cat.grp.' + g)}</li>`) : '') + li(p)).join('')}</ul>`;
+};
 function tissueCard(t, sel) {
   const p = t.parts.find(x => x.id === sel);
   return p ? `<p><strong>${html(p.name)}</strong></p><p>${html(p.text)}</p><p class="muted" style="font-size:12.5px">${html(t.name)}</p>`
@@ -272,7 +287,7 @@ function render(s) {
     $('vp-compare').innerHTML = renderCompare(s);
   } else {
     $('vp-empty').innerHTML = html(A ? 'moduleA.empty' : C ? 'moduleC.empty' : T ? 'moduleT.empty' : O ? 'moduleO.empty' : M ? 'moduleM.empty' : 'moduleB.empty');
-    $('vp-queue').innerHTML = C || P ? partsFor(s.level).map(p => `<li><button data-kind="part" data-id="${p.id}" aria-pressed="${p.id === s.anat}"><span>${html(p.name)}</span></button></li>`).join('') : (A ? catalog.cells : catalog.structures).map(item => {
+    $('vp-queue').innerHTML = T ? tissueQueue(s) : C || P ? partsFor(s.level).map(p => `<li><button data-kind="part" data-id="${p.id}" aria-pressed="${p.id === s.anat}"><span>${html(p.name)}</span></button></li>`).join('') : (A ? catalog.cells : catalog.structures).map(item => {
       const kind = A ? 'cell' : 'pdb';
       const on = A ? item.id === s.cell : item.id === s.pdb;
       return `<li><button data-kind="${kind}" data-id="${item.id}" aria-pressed="${on}"${A ? ` style="--k:var(--kind-${item.kind ?? 'animal'})"` : ''}>
@@ -309,6 +324,10 @@ function linkChip(k) {
   const p = k.slice(0, i), id = k.slice(i + 1);
   if (p === 'pdb') return `<a class="chip" href="?pdb=${encodeURIComponent(id)}" data-pdb="${esc(id)}">${esc(k)}</a>`;
   if (p === 'cell') return `<a class="chip" href="?cell=${encodeURIComponent(id)}" data-cell="${esc(id)}">${esc(k)}</a>`;
+  if (p === 'tis') {   // tissue models in the Tissue level; an alias points at one part of a tissue
+    const t = tissues.tissues.find(x => x.id === id || x.aliases?.[id]);
+    if (t) { const sel = t.id === id ? '' : t.aliases[id]; return `<a class="chip" href="?level=tissue&part=${t.id}${sel ? `&sel=${sel}` : ''}" data-tissue="${t.id}" data-sel="${sel}">${esc(k)}</a>`; }
+  }
   if (p === 'anat') {   // organs and systems built into the in-site 3D Anatomy Model open at the Organ level
     const organ = anatomy.organs.find(o => o.id === id.toLowerCase());
     if (organ) return `<a class="chip" href="?level=organ&part=${organ.id}" data-anat="${organ.id}">${esc(k)}</a>`;

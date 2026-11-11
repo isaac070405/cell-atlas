@@ -560,6 +560,46 @@
     "tview.plane": {
       "en": "Show cutting plane in the model",
       "zh-Hant": "喺模型內顯示切割面"
+    },
+    "tissue.cat.epithelial": {
+      "en": "Epithelial tissue",
+      "zh-Hant": "上皮組織"
+    },
+    "tissue.cat.connective": {
+      "en": "Connective tissue",
+      "zh-Hant": "結締組織"
+    },
+    "tissue.cat.muscular": {
+      "en": "Muscular tissue",
+      "zh-Hant": "肌肉組織"
+    },
+    "tissue.cat.nervous": {
+      "en": "Nervous tissue",
+      "zh-Hant": "神經組織"
+    },
+    "tissue.cat.sub.neuroglia": {
+      "en": "Neuroglia",
+      "zh-Hant": "神經膠質細胞"
+    },
+    "tissue.cat.sub.neurons": {
+      "en": "Neurons",
+      "zh-Hant": "神經元"
+    },
+    "tissue.cat.grp.ground": {
+      "en": "Ground substance",
+      "zh-Hant": "基質"
+    },
+    "tissue.cat.grp.fibers": {
+      "en": "Fibres",
+      "zh-Hant": "纖維"
+    },
+    "tissue.cat.grp.cells": {
+      "en": "Cells",
+      "zh-Hant": "細胞"
+    },
+    "tissue.cat.grp.other": {
+      "en": "Vessels and nerves",
+      "zh-Hant": "血管同神經"
     }
   }
 }

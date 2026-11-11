@@ -24,6 +24,14 @@ for (const s of cat.structures) if (!citations[s.cite]) bad(`${s.id}: cite ${s.c
 for (const e of links.edges) for (const k of [e.from, ...e.to]) if (!links.targets[k.split(':')[0]]) bad(`link key ${k}`);
 
 // Organelle and atom models: citations resolve, parts unique, bond indices valid, bond length matches the covalent-radius sum
+const tis = read('tissues.json');
+for (const t of tis.tissues) {
+  if (!t.category) bad(`tissue ${t.id}: no category`);
+  if (new Set(t.parts.map(p => p.id)).size !== t.parts.length) bad(`tissue ${t.id}: duplicate part id`);
+  for (const [k, v] of Object.entries(t.aliases ?? {})) if (!t.parts.some(p => p.id === v)) bad(`tissue ${t.id}: alias ${k} -> ${v} not a part`);
+}
+for (const e of links.edges) for (const k of [e.from, ...e.to]) if (k.startsWith('tis:') && !tis.tissues.some(t => t.id === k.slice(4) || t.aliases?.[k.slice(4)])) bad(`link ${k}: no tissue model`);
+console.log(`tissue models: ${tis.tissues.length}`);
 const orgs = read('organelles.json'), atoms = read('atoms.json');
 for (const m of orgs.models) {
   if (m.compartment && !cat.compartments.some(c => c.id === m.compartment)) bad(`organelle ${m.id}: compartment ${m.compartment} missing`);

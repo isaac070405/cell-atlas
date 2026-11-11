@@ -1,11 +1,11 @@
 {
- "_note": "Schematic tissues. No measured values; shapes follow textbook figures.",
+ "_note": "Schematic tissues. No measured values; shapes follow textbook figures. category groups the picker; subgroup splits nervous tissue into neuroglia and neurons; part.group headings split connective tissue into ground substance, fibres and cells; aliases map a links.json tis: key to a part of the tissue.",
  "tissues": [
   {
    "id": "epithelial",
    "name": {
-    "en": "Epithelial Tissue",
-    "zh-Hant": "上皮組織"
+    "en": "Epithelial tissue (overview)",
+    "zh-Hant": "上皮組織（總覽）"
    },
    "summary": {
     "en": "Sheets of tightly packed cells that line surfaces and cavities. Drawn here as simple columnar epithelium over connective tissue.",
@@ -108,6 +108,539 @@
       "zh-Hant": "感覺神經末梢伸入上皮。"
      }
     }
+   ],
+   "category": "epithelial"
+  },
+  {
+   "id": "simple-squamous",
+   "category": "epithelial",
+   "name": {
+    "en": "Simple squamous epithelium",
+    "zh-Hant": "單層扁平上皮"
+   },
+   "summary": {
+    "en": "One layer of thin, flat cells. The short distance across it suits gas exchange and filtration, as in the air sacs of the lung and the lining of blood vessels.",
+    "zh-Hant": "一層薄而扁平嘅細胞。跨越嘅距離短，適合氣體交換同過濾，例如肺泡同血管內襯。"
+   },
+   "parts": [
+    {
+     "id": "cell",
+     "color": "#E8A33D",
+     "name": {
+      "en": "Squamous cells",
+      "zh-Hant": "扁平細胞"
+     },
+     "text": {
+      "en": "Flat, thin cells that fit edge to edge like paving stones.",
+      "zh-Hant": "扁平而薄嘅細胞，邊對邊拼合，似鋪路石。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E5DB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Flattened to match the cell and bulges slightly.",
+      "zh-Hant": "壓成扁平形，稍為凸起。"
+     }
+    },
+    {
+     "id": "basement",
+     "color": "#B7A7C9",
+     "name": {
+      "en": "Basement membrane",
+      "zh-Hant": "基底膜"
+     },
+     "text": {
+      "en": "Thin sheet under the cells that anchors the epithelium to the tissue below.",
+      "zh-Hant": "喺細胞下方嘅薄層，將上皮固定喺下面嘅組織。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "simple-cuboidal",
+   "category": "epithelial",
+   "name": {
+    "en": "Simple cuboidal epithelium",
+    "zh-Hant": "單層立方上皮"
+   },
+   "summary": {
+    "en": "One layer of cube-shaped cells with round, central nuclei. Found in kidney tubules and small gland ducts, where cells secrete or absorb.",
+    "zh-Hant": "一層立方形細胞，細胞核圓而居中。見於腎小管同細小腺管，負責分泌或吸收。"
+   },
+   "parts": [
+    {
+     "id": "cell",
+     "color": "#E8A33D",
+     "name": {
+      "en": "Cuboidal cells",
+      "zh-Hant": "立方細胞"
+     },
+     "text": {
+      "en": "Cells about as tall as they are wide.",
+      "zh-Hant": "高度同闊度相近嘅細胞。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E5DB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Round and near the middle of the cell.",
+      "zh-Hant": "圓形，位於細胞中間附近。"
+     }
+    },
+    {
+     "id": "basement",
+     "color": "#B7A7C9",
+     "name": {
+      "en": "Basement membrane",
+      "zh-Hant": "基底膜"
+     },
+     "text": {
+      "en": "Thin sheet under the cells that anchors the epithelium to the tissue below.",
+      "zh-Hant": "喺細胞下方嘅薄層，將上皮固定喺下面嘅組織。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "simple-columnar",
+   "category": "epithelial",
+   "name": {
+    "en": "Simple columnar epithelium",
+    "zh-Hant": "單層柱狀上皮"
+   },
+   "summary": {
+    "en": "One layer of tall cells with nuclei near the base. Lines the stomach and intestine, where microvilli enlarge the absorbing surface and goblet cells make mucus.",
+    "zh-Hant": "一層高身細胞，細胞核靠近底部。襯住胃同腸，微絨毛擴大吸收面積，杯狀細胞製造黏液。"
+   },
+   "parts": [
+    {
+     "id": "cell",
+     "color": "#E8A33D",
+     "name": {
+      "en": "Columnar cells",
+      "zh-Hant": "柱狀細胞"
+     },
+     "text": {
+      "en": "Cells taller than they are wide.",
+      "zh-Hant": "高度大於闊度嘅細胞。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E5DB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Oval and near the base of the cell.",
+      "zh-Hant": "橢圓形，靠近細胞基部。"
+     }
+    },
+    {
+     "id": "apical",
+     "color": "#7C8FB0",
+     "name": {
+      "en": "Microvilli",
+      "zh-Hant": "微絨毛"
+     },
+     "text": {
+      "en": "Fine projections on the free surface that enlarge the area for absorption.",
+      "zh-Hant": "游離面嘅細小突起，增加吸收面積。"
+     }
+    },
+    {
+     "id": "goblet",
+     "color": "#6FC3DF",
+     "name": {
+      "en": "Goblet cell",
+      "zh-Hant": "杯狀細胞"
+     },
+     "text": {
+      "en": "Single mucus-secreting cell with a swollen top.",
+      "zh-Hant": "分泌黏液嘅單個細胞，頂部膨大。"
+     }
+    },
+    {
+     "id": "basement",
+     "color": "#B7A7C9",
+     "name": {
+      "en": "Basement membrane",
+      "zh-Hant": "基底膜"
+     },
+     "text": {
+      "en": "Thin sheet under the cells that anchors the epithelium to the tissue below.",
+      "zh-Hant": "喺細胞下方嘅薄層，將上皮固定喺下面嘅組織。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "stratified-squamous",
+   "category": "epithelial",
+   "name": {
+    "en": "Stratified squamous epithelium",
+    "zh-Hant": "複層扁平上皮"
+   },
+   "summary": {
+    "en": "Many layers: dividing cuboidal cells at the base, flattened cells at the surface. Protects against wear in skin, mouth and oesophagus.",
+    "zh-Hant": "多層結構：底部係分裂中嘅立方細胞，表面係扁平細胞。保護皮膚、口腔同食道免受磨損。"
+   },
+   "parts": [
+    {
+     "id": "surface",
+     "color": "#E8A33D",
+     "name": {
+      "en": "Surface layer",
+      "zh-Hant": "表層"
+     },
+     "text": {
+      "en": "Flat cells that are shed and replaced from below. In skin they are filled with keratin.",
+      "zh-Hant": "扁平細胞，會脫落並由下方補充。喺皮膚入面充滿角蛋白。"
+     }
+    },
+    {
+     "id": "intermediate",
+     "color": "#E0B15C",
+     "name": {
+      "en": "Middle layers",
+      "zh-Hant": "中間層"
+     },
+     "text": {
+      "en": "Polygonal cells that flatten as they move upward.",
+      "zh-Hant": "多邊形細胞，向上移動時變得扁平。"
+     }
+    },
+    {
+     "id": "basal",
+     "color": "#D98E2B",
+     "name": {
+      "en": "Basal layer",
+      "zh-Hant": "基底層"
+     },
+     "text": {
+      "en": "Cuboidal cells that divide to renew the layers above.",
+      "zh-Hant": "立方細胞，不斷分裂以更新上面嘅層。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E5DB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Holds the DNA. Its shape and position follow the cell shape.",
+      "zh-Hant": "載有 DNA，形狀同位置跟隨細胞形狀。"
+     }
+    },
+    {
+     "id": "basement",
+     "color": "#B7A7C9",
+     "name": {
+      "en": "Basement membrane",
+      "zh-Hant": "基底膜"
+     },
+     "text": {
+      "en": "Thin sheet under the cells that anchors the epithelium to the tissue below.",
+      "zh-Hant": "喺細胞下方嘅薄層，將上皮固定喺下面嘅組織。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "stratified-cuboidal",
+   "category": "epithelial",
+   "name": {
+    "en": "Stratified cuboidal epithelium",
+    "zh-Hant": "複層立方上皮"
+   },
+   "summary": {
+    "en": "Two or more layers of cuboidal cells. Rare; lines the larger ducts of sweat and salivary glands.",
+    "zh-Hant": "兩層或以上立方細胞。較罕見，襯住汗腺同唾液腺嘅較大導管。"
+   },
+   "parts": [
+    {
+     "id": "surface",
+     "color": "#E8A33D",
+     "name": {
+      "en": "Surface layer",
+      "zh-Hant": "表層"
+     },
+     "text": {
+      "en": "Cuboidal cells facing the duct space.",
+      "zh-Hant": "面向管腔嘅立方細胞。"
+     }
+    },
+    {
+     "id": "basal",
+     "color": "#D98E2B",
+     "name": {
+      "en": "Basal layer",
+      "zh-Hant": "基底層"
+     },
+     "text": {
+      "en": "Cuboidal cells resting on the basement membrane.",
+      "zh-Hant": "位於基底膜上嘅立方細胞。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E5DB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Holds the DNA. Its shape and position follow the cell shape.",
+      "zh-Hant": "載有 DNA，形狀同位置跟隨細胞形狀。"
+     }
+    },
+    {
+     "id": "basement",
+     "color": "#B7A7C9",
+     "name": {
+      "en": "Basement membrane",
+      "zh-Hant": "基底膜"
+     },
+     "text": {
+      "en": "Thin sheet under the cells that anchors the epithelium to the tissue below.",
+      "zh-Hant": "喺細胞下方嘅薄層，將上皮固定喺下面嘅組織。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "stratified-columnar",
+   "category": "epithelial",
+   "name": {
+    "en": "Stratified columnar epithelium",
+    "zh-Hant": "複層柱狀上皮"
+   },
+   "summary": {
+    "en": "Cuboidal cells at the base and a surface layer of columnar cells. Rare; found in parts of the conjunctiva and large gland ducts.",
+    "zh-Hant": "底部係立方細胞，表層係柱狀細胞。較罕見，見於部分結膜同大型腺管。"
+   },
+   "parts": [
+    {
+     "id": "surface",
+     "color": "#E8A33D",
+     "name": {
+      "en": "Surface layer",
+      "zh-Hant": "表層"
+     },
+     "text": {
+      "en": "Tall columnar cells facing the free surface.",
+      "zh-Hant": "面向游離面嘅高身柱狀細胞。"
+     }
+    },
+    {
+     "id": "basal",
+     "color": "#D98E2B",
+     "name": {
+      "en": "Basal layer",
+      "zh-Hant": "基底層"
+     },
+     "text": {
+      "en": "Short cuboidal cells on the basement membrane.",
+      "zh-Hant": "位於基底膜上嘅矮身立方細胞。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E5DB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Holds the DNA. Its shape and position follow the cell shape.",
+      "zh-Hant": "載有 DNA，形狀同位置跟隨細胞形狀。"
+     }
+    },
+    {
+     "id": "basement",
+     "color": "#B7A7C9",
+     "name": {
+      "en": "Basement membrane",
+      "zh-Hant": "基底膜"
+     },
+     "text": {
+      "en": "Thin sheet under the cells that anchors the epithelium to the tissue below.",
+      "zh-Hant": "喺細胞下方嘅薄層，將上皮固定喺下面嘅組織。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "pseudostratified",
+   "category": "epithelial",
+   "name": {
+    "en": "Pseudostratified columnar epithelium",
+    "zh-Hant": "假複層柱狀上皮"
+   },
+   "summary": {
+    "en": "One layer that looks like several, because nuclei sit at different heights. Every cell touches the basement membrane. Ciliated in the trachea, with goblet cells.",
+    "zh-Hant": "一層細胞，因細胞核高低不同而似多層。每個細胞都接觸基底膜。氣管內帶纖毛並有杯狀細胞。"
+   },
+   "parts": [
+    {
+     "id": "ciliated",
+     "color": "#E8A33D",
+     "name": {
+      "en": "Ciliated columnar cells",
+      "zh-Hant": "纖毛柱狀細胞"
+     },
+     "text": {
+      "en": "Tall cells that reach the surface and carry cilia.",
+      "zh-Hant": "高身細胞，伸達表面並帶纖毛。"
+     }
+    },
+    {
+     "id": "cilia",
+     "color": "#7C8FB0",
+     "name": {
+      "en": "Cilia",
+      "zh-Hant": "纖毛"
+     },
+     "text": {
+      "en": "Beat together to sweep mucus and trapped particles along the surface.",
+      "zh-Hant": "協調擺動，將黏液同夾住嘅微粒沿表面推送。"
+     }
+    },
+    {
+     "id": "goblet",
+     "color": "#6FC3DF",
+     "name": {
+      "en": "Goblet cell",
+      "zh-Hant": "杯狀細胞"
+     },
+     "text": {
+      "en": "Secretes mucus that traps particles.",
+      "zh-Hant": "分泌黏液以黏住微粒。"
+     }
+    },
+    {
+     "id": "basal-cell",
+     "color": "#D98E2B",
+     "name": {
+      "en": "Short basal cells",
+      "zh-Hant": "矮身基底細胞"
+     },
+     "text": {
+      "en": "Do not reach the surface; they replace worn cells.",
+      "zh-Hant": "唔伸達表面，負責補充老化細胞。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E5DB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Sit at different heights, which gives the layered look.",
+      "zh-Hant": "高低唔同，造成分層嘅外觀。"
+     }
+    },
+    {
+     "id": "basement",
+     "color": "#B7A7C9",
+     "name": {
+      "en": "Basement membrane",
+      "zh-Hant": "基底膜"
+     },
+     "text": {
+      "en": "Thin sheet under the cells that anchors the epithelium to the tissue below.",
+      "zh-Hant": "喺細胞下方嘅薄層，將上皮固定喺下面嘅組織。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "transitional",
+   "category": "epithelial",
+   "name": {
+    "en": "Transitional epithelium",
+    "zh-Hant": "變移上皮"
+   },
+   "summary": {
+    "en": "Layers whose cell shapes change as the organ stretches. Lines the bladder and ureters; large dome-shaped umbrella cells sit at the surface.",
+    "zh-Hant": "細胞形狀會隨器官伸展而改變嘅多層上皮。襯住膀胱同輸尿管，表面有大型圓頂狀傘細胞。"
+   },
+   "parts": [
+    {
+     "id": "umbrella",
+     "color": "#E8A33D",
+     "name": {
+      "en": "Umbrella cells",
+      "zh-Hant": "傘細胞"
+     },
+     "text": {
+      "en": "Large dome-shaped surface cells that flatten when the bladder fills.",
+      "zh-Hant": "表面嘅大型圓頂細胞，膀胱脹滿時會變扁。"
+     }
+    },
+    {
+     "id": "intermediate",
+     "color": "#E0B15C",
+     "name": {
+      "en": "Intermediate cells",
+      "zh-Hant": "中間細胞"
+     },
+     "text": {
+      "en": "Pear-shaped cells between the surface and the base.",
+      "zh-Hant": "位於表面同基部之間嘅梨形細胞。"
+     }
+    },
+    {
+     "id": "basal",
+     "color": "#D98E2B",
+     "name": {
+      "en": "Basal cells",
+      "zh-Hant": "基底細胞"
+     },
+     "text": {
+      "en": "Small cuboidal cells on the basement membrane.",
+      "zh-Hant": "位於基底膜上嘅細小立方細胞。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E5DB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Holds the DNA. Its shape and position follow the cell shape.",
+      "zh-Hant": "載有 DNA，形狀同位置跟隨細胞形狀。"
+     }
+    },
+    {
+     "id": "basement",
+     "color": "#B7A7C9",
+     "name": {
+      "en": "Basement membrane",
+      "zh-Hant": "基底膜"
+     },
+     "text": {
+      "en": "Thin sheet under the cells that anchors the epithelium to the tissue below.",
+      "zh-Hant": "喺細胞下方嘅薄層，將上皮固定喺下面嘅組織。"
+     }
+    }
    ]
   },
   {
@@ -131,7 +664,8 @@
      "text": {
       "en": "Gel-like material that fills the space between cells and fibres.",
       "zh-Hant": "填滿細胞同纖維之間空間嘅膠狀物質。"
-     }
+     },
+     "group": "ground"
     },
     {
      "id": "collagen",
@@ -143,7 +677,8 @@
      "text": {
       "en": "Strong, rope-like fibres grouped into bundles. They resist pulling.",
       "zh-Hant": "堅韌如繩嘅纖維，聚成纖維束，抵抗拉力。"
-     }
+     },
+     "group": "fibers"
     },
     {
      "id": "elastic",
@@ -155,7 +690,8 @@
      "text": {
       "en": "Thin branching fibres that stretch and recoil.",
       "zh-Hant": "幼細分支嘅纖維，可伸展及回彈。"
-     }
+     },
+     "group": "fibers"
     },
     {
      "id": "reticular",
@@ -167,7 +703,8 @@
      "text": {
       "en": "Fine fibres forming a supporting mesh around cells and vessels.",
       "zh-Hant": "幼細纖維，喺細胞同血管周圍形成支持網。"
-     }
+     },
+     "group": "fibers"
     },
     {
      "id": "fibroblast",
@@ -179,7 +716,8 @@
      "text": {
       "en": "Flat, spindle-shaped cell that makes the fibres and ground substance.",
       "zh-Hant": "扁平梭形細胞，製造纖維同基質。"
-     }
+     },
+     "group": "cells"
     },
     {
      "id": "macrophage",
@@ -191,7 +729,8 @@
      "text": {
       "en": "Engulfs debris and microbes.",
       "zh-Hant": "吞噬碎屑同微生物。"
-     }
+     },
+     "group": "cells"
     },
     {
      "id": "plasma",
@@ -203,7 +742,8 @@
      "text": {
       "en": "Makes antibodies.",
       "zh-Hant": "製造抗體。"
-     }
+     },
+     "group": "cells"
     },
     {
      "id": "fat",
@@ -215,7 +755,8 @@
      "text": {
       "en": "Store lipid in one large droplet.",
       "zh-Hant": "以一個大脂滴貯存脂質。"
-     }
+     },
+     "group": "cells"
     },
     {
      "id": "capillary",
@@ -227,7 +768,8 @@
      "text": {
       "en": "Brings nutrients and takes away waste.",
       "zh-Hant": "運送養分及帶走廢物。"
-     }
+     },
+     "group": "other"
     },
     {
      "id": "nerve",
@@ -239,9 +781,11 @@
      "text": {
       "en": "Carries signals to and from the tissue.",
       "zh-Hant": "向組織傳入及傳出訊號。"
-     }
+     },
+     "group": "other"
     }
-   ]
+   ],
+   "category": "connective"
   },
   {
    "id": "muscular",
@@ -290,13 +834,17 @@
       "zh-Hant": "短梭形細胞，一個中央細胞核，冇橫紋。見於空腔器官同血管壁。不受意識控制。"
      }
     }
-   ]
+   ],
+   "category": "muscular",
+   "aliases": {
+    "smooth-muscle": "smooth"
+   }
   },
   {
    "id": "nervous",
    "name": {
-    "en": "Nervous Tissue",
-    "zh-Hant": "神經組織"
+    "en": "Nervous tissue (overview)",
+    "zh-Hant": "神經組織（總覽）"
    },
    "summary": {
     "en": "Neurons carry electrical signals and supporting glial cells insulate and protect them. Drawn here as one neuron with a myelinated axon.",
@@ -435,7 +983,647 @@
      "en": "In this neuron the signal passes from the dendrites to the cell body, then along the axon to the terminals.",
      "zh-Hant": "喺呢個神經元，訊號由樹突傳到細胞體，再沿軸突傳到末端。"
     }
+   },
+   "category": "nervous"
+  },
+  {
+   "id": "astrocyte",
+   "category": "nervous",
+   "name": {
+    "en": "Astrocyte",
+    "zh-Hant": "星狀膠質細胞"
+   },
+   "summary": {
+    "en": "Star-shaped glial cell of the central nervous system. Its processes support neurons, regulate the chemical surroundings and reach blood vessels with end-feet.",
+    "zh-Hant": "中樞神經系統嘅星形膠質細胞。突起支持神經元、調節化學環境，並以終足接觸血管。"
+   },
+   "parts": [
+    {
+     "id": "soma",
+     "color": "#E3A23A",
+     "name": {
+      "en": "Cell body",
+      "zh-Hant": "細胞體"
+     },
+     "text": {
+      "en": "Holds the nucleus.",
+      "zh-Hant": "載有細胞核。"
+     }
+    },
+    {
+     "id": "processes",
+     "color": "#F0C070",
+     "name": {
+      "en": "Processes",
+      "zh-Hant": "突起"
+     },
+     "text": {
+      "en": "Branching arms that contact neurons and synapses.",
+      "zh-Hant": "分支嘅突起，接觸神經元同突觸。"
+     }
+    },
+    {
+     "id": "endfeet",
+     "color": "#D9822B",
+     "name": {
+      "en": "End-feet",
+      "zh-Hant": "終足"
+     },
+     "text": {
+      "en": "Flattened ends on the blood vessel wall; they help form the blood–brain barrier.",
+      "zh-Hant": "貼喺血管壁上嘅扁平末端，協助形成血腦屏障。"
+     }
+    },
+    {
+     "id": "capillary",
+     "color": "#C8312E",
+     "name": {
+      "en": "Capillary",
+      "zh-Hant": "微血管"
+     },
+     "text": {
+      "en": "Small blood vessel in the brain.",
+      "zh-Hant": "腦內嘅細小血管。"
+     }
+    }
+   ],
+   "subgroup": "neuroglia"
+  },
+  {
+   "id": "microglia",
+   "category": "nervous",
+   "name": {
+    "en": "Microglial cell",
+    "zh-Hant": "小膠質細胞"
+   },
+   "summary": {
+    "en": "Small immune cell of the central nervous system. Thin branched processes survey the tissue and the cell engulfs debris.",
+    "zh-Hant": "中樞神經系統嘅細小免疫細胞。幼細分支突起巡視組織，並吞噬碎屑。"
+   },
+   "parts": [
+    {
+     "id": "soma",
+     "color": "#6FB5E0",
+     "name": {
+      "en": "Cell body",
+      "zh-Hant": "細胞體"
+     },
+     "text": {
+      "en": "Small body with a dense nucleus.",
+      "zh-Hant": "細小嘅胞體，細胞核較致密。"
+     }
+    },
+    {
+     "id": "processes",
+     "color": "#9CCBEA",
+     "name": {
+      "en": "Processes",
+      "zh-Hant": "突起"
+     },
+     "text": {
+      "en": "Thin branches that continually probe the surroundings.",
+      "zh-Hant": "不斷探測周圍嘅幼細分支。"
+     }
+    },
+    {
+     "id": "debris",
+     "color": "#B0B0B0",
+     "name": {
+      "en": "Debris",
+      "zh-Hant": "碎屑"
+     },
+     "text": {
+      "en": "A damaged fragment being engulfed by phagocytosis.",
+      "zh-Hant": "正被吞噬嘅受損碎片。"
+     }
+    }
+   ],
+   "subgroup": "neuroglia"
+  },
+  {
+   "id": "ependymal",
+   "category": "nervous",
+   "name": {
+    "en": "Ependymal cells",
+    "zh-Hant": "室管膜細胞"
+   },
+   "summary": {
+    "en": "Ciliated cells lining the brain ventricles and the spinal central canal. Their cilia help move cerebrospinal fluid.",
+    "zh-Hant": "襯住腦室同脊髓中央管嘅纖毛細胞。纖毛協助推動腦脊髓液。"
+   },
+   "parts": [
+    {
+     "id": "cells",
+     "color": "#E8A33D",
+     "name": {
+      "en": "Ependymal cells",
+      "zh-Hant": "室管膜細胞"
+     },
+     "text": {
+      "en": "Cuboidal to columnar cells in a single sheet.",
+      "zh-Hant": "排成單層嘅立方至柱狀細胞。"
+     }
+    },
+    {
+     "id": "cilia",
+     "color": "#7C8FB0",
+     "name": {
+      "en": "Cilia",
+      "zh-Hant": "纖毛"
+     },
+     "text": {
+      "en": "Beat to circulate cerebrospinal fluid.",
+      "zh-Hant": "擺動以推動腦脊髓液流動。"
+     }
+    },
+    {
+     "id": "lumen",
+     "color": "#BFD9E6",
+     "name": {
+      "en": "Fluid space",
+      "zh-Hant": "液腔"
+     },
+     "text": {
+      "en": "Ventricle or canal filled with cerebrospinal fluid.",
+      "zh-Hant": "充滿腦脊髓液嘅腦室或管道。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E5DB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Holds the DNA. Its shape and position follow the cell shape.",
+      "zh-Hant": "載有 DNA，形狀同位置跟隨細胞形狀。"
+     }
+    }
+   ],
+   "subgroup": "neuroglia"
+  },
+  {
+   "id": "oligodendrocyte",
+   "category": "nervous",
+   "name": {
+    "en": "Oligodendrocyte",
+    "zh-Hant": "寡突膠質細胞"
+   },
+   "summary": {
+    "en": "Central nervous system cell that makes myelin. One cell sends processes to wrap segments of several axons.",
+    "zh-Hant": "製造髓鞘嘅中樞神經系統細胞。一個細胞會伸出突起，包裹數條軸突嘅節段。"
+   },
+   "parts": [
+    {
+     "id": "soma",
+     "color": "#5FC4BF",
+     "name": {
+      "en": "Cell body",
+      "zh-Hant": "細胞體"
+     },
+     "text": {
+      "en": "Holds the nucleus.",
+      "zh-Hant": "載有細胞核。"
+     }
+    },
+    {
+     "id": "processes",
+     "color": "#3FA7A7",
+     "name": {
+      "en": "Processes",
+      "zh-Hant": "突起"
+     },
+     "text": {
+      "en": "Each process flattens and wraps one axon segment.",
+      "zh-Hant": "每條突起會攤平並包裹一段軸突。"
+     }
+    },
+    {
+     "id": "myelin",
+     "color": "#9AE0DC",
+     "name": {
+      "en": "Myelin sheath",
+      "zh-Hant": "髓鞘"
+     },
+     "text": {
+      "en": "Insulating layers that speed up signal conduction.",
+      "zh-Hant": "絕緣層，加快訊號傳導。"
+     }
+    },
+    {
+     "id": "axon",
+     "color": "#E3A23A",
+     "name": {
+      "en": "Axons",
+      "zh-Hant": "軸突"
+     },
+     "text": {
+      "en": "Neuron fibres wrapped by the same oligodendrocyte.",
+      "zh-Hant": "由同一個寡突膠質細胞包裹嘅神經纖維。"
+     }
+    }
+   ],
+   "subgroup": "neuroglia"
+  },
+  {
+   "id": "satellite",
+   "category": "nervous",
+   "name": {
+    "en": "Satellite cells",
+    "zh-Hant": "衛星細胞"
+   },
+   "summary": {
+    "en": "Flat glial cells of the peripheral nervous system that surround neuron cell bodies in ganglia and regulate their surroundings.",
+    "zh-Hant": "周圍神經系統嘅扁平膠質細胞，圍住神經節內嘅神經元細胞體，並調節其周圍環境。"
+   },
+   "parts": [
+    {
+     "id": "neuron",
+     "color": "#E3A23A",
+     "name": {
+      "en": "Ganglion neuron",
+      "zh-Hant": "神經節神經元"
+     },
+     "text": {
+      "en": "Neuron cell body with its nucleus.",
+      "zh-Hant": "神經元細胞體及其細胞核。"
+     }
+    },
+    {
+     "id": "satellite",
+     "color": "#5FC4BF",
+     "name": {
+      "en": "Satellite cells",
+      "zh-Hant": "衛星細胞"
+     },
+     "text": {
+      "en": "Flat cells forming a capsule around the cell body.",
+      "zh-Hant": "扁平細胞，圍成包住細胞體嘅囊。"
+     }
+    }
+   ],
+   "subgroup": "neuroglia"
+  },
+  {
+   "id": "schwann",
+   "category": "nervous",
+   "name": {
+    "en": "Schwann cell",
+    "zh-Hant": "許旺細胞"
+   },
+   "summary": {
+    "en": "Peripheral nervous system cell that wraps one segment of one axon in myelin. Gaps between neighbours are the nodes of Ranvier.",
+    "zh-Hant": "周圍神經系統細胞，以髓鞘包裹一條軸突嘅一個節段。相鄰細胞之間嘅空隙係蘭氏結。"
+   },
+   "parts": [
+    {
+     "id": "axon",
+     "color": "#E3A23A",
+     "name": {
+      "en": "Axon",
+      "zh-Hant": "軸突"
+     },
+     "text": {
+      "en": "Nerve fibre carrying the signal.",
+      "zh-Hant": "傳送訊號嘅神經纖維。"
+     }
+    },
+    {
+     "id": "myelin",
+     "color": "#9AE0DC",
+     "name": {
+      "en": "Myelin sheath",
+      "zh-Hant": "髓鞘"
+     },
+     "text": {
+      "en": "Many wraps of Schwann cell membrane.",
+      "zh-Hant": "許旺細胞膜嘅多重包裹層。"
+     }
+    },
+    {
+     "id": "schwann",
+     "color": "#5FC4BF",
+     "name": {
+      "en": "Schwann cell body",
+      "zh-Hant": "許旺細胞體"
+     },
+     "text": {
+      "en": "Cytoplasm pushed to the outside of the sheath.",
+      "zh-Hant": "被推到髓鞘外層嘅細胞質。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#2E8C88",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Lies on the outer surface of the sheath.",
+      "zh-Hant": "位於髓鞘外表面。"
+     }
+    },
+    {
+     "id": "node",
+     "color": "#F5D36B",
+     "name": {
+      "en": "Node of Ranvier",
+      "zh-Hant": "蘭氏結"
+     },
+     "text": {
+      "en": "Bare axon between two Schwann cells; the signal jumps from node to node.",
+      "zh-Hant": "兩個許旺細胞之間裸露嘅軸突，訊號喺結與結之間跳躍傳導。"
+     }
+    }
+   ],
+   "subgroup": "neuroglia"
+  },
+  {
+   "id": "sensory",
+   "category": "nervous",
+   "name": {
+    "en": "Sensory (afferent) neuron",
+    "zh-Hant": "感覺（傳入）神經元"
+   },
+   "summary": {
+    "en": "Carries signals from a receptor toward the central nervous system. One stem leaves the cell body and splits into a peripheral and a central process.",
+    "zh-Hant": "將訊號由感受器傳向中樞神經系統。一條主幹離開細胞體後分成周邊突同中樞突。"
+   },
+   "parts": [
+    {
+     "id": "soma",
+     "color": "#E3A23A",
+     "name": {
+      "en": "Cell body",
+      "zh-Hant": "細胞體"
+     },
+     "text": {
+      "en": "Sits in a ganglion, off to the side of the signal path.",
+      "zh-Hant": "位於神經節，偏離訊號路徑。"
+     }
+    },
+    {
+     "id": "peripheral",
+     "color": "#E8B04A",
+     "name": {
+      "en": "Peripheral process",
+      "zh-Hant": "周邊突"
+     },
+     "text": {
+      "en": "Brings the signal from the receptor to the cell body region.",
+      "zh-Hant": "將訊號由感受器帶到細胞體附近。"
+     }
+    },
+    {
+     "id": "central",
+     "color": "#C98A2A",
+     "name": {
+      "en": "Central process",
+      "zh-Hant": "中樞突"
+     },
+     "text": {
+      "en": "Carries the signal into the spinal cord or brain.",
+      "zh-Hant": "將訊號送入脊髓或腦。"
+     }
+    },
+    {
+     "id": "receptor",
+     "color": "#F08080",
+     "name": {
+      "en": "Receptor ending",
+      "zh-Hant": "感受器末梢"
+     },
+     "text": {
+      "en": "Detects touch, stretch, temperature or pain.",
+      "zh-Hant": "偵測觸覺、拉伸、溫度或痛覺。"
+     }
+    },
+    {
+     "id": "terminals",
+     "color": "#E3A23A",
+     "name": {
+      "en": "Central terminals",
+      "zh-Hant": "中樞末梢"
+     },
+     "text": {
+      "en": "Pass the signal on to neurons in the central nervous system.",
+      "zh-Hant": "將訊號傳給中樞神經系統內嘅神經元。"
+     }
+    }
+   ],
+   "subgroup": "neurons",
+   "directions": {
+    "title": {
+     "en": "Directional terminology",
+     "zh-Hant": "方向術語"
+    },
+    "items": [
+     {
+      "id": "afferent",
+      "arrow": "→",
+      "name": {
+       "en": "Afferent",
+       "zh-Hant": "傳入"
+      },
+      "text": {
+       "en": "Carries signals toward the central nervous system (CNS). Sensory nerves are afferent.",
+       "zh-Hant": "將訊號傳向中樞神經系統（CNS）。感覺神經屬傳入。"
+      }
+     },
+     {
+      "id": "efferent",
+      "arrow": "←",
+      "name": {
+       "en": "Efferent",
+       "zh-Hant": "傳出"
+      },
+      "text": {
+       "en": "Carries signals away from the CNS to muscles or glands. Motor nerves are efferent.",
+       "zh-Hant": "將訊號由中樞神經系統傳向肌肉或腺體。運動神經屬傳出。"
+      }
+     }
+    ],
+    "note": {
+     "en": "In this neuron the signal passes from the dendrites to the cell body, then along the axon to the terminals.",
+     "zh-Hant": "喺呢個神經元，訊號由樹突傳到細胞體，再沿軸突傳到末端。"
+    }
    }
+  },
+  {
+   "id": "motor",
+   "category": "nervous",
+   "name": {
+    "en": "Motor (efferent) neuron",
+    "zh-Hant": "運動（傳出）神經元"
+   },
+   "summary": {
+    "en": "Carries signals from the central nervous system to a muscle or gland. A multipolar cell with many dendrites and one long axon.",
+    "zh-Hant": "將訊號由中樞神經系統傳向肌肉或腺體。多極細胞，有多條樹突同一條長軸突。"
+   },
+   "parts": [
+    {
+     "id": "soma",
+     "color": "#E3A23A",
+     "name": {
+      "en": "Cell body",
+      "zh-Hant": "細胞體"
+     },
+     "text": {
+      "en": "Receives input and holds the nucleus.",
+      "zh-Hant": "接收輸入並載有細胞核。"
+     }
+    },
+    {
+     "id": "dendrites",
+     "color": "#F0C070",
+     "name": {
+      "en": "Dendrites",
+      "zh-Hant": "樹突"
+     },
+     "text": {
+      "en": "Branches that receive signals from other neurons.",
+      "zh-Hant": "接收其他神經元訊號嘅分支。"
+     }
+    },
+    {
+     "id": "axon",
+     "color": "#E8B04A",
+     "name": {
+      "en": "Axon",
+      "zh-Hant": "軸突"
+     },
+     "text": {
+      "en": "Long fibre carrying the signal away from the cell body.",
+      "zh-Hant": "將訊號由細胞體傳走嘅長纖維。"
+     }
+    },
+    {
+     "id": "terminals",
+     "color": "#D9822B",
+     "name": {
+      "en": "Axon terminals",
+      "zh-Hant": "軸突末梢"
+     },
+     "text": {
+      "en": "Release neurotransmitter onto the muscle fibre.",
+      "zh-Hant": "向肌纖維釋放神經傳遞物質。"
+     }
+    },
+    {
+     "id": "muscle",
+     "color": "#E8645A",
+     "name": {
+      "en": "Muscle fibre",
+      "zh-Hant": "肌纖維"
+     },
+     "text": {
+      "en": "Target cell that contracts.",
+      "zh-Hant": "會收縮嘅目標細胞。"
+     }
+    }
+   ],
+   "subgroup": "neurons",
+   "directions": {
+    "title": {
+     "en": "Directional terminology",
+     "zh-Hant": "方向術語"
+    },
+    "items": [
+     {
+      "id": "afferent",
+      "arrow": "→",
+      "name": {
+       "en": "Afferent",
+       "zh-Hant": "傳入"
+      },
+      "text": {
+       "en": "Carries signals toward the central nervous system (CNS). Sensory nerves are afferent.",
+       "zh-Hant": "將訊號傳向中樞神經系統（CNS）。感覺神經屬傳入。"
+      }
+     },
+     {
+      "id": "efferent",
+      "arrow": "←",
+      "name": {
+       "en": "Efferent",
+       "zh-Hant": "傳出"
+      },
+      "text": {
+       "en": "Carries signals away from the CNS to muscles or glands. Motor nerves are efferent.",
+       "zh-Hant": "將訊號由中樞神經系統傳向肌肉或腺體。運動神經屬傳出。"
+      }
+     }
+    ],
+    "note": {
+     "en": "In this neuron the signal passes from the dendrites to the cell body, then along the axon to the terminals.",
+     "zh-Hant": "喺呢個神經元，訊號由樹突傳到細胞體，再沿軸突傳到末端。"
+    }
+   }
+  },
+  {
+   "id": "interneuron",
+   "category": "nervous",
+   "name": {
+    "en": "Interneuron (relay neuron)",
+    "zh-Hant": "中間神經元（傳遞神經元）"
+   },
+   "summary": {
+    "en": "Connects neurons to neurons inside the central nervous system, linking sensory input to motor output. Multipolar, with a short axon.",
+    "zh-Hant": "喺中樞神經系統內連接神經元，將感覺輸入連到運動輸出。多極，軸突較短。"
+   },
+   "parts": [
+    {
+     "id": "soma",
+     "color": "#E3A23A",
+     "name": {
+      "en": "Cell body",
+      "zh-Hant": "細胞體"
+     },
+     "text": {
+      "en": "Holds the nucleus and integrates incoming signals.",
+      "zh-Hant": "載有細胞核並整合傳入訊號。"
+     }
+    },
+    {
+     "id": "dendrites",
+     "color": "#F0C070",
+     "name": {
+      "en": "Dendrites",
+      "zh-Hant": "樹突"
+     },
+     "text": {
+      "en": "Receive signals from sensory and other neurons.",
+      "zh-Hant": "接收感覺神經元同其他神經元嘅訊號。"
+     }
+    },
+    {
+     "id": "axon",
+     "color": "#E8B04A",
+     "name": {
+      "en": "Short axon",
+      "zh-Hant": "短軸突"
+     },
+     "text": {
+      "en": "Branches locally instead of leaving the central nervous system.",
+      "zh-Hant": "喺局部分支，唔離開中樞神經系統。"
+     }
+    },
+    {
+     "id": "terminals",
+     "color": "#D9822B",
+     "name": {
+      "en": "Axon terminals",
+      "zh-Hant": "軸突末梢"
+     },
+     "text": {
+      "en": "Pass the signal to the next neuron.",
+      "zh-Hant": "將訊號傳給下一個神經元。"
+     }
+    }
+   ],
+   "subgroup": "neurons"
   }
  ],
  "cellModels": [
