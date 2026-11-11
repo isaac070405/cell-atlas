@@ -44,6 +44,20 @@ export async function createTissueView(host, { onPick, elements }) {
     const t = new THREE.CanvasTexture(c); t.wrapS = THREE.RepeatWrapping; t.repeat.set(10, 1); t.colorSpace = THREE.SRGBColorSpace; return t;
   }
 
+
+  // Generic epithelial sheet: hexagonal cells in a staggered grid on a basement membrane. Each layer: {part, color, r, h, y, shift}
+  function epi(layers) {
+    put(new THREE.BoxGeometry(5.2, 0.1, 3.2), '#B7A7C9', 'basement');
+    const cols = 6, rows = 3, pitch = 0.85;
+    for (const L of layers) for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
+      const k = i * rows + j; if (L.skip?.includes(k)) continue;
+      const x = (i - (cols - 1) / 2) * pitch + (j % 2) * 0.25 - 0.12 + (L.shift ?? 0), z = (j - (rows - 1) / 2) * pitch;
+      const c = put(new THREE.CylinderGeometry(L.r, L.r * 0.96, L.h, 6), L.color, L.part, L.h < 0.2 ? {} : { opacity: 0.6 }); c.position.set(x, 0.05 + L.y + L.h / 2, z);
+      const flat = L.h < 0.2;
+      ball([x, 0.05 + L.y + (L.nuc ?? 0.5) * L.h, z], flat ? 0.17 : 0.15, '#8E5DB0', 'nucleus', flat ? [1, 0.55, 1] : [0.95, 1.15, 0.95]);
+    }
+  }
+
   const BUILD = {
     // Simple columnar epithelium on a basal lamina, over connective tissue with a capillary and a nerve ending
     epithelial() {
@@ -287,6 +301,158 @@ export async function createTissueView(host, { onPick, elements }) {
         const v = V(r() - 0.5, r() - 0.5, r() - 0.5).normalize(), w = v.clone().multiplyScalar(1.4), e = v.clone().multiplyScalar(3.2 + r() * 0.8);
         tube([w.toArray(), w.clone().lerp(e, 0.5).add(V(0, 0.1, 0)).toArray(), e.toArray()], 0.04, '#2E7D9A', 'mt');
       }
+    },
+
+    // ── Epithelial subtypes: one sheet of cells on a basement membrane, built from per-layer specs ──
+    'simple-squamous'() { epi([{ part: 'cell', color: '#E8A33D', r: 0.5, h: 0.1, y: 0 }]); },
+    'simple-cuboidal'() { epi([{ part: 'cell', color: '#E8A33D', r: 0.4, h: 0.7, y: 0 }]); },
+    'simple-columnar'() {
+      epi([{ part: 'cell', color: '#E8A33D', r: 0.38, h: 1.5, y: 0, nuc: 0.22, skip: [5, 12] }]);
+      const cols = 6, rows = 3, pitch = 0.85;
+      for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
+        const x = (i - (cols - 1) / 2) * pitch + (j % 2) * 0.25 - 0.12, z = (j - (rows - 1) / 2) * pitch, k = i * rows + j;
+        if (k === 5 || k === 12) { const g = ball([x, 1.0, z], 0.36, '#6FC3DF', 'goblet', [1, 1.5, 1]); ball([x, 0.35, z], 0.2, '#8E5DB0', 'nucleus'); continue; }
+        for (let m = 0; m < 6; m++) { const a = m / 6 * Math.PI * 2; put(new THREE.CylinderGeometry(0.014, 0.014, 0.2, 5), '#7C8FB0', 'apical').position.set(x + Math.cos(a) * 0.17, 1.6, z + Math.sin(a) * 0.17); }
+        put(new THREE.CylinderGeometry(0.014, 0.014, 0.2, 5), '#7C8FB0', 'apical').position.set(x, 1.6, z);
+      }
+    },
+    'stratified-squamous'() {
+      epi([{ part: 'basal', color: '#D98E2B', r: 0.4, h: 0.5, y: 0 }, { part: 'intermediate', color: '#E0B15C', r: 0.44, h: 0.4, y: 0.5 }, { part: 'intermediate', color: '#E0B15C', r: 0.46, h: 0.3, y: 0.9 },
+        { part: 'surface', color: '#E8A33D', r: 0.5, h: 0.1, y: 1.2 }, { part: 'surface', color: '#E8A33D', r: 0.5, h: 0.1, y: 1.32, shift: 0.3 }]);
+    },
+    'stratified-cuboidal'() {
+      epi([{ part: 'basal', color: '#D98E2B', r: 0.4, h: 0.55, y: 0 }, { part: 'surface', color: '#E8A33D', r: 0.4, h: 0.55, y: 0.55, shift: 0.2 }]);
+    },
+    'stratified-columnar'() {
+      epi([{ part: 'basal', color: '#D98E2B', r: 0.4, h: 0.5, y: 0 }, { part: 'surface', color: '#E8A33D', r: 0.38, h: 1.1, y: 0.5, every: 1, shift: 0.2 }]);
+    },
+    pseudostratified() {
+      const r = rng(8), cols = 6, rows = 3, pitch = 0.85;
+      put(new THREE.BoxGeometry(5.2, 0.1, 3.2), '#B7A7C9', 'basement');
+      for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
+        const x = (i - (cols - 1) / 2) * pitch + (j % 2) * 0.25 - 0.12, z = (j - (rows - 1) / 2) * pitch, k = i * rows + j, short = k % 3 === 1, goblet = k === 5 || k === 14;
+        const h = short ? 0.55 : 1.7;
+        if (goblet) { ball([x, 1.15, z], 0.34, '#6FC3DF', 'goblet', [1, 1.7, 1]); ball([x, 0.4, z], 0.18, '#8E5DB0', 'nucleus'); continue; }
+        const c = put(new THREE.CylinderGeometry(short ? 0.32 : 0.28, 0.3, h, 6), short ? '#D98E2B' : '#E8A33D', short ? 'basal-cell' : 'ciliated'); c.position.set(x, 0.05 + h / 2, z);
+        ball([x, 0.25 + r() * (short ? 0.2 : 0.95), z], 0.17, '#8E5DB0', 'nucleus', [0.9, 1.3, 0.9]);
+        if (!short) for (let m = 0; m < 7; m++) { const a = m / 7 * Math.PI * 2, d = m ? 0.17 : 0; put(new THREE.CylinderGeometry(0.012, 0.012, 0.26, 5), '#7C8FB0', 'cilia').position.set(x + Math.cos(a) * d, 1.9, z + Math.sin(a) * d); }
+      }
+    },
+    transitional() {
+      const r = rng(12);
+      put(new THREE.BoxGeometry(5.2, 0.1, 3.2), '#B7A7C9', 'basement');
+      const cols = 6, rows = 3, pitch = 0.85;
+      for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
+        const x = (i - (cols - 1) / 2) * pitch + (j % 2) * 0.25 - 0.12, z = (j - (rows - 1) / 2) * pitch;
+        const b = put(new THREE.CylinderGeometry(0.3, 0.3, 0.4, 6), '#D98E2B', 'basal'); b.position.set(x, 0.3, z);
+        ball([x, 0.3, z], 0.14, '#8E5DB0', 'nucleus');
+        const m = put(new THREE.ConeGeometry(0.36, 0.7, 6), '#E0B15C', 'intermediate'); m.position.set(x, 0.85, z);
+        ball([x, 0.8, z], 0.13, '#8E5DB0', 'nucleus');
+      }
+      for (const [x, z] of [[-1.6, -0.6], [-0.1, -0.6], [1.4, -0.6], [-0.9, 0.7], [0.6, 0.7], [2.0, 0.7]]) {
+        const d = ball([x, 1.15, z], 0.68, '#E8A33D', 'umbrella', [1, 0.55, 1]);
+        ball([x, 1.2, z], 0.17, '#8E5DB0', 'nucleus');
+      }
+    },
+
+    // ── Neuroglia ──
+    astrocyte() {
+      const r = rng(21);
+      tube([[-3, -1.7, 0], [-1, -1.6, 0.1], [1, -1.7, -0.1], [3, -1.6, 0]], 0.28, '#C8312E', 'capillary');
+      ball([0, 0.4, 0], 0.4, '#E3A23A', 'soma'); ball([0, 0.4, 0], 0.17, '#8E6FB0', 'soma');
+      const feet = [[-1.0, -1.38], [0.1, -1.4], [1.1, -1.38]];
+      feet.forEach(([x, y]) => { tube([[0, 0.4, 0], [x * 0.5, -0.5, 0.1 * x], [x, y + 0.15, 0.05]], 0.05, '#F0C070', 'processes'); ball([x, y, 0.05], 0.2, '#D9822B', 'endfeet', [1.5, 0.35, 1.2]); });
+      for (let k = 0; k < 9; k++) {
+        const a = Math.PI * (0.05 + k * 0.1) + 0.2, e = V(Math.cos(a) * 1.5, Math.sin(a) * 1.3 + 0.4, (r() - 0.5) * 1.0);
+        const m = e.clone().multiplyScalar(0.55).add(V(0, 0.2, 0));
+        tube([[0, 0.4, 0], m.toArray(), e.toArray()], 0.045, '#F0C070', 'processes');
+        for (let b = 0; b < 2; b++) tube([e.toArray(), e.clone().add(V((r() - 0.5) * 0.6, 0.35 + r() * 0.3, (r() - 0.5) * 0.4)).toArray()], 0.025, '#F0C070', 'processes');
+      }
+    },
+    microglia() {
+      const r = rng(23);
+      ball([-0.4, 0, 0], 0.26, '#6FB5E0', 'soma'); ball([-0.4, 0, 0], 0.12, '#2F6F9A', 'soma', [1.2, 0.8, 1]);
+      for (let k = 0; k < 7; k++) {
+        const a = k / 7 * Math.PI * 2, base = V(-0.4, 0, 0), dir = V(Math.cos(a), Math.sin(a) * 0.7, (r() - 0.5) * 0.8).normalize();
+        const mid = base.clone().addScaledVector(dir, 0.7), end = mid.clone().addScaledVector(dir.clone().add(V((r() - 0.5) * 0.6, (r() - 0.5) * 0.6, 0)).normalize(), 0.7);
+        tube([base.toArray(), mid.toArray(), end.toArray()], 0.035, '#9CCBEA', 'processes');
+        for (let b = 0; b < 3; b++) tube([mid.toArray(), mid.clone().add(V((r() - 0.5) * 0.7, (r() - 0.5) * 0.7, (r() - 0.5) * 0.5)).toArray()], 0.02, '#9CCBEA', 'processes');
+      }
+      ball([1.55, -0.2, 0], 0.17, '#9CCBEA', 'processes', [1, 1, 1], { opacity: 0.5 });
+      for (let k = 0; k < 5; k++) ball([1.55 + (r() - 0.5) * 0.14, -0.2 + (r() - 0.5) * 0.14, (r() - 0.5) * 0.1], 0.04, '#B0B0B0', 'debris');
+    },
+    ependymal() {
+      put(new THREE.BoxGeometry(5.4, 1.2, 2.4), '#BFD9E6', 'lumen', { opacity: 0.2 }).position.set(0, 1.1, 0);
+      const cols = 6, rows = 3, pitch = 0.85;
+      for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
+        const x = (i - (cols - 1) / 2) * pitch, z = (j - 1) * 0.85;
+        const c = put(new THREE.CylinderGeometry(0.38, 0.36, 0.9, 6), '#E8A33D', 'cells'); c.position.set(x, -0.1, z);
+        ball([x, -0.3, z], 0.17, '#8E5DB0', 'nucleus');
+        for (let m = 0; m < 6; m++) { const a = m / 6 * Math.PI * 2, d = m ? 0.17 : 0; put(new THREE.CylinderGeometry(0.014, 0.014, 0.5, 5), '#7C8FB0', 'cilia').position.set(x + Math.cos(a) * d, 0.6, z + Math.sin(a) * d); }
+      }
+    },
+    oligodendrocyte() {
+      ball([0, 1.5, 0], 0.32, '#5FC4BF', 'soma'); ball([0, 1.5, 0], 0.13, '#2E8C88', 'soma');
+      [-1.0, 0, 1.0].forEach((z, k) => {
+        tube([[-3, -0.2, z], [0, -0.2, z], [3, -0.2, z]], 0.09, '#E3A23A', 'axon');
+        const my = put(new THREE.CylinderGeometry(0.26, 0.26, 1.6, 20, 1, true), '#9AE0DC', 'myelin', { opacity: 0.75 }); my.rotation.z = Math.PI / 2; my.position.set(-0.3 + k * 0.5, -0.2, z);
+        tube([[0, 1.5, 0], [(k - 1) * 0.5, 0.7, z * 0.6], [-0.3 + k * 0.5, 0.2, z]], 0.04, '#3FA7A7', 'processes');
+      });
+    },
+    satellite() {
+      ball([0, 0, 0], 0.95, '#E3A23A', 'neuron'); ball([0.1, 0.1, 0.1], 0.38, '#8E6FB0', 'neuron');
+      tube([[0, -0.9, 0], [0, -1.6, 0.1], [0.2, -2.4, 0.2]], 0.08, '#E3A23A', 'neuron');
+      const r = rng(5), up = V(0, 1, 0);
+      for (let k = 0; k < 22; k++) {
+        const y = 1 - (k + 0.5) / 11, rad = Math.sqrt(Math.max(0, 1 - y * y)), th = k * 2.399963, n = V(Math.cos(th) * rad, y, Math.sin(th) * rad);
+        if (n.y < -0.75) continue;
+        const c = ball(n.clone().multiplyScalar(1.07).toArray(), 0.28, '#5FC4BF', 'satellite', [1, 0.22, 1]); c.quaternion.setFromUnitVectors(up, n);
+      }
+    },
+    schwann() {
+      tube([[-3.4, 0, 0], [0, 0, 0], [3.4, 0, 0]], 0.17, '#E3A23A', 'axon');
+      const seg = (x, len, o) => { const m = put(new THREE.CylinderGeometry(0.5, 0.5, len, 24, 1, true), '#9AE0DC', 'myelin', o); m.rotation.z = Math.PI / 2; m.position.set(x, 0, 0); };
+      seg(0, 2.6, { opacity: 0.8 }); seg(-3.0, 1.3, { opacity: 0.4 }); seg(3.0, 1.3, { opacity: 0.4 });
+      ball([0, 0.55, 0], 0.5, '#5FC4BF', 'schwann', [1.5, 0.45, 0.8]); ball([0, 0.72, 0], 0.22, '#2E8C88', 'nucleus', [1.3, 0.8, 0.9]);
+      for (const x of [-1.62, 1.62]) { const n = put(new THREE.TorusGeometry(0.2, 0.04, 8, 18), '#F5D36B', 'node'); n.rotation.y = Math.PI / 2; n.position.set(x, 0, 0); }
+    },
+
+    // ── Neurons ──
+    sensory() {
+      const gold = '#E3A23A';
+      ball([0, 1.0, 0], 0.5, gold, 'soma'); ball([0, 1.0, 0], 0.22, '#8E6FB0', 'soma');
+      tube([[0, 0.5, 0], [0, 0.2, 0], [0, 0, 0]], 0.07, gold, 'soma');
+      tube([[0, 0, 0], [-1.5, -0.05, 0], [-3.2, 0, 0]], 0.07, '#E8B04A', 'peripheral');
+      tube([[0, 0, 0], [1.5, 0.05, 0], [3.0, 0, 0]], 0.07, '#C98A2A', 'central');
+      for (let k = 0; k < 6; k++) { const a = k / 6 * Math.PI * 2; tube([[-3.2, 0, 0], [-3.45, Math.cos(a) * 0.15, Math.sin(a) * 0.15], [-3.7, Math.cos(a) * 0.3, Math.sin(a) * 0.3]], 0.03, '#F08080', 'receptor'); ball([-3.7, Math.cos(a) * 0.3, Math.sin(a) * 0.3], 0.06, '#F08080', 'receptor'); }
+      for (const [dx, dy, dz] of [[0.5, 0.4, 0.2], [0.6, -0.1, -0.3], [0.5, -0.5, 0.25]]) { tube([[3.0, 0, 0], [3.0 + dx * 0.5, dy * 0.5, dz * 0.5], [3.0 + dx, dy, dz]], 0.04, gold, 'terminals'); ball([3.0 + dx, dy, dz], 0.12, gold, 'terminals'); }
+    },
+    motor() {
+      const r = rng(27), gold = '#E3A23A';
+      ball([-2.8, 0, 0], 0.5, gold, 'soma'); ball([-2.8, 0, 0], 0.22, '#8E6FB0', 'soma');
+      const branch = (from, dir, len, rad, depth) => {
+        const to = from.clone().addScaledVector(dir, len), mid = from.clone().lerp(to, 0.5).add(V((r() - 0.5) * 0.15, (r() - 0.5) * 0.15, (r() - 0.5) * 0.15));
+        tube([from.toArray(), mid.toArray(), to.toArray()], rad, '#F0C070', 'dendrites');
+        if (depth > 0) for (let k = 0; k < 2; k++) branch(to, dir.clone().add(V((r() - 0.5) * 1.2, (r() - 0.5) * 1.2, (r() - 0.5) * 1.2)).normalize(), len * 0.7, rad * 0.7, depth - 1);
+      };
+      for (let k = 0; k < 6; k++) { const a = Math.PI * 0.6 + k / 5 * Math.PI * 0.8, b = (r() - 0.5) * 1.4, dir = V(Math.cos(a), Math.sin(a) * Math.cos(b), Math.sin(a) * Math.sin(b)).normalize(); branch(V(-2.8, 0, 0).addScaledVector(dir, 0.5), dir, 0.6, 0.06, 2); }
+      tube([[-2.3, 0, 0], [-0.8, 0.1, 0], [0.8, -0.1, 0], [2.3, -0.3, 0]], 0.07, '#E8B04A', 'axon');
+      const m = put(new THREE.CylinderGeometry(0.4, 0.4, 3.2, 16), '#E8645A', 'muscle'); m.rotation.x = Math.PI / 2; m.position.set(3.4, -0.7, 0);
+      const end = V(2.3, -0.3, 0);
+      for (const dz of [-0.9, -0.3, 0.3, 0.9]) { const to = V(3.2, -0.34, dz); tube([end.toArray(), [2.7, -0.3, dz * 0.5], to.toArray()], 0.04, '#D9822B', 'terminals'); ball(to.toArray(), 0.1, '#D9822B', 'terminals'); }
+    },
+    interneuron() {
+      const r = rng(33), gold = '#E3A23A';
+      ball([0, 0, 0], 0.5, gold, 'soma'); ball([0, 0, 0], 0.22, '#8E6FB0', 'soma');
+      const branch = (from, dir, len, rad, depth, part, color) => {
+        const to = from.clone().addScaledVector(dir, len), mid = from.clone().lerp(to, 0.5).add(V((r() - 0.5) * 0.15, (r() - 0.5) * 0.15, (r() - 0.5) * 0.15));
+        tube([from.toArray(), mid.toArray(), to.toArray()], rad, color, part);
+        if (depth > 0) for (let k = 0; k < 2; k++) branch(to, dir.clone().add(V((r() - 0.5) * 1.2, (r() - 0.5) * 1.2, (r() - 0.5) * 1.2)).normalize(), len * 0.7, rad * 0.7, depth - 1, part, color);
+        else if (part === 'axon') ball(to.toArray(), 0.1, '#D9822B', 'terminals');
+      };
+      for (let k = 0; k < 7; k++) { const a = Math.PI * 0.5 + k / 6 * Math.PI, b = (r() - 0.5) * 1.4, dir = V(-Math.abs(Math.cos(a)) - 0.2, Math.sin(a) * Math.cos(b), Math.sin(a) * Math.sin(b)).normalize(); branch(V(0, 0, 0).addScaledVector(dir, 0.5), dir, 0.7, 0.06, 2, 'dendrites', '#F0C070'); }
+      tube([[0.5, 0, 0], [0.9, 0.1, 0]], 0.065, '#E8B04A', 'axon');
+      for (const d of [V(1, 0.5, 0.3), V(1, -0.4, 0.4), V(1, 0.1, -0.6)]) branch(V(0.9, 0.1, 0), d.normalize(), 0.7, 0.045, 1, 'axon', '#E8B04A');
     },
 
     // Bacterial cell (E. coli): capsule envelope, nucleoid, plasmids, ribosomes, pili and flagella. Adapted from the supplied procedural model.

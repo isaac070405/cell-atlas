@@ -7,6 +7,7 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 ## Unreleased
 
 ### Added
+- Tissue models: eight epithelial subtypes, six neuroglia and three neuron types; the tissue picker is grouped by type and connective tissue parts are grouped as ground substance, fibres and cells.
 - Organelle level: schematic 3D models of mitochondrion, nucleus, rough ER and Golgi apparatus, with parts, cited sizes and links to PDB 5XTD and 4UG0.
 - Atom level: ball-and-stick water, ammonia and methane with element radii (Cordero 2008, Bondi 1964).
 - Module B structures 1TQN (human cytochrome P450 3A4, 2.05 Å) and 1ZUM (human ALDH2*2, 2.10 Å) with tour points read from the deposited coordinates.
@@ -18,6 +19,7 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 - Body level on the ruler (2 m to 0.5 m, 全身): shows the whole body with every anatomy panel. System now spans 0.5 m to 10 cm (#47).
 - System and Organ pick lists no longer have a "Body" item. With nothing picked, both show the whole body with panels hidden (#47).
 - Tissue level hides the empty Parts, Selected object and Sources panels until a tissue is picked (#47).
+- The "Histology" link target is now "Tissue" and `tis:` links open the Tissue level.
 - Removed `anatomy/assets/eye.glb` (GPL-3.0-only, incompatible with the MIT licence); the procedural eye is drawn instead.
 - Added the Three.js MIT licence text to `vendor/three/LICENSE`.
 

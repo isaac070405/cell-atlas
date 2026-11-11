@@ -268,3 +268,8 @@ body.bare .panels { display: none; }
 #tissue-main:has(#tissue-xsec[hidden]) { grid-template-columns: minmax(0, 1fr); }
 #txsec-canvas { display: block; width: 100%; aspect-ratio: 4 / 3; border: 1px solid var(--rule); background: var(--paper-raised); }
 .xsec-sel { font: 12px var(--font-label); background: var(--paper); color: var(--ink); border: 1px solid var(--rule); border-radius: var(--radius); padding: var(--s1) var(--s2); }
+
+/* Group headings inside pickers and part lists */
+.queue .qh { flex-basis: 100%; margin-top: var(--s2); font: 500 11px/1.3 var(--font-label); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.queue .qh:first-child { margin-top: 0; }
+.queue .qh2 { padding-left: var(--s3); text-transform: none; letter-spacing: 0; }
