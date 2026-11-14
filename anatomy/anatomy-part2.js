@@ -1629,7 +1629,7 @@ let sq = false; const requestSlice = () => { if (sq) return; sq = true; requestA
     document.querySelectorAll('[data-v="breast"],[data-v="breastside"],[data-v="cycle"]').forEach(b => { b.style.display = v === 'female' ? '' : 'none'; });
     $('cyclebox').style.display = v === 'female' ? 'block' : 'none';
     $('p-sex').querySelectorAll('.b').forEach(b => { const on = b.dataset.v === v; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
-    try { localStorage.setItem('anatomy-sex', v); } catch (e) {}
+    try { localStorage.setItem('anatomy-sex', v === 'female' ? 'female' : 'male'); } catch (e) {}
     if (sel === 'reproductive') showInfo();
     requestSlice();
   };
@@ -1643,7 +1643,7 @@ let sq = false; const requestSlice = () => { if (sq) return; sq = true; requestA
   const setTone = v => { const hex = v === 'plate' ? null : parseInt(v, 16); mat.skin.userData.tone = hex ?? undefined;
     mat.skin.color.setHex(hex ?? (mat.skin.userData.base ? mat.skin.userData.base.c : 0xe7ddd2));
     $('p-tone').querySelectorAll('.t').forEach(b => { const on = b.dataset.v === v; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
-    try { localStorage.setItem('anatomy-skin-tone', v); } catch (e) {} };
+    if (v === 'plate' || /^[0-9a-f]{6}$/i.test(v)) { try { localStorage.setItem('anatomy-skin-tone', v); } catch (e) {} } };
   $('p-tone').addEventListener('click', e => { const b = e.target.closest('.t'); if (b) setTone(b.dataset.v); });
   let t0 = 'plate'; try { t0 = localStorage.getItem('anatomy-skin-tone') || 'plate'; } catch (e) {} setTone(t0);
 }
