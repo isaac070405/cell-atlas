@@ -108,7 +108,7 @@ function init() {
   const list = $('lylist'), slider = $('lyslider'), cur = $('lycur');
   LAYERS.forEach((L, k) => {
     const r = document.createElement('label'); r.className = 'ly'; r.dataset.k = k;
-    r.innerHTML = `<span class="lyn">${k + 1}</span><span class="sw" style="background:${L.color}"></span><span class="lyt"><b>${L.name}</b><small>${L.note}</small></span><input type="checkbox" checked aria-label="Show ${L.name}">`;
+    r.innerHTML = `<span class="lyn">${k + 1}</span><span class="sw" style="background:${L.color}"></span><span class="lyt"><b>${window.__zh ? window.__zh.html(L.name) : L.name}</b><small>${L.note}</small></span><input type="checkbox" checked aria-label="Show ${L.name}">`;
     r.querySelector('input').addEventListener('change', e => { engage(); on[k] = e.target.checked; apply(); sync(); });
     list.appendChild(r);
   });

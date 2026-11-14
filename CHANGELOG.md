@@ -7,6 +7,7 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 ## Unreleased
 
 ### Added
+- Traditional Chinese names for the embedded 3D Anatomy Model: all 2,348 structure labels, group headings, systems and the 14 layers follow the EN / 繁 / 雙語 switch, and the search box accepts Chinese (`anatomy/zh-hant.js`).
 - Tissue models: eight epithelial subtypes, six neuroglia and three neuron types; the tissue picker is grouped by type and connective tissue parts are grouped as ground substance, fibres and cells.
 - Organelle level: schematic 3D models of mitochondrion, nucleus, rough ER and Golgi apparatus, with parts, cited sizes and links to PDB 5XTD and 4UG0.
 - Atom level: ball-and-stick water, ammonia and methane with element radii (Cordero 2008, Bondi 1964).

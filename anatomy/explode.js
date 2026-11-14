@@ -191,7 +191,7 @@ function init() {
     const group = new Set(), snap = [];
     model.traverse(o => { if (!o.isMesh || !o.userData.sys || o.userData.sys === 'skin' && st.mode === 'explode') return; if (o.userData.label === label) group.add(o); if (vis(o) || o.userData.label === label) snap.push({ o, m: o.material, v: o.visible }); });
     sel = { label, group, snap, alpha: 100, hidden: false };
-    $('sbname').textContent = label; $('sbsys').textContent = (({ skeletal: 'Skeletal', muscular: 'Muscular', circulatory: 'Circulatory', nervous: 'Nervous', respiratory: 'Respiratory', digestive: 'Digestive', urinary: 'Urinary', reproductive: 'Reproductive', endocrine: 'Endocrine', senses: 'Special senses' })[obj.userData.sys] || obj.userData.sys) + ' system';
+    const ZH = window.__zh || { html: s => s }; $('sbname').dataset.label = label; $('sbname').innerHTML = ZH.html(label); const sysName = ({ skeletal: 'Skeletal', muscular: 'Muscular', circulatory: 'Circulatory', nervous: 'Nervous', respiratory: 'Respiratory', digestive: 'Digestive', urinary: 'Urinary', reproductive: 'Reproductive', endocrine: 'Endocrine', senses: 'Special senses', lymphatic: 'Lymphatic' })[obj.userData.sys] || obj.userData.sys; $('sbsys').dataset.label = sysName + ' system'; $('sbsys').innerHTML = ZH.html(sysName, sysName + ' system');
     sbar.classList.add('open'); applySel();
   }
   window.__select = select; window.__clearSelection = clearSel;

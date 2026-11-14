@@ -2,7 +2,7 @@
 // Choosing a part pins it in 3D. Selecting anything in 3D, on the cut or by search opens the matching branch and scrolls to it.
 
 function init() {
-  const T = window.__tree, $ = id => document.getElementById(id), root = $('tree'), crumb = $('crumb');
+  const T = window.__tree, $ = id => document.getElementById(id), root = $('tree'), crumb = $('crumb'), ZH = window.__zh || { html: s => esc(s) };
   const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const css = document.createElement('style');
   css.textContent = `
@@ -30,9 +30,9 @@ function init() {
     const prev = built.get(s.k); if (prev && prev.parts === s.parts) return prev;
     const g = groupsOf(s.parts), body = det.querySelector('.grp'); body.innerHTML = '';
     g.forEach((gr, gi) => {
-      const items = gr.items.map(it => live(s.k, it.p) ? `<li><button class="pi" data-s="${s.k}" data-i="${it.i}">${esc(it.p)}</button></li>` : `<li><span>${esc(it.p)}</span></li>`).join('');
+      const items = gr.items.map(it => live(s.k, it.p) ? `<li><button class="pi" data-s="${s.k}" data-i="${it.i}">${ZH.html(it.p)}</button></li>` : `<li><span>${ZH.html(it.p)}</span></li>`).join('');
       if (gr.h === null) body.insertAdjacentHTML('beforeend', `<ul>${items}</ul>`);
-      else body.insertAdjacentHTML('beforeend', `<details data-g="${gi}"><summary>${esc(gr.h)} · ${gr.items.length}</summary><ul>${items}</ul></details>`);
+      else body.insertAdjacentHTML('beforeend', `<details data-g="${gi}"><summary>${ZH.html(gr.h)} · ${gr.items.length}</summary><ul>${items}</ul></details>`);
     });
     const rec = { parts: s.parts, groups: g }; built.set(s.k, rec); return rec;
   }
@@ -40,7 +40,7 @@ function init() {
   T.SYS.forEach(s => {
     const n = s.parts.filter(p => p[0] !== '#').length; if (!n) return;
     const d = document.createElement('details'); d.dataset.k = s.k;
-    d.innerHTML = `<summary><span class="sn">${esc(s.name)}</span> · ${n}</summary><div class="grp"></div>`;
+    d.innerHTML = `<summary><span class="sn">${ZH.html(s.name)}</span> · ${n}</summary><div class="grp"></div>`;
     d.addEventListener('toggle', () => { if (d.open) fill(s, d); });
     root.appendChild(d);
   });
@@ -54,11 +54,11 @@ function init() {
     let hit = null;
     for (const gr of rec.groups) { for (const it of gr.items) if (T.partMatches(it.p, label) && (!hit || label.startsWith(it.p.split(' (')[0]))) hit = { gr, it }; }
     root.querySelectorAll('.pi.on').forEach(b => b.classList.remove('on'));
-    if (!hit) { crumb.innerHTML = `<b>${esc(s.name)}</b> › ${esc(label)}`; d.scrollIntoView({ block: 'nearest' }); return; }
+    if (!hit) { crumb.innerHTML = `<b>${ZH.html(s.name)}</b> › ${ZH.html(label)}`; d.scrollIntoView({ block: 'nearest' }); return; }
     const btn = d.querySelector(`.pi[data-i="${hit.it.i}"]`);
     if (hit.gr.h !== null) { const gd = btn && btn.closest('details'); if (gd) gd.open = true; }
     if (btn) { btn.classList.add('on'); btn.scrollIntoView({ block: 'nearest' }); }
-    crumb.innerHTML = `<b>${esc(s.name)}</b>${hit.gr.h ? ' › ' + esc(hit.gr.h) : ''} › ${esc(hit.it.p)}`;
+    crumb.innerHTML = `<b>${ZH.html(s.name)}</b>${hit.gr.h ? ' › ' + ZH.html(hit.gr.h) : ''} › ${ZH.html(hit.it.p)}`;
   }
   window.__onPin = (label, sk) => reveal(label, sk);
   const sel0 = window.__select;

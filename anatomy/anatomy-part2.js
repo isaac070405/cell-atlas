@@ -1391,14 +1391,14 @@ model.traverse(o => { if (o.isMesh) { o.castShadow = o.userData.sys === 'skin'; 
 for (const k in mat) if (mat[k].transparent) { /* transparent materials draw after opaques */ }
 
 // ───────── UI ─────────
-const $ = id => document.getElementById(id);
+const $ = id => document.getElementById(id), ZH = window.__zh || { html: s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])) };
 const list = $('systems'); let sel = 'skeletal'; var index = null;
 function showInfo() {
   const s = SYS.find(x => x.k === sel);
   if (!index) buildIndex();
   const keys = [...index.keys()], low = keys.map(k => k.toLowerCase()), n = s.parts.filter(p => p[0] !== '#').length;
-  const items = s.parts.map((p, i) => { if (p[0] === '#') return '<h4 class="ph">' + p.slice(1) + '</h4>'; const q = p.toLowerCase().split(' (')[0].split(': ')[0]; const m = keys.filter((k, j) => k.startsWith(p.split(' (')[0]) || low[j].includes(q) || (q.includes(' and ') && q.split(' and ').some(w => w.length > 3 && low[j].includes(w))) ); return m.length ? '<li><button class="pi" data-i="' + i + '">' + p + '</button></li>' : '<li><span>' + p + '</span></li>'; }).join('');
-  $('info').innerHTML = '<h3>' + s.name + '</h3><p>' + s.blurb + '</p><div class="ptitle">Parts · ' + n + '</div><ul class="plist">' + items + '</ul><div class="btns"><button class="b" id="solo">Show only this system</button></div>';
+  const items = s.parts.map((p, i) => { if (p[0] === '#') return '<h4 class="ph">' + ZH.html(p.slice(1)) + '</h4>'; const q = p.toLowerCase().split(' (')[0].split(': ')[0]; const m = keys.filter((k, j) => k.startsWith(p.split(' (')[0]) || low[j].includes(q) || (q.includes(' and ') && q.split(' and ').some(w => w.length > 3 && low[j].includes(w))) ); return m.length ? '<li><button class="pi" data-i="' + i + '">' + ZH.html(p) + '</button></li>' : '<li><span>' + ZH.html(p) + '</span></li>'; }).join('');
+  $('info').innerHTML = '<h3>' + ZH.html(s.name) + '</h3><p>' + s.blurb + '</p><div class="ptitle">Parts · ' + n + '</div><ul class="plist">' + items + '</ul><div class="btns"><button class="b" id="solo">Show only this system</button></div>';
   $('info').querySelectorAll('.pi').forEach(b => { b.onclick = () => { const p = s.parts[+b.dataset.i], q = p.toLowerCase().split(' (')[0].split(': ')[0]; const m = keys.filter((k, j) => k.startsWith(p.split(' (')[0]) || low[j].includes(q) || (q.includes(' and ') && q.split(' and ').some(w => w.length > 3 && low[j].includes(w)))).filter(k => index.get(k).sys === s.k); const hit = m.find(k => index.get(k).meshes.some(x => vis(x))) || m[0]; if (hit) setPin(s.k === 'nervous' && m.length > 1 ? m : hit, p); }; });
   $('solo').onclick = () => { SYS.forEach(x => setSys(x.k, x.k === sel || (x.k === 'skin'))); };
   list.querySelectorAll('.sys').forEach(r => r.classList.toggle('sel', r.dataset.k === sel));
@@ -1406,7 +1406,7 @@ function showInfo() {
 function setSys(k, on) { G[k].visible = on; list.querySelector(`[data-k="${k}"] input`).checked = on; }
 SYS.forEach(s => {
   const r = document.createElement('div'); r.className = 'sys'; r.dataset.k = s.k;
-  r.innerHTML = `<span class="sw" style="background:${s.color}"></span><span class="sname">${s.name}</span><input type="checkbox" ${s.on ? 'checked' : ''} aria-label="Show ${s.name}">`;
+  r.innerHTML = `<span class="sw" style="background:${s.color}"></span><span class="sname">${ZH.html(s.name)}</span><input type="checkbox" ${s.on ? 'checked' : ''} aria-label="Show ${s.name}">`;
   r.addEventListener('click', e => { if (e.target.tagName !== 'INPUT') { sel = s.k; showInfo(); } });
   r.querySelector('input').addEventListener('change', e => { G[s.k].visible = e.target.checked; sel = s.k; showInfo(); });
   list.appendChild(r);
@@ -1510,7 +1510,7 @@ stage.addEventListener('pointermove', e => {
   const hits = ray.intersectObjects(meshes, false);
   const h = hits.find(x => x.object.userData.sys !== 'skin' && !x.object.userData.passive) || hits.find(x => x.object.userData.sys !== 'skin') || hits[0];
   if (!h) { tip.style.display = 'none'; return; }
-  tip.textContent = h.object.userData.label; tip.style.display = 'block';
+  tip.innerHTML = ZH.html(h.object.userData.label); tip.style.display = 'block';
   tip.style.left = e.clientX + 14 + 'px'; tip.style.top = e.clientY + 14 + 'px';
 });
 stage.addEventListener('pointerleave', () => { tip.style.display = 'none'; });
@@ -1656,7 +1656,7 @@ function setPin(label, text) {
   es.forEach(e => { setSys(e.sys, true); e.meshes.forEach(m => { m.visible = true; }); });
   if ([].concat(label).some(l => l.startsWith('Magnified')) && window.__alvG) { if (!$('alvshow').checked) { $('alvshow').checked = true; $('alvshow').onchange({ target: $('alvshow') }); } }
   const b = new THREE.Box3(); es.forEach(e => e.meshes.forEach(m => b.expandByObject(m))); pin.c = b.getCenter(new THREE.Vector3());
-  $('pintxt').textContent = text || [].concat(label)[0]; pin.on = true; sel = es[0].sys; showInfo(); requestSlice(); trackPin();
+  $('pintxt').innerHTML = ZH.html(text || [].concat(label)[0]); pin.on = true; sel = es[0].sys; showInfo(); requestSlice(); trackPin();
   if (window.__onPin) window.__onPin([].concat(label)[0], es[0].sys);
 }
 function clearPin() { pin.on = false; ['pinsvg'].forEach(i => $(i).style.display = 'none'); $('pinlbl').style.display = 'none'; }
@@ -1680,7 +1680,7 @@ $('q').addEventListener('input', e => {
   if (!q) return;
   const hits = [...index.keys()].filter(k => k.toLowerCase().includes(q)).sort((a, b) => (a.toLowerCase().startsWith(q) ? 0 : 1) - (b.toLowerCase().startsWith(q) ? 0 : 1) || a.localeCompare(b)).slice(0, 7);
   if (!hits.length) { box.innerHTML = '<div style="font-size:12px;color:var(--color-neutral-700);padding:4px">No match</div>'; return; }
-  hits.forEach(k => { const b = document.createElement('button'); b.className = 'res'; b.innerHTML = '<span></span><small></small>'; b.firstChild.textContent = k; b.lastChild.textContent = SYSNAME[index.get(k).sys]; b.onclick = () => { setPin(k); }; box.appendChild(b); });
+  hits.forEach(k => { const b = document.createElement('button'); b.className = 'res'; b.innerHTML = '<span></span><small></small>'; b.firstChild.innerHTML = ZH.html(k); b.lastChild.textContent = SYSNAME[index.get(k).sys]; b.onclick = () => { setPin(k); }; box.appendChild(b); });
 });
 // hooks for search.js and tree.js: the system and part lists, the part-name matcher the Parts list uses, and pinning
 window.__setPin = setPin;
@@ -1771,7 +1771,7 @@ function renderSlice() {
   Object.values(planes).forEach(p => { if (p.visible) { p.visible = false; hid.push(p); } });
   G.skin.visible = false; scene.background = null;
   // the structure selected in the 3D view (its tab is open) is drawn in amber on the cut as well
-  const selTab = $('sbar'), selLab = selTab && selTab.classList.contains('open') ? $('sbname').textContent : '';
+  const selTab = $('sbar'), selLab = selTab && selTab.classList.contains('open') ? $('sbname').dataset.label : '';
   model.traverse(o => { if (o.isMesh) { swap.push([o, o.material]); o.material = bmat(selLab && o.userData.label === selLab ? 0xe8801a : o.material.color.getHex()); } });
   r2.render(scene, cam);
   swap.forEach(([o, m]) => { o.material = m; }); hid.forEach(o => { o.visible = true; }); G.skin.visible = skinV; scene.background = bg;
