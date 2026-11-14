@@ -1629,7 +1629,7 @@ let sq = false; const requestSlice = () => { if (sq) return; sq = true; requestA
     document.querySelectorAll('[data-v="breast"],[data-v="breastside"],[data-v="cycle"]').forEach(b => { b.style.display = v === 'female' ? '' : 'none'; });
     $('cyclebox').style.display = v === 'female' ? 'block' : 'none';
     $('p-sex').querySelectorAll('.b').forEach(b => { const on = b.dataset.v === v; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
-    if (v === 'male' || v === 'female') { try { localStorage.setItem('anatomy-sex', v); } catch (e) {} }
+    try { localStorage.setItem('anatomy-sex', v === 'female' ? 'female' : 'male'); } catch (e) {}
     if (sel === 'reproductive') showInfo();
     requestSlice();
   };
