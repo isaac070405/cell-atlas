@@ -1,29 +1,5 @@
 // Notes: double-click a surface to pin a text note there. A note is stored as a point in the local space of the mesh it sits on,
-// so it follows the mesh when the body is exploded, and it is hidden while that mesh is hidden. Notes persist in localStorage as AES-GCM ciphertext; the key is non-extractable and lives in IndexedDB.
-
-// Note text is free-form user input, so it is never written to storage as plain text.
-const NOTE_KEY = 'anatomy-notes', DB = 'anatomy-keys';
-const keyStore = (mode, fn) => new Promise((res, rej) => {
-  const o = indexedDB.open(DB, 1);
-  o.onupgradeneeded = () => o.result.createObjectStore('k');
-  o.onerror = () => rej(o.error);
-  o.onsuccess = () => { const r = fn(o.result.transaction('k', mode).objectStore('k')); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); };
-});
-async function noteKey() {
-  let k = await keyStore('readonly', st => st.get('notes'));
-  if (!k) { k = await crypto.subtle.generateKey({ name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']); await keyStore('readwrite', st => st.put(k, 'notes')); }
-  return k;
-}
-const b64 = u => btoa(String.fromCharCode(...u)), unb64 = t => Uint8Array.from(atob(t), c => c.charCodeAt(0));
-async function sealNotes(list) {
-  const iv = crypto.getRandomValues(new Uint8Array(12));
-  const ct = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, await noteKey(), new TextEncoder().encode(JSON.stringify(list))));
-  return b64(iv) + '.' + b64(ct);
-}
-async function openNotes(blob) {
-  const [iv, ct] = blob.split('.');
-  return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(iv) }, await noteKey(), unb64(ct))));
-}
+// so it follows the mesh when the body is exploded, and it is hidden while that mesh is hidden. Notes persist in localStorage.
 
 function init() {
   const A = window.__anat, THREE = A.THREE, model = A.model, stage = document.querySelector('three-d-stage'), cam = stage._camera, dom = stage._renderer.domElement;
@@ -42,12 +18,7 @@ function init() {
 
   const pins = [];   // { mesh, local, text, el, input }
   const labelled = () => { const m = new Map(); model.traverse(o => { if (o.isMesh && o.userData.label) { if (!m.has(o.userData.label)) m.set(o.userData.label, []); m.get(o.userData.label).push(o); } }); return m; };
-  const save = async () => {
-    try {
-      const list = pins.filter(p => p.text).map(p => { const same = labelled().get(p.mesh.userData.label); return { l: p.mesh.userData.label, i: same.indexOf(p.mesh), p: p.local.toArray().map(v => +v.toFixed(5)), t: p.text }; });
-      if (list.length) localStorage.setItem(NOTE_KEY, await sealNotes(list)); else localStorage.removeItem(NOTE_KEY);
-    } catch (e) { }
-  };
+  const save = () => { try { localStorage.setItem('anatomy-notes', JSON.stringify(pins.filter(p => p.text).map(p => { const same = labelled().get(p.mesh.userData.label); return { l: p.mesh.userData.label, i: same.indexOf(p.mesh), p: p.local.toArray().map(v => +v.toFixed(5)), t: p.text }; }))); } catch (e) { } };
 
   function add(mesh, local, text, edit) {
     const el = document.createElement('div'); el.className = 'note-pin';
@@ -96,14 +67,10 @@ function init() {
   });
 
   // restore saved notes
-  (async () => {
-    try {
-      const blob = localStorage.getItem(NOTE_KEY); if (!blob) return;
-      const legacy = blob.startsWith('['), saved = legacy ? JSON.parse(blob) : await openNotes(blob), by = labelled();
-      saved.forEach(s => { const m = (by.get(s.l) || [])[s.i]; if (m) add(m, new THREE.Vector3(...s.p), s.t, false); });
-      if (legacy) save();
-    } catch (e) { localStorage.removeItem(NOTE_KEY); }
-  })();
+  try {
+    const saved = JSON.parse(localStorage.getItem('anatomy-notes') || '[]'), by = labelled();
+    saved.forEach(s => { const m = (by.get(s.l) || [])[s.i]; if (m) add(m, new THREE.Vector3(...s.p), s.t, false); });
+  } catch (e) { }
   window.__notes = { pins, add, clear: () => pins.slice().forEach(kill) };
 }
 
