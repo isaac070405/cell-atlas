@@ -1640,10 +1640,11 @@ let sq = false; const requestSlice = () => { if (sq) return; sq = true; requestA
   setSex(s0);
 }
 {
+  const TONES = ['plate', '3b2219', '8d5524', 'c68642', 'e0ac69', 'f1c27d', 'ffdbac'];  // literals, so the stored value never flows from the DOM
   const setTone = v => { const hex = v === 'plate' ? null : parseInt(v, 16); mat.skin.userData.tone = hex ?? undefined;
     mat.skin.color.setHex(hex ?? (mat.skin.userData.base ? mat.skin.userData.base.c : 0xe7ddd2));
     $('p-tone').querySelectorAll('.t').forEach(b => { const on = b.dataset.v === v; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
-    if (v === 'plate' || /^[0-9a-f]{6}$/i.test(v)) { try { localStorage.setItem('anatomy-skin-tone', v); } catch (e) {} } };
+    const stored = TONES.find(t => t === v); if (stored) { try { localStorage.setItem('anatomy-skin-tone', stored); } catch (e) {} } };
   $('p-tone').addEventListener('click', e => { const b = e.target.closest('.t'); if (b) setTone(b.dataset.v); });
   let t0 = 'plate'; try { t0 = localStorage.getItem('anatomy-skin-tone') || 'plate'; } catch (e) {} setTone(t0);
 }
