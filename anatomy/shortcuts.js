@@ -7,7 +7,7 @@ function init() {
 
   // selecting a structure, in 3D or on the cut, announces its name and system
   const orig = window.__select;
-  window.__select = obj => { orig(obj); const n = $('sbname').textContent, s = $('sbsys').textContent; if ($('sbar').classList.contains('open')) say(n + (s ? ', ' + s : '') + ', selected'); };
+  window.__select = obj => { orig(obj); const n = $('sbname').dataset.label, s = $('sbsys').dataset.label; if ($('sbar').classList.contains('open')) say(n + (s ? ', ' + s : '') + ', selected'); };
 
   const AXES = { 1: 'transverse', 2: 'coronal', 3: 'sagittal' };
   const typing = el => el && (el.isContentEditable || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || (el.tagName === 'INPUT' && !/^(checkbox|radio|range|button)$/.test(el.type)));
@@ -24,10 +24,10 @@ function init() {
     if (e.repeat) return;
     if (k === 'h') {
       if (!sel()) { say('Nothing selected to hide'); return; }
-      $('sbhide').click(); say($('sbhide').classList.contains('on') ? $('sbname').textContent + ' hidden' : $('sbname').textContent + ' shown'); e.preventDefault();
+      $('sbhide').click(); say($('sbhide').classList.contains('on') ? $('sbname').dataset.label + ' hidden' : $('sbname').dataset.label + ' shown'); e.preventDefault();
     } else if (k === 'u') {
       // a structure hidden from the open tab comes back first, then earlier dissections undo one by one
-      if (sel() && $('sbhide').classList.contains('on')) { $('sbhide').click(); say($('sbname').textContent + ' shown'); }
+      if (sel() && $('sbhide').classList.contains('on')) { $('sbhide').click(); say($('sbname').dataset.label + ' shown'); }
       else if (!$('undo').disabled) { $('undo').click(); say('Undone. ' + $('dcount').textContent); }
       else say('Nothing to undo');
       e.preventDefault();

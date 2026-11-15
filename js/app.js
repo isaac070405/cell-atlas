@@ -31,8 +31,11 @@ $('theme-btn').addEventListener('click', () => {
 
 // Language
 setLang(await loadStrings());
+// the embedded 3D Anatomy Model follows the language switch (anatomy/zh-hant.js reads it)
+const sendLang = () => { const f = $('vp-anatomy'); if (f && f.contentWindow) f.contentWindow.postMessage({ type: 'lang', lang: getLang() }, location.origin); };
 document.querySelectorAll('[data-lang-set]').forEach(b => b.addEventListener('click', () => {
   setLang(b.dataset.langSet);
+  sendLang();
   render(getState());
 }));
 
@@ -121,7 +124,7 @@ async function sync3d(cell, selection) {
 const partsFor = level => level === 'system' ? anatomy.systems : level === 'organ' ? anatomy.organs : level === 'tissue' ? tissues.tissues : level === 'organelle' ? organelles.models : level === 'atom' ? atoms.models : [];
 let modelReady = false, lastShow = null;
 addEventListener('message', e => {
-  if (e.origin === location.origin && e.data?.type === 'embed-ready') { modelReady = true; if (lastShow) $('vp-anatomy').contentWindow.postMessage(lastShow, location.origin); }
+  if (e.origin === location.origin && e.data?.type === 'embed-ready') { modelReady = true; sendLang(); if (lastShow) $('vp-anatomy').contentWindow.postMessage(lastShow, location.origin); }
 });
 $('vp-anatomy').addEventListener('load', () => { modelReady = false; });
 function showInModel(s) {

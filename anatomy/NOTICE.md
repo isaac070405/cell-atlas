@@ -7,3 +7,5 @@ Third-party data keeps its own terms:
 - `vendor/three/` is three.js r184 (MIT), copied from npm so the page loads no external files.
 - `assets/eye.glb` was removed because it was derived from feelpp/mesh.eye v1.1 (Zenodo 10.5281/zenodo.15630998), GPL-3.0-only, which does not fit the MIT licence of this repository. The page falls back to the procedural eye.
 - `assets/mni_brain*` is derived from the MNI T1 template. The licence is not confirmed; see `THIRD_PARTY_NOTICES.md`.
+
+Local change: `zh-hant.js` adds Traditional Chinese names. The master copy stays English only, so re-copying from it needs these edits again: the `ZH.html(...)` calls in `anatomy-part2.js`, `explode.js`, `tree.js`, `search.js` and `layers.js`, the `dataset.label` reads in `shortcuts.js`, and the script tag in `index.html`.

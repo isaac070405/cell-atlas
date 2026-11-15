@@ -107,6 +107,20 @@ function init() {
   const build = () => { rows = []; for (const [label, v] of T.labels()) { const low = norm(label); rows.push({ label, low, words: low.split(' '), sys: v.sys }); } };
   const aliasKeys = ALIASES.map(([keys, tg]) => ({ keys: keys.map(norm), tg: tg.map(norm) }));
 
+  // a query typed in Chinese is matched against the Chinese names, so type 繁體
+  const CJK = /[\u3400-\u9fff]/;
+  function searchZh(raw) {
+    if (!rows) build();
+    const q = raw.replace(/\s+/g, ''), Z = window.__zh, out = [];
+    if (!Z) return out;
+    for (const r of rows) {
+      const z = Z.zh(r.label); if (!z) continue;
+      const i = z.replace(/\s+/g, '').indexOf(q); if (i < 0) continue;
+      out.push({ r, score: z.replace(/\s+/g, '') === q ? 100 : i === 0 ? 90 : 70, note: z });
+    }
+    return out.sort((a, b) => b.score - a.score || a.r.label.length - b.r.label.length || a.r.label.localeCompare(b.r.label)).slice(0, 8);
+  }
+
   function search(raw) {
     if (!rows) build();
     const q = norm(raw); if (!q) return [];
@@ -136,11 +150,11 @@ function init() {
 
   function render() {
     box.innerHTML = ''; const raw = inp.value.trim(); if (!raw) return;
-    const hits = search(raw);
+    const hits = CJK.test(raw) ? searchZh(raw) : search(raw);
     if (!hits.length) { box.innerHTML = '<div style="font-size:12px;color:var(--color-neutral-700);padding:4px">No match. Try a common name, a Latin name or fewer letters.</div>'; return; }
     hits.forEach(h => {
       const b = document.createElement('button'); b.className = 'res'; b.innerHTML = '<span></span><small></small>';
-      b.firstChild.textContent = h.r.label; b.lastChild.textContent = T.SYSNAME[h.r.sys] + (h.note ? ' · ' + h.note : h.score < 60 ? ' · close match' : '');
+      if (window.__zh) b.firstChild.innerHTML = window.__zh.html(h.r.label); else b.firstChild.textContent = h.r.label; b.lastChild.textContent = T.SYSNAME[h.r.sys] + (h.note && !CJK.test(raw) ? ' · ' + h.note : h.score < 60 ? ' · close match' : '');
       b.onclick = () => window.__setPin(h.r.label); box.appendChild(b);
     });
   }
