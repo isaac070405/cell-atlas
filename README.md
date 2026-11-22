@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/github/license/isaac070405/cell-atlas)](LICENSE)
 
-Cell Atlas is the cell and molecule section of the Human Biology platform. It covers the last two steps of the scale chain: body (3D Anatomy Model) → tissue (Histology) → **cell (Module A)** → **molecule (Module B)**.
+Cell Atlas is the cell and molecule section of the Human Biology platform. It covers the scale chain from body to atom: body, system and organ (3D Anatomy Model) → tissue → **cell (Module A)** → organelle → **molecule (Module B)** → atom.
 
 Every number on screen carries a source chip with species, cell type and method. Cell models are to-scale schematics. Molecular models are experimental PDB / EMDB structures, never AI predictions.
 
@@ -12,7 +12,7 @@ Live site: https://isaac070405.github.io/cell-atlas/
 
 This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3), the Module B Mol* viewer (stage 4) and the embedded 3D Anatomy Model (stage 5):
 
-- Log-scale navigator from 2 m to 0.6 Å with seven levels: system, organ, tissue (the 3D Anatomy Model, embedded from `anatomy/` with its controls docked in the Cell Atlas panel style; desktop only). System and organ levels list a Body item (the whole model with every panel) plus the systems and organs in `data/anatomy.json`; picking a system or organ isolates its parts, hides every panel and, for an organ, shows the model's cross-section (`?level=organ&part=heart`). The Organelle-level cell view has a cross-section panel in place of the cutting slider. Tissue level has 21 schematic 3D models grouped by type: epithelial overview and eight epithelia (simple squamous, cuboidal, columnar; stratified squamous, cuboidal, columnar; pseudostratified columnar; transitional), connective tissue (parts grouped as ground substance, fibres and cells), muscular tissue, and nervous tissue with an overview, six neuroglia (astrocyte, microglial, ependymal, oligodendrocyte, satellite and Schwann cells) and three neurons (sensory, motor, interneuron). Nervous tissue shows afferent and efferent beside the model. The old Histology links (`tis:`) now open these models (`?level=tissue&part=simple-columnar`) (`js/tissue3d.js`, `data/tissues.json`, `?level=tissue&part=nervous`). The bacterial cell (E. coli) and the virus (bacteriophage T4) are schematic models; E. coli has a periplasm range (Stock 1977) in the compare view, the phage has no data table. Selected cell buttons and the Cell band on the ruler use the cell type colour, listed in a legend under the cell list (colours only, no codes on screen): animal #C62828, plant #2E7D32, fungal #795548, protist #FFB300 (eukaryote); bacterial #00ACC1, archaeal #E64A19 (prokaryote); viral #8E24AA (non-cellular). Dark mode uses lighter tones. `anat:` chips for heart, jejunum, biceps, liver and pancreas open the Organ level; `ent:` and `spec:` links are hidden until those sites are linked.
+- Log-scale navigator from 2 m to 0.6 Å with eight levels: body, system, organ, tissue, cell, organelle, molecule (complex) and atom. The body, system and organ levels are the 3D Anatomy Model, embedded from `anatomy/` with its controls docked in the Cell Atlas panel style (desktop only); its labels follow the EN / 繁 / 雙語 switch (`anatomy/zh-hant.js`). System and organ levels list a Body item (the whole model with every panel) plus the systems and organs in `data/anatomy.json`; picking a system or organ isolates its parts, hides every panel and, for an organ, shows the model's cross-section (`?level=organ&part=heart`). The Organelle-level cell view has a cross-section panel in place of the cutting slider. Tissue level has 21 schematic 3D models grouped by type: epithelial overview and eight epithelia (simple squamous, cuboidal, columnar; stratified squamous, cuboidal, columnar; pseudostratified columnar; transitional), connective tissue (parts grouped as ground substance, fibres and cells), muscular tissue, and nervous tissue with an overview, six neuroglia (astrocyte, microglial, ependymal, oligodendrocyte, satellite and Schwann cells) and three neurons (sensory, motor, interneuron). Nervous tissue shows afferent and efferent beside the model. The old Histology links (`tis:`) now open these models (`js/tissue3d.js`, `data/tissues.json`, `?level=tissue&part=nervous`, `?level=tissue&part=simple-columnar`). The bacterial cell (E. coli) and the virus (bacteriophage T4) are schematic models; E. coli has a periplasm range (Stock 1977) in the compare view, the phage has no data table. Selected cell buttons and the Cell band on the ruler use the cell type colour, listed in a legend under the cell list (colours only, no codes on screen): animal #C62828, plant #2E7D32, fungal #795548, protist #FFB300 (eukaryote); bacterial #00ACC1, archaeal #E64A19 (prokaryote); viral #8E24AA (non-cellular). Dark mode uses lighter tones. `anat:` chips for heart, jejunum, biceps, liver and pancreas open the Organ level; `ent:` and `spec:` links are hidden until those sites are linked.
 - **Organelle level** (`data/organelles.json`): schematic 3D models of the mitochondrion, nucleus, rough ER, Golgi apparatus, lysosome, peroxisome, microfilament, intermediate filament, microtubule and centrosome, with clickable parts. Sizes and function text come from the catalog compartment; the inner membrane and ribosome parts link to PDB 5XTD and 4UG0 (`?level=organelle&part=mito&sel=cristae`).
 - **Atom level** (`data/atoms.json`): ball-and-stick water, ammonia, methane, ATP, ADP, NADH, xanthine, purine, pyrimidine and a [4Fe-4S] cluster. ATP, ADP, NADH, xanthine, purine and pyrimidine are computed conformers (ETKDG, relaxed with MMFF94), not experimental structures. For the small molecules, bond length is the sum of Cordero 2008 covalent radii, ball radius is 25% of the Bondi 1964 van der Waals radius; click an element for its radii (`?level=atom&part=water&sel=O`).
 - System, organ and tissue levels share camera view buttons (anterior, posterior, right, left, superior, inferior) and a cross-section panel with a cutting-plane option; the tissue panel draws a thin slab of the model.
@@ -23,11 +23,12 @@ This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3
 - Module B pane with the first-release queue; the Mol* viewer loads in it (see tour points below).
 - **Compare view** (`?view=compare`): hepatocyte, enterocyte, muscle (skeletal, cardiac or smooth via `&muscle=`) and plant mesophyll side by side, one row per compartment, on one 0–100% scale. Species on every column; ranges drawn as spans; unmeasured compartments shown as a dash.
 - Volume-fraction chart for the selected cell, from `data/catalog.json`.
-- **3D cell** (Module A): procedural Three.js cell for each of the six cells. Compartment volumes sum to the published fractions (`js/cellmodel.js`); shapes and positions are schematic. Orbit, cutting plane, click a compartment for its data card (`?cell=hepatocyte&org=mito`). Three.js r187 is self-hosted in `vendor/three/`.
+- **3D cell** (Module A): procedural Three.js cell for each cell in `data/catalog.json` (six with published volume fractions, plus the schematic E. coli and bacteriophage T4). Compartment volumes sum to the published fractions (`js/cellmodel.js`); shapes and positions are schematic. Orbit, cutting plane, click a compartment for its data card (`?cell=hepatocyte&org=mito`). Three.js r187 is self-hosted in `vendor/three/`.
 - **Mol\* spike** (`spike/molstar.html`): loads 5XTD or 4UG0 as binary CIF from RCSB with Mol* 5.13.1, self-hosted in `vendor/molstar/`.
 - **Module B tour points** (`data/tour-points.json`): preset views for 5XTD (FMN, Fe–S clusters, Q-site), 4UG0 (tRNA sites), 1TQN (heme, Cys442) and 1ZUM (Cys302, Glu268, Lys487), each with a source chip and a `computed` or `literature` basis. A tour bar in the Module B pane focuses each point in Mol*.
-- **Organelle size and function text**: the cell card shows size ranges and function text from PubMed and SciSpace sources, 36 citations in `data/citations.json`.
+- **Organelle size and function text**: the cell card shows size ranges and function text from PubMed and SciSpace sources, 45 citations in `data/citations.json`.
 - **`@isaac070405/cell-3d`** (`packages/cell-3d/`): the 3D cell model and view as an npm package, published to GitHub Packages by `.github/workflows/publish-cell-3d.yml`.
+- **Protein subcellular location** (`data/protein-location.json`): Human Protein Atlas location, reliability and GO terms for 158 genes of the Module B structures, shown in the Module B cards. 19 genes missing from the HPA export come from UniProt and are labelled as such. Rebuilt with `scripts/build-protein-location.py`; HPA data is CC BY-SA 4.0 (`THIRD_PARTY_NOTICES.md`).
 - Two-way links: each card lists its own `links.json` edges grouped by site, plus every item that links to it. Mitochondria and rough ER rows jump to PDB 5XTD and 4UG0.
 
 ## Files
@@ -36,26 +37,31 @@ This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3
 | --- | --- |
 | `index.html` | Page layout: HUD, scale ruler, viewer, three panels |
 | `css/tokens.css` | Platform colours, fonts, spacing, organelle colours |
+| `js/app.js` | Page wiring: data loading, panels, cards, theme, language, Module B pane |
+| `css/app.css` | Layout and component styles |
 | `js/state.js` | Scale controller and URL deep links |
 | `js/i18n.js` | Language modes |
 | `js/ruler.js` | Scale navigator |
 | `js/compare.js` | Four-cell comparison and fraction chart |
 | `js/molview.js` | Module B: Mol* loader and tour-point focus |
-| `js/tissue3d.js` | Four schematic tissue models |
+| `js/tissue3d.js` | Schematic tissue, organelle and atom models (21 tissues, 10 organelles, 10 atoms) |
 | `packages/cell-3d/` | Reusable npm package `@isaac070405/cell-3d`: cell layout (`src/model.js`, pure maths) and Three.js view (`src/view.js`) |
 | `js/cellmodel.js`, `js/cell3d.js` | Re-exports of the package, so site imports keep working |
 | `spike/molstar.html` | Stage 1 Mol* spike page |
-| `scripts/check-data.mjs` | Stage 2 and 3 gate: citations resolve, none pending, model volumes within 2 points |
+| `scripts/check-data.mjs` | Stage 2 and 3 gate: citations resolve, none pending, model volumes within 2 points, organelle, atom and protein-location data consistent |
+| `scripts/build-protein-location.py` | Builds `data/protein-location.json` from an HPA export plus UniProt |
 | `vendor/` | Self-hosted Three.js and Mol* builds |
-| `anatomy/` | Imported 3D Anatomy Model (stage 5), served at `/anatomy/`, no design system; see `anatomy/NOTICE.md` for licences |
+| `anatomy/` | Imported 3D Anatomy Model (stage 5), served at `/anatomy/`, no design system; see `anatomy/NOTICE.md` for licences. `anatomy/docs/` holds the model's wiki pages (Home, Interface, layers, 13 system pages) |
 | `.design/cell-atlas/` | Design brief, information architecture, build tasks |
 | `docs/DATA.md` | Schema of the data files and how to add a value |
 | `docs/4UG0-summary.md` | Structural summary of the human 80S ribosome (4UG0): validation, per-chain fit, nomenclature |
+| `CHANGELOG.md`, `CONTRIBUTING.md`, `SUPPORT.md`, `SECURITY.md`, `ACCESSIBILITY.md`, `CODE_OF_CONDUCT.md` | Project history and community files |
 | `THIRD_PARTY_NOTICES.md` | Licences of vendored libraries and models |
 | `data/catalog.json` | Cells with volume fractions, compartments, structures |
 | `data/citations.json` | Shared citation registry (`verified` or `pending`) |
-| `data/tour-points.json` | Module B preset views for 5XTD and 4UG0, with citations |
+| `data/tour-points.json` | Module B preset views for 5XTD, 4UG0, 1TQN and 1ZUM, with citations |
 | `data/anatomy.json`, `data/tissues.json` | System, organ and tissue lists for the anatomy levels |
+| `data/protein-location.json` | HPA and UniProt subcellular location for 158 genes |
 | `data/organelles.json`, `data/atoms.json` | Organelle and atom models for the Organelle and Atom levels |
 | `data/links.json` | Shared link keys `anat:` `tis:` `cell:` `pdb:` `spec:` `diag:` `ent:` |
 | `data/i18n.json` | All interface text in `en` and `zh-Hant` |
@@ -83,7 +89,7 @@ Each stage has a pass condition. The next stage starts only after it passes.
 | --- | --- | --- |
 | 0. Shell | HUD, scale navigator, state controller, i18n, links.json, citations.json | Live on GitHub Pages ✅ |
 | 1. Technical spike | One page loads Mol* with 5XTD; test whether `<sr-mol>` and `<pdb-slot>` read 4UG0 | Displays on GitHub Pages and rotates on a phone. Built; needs a check on the live site and a phone (RCSB is unreachable from the build sandbox) |
-| 2. Data | Data tables for the four first-release cell types, cross-layer index, full links.json | "Pending check" count is zero. The 36 citations are verified; the open data items below stay open |
+| 2. Data | Data tables for the four first-release cell types, cross-layer index, full links.json | "Pending check" count is zero. The 45 citations are verified; the open data items below stay open |
 | 3. Module A | Procedural Three.js cell, side-by-side compare, clipping plane, organelle pick, data card | Organelle volume ratios match the data table within 2 percentage points. Passes in `node scripts/check-data.mjs`; cardiomyocyte and plant outlines are too crowded to draw without overlap |
 | 4. Module B | Mol* viewer, preset tour points, mitochondrion → Complex I and rough ER → ribosome jumps | One full cell → atom → cell round trip without stutter. Viewer, tour points and jumps are built. Colouring modes and a subunit list with UniProt links are not built |
 | 5. Platform integration | New section in the Human Biology home page; `?part=` deep link in the 3D model; jump buttons in Histology and Specimen Room | Body → tissue → cell → molecule chain works end to end. 3D model copied into `anatomy/`. Home page section and Histology / Specimen Room jumps dropped; only the 3D model and a `?part=` link from the cell views remain |
@@ -134,7 +140,7 @@ Technical
 
 ## Open questions
 
-- None on volume fractions. All six cells cite a verified source in `data/citations.json`.
+- None on volume fractions. All six cells with volume fractions cite a verified source in `data/citations.json`.
 
 ## Cite
 
@@ -151,6 +157,7 @@ Code and data written for this repository are released under the MIT License (se
 | Mol* (`vendor/molstar/`) | MIT |
 | PDB and EMDB structures loaded from RCSB | Archive terms, cited per entry in `data/citations.json` |
 | `anatomy/assets/mni_brain*` | MNI template, licence not yet confirmed |
+| Human Protein Atlas subcellular location (`data/protein-location.json`) | CC BY-SA 4.0 |
 | Eye mesh | Removed (GPL-3.0-only source); the page draws a procedural eye |
 | `CODE_OF_CONDUCT.md` | Adapted from the Contributor Covenant 2.1, CC BY 4.0 |
 

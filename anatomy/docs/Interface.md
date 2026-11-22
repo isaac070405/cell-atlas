@@ -4,6 +4,8 @@ Controls in the sidebar and the cross-section panel.
 
 ## Sidebar sections
 
+The Sex control (male, female) and the Skin tone swatches (plate plus six tones) sit above the sections. Both choices are remembered per browser. Inside Cell Atlas the sidebar is docked in the Cell Atlas panel style and the language follows the site switch, including Traditional Chinese part names and Chinese search.
+
 - Find a part
 - Systems
 - Heart, lungs and diaphragm

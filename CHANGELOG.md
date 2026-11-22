@@ -1,12 +1,14 @@
 # Changelog
 
-All notable changes to Cell Atlas are listed here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The project has no version numbers yet, so entries are grouped by date. The `@isaac070405/cell-3d` package has its own version, 0.1.0.
+All notable changes to Cell Atlas are listed here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The project has no version numbers yet, so entries are grouped by date. The `@isaac070405/cell-3d` package has its own version, currently 0.1.1.
 
 Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 
 ## Unreleased
 
 ### Added
+- Human Protein Atlas subcellular location for 158 genes of the Module B structures, with 19 genes missing from the HPA export filled from UniProt (`data/protein-location.json`, `scripts/build-protein-location.py`) (#59, #60).
+- Cell type colour legend, view buttons and cross-section for the system and tissue levels, and epithelial, neuroglia and neuron tissue models (#49, #50, #51).
 - Traditional Chinese names for the embedded 3D Anatomy Model: all 2,348 structure labels, group headings, systems and the 14 layers follow the EN / 繁 / 雙語 switch, and the search box accepts Chinese (`anatomy/zh-hant.js`).
 - Tissue models: eight epithelial subtypes, six neuroglia and three neuron types; the tissue picker is grouped by type and connective tissue parts are grouped as ground substance, fibres and cells.
 - Organelle level: schematic 3D models of mitochondrion, nucleus, rough ER and Golgi apparatus, with parts, cited sizes and links to PDB 5XTD and 4UG0.
@@ -18,8 +20,8 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 
 ### Changed
 - The "Histology" link target is now "Tissue" and `tis:` links open the Tissue level.
-
-### Changed
+- Anatomy sex and skin tone preferences are whitelisted and stored as literals (#56, #58).
+- README, `docs/DATA.md` and the wiki pages in `anatomy/docs/` now match the current data (45 citations, 21 tissues, eight levels).
 - Removed `anatomy/assets/eye.glb` (GPL-3.0-only, incompatible with the MIT licence); the procedural eye is drawn instead.
 - Added the Three.js MIT licence text to `vendor/three/LICENSE`.
 

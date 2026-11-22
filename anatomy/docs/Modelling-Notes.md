@@ -12,6 +12,10 @@
 ---
 [← Anatomy review additions](Anatomy-Review-Additions) · [Home](Home)
 
+## Language
+
+`zh-hant.js` holds Traditional Chinese names for every structure label, group heading, system and layer. It is a local change to the imported copy; `NOTICE.md` lists the edits to repeat when re-copying from the master repository.
+
 ## Eye meshes
 
 The eyeball (sclera, choroid, retina, vitreous body, cornea, iris and ciliary body, lens, suspensory ligament) used meshes from feelpp/mesh.eye v1.1 (Zenodo 10.5281/zenodo.15630998, GPL-3.0-only; Chabannes, Prud'homme, Saigre, Sala, Szopos, Trophime). That file, `assets/eye.glb`, was removed for licence reasons and the page now draws the procedural eye. When present, it loaded from `assets/eye.glb`, scaled to the sclera radius of the model, and the left eye is mirrored for the right. Solid names were matched from geometry (`scripts/eye_names.json`). The two retinal vessels in the source are not shown.
