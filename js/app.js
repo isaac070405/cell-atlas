@@ -6,8 +6,8 @@ import { buildModel, crowded } from './cellmodel.js';
 import { showStructure } from './molview.js';
 
 const load = p => fetch(p).then(r => r.json());
-const [catalog, { citations }, links, tours, anatomy, tissues, organelles, atoms] = await Promise.all([
-  load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'), load('data/anatomy.json'), load('data/tissues.json'), load('data/organelles.json'), load('data/atoms.json'),
+const [catalog, { citations }, links, tours, anatomy, tissues, organelles, atoms, ploc] = await Promise.all([
+  load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'), load('data/anatomy.json'), load('data/tissues.json'), load('data/organelles.json'), load('data/atoms.json'), load('data/protein-location.json'),
 ]);
 const $ = id => document.getElementById(id);
 // Cell types: colour is the --kind-* token, group is the domain-level class
@@ -313,6 +313,7 @@ function render(s) {
   if (compare) columnCells(s.muscle).forEach(c => c.data && ids.add(c.data));
   if (A && cell?.data) ids.add(cell.data);
   if (B && pdb?.cite) ids.add(pdb.cite);
+  if (B && pdb && (Object.values(ploc.genes).some(e => e.structure === pdb.id) || (point && ploc.genes[point.subunit]))) ids.add(ploc.cite);
   if (A && !compare && cell?.id === 'hepatocyte') ids.add('bnid-105782');
   if (O || M) (sm ? modelCites(sm, s.level) : []).forEach(id => ids.add(id));
   $('sources-body').innerHTML = sm && !(O || M) ? `<li class="muted" style="list-style:none;margin-left:-1.4em">${html('tissue.source')}</li>` : ids.size
@@ -391,6 +392,28 @@ async function sync3dMol(id, point) {
   }
 }
 
+// Human Protein Atlas location for one gene, or a count and the commonest locations for a whole structure
+const locName = n => html(ploc.locations[n] ?? { en: n, 'zh-Hant': n });
+function locRows(g) {
+  const e = ploc.genes[g];
+  if (!e) return '';
+  return `<dt>${html('card.loc.main')}</dt><dd>${e.main.map(locName).join(', ') || '–'}</dd>
+    ${e.additional.length ? `<dt>${html('card.loc.extra')}</dt><dd>${e.additional.map(locName).join(', ')}</dd>` : ''}
+    <dt>${html('card.loc.grade')}</dt><dd>${esc(e.reliability)}</dd>`;
+}
+function locCard(rows, note = true) {
+  return rows ? `<h4 class="card-sub">${html('card.loc')}</h4><dl class="kv">${rows}</dl>${note ? `<p class="muted" style="font-size:12.5px">${html('card.loc.note')}</p>` : ''}` : '';
+}
+function structureLoc(id) {
+  const gs = Object.values(ploc.genes).filter(e => e.structure === id);
+  if (!gs.length) return '';
+  if (gs.length === 1) return getState().tour ? '' : locCard(locRows(Object.keys(ploc.genes).find(g => ploc.genes[g].structure === id)));
+  const n = {};
+  gs.forEach(e => e.main.forEach(m => { n[m] = (n[m] ?? 0) + 1; }));
+  const top = Object.entries(n).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([m, c]) => `${locName(m)} ${c}`).join(', ');
+  return locCard(`<dt>${gs.length}</dt><dd>${html('card.loc.summary')}</dd><dt>${html('card.loc.main')}</dt><dd>${top}</dd>`);
+}
+
 function tourCard(p) {
   const rows = `<dt>${html('card.tour.subunit')}</dt><dd>${esc(p.subunit ?? p.id)}</dd>
     <dt>${html('card.tour.chain')}</dt><dd>${esc(p.chain)}${p.authChain || p.subunitAuthChain ? ` (auth ${esc(p.authChain ?? p.subunitAuthChain)})` : ''}</dd>
@@ -399,6 +422,7 @@ function tourCard(p) {
     <p><strong>${html(p.label)}</strong></p>
     <dl class="kv">${rows}</dl>
     <p class="muted" style="font-size:12.5px">${html('card.tour.basis.' + p.basis)}.${p.support ? ' ' + esc(p.support) : ''}${p.names ? ' ' + html('card.tour.names') : ''}${p.note ? ' ' + esc(p.note) : ''}</p>
+    ${locCard(locRows(p.subunit))}
   </div>`;
 }
 
@@ -419,7 +443,7 @@ function card(item, kind) {
        ${inc.length ? `<h4 class="card-sub">${html('card.linkedfrom')}</h4>${grouped(inc)}` : ''}`
     : `<p class="muted" style="margin-top:8px">${html('card.links.none')}</p>`;
   return `<p><strong>${html(item.name)}</strong></p>
-    <dl class="kv"><dt>${html('release')}</dt><dd>${item.release}</dd>${rows}</dl>${status}${linkBlock}`;
+    <dl class="kv"><dt>${html('release')}</dt><dd>${item.release}</dd>${rows}</dl>${status}${kind === 'pdb' ? structureLoc(item.id) : ''}${linkBlock}`;
 }
 
 function source(c) {

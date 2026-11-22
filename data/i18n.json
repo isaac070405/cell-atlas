@@ -393,6 +393,30 @@
       "en": "Preset view",
       "zh-Hant": "預設視角"
     },
+    "card.loc": {
+      "en": "Protein location (Human Protein Atlas)",
+      "zh-Hant": "蛋白質定位（Human Protein Atlas）"
+    },
+    "card.loc.grade": {
+      "en": "Reliability",
+      "zh-Hant": "可靠度"
+    },
+    "card.loc.main": {
+      "en": "Main location",
+      "zh-Hant": "主要位置"
+    },
+    "card.loc.extra": {
+      "en": "Additional location",
+      "zh-Hant": "其他位置"
+    },
+    "card.loc.note": {
+      "en": "Immunofluorescence in human cell lines. The cell compartment is where the gene product is found, not where this structure was isolated.",
+      "zh-Hant": "於人類細胞株以免疫螢光測定。此為基因產物所在之細胞區室，並非此結構之分離來源。"
+    },
+    "card.loc.summary": {
+      "en": "genes with a Human Protein Atlas location",
+      "zh-Hant": "個基因有 Human Protein Atlas 定位"
+    },
     "card.tour.subunit": {
       "en": "Subunit",
       "zh-Hant": "亞基"

@@ -26,6 +26,14 @@ See `anatomy/NOTICE.md` for the origin of the rest of the 3D Anatomy Model, whic
 
 Experimental structures (PDB and EMDB entries such as 5XTD and 4UG0) load from RCSB when a page is viewed. The archives' own terms apply, and each entry is cited in `data/citations.json`.
 
+## Data derived from other sources
+
+| Item | Path | Licence | Source |
+| --- | --- | --- | --- |
+| Protein subcellular location, trimmed to 139 genes | `data/protein-location.json` | CC BY-SA 4.0 | The Human Protein Atlas, https://www.proteinatlas.org/humanproteome/subcellular |
+
+Attribution: Thul PJ et al. (2017) Science 356:eaal3321; Uhlen M et al. (2015) Science 347:1260419. The file is a changed copy of the Atlas table, so it stays under CC BY-SA 4.0. The rest of the repository keeps the MIT licence.
+
 ## Open items
 
 - Find an eye mesh under a compatible licence (CC0, CC BY or MIT) and add it as `anatomy/assets/eye.glb`. The loader picks it up with no code change.
