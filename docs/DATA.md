@@ -10,7 +10,7 @@ Names and long text use an object with `en` and `zh-Hant` keys. Write Traditiona
 | --- | --- |
 | `compartments` | One entry per organelle: `id`, colour `token` (a CSS variable from `css/tokens.css`), `name`, and `sizes[]` with a `cite` and a `text` |
 | `compareRows`, `compareColumns`, `muscleTypes` | Layout of the compare view |
-| `cells` | Six cells: `id`, `kind` (`animal`, `plant`, `bacterial`, `virus`), `name`, `release`, `species`, `basis`, `data` (a citation id), `fractions[]` |
+| `cells` | Eight cells (six with volume fractions, plus E. coli and bacteriophage T4 as schematic models): `id`, `kind` (`animal`, `plant`, `bacterial`, `virus`), `name`, `release`, `species`, `basis`, `data` (a citation id), `fractions[]` |
 | `structures` | Molecular structures: `id` (PDB ID), `name`, `method`, `from`, `release`, `cite` |
 
 Rules for `fractions[]`:
@@ -36,11 +36,15 @@ Human Protein Atlas subcellular location for the genes of the Module B structure
 
 ## `tour-points.json`
 
-Preset views for Module B, keyed by PDB ID. Each point has `id`, `label`, `kind`, `comp`, `chain`, `subunit`, `xyz` (Å in the deposited frame, model 1), `basis` and `select` (a Mol* locus). `basis` is `computed` (read from deposited coordinates) or `literature` (stated in the cited paper). Each structure carries a `cite`.
+Preset views for Module B (5XTD, 4UG0, 1TQN, 1ZUM), keyed by PDB ID. Each point has `id`, `label`, `kind`, `comp`, `chain`, `subunit`, `xyz` (Å in the deposited frame, model 1), `basis` and `select` (a Mol* locus). `basis` is `computed` (read from deposited coordinates) or `literature` (stated in the cited paper). Each structure carries a `cite`.
+
+## `organelles.json` and `atoms.json`
+
+`organelles.json` holds 10 schematic organelle models (mitochondrion, nucleus, rough ER, Golgi apparatus, lysosome, peroxisome, microfilament, intermediate filament, microtubule, centrosome). Each has clickable parts whose sizes and function text point to a compartment in `catalog.json`. `atoms.json` holds 10 ball-and-stick models and the element radii table (Cordero 2008 covalent, Bondi 1964 van der Waals). Computed conformers (ETKDG, MMFF94) are marked as such and are not experimental structures.
 
 ## `anatomy.json` and `tissues.json`
 
-`anatomy.json` classifies the 3D Anatomy Model levels: `systems[]` with the model's system `keys` (`null` shows the whole body) and `match` patterns tested against part labels. `tissues.json` holds four schematic tissues. They carry no measured values and follow textbook figures.
+`anatomy.json` classifies the 3D Anatomy Model levels: `systems[]` with the model's system `keys` (`null` shows the whole body) and `match` patterns tested against part labels. `tissues.json` holds 21 schematic tissue models (epithelial, connective, muscular, nervous, neuroglia and neurons) and the `cellModels` for E. coli and bacteriophage T4. They carry no measured values and follow textbook figures.
 
 ## Adding a value
 

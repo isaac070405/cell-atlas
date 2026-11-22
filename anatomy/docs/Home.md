@@ -3,6 +3,9 @@
 Interactive three.js model of the human body. Systems can be toggled, parts searched and selected, layers peeled, regions dissected, and any plane cut as a live cross-section. Exports OBJ + MTL and GLB.
 
 > [!NOTE]
+> This model is embedded in [Cell Atlas](https://isaac070405.github.io/cell-atlas/) as its body, system and organ levels (`?level=organ&part=heart`). Labels follow the Cell Atlas EN / 繁 / 雙語 switch (`zh-hant.js`). The master copy of the model is https://github.com/isaac070405/3D-Anatomy-Model, which stays English only.
+
+> [!NOTE]
 > The model is approximate. See `known-limitations.html` for thin, approximate or missing areas.
 
 ## Contents
