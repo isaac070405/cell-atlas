@@ -30,6 +30,10 @@ One object per source, keyed by id (for example `guo-2017`). Fields: `source`, `
 
 `targets` maps a prefix to a label and a URL template where `{id}` is the part after the colon. Prefixes: `anat`, `tis`, `cell`, `pdb`, `spec`, `diag`, `ent`. `edges` lists one-way links such as `cell:hepatocyte` to `pdb:5XTD`. The site shows the reverse direction under "Linked from".
 
+## `protein-location.json`
+
+Human Protein Atlas subcellular location for the genes of the Module B structures. `genes` is keyed by gene symbol. Each entry has `ensembl`, `structure` (PDB ID, or `candidate`), `reliability` (Enhanced, Supported, Approved, Uncertain), `main[]`, `additional[]` and `go[]`. Rebuild with `python3 scripts/build-protein-location.py <export>`. ALDH2, HMGCR, LCT, UCP1 and ATP4A are not in the export, so 1ZUM has no entry. CC BY-SA 4.0, see `THIRD_PARTY_NOTICES.md`.
+
 ## `tour-points.json`
 
 Preset views for Module B, keyed by PDB ID. Each point has `id`, `label`, `kind`, `comp`, `chain`, `subunit`, `xyz` (Å in the deposited frame, model 1), `basis` and `select` (a Mol* locus). `basis` is `computed` (read from deposited coordinates) or `literature` (stated in the cited paper). Each structure carries a `cite`.

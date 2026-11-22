@@ -105,7 +105,7 @@ Cell data
 - [x] Plant mesophyll organelle volume fractions (Winter, Robinson & Heldt 1994, spinach leaf)
 - [x] Hepatocyte compartment percentages checked one by one (Alberts MBoC Table 12-1, latest edition)
 - [x] Organelle size ranges and function text (PubMed and SciSpace sources in place of Alberts and Lodish, which were not reachable). Open gaps: absolute vacuole size, function text for perinuclear space (tracked in #27)
-- [ ] Protein subcellular location (Human Protein Atlas, subcellular)
+- [x] Protein subcellular location (Human Protein Atlas, subcellular): `data/protein-location.json`, 139 genes. Not yet shown in the viewer
 
 Molecular structures
 - [ ] Human ATP synthase PDB ID (RCSB PDB)

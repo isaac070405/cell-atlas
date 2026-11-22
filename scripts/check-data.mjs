@@ -31,6 +31,10 @@ for (const t of tis.tissues) {
   for (const [k, v] of Object.entries(t.aliases ?? {})) if (!t.parts.some(p => p.id === v)) bad(`tissue ${t.id}: alias ${k} -> ${v} not a part`);
 }
 for (const e of links.edges) for (const k of [e.from, ...e.to]) if (k.startsWith('tis:') && !tis.tissues.some(t => t.id === k.slice(4) || t.aliases?.[k.slice(4)])) bad(`link ${k}: no tissue model`);
+const loc = read('protein-location.json');
+if (!citations[loc.cite]) bad(`protein-location: cite ${loc.cite} missing`);
+for (const [g, e] of Object.entries(loc.genes)) if (!['Enhanced', 'Supported', 'Approved', 'Uncertain'].includes(e.reliability) || !e.main.length && !e.additional.length) bad(`protein-location ${g}: reliability or location`);
+console.log(`protein locations: ${Object.keys(loc.genes).length}`);
 console.log(`tissue models: ${tis.tissues.length}`);
 const orgs = read('organelles.json'), atoms = read('atoms.json');
 for (const m of orgs.models) {

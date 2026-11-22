@@ -537,6 +537,19 @@
       "year": 2005,
       "url": "https://www.rcsb.org/structure/1ZUM",
       "status": "verified"
+    },
+    "hpa-subcellular": {
+      "source": "The Human Protein Atlas, subcellular location",
+      "detail": {
+        "en": "Protein subcellular location by immunofluorescence in human cell lines, with a reliability grade (Enhanced, Supported, Approved, Uncertain)",
+        "zh-Hant": "以免疫螢光在人類細胞株中測定的蛋白質次細胞定位，附可靠度等級（Enhanced、Supported、Approved、Uncertain）"
+      },
+      "species": "Human",
+      "cellType": "Cell lines",
+      "method": "Immunofluorescence confocal microscopy",
+      "url": "https://www.proteinatlas.org/humanproteome/subcellular",
+      "status": "verified",
+      "note": "Read from a 13,603-gene export. The HPA version is not recorded in the file; add it when known. Licence CC BY-SA 4.0 (Thul 2017 Science; Uhlen 2015 Science)."
     }
   }
 }
