@@ -1,6 +1,136 @@
 {
  "_schema": "Human Protein Atlas subcellular location, trimmed to genes of the structures in catalog.json. reliability is the HPA grade: Enhanced, Supported, Approved or Uncertain. main and additional are HPA location names; go lists \"name (GO:id)\". Rebuild with scripts/build-protein-location.py. cite is in citations.json.",
  "cite": "hpa-subcellular",
+ "locations": {
+  "Cytosol": {
+   "en": "Cytosol",
+   "zh-Hant": "細胞質基質"
+  },
+  "Endoplasmic reticulum": {
+   "en": "Endoplasmic reticulum",
+   "zh-Hant": "內質網"
+  },
+  "Mitochondria": {
+   "en": "Mitochondria",
+   "zh-Hant": "粒線體"
+  },
+  "Nucleoli": {
+   "en": "Nucleoli",
+   "zh-Hant": "核仁"
+  },
+  "Nucleoplasm": {
+   "en": "Nucleoplasm",
+   "zh-Hant": "核質"
+  },
+  "Plasma membrane": {
+   "en": "Plasma membrane",
+   "zh-Hant": "細胞膜"
+  },
+  "Principal piece": {
+   "en": "Principal piece",
+   "zh-Hant": "精子主段"
+  },
+  "Nuclear membrane": {
+   "en": "Nuclear membrane",
+   "zh-Hant": "核膜"
+  },
+  "Vesicles": {
+   "en": "Vesicles",
+   "zh-Hant": "囊泡"
+  },
+  "Mid piece": {
+   "en": "Mid piece",
+   "zh-Hant": "精子中段"
+  },
+  "End piece": {
+   "en": "End piece",
+   "zh-Hant": "精子末段"
+  },
+  "Connecting piece": {
+   "en": "Connecting piece",
+   "zh-Hant": "精子連接段"
+  },
+  "Flagellar centriole": {
+   "en": "Flagellar centriole",
+   "zh-Hant": "鞭毛中心粒"
+  },
+  "Nucleoli fibrillar center": {
+   "en": "Nucleoli fibrillar center",
+   "zh-Hant": "核仁纖維中心"
+  },
+  "Golgi apparatus": {
+   "en": "Golgi apparatus",
+   "zh-Hant": "高基氏體"
+  },
+  "Acrosome": {
+   "en": "Acrosome",
+   "zh-Hant": "頂體"
+  },
+  "Centrosome": {
+   "en": "Centrosome",
+   "zh-Hant": "中心體"
+  },
+  "Equatorial segment": {
+   "en": "Equatorial segment",
+   "zh-Hant": "精子赤道段"
+  },
+  "Nuclear bodies": {
+   "en": "Nuclear bodies",
+   "zh-Hant": "核體"
+  },
+  "Basal body": {
+   "en": "Basal body",
+   "zh-Hant": "基體"
+  },
+  "Mitotic spindle": {
+   "en": "Mitotic spindle",
+   "zh-Hant": "有絲分裂紡錘體"
+  },
+  "Perinuclear theca": {
+   "en": "Perinuclear theca",
+   "zh-Hant": "核周鞘"
+  },
+  "Nuclear speckles": {
+   "en": "Nuclear speckles",
+   "zh-Hant": "核斑點"
+  },
+  "Calyx": {
+   "en": "Calyx",
+   "zh-Hant": "精子頸鞘"
+  },
+  "Actin filaments": {
+   "en": "Actin filaments",
+   "zh-Hant": "肌動蛋白絲"
+  },
+  "Cytokinetic bridge": {
+   "en": "Cytokinetic bridge",
+   "zh-Hant": "胞質分裂橋"
+  },
+  "Microtubules": {
+   "en": "Microtubules",
+   "zh-Hant": "微管"
+  },
+  "Primary cilium": {
+   "en": "Primary cilium",
+   "zh-Hant": "初級纖毛"
+  },
+  "Annulus": {
+   "en": "Annulus",
+   "zh-Hant": "精子環"
+  },
+  "Nucleoli rim": {
+   "en": "Nucleoli rim",
+   "zh-Hant": "核仁邊緣"
+  },
+  "Cell Junctions": {
+   "en": "Cell Junctions",
+   "zh-Hant": "細胞連接"
+  },
+  "Focal adhesion sites": {
+   "en": "Focal adhesion sites",
+   "zh-Hant": "焦點黏著位點"
+  }
+ },
  "genes": {
   "ADRB2": {
    "ensembl": "ENSG00000169252",
