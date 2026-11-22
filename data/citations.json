@@ -550,6 +550,19 @@
       "url": "https://www.proteinatlas.org/humanproteome/subcellular",
       "status": "verified",
       "note": "Read from a 13,603-gene export. The HPA version is not recorded in the file; add it when known. Licence CC BY-SA 4.0 (Thul 2017 Science; Uhlen 2015 Science)."
+    },
+    "uniprot-subcellular": {
+      "source": "UniProtKB/Swiss-Prot, subcellular location",
+      "detail": {
+        "en": "Curated subcellular location of reviewed human entries, used for genes missing from the Human Protein Atlas export",
+        "zh-Hant": "經人工審閱之人類條目的次細胞定位，用於 Human Protein Atlas 匯出檔所缺之基因"
+      },
+      "species": "Human",
+      "cellType": "n/a",
+      "method": "Curated annotation (experimental or inferred evidence)",
+      "url": "https://www.uniprot.org/",
+      "status": "verified",
+      "note": "Fetched from rest.uniprot.org on 2026-11-22 (release not recorded). Licence CC BY 4.0."
     }
   }
 }

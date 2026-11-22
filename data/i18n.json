@@ -394,8 +394,8 @@
       "zh-Hant": "預設視角"
     },
     "card.loc": {
-      "en": "Protein location (Human Protein Atlas)",
-      "zh-Hant": "蛋白質定位（Human Protein Atlas）"
+      "en": "Protein location (Human Protein Atlas, UniProt)",
+      "zh-Hant": "蛋白質定位（Human Protein Atlas、UniProt）"
     },
     "card.loc.grade": {
       "en": "Reliability",
@@ -410,8 +410,8 @@
       "zh-Hant": "其他位置"
     },
     "card.loc.note": {
-      "en": "Immunofluorescence in human cell lines. The cell compartment is where the gene product is found, not where this structure was isolated.",
-      "zh-Hant": "於人類細胞株以免疫螢光測定。此為基因產物所在之細胞區室，並非此結構之分離來源。"
+      "en": "Human Protein Atlas: immunofluorescence in human cell lines. UniProt (where the Atlas has no entry): curated annotation. The cell compartment is where the gene product is found, not where this structure was isolated.",
+      "zh-Hant": "Human Protein Atlas 為人類細胞株免疫螢光測定；Atlas 無資料者用 UniProt 人工註解。此為基因產物所在之細胞區室，並非此結構之分離來源。"
     },
     "card.loc.summary": {
       "en": "genes with a Human Protein Atlas location",

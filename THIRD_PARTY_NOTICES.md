@@ -30,9 +30,10 @@ Experimental structures (PDB and EMDB entries such as 5XTD and 4UG0) load from R
 
 | Item | Path | Licence | Source |
 | --- | --- | --- | --- |
-| Protein subcellular location, trimmed to 139 genes | `data/protein-location.json` | CC BY-SA 4.0 | The Human Protein Atlas, https://www.proteinatlas.org/humanproteome/subcellular |
+| Protein subcellular location, 139 genes | `data/protein-location.json` | CC BY-SA 4.0 | The Human Protein Atlas, https://www.proteinatlas.org/humanproteome/subcellular |
+| Protein subcellular location, 19 genes missing from the Atlas, marked `source: uniprot` | `data/protein-location.json` | CC BY 4.0 | UniProt, https://www.uniprot.org/ |
 
-Attribution: Thul PJ et al. (2017) Science 356:eaal3321; Uhlen M et al. (2015) Science 347:1260419. The file is a changed copy of the Atlas table, so it stays under CC BY-SA 4.0. The rest of the repository keeps the MIT licence.
+UniProt attribution: The UniProt Consortium, Nucleic Acids Res. Atlas attribution: Thul PJ et al. (2017) Science 356:eaal3321; Uhlen M et al. (2015) Science 347:1260419. The file is a changed copy of the Atlas table, so it stays under CC BY-SA 4.0. The rest of the repository keeps the MIT licence.
 
 ## Open items
 

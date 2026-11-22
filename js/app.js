@@ -313,7 +313,7 @@ function render(s) {
   if (compare) columnCells(s.muscle).forEach(c => c.data && ids.add(c.data));
   if (A && cell?.data) ids.add(cell.data);
   if (B && pdb?.cite) ids.add(pdb.cite);
-  if (B && pdb && (Object.values(ploc.genes).some(e => e.structure === pdb.id) || (point && ploc.genes[point.subunit]))) ids.add(ploc.cite);
+  if (B && pdb) Object.values(ploc.genes).filter(e => e.structure === pdb.id || (point && ploc.genes[point.subunit] === e)).forEach(e => ids.add(e.source === 'uniprot' ? ploc.citeUniprot : ploc.cite));
   if (A && !compare && cell?.id === 'hepatocyte') ids.add('bnid-105782');
   if (O || M) (sm ? modelCites(sm, s.level) : []).forEach(id => ids.add(id));
   $('sources-body').innerHTML = sm && !(O || M) ? `<li class="muted" style="list-style:none;margin-left:-1.4em">${html('tissue.source')}</li>` : ids.size
@@ -399,7 +399,7 @@ function locRows(g) {
   if (!e) return '';
   return `<dt>${html('card.loc.main')}</dt><dd>${e.main.map(locName).join(', ') || '–'}</dd>
     ${e.additional.length ? `<dt>${html('card.loc.extra')}</dt><dd>${e.additional.map(locName).join(', ')}</dd>` : ''}
-    <dt>${html('card.loc.grade')}</dt><dd>${esc(e.reliability)}</dd>`;
+    <dt>${html('card.loc.grade')}</dt><dd>${esc(e.reliability)}${e.source === 'uniprot' ? ` (UniProt ${esc(e.accession)})` : ''}</dd>`;
 }
 function locCard(rows, note = true) {
   return rows ? `<h4 class="card-sub">${html('card.loc')}</h4><dl class="kv">${rows}</dl>${note ? `<p class="muted" style="font-size:12.5px">${html('card.loc.note')}</p>` : ''}` : '';
