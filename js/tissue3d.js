@@ -455,6 +455,56 @@ export async function createTissueView(host, { onPick, elements }) {
       for (const d of [V(1, 0.5, 0.3), V(1, -0.4, 0.4), V(1, 0.1, -0.6)]) branch(V(0.9, 0.1, 0), d.normalize(), 0.7, 0.045, 1, 'axon', '#E8B04A');
     },
 
+    // General eukaryotic cell: generalised animal cell after a textbook figure. Shapes and positions are illustrative, not to scale.
+    'eukaryote-general'() {
+      const r = rng(11), CX = 5, CY = 3, CZ = 4, NUC = V(1.7, 0.4, -0.4), NR = 1.5;
+      ball([0, 0, 0], 1, '#E8B04A', 'membrane', [CX, CY, CZ], { opacity: 0.16 });
+      ball([0, 0, 0], 1, '#F2D27A', 'cytoplasm', [CX * 0.97, CY * 0.97, CZ * 0.97], { opacity: 0.08 });
+      // nucleus: envelope, chromatin, nucleolus
+      ball(NUC.toArray(), NR, '#8E7BC4', 'envelope', [1, 1, 1], { opacity: 0.3 });
+      ball(NUC.toArray(), NR * 0.8, '#B9A8E0', 'chromatin', [1, 1, 1], { opacity: 0.55 });
+      ball(NUC.clone().add(V(0.15, 0.1, 0.2)).toArray(), 0.4, '#5B4B9A', 'nucleolus');
+      const inside = (p, pad = 0) => (p.x / (CX - pad)) ** 2 + (p.y / (CY - pad)) ** 2 + (p.z / (CZ - pad)) ** 2 < 1 && p.distanceTo(NUC) > NR + 0.15;
+      const spot = (pad = 0.5) => { for (;;) { const p = V((r() * 2 - 1) * CX, (r() * 2 - 1) * CY, (r() * 2 - 1) * CZ); if (inside(p, pad)) return p; } };
+      const dots = (n, rad, color, part, at) => {
+        const im = new THREE.InstancedMesh(new THREE.SphereGeometry(rad, 8, 6), new THREE.MeshStandardMaterial({ color, roughness: 0.5 }), n), d = new THREE.Object3D();
+        for (let k = 0; k < n; k++) { d.position.copy(at()); d.updateMatrix(); im.setMatrixAt(k, d.matrix); }
+        im.userData.part = part; im.userData.base = 1; group.add(im); meshes.push(im);
+      };
+      // rough ER: flattened sheets wrapped on the near side of the nucleus, ribosomes on the faces
+      const sheetPts = [];
+      for (let i = 0; i < 7; i++) {
+        const rad = NR + 0.25 + i * 0.22, sh = ball(NUC.toArray(), rad, '#E27C9B', 'er-rough', [0.55, 1, 1.05], { opacity: 0.45 });
+        sh.geometry.dispose(); sh.geometry = new THREE.SphereGeometry(rad, 28, 16, -Math.PI * 0.55, Math.PI * 0.65, Math.PI * 0.2, Math.PI * 0.6);
+        sheetPts.push(rad);
+      }
+      dots(160, 0.045, '#8B1E2D', 'ribosome', () => { const rad = sheetPts[Math.floor(r() * sheetPts.length)], a = Math.PI * (-0.55 + r() * 0.65), b = Math.PI * (0.2 + r() * 0.6); return V(NUC.x - rad * Math.sin(b) * Math.cos(a) * 0.55 - 0.03, NUC.y + rad * Math.cos(b), NUC.z + rad * Math.sin(b) * Math.sin(a) * 1.05); });
+      dots(70, 0.045, '#8B1E2D', 'ribosome', () => spot());
+      // smooth ER: branching tubules
+      for (let k = 0; k < 7; k++) { const a = V(-1.6 + r() * 0.6, -1.4 + r() * 0.5, -1.6 + r() * 2.6), b = a.clone().add(V((r() - 0.5) * 1.6, (r() - 0.5) * 1.0, (r() - 0.5) * 1.6)), c = b.clone().add(V((r() - 0.5) * 1.2, (r() - 0.5) * 0.8, (r() - 0.5) * 1.2)); tube([a.toArray(), b.toArray(), c.toArray()], 0.11, '#C2417F', 'er-smooth'); ball(c.toArray(), 0.16, '#C2417F', 'er-smooth'); }
+      // Golgi: curved stack with vesicles
+      const G = V(2.2, -1.7, 1.7);
+      for (let i = 0; i < 5; i++) ball(G.clone().add(V(0, i * 0.17, 0)).toArray(), 0.9 - Math.abs(i - 2) * 0.1, '#E8923A', 'golgi', [1, 0.09, 0.55]);
+      for (let k = 0; k < 6; k++) ball(G.clone().add(V(-1.0 + r() * 2, r() * 0.9 - 0.2, 0.7 + r() * 0.3)).toArray(), 0.1, '#F2B36B', 'golgi');
+      // mitochondria: outer membrane with an inner capsule for the cristae
+      for (const [pos, rot] of [[V(-3, 1.1, 1.4), 0.5], [V(-3.2, -1.2, -1.4), -0.4]]) {
+        const o = put(new THREE.CapsuleGeometry(0.42, 1.1, 8, 16), '#D9534F', 'mito', { opacity: 0.55 }), i = put(new THREE.CapsuleGeometry(0.26, 0.9, 8, 16), '#F2B8A0', 'mito');
+        for (const m of [o, i]) { m.position.copy(pos); m.rotation.set(0.3, 0, Math.PI / 2 + rot); }
+      }
+      // lysosomes, vacuole
+      for (const p of [V(0.5, 2.2, 1.6), V(-1.4, 0.2, 2.7), V(3.4, 1.6, 2.0)]) ball(p.toArray(), 0.28, '#8A8F98', 'lysosome');
+      ball([-0.4, 2.4, -1.6], 0.6, '#B6BCC6', 'vacuole', [1, 0.7, 1], { opacity: 0.55 });
+      // centrioles: two barrels at right angles, microtubules radiating from them
+      const Cn = V(-0.9, 1.4, 0.8);
+      for (const rotz of [0, Math.PI / 2]) { const c = put(new THREE.CylinderGeometry(0.13, 0.13, 0.55, 12), '#E8D84A', 'centriole'); c.position.copy(Cn).add(V(rotz ? 0.18 : 0, rotz ? 0 : 0.18, 0)); c.rotation.z = rotz; }
+      for (let k = 0; k < 14; k++) { const d = V(r() * 2 - 1, r() * 2 - 1, r() * 2 - 1).normalize(), end = Cn.clone().addScaledVector(d, 1.5 + r() * 2.2); if (!inside(end, 0.2)) continue; tube([Cn.toArray(), Cn.clone().lerp(end, 0.5).add(V((r() - 0.5) * 0.3, (r() - 0.5) * 0.3, (r() - 0.5) * 0.3)).toArray(), end.toArray()], 0.03, '#B8793A', 'microtubule'); }
+      // microfilaments under the membrane, intermediate filaments around the nucleus
+      for (let k = 0; k < 20; k++) { const a = r() * Math.PI * 2, b = (r() - 0.5) * Math.PI * 0.8, q = (t) => V(Math.cos(a + t) * Math.cos(b) * (CX - 0.25), Math.sin(b + t * 0.4) * (CY - 0.25), Math.sin(a + t) * Math.cos(b) * (CZ - 0.25)); tube([q(0).toArray(), q(0.18).toArray(), q(0.36).toArray()], 0.025, '#4F8FD6', 'microfilament'); }
+      for (let k = 0; k < 10; k++) { const d = V(r() * 2 - 1, r() * 2 - 1, r() * 2 - 1).normalize(), a = NUC.clone().addScaledVector(d, NR + 0.2), e = NUC.clone().addScaledVector(d, NR + 1.6 + r()); if (!inside(e, 0.3)) continue; tube([a.toArray(), a.clone().lerp(e, 0.5).add(V((r() - 0.5) * 0.4, (r() - 0.5) * 0.4, (r() - 0.5) * 0.4)).toArray(), e.toArray()], 0.04, '#6F9E6A', 'intermediate'); }
+      // glycogen granules in clusters
+      for (let c = 0; c < 4; c++) { const ctr = spot(1), n = 14; dots(n, 0.06, '#D4A017', 'glycogen', () => ctr.clone().add(V((r() - 0.5) * 0.7, (r() - 0.5) * 0.7, (r() - 0.5) * 0.7))); }
+    },
+
     // Bacterial cell (E. coli): capsule envelope, nucleoid, plasmids, ribosomes, pili and flagella. Adapted from the supplied procedural model.
     ecoli() {
       const r = rng(7), R = 2, L = 4;

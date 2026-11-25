@@ -24,6 +24,8 @@
   "compareColumns": ["hepatocyte", "enterocyte", "muscle", "plant-mesophyll", "ecoli", "bacteriophage"],
   "muscleTypes": ["skeletal-myocyte", "cardiomyocyte", "smooth-myocyte"],
   "cells": [
+    { "id": "eukaryote-general", "kind": "animal", "schematic": true, "name": { "en": "General eukaryotic cell", "zh-Hant": "一般真核細胞" }, "release": 2,
+      "species": { "en": "Generalised animal cell, textbook schematic", "zh-Hant": "一般動物細胞，教科書示意圖" }, "basis": "cell" },
     { "id": "hepatocyte", "kind": "animal", "name": { "en": "Hepatocyte", "zh-Hant": "肝細胞" }, "release": 1, "sizeUm": [20, 30],
       "species": { "en": "Rat liver", "zh-Hant": "大鼠肝臟" }, "basis": "cell", "data": "bnid-110373",
       "fractions": [

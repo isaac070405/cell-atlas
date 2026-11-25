@@ -10,7 +10,7 @@ Names and long text use an object with `en` and `zh-Hant` keys. Write Traditiona
 | --- | --- |
 | `compartments` | One entry per organelle: `id`, colour `token` (a CSS variable from `css/tokens.css`), `name`, and `sizes[]` with a `cite` and a `text` |
 | `compareRows`, `compareColumns`, `muscleTypes` | Layout of the compare view |
-| `cells` | Eight cells (six with volume fractions, plus E. coli and bacteriophage T4 as schematic models): `id`, `kind` (`animal`, `plant`, `bacterial`, `virus`), `name`, `release`, `species`, `basis`, `data` (a citation id), `fractions[]` |
+| `cells` | Nine cells (six with volume fractions, plus the general eukaryotic cell, E. coli and bacteriophage T4 as schematic models): `id`, `kind` (`animal`, `plant`, `bacterial`, `virus`), `name`, `release`, `species`, `basis`, `data` (a citation id), `fractions[]` |
 | `structures` | Molecular structures: `id` (PDB ID), `name`, `method`, `from`, `release`, `cite` |
 
 Rules for `fractions[]`:
@@ -44,7 +44,7 @@ Preset views for Module B (5XTD, 4UG0, 1TQN, 1ZUM, 1MAZ, 1G5M, 2IMS, 1F16), keye
 
 ## `anatomy.json` and `tissues.json`
 
-`anatomy.json` classifies the 3D Anatomy Model levels: `systems[]` with the model's system `keys` (`null` shows the whole body) and `match` patterns tested against part labels. `tissues.json` holds 21 schematic tissue models (epithelial, connective, muscular, nervous, neuroglia and neurons) and the `cellModels` for E. coli and bacteriophage T4. They carry no measured values and follow textbook figures.
+`anatomy.json` classifies the 3D Anatomy Model levels: `systems[]` with the model's system `keys` (`null` shows the whole body) and `match` patterns tested against part labels. `tissues.json` holds 21 schematic tissue models (epithelial, connective, muscular, nervous, neuroglia and neurons) and the `cellModels` for the general eukaryotic cell (17 parts: plasma membrane, cytoplasm, nuclear membrane, chromatin, nucleolus, rough and smooth ER, Golgi apparatus, mitochondrion, lysosome, vacuole, centrioles, ribosomes, glycogen and the three cytoskeletal fibres), E. coli and bacteriophage T4. They carry no measured values and follow textbook figures.
 
 ## `bcl2-family/`
 

@@ -1628,6 +1628,223 @@
  ],
  "cellModels": [
   {
+   "id": "eukaryote-general",
+   "name": {
+    "en": "General eukaryotic cell",
+    "zh-Hant": "一般真核細胞"
+   },
+   "summary": {
+    "en": "A generalised animal cell with the organelles of a textbook figure: nucleus, endoplasmic reticulum, Golgi apparatus, mitochondria, lysosomes, vacuole, centrioles and cytoskeleton. Schematic: no measured volume fractions.",
+    "zh-Hant": "依教科書圖示繪成的一般動物細胞，含細胞核、內質網、高爾基體、粒線體、溶酶體、液泡、中心粒與細胞骨架。示意圖：沒有量度的體積比例。"
+   },
+   "parts": [
+   {
+    "id": "membrane",
+    "color": "#E8B04A",
+    "name": {
+     "en": "Plasma membrane",
+     "zh-Hant": "細胞膜"
+    },
+    "text": {
+     "en": "Lipid bilayer that bounds the cell and controls what enters and leaves. Drawn as one translucent shell.",
+     "zh-Hant": "包圍細胞的脂質雙層，控制物質進出。圖中以一層半透明外殼表示。"
+    }
+   },
+   {
+    "id": "cytoplasm",
+    "color": "#F2D27A",
+    "name": {
+     "en": "Cytoplasm",
+     "zh-Hant": "細胞質"
+    },
+    "text": {
+     "en": "Everything inside the plasma membrane except the nucleus: the cytosol with its organelles and cytoskeleton.",
+     "zh-Hant": "細胞膜內、細胞核以外的全部內容：細胞質基質連同其中的細胞器與細胞骨架。"
+    }
+   },
+   {
+    "id": "envelope",
+    "color": "#8E7BC4",
+    "name": {
+     "en": "Nuclear membrane",
+     "zh-Hant": "核膜"
+    },
+    "text": {
+     "en": "Double membrane around the nucleus, studded with pores and continuous with the rough ER.",
+     "zh-Hant": "包圍細胞核的雙層膜，佈滿核孔，並與粗面內質網相連。"
+    }
+   },
+   {
+    "id": "chromatin",
+    "color": "#B9A8E0",
+    "name": {
+     "en": "Chromatin",
+     "zh-Hant": "染色質"
+    },
+    "text": {
+     "en": "DNA wound on histones, filling the nuclear interior.",
+     "zh-Hant": "纏繞在組織蛋白上的 DNA，充滿細胞核內部。"
+    }
+   },
+   {
+    "id": "nucleolus",
+    "color": "#5B4B9A",
+    "name": {
+     "en": "Nucleolus",
+     "zh-Hant": "核仁"
+    },
+    "text": {
+     "en": "Dense region of the nucleus where ribosomal RNA is made and ribosomes begin to assemble.",
+     "zh-Hant": "細胞核內的緻密區域，在此製造核糖體 RNA，並開始組裝核糖體。"
+    }
+   },
+   {
+    "id": "er-rough",
+    "color": "#E27C9B",
+    "name": {
+     "en": "Rough endoplasmic reticulum",
+     "zh-Hant": "粗面內質網"
+    },
+    "text": {
+     "en": "Stacked flattened sacs coated with ribosomes. Makes secreted and membrane proteins.",
+     "zh-Hant": "表面附有核糖體的層疊扁平囊，製造分泌蛋白與膜蛋白。"
+    }
+   },
+   {
+    "id": "er-smooth",
+    "color": "#C2417F",
+    "name": {
+     "en": "Smooth endoplasmic reticulum",
+     "zh-Hant": "滑面內質網"
+    },
+    "text": {
+     "en": "Branching tubules with no ribosomes. Makes lipids and handles detoxification and calcium storage in many cells.",
+     "zh-Hant": "不附核糖體的分支小管，製造脂質；在許多細胞中也負責解毒與儲存鈣。"
+    }
+   },
+   {
+    "id": "golgi",
+    "color": "#E8923A",
+    "name": {
+     "en": "Golgi apparatus",
+     "zh-Hant": "高爾基體"
+    },
+    "text": {
+     "en": "Stack of cisternae that modifies and sorts proteins from the ER into vesicles.",
+     "zh-Hant": "由扁囊層疊而成，修飾來自內質網的蛋白質，並分選到囊泡中。"
+    }
+   },
+   {
+    "id": "mito",
+    "color": "#D9534F",
+    "name": {
+     "en": "Mitochondrion",
+     "zh-Hant": "粒線體"
+    },
+    "text": {
+     "en": "Double-membrane organelle that makes most of the cell's ATP by oxidative phosphorylation.",
+     "zh-Hant": "雙層膜細胞器，經氧化磷酸化製造細胞大部分 ATP。"
+    }
+   },
+   {
+    "id": "lysosome",
+    "color": "#8A8F98",
+    "name": {
+     "en": "Lysosome",
+     "zh-Hant": "溶酶體"
+    },
+    "text": {
+     "en": "Membrane-bound sac of digestive enzymes that breaks down worn-out organelles and material taken up from outside.",
+     "zh-Hant": "內含消化酵素的膜囊，分解老化的細胞器與自外界攝入的物質。"
+    }
+   },
+   {
+    "id": "vacuole",
+    "color": "#B6BCC6",
+    "name": {
+     "en": "Vacuole",
+     "zh-Hant": "液泡"
+    },
+    "text": {
+     "en": "Membrane-bound sac that stores fluid and other material. In animal cells it is small and short-lived.",
+     "zh-Hant": "儲存液體與其他物質的膜囊；在動物細胞中體積小、存在時間短。"
+    }
+   },
+   {
+    "id": "centriole",
+    "color": "#E8D84A",
+    "name": {
+     "en": "Centrioles",
+     "zh-Hant": "中心粒"
+    },
+    "text": {
+     "en": "Pair of short barrels at right angles, each a ring of microtubule blades. They organise the microtubules of an animal cell.",
+     "zh-Hant": "成對的短筒、彼此成直角，每個由一圈微管組成；負責組織動物細胞的微管。"
+    }
+   },
+   {
+    "id": "ribosome",
+    "color": "#8B1E2D",
+    "name": {
+     "en": "Ribosomes",
+     "zh-Hant": "核糖體"
+    },
+    "text": {
+     "en": "Make proteins. Bound to the rough ER or free in the cytosol. The 80S ribosome (PDB 4UG0) can be opened in Module B.",
+     "zh-Hant": "製造蛋白質；附在粗面內質網上，或游離在細胞質基質中。80S 核糖體（PDB 4UG0）可在 Module B 打開。"
+    }
+   },
+   {
+    "id": "glycogen",
+    "color": "#D4A017",
+    "name": {
+     "en": "Glycogen granules",
+     "zh-Hant": "肝醣顆粒"
+    },
+    "text": {
+     "en": "Clusters of branched glucose polymer stored in the cytosol as an energy reserve.",
+     "zh-Hant": "儲存在細胞質基質中的分支葡萄糖聚合物顆粒，作為能量儲備。"
+    }
+   },
+   {
+    "id": "microfilament",
+    "color": "#4F8FD6",
+    "name": {
+     "en": "Microfilaments",
+     "zh-Hant": "微絲"
+    },
+    "text": {
+     "en": "Thinnest cytoskeletal fibres, made of actin. They shape the cell surface and drive crawling and contraction.",
+     "zh-Hant": "最細的細胞骨架纖維，由肌動蛋白組成；塑造細胞表面，並驅動爬行與收縮。"
+    }
+   },
+   {
+    "id": "intermediate",
+    "color": "#6F9E6A",
+    "name": {
+     "en": "Intermediate filaments",
+     "zh-Hant": "中間絲"
+    },
+    "text": {
+     "en": "Rope-like fibres that give the cell mechanical strength.",
+     "zh-Hant": "繩索狀纖維，賦予細胞機械強度。"
+    }
+   },
+   {
+    "id": "microtubule",
+    "color": "#B8793A",
+    "name": {
+     "en": "Microtubules",
+     "zh-Hant": "微管"
+    },
+    "text": {
+     "en": "Hollow tubes of tubulin that form tracks for transport and the spindle for cell division.",
+     "zh-Hant": "由微管蛋白組成的中空管，構成運輸軌道與細胞分裂的紡錘體。"
+    }
+   }
+   ]
+  },
+  {
    "id": "ecoli",
    "name": {
     "en": "Bacterial cell (E. coli)",
