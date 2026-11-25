@@ -59,7 +59,7 @@ This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3
 | `THIRD_PARTY_NOTICES.md` | Licences of vendored libraries and models |
 | `data/catalog.json` | Cells with volume fractions, compartments, structures |
 | `data/citations.json` | Shared citation registry (`verified` or `pending`) |
-| `data/tour-points.json` | Module B preset views for 5XTD, 4UG0, 1TQN and 1ZUM, with citations |
+| `data/tour-points.json` | Module B preset views for 5XTD, 4UG0, 1TQN and 1ZUM, with citations (the Bcl-2 structures have none yet) |
 | `data/anatomy.json`, `data/tissues.json` | System, organ and tissue lists for the anatomy levels |
 | `data/protein-location.json` | HPA and UniProt subcellular location for 158 genes |
 | `data/organelles.json`, `data/atoms.json` | Organelle and atom models for the Organelle and Atom levels |
