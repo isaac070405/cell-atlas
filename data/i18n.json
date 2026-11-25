@@ -673,6 +673,22 @@
       "en": "Neurons",
       "zh-Hant": "神經元"
     },
+    "tissue.cat.sub.blood": {
+      "en": "Blood",
+      "zh-Hant": "血液"
+    },
+    "tissue.cat.sub.adipocyte": {
+      "en": "Adipocytes",
+      "zh-Hant": "脂肪細胞"
+    },
+    "tissue.cat.sub.cells": {
+      "en": "Connective tissue cells",
+      "zh-Hant": "結締組織細胞"
+    },
+    "tissue.cat.grp.formed": {
+      "en": "Formed elements",
+      "zh-Hant": "血球及血小板"
+    },
     "tissue.cat.grp.ground": {
       "en": "Ground substance",
       "zh-Hant": "基質"
