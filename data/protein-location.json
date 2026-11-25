@@ -170,6 +170,10 @@
   "Peroxisome membrane": {
    "en": "Peroxisome membrane",
    "zh-Hant": "過氧化體膜"
+  },
+  "Mitochondrion outer membrane": {
+   "en": "Mitochondrion outer membrane",
+   "zh-Hant": "粒線體外膜"
   }
  },
  "genes": {
@@ -497,9 +501,20 @@
    ],
    "source": "hpa"
   },
+  "BAK1": {
+   "source": "uniprot",
+   "accession": "Q16611",
+   "structure": "2IMS",
+   "reliability": "Experimental",
+   "main": [
+    "Mitochondrion outer membrane"
+   ],
+   "additional": [],
+   "go": []
+  },
   "BAX": {
    "ensembl": "ENSG00000087088",
-   "structure": "candidate",
+   "structure": "1F16",
    "reliability": "Approved",
    "main": [
     "Vesicles"
@@ -515,7 +530,7 @@
   },
   "BCL2": {
    "ensembl": "ENSG00000171791",
-   "structure": "candidate",
+   "structure": "1G5M",
    "reliability": "Enhanced",
    "main": [
     "Mitochondria"
@@ -528,7 +543,7 @@
   },
   "BCL2L1": {
    "ensembl": "ENSG00000171552",
-   "structure": "candidate",
+   "structure": "1MAZ",
    "reliability": "Approved",
    "main": [
     "Mitochondria"

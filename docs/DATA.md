@@ -32,7 +32,7 @@ One object per source, keyed by id (for example `guo-2017`). Fields: `source`, `
 
 ## `protein-location.json`
 
-Human Protein Atlas subcellular location for the genes of the Module B structures. `genes` is keyed by gene symbol. Each entry has `source` (`hpa` or `uniprot`), `structure` (PDB ID, or `candidate`), `reliability` (HPA: Enhanced, Supported, Approved, Uncertain; UniProt: Experimental, Annotated), `ensembl` or `accession`, `main[]`, `additional[]` and `go[]`. Rebuild with `python3 scripts/build-protein-location.py <export>`. 19 genes missing from the export (ALDH2, HMGCR, LCT, UCP1, ATP4A, NDUFS7, ATP5 and NUP subunits) come from UniProt, so the build needs network access to rest.uniprot.org. UniProt location names differ from HPA names. CC BY-SA 4.0, see `THIRD_PARTY_NOTICES.md`.
+Human Protein Atlas subcellular location for the genes of the Module B structures. `genes` is keyed by gene symbol. Each entry has `source` (`hpa` or `uniprot`), `structure` (PDB ID, or `candidate`), `reliability` (HPA: Enhanced, Supported, Approved, Uncertain; UniProt: Experimental, Annotated), `ensembl` or `accession`, `main[]`, `additional[]` and `go[]`. Rebuild with `python3 scripts/build-protein-location.py <export>`. 20 genes missing from the export (BAK1, ALDH2, HMGCR, LCT, UCP1, ATP4A, NDUFS7, ATP5 and NUP subunits) come from UniProt, so the build needs network access to rest.uniprot.org. UniProt location names differ from HPA names. CC BY-SA 4.0, see `THIRD_PARTY_NOTICES.md`.
 
 ## `tour-points.json`
 
