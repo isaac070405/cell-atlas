@@ -48,7 +48,7 @@ Preset views for Module B (5XTD, 4UG0, 1TQN, 1ZUM), keyed by PDB ID. Each point 
 
 ## `bcl2-family/`
 
-PDB structure catalogue for the Bcl-2 family: 543 entries across 10 family members (plus one non-member control, BIT1/PTRH2). `bcl2_family_pdb_catalogue.csv` (and the `.xlsx` copy) lists one row per entry with UniProt accession, species, construct class, method, resolution, release year, PubMed ID and DOI. `bcl2_family_pdb_summary.csv` counts entries per member by method (X-ray, NMR, cryo-EM). The files are reference tables and no page loads them yet.
+PDB structure catalogue for the Bcl-2 family: 543 rows covering 445 unique PDB IDs, across 9 family members (BIK has no entries) plus one non-member control, BIT1/PTRH2. `bcl2_family_pdb_catalogue.csv` (and the `.xlsx` copy) lists one row per entry and family member with UniProt accession, species, construct class, method, resolution, release year, PubMed ID and DOI. `bcl2_family_pdb_summary.csv` counts entries per member by method (X-ray, NMR, cryo-EM). The files are reference tables and no page loads them yet.
 
 ## Adding a value
 
