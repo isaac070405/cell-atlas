@@ -74,6 +74,10 @@
     { "id": "5XTD", "name": { "en": "Human Complex I", "zh-Hant": "人類呼吸鏈 Complex I" }, "method": "Cryo-EM, 3.7 Å", "from": "mitochondrial inner membrane", "release": 1, "cite": "guo-2017" },
     { "id": "4UG0", "name": { "en": "Human 80S ribosome", "zh-Hant": "人類 80S 核糖體" }, "method": "Cryo-EM, 3.6 Å", "from": "rough ER / cytosol", "release": 1, "cite": "khatter-2015" },
     {"id": "1TQN", "name": {"en": "Human cytochrome P450 3A4", "zh-Hant": "人類細胞色素 P450 3A4"}, "method": "X-ray, 2.05 Å", "from": "endoplasmic reticulum (microsomal)", "release": 1, "cite": "yano-2004"},
-    {"id": "1ZUM", "name": {"en": "Human ALDH2*2 (Asian variant)", "zh-Hant": "人類 ALDH2*2（亞洲變異體）"}, "method": "X-ray, 2.10 Å", "from": "mitochondrial matrix", "release": 1, "cite": "larson-2005"}
+    {"id": "1ZUM", "name": {"en": "Human ALDH2*2 (Asian variant)", "zh-Hant": "人類 ALDH2*2（亞洲變異體）"}, "method": "X-ray, 2.10 Å", "from": "mitochondrial matrix", "release": 1, "cite": "larson-2005"},
+    {"id": "1MAZ", "name": {"en": "Human BCL-XL (anti-apoptotic)", "zh-Hant": "人類 BCL-XL（抗凋亡）"}, "method": "X-ray, 2.2 Å", "from": "mitochondrial outer membrane / cytosol", "release": 1, "cite": "muchmore-1996"},
+    {"id": "1G5M", "name": {"en": "Human BCL-2 (anti-apoptotic, BCL-XL loop chimera)", "zh-Hant": "人類 BCL-2（抗凋亡，BCL-XL 環區嵌合體）"}, "method": "Solution NMR", "from": "mitochondrial outer membrane / cytosol", "release": 1, "cite": "petros-2001"},
+    {"id": "2IMS", "name": {"en": "Human BAK homodimer (pore former, calpain-cleaved)", "zh-Hant": "人類 BAK 同源二聚體（成孔蛋白，鈣蛋白酶切割）"}, "method": "X-ray, 1.48 Å", "from": "mitochondrial outer membrane", "release": 1, "cite": "moldoveanu-2006"},
+    {"id": "1F16", "name": {"en": "Human BAX (pore former, full length)", "zh-Hant": "人類 BAX（成孔蛋白，全長）"}, "method": "Solution NMR", "from": "cytosol, inserts into mitochondrial membranes", "release": 1, "cite": "suzuki-2000"}
   ]
 }

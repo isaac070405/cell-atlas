@@ -36,7 +36,7 @@ Human Protein Atlas subcellular location for the genes of the Module B structure
 
 ## `tour-points.json`
 
-Preset views for Module B (5XTD, 4UG0, 1TQN, 1ZUM), keyed by PDB ID. Each point has `id`, `label`, `kind`, `comp`, `chain`, `subunit`, `xyz` (Å in the deposited frame, model 1), `basis` and `select` (a Mol* locus). `basis` is `computed` (read from deposited coordinates) or `literature` (stated in the cited paper). Each structure carries a `cite`.
+Preset views for Module B (5XTD, 4UG0, 1TQN, 1ZUM, 1MAZ, 1G5M, 2IMS, 1F16), keyed by PDB ID. Each point has `id`, `label`, `kind`, `comp`, `chain`, `subunit`, `xyz` (Å in the deposited frame, model 1), `basis` and `select` (a Mol* locus). `basis` is `computed` (read from deposited coordinates) or `literature` (stated in the cited paper). Each structure carries a `cite`.
 
 ## `organelles.json` and `atoms.json`
 
