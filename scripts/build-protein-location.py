@@ -53,7 +53,7 @@ for g, sid in EXTRA.items():
               'reliability': 'Experimental' if exp else 'Annotated', 'main': locs, 'additional': [], 'go': go}
     n[sid] = n.get(sid, 0) + 1
 # Bcl-2 family genes whose structures are now in Module B
-for g, sid in {'BCL2': '1G5M', 'BCL2L1': '1MAZ', 'BAX': '1F16'}.items():
+for g, sid in {'BCL2': '1G5M', 'BCL2L1': '1MAZ', 'BAX': '1F16', 'MCL1': '2PQK'}.items():
     if g in out: out[g]['structure'] = sid
 for e in out.values(): e.setdefault('source', 'hpa')
 doc = {'_schema': 'Subcellular location for genes of the structures in catalog.json. source is hpa (Human Protein Atlas, reliability Enhanced, Supported, Approved or Uncertain) or uniprot (genes missing from the HPA export, reliability Experimental when UniProt cites experimental evidence, else Annotated). main and additional are HPA location names; go lists "name (GO:id)". Rebuild with scripts/build-protein-location.py. cite is in citations.json.',

@@ -586,6 +586,18 @@
       "url": "https://www.rcsb.org/structure/1F16",
       "status": "verified"
     },
+    "fire-2010": {
+      "source": "Fire et al. (2010) Protein Sci 19:507–519",
+      "detail": {
+        "en": "Human MCL-1 bound to a BH3 peptide from human Bim, PDB 2PQK, 2.0 Å",
+        "zh-Hant": "人類 MCL-1 與人類 Bim 的 BH3 肽複合體，PDB 2PQK，2.0 Å"
+      },
+      "species": "Human",
+      "method": "X-ray crystallography, 2.0 Å",
+      "year": 2010,
+      "url": "https://www.rcsb.org/structure/2PQK",
+      "status": "verified"
+    },
     "hpa-subcellular": {
       "source": "The Human Protein Atlas, subcellular location",
       "detail": {

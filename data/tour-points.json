@@ -622,6 +622,37 @@
           }
         }
       ]
+    },
+    "2PQK": {
+      "cite": "fire-2010",
+      "points": [
+        {
+          "id": "bim-bh3",
+          "label": {
+            "en": "Bim BH3 peptide in the binding groove",
+            "zh-Hant": "結合於凹槽的 Bim BH3 肽"
+          },
+          "kind": "peptide",
+          "chain": "B",
+          "authChain": "B",
+          "subunit": "Bim BH3 peptide",
+          "residues": {
+            "firstAuthSeqId": 0,
+            "lastAuthSeqId": 22,
+            "modelled": 23
+          },
+          "xyz": [
+            12.4,
+            26.1,
+            35.1
+          ],
+          "basis": "computed",
+          "support": "Fire et al. (2010): anti-apoptotic Bcl-2 proteins have a surface groove into which the α-helical BH3 regions of certain pro-apoptotic proteins bind. In 2PQK, chain B is the human Bim BH3 peptide (23 residues); the point is the centroid of its atoms in model 1.",
+          "select": {
+            "label_asym_id": "B"
+          }
+        }
+      ]
     }
   }
 }

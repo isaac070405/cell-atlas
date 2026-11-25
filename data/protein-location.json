@@ -622,7 +622,7 @@
   },
   "MCL1": {
    "ensembl": "ENSG00000143384",
-   "structure": "candidate",
+   "structure": "2PQK",
    "reliability": "Enhanced",
    "main": [
     "Mitochondria"
