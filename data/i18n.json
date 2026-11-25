@@ -245,6 +245,62 @@
       "en": "Share of whole-cell volume on one shared 0–100% scale. A span shows the range between people or species.",
       "zh-Hant": "佔整個細胞體積嘅百分比，四欄共用同一條 0–100% 比例尺。橫條係範圍，代表個體或者物種之間嘅差異。"
     },
+    "compare.sub.label": {
+      "en": "Comparison",
+      "zh-Hant": "比較類型"
+    },
+    "compare.sub.cells": {
+      "en": "Cells",
+      "zh-Hant": "細胞"
+    },
+    "compare.sub.bcl2": {
+      "en": "Bcl-2 family",
+      "zh-Hant": "Bcl-2 家族"
+    },
+    "compare.bcl2.title": {
+      "en": "Five Bcl-2 family members side by side",
+      "zh-Hant": "五個 Bcl-2 家族成員並排比較"
+    },
+    "compare.bcl2.lede": {
+      "en": "Experimental structures in the RCSB PDB for each member. Bars share one scale per row. Open a member to see its Module B structure.",
+      "zh-Hant": "各成員在 RCSB PDB 中的實驗結構。每列的橫條共用同一比例尺。點擊成員可打開其 Module B 結構。"
+    },
+    "compare.bcl2.member": {
+      "en": "Member",
+      "zh-Hant": "成員"
+    },
+    "compare.bcl2.uniprot": {
+      "en": "UniProt (human)",
+      "zh-Hant": "UniProt（人類）"
+    },
+    "compare.bcl2.entries": {
+      "en": "PDB entries",
+      "zh-Hant": "PDB 條目"
+    },
+    "compare.bcl2.xray": {
+      "en": "X-ray",
+      "zh-Hant": "X 射線晶體學"
+    },
+    "compare.bcl2.nmr": {
+      "en": "NMR",
+      "zh-Hant": "核磁共振"
+    },
+    "compare.bcl2.cryoem": {
+      "en": "Cryo-EM",
+      "zh-Hant": "冷凍電鏡"
+    },
+    "compare.bcl2.best": {
+      "en": "Best resolution",
+      "zh-Hant": "最佳解析度"
+    },
+    "compare.bcl2.years": {
+      "en": "Released",
+      "zh-Hant": "發佈年份"
+    },
+    "compare.bcl2.footnote": {
+      "en": "Counts are unique PDB IDs per member, including mouse and rat orthologs and BH3 peptide complexes. Method counts add up to the total. The catalogue is in data/bcl2-family.",
+      "zh-Hant": "數字為每個成員不重複的 PDB 編號，包括小鼠與大鼠的同源蛋白及 BH3 肽複合體。方法數目加起來等於總數。目錄見 data/bcl2-family。"
+    },
     "compare.compartment": {
       "en": "Compartment",
       "zh-Hant": "區室"

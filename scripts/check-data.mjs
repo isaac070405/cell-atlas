@@ -37,6 +37,14 @@ if (!citations[loc.cite]) bad(`protein-location: cite ${loc.cite} missing`);
 for (const [g, e] of Object.entries(loc.genes)) if (!citations[loc.citeUniprot]) bad(`protein-location: cite ${loc.citeUniprot} missing`);
 for (const [g, e] of Object.entries(loc.genes)) if (!['Enhanced', 'Supported', 'Approved', 'Uncertain', 'Experimental', 'Annotated'].includes(e.reliability) || !e.main.length && !e.additional.length) bad(`protein-location ${g}: reliability or location`);
 console.log(`protein locations: ${Object.keys(loc.genes).length}`);
+const fam = read('bcl2-compare.json');
+if (!citations[fam.cite]) bad(`bcl2-compare: cite ${fam.cite} missing`);
+for (const m of fam.members) {
+  if (!cat.structures.some(s => s.id === m.structure)) bad(`bcl2-compare ${m.id}: structure ${m.structure} not in catalog`);
+  if (m.xray + m.nmr + m.cryoem !== m.entries) bad(`bcl2-compare ${m.id}: methods ${m.xray + m.nmr + m.cryoem} vs entries ${m.entries}`);
+  if (m.firstRelease > m.lastRelease) bad(`bcl2-compare ${m.id}: release years`);
+}
+console.log(`bcl2 compare members: ${fam.members.length}`);
 console.log(`tissue models: ${tis.tissues.length}`);
 const orgs = read('organelles.json'), atoms = read('atoms.json');
 for (const m of orgs.models) {

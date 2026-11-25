@@ -646,6 +646,18 @@
       "url": "https://www.rcsb.org/structure/1CAG",
       "status": "verified"
     },
+    "bcl2-pdb-catalogue": {
+      "source": "Bcl-2 family PDB catalogue compiled for this atlas (data/bcl2-family/)",
+      "detail": {
+        "en": "Unique PDB IDs per family member from UniProt accession searches of the RCSB PDB, with method, best resolution and release years. Counts were recomputed from the catalogue CSV; the catalogue was not re-queried against RCSB.",
+        "zh-Hant": "依 UniProt 登錄號在 RCSB PDB 搜尋所得，按家族成員統計不重複 PDB 編號，並列出方法、最佳解析度與發佈年份。數字由目錄 CSV 重新計算，未再向 RCSB 查詢。"
+      },
+      "species": "Human, with mouse and rat orthologs",
+      "method": "PDB entry counts (X-ray, NMR, cryo-EM)",
+      "year": 2026,
+      "url": "https://github.com/isaac070405/cell-atlas/tree/main/data/bcl2-family",
+      "status": "verified"
+    },
     "hpa-subcellular": {
       "source": "The Human Protein Atlas, subcellular location",
       "detail": {

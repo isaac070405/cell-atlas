@@ -2,8 +2,8 @@
 // Both draw on one 0–100% scale so a 0.5% compartment looks small next to 79%.
 import { html, text, esc } from './i18n.js';
 
-let cat;
-export const initCompare = catalog => { cat = catalog; };
+let cat, bcl2;
+export const initCompare = (catalog, family) => { cat = catalog; bcl2 = family; };
 
 export const comp = id => cat.compartments.find(c => c.id === id);
 export const cellById = id => cat.cells.find(c => c.id === id);
@@ -47,7 +47,32 @@ export function bar(f, orgId) {
 
 const swatch = orgId => `<span class="swatch" style="--c:var(${comp(orgId).token})" aria-hidden="true"></span>`;
 
+// Switch between the cell comparison and the Bcl-2 family table
+const subSwitch = cmp => `<div class="seg seg-sm" role="radiogroup" aria-label="${esc(text('compare.sub.label'))}">${
+  ['cells', 'bcl2'].map(k => `<button role="radio" data-cmp="${k}" aria-checked="${k === cmp}">${html(`compare.sub.${k}`)}</button>`).join('')}</div>`;
+
+// Bcl-2 family: members as columns, PDB statistics as rows. Bars scale to the largest count in the row.
+export function renderBcl2() {
+  const ms = bcl2.members, sw = k => `var(--org-${k})`;
+  const colour = m => sw(m.class.en === 'Anti-apoptotic' ? 'nucleus' : 'mito');
+  const head = ms.map(m => `<th scope="col"><a class="col-head chip-jump" href="?pdb=${esc(m.structure)}" data-pdb="${esc(m.structure)}" title="${esc(text('compare.jump'))}">${html(m.name)}</a>
+      <span class="col-species">${html(m.class)}</span></th>`).join('');
+  const count = key => `<tr><th scope="row">${html(`compare.bcl2.${key}`)}</th>${ms.map(m => {
+    const max = Math.max(...ms.map(x => x[key]));
+    return `<td><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:${max ? m[key] / max * 100 : 0}%;--c:${colour(m)}"></span></span><span class="val">${m[key]}</span></td>`;
+  }).join('')}</tr>`;
+  const plain = (key, f) => `<tr><th scope="row">${html(`compare.bcl2.${key}`)}</th>${ms.map(m => `<td><span class="val">${esc(f(m))}</span></td>`).join('')}</tr>`;
+  return `${subSwitch('bcl2')}<p class="compare-lede">${html('compare.bcl2.lede')}</p>
+    <div class="compare-scroll"><table class="compare">
+      <thead><tr><th scope="col" class="corner">${html('compare.bcl2.member')}</th>${head}</tr></thead>
+      <tbody>${plain('uniprot', m => m.uniprot)}${count('entries')}${count('xray')}${count('nmr')}${count('cryoem')}
+      ${plain('best', m => `${m.bestResolution} Å`)}${plain('years', m => `${m.firstRelease}–${m.lastRelease}`)}</tbody>
+    </table></div>
+    <p class="compare-foot">${html('compare.bcl2.footnote')}</p>`;
+}
+
 export function renderCompare(s) {
+  if (s.cmp === 'bcl2') return renderBcl2();
   const cells = columnCells(s.muscle);
   const head = cells.map((c, i) => {
     const isMuscle = cat.compareColumns[i] === 'muscle';
@@ -73,7 +98,7 @@ export function renderCompare(s) {
       return `<tr><th scope="row"><span class="row-label">${swatch(r)}<span>${html(k.name)}${jump}</span></span></th>${tds}</tr>`;
     }).join('');
 
-  return `<p class="compare-lede">${html('compare.lede')}</p>
+  return `${subSwitch('cells')}<p class="compare-lede">${html('compare.lede')}</p>
     <div class="compare-scroll"><table class="compare">
       <thead><tr><th scope="col" class="corner">${html('compare.compartment')}</th>${head}</tr></thead>
       <tbody>${rows}</tbody>

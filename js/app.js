@@ -6,8 +6,8 @@ import { buildModel, crowded } from './cellmodel.js';
 import { showStructure } from './molview.js';
 
 const load = p => fetch(p).then(r => r.json());
-const [catalog, { citations }, links, tours, anatomy, tissues, organelles, atoms, ploc] = await Promise.all([
-  load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'), load('data/anatomy.json'), load('data/tissues.json'), load('data/organelles.json'), load('data/atoms.json'), load('data/protein-location.json'),
+const [catalog, { citations }, links, tours, anatomy, tissues, organelles, atoms, ploc, bcl2] = await Promise.all([
+  load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'), load('data/anatomy.json'), load('data/tissues.json'), load('data/organelles.json'), load('data/atoms.json'), load('data/protein-location.json'), load('data/bcl2-compare.json'),
 ]);
 const $ = id => document.getElementById(id);
 // Cell types: colour is the --kind-* token, group is the domain-level class
@@ -17,7 +17,7 @@ const KINDS = [
 ];
 const GROUPS = ['noncellular', 'prokaryote', 'eukaryote'];
 const kindLegend = () => `<h4>${html('legend.title')}</h4>` + GROUPS.map(g => `<div class="kl-group"><span>${html('group.' + g)}</span>${KINDS.filter(k => k.group === g).map(k => `<span class="kl-item" style="--k:var(--kind-${k.id})"><span class="sw"></span>${html('kind.' + k.id)}</span>`).join('')}</div>`).join('');
-initCompare(catalog);
+initCompare(catalog, bcl2);
 
 // Theme: follows the system until the person picks one
 const THEME = 'hb.theme';
@@ -63,6 +63,8 @@ $('vp-switch').addEventListener('click', e => {
   if (b) setState({ view: b.dataset.view });
 });
 $('vp-compare').addEventListener('click', e => {
+  const k = e.target.closest('button[data-cmp]');
+  if (k) return setState({ cmp: k.dataset.cmp });
   const m = e.target.closest('button[data-muscle]');
   if (m) {
     const s = getState();
@@ -250,7 +252,7 @@ function render(s) {
   $('ro-view').innerHTML = P ? (tissueOf(s) ? html(tissueOf(s).name) : html('hud.nothing')) : C ? (partsFor(s.level).find(p => p.id === s.anat) ? html(partsFor(s.level).find(p => p.id === s.anat).name) : html('hud.anatomy')) : !A && pdb ? `PDB ${esc(pdb.id)}` : compare ? html('view.compare') : cell && A ? html(cell.name) : html('hud.nothing');
 
   // Viewport: queue or comparison for module A, queue for module B
-  $('vp-title').innerHTML = html(compare ? 'compare.title' : A ? 'moduleA.title' : C ? 'moduleC.title' : T ? 'moduleT.title' : O ? 'moduleO.title' : M ? 'moduleM.title' : 'moduleB.title');
+  $('vp-title').innerHTML = html(compare ? (s.cmp === 'bcl2' ? 'compare.bcl2.title' : 'compare.title') : A ? 'moduleA.title' : C ? 'moduleC.title' : T ? 'moduleT.title' : O ? 'moduleO.title' : M ? 'moduleM.title' : 'moduleB.title');
   $('vp-switch').hidden = !A;
   $('vp-switch').querySelectorAll('button').forEach(b => b.setAttribute('aria-checked', b.dataset.view === (compare ? 'compare' : 'cells')));
   const points = B && pdb ? tours.structures[pdb.id]?.points ?? [] : [];
@@ -310,7 +312,8 @@ function render(s) {
 
   // Panel 3: every source behind a number on screen
   const ids = new Set();
-  if (compare) columnCells(s.muscle).forEach(c => c.data && ids.add(c.data));
+  if (compare && s.cmp === 'bcl2') ids.add(bcl2.cite);
+  else if (compare) columnCells(s.muscle).forEach(c => c.data && ids.add(c.data));
   if (A && cell?.data) ids.add(cell.data);
   if (B && pdb?.cite) ids.add(pdb.cite);
   if (B && pdb) Object.values(ploc.genes).filter(e => e.structure === pdb.id || (point && ploc.genes[point.subunit] === e)).forEach(e => ids.add(e.source === 'uniprot' ? ploc.citeUniprot : ploc.cite));

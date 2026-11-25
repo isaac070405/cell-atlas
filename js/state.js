@@ -15,7 +15,7 @@ export const LEVELS = [
 
 const bus = new EventTarget();
 export const MUSCLES = ['skeletal-myocyte', 'cardiomyocyte', 'smooth-myocyte'];
-const state = { level: 'cell', cell: null, pdb: null, tour: null, selection: null, anat: null, lang: 'en', view: 'cells', muscle: MUSCLES[0] };
+const state = { level: 'cell', cell: null, pdb: null, tour: null, selection: null, anat: null, lang: 'en', view: 'cells', cmp: 'cells', muscle: MUSCLES[0] };
 
 export const getState = () => ({ ...state });
 export const levelInfo = (id = state.level) => LEVELS.find(l => l.id === id);
@@ -38,7 +38,7 @@ export function setState(patch) {
 }
 
 // Deep links: ?cell=enterocyte, ?pdb=5XTD, ?level=organelle (same keys as links.json),
-// ?view=compare and &muscle=cardiomyocyte for the four-cell comparison,
+// ?view=compare and &muscle=cardiomyocyte for the cell comparison, ?view=compare&cmp=bcl2 for the Bcl-2 family table,
 // ?level=organ&part=liver for a system or organ in the 3D Anatomy Model, ?level=organelle&part=mito&sel=cristae and ?level=atom&part=water&sel=O for the organelle and atom models, ?cell=hepatocyte&org=mito for a picked compartment, ?pdb=5XTD&tour=fes-n2 for a preset view
 export function readUrl() {
   const q = new URLSearchParams(location.search);
@@ -48,6 +48,7 @@ export function readUrl() {
   if (q.get('tour')) patch.tour = q.get('tour');
   if (LEVELS.some(l => l.id === q.get('level'))) patch.level = q.get('level');
   if (q.get('view') === 'compare') patch.view = 'compare';
+  if (q.get('cmp') === 'bcl2') patch.cmp = 'bcl2';
   if (q.get('part')) patch.anat = q.get('part');
   if (q.get('org') && q.get('level') !== 'organelle') patch.selection = q.get('org');
   if (q.get('org') && q.get('level') === 'organelle' && !q.get('part')) patch.anat = q.get('org');  // old ?level=organelle&org=mito links
@@ -67,7 +68,8 @@ function writeUrl() {
   if (state.selection && state.cell && !state.pdb && levelInfo().module === 'A') q.set('org', state.selection);
   if (state.view === 'compare' && levelInfo().module === 'A') {
     q.set('view', 'compare');
-    if (state.muscle !== MUSCLES[0]) q.set('muscle', state.muscle);
+    if (state.cmp === 'bcl2') q.set('cmp', 'bcl2');
+    else if (state.muscle !== MUSCLES[0]) q.set('muscle', state.muscle);
   }
   const s = q.toString();
   history.replaceState(null, '', s ? `?${s}` : location.pathname);
