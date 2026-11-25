@@ -190,27 +190,6 @@
       "bestResolution": 1.799,
       "firstRelease": 2018,
       "lastRelease": 2018
-    },
-    {
-      "id": "BIT1 (PTRH2)",
-      "name": {
-        "en": "BIT1 (PTRH2)",
-        "zh-Hant": "BIT1 (PTRH2)"
-      },
-      "class": {
-        "en": "Not a Bcl-2 family member (no BH3 domain)",
-        "zh-Hant": "非 Bcl-2 家族成員（無 BH3 結構域）"
-      },
-      "uniprot": "Q9Y3E5",
-      "structure": null,
-      "entries": 1,
-      "xray": 1,
-      "nmr": 0,
-      "cryoem": 0,
-      "peptideOnly": 0,
-      "bestResolution": 2.0,
-      "firstRelease": 2003,
-      "lastRelease": 2003
     }
   ]
 }

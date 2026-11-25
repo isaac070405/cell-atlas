@@ -10,11 +10,11 @@ summ = {r['family_member']: r for r in csv.DictReader(open(root / 'data/bcl2-fam
 
 # member -> (id, zh-Hant class, Module B structure in catalog.json)
 # structure is None for members with no Module B structure yet
-MEMBERS = [('Bcl-2', '1G5M'), ('Bcl-xL', '1MAZ'), ('MCL-1', '2PQK'), ('BID', None), ('BIM', None), ('BIK', None), ('BAX', '1F16'), ('BAK', '2IMS'), ('BOK', None), ('BIT1 (PTRH2)', None)]
+MEMBERS = [('Bcl-2', '1G5M'), ('Bcl-xL', '1MAZ'), ('MCL-1', '2PQK'), ('BID', None), ('BIM', None), ('BIK', None), ('BAX', '1F16'), ('BAK', '2IMS'), ('BOK', None)]
 # human accession when the catalogue has no human entry for the member (BIK has no PDB entries)
 HUMAN = {'BIK': 'Q13323'}
-ZH_CLASS = {'Anti-apoptotic': '抗凋亡', 'Pro-apoptotic BH3-only activator': '促凋亡 BH3-only 活化蛋白', 'Pro-apoptotic BH3-only sensitiser': '促凋亡 BH3-only 敏化蛋白', 'Not a Bcl-2 family member (no BH3 domain)': '非 Bcl-2 家族成員（無 BH3 結構域）', 'Pro-apoptotic pore former': '促凋亡成孔蛋白'}
-NAME = {'Bcl-2': 'BCL-2', 'Bcl-xL': 'BCL-XL', 'MCL-1': 'MCL-1', 'BID': 'BID', 'BIM': 'BIM', 'BAX': 'BAX', 'BAK': 'BAK', 'BOK': 'BOK', 'BIK': 'BIK', 'BIT1 (PTRH2)': 'BIT1 (PTRH2)'}
+ZH_CLASS = {'Anti-apoptotic': '抗凋亡', 'Pro-apoptotic BH3-only activator': '促凋亡 BH3-only 活化蛋白', 'Pro-apoptotic BH3-only sensitiser': '促凋亡 BH3-only 敏化蛋白', 'Pro-apoptotic pore former': '促凋亡成孔蛋白'}
+NAME = {'Bcl-2': 'BCL-2', 'Bcl-xL': 'BCL-XL', 'MCL-1': 'MCL-1', 'BID': 'BID', 'BIM': 'BIM', 'BAX': 'BAX', 'BAK': 'BAK', 'BOK': 'BOK', 'BIK': 'BIK'}
 
 out = []
 for m, sid in MEMBERS:
