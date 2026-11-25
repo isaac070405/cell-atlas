@@ -1,0 +1,11 @@
+BCL2_class,family_member,UniProt_accessions_searched,n_PDB_entries,entries_with_protein_or_domain,entries_BH3_peptide_only,X-ray,NMR,cryo-EM,ortholog_species (entries),first_release,last_release,best_resolution_A
+Anti-apoptotic,Bcl-2,B8AH97; O02718; P10415; P10417; P49950; Q00709; Q6R755; Q6Z2G7; Q9JJV8,63,63,0,56,7,0,Homo sapiens (63),2001.0,2026.0,1.25
+Anti-apoptotic,Bcl-xL,O77737; P53563; Q07816; Q07817; Q64373,143,141,2,120,23,0,Homo sapiens (126); Mus musculus (15); Rattus norvegicus (2),1997.0,2026.0,1.3
+Anti-apoptotic,MCL-1,A3PGR7; A4WVF5; B6E2X2; B9KLE8; D5AR83; P97287; Q07820; Q7YRZ9; Q8HYS5; Q9C107; Q9Z1P3,153,152,1,146,7,0,Homo sapiens (137); Mus musculus (16),2004.0,2026.0,1.13
+Pro-apoptotic BH3-only activator,BID,P55957; P70444; Q4JHS0; Q8JGM8; Q9JLT6,20,3,17,14,6,0,Homo sapiens (17); Mus musculus (2); Sus scrofa (1),1999.0,2023.0,1.41
+Pro-apoptotic BH3-only activator,BIM,O43521; O54918; O88498,46,0,46,44,2,0,Homo sapiens (45); Mus musculus (1),2001.0,2024.0,1.31
+Pro-apoptotic BH3-only sensitiser,BIK,O70337; Q13323,0,0,0,0,0,0,,,,
+Pro-apoptotic pore former,BAX,O02703; P27297; Q07812; Q07813; Q63690,39,30,9,33,5,1,Homo sapiens (37); Mus musculus (2),2000.0,2025.0,1.797
+Pro-apoptotic pore former,BAK,B8BB68; O08734; Q16611; Q6Z4U4,59,40,19,52,6,1,Homo sapiens (55); Mus musculus (4),1997.0,2025.0,1.224
+Pro-apoptotic pore former,BOK,O35425; Q6DC66; Q792S6; Q7T381; Q9I8I2; Q9UMX3,2,2,0,1,1,0,Gallus gallus (1); Homo sapiens (1),2018.0,2018.0,1.799
+Not a Bcl-2 family member (no BH3 domain),BIT1 (PTRH2),Q3ZBL5; Q8R2Y8; Q9Y3E5,1,1,0,1,0,0,Homo sapiens (1),2003.0,2003.0,2.0
