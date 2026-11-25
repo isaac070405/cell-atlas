@@ -7,6 +7,7 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 ## Unreleased
 
 ### Added
+- General eukaryotic cell (`eukaryote-general`): a schematic animal cell drawn after a textbook figure, with 17 clickable parts. It has no measured volume fractions and no source chip (`data/tissues.json`, `js/tissue3d.js`).
 - Protein subcellular location for the Bcl-2 structures: BCL2, BCL2L1 and BAX (HPA) now point to 1G5M, 1MAZ and 1F16, and BAK1 (UniProt, experimental evidence: mitochondrion outer membrane) is added for 2IMS, making 159 genes.
 - Module B structures for the Bcl-2 family: 1MAZ (human BCL-XL, 2.2 Å), 1G5M (human BCL-2, NMR), 2IMS (human BAK, 1.48 Å) and 1F16 (human BAX, NMR), each with a verified citation and links to hepatocyte, cardiomyocyte and skeletal myocyte. The mitochondrion outer membrane part links to 2IMS. Each has one tour point read from the deposited coordinates: BCL-XL and BCL-2 loop ends, the BAK zinc ion and BAX helix α9. The full PDB catalogue is in `data/bcl2-family/`.
 - Human Protein Atlas subcellular location for 158 genes of the Module B structures, with 19 genes missing from the HPA export filled from UniProt (`data/protein-location.json`, `scripts/build-protein-location.py`) (#59, #60).
