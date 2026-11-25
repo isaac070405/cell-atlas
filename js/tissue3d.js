@@ -58,6 +58,32 @@ export async function createTissueView(host, { onPick, elements }) {
     }
   }
 
+  // Multilocular fat cells (brown and beige): cytoplasm shell, central nucleus, small lipid droplets, mitochondria, capillary and nerve
+  function fatCells(r, o) {
+    const R = 0.72, up = V(0, 1, 0);
+    const inside = (rad) => { for (;;) { const p = V(r() * 2 - 1, r() * 2 - 1, r() * 2 - 1); if (p.length() <= 1) return p.multiplyScalar(rad); } };
+    for (const [x, y, z] of [[-1.5, 0.7, 0], [0, 0.7, 0.2], [1.5, 0.7, -0.1], [0, -0.9, 0.3]]) {
+      const c = V(x, y, z);
+      ball([x, y, z], R, '#D9A66C', 'cytoplasm', [1, 1, 1], { opacity: 0.3 });
+      const nuc = inside(R * 0.25);
+      ball(c.clone().add(nuc).toArray(), 0.2, '#8E5DB0', 'nucleus');
+      const used = [[nuc, 0.24]];
+      const place = (n, rad, col, part, scale) => {
+        for (let k = 0, t = 0; k < n && t < 300; t++) {
+          const p = inside(R * 0.8 - rad);
+          if (!used.every(([q, qr]) => q.distanceTo(p) > qr + rad * 0.9)) continue;
+          used.push([p, rad]); k++;
+          const m = ball(c.clone().add(p).toArray(), rad, col, part, scale ?? [1, 1, 1], part === 'droplets' ? { opacity: 0.9 } : {});
+          if (scale) m.rotation.set(r() * 3, r() * 3, r() * 3);
+        }
+      };
+      place(o.nDrop, o.dropR, '#F3D34A', 'droplets');
+      place(o.nMito, 0.08, o.mito, 'mitochondria', [2, 0.8, 0.8]);
+    }
+    tube([[-2.5, -0.1, 0], [-0.8, -0.1, 0.1], [0.8, -0.1, 0.1], [2.5, -0.1, 0]], 0.09, '#C8312E', 'capillary');
+    tube([[2.3, -1.3, 0.6], [1.7, -0.6, 0.7], [1.0, -0.1, 0.55], [0.5, 0.15, 0.55]], 0.035, '#E8C93C', 'nerve');
+  }
+
   const BUILD = {
     // Simple columnar epithelium on a basal lamina, over connective tissue with a capillary and a nerve ending
     epithelial() {
@@ -105,6 +131,97 @@ export async function createTissueView(host, { onPick, elements }) {
       for (const [x, y, z, rr] of [[0.2, -1.0, 0.8, 0.36], [0.7, -0.85, 0.5, 0.3], [0.1, -0.7, 1.15, 0.28], [0.7, -1.1, 1.05, 0.3]]) ball([x, y, z], rr, '#F3E27A', 'fat', [1, 1, 1], { opacity: 0.75 });
       tube([[-2.5, -0.2, -1.0], [-1.0, -0.1, -0.9], [0.2, 0.3, -1.1], [1.4, 0.1, -1.0]], 0.15, '#C8312E', 'capillary');
       tube([[0.6, -1.3, -0.2], [1.2, -0.8, 0.1], [1.7, -0.6, 0.0], [2.3, -0.4, 0.3]], 0.1, '#E8C93C', 'nerve');
+    },
+
+    // Blood: plasma with red cells, five white cell types and platelets
+    blood() {
+      const r = rng(31), taken = [];
+      put(new THREE.BoxGeometry(5.2, 3, 3.2), '#E8C77A', 'plasma', { opacity: 0.14 });
+      const lobes = (c, pts, rad, col, part) => { pts.forEach(p => ball([c[0] + p[0], c[1] + p[1], c[2] + p[2]], rad, col, part)); for (let i = 1; i < pts.length; i++) tube([pts[i - 1], pts[i]].map(p => [c[0] + p[0], c[1] + p[1], c[2] + p[2]]), rad * 0.3, col, part); };
+      const granules = (c, R, n, rad, col, part, seed) => { const g = rng(seed); for (let k = 0; k < n; k++) { const a = g() * Math.PI * 2, b = Math.acos(2 * g() - 1), d = R * (0.55 + g() * 0.4); ball([c[0] + Math.sin(b) * Math.cos(a) * d, c[1] + Math.cos(b) * d, c[2] + Math.sin(b) * Math.sin(a) * d], rad, col, part); } };
+      const wbc = (c, R, col, part) => { ball(c, R, col, part, [1, 1, 1], { opacity: 0.55 }); taken.push([...c, R]); };
+      let c = [-1.7, 0.35, 0.2];
+      wbc(c, 0.42, '#C9B6E0', 'neutrophil'); lobes(c, [[-0.17, 0.05, 0], [0.02, -0.12, 0.06], [0.2, 0.05, -0.04]], 0.1, '#6B4C9A', 'neutrophil');
+      c = [1.3, -0.35, 0.6];
+      wbc(c, 0.42, '#F29B7A', 'eosinophil'); lobes(c, [[-0.1, 0.02, 0], [0.12, 0, 0.03]], 0.13, '#6B4C9A', 'eosinophil'); granules(c, 0.42, 16, 0.045, '#D8412B', 'eosinophil', 7);
+      c = [0.2, 0.75, -0.9];
+      wbc(c, 0.4, '#8FA0E0', 'basophil'); ball(c, 0.22, '#3D3A8C', 'basophil', [1.2, 1, 0.9]); granules(c, 0.4, 12, 0.07, '#2E2A70', 'basophil', 9);
+      c = [-0.5, -0.65, 0.9];
+      wbc(c, 0.32, '#7FA8E0', 'lymphocyte'); ball(c, 0.27, '#4B3A8C', 'lymphocyte');
+      c = [1.9, 0.65, -0.5];
+      wbc(c, 0.52, '#B59AD6', 'monocyte'); { const k = put(new THREE.TorusGeometry(0.19, 0.1, 10, 20, Math.PI * 1.4), '#6B4C9A', 'monocyte'); k.position.set(...c); k.rotation.set(0.3, 0.4, 0.5); }
+      const prof = [], hh = t => 0.5 * Math.sqrt(1 - t * t) * (0.2 + 0.5 * t * t);
+      for (let i = 0; i <= 10; i++) prof.push(new THREE.Vector2(i / 10 * 0.5, -hh(i / 10)));
+      for (let i = 10; i >= 0; i--) prof.push(new THREE.Vector2(i / 10 * 0.5, hh(i / 10)));
+      const disc = new THREE.LatheGeometry(prof, 22);
+      const clear = (p, d) => taken.every(q => Math.hypot(q[0] - p[0], q[1] - p[1], q[2] - p[2]) > d + q[3]);
+      for (let n = 0, tries = 0; n < 11 && tries < 600; tries++) {
+        const p = [(r() - 0.5) * 4.5, (r() - 0.5) * 2.5, (r() - 0.5) * 2.7];
+        if (!clear(p, 0.55)) continue;
+        taken.push([...p, 0.5]); n++;
+        const m = put(disc, '#D8352F', 'rbc'); m.position.set(...p); m.rotation.set(r() * Math.PI, r() * Math.PI, r() * Math.PI);
+      }
+      for (let n = 0, tries = 0; n < 7 && tries < 400; tries++) {
+        const p = [(r() - 0.5) * 4.6, (r() - 0.5) * 2.6, (r() - 0.5) * 2.8];
+        if (!clear(p, 0.2)) continue;
+        taken.push([...p, 0.12]); n++;
+        const m = ball(p, 0.12, '#E48AB5', 'platelet', [1.3, 0.4, 1]); m.rotation.set(r() * 3, r() * 3, r() * 3);
+      }
+    },
+
+    // White adipose tissue: unilocular cells, one lipid droplet and a flattened nucleus pushed to the rim
+    'adipose-white'() {
+      const r = rng(41), up = V(0, 1, 0), R = 0.72;
+      for (const [x, y, z] of [[-1.55, 0.7, 0], [0, 0.7, 0.2], [1.55, 0.7, -0.1], [-0.8, -0.9, 0.5], [0.8, -0.9, 0.3]]) {
+        ball([x, y, z], R, '#F6E7A8', 'cytoplasm', [1, 1, 1], { opacity: 0.3 });
+        ball([x, y, z], R * 0.92, '#F3D34A', 'lipid', [1, 1, 1], { opacity: 0.85 });
+        const n = V(r() - 0.5, r() * 0.8 + 0.2, r() - 0.2).normalize();
+        const nu = ball(V(x, y, z).addScaledVector(n, R * 0.96).toArray(), 0.2, '#8E5DB0', 'nucleus', [1, 0.35, 1]); nu.quaternion.setFromUnitVectors(up, n);
+      }
+      tube([[-2.5, -0.1, 0], [-0.8, -0.1, 0.1], [0.8, -0.1, 0.1], [2.5, -0.1, 0]], 0.09, '#C8312E', 'capillary');
+    },
+
+    // Brown and beige adipocytes share one builder: droplet count and size, mitochondria count and colour differ
+    'adipose-brown'() { fatCells(rng(43), { nDrop: 11, dropR: 0.12, nMito: 16, mito: '#6E3516' }); },
+    'adipose-beige'() { fatCells(rng(47), { nDrop: 4, dropR: 0.2, nMito: 9, mito: '#A8683C' }); },
+
+    // Fibroblast: spindle cell with branching processes, secretory vesicles and the collagen it releases
+    fibroblast() {
+      const r = rng(51);
+      put(new THREE.BoxGeometry(5.2, 3, 3.2), '#6B5B8C', 'matrix', { opacity: 0.1 });
+      ball([0, 0, 0], 0.5, '#E4A15C', 'body', [2.4, 0.32, 0.7]);
+      ball([0.15, 0.04, 0], 0.22, '#8E5DB0', 'nucleus', [1.6, 0.75, 1]);
+      for (const s of [-1, 1]) {
+        tube([[s * 1.15, 0, 0], [s * 1.9, 0.12, 0.2 * s], [s * 2.5, 0.3, 0.1 * s]], 0.07, '#F0C070', 'processes');
+        tube([[s * 1.9, 0.12, 0.2 * s], [s * 2.3, -0.1, 0.55], [s * 2.5, -0.2, 0.9]], 0.04, '#F0C070', 'processes');
+        tube([[s * 0.6, 0.05, 0.3], [s * 0.7, 0.15, 0.8], [s * 0.9, 0.3, 1.1]], 0.04, '#F0C070', 'processes');
+      }
+      for (let k = 0; k < 9; k++) ball([(r() - 0.5) * 1.6, 0.14 + (r() - 0.5) * 0.1, (r() - 0.5) * 0.5 + (k % 2 ? 0.28 : -0.28)], 0.045, '#F5E56B', 'vesicles');
+      const lay = (z, y, dy) => { const pts = [[-2.5, y, z], [-1, y + dy, z + 0.1], [0.6, y - dy, z - 0.1], [2.5, y, z]]; for (const o of [0, 0.1, -0.1]) tube(pts.map(p => [p[0], p[1] + o, p[2]]), 0.045, '#8C9BE8', 'collagen'); };
+      lay(0.65, 0.5, 0.15); lay(-0.7, 0.35, -0.12); lay(0.2, -0.65, 0.1); lay(-0.3, 1.0, 0.1); lay(1.15, -0.3, -0.1);
+    },
+
+    // Osteocyte: cells in lacunae within concentric bone lamellae, linked by canaliculi to a central (Haversian) canal
+    osteocyte() {
+      const r = rng(61);
+      put(new THREE.BoxGeometry(5.2, 3, 3.2), '#E9DDC3', 'matrix', { opacity: 0.18 });
+      for (const rad of [0.75, 1.05, 1.35]) { const l = put(new THREE.CylinderGeometry(rad, rad, 5.2, 36, 1, true), '#D9C7A0', 'lamellae', { opacity: 0.22 }); l.rotation.z = Math.PI / 2; }
+      const cn = put(new THREE.CylinderGeometry(0.42, 0.42, 5.2, 24, 1, true), '#F2B8A0', 'canal', { opacity: 0.3 }); cn.rotation.z = Math.PI / 2;
+      tube([[-2.6, 0, 0.05], [0, 0.05, -0.05], [2.6, 0, 0.05]], 0.17, '#C8312E', 'canal');
+      const cells = [];
+      for (let k = 0; k < 9; k++) {
+        const rad = k % 3 === 2 ? 1.2 : 0.9, a = k * 2.4 + 0.3, x = -2 + (k % 5) * 1 + r() * 0.4;
+        const p = [x, Math.cos(a) * rad, Math.sin(a) * rad], rot = V(0, Math.cos(a), Math.sin(a)).normalize();
+        cells.push(p);
+        const lac = ball(p, 0.19, '#8A6F4A', 'lacuna', [1.6, 1, 1], { opacity: 0.4 });
+        const oc = ball(p, 0.13, '#5B9FC4', 'osteocyte', [1.6, 0.9, 0.9]);
+        for (const m of [lac, oc]) m.quaternion.setFromUnitVectors(V(0, 1, 0), rot).multiply(new THREE.Quaternion().setFromAxisAngle(V(1, 0, 0), Math.PI / 2));
+        tube([p, [p[0] + 0.05, p[1] * 0.7, p[2] * 0.7], [p[0] + 0.1, p[1] * 0.46, p[2] * 0.46]], 0.025, '#3F7F9E', 'canaliculi');
+      }
+      for (let i = 0; i < cells.length; i++) for (let j = i + 1; j < cells.length; j++) {
+        const a = cells[i], b = cells[j];
+        if (Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]) < 1.3) tube([a, [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2 * 1.05, (a[2] + b[2]) / 2 * 1.05], b], 0.02, '#3F7F9E', 'canaliculi');
+      }
     },
 
     // Three muscle types: skeletal, cardiac and smooth, fibres along x

@@ -790,6 +790,536 @@
    "category": "connective"
   },
   {
+   "id": "blood",
+   "category": "connective",
+   "subgroup": "blood",
+   "name": {
+    "en": "Blood",
+    "zh-Hant": "血液"
+   },
+   "summary": {
+    "en": "A fluid connective tissue: cells and cell fragments suspended in plasma. Drawn here as a small volume of plasma with red cells, the five white cell types and platelets.",
+    "zh-Hant": "流動嘅結締組織，細胞同細胞碎片懸浮於血漿之中。圖中為一小段血漿，內有紅血球、五種白血球同血小板。"
+   },
+   "parts": [
+    {
+     "id": "plasma",
+     "color": "#E8C77A",
+     "name": {
+      "en": "Plasma",
+      "zh-Hant": "血漿"
+     },
+     "text": {
+      "en": "The liquid matrix of blood. It is mostly water and carries proteins, nutrients, hormones, gases and waste.",
+      "zh-Hant": "血液嘅液體基質，主要係水，運載蛋白質、養分、荷爾蒙、氣體同廢物。"
+     },
+     "group": "ground"
+    },
+    {
+     "id": "rbc",
+     "color": "#D8352F",
+     "name": {
+      "en": "Red blood cell (erythrocyte)",
+      "zh-Hant": "紅血球"
+     },
+     "text": {
+      "en": "Biconcave disc with no nucleus. Packed with haemoglobin, it carries oxygen and some carbon dioxide.",
+      "zh-Hant": "雙凹圓盤狀，冇細胞核，載滿血紅素，運載氧氣同部分二氧化碳。"
+     },
+     "group": "formed"
+    },
+    {
+     "id": "neutrophil",
+     "color": "#C9B6E0",
+     "name": {
+      "en": "Neutrophil",
+      "zh-Hant": "嗜中性粒細胞"
+     },
+     "text": {
+      "en": "Most numerous white cell. Its nucleus has 3 to 5 lobes. It engulfs bacteria early in an infection.",
+      "zh-Hant": "最多嘅白血球，細胞核分 3 至 5 葉，感染初期吞噬細菌。"
+     },
+     "group": "formed"
+    },
+    {
+     "id": "eosinophil",
+     "color": "#F29B7A",
+     "name": {
+      "en": "Eosinophil",
+      "zh-Hant": "嗜酸性粒細胞"
+     },
+     "text": {
+      "en": "Bilobed nucleus and large red-orange granules. It acts against parasites and takes part in allergic responses.",
+      "zh-Hant": "雙葉細胞核同大型紅橙色顆粒，對付寄生蟲，亦參與過敏反應。"
+     },
+     "group": "formed"
+    },
+    {
+     "id": "basophil",
+     "color": "#8FA0E0",
+     "name": {
+      "en": "Basophil",
+      "zh-Hant": "嗜鹼性粒細胞"
+     },
+     "text": {
+      "en": "Large dark blue granules that often hide the nucleus. The granules hold histamine and heparin, and it takes part in allergic responses.",
+      "zh-Hant": "大型深藍色顆粒，常遮住細胞核，顆粒含組織胺同肝素，參與過敏反應。"
+     },
+     "group": "formed"
+    },
+    {
+     "id": "lymphocyte",
+     "color": "#7FA8E0",
+     "name": {
+      "en": "Lymphocyte",
+      "zh-Hant": "淋巴細胞"
+     },
+     "text": {
+      "en": "Round nucleus that fills most of the cell, with a thin rim of cytoplasm. B cells, T cells and NK cells run adaptive and cytotoxic immune responses.",
+      "zh-Hant": "圓形細胞核佔細胞大部分，細胞質只有薄薄一圈。B 細胞、T 細胞同 NK 細胞負責適應性同細胞毒性免疫反應。"
+     },
+     "group": "formed"
+    },
+    {
+     "id": "monocyte",
+     "color": "#B59AD6",
+     "name": {
+      "en": "Monocyte",
+      "zh-Hant": "單核球"
+     },
+     "text": {
+      "en": "Largest white cell, with a kidney-shaped nucleus. It leaves the blood and becomes a macrophage or dendritic cell in tissue.",
+      "zh-Hant": "最大嘅白血球，細胞核呈腎形。離開血液後，喺組織中變成巨噬細胞或樹突細胞。"
+     },
+     "group": "formed"
+    },
+    {
+     "id": "platelet",
+     "color": "#E48AB5",
+     "name": {
+      "en": "Platelet (thrombocyte)",
+      "zh-Hant": "血小板"
+     },
+     "text": {
+      "en": "Small anucleate fragment of a megakaryocyte. It sticks to damaged vessel walls and starts clotting.",
+      "zh-Hant": "巨核細胞脫落嘅無核小碎片，黏附於受損血管壁並啟動凝血。"
+     },
+     "group": "formed"
+    }
+   ]
+  },
+  {
+   "id": "adipose-white",
+   "category": "connective",
+   "subgroup": "adipocyte",
+   "name": {
+    "en": "White adipocyte",
+    "zh-Hant": "白色脂肪細胞"
+   },
+   "summary": {
+    "en": "Unilocular fat cell. One large lipid droplet fills the cell and pushes the nucleus and a thin rim of cytoplasm to the edge. It stores energy as triacylglycerol and releases hormones such as leptin.",
+    "zh-Hant": "單泡脂肪細胞，一個大脂滴佔滿細胞，將細胞核同薄薄嘅細胞質推到邊緣。以三酸甘油酯貯存能量，亦分泌瘦體素等荷爾蒙。"
+   },
+   "parts": [
+    {
+     "id": "lipid",
+     "color": "#F3D34A",
+     "name": {
+      "en": "Lipid droplet (unilocular)",
+      "zh-Hant": "脂滴（單泡）"
+     },
+     "text": {
+      "en": "One large droplet of triacylglycerol. It takes up most of the cell volume and gives the cell a signet-ring look in section.",
+      "zh-Hant": "單一大脂滴，成分為三酸甘油酯，佔細胞大部分體積，切片上呈印戒狀。"
+     }
+    },
+    {
+     "id": "cytoplasm",
+     "color": "#F6E7A8",
+     "name": {
+      "en": "Cytoplasm rim",
+      "zh-Hant": "細胞質邊緣"
+     },
+     "text": {
+      "en": "Thin layer of cytoplasm around the droplet. It holds few mitochondria and little endoplasmic reticulum.",
+      "zh-Hant": "圍繞脂滴嘅薄層細胞質，粒線體同內質網都少。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E5DB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Flattened and pushed to the cell edge by the droplet.",
+      "zh-Hant": "被脂滴擠壓，扁平並偏向細胞邊緣。"
+     }
+    },
+    {
+     "id": "capillary",
+     "color": "#C8312E",
+     "name": {
+      "en": "Capillary",
+      "zh-Hant": "微血管"
+     },
+     "text": {
+      "en": "Each adipocyte lies against a capillary, which supplies fatty acids and glucose for storage and carries away released fatty acids.",
+      "zh-Hant": "每個脂肪細胞貼近微血管，微血管供應脂肪酸同葡萄糖以供貯存，並運走釋出嘅脂肪酸。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "adipose-brown",
+   "category": "connective",
+   "subgroup": "adipocyte",
+   "name": {
+    "en": "Brown adipocyte",
+    "zh-Hant": "棕色脂肪細胞"
+   },
+   "summary": {
+    "en": "Multilocular fat cell packed with mitochondria. It burns fatty acids to make heat instead of ATP, using uncoupling protein 1 (UCP1).",
+    "zh-Hant": "多泡脂肪細胞，載滿粒線體。利用解偶聯蛋白 1（UCP1）燃燒脂肪酸產熱，而唔係製造 ATP。"
+   },
+   "parts": [
+    {
+     "id": "droplets",
+     "color": "#F3D34A",
+     "name": {
+      "en": "Lipid droplets (multilocular)",
+      "zh-Hant": "脂滴（多泡）"
+     },
+     "text": {
+      "en": "Many small droplets that give fast access to fuel for heat production.",
+      "zh-Hant": "多個細小脂滴，方便快速取用產熱所需燃料。"
+     }
+    },
+    {
+     "id": "mitochondria",
+     "color": "#6E3516",
+     "name": {
+      "en": "Mitochondria",
+      "zh-Hant": "粒線體"
+     },
+     "text": {
+      "en": "Very numerous, with dense cristae. They hold UCP1 in the inner membrane, which lets protons leak back and releases the energy as heat. The iron-rich cytochromes give the tissue its brown colour.",
+      "zh-Hant": "數量極多，嵴密集，內膜上有 UCP1，讓質子漏回基質，能量以熱能釋出。富含鐵嘅細胞色素令組織呈棕色。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E5DB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Round and near the centre, since the droplets do not displace it.",
+      "zh-Hant": "呈圓形，位置近中央，因為脂滴冇將它推開。"
+     }
+    },
+    {
+     "id": "cytoplasm",
+     "color": "#D9A66C",
+     "name": {
+      "en": "Cytoplasm",
+      "zh-Hant": "細胞質"
+     },
+     "text": {
+      "en": "Fills the space between droplets and mitochondria.",
+      "zh-Hant": "填滿脂滴同粒線體之間嘅空間。"
+     }
+    },
+    {
+     "id": "capillary",
+     "color": "#C8312E",
+     "name": {
+      "en": "Capillary",
+      "zh-Hant": "微血管"
+     },
+     "text": {
+      "en": "Dense capillary supply brings oxygen and fuel, and carries heat away in the blood.",
+      "zh-Hant": "豐富嘅微血管網供應氧氣同燃料，並以血流帶走熱能。"
+     }
+    },
+    {
+     "id": "nerve",
+     "color": "#E8C93C",
+     "name": {
+      "en": "Sympathetic nerve fibre",
+      "zh-Hant": "交感神經纖維"
+     },
+     "text": {
+      "en": "Noradrenaline from sympathetic nerves acts on β3-adrenergic receptors and switches on heat production, for example in the cold.",
+      "zh-Hant": "交感神經釋出嘅去甲腎上腺素作用於 β3 腎上腺素受體，啟動產熱，例如喺寒冷環境。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "adipose-beige",
+   "category": "connective",
+   "subgroup": "adipocyte",
+   "name": {
+    "en": "Beige adipocyte",
+    "zh-Hant": "米色脂肪細胞"
+   },
+   "summary": {
+    "en": "Inducible thermogenic fat cell found inside white fat. Cold or β-adrenergic stimulation turns white adipocytes into cells with several droplets, more mitochondria and UCP1.",
+    "zh-Hant": "白色脂肪組織內可被誘導嘅產熱脂肪細胞。寒冷或 β 腎上腺素刺激令白色脂肪細胞變成有多個脂滴、較多粒線體同 UCP1 嘅細胞。"
+   },
+   "parts": [
+    {
+     "id": "droplets",
+     "color": "#F3D34A",
+     "name": {
+      "en": "Lipid droplets (paucilocular)",
+      "zh-Hant": "脂滴（少泡）"
+     },
+     "text": {
+      "en": "A few medium droplets, between the one large droplet of a white cell and the many small ones of a brown cell.",
+      "zh-Hant": "數個中型脂滴，介乎白色細胞嘅單一大脂滴同棕色細胞嘅多個小脂滴之間。"
+     }
+    },
+    {
+     "id": "mitochondria",
+     "color": "#A8683C",
+     "name": {
+      "en": "Mitochondria",
+      "zh-Hant": "粒線體"
+     },
+     "text": {
+      "en": "More than in a white cell and fewer than in a brown cell. UCP1 is low at rest and rises after stimulation, so heat output is inducible.",
+      "zh-Hant": "比白色細胞多，比棕色細胞少。UCP1 平時偏低，受刺激後上升，所以產熱可被誘導。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E5DB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Round and near the centre, since the droplets do not displace it.",
+      "zh-Hant": "呈圓形，位置近中央，因為脂滴冇將它推開。"
+     }
+    },
+    {
+     "id": "cytoplasm",
+     "color": "#D9A66C",
+     "name": {
+      "en": "Cytoplasm",
+      "zh-Hant": "細胞質"
+     },
+     "text": {
+      "en": "Fills the space between droplets and mitochondria.",
+      "zh-Hant": "填滿脂滴同粒線體之間嘅空間。"
+     }
+    },
+    {
+     "id": "capillary",
+     "color": "#C8312E",
+     "name": {
+      "en": "Capillary",
+      "zh-Hant": "微血管"
+     },
+     "text": {
+      "en": "Dense capillary supply brings oxygen and fuel, and carries heat away in the blood.",
+      "zh-Hant": "豐富嘅微血管網供應氧氣同燃料，並以血流帶走熱能。"
+     }
+    },
+    {
+     "id": "nerve",
+     "color": "#E8C93C",
+     "name": {
+      "en": "Sympathetic nerve fibre",
+      "zh-Hant": "交感神經纖維"
+     },
+     "text": {
+      "en": "Cold exposure and β3-adrenergic signalling from sympathetic nerves drive white-to-beige conversion (browning).",
+      "zh-Hant": "寒冷同交感神經嘅 β3 腎上腺素訊號促使白色轉變為米色（褐變）。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "fibroblast",
+   "category": "connective",
+   "subgroup": "cells",
+   "name": {
+    "en": "Fibroblast",
+    "zh-Hant": "纖維母細胞"
+   },
+   "summary": {
+    "en": "Spindle-shaped cell of connective tissue. It makes collagen, elastin and ground substance, and drives wound repair. Drawn here with branching processes and secretory vesicles.",
+    "zh-Hant": "結締組織嘅梭形細胞，製造膠原蛋白、彈性蛋白同基質，並推動傷口修復。圖中有分支突起同分泌小泡。"
+   },
+   "parts": [
+    {
+     "id": "body",
+     "color": "#E4A15C",
+     "name": {
+      "en": "Cell body",
+      "zh-Hant": "細胞體"
+     },
+     "text": {
+      "en": "Flat spindle with abundant rough endoplasmic reticulum and Golgi apparatus, which make and process procollagen.",
+      "zh-Hant": "扁平梭形，含豐富嘅粗面內質網同高爾基體，負責製造同加工前膠原。"
+     }
+    },
+    {
+     "id": "nucleus",
+     "color": "#8E5DB0",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "text": {
+      "en": "Elongated and often indented, lying along the long axis of the cell.",
+      "zh-Hant": "細長，常有凹陷，沿細胞長軸排列。"
+     }
+    },
+    {
+     "id": "processes",
+     "color": "#F0C070",
+     "name": {
+      "en": "Cell processes",
+      "zh-Hant": "細胞突起"
+     },
+     "text": {
+      "en": "Thin branching extensions that attach to the matrix and to neighbouring cells. Tension through them lets fibroblasts remodel the matrix.",
+      "zh-Hant": "幼細分支嘅突起，附著於基質同鄰近細胞。透過它們產生嘅張力令纖維母細胞能重塑基質。"
+     }
+    },
+    {
+     "id": "vesicles",
+     "color": "#F5E56B",
+     "name": {
+      "en": "Secretory vesicles",
+      "zh-Hant": "分泌小泡"
+     },
+     "text": {
+      "en": "Carry procollagen to the cell surface. Outside the cell, enzymes trim it to tropocollagen, which assembles into fibrils.",
+      "zh-Hant": "將前膠原運到細胞表面。細胞外酶將它切成原膠原，再組裝成纖維。"
+     }
+    },
+    {
+     "id": "collagen",
+     "color": "#8C9BE8",
+     "name": {
+      "en": "Collagen fibres",
+      "zh-Hant": "膠原纖維"
+     },
+     "text": {
+      "en": "Fibres laid down by the cell. They align along lines of tension in the tissue.",
+      "zh-Hant": "由細胞分泌形成嘅纖維，沿組織嘅張力方向排列。"
+     }
+    },
+    {
+     "id": "matrix",
+     "color": "#6B5B8C",
+     "name": {
+      "en": "Ground substance",
+      "zh-Hant": "基質"
+     },
+     "text": {
+      "en": "Gel of glycosaminoglycans and proteoglycans that fills the space between cells and fibres.",
+      "zh-Hant": "由糖胺聚醣同蛋白聚醣組成嘅凝膠，填滿細胞同纖維之間嘅空間。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "osteocyte",
+   "category": "connective",
+   "subgroup": "cells",
+   "name": {
+    "en": "Osteocyte",
+    "zh-Hant": "骨細胞"
+   },
+   "summary": {
+    "en": "Mature bone cell, trapped in a lacuna inside mineralised matrix. Its processes run through canaliculi to neighbouring cells and the central canal. Drawn here in one osteon.",
+    "zh-Hant": "成熟骨細胞，困喺礦化基質內嘅骨陷窩中，突起穿過骨小管連接鄰近細胞同中央管。圖中為一個骨單位。"
+   },
+   "parts": [
+    {
+     "id": "osteocyte",
+     "color": "#5B9FC4",
+     "name": {
+      "en": "Osteocyte",
+      "zh-Hant": "骨細胞"
+     },
+     "text": {
+      "en": "Former osteoblast now buried in bone. It senses mechanical load and signals to osteoblasts and osteoclasts, for example through sclerostin.",
+      "zh-Hant": "由成骨細胞轉變而成，埋於骨內。感測機械負荷，並以硬化蛋白等訊號通知成骨細胞同破骨細胞。"
+     }
+    },
+    {
+     "id": "lacuna",
+     "color": "#8A6F4A",
+     "name": {
+      "en": "Lacuna",
+      "zh-Hant": "骨陷窩"
+     },
+     "text": {
+      "en": "Small cavity in the matrix that holds the cell body and a thin film of fluid.",
+      "zh-Hant": "基質內嘅小腔，容納細胞體同薄薄一層組織液。"
+     }
+    },
+    {
+     "id": "canaliculi",
+     "color": "#3F7F9E",
+     "name": {
+      "en": "Canaliculi",
+      "zh-Hant": "骨小管"
+     },
+     "text": {
+      "en": "Narrow channels that hold the cell processes. They link lacunae to each other and to the central canal, so nutrients and signals can pass through hard bone.",
+      "zh-Hant": "容納細胞突起嘅幼細通道，連接各骨陷窩同中央管，令養分同訊號可穿過堅硬嘅骨。"
+     }
+    },
+    {
+     "id": "lamellae",
+     "color": "#D9C7A0",
+     "name": {
+      "en": "Lamellae",
+      "zh-Hant": "骨板"
+     },
+     "text": {
+      "en": "Concentric layers of mineralised matrix around the central canal. Collagen fibres run in a different direction in neighbouring layers.",
+      "zh-Hant": "圍繞中央管嘅同心圓礦化基質層，相鄰層嘅膠原纖維方向唔同。"
+     }
+    },
+    {
+     "id": "canal",
+     "color": "#C8312E",
+     "name": {
+      "en": "Central (Haversian) canal",
+      "zh-Hant": "中央管（哈氏管）"
+     },
+     "text": {
+      "en": "Runs along the osteon and carries a blood vessel and nerve fibres.",
+      "zh-Hant": "沿骨單位走向，內有血管同神經纖維。"
+     }
+    },
+    {
+     "id": "matrix",
+     "color": "#E9DDC3",
+     "name": {
+      "en": "Bone matrix",
+      "zh-Hant": "骨基質"
+     },
+     "text": {
+      "en": "Collagen type I fibres mineralised with calcium phosphate (hydroxyapatite), which makes bone hard and stiff.",
+      "zh-Hant": "I 型膠原纖維加上磷酸鈣（羥磷灰石）礦化，令骨堅硬。"
+     }
+    }
+   ]
+  },
+  {
    "id": "muscular",
    "name": {
     "en": "Muscular Tissue",

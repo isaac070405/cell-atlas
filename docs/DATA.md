@@ -44,7 +44,7 @@ Preset views for Module B (5XTD, 4UG0, 1TQN, 1ZUM, 1MAZ, 1G5M, 2IMS, 1F16, 2PQK,
 
 ## `anatomy.json` and `tissues.json`
 
-`anatomy.json` classifies the 3D Anatomy Model levels: `systems[]` with the model's system `keys` (`null` shows the whole body) and `match` patterns tested against part labels. `tissues.json` holds 21 schematic tissue models (epithelial, connective, muscular, nervous, neuroglia and neurons) and the `cellModels` for the general eukaryotic cell (17 parts: plasma membrane, cytoplasm, nuclear membrane, chromatin, nucleolus, rough and smooth ER, Golgi apparatus, mitochondrion, lysosome, vacuole, centrioles, ribosomes, glycogen and the three cytoskeletal fibres), E. coli and bacteriophage T4. They carry no measured values and follow textbook figures.
+`anatomy.json` classifies the 3D Anatomy Model levels: `systems[]` with the model's system `keys` (`null` shows the whole body) and `match` patterns tested against part labels. `tissues.json` holds 27 schematic tissue models (epithelial, connective, blood, white, brown and beige adipocytes, fibroblast, osteocyte, muscular, nervous, neuroglia and neurons) and the `cellModels` for the general eukaryotic cell (17 parts: plasma membrane, cytoplasm, nuclear membrane, chromatin, nucleolus, rough and smooth ER, Golgi apparatus, mitochondrion, lysosome, vacuole, centrioles, ribosomes, glycogen and the three cytoskeletal fibres), E. coli and bacteriophage T4. They carry no measured values and follow textbook figures.
 
 ## `bcl2-compare.json`
 
