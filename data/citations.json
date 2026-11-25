@@ -683,6 +683,222 @@
       "url": "https://www.uniprot.org/",
       "status": "verified",
       "note": "Fetched from rest.uniprot.org on 2026-11-22 (release not recorded). Licence CC BY 4.0."
+    },
+    "mohandas-2008": {
+      "source": "Mohandas & Gallagher (2008) Blood 112:3939–3948",
+      "detail": {
+        "en": "Review of the red cell membrane: the non-nucleated red cell, its membrane and skeleton, and how they set its mechanical properties",
+        "zh-Hant": "紅血球膜綜述：無核紅血球、其細胞膜與膜骨架，以及它們如何決定紅血球嘅力學特性"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2008,
+      "url": "https://doi.org/10.1182/blood-2008-07-161166",
+      "status": "verified"
+    },
+    "kolaczkowska-2013": {
+      "source": "Kolaczkowska & Kubes (2013) Nat Rev Immunol 13:159–175",
+      "detail": {
+        "en": "Review of neutrophil life, recruitment to infected or injured tissue and role in acute inflammation",
+        "zh-Hant": "嗜中性粒細胞嘅生命週期、被招募至感染或受傷組織，以及喺急性炎症中嘅角色綜述"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2013,
+      "url": "https://doi.org/10.1038/nri3399",
+      "status": "verified"
+    },
+    "rothenberg-2006": {
+      "source": "Rothenberg & Hogan (2006) Annu Rev Immunol 24:147–174",
+      "detail": {
+        "en": "Review of eosinophil biology: granule products, host protection against parasites, and roles in asthma and other inflammation",
+        "zh-Hant": "嗜酸性粒細胞生物學綜述：顆粒產物、抵禦寄生蟲，以及喺哮喘同其他炎症中嘅角色"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2006,
+      "url": "https://doi.org/10.1146/annurev.immunol.24.021605.090720",
+      "status": "verified"
+    },
+    "voehringer-2013": {
+      "source": "Voehringer (2013) Nat Rev Immunol 13:362–375",
+      "detail": {
+        "en": "Review of mast cells and basophils as innate effector cells in allergic responses and defence against pathogens",
+        "zh-Hant": "肥大細胞同嗜鹼性粒細胞作為先天免疫效應細胞，喺過敏反應同抵禦病原體中嘅角色綜述"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2013,
+      "url": "https://doi.org/10.1038/nri3427",
+      "status": "verified"
+    },
+    "cooper-2006": {
+      "source": "Cooper & Alder (2006) Cell 124:815–822",
+      "detail": {
+        "en": "Review of the adaptive immune system: each lymphocyte bears a unique antigen receptor",
+        "zh-Hant": "適應性免疫系統綜述：每個淋巴細胞帶有獨特嘅抗原受體"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2006,
+      "url": "https://doi.org/10.1016/j.cell.2006.02.001",
+      "status": "verified"
+    },
+    "vivier-2008": {
+      "source": "Vivier et al. (2008) Nat Immunol 9:503–510",
+      "detail": {
+        "en": "Review of natural killer cells as effector lymphocytes of the innate immune system that limit tumours and infections",
+        "zh-Hant": "自然殺手細胞作為先天免疫效應淋巴細胞，限制腫瘤同感染嘅綜述"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2008,
+      "url": "https://doi.org/10.1038/ni1582",
+      "status": "verified"
+    },
+    "guilliams-2018": {
+      "source": "Guilliams, Mildner & Yona (2018) Immunity 49:595–613",
+      "detail": {
+        "en": "Review of monocyte subsets, their fates in tissue and how recruited monocytes differ from resident macrophages and dendritic cells",
+        "zh-Hant": "單核球亞群、其喺組織中嘅去向，以及被招募嘅單核球同常駐巨噬細胞、樹突細胞嘅分別綜述"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2018,
+      "url": "https://doi.org/10.1016/j.immuni.2018.10.005",
+      "status": "verified"
+    },
+    "machlus-2013": {
+      "source": "Machlus & Italiano (2013) J Cell Biol 201:785–796",
+      "detail": {
+        "en": "Review of platelet formation: megakaryocytes in bone marrow release platelets through proplatelets",
+        "zh-Hant": "血小板形成綜述：骨髓巨核細胞透過前血小板釋出血小板"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2013,
+      "url": "https://doi.org/10.1083/jcb.201304054",
+      "status": "verified"
+    },
+    "rosen-2014": {
+      "source": "Rosen & Spiegelman (2014) Cell 156:20–44",
+      "detail": {
+        "en": "Review of adipocyte classification, lipid metabolism and communication with other tissues",
+        "zh-Hant": "脂肪細胞分類、脂質代謝及與其他組織溝通嘅綜述"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2014,
+      "url": "https://doi.org/10.1016/j.cell.2013.12.012",
+      "status": "verified"
+    },
+    "cannon-2004": {
+      "source": "Cannon & Nedergaard (2004) Physiol Rev 84:277–359",
+      "detail": {
+        "en": "Review of brown adipose tissue: heat production by UCP1, combustion of lipids and glucose, and control by norepinephrine from sympathetic nerves",
+        "zh-Hant": "棕色脂肪組織綜述：UCP1 產熱、燃燒脂質同葡萄糖，以及交感神經釋出嘅去甲腎上腺素嘅控制"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2004,
+      "url": "https://doi.org/10.1152/physrev.00015.2003",
+      "status": "verified"
+    },
+    "wu-2012": {
+      "source": "Wu et al. (2012) Cell 150:366–376",
+      "detail": {
+        "en": "Isolation of beige adipocytes from mouse white fat: low basal UCP1, high UCP1 and respiration after cAMP stimulation; human brown fat deposits resemble beige cells",
+        "zh-Hant": "由小鼠白色脂肪分離米色脂肪細胞：基礎 UCP1 低，cAMP 刺激後 UCP1 同呼吸率上升；人類棕色脂肪沉積與米色細胞相似"
+      },
+      "species": "Mouse and human",
+      "method": "Cell isolation and gene expression",
+      "year": 2012,
+      "url": "https://doi.org/10.1016/j.cell.2012.05.016",
+      "status": "verified"
+    },
+    "harms-2013": {
+      "source": "Harms & Seale (2013) Nat Med 19:1252–1263",
+      "detail": {
+        "en": "Review of brown and beige fat: beige cells develop in white fat in response to various activators",
+        "zh-Hant": "棕色同米色脂肪綜述：米色細胞喺多種活化因子作用下於白色脂肪中形成"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2013,
+      "url": "https://doi.org/10.1038/nm.3361",
+      "status": "verified"
+    },
+    "canty-2005": {
+      "source": "Canty & Kadler (2005) J Cell Sci 118:1341–1353",
+      "detail": {
+        "en": "Review of procollagen trafficking through the secretory pathway, conversion to collagen by procollagen metalloproteinases and fibril formation",
+        "zh-Hant": "前膠原經分泌途徑運輸、由前膠原金屬蛋白酶轉變為膠原，以及纖維形成嘅綜述"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2005,
+      "url": "https://doi.org/10.1242/jcs.01731",
+      "status": "verified"
+    },
+    "kendall-2014": {
+      "source": "Kendall & Feghali-Bostwick (2014) Front Pharmacol 5:123",
+      "detail": {
+        "en": "Review of fibroblasts as the most common connective tissue cell and principal source of extracellular matrix; contractile myofibroblasts",
+        "zh-Hant": "纖維母細胞係最常見嘅結締組織細胞同細胞外基質嘅主要來源；收縮性肌纖維母細胞綜述"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2014,
+      "url": "https://doi.org/10.3389/fphar.2014.00123",
+      "status": "verified"
+    },
+    "bonewald-2011": {
+      "source": "Bonewald (2011) J Bone Miner Res 26:229–238",
+      "detail": {
+        "en": "Review of osteocyte functions: orchestrating bone remodelling through osteoblasts and osteoclasts, endocrine signalling, long life within mineralised matrix",
+        "zh-Hant": "骨細胞功能綜述：透過成骨細胞同破骨細胞調控骨重塑、內分泌訊號，以及喺礦化基質內長壽"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2011,
+      "url": "https://doi.org/10.1002/jbmr.320",
+      "status": "verified"
+    },
+    "schaffler-2014": {
+      "source": "Schaffler et al. (2014) Calcif Tissue Int 94:5–24",
+      "detail": {
+        "en": "Review of osteocytes entombed in mineralised matrix, networked through gap junctions and the lacunar-canalicular system, sensing mechanical signals",
+        "zh-Hant": "困於礦化基質中嘅骨細胞，透過間隙連接同骨陷窩-骨小管系統組成網絡並感測機械訊號嘅綜述"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2014,
+      "url": "https://doi.org/10.1007/s00223-013-9790-y",
+      "status": "verified"
+    },
+    "winkler-2003": {
+      "source": "Winkler et al. (2003) EMBO J 22:6267–6276",
+      "detail": {
+        "en": "Sclerostin, expressed in osteocytes, is a BMP antagonist that suppresses osteoblast activity and bone formation",
+        "zh-Hant": "骨細胞表達嘅硬化蛋白係 BMP 拮抗劑，抑制成骨細胞活性同骨形成"
+      },
+      "species": "Mouse and human",
+      "method": "Gene expression and transgenic mice",
+      "year": 2003,
+      "url": "https://doi.org/10.1093/emboj/cdg599",
+      "status": "verified"
+    },
+    "clarke-2008": {
+      "source": "Clarke (2008) Clin J Am Soc Nephrol 3:S131–S139",
+      "detail": {
+        "en": "Review of normal bone anatomy and physiology: collagenous and non-collagenous matrix proteins, mineralisation, and the canalicular network",
+        "zh-Hant": "正常骨骼解剖同生理綜述：膠原同非膠原基質蛋白、礦化，以及骨小管網絡"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2008,
+      "url": "https://doi.org/10.2215/CJN.04151206",
+      "status": "verified"
     }
   }
 }
