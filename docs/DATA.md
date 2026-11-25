@@ -48,7 +48,7 @@ Preset views for Module B (5XTD, 4UG0, 1TQN, 1ZUM, 1MAZ, 1G5M, 2IMS, 1F16, 2PQK,
 
 ## `bcl2-compare.json`
 
-The Bcl-2 family table in the Compare view (`?view=compare&cmp=bcl2`). `members[]` holds BCL-2, BCL-XL, MCL-1, BAX and BAK with `class`, human `uniprot`, the Module B `structure`, `entries` (unique PDB IDs), `xray`, `nmr` and `cryoem` (these add up to `entries`), `bestResolution` (Å) and the first and last release years. Rebuild with `python3 scripts/build-bcl2-compare.py` from `data/bcl2-family/`. `check-data.mjs` checks the sums and that each structure exists in `catalog.json`.
+The Bcl-2 family table in the Compare view (`?view=compare&cmp=bcl2`). `members[]` holds BCL-2, BCL-XL, MCL-1, BID, BIM, BAX and BAK with `class`, human `uniprot`, the Module B `structure` (`null` for BID and BIM), `peptideOnly` (entries holding only a BH3 peptide), `entries` (unique PDB IDs), `xray`, `nmr` and `cryoem` (these add up to `entries`), `bestResolution` (Å) and the first and last release years. Rebuild with `python3 scripts/build-bcl2-compare.py` from `data/bcl2-family/`. `check-data.mjs` checks the sums and that each structure exists in `catalog.json`.
 
 ## `bcl2-family/`
 

@@ -40,7 +40,8 @@ console.log(`protein locations: ${Object.keys(loc.genes).length}`);
 const fam = read('bcl2-compare.json');
 if (!citations[fam.cite]) bad(`bcl2-compare: cite ${fam.cite} missing`);
 for (const m of fam.members) {
-  if (!cat.structures.some(s => s.id === m.structure)) bad(`bcl2-compare ${m.id}: structure ${m.structure} not in catalog`);
+  if (m.structure && !cat.structures.some(s => s.id === m.structure)) bad(`bcl2-compare ${m.id}: structure ${m.structure} not in catalog`);
+  if (m.peptideOnly > m.entries) bad(`bcl2-compare ${m.id}: peptideOnly above entries`);
   if (m.xray + m.nmr + m.cryoem !== m.entries) bad(`bcl2-compare ${m.id}: methods ${m.xray + m.nmr + m.cryoem} vs entries ${m.entries}`);
   if (m.firstRelease > m.lastRelease) bad(`bcl2-compare ${m.id}: release years`);
 }

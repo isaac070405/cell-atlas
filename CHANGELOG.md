@@ -7,6 +7,7 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 ## Unreleased
 
 ### Added
+- BID and BIM in the Bcl-2 family table in Compare, with a new "BH3 peptide only" row. Neither has a Module B structure yet, so their headers are not links.
 - Bcl-2 family table in the Compare view (`?view=compare&cmp=bcl2`): BCL-2, BCL-XL, MCL-1, BAX and BAK with PDB entries by method, best resolution and release years, linked to their Module B structures (`data/bcl2-compare.json`, `scripts/build-bcl2-compare.py`). A Cells / Bcl-2 family switch sits at the top of Compare.
 - Collagen types I to III and elastin: Module B structure 1CAG (collagen-like triple helix peptide, 1.85 Å, with a tour point on the Gly→Ala substitution), location entries for COL1A1, COL1A2, COL2A1, COL3A1 and ELN (UniProt P15502, 164 genes), and cited text on the collagen and elastic fibre parts of the connective tissue model. Tissue parts can now carry a `cite` list, shown in the Sources panel when the part is selected. Sources: Shoulders & Raines 2009, Samad & Sikarwar 2016, Moroy et al. 2005, Bella et al. 1994.
 - Module B structure 2PQK (human MCL-1 with a Bim BH3 peptide, 2.0 Å) with a verified citation (Fire et al. 2010), one tour point (the Bim BH3 peptide, centroid read from the deposited coordinates), links to hepatocyte, cardiomyocyte and skeletal myocyte, and the MCL1 location entry moved from `candidate` to 2PQK.

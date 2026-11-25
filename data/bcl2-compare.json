@@ -1,5 +1,5 @@
 {
-  "_schema": "Bcl-2 family members in the Compare view. entries counts unique PDB IDs per member (UniProt accession searches, see data/bcl2-family/); xray, nmr and cryoem add up to entries; bestResolution is in Å; structure is the Module B entry in catalog.json; uniprot is the human accession. cite is in citations.json. Rebuild with scripts/build-bcl2-compare.py.",
+  "_schema": "Bcl-2 family members in the Compare view. entries counts unique PDB IDs per member (UniProt accession searches, see data/bcl2-family/); xray, nmr and cryoem add up to entries; bestResolution is in Å; structure is the Module B entry in catalog.json, or null when the member has none yet; peptideOnly counts entries that hold only a BH3 peptide; uniprot is the human accession. cite is in citations.json. Rebuild with scripts/build-bcl2-compare.py.",
   "cite": "bcl2-pdb-catalogue",
   "members": [
     {
@@ -18,6 +18,7 @@
       "xray": 56,
       "nmr": 7,
       "cryoem": 0,
+      "peptideOnly": 0,
       "bestResolution": 1.25,
       "firstRelease": 2001,
       "lastRelease": 2026
@@ -38,6 +39,7 @@
       "xray": 120,
       "nmr": 23,
       "cryoem": 0,
+      "peptideOnly": 2,
       "bestResolution": 1.3,
       "firstRelease": 1997,
       "lastRelease": 2026
@@ -58,9 +60,52 @@
       "xray": 146,
       "nmr": 7,
       "cryoem": 0,
+      "peptideOnly": 1,
       "bestResolution": 1.13,
       "firstRelease": 2004,
       "lastRelease": 2026
+    },
+    {
+      "id": "BID",
+      "name": {
+        "en": "BID",
+        "zh-Hant": "BID"
+      },
+      "class": {
+        "en": "Pro-apoptotic BH3-only activator",
+        "zh-Hant": "促凋亡 BH3-only 活化蛋白"
+      },
+      "uniprot": "P55957",
+      "structure": null,
+      "entries": 20,
+      "xray": 14,
+      "nmr": 6,
+      "cryoem": 0,
+      "peptideOnly": 17,
+      "bestResolution": 1.41,
+      "firstRelease": 1999,
+      "lastRelease": 2023
+    },
+    {
+      "id": "BIM",
+      "name": {
+        "en": "BIM",
+        "zh-Hant": "BIM"
+      },
+      "class": {
+        "en": "Pro-apoptotic BH3-only activator",
+        "zh-Hant": "促凋亡 BH3-only 活化蛋白"
+      },
+      "uniprot": "O43521",
+      "structure": null,
+      "entries": 46,
+      "xray": 44,
+      "nmr": 2,
+      "cryoem": 0,
+      "peptideOnly": 46,
+      "bestResolution": 1.31,
+      "firstRelease": 2001,
+      "lastRelease": 2024
     },
     {
       "id": "BAX",
@@ -78,6 +123,7 @@
       "xray": 33,
       "nmr": 5,
       "cryoem": 1,
+      "peptideOnly": 9,
       "bestResolution": 1.797,
       "firstRelease": 2000,
       "lastRelease": 2025
@@ -98,6 +144,7 @@
       "xray": 52,
       "nmr": 6,
       "cryoem": 1,
+      "peptideOnly": 19,
       "bestResolution": 1.224,
       "firstRelease": 1997,
       "lastRelease": 2025
