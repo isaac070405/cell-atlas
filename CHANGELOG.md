@@ -7,7 +7,7 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 ## Unreleased
 
 ### Added
-- Module B structures for the Bcl-2 family: 1MAZ (human BCL-XL, 2.2 Å), 1G5M (human BCL-2, NMR), 2IMS (human BAK, 1.48 Å) and 1F16 (human BAX, NMR), each with a verified citation and links to hepatocyte, cardiomyocyte and skeletal myocyte. The mitochondrion outer membrane part links to 2IMS. The full PDB catalogue is in `data/bcl2-family/`.
+- Module B structures for the Bcl-2 family: 1MAZ (human BCL-XL, 2.2 Å), 1G5M (human BCL-2, NMR), 2IMS (human BAK, 1.48 Å) and 1F16 (human BAX, NMR), each with a verified citation and links to hepatocyte, cardiomyocyte and skeletal myocyte. The mitochondrion outer membrane part links to 2IMS. Each has one tour point read from the deposited coordinates: BCL-XL and BCL-2 loop ends, the BAK zinc ion and BAX helix α9. The full PDB catalogue is in `data/bcl2-family/`.
 - Human Protein Atlas subcellular location for 158 genes of the Module B structures, with 19 genes missing from the HPA export filled from UniProt (`data/protein-location.json`, `scripts/build-protein-location.py`) (#59, #60).
 - Cell type colour legend, view buttons and cross-section for the system and tissue levels, and epithelial, neuroglia and neuron tissue models (#49, #50, #51).
 - Traditional Chinese names for the embedded 3D Anatomy Model: all 2,348 structure labels, group headings, systems and the 14 layers follow the EN / 繁 / 雙語 switch, and the search box accepts Chinese (`anatomy/zh-hant.js`).

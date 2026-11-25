@@ -25,7 +25,7 @@ This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3
 - Volume-fraction chart for the selected cell, from `data/catalog.json`.
 - **3D cell** (Module A): procedural Three.js cell for each cell in `data/catalog.json` (six with published volume fractions, plus the schematic E. coli and bacteriophage T4). Compartment volumes sum to the published fractions (`js/cellmodel.js`); shapes and positions are schematic. Orbit, cutting plane, click a compartment for its data card (`?cell=hepatocyte&org=mito`). Three.js r187 is self-hosted in `vendor/three/`.
 - **Mol\* spike** (`spike/molstar.html`): loads 5XTD or 4UG0 as binary CIF from RCSB with Mol* 5.13.1, self-hosted in `vendor/molstar/`.
-- **Module B tour points** (`data/tour-points.json`): preset views for 5XTD (FMN, Fe–S clusters, Q-site), 4UG0 (tRNA sites), 1TQN (heme, Cys442) and 1ZUM (Cys302, Glu268, Lys487), each with a source chip and a `computed` or `literature` basis. A tour bar in the Module B pane focuses each point in Mol*.
+- **Module B tour points** (`data/tour-points.json`): preset views for 5XTD (FMN, Fe–S clusters, Q-site), 4UG0 (tRNA sites), 1TQN (heme, Cys442), 1ZUM (Cys302, Glu268, Lys487), 1MAZ (α1–α2 loop), 1G5M (loop gap), 2IMS (zinc site) and 1F16 (helix α9), each with a source chip and a `computed` or `literature` basis. A tour bar in the Module B pane focuses each point in Mol*.
 - **Organelle size and function text**: the cell card shows size ranges and function text from PubMed and SciSpace sources, 45 citations in `data/citations.json`.
 - **`@isaac070405/cell-3d`** (`packages/cell-3d/`): the 3D cell model and view as an npm package, published to GitHub Packages by `.github/workflows/publish-cell-3d.yml`.
 - **Protein subcellular location** (`data/protein-location.json`): Human Protein Atlas location, reliability and GO terms for 158 genes of the Module B structures, shown in the Module B cards. 19 genes missing from the HPA export come from UniProt and are labelled as such. Rebuilt with `scripts/build-protein-location.py`; HPA data is CC BY-SA 4.0 (`THIRD_PARTY_NOTICES.md`).
@@ -59,7 +59,7 @@ This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3
 | `THIRD_PARTY_NOTICES.md` | Licences of vendored libraries and models |
 | `data/catalog.json` | Cells with volume fractions, compartments, structures |
 | `data/citations.json` | Shared citation registry (`verified` or `pending`) |
-| `data/tour-points.json` | Module B preset views for 5XTD, 4UG0, 1TQN and 1ZUM, with citations (the Bcl-2 structures have none yet) |
+| `data/tour-points.json` | Module B preset views for 5XTD, 4UG0, 1TQN, 1ZUM, 1MAZ, 1G5M, 2IMS and 1F16, with citations |
 | `data/anatomy.json`, `data/tissues.json` | System, organ and tissue lists for the anatomy levels |
 | `data/protein-location.json` | HPA and UniProt subcellular location for 158 genes |
 | `data/organelles.json`, `data/atoms.json` | Organelle and atom models for the Organelle and Atom levels |
