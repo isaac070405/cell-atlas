@@ -133,6 +133,10 @@
     {
       "from": "pdb:1F16",
       "to": ["cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
+    },
+    {
+      "from": "pdb:2PQK",
+      "to": ["cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
     }
   ]
 }
