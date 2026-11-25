@@ -10,9 +10,11 @@ summ = {r['family_member']: r for r in csv.DictReader(open(root / 'data/bcl2-fam
 
 # member -> (id, zh-Hant class, Module B structure in catalog.json)
 # structure is None for members with no Module B structure yet
-MEMBERS = [('Bcl-2', '1G5M'), ('Bcl-xL', '1MAZ'), ('MCL-1', '2PQK'), ('BID', None), ('BIM', None), ('BAX', '1F16'), ('BAK', '2IMS')]
-ZH_CLASS = {'Anti-apoptotic': '抗凋亡', 'Pro-apoptotic BH3-only activator': '促凋亡 BH3-only 活化蛋白', 'Pro-apoptotic pore former': '促凋亡成孔蛋白'}
-NAME = {'Bcl-2': 'BCL-2', 'Bcl-xL': 'BCL-XL', 'MCL-1': 'MCL-1', 'BID': 'BID', 'BIM': 'BIM', 'BAX': 'BAX', 'BAK': 'BAK'}
+MEMBERS = [('Bcl-2', '1G5M'), ('Bcl-xL', '1MAZ'), ('MCL-1', '2PQK'), ('BID', None), ('BIM', None), ('BIK', None), ('BAX', '1F16'), ('BAK', '2IMS'), ('BOK', None), ('BIT1 (PTRH2)', None)]
+# human accession when the catalogue has no human entry for the member (BIK has no PDB entries)
+HUMAN = {'BIK': 'Q13323'}
+ZH_CLASS = {'Anti-apoptotic': '抗凋亡', 'Pro-apoptotic BH3-only activator': '促凋亡 BH3-only 活化蛋白', 'Pro-apoptotic BH3-only sensitiser': '促凋亡 BH3-only 敏化蛋白', 'Not a Bcl-2 family member (no BH3 domain)': '非 Bcl-2 家族成員（無 BH3 結構域）', 'Pro-apoptotic pore former': '促凋亡成孔蛋白'}
+NAME = {'Bcl-2': 'BCL-2', 'Bcl-xL': 'BCL-XL', 'MCL-1': 'MCL-1', 'BID': 'BID', 'BIM': 'BIM', 'BAX': 'BAX', 'BAK': 'BAK', 'BOK': 'BOK', 'BIK': 'BIK', 'BIT1 (PTRH2)': 'BIT1 (PTRH2)'}
 
 out = []
 for m, sid in MEMBERS:
@@ -20,15 +22,16 @@ for m, sid in MEMBERS:
     ids = {r['pdb_id'] for r in mine}
     s = summ[m]
     assert len(ids) == int(s['n_PDB_entries']), m
-    human = sorted({r['uniprot'] for r in mine if r['species'] == 'Homo sapiens'})
+    human = sorted({r['uniprot'] for r in mine if r['species'] == 'Homo sapiens'}) or ([HUMAN[m]] if m in HUMAN else [])
     assert len(human) == 1, (m, human)
     xray, nmr, em = int(s['X-ray']), int(s['NMR']), int(s['cryo-EM'])
     assert xray + nmr + em == len(ids), m
     out.append({'id': NAME[m], 'name': {'en': NAME[m], 'zh-Hant': NAME[m]},
                 'class': {'en': s['BCL2_class'], 'zh-Hant': ZH_CLASS[s['BCL2_class']]},
                 'uniprot': human[0], 'structure': sid, 'entries': len(ids), 'xray': xray, 'nmr': nmr, 'cryoem': em, 'peptideOnly': int(s['entries_BH3_peptide_only']),
-                'bestResolution': float(s['best_resolution_A']), 'firstRelease': int(float(s['first_release'])), 'lastRelease': int(float(s['last_release']))})
-doc = {'_schema': 'Bcl-2 family members in the Compare view. entries counts unique PDB IDs per member (UniProt accession searches, see data/bcl2-family/); xray, nmr and cryoem add up to entries; bestResolution is in Å; structure is the Module B entry in catalog.json, or null when the member has none yet; peptideOnly counts entries that hold only a BH3 peptide; uniprot is the human accession. cite is in citations.json. Rebuild with scripts/build-bcl2-compare.py.',
+                'bestResolution': float(s['best_resolution_A']) if s['best_resolution_A'] else None,
+                'firstRelease': int(float(s['first_release'])) if s['first_release'] else None, 'lastRelease': int(float(s['last_release'])) if s['last_release'] else None})
+doc = {'_schema': 'Bcl-2 family members in the Compare view. entries counts unique PDB IDs per member (UniProt accession searches, see data/bcl2-family/); xray, nmr and cryoem add up to entries; bestResolution is in Å and the release years are null when the member has no PDB entries; structure is the Module B entry in catalog.json, or null when the member has none yet; peptideOnly counts entries that hold only a BH3 peptide; uniprot is the human accession. cite is in citations.json. Rebuild with scripts/build-bcl2-compare.py.',
        'cite': 'bcl2-pdb-catalogue', 'members': out}
 (root / 'data/bcl2-compare.json').write_text(json.dumps(doc, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print(len(out), [m['entries'] for m in out])

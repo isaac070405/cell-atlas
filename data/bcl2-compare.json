@@ -1,5 +1,5 @@
 {
-  "_schema": "Bcl-2 family members in the Compare view. entries counts unique PDB IDs per member (UniProt accession searches, see data/bcl2-family/); xray, nmr and cryoem add up to entries; bestResolution is in Å; structure is the Module B entry in catalog.json, or null when the member has none yet; peptideOnly counts entries that hold only a BH3 peptide; uniprot is the human accession. cite is in citations.json. Rebuild with scripts/build-bcl2-compare.py.",
+  "_schema": "Bcl-2 family members in the Compare view. entries counts unique PDB IDs per member (UniProt accession searches, see data/bcl2-family/); xray, nmr and cryoem add up to entries; bestResolution is in Å and the release years are null when the member has no PDB entries; structure is the Module B entry in catalog.json, or null when the member has none yet; peptideOnly counts entries that hold only a BH3 peptide; uniprot is the human accession. cite is in citations.json. Rebuild with scripts/build-bcl2-compare.py.",
   "cite": "bcl2-pdb-catalogue",
   "members": [
     {
@@ -108,6 +108,27 @@
       "lastRelease": 2024
     },
     {
+      "id": "BIK",
+      "name": {
+        "en": "BIK",
+        "zh-Hant": "BIK"
+      },
+      "class": {
+        "en": "Pro-apoptotic BH3-only sensitiser",
+        "zh-Hant": "促凋亡 BH3-only 敏化蛋白"
+      },
+      "uniprot": "Q13323",
+      "structure": null,
+      "entries": 0,
+      "xray": 0,
+      "nmr": 0,
+      "cryoem": 0,
+      "peptideOnly": 0,
+      "bestResolution": null,
+      "firstRelease": null,
+      "lastRelease": null
+    },
+    {
       "id": "BAX",
       "name": {
         "en": "BAX",
@@ -148,6 +169,48 @@
       "bestResolution": 1.224,
       "firstRelease": 1997,
       "lastRelease": 2025
+    },
+    {
+      "id": "BOK",
+      "name": {
+        "en": "BOK",
+        "zh-Hant": "BOK"
+      },
+      "class": {
+        "en": "Pro-apoptotic pore former",
+        "zh-Hant": "促凋亡成孔蛋白"
+      },
+      "uniprot": "Q9UMX3",
+      "structure": null,
+      "entries": 2,
+      "xray": 1,
+      "nmr": 1,
+      "cryoem": 0,
+      "peptideOnly": 0,
+      "bestResolution": 1.799,
+      "firstRelease": 2018,
+      "lastRelease": 2018
+    },
+    {
+      "id": "BIT1 (PTRH2)",
+      "name": {
+        "en": "BIT1 (PTRH2)",
+        "zh-Hant": "BIT1 (PTRH2)"
+      },
+      "class": {
+        "en": "Not a Bcl-2 family member (no BH3 domain)",
+        "zh-Hant": "非 Bcl-2 家族成員（無 BH3 結構域）"
+      },
+      "uniprot": "Q9Y3E5",
+      "structure": null,
+      "entries": 1,
+      "xray": 1,
+      "nmr": 0,
+      "cryoem": 0,
+      "peptideOnly": 0,
+      "bestResolution": 2.0,
+      "firstRelease": 2003,
+      "lastRelease": 2003
     }
   ]
 }

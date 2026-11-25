@@ -54,7 +54,7 @@ const subSwitch = cmp => `<div class="seg seg-sm" role="radiogroup" aria-label="
 // Bcl-2 family: members as columns, PDB statistics as rows. Bars scale to the largest count in the row.
 export function renderBcl2() {
   const ms = bcl2.members, sw = k => `var(--org-${k})`;
-  const colour = m => sw(m.class.en === 'Anti-apoptotic' ? 'nucleus' : m.class.en.includes('BH3-only') ? 'er-rough' : 'mito');
+  const colour = m => sw(m.class.en === 'Anti-apoptotic' ? 'nucleus' : m.class.en.includes('BH3-only') ? 'er-rough' : m.class.en.startsWith('Not') ? 'cytosol' : 'mito');
   const label = m => m.structure
     ? `<a class="col-head" href="?pdb=${esc(m.structure)}" data-pdb="${esc(m.structure)}" title="${esc(text('compare.jump'))}">${html(m.name)}</a>`
     : `<span class="col-head" style="cursor:default" title="${esc(text('compare.bcl2.nostructure'))}">${html(m.name)}</span>`;
@@ -69,7 +69,7 @@ export function renderBcl2() {
     <div class="compare-scroll"><table class="compare">
       <thead><tr><th scope="col" class="corner">${html('compare.bcl2.member')}</th>${head}</tr></thead>
       <tbody>${plain('uniprot', m => m.uniprot)}${count('entries')}${count('xray')}${count('nmr')}${count('cryoem')}${count('peptideOnly')}
-      ${plain('best', m => `${m.bestResolution} Å`)}${plain('years', m => `${m.firstRelease}–${m.lastRelease}`)}</tbody>
+      ${plain('best', m => m.bestResolution ? `${m.bestResolution} Å` : '—')}${plain('years', m => m.firstRelease ? (m.firstRelease === m.lastRelease ? `${m.firstRelease}` : `${m.firstRelease}–${m.lastRelease}`) : '—')}</tbody>
     </table></div>
     <p class="compare-foot">${html('compare.bcl2.footnote')}</p>`;
 }
