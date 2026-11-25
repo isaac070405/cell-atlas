@@ -258,12 +258,12 @@
       "zh-Hant": "Bcl-2 家族"
     },
     "compare.bcl2.title": {
-      "en": "Five Bcl-2 family members side by side",
-      "zh-Hant": "五個 Bcl-2 家族成員並排比較"
+      "en": "Nine Bcl-2 family members side by side",
+      "zh-Hant": "九個 Bcl-2 家族成員並排比較"
     },
     "compare.bcl2.lede": {
-      "en": "Experimental structures in the RCSB PDB for each member. Bars share one scale per row. Open a member to see its Module B structure.",
-      "zh-Hant": "各成員在 RCSB PDB 中的實驗結構。每列的橫條共用同一比例尺。點擊成員可打開其 Module B 結構。"
+      "en": "Experimental structures in the RCSB PDB for each member. Bars share one scale per row. Open a member to see its Module B structure. BID, BIM, BIK and BOK have no Module B structure yet.",
+      "zh-Hant": "各成員在 RCSB PDB 中的實驗結構。每列的橫條共用同一比例尺。點擊成員可打開其 Module B 結構。BID、BIM、BIK 與 BOK 暫時沒有 Module B 結構。"
     },
     "compare.bcl2.member": {
       "en": "Member",
@@ -289,6 +289,14 @@
       "en": "Cryo-EM",
       "zh-Hant": "冷凍電鏡"
     },
+    "compare.bcl2.peptideOnly": {
+      "en": "BH3 peptide only",
+      "zh-Hant": "僅 BH3 肽"
+    },
+    "compare.bcl2.nostructure": {
+      "en": "No Module B structure yet",
+      "zh-Hant": "暫時沒有 Module B 結構"
+    },
     "compare.bcl2.best": {
       "en": "Best resolution",
       "zh-Hant": "最佳解析度"
@@ -298,8 +306,8 @@
       "zh-Hant": "發佈年份"
     },
     "compare.bcl2.footnote": {
-      "en": "Counts are unique PDB IDs per member, including mouse and rat orthologs and BH3 peptide complexes. Method counts add up to the total. The catalogue is in data/bcl2-family.",
-      "zh-Hant": "數字為每個成員不重複的 PDB 編號，包括小鼠與大鼠的同源蛋白及 BH3 肽複合體。方法數目加起來等於總數。目錄見 data/bcl2-family。"
+      "en": "Counts are unique PDB IDs per member, including orthologs (BOK: one chicken and one human entry; its best resolution is the chicken one) and BH3 peptide complexes. Method counts add up to the total. BH3 peptide only means the entry holds no folded protein or domain of that member, only its BH3 peptide, which is why BIM shows 46 of 46. BIK has no PDB entries. The catalogue is in data/bcl2-family.",
+      "zh-Hant": "數字為每個成員不重複的 PDB 編號，包括同源蛋白（BOK：一條雞、一條人類；其最佳解析度屬雞的條目）及 BH3 肽複合體。方法數目加起來等於總數。「僅 BH3 肽」指該條目只含該成員的 BH3 肽，不含摺疊的蛋白質或結構域，所以 BIM 的 46 條全部屬此類。BIK 沒有 PDB 條目。目錄見 data/bcl2-family。"
     },
     "compare.compartment": {
       "en": "Compartment",
