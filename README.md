@@ -21,7 +21,7 @@ This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3
 - Light and dark themes from `css/tokens.css`, with fixed organelle colours shared across the platform.
 - Deep links `?cell=enterocyte`, `?pdb=5XTD`, `?level=organelle`.
 - Module B pane with the first-release queue; the Mol* viewer loads in it (see tour points below).
-- **Compare view** (`?view=compare`): hepatocyte, enterocyte, muscle (skeletal, cardiac or smooth via `&muscle=`) and plant mesophyll side by side, one row per compartment, on one 0–100% scale. Species on every column; ranges drawn as spans; unmeasured compartments shown as a dash.
+- **Compare view** (`?view=compare`): hepatocyte, enterocyte, muscle (skeletal, cardiac or smooth via `&muscle=`) and plant mesophyll side by side, one row per compartment, on one 0–100% scale. Species on every column; ranges drawn as spans; unmeasured compartments shown as a dash. A switch in the view opens the Bcl-2 family table (`?view=compare&cmp=bcl2`): BCL-2, BCL-XL, MCL-1, BAX and BAK with PDB entries by method, best resolution and release years, each linked to its Module B structure.
 - Volume-fraction chart for the selected cell, from `data/catalog.json`.
 - **3D cell** (Module A): procedural Three.js cell for each cell in `data/catalog.json` (six with published volume fractions, plus the schematic general eukaryotic cell, E. coli and bacteriophage T4). Compartment volumes sum to the published fractions (`js/cellmodel.js`); shapes and positions are schematic. Orbit, cutting plane, click a compartment for its data card (`?cell=hepatocyte&org=mito`). Three.js r187 is self-hosted in `vendor/three/`.
 - **Mol\* spike** (`spike/molstar.html`): loads 5XTD or 4UG0 as binary CIF from RCSB with Mol* 5.13.1, self-hosted in `vendor/molstar/`.
@@ -61,6 +61,7 @@ This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3
 | `data/citations.json` | Shared citation registry (`verified` or `pending`) |
 | `data/tour-points.json` | Module B preset views for 5XTD, 4UG0, 1TQN, 1ZUM, 1MAZ, 1G5M, 2IMS, 1F16, 2PQK and 1CAG, with citations |
 | `data/anatomy.json`, `data/tissues.json` | System, organ and tissue lists for the anatomy levels |
+| `data/bcl2-compare.json` | Bcl-2 family table in Compare, built by `scripts/build-bcl2-compare.py` |
 | `data/protein-location.json` | HPA and UniProt subcellular location for 164 genes |
 | `data/organelles.json`, `data/atoms.json` | Organelle and atom models for the Organelle and Atom levels |
 | `data/links.json` | Shared link keys `anat:` `tis:` `cell:` `pdb:` `spec:` `diag:` `ent:` |

@@ -46,6 +46,10 @@ Preset views for Module B (5XTD, 4UG0, 1TQN, 1ZUM, 1MAZ, 1G5M, 2IMS, 1F16, 2PQK,
 
 `anatomy.json` classifies the 3D Anatomy Model levels: `systems[]` with the model's system `keys` (`null` shows the whole body) and `match` patterns tested against part labels. `tissues.json` holds 21 schematic tissue models (epithelial, connective, muscular, nervous, neuroglia and neurons) and the `cellModels` for the general eukaryotic cell (17 parts: plasma membrane, cytoplasm, nuclear membrane, chromatin, nucleolus, rough and smooth ER, Golgi apparatus, mitochondrion, lysosome, vacuole, centrioles, ribosomes, glycogen and the three cytoskeletal fibres), E. coli and bacteriophage T4. They carry no measured values and follow textbook figures.
 
+## `bcl2-compare.json`
+
+The Bcl-2 family table in the Compare view (`?view=compare&cmp=bcl2`). `members[]` holds BCL-2, BCL-XL, MCL-1, BAX and BAK with `class`, human `uniprot`, the Module B `structure`, `entries` (unique PDB IDs), `xray`, `nmr` and `cryoem` (these add up to `entries`), `bestResolution` (Å) and the first and last release years. Rebuild with `python3 scripts/build-bcl2-compare.py` from `data/bcl2-family/`. `check-data.mjs` checks the sums and that each structure exists in `catalog.json`.
+
 ## `bcl2-family/`
 
 PDB structure catalogue for the Bcl-2 family: 543 rows covering 445 unique PDB IDs, across 9 family members (BIK has no entries) plus one non-member control, BIT1/PTRH2. `bcl2_family_pdb_catalogue.csv` (and the `.xlsx` copy) lists one row per entry and family member with UniProt accession, species, construct class, method, resolution, release year, PubMed ID and DOI. `bcl2_family_pdb_summary.csv` counts entries per member by method (X-ray, NMR, cryo-EM). The files are reference tables and no page loads them yet.
