@@ -21,9 +21,10 @@
       "zh-Hant": "外膜"
      },
      "text": {
-      "en": "Smooth membrane with porins, permeable to small molecules.",
-      "zh-Hant": "平滑嘅膜，含孔蛋白，小分子可以通過。"
-     }
+      "en": "Smooth membrane with porins, permeable to small molecules. BAK and BAX permeabilize it in apoptosis (PDB 2IMS), and BCL-2 family anti-apoptotic proteins block this.",
+      "zh-Hant": "平滑嘅膜，含孔蛋白，小分子可以通過。細胞凋亡時 BAK 與 BAX 令外膜通透化（PDB 2IMS），Bcl-2 家族的抗凋亡蛋白則阻止此過程。"
+     },
+     "link": "pdb:2IMS"
     },
     {
      "id": "ims",

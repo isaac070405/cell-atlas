@@ -538,6 +538,54 @@
       "url": "https://www.rcsb.org/structure/1ZUM",
       "status": "verified"
     },
+    "muchmore-1996": {
+      "source": "Muchmore et al. (1996) Nature 381:335–341",
+      "detail": {
+        "en": "Human BCL-XL, an inhibitor of programmed cell death, PDB 1MAZ, 2.2 Å; the paper also reports the solution structure",
+        "zh-Hant": "人類 BCL-XL（細胞程序性死亡抑制蛋白），PDB 1MAZ，2.2 Å；論文亦報告溶液結構"
+      },
+      "species": "Human",
+      "method": "X-ray crystallography, 2.2 Å",
+      "year": 1996,
+      "url": "https://www.rcsb.org/structure/1MAZ",
+      "status": "verified"
+    },
+    "petros-2001": {
+      "source": "Petros et al. (2001) Proc Natl Acad Sci USA 98:3012–3017",
+      "detail": {
+        "en": "Human BCL-2, a Bcl-2/Bcl-xL chimera with part of the loop replaced because wild-type BCL-2 behaved poorly in solution, PDB 1G5M",
+        "zh-Hant": "人類 BCL-2；野生型 BCL-2 在溶液中表現不佳，故用部分環區換成 BCL-XL 序列的嵌合體，PDB 1G5M"
+      },
+      "species": "Human",
+      "method": "Solution NMR",
+      "year": 2001,
+      "url": "https://www.rcsb.org/structure/1G5M",
+      "status": "verified"
+    },
+    "moldoveanu-2006": {
+      "source": "Moldoveanu et al. (2006) Mol Cell 24:677–688",
+      "detail": {
+        "en": "Human BAK homodimer (calpain-cleaved BAK, cBAK) with an inhibitory zinc binding site, PDB 2IMS, 1.5 Å",
+        "zh-Hant": "人類 BAK 同源二聚體（鈣蛋白酶切割的 BAK，cBAK），含抑制性鋅結合位點，PDB 2IMS，1.5 Å"
+      },
+      "species": "Human",
+      "method": "X-ray crystallography, 1.48 Å",
+      "year": 2006,
+      "url": "https://www.rcsb.org/structure/2IMS",
+      "status": "verified"
+    },
+    "suzuki-2000": {
+      "source": "Suzuki, Youle & Tjandra (2000) Cell 103:645–654",
+      "detail": {
+        "en": "Human BAX including the C-terminal transmembrane helix α9, nine α-helices, PDB 1F16",
+        "zh-Hant": "人類 BAX（含 C 端跨膜螺旋 α9，共九段 α 螺旋），PDB 1F16"
+      },
+      "species": "Human",
+      "method": "Solution NMR",
+      "year": 2000,
+      "url": "https://www.rcsb.org/structure/1F16",
+      "status": "verified"
+    },
     "hpa-subcellular": {
       "source": "The Human Protein Atlas, subcellular location",
       "detail": {

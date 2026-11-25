@@ -117,6 +117,22 @@
         "ent:TOP-01",
         "spec:aldh2"
       ]
+    },
+    {
+      "from": "pdb:1MAZ",
+      "to": ["cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
+    },
+    {
+      "from": "pdb:1G5M",
+      "to": ["cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
+    },
+    {
+      "from": "pdb:2IMS",
+      "to": ["cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
+    },
+    {
+      "from": "pdb:1F16",
+      "to": ["cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
     }
   ]
 }

@@ -99,7 +99,7 @@ Each stage has a pass condition. The next stage starts only after it passes.
 
 | Release | Cells | Structures |
 | --- | --- | --- |
-| 1 | Hepatocyte, enterocyte, skeletal / cardiac / smooth muscle, plant cell | 5XTD Complex I, 4UG0 80S ribosome, 1TQN cytochrome P450 3A4, 1ZUM ALDH2*2; candidates ATP synthase, nuclear pore complex, GLUT / SGLT1 |
+| 1 | Hepatocyte, enterocyte, skeletal / cardiac / smooth muscle, plant cell | 5XTD Complex I, 4UG0 80S ribosome, 1TQN cytochrome P450 3A4, 1ZUM ALDH2*2, and the Bcl-2 family structures 1MAZ BCL-XL, 1G5M BCL-2, 2IMS BAK, 1F16 BAX; candidates ATP synthase, nuclear pore complex, GLUT / SGLT1 |
 | 2 | Sperm and egg, neurone types | Bcl-2 family, β2 adrenergic receptor |
 | Candidates | Parietal cell, intestinal L cell, brown adipocyte, bone cell, type II pneumocyte | ALDH2, GLP-1, lactase, HMG-CoA reductase, H⁺/K⁺-ATPase, UCP1 |
 
