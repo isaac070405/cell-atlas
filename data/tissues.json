@@ -675,9 +675,10 @@
       "zh-Hant": "膠原纖維與纖維束"
      },
      "text": {
-      "en": "Strong, rope-like fibres grouped into bundles. They resist pulling.",
-      "zh-Hant": "堅韌如繩嘅纖維，聚成纖維束，抵抗拉力。"
+      "en": "Strong, rope-like fibres grouped into bundles. They resist pulling. Collagen is the most abundant protein in animals: about one third of human protein and three quarters of the dry weight of skin. Each molecule is a triple helix of three α-chains with Gly at every third position. Type I (bone, skin, tendon, ligaments, cornea) is 80 to 90% of dermal collagen, type II is in cartilage and the vitreous humour, and type III is in skin and blood vessels.",
+      "zh-Hant": "堅韌如繩的纖維，聚成纖維束，抵抗拉力。膠原蛋白是動物中最豐富的蛋白質：約佔人體蛋白質的三分之一、皮膚乾重的四分之三。每個分子由三條 α 鏈組成三股螺旋，每隔兩個殘基即有一個 Gly。I 型（骨、皮膚、肌腱、韌帶、角膜）佔真皮膠原蛋白的 80% 至 90%；II 型見於軟骨與玻璃體；III 型見於皮膚與血管。"
      },
+     "cite": ["shoulders-2009", "sikarwar-2016"],
      "group": "fibers"
     },
     {
@@ -688,9 +689,10 @@
       "zh-Hant": "彈性纖維"
      },
      "text": {
-      "en": "Thin branching fibres that stretch and recoil.",
-      "zh-Hant": "幼細分支嘅纖維，可伸展及回彈。"
+      "en": "Thin branching fibres that stretch and recoil. Elastin, the insoluble polymer of tropoelastin, gives most of the elasticity of vertebrate tissue and forms elastic fibres in skin, lung and ligaments. Human tropoelastin (UniProt P15502) has 724 amino acids. Elastase digestion releases elastin-derived peptides that change how cells behave.",
+      "zh-Hant": "幼細分支的纖維，可伸展及回彈。彈性蛋白是原彈性蛋白的不溶性聚合物，賦予脊椎動物組織大部分彈性，並在皮膚、肺與韌帶中形成彈性纖維。人類原彈性蛋白（UniProt P15502）有 724 個胺基酸。彈性蛋白酶的分解會釋出彈性蛋白衍生肽，影響細胞行為。"
      },
+     "cite": ["moroy-2005"],
      "group": "fibers"
     },
     {

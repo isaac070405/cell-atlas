@@ -28,6 +28,7 @@ const tis = read('tissues.json');
 for (const t of tis.tissues) {
   if (!t.category) bad(`tissue ${t.id}: no category`);
   if (new Set(t.parts.map(p => p.id)).size !== t.parts.length) bad(`tissue ${t.id}: duplicate part id`);
+  for (const p of t.parts) for (const c of p.cite ?? []) if (!citations[c]) bad(`tissue ${t.id} ${p.id}: cite ${c} missing`);
   for (const [k, v] of Object.entries(t.aliases ?? {})) if (!t.parts.some(p => p.id === v)) bad(`tissue ${t.id}: alias ${k} -> ${v} not a part`);
 }
 for (const e of links.edges) for (const k of [e.from, ...e.to]) if (k.startsWith('tis:') && !tis.tissues.some(t => t.id === k.slice(4) || t.aliases?.[k.slice(4)])) bad(`link ${k}: no tissue model`);

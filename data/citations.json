@@ -598,6 +598,54 @@
       "url": "https://www.rcsb.org/structure/2PQK",
       "status": "verified"
     },
+    "shoulders-2009": {
+      "source": "Shoulders & Raines (2009) Annu Rev Biochem 78:929–958",
+      "detail": {
+        "en": "Review of collagen structure and stability: triple helix, amino acid composition, share of body protein, fibril assembly",
+        "zh-Hant": "膠原蛋白結構與穩定性綜述：三股螺旋、胺基酸組成、佔身體蛋白質的比例、纖維組裝"
+      },
+      "species": "Animals, mainly human",
+      "method": "Review",
+      "year": 2009,
+      "url": "https://doi.org/10.1146/annurev.biochem.77.032207.120833",
+      "status": "verified"
+    },
+    "sikarwar-2016": {
+      "source": "Samad & Sikarwar (2016) Int J Biochem Res Rev 14(3):1–8",
+      "detail": {
+        "en": "Review of collagen in cosmetics and healthcare, with a table of collagen classes, types and tissue distribution",
+        "zh-Hant": "膠原蛋白在美容與保健中的應用綜述，內含膠原蛋白分類、類型及組織分佈表"
+      },
+      "species": "Human, bovine, porcine, marine",
+      "method": "Review",
+      "year": 2016,
+      "url": "https://doi.org/10.9734/IJBCRR/2016/27271",
+      "status": "verified"
+    },
+    "moroy-2005": {
+      "source": "Moroy, Alix & Héry-Huynh (2005) Biopolymers 78:206–220",
+      "detail": {
+        "en": "Human elastin-derived peptides containing the GXXP motif, from the 724-residue tropoelastin sequence (UniProt P15502); molecular dynamics of 128 peptides",
+        "zh-Hant": "含 GXXP 基序的人類彈性蛋白衍生肽，源自 724 個殘基的原彈性蛋白序列（UniProt P15502）；128 條肽的分子動力學模擬"
+      },
+      "species": "Human",
+      "method": "Molecular dynamics (computed)",
+      "year": 2005,
+      "url": "https://doi.org/10.1002/bip.20276",
+      "status": "verified"
+    },
+    "bella-1994": {
+      "source": "Bella et al. (1994) Science 266:75–81",
+      "detail": {
+        "en": "Collagen-like peptide (ProHypGly)4(ProHypAla)(ProHypGly)5, PDB 1CAG, 1.85 Å (title: 1.9 Å); triple helix with a single Gly to Ala substitution",
+        "zh-Hant": "類膠原肽 (ProHypGly)4(ProHypAla)(ProHypGly)5，PDB 1CAG，1.85 Å（標題 1.9 Å）；含單一 Gly→Ala 取代的三股螺旋"
+      },
+      "species": "Synthetic peptide",
+      "method": "X-ray crystallography, 1.85 Å",
+      "year": 1994,
+      "url": "https://www.rcsb.org/structure/1CAG",
+      "status": "verified"
+    },
     "hpa-subcellular": {
       "source": "The Human Protein Atlas, subcellular location",
       "detail": {

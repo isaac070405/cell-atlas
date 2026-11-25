@@ -25,10 +25,10 @@ This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3
 - Volume-fraction chart for the selected cell, from `data/catalog.json`.
 - **3D cell** (Module A): procedural Three.js cell for each cell in `data/catalog.json` (six with published volume fractions, plus the schematic general eukaryotic cell, E. coli and bacteriophage T4). Compartment volumes sum to the published fractions (`js/cellmodel.js`); shapes and positions are schematic. Orbit, cutting plane, click a compartment for its data card (`?cell=hepatocyte&org=mito`). Three.js r187 is self-hosted in `vendor/three/`.
 - **Mol\* spike** (`spike/molstar.html`): loads 5XTD or 4UG0 as binary CIF from RCSB with Mol* 5.13.1, self-hosted in `vendor/molstar/`.
-- **Module B tour points** (`data/tour-points.json`): preset views for 5XTD (FMN, Fe–S clusters, Q-site), 4UG0 (tRNA sites), 1TQN (heme, Cys442), 1ZUM (Cys302, Glu268, Lys487), 1MAZ (α1–α2 loop), 1G5M (loop gap), 2IMS (zinc site), 1F16 (helix α9) and 2PQK (Bim BH3 peptide), each with a source chip and a `computed` or `literature` basis. A tour bar in the Module B pane focuses each point in Mol*.
+- **Module B tour points** (`data/tour-points.json`): preset views for 5XTD (FMN, Fe–S clusters, Q-site), 4UG0 (tRNA sites), 1TQN (heme, Cys442), 1ZUM (Cys302, Glu268, Lys487), 1MAZ (α1–α2 loop), 1G5M (loop gap), 2IMS (zinc site), 1F16 (helix α9) 2PQK (Bim BH3 peptide) and 1CAG (Gly→Ala site), each with a source chip and a `computed` or `literature` basis. A tour bar in the Module B pane focuses each point in Mol*.
 - **Organelle size and function text**: the cell card shows size ranges and function text from PubMed and SciSpace sources, 45 citations in `data/citations.json`.
 - **`@isaac070405/cell-3d`** (`packages/cell-3d/`): the 3D cell model and view as an npm package, published to GitHub Packages by `.github/workflows/publish-cell-3d.yml`.
-- **Protein subcellular location** (`data/protein-location.json`): Human Protein Atlas location, reliability and GO terms for 159 genes of the Module B structures, shown in the Module B cards. 20 genes missing from the HPA export come from UniProt and are labelled as such. Rebuilt with `scripts/build-protein-location.py`; HPA data is CC BY-SA 4.0 (`THIRD_PARTY_NOTICES.md`).
+- **Protein subcellular location** (`data/protein-location.json`): Human Protein Atlas location, reliability and GO terms for 164 genes of the Module B structures, shown in the Module B cards. 25 genes (20 missing from the HPA export, plus COL1A1, COL1A2, COL2A1, COL3A1 and ELN) come from UniProt and are labelled as such. Rebuilt with `scripts/build-protein-location.py`; HPA data is CC BY-SA 4.0 (`THIRD_PARTY_NOTICES.md`).
 - Two-way links: each card lists its own `links.json` edges grouped by site, plus every item that links to it. Mitochondria and rough ER rows jump to PDB 5XTD and 4UG0.
 
 ## Files
@@ -59,9 +59,9 @@ This repo holds the site shell (roadmap stage 0), the data views (stages 2 and 3
 | `THIRD_PARTY_NOTICES.md` | Licences of vendored libraries and models |
 | `data/catalog.json` | Cells with volume fractions, compartments, structures |
 | `data/citations.json` | Shared citation registry (`verified` or `pending`) |
-| `data/tour-points.json` | Module B preset views for 5XTD, 4UG0, 1TQN, 1ZUM, 1MAZ, 1G5M, 2IMS, 1F16 and 2PQK, with citations |
+| `data/tour-points.json` | Module B preset views for 5XTD, 4UG0, 1TQN, 1ZUM, 1MAZ, 1G5M, 2IMS, 1F16, 2PQK and 1CAG, with citations |
 | `data/anatomy.json`, `data/tissues.json` | System, organ and tissue lists for the anatomy levels |
-| `data/protein-location.json` | HPA and UniProt subcellular location for 159 genes |
+| `data/protein-location.json` | HPA and UniProt subcellular location for 164 genes |
 | `data/organelles.json`, `data/atoms.json` | Organelle and atom models for the Organelle and Atom levels |
 | `data/links.json` | Shared link keys `anat:` `tis:` `cell:` `pdb:` `spec:` `diag:` `ent:` |
 | `data/i18n.json` | All interface text in `en` and `zh-Hant` |
@@ -99,7 +99,7 @@ Each stage has a pass condition. The next stage starts only after it passes.
 
 | Release | Cells | Structures |
 | --- | --- | --- |
-| 1 | Hepatocyte, enterocyte, skeletal / cardiac / smooth muscle, plant cell | 5XTD Complex I, 4UG0 80S ribosome, 1TQN cytochrome P450 3A4, 1ZUM ALDH2*2, and the Bcl-2 family structures 1MAZ BCL-XL, 1G5M BCL-2, 2IMS BAK, 1F16 BAX, 2PQK MCL-1; candidates ATP synthase, nuclear pore complex, GLUT / SGLT1 |
+| 1 | Hepatocyte, enterocyte, skeletal / cardiac / smooth muscle, plant cell | 5XTD Complex I, 4UG0 80S ribosome, 1TQN cytochrome P450 3A4, 1ZUM ALDH2*2, and the Bcl-2 family structures 1MAZ BCL-XL, 1G5M BCL-2, 2IMS BAK, 1F16 BAX, 2PQK MCL-1, and the collagen-like peptide 1CAG; candidates ATP synthase, nuclear pore complex, GLUT / SGLT1 |
 | 2 | Sperm and egg, neurone types | Bcl-2 family, β2 adrenergic receptor |
 | Candidates | Parietal cell, intestinal L cell, brown adipocyte, bone cell, type II pneumocyte | ALDH2, GLP-1, lactase, HMG-CoA reductase, H⁺/K⁺-ATPase, UCP1 |
 
@@ -111,7 +111,7 @@ Cell data
 - [x] Plant mesophyll organelle volume fractions (Winter, Robinson & Heldt 1994, spinach leaf)
 - [x] Hepatocyte compartment percentages checked one by one (Alberts MBoC Table 12-1, latest edition)
 - [x] Organelle size ranges and function text (PubMed and SciSpace sources in place of Alberts and Lodish, which were not reachable). Open gaps: absolute vacuole size, function text for perinuclear space (tracked in #27)
-- [x] Protein subcellular location (Human Protein Atlas, UniProt): `data/protein-location.json`, 159 genes, shown in the Module B cards
+- [x] Protein subcellular location (Human Protein Atlas, UniProt): `data/protein-location.json`, 164 genes, shown in the Module B cards
 
 Molecular structures
 - [ ] Human ATP synthase PDB ID (RCSB PDB)

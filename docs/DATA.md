@@ -32,11 +32,11 @@ One object per source, keyed by id (for example `guo-2017`). Fields: `source`, `
 
 ## `protein-location.json`
 
-Human Protein Atlas subcellular location for the genes of the Module B structures. `genes` is keyed by gene symbol. Each entry has `source` (`hpa` or `uniprot`), `structure` (PDB ID, or `candidate`), `reliability` (HPA: Enhanced, Supported, Approved, Uncertain; UniProt: Experimental, Annotated), `ensembl` or `accession`, `main[]`, `additional[]` and `go[]`. Rebuild with `python3 scripts/build-protein-location.py <export>`. 20 genes missing from the export (BAK1, ALDH2, HMGCR, LCT, UCP1, ATP4A, NDUFS7, ATP5 and NUP subunits) come from UniProt, so the build needs network access to rest.uniprot.org. UniProt location names differ from HPA names. CC BY-SA 4.0, see `THIRD_PARTY_NOTICES.md`.
+Human Protein Atlas subcellular location for the genes of the Module B structures. `genes` is keyed by gene symbol. Each entry has `source` (`hpa` or `uniprot`), `structure` (PDB ID, or `candidate`), `reliability` (HPA: Enhanced, Supported, Approved, Uncertain; UniProt: Experimental, Annotated), `ensembl` or `accession`, `main[]`, `additional[]` and `go[]`. Rebuild with `python3 scripts/build-protein-location.py <export>`. 25 genes come from UniProt: COL1A1, COL1A2, COL2A1, COL3A1 and ELN (collagen types I to III and elastin, UniProt P15502), plus 20 genes missing from the export (BAK1, ALDH2, HMGCR, LCT, UCP1, ATP4A, NDUFS7, ATP5 and NUP subunits) come from UniProt, so the build needs network access to rest.uniprot.org. UniProt location names differ from HPA names. CC BY-SA 4.0, see `THIRD_PARTY_NOTICES.md`.
 
 ## `tour-points.json`
 
-Preset views for Module B (5XTD, 4UG0, 1TQN, 1ZUM, 1MAZ, 1G5M, 2IMS, 1F16, 2PQK), keyed by PDB ID. Each point has `id`, `label`, `kind`, `comp`, `chain`, `subunit`, `xyz` (Å in the deposited frame, model 1), `basis` and `select` (a Mol* locus). `basis` is `computed` (read from deposited coordinates) or `literature` (stated in the cited paper). Each structure carries a `cite`.
+Preset views for Module B (5XTD, 4UG0, 1TQN, 1ZUM, 1MAZ, 1G5M, 2IMS, 1F16, 2PQK, 1CAG), keyed by PDB ID. Each point has `id`, `label`, `kind`, `comp`, `chain`, `subunit`, `xyz` (Å in the deposited frame, model 1), `basis` and `select` (a Mol* locus). `basis` is `computed` (read from deposited coordinates) or `literature` (stated in the cited paper). Each structure carries a `cite`.
 
 ## `organelles.json` and `atoms.json`
 
