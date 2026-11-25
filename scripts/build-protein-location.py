@@ -33,7 +33,7 @@ for sid, (pat, _) in SETS.items():
                   'go': split(r['GO id'])}
         n[sid] = n.get(sid, 0) + 1
 # Genes the HPA export lacks, filled from UniProt (reviewed human entry). Needs network access to rest.uniprot.org.
-EXTRA = {'BAK1': '2IMS', 'ALDH2': '1ZUM', 'NDUFS7': '5XTD', 'HMGCR': 'candidate', 'LCT': 'candidate', 'UCP1': 'candidate', 'ATP4A': 'candidate',
+EXTRA = {'COL1A1': '1CAG', 'COL1A2': '1CAG', 'COL2A1': '1CAG', 'COL3A1': '1CAG', 'ELN': 'candidate', 'BAK1': '2IMS', 'ALDH2': '1ZUM', 'NDUFS7': '5XTD', 'HMGCR': 'candidate', 'LCT': 'candidate', 'UCP1': 'candidate', 'ATP4A': 'candidate',
          'ATP5F1C': 'candidate', 'ATP5F1E': 'candidate', 'ATP5MC1': 'candidate', 'ATP5MC2': 'candidate', 'ATP5MC3': 'candidate',
          'NUP35': 'candidate', 'NUP54': 'candidate', 'NUP88': 'candidate', 'NUP93': 'candidate', 'NUP98': 'candidate', 'NUP188': 'candidate', 'NUP205': 'candidate', 'NUP214': 'candidate'}
 for g, sid in EXTRA.items():

@@ -137,6 +137,10 @@
     {
       "from": "pdb:2PQK",
       "to": ["cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
+    },
+    {
+      "from": "pdb:1CAG",
+      "to": ["tis:connective"]
     }
   ]
 }

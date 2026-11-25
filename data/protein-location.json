@@ -174,6 +174,10 @@
   "Mitochondrion outer membrane": {
    "en": "Mitochondrion outer membrane",
    "zh-Hant": "粒線體外膜"
+  },
+  "Secreted, extracellular space, extracellular matrix": {
+   "en": "Secreted, extracellular space, extracellular matrix",
+   "zh-Hant": "分泌至細胞外空間的細胞外基質"
   }
  },
  "genes": {
@@ -559,6 +563,50 @@
    ],
    "source": "hpa"
   },
+  "COL1A1": {
+   "source": "uniprot",
+   "accession": "P02452",
+   "structure": "1CAG",
+   "reliability": "Annotated",
+   "main": [
+    "Secreted, extracellular space, extracellular matrix"
+   ],
+   "additional": [],
+   "go": []
+  },
+  "COL1A2": {
+   "source": "uniprot",
+   "accession": "P08123",
+   "structure": "1CAG",
+   "reliability": "Annotated",
+   "main": [
+    "Secreted, extracellular space, extracellular matrix"
+   ],
+   "additional": [],
+   "go": []
+  },
+  "COL2A1": {
+   "source": "uniprot",
+   "accession": "P02458",
+   "structure": "1CAG",
+   "reliability": "Annotated",
+   "main": [
+    "Secreted, extracellular space, extracellular matrix"
+   ],
+   "additional": [],
+   "go": []
+  },
+  "COL3A1": {
+   "source": "uniprot",
+   "accession": "P02461",
+   "structure": "1CAG",
+   "reliability": "Annotated",
+   "main": [
+    "Secreted, extracellular space, extracellular matrix"
+   ],
+   "additional": [],
+   "go": []
+  },
   "CYP3A4": {
    "ensembl": "ENSG00000160868",
    "structure": "1TQN",
@@ -596,6 +644,17 @@
     "Mid piece (GO:0097225)"
    ],
    "source": "hpa"
+  },
+  "ELN": {
+   "source": "uniprot",
+   "accession": "P15502",
+   "structure": "candidate",
+   "reliability": "Experimental",
+   "main": [
+    "Secreted, extracellular space, extracellular matrix"
+   ],
+   "additional": [],
+   "go": []
   },
   "HMGCR": {
    "source": "uniprot",

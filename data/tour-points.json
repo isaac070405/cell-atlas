@@ -653,6 +653,37 @@
           }
         }
       ]
+    },
+    "1CAG": {
+      "cite": "bella-1994",
+      "points": [
+        {
+          "id": "ala-site",
+          "label": {
+            "en": "Gly→Ala substitution site (Ala15, chain A)",
+            "zh-Hant": "Gly→Ala 取代位點（Ala15，A 鏈）"
+          },
+          "kind": "substitution",
+          "comp": "ALA",
+          "chain": "A",
+          "subunit": "Collagen-like peptide chain A",
+          "residue": {
+            "authSeqId": 15,
+            "atom": "CA"
+          },
+          "xyz": [
+            43.8,
+            0.8,
+            5.1
+          ],
+          "basis": "computed",
+          "support": "Bella et al. (1994): the Gly→Ala substitution breaks the repeating (X-Y-Gly)n pattern, untwists the triple helix locally and replaces direct interchain hydrogen bonds with water bridges. The peptide has this substitution once per chain (residues 15, 45 and 75); the point is the CA of Ala15 in chain A, model 1.",
+          "select": {
+            "label_asym_id": "A",
+            "auth_seq_id": 15
+          }
+        }
+      ]
     }
   }
 }

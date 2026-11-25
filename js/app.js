@@ -316,7 +316,8 @@ function render(s) {
   if (B && pdb) Object.values(ploc.genes).filter(e => e.structure === pdb.id || (point && ploc.genes[point.subunit] === e)).forEach(e => ids.add(e.source === 'uniprot' ? ploc.citeUniprot : ploc.cite));
   if (A && !compare && cell?.id === 'hepatocyte') ids.add('bnid-105782');
   if (O || M) (sm ? modelCites(sm, s.level) : []).forEach(id => ids.add(id));
-  $('sources-body').innerHTML = sm && !(O || M) ? `<li class="muted" style="list-style:none;margin-left:-1.4em">${html('tissue.source')}</li>` : ids.size
+  const partCites = sm && !(O || M) ? sm.parts?.find(p => p.id === s.selection)?.cite ?? [] : [];
+  $('sources-body').innerHTML = partCites.length ? partCites.map(id => source(citations[id])).join('') : sm && !(O || M) ? `<li class="muted" style="list-style:none;margin-left:-1.4em">${html('tissue.source')}</li>` : ids.size
     ? [...ids].map(id => source(citations[id])).join('')
     : `<li class="muted" style="list-style:none;margin-left:-1.4em">${html('status.nodata')}</li>`;
 }
