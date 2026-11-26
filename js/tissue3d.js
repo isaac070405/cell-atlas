@@ -129,11 +129,11 @@ export async function createTissueView(host, { onPick, elements }) {
         const top = 1.9;
         if (role === 0) for (let k = 0; k < 9; k++) {
           const a = r() * Math.PI * 2, d = Math.sqrt(r()) * 0.32, h = 0.55 - 0.18 * (d / 0.32);
-          put(new THREE.CylinderGeometry(0.03, 0.03, h, 6), '#9AA7C7', 'stereocilia').position.set(x + Math.cos(a) * d, top + h / 2, z + Math.sin(a) * d);
+          put(new THREE.CylinderGeometry(0.03, 0.03, h, 6), '#8EC5F0', 'stereocilia').position.set(x + Math.cos(a) * d, top + h / 2, z + Math.sin(a) * d);
         } else if (role === 2) for (let k = 0; k < 6; k++) {
           const a = (k / 6) * Math.PI * 2 + 0.3, d = 0.26 * (k % 2 ? 1 : 0.5), tx = x + Math.cos(a) * d, tz = z + Math.sin(a) * d, lean = 0.12;
           const pts = [[tx, top, tz], [tx + Math.cos(a) * lean * 0.4, top + 0.35, tz + Math.sin(a) * lean * 0.4], [tx + Math.cos(a) * lean, top + 0.7, tz + Math.sin(a) * lean]];
-          tube(pts, 0.04, '#5FB3A1', 'cilia', { opacity: 0.55 });
+          tube(pts, 0.04, '#8EC5F0', 'cilia', { opacity: 0.55 });
           for (const [ox, oz] of [[0, 0], [0.015, 0.012], [-0.015, 0.012], [0, -0.018]]) tube(pts.map(q => [q[0] + ox, q[1], q[2] + oz]), 0.008, '#E8A33D', 'microtubule');
         } else for (let k = 0; k < 12; k++) {
           const a = r() * Math.PI * 2, d = Math.sqrt(r()) * 0.34;
@@ -497,7 +497,7 @@ export async function createTissueView(host, { onPick, elements }) {
         if (goblet) { ball([x, 1.15, z], 0.34, '#6FC3DF', 'goblet', [1, 1.7, 1]); ball([x, 0.4, z], 0.18, '#8E5DB0', 'nucleus'); continue; }
         const c = put(new THREE.CylinderGeometry(short ? 0.32 : 0.28, 0.3, h, 6), short ? BASAL_LAYER : SURFACE_LAYER, short ? 'basal-cell' : 'ciliated'); c.position.set(x, 0.05 + h / 2, z);
         ball([x, 0.25 + r() * (short ? 0.2 : 0.95), z], 0.17, '#8E5DB0', 'nucleus', [0.9, 1.3, 0.9]);
-        if (!short) for (let m = 0; m < 7; m++) { const a = m / 7 * Math.PI * 2, d = m ? 0.17 : 0; put(new THREE.CylinderGeometry(0.012, 0.012, 0.26, 5), '#7C8FB0', 'cilia').position.set(x + Math.cos(a) * d, 1.9, z + Math.sin(a) * d); }
+        if (!short) for (let m = 0; m < 7; m++) { const a = m / 7 * Math.PI * 2, d = m ? 0.17 : 0; put(new THREE.CylinderGeometry(0.012, 0.012, 0.26, 5), '#8EC5F0', 'cilia').position.set(x + Math.cos(a) * d, 1.9, z + Math.sin(a) * d); }
       }
     },
     transitional() {
@@ -550,7 +550,7 @@ export async function createTissueView(host, { onPick, elements }) {
         const x = (i - (cols - 1) / 2) * pitch, z = (j - 1) * 0.85;
         const c = put(new THREE.CylinderGeometry(0.38, 0.36, 0.9, 6), SURFACE_LAYER, 'cells'); c.position.set(x, -0.1, z);
         ball([x, -0.3, z], 0.17, '#8E5DB0', 'nucleus');
-        for (let m = 0; m < 6; m++) { const a = m / 6 * Math.PI * 2, d = m ? 0.17 : 0; put(new THREE.CylinderGeometry(0.014, 0.014, 0.5, 5), '#7C8FB0', 'cilia').position.set(x + Math.cos(a) * d, 0.6, z + Math.sin(a) * d); }
+        for (let m = 0; m < 6; m++) { const a = m / 6 * Math.PI * 2, d = m ? 0.17 : 0; put(new THREE.CylinderGeometry(0.014, 0.014, 0.5, 5), '#8EC5F0', 'cilia').position.set(x + Math.cos(a) * d, 0.6, z + Math.sin(a) * d); }
       }
     },
     oligodendrocyte() {
