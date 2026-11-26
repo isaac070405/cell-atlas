@@ -178,12 +178,28 @@
   "Secreted, extracellular space, extracellular matrix": {
    "en": "Secreted, extracellular space, extracellular matrix",
    "zh-Hant": "分泌至細胞外空間的細胞外基質"
+  },
+  "Cell membrane": {
+   "en": "Cell membrane",
+   "zh-Hant": "細胞膜"
+  },
+  "Cell projection, ruffle": {
+   "en": "Cell projection, ruffle",
+   "zh-Hant": "細胞突起（膜皺褶）"
+  },
+  "Photoreceptor inner segment": {
+   "en": "Photoreceptor inner segment",
+   "zh-Hant": "感光細胞內節"
+  },
+  "Photoreceptor outer segment membrane": {
+   "en": "Photoreceptor outer segment membrane",
+   "zh-Hant": "感光細胞外節膜"
   }
  },
  "genes": {
   "ADRB2": {
    "ensembl": "ENSG00000169252",
-   "structure": "candidate",
+   "structure": "3SN6",
    "reliability": "Supported",
    "main": ["Plasma membrane"],
    "additional": ["Basal body", "Cytokinetic bridge", "Microtubules", "Mitotic spindle", "Primary cilium"],
@@ -485,6 +501,33 @@
    "structure": "candidate",
    "reliability": "Experimental",
    "main": ["Secreted, extracellular space, extracellular matrix"],
+   "additional": [],
+   "go": []
+  },
+  "GNAS": {
+   "source": "uniprot",
+   "accession": "P84996",
+   "structure": "3SN6",
+   "reliability": "Annotated",
+   "main": ["Cell membrane", "Cell projection, ruffle"],
+   "additional": [],
+   "go": []
+  },
+  "GNB1": {
+   "source": "uniprot",
+   "accession": "P62873",
+   "structure": "3SN6",
+   "reliability": "Annotated",
+   "main": ["Photoreceptor outer segment membrane", "Photoreceptor inner segment"],
+   "additional": [],
+   "go": []
+  },
+  "GNG2": {
+   "source": "uniprot",
+   "accession": "P59768",
+   "structure": "3SN6",
+   "reliability": "Annotated",
+   "main": ["Cell membrane"],
    "additional": [],
    "go": []
   },
