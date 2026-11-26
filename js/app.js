@@ -267,7 +267,8 @@ function renderDiagramView(s) {
   $('chart-title').innerHTML = html('panel.chart.d');
   $('chart-body').innerHTML = `<ul class="queue parts">${dg.nodes.map(n => `<li><button data-kind="dnode" data-id="${esc(n.id)}" aria-pressed="${n.id === s.selection}"><span>${html(n.name)}</span></button></li>`).join('')}</ul>`;
   const n = dg.nodes.find(x => x.id === s.selection);
-  const out = n?.link ? `<h4 class="card-sub">${html('card.links')}</h4><div class="chips">${linkChip(n.link)}</div>` : '';
+  const nl = n?.links ?? (n?.link ? [n.link] : []);
+  const out = nl.length ? `<h4 class="card-sub">${html('card.links')}</h4><div class="chips">${nl.map(linkChip).join('')}</div>` : '';
   $('card-body').innerHTML = n ? `<p><strong>${html(n.name)}</strong>${n.sub?.en ? ` <span class="muted">${html(n.sub)}</span>` : ''}</p><p>${html(n.text)}</p>${out}`
     : `<p><strong>${html(dg.name)}</strong></p><p>${html(dg.summary)}</p><p class="muted" style="font-size:12.5px">${html('diagram.pick')}</p>`;
   const ids = n ? n.cite ?? [] : dg.cite ?? [];

@@ -37,7 +37,7 @@ export function drawDiagram(dg, selected) {
     const subSvg = sub.length ? `<text class="dg-sub" text-anchor="middle"${n.textColor ? ` style="fill:${n.textColor}"` : ''}>${sub.map((t, i) => tspan(t, cx, ty + (name.length + i) * 14, 10, maxW)).join('')}</text>` : '';
     return `<g class="dg-node" role="button" tabindex="0" data-node="${esc(n.id)}" aria-pressed="${on}" aria-label="${esc(lines(n.name).join(' / '))}">${shape(n)}${nameSvg}${subSvg}</g>`;
   }).join('');
-  const marker = t => `<marker id="dg-arrow-${t}" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-head dg-head-${t}"/></marker>`;
+  const marker = t => t === 'inhibit' ? `<marker id="dg-arrow-inhibit" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M5,0 L5,10" class="dg-head-inhibit"/></marker>` : `<marker id="dg-arrow-${t}" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-head dg-head-${t}"/></marker>`;
   return `<svg class="dg-svg" viewBox="0 ${-PAD} ${W} ${H + PAD * 2}" role="group" aria-label="${esc(text('diagram.label'))}: ${esc(text(dg.name))}">
     <defs>${[...new Set(dg.edges.map(e => e.type))].map(marker).join('')}</defs>${bands}${labels}${edges}${nodes}</svg>
     <ul class="dg-legend">${(dg.legend ?? []).map(l => `<li><span class="dg-key dg-key-${esc(l.type)}"></span>${html(l.label)}</li>`).join('')}</ul>`;

@@ -1368,6 +1368,712 @@
      "textColor": "#1D232B"
     }
    ]
+  },
+  {
+   "id": "apoptosis",
+   "name": {
+    "en": "Apoptosis: extrinsic and intrinsic pathways",
+    "zh-Hant": "細胞凋亡：外在與內在途徑"
+   },
+   "summary": {
+    "en": "The extrinsic pathway starts at a death receptor, forms the DISC and activates caspase-8. The intrinsic pathway starts with cell stress, is controlled by the BCL-2 family at the mitochondrion, and releases cytochrome c to activate caspase-9. Both pathways meet at the executioner caspases.",
+    "zh-Hant": "外在途徑由死亡受體開始，形成 DISC 並活化 caspase-8。內在途徑由細胞壓力開始，在線粒體受 BCL-2 家族控制，釋出細胞色素 c 以活化 caspase-9。兩條途徑在執行型 caspase 匯合。"
+   },
+   "cite": ["elmore-2007", "scaffidi-1999", "kalkavan-2017"],
+   "viewBox": [
+    860,
+    720
+   ],
+   "bands": [
+    {
+     "id": "lumen",
+     "y": 0,
+     "h": 110
+    },
+    {
+     "id": "mem",
+     "y": 110,
+     "h": 42
+    },
+    {
+     "id": "cell",
+     "y": 152,
+     "h": 568
+    }
+   ],
+   "labels": [
+    {
+     "x": 840,
+     "y": 22,
+     "anchor": "end",
+     "text": {
+      "en": "Extracellular",
+      "zh-Hant": "細胞外"
+     }
+    },
+    {
+     "x": 840,
+     "y": 138,
+     "anchor": "end",
+     "text": {
+      "en": "Plasma membrane",
+      "zh-Hant": "細胞膜"
+     }
+    },
+    {
+     "x": 145,
+     "y": 22,
+     "anchor": "middle",
+     "text": {
+      "en": "Extrinsic pathway",
+      "zh-Hant": "外在途徑"
+     }
+    },
+    {
+     "x": 670,
+     "y": 166,
+     "anchor": "middle",
+     "text": {
+      "en": "Intrinsic pathway",
+      "zh-Hant": "內在途徑"
+     }
+    },
+    {
+     "x": 312,
+     "y": 282,
+     "anchor": "start",
+     "text": {
+      "en": "cleaves BID",
+      "zh-Hant": "切割 BID"
+     }
+    },
+    {
+     "x": 372,
+     "y": 343,
+     "anchor": "start",
+     "text": {
+      "en": "tBID",
+      "zh-Hant": "tBID"
+     }
+    },
+    {
+     "x": 155,
+     "y": 470,
+     "anchor": "start",
+     "text": {
+      "en": "type I cells: direct",
+      "zh-Hant": "I 型細胞：直接"
+     }
+    },
+    {
+     "x": 155,
+     "y": 486,
+     "anchor": "start",
+     "text": {
+      "en": "cleavage of caspase-3",
+      "zh-Hant": "切割 caspase-3"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "type": "ext",
+     "pts": [
+      [
+       145,
+       82
+      ],
+      [
+       145,
+       108
+      ]
+     ]
+    },
+    {
+     "type": "ext",
+     "pts": [
+      [
+       145,
+       152
+      ],
+      [
+       145,
+       190
+      ]
+     ]
+    },
+    {
+     "type": "ext",
+     "pts": [
+      [
+       145,
+       236
+      ],
+      [
+       145,
+       270
+      ]
+     ]
+    },
+    {
+     "type": "ext",
+     "pts": [
+      [
+       145,
+       316
+      ],
+      [
+       145,
+       606
+      ],
+      [
+       300,
+       606
+      ]
+     ]
+    },
+    {
+     "type": "ext",
+     "pts": [
+      [
+       230,
+       293
+      ],
+      [
+       305,
+       293
+      ],
+      [
+       305,
+       330
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       360,
+       349
+      ],
+      [
+       468,
+       349
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       670,
+       214
+      ],
+      [
+       670,
+       236
+      ]
+     ]
+    },
+    {
+     "type": "inhibit",
+     "pts": [
+      [
+       570,
+       274
+      ],
+      [
+       570,
+       314
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       740,
+       274
+      ],
+      [
+       740,
+       314
+      ]
+     ]
+    },
+    {
+     "type": "inhibit",
+     "pts": [
+      [
+       650,
+       334
+      ],
+      [
+       685,
+       334
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       720,
+       354
+      ],
+      [
+       720,
+       386
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       665,
+       426
+      ],
+      [
+       665,
+       470
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       655,
+       506
+      ],
+      [
+       655,
+       526
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       655,
+       566
+      ],
+      [
+       655,
+       586
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       560,
+       606
+      ],
+      [
+       460,
+       606
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       380,
+       626
+      ],
+      [
+       380,
+       660
+      ]
+     ]
+    }
+   ],
+   "legend": [
+    {
+     "type": "ext",
+     "label": {
+      "en": "Extrinsic pathway",
+      "zh-Hant": "外在途徑"
+     }
+    },
+    {
+     "type": "int",
+     "label": {
+      "en": "Intrinsic pathway",
+      "zh-Hant": "內在途徑"
+     }
+    },
+    {
+     "type": "inhibit",
+     "label": {
+      "en": "Inhibition",
+      "zh-Hant": "抑制"
+     }
+    }
+   ],
+   "nodes": [
+    {
+     "id": "mito",
+     "kind": "region",
+     "x": 470,
+     "y": 294,
+     "w": 370,
+     "h": 160,
+     "tx": 480,
+     "ty": 446,
+     "color": "#B0563A",
+     "name": {
+      "en": "Mitochondrion",
+      "zh-Hant": "線粒體"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "The BCL-2 family controls the outer membrane of the mitochondrion. When it is permeabilised (MOMP), proteins from the intermembrane space such as cytochrome c and SMAC are released into the cytosol.",
+      "zh-Hant": "BCL-2 家族控制線粒體外膜。外膜通透化（MOMP）後，膜間腔的蛋白質如細胞色素 c 與 SMAC 會釋入細胞質。"
+     },
+     "cite": ["kalkavan-2017"]
+    },
+    {
+     "id": "ligand",
+     "kind": "box",
+     "x": 60,
+     "y": 40,
+     "w": 170,
+     "h": 42,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Death ligand",
+      "zh-Hant": "死亡配體"
+     },
+     "sub": {
+      "en": "FasL, TNF, TRAIL",
+      "zh-Hant": "FasL、TNF、TRAIL"
+     },
+     "text": {
+      "en": "An extracellular signal that starts the extrinsic pathway. Death ligands such as FasL bind their receptors on the target cell.",
+      "zh-Hant": "啟動外在途徑的細胞外訊號。FasL 等死亡配體與目標細胞上的受體結合。"
+     },
+     "cite": ["micheau-2002"]
+    },
+    {
+     "id": "receptor",
+     "kind": "box",
+     "x": 60,
+     "y": 108,
+     "w": 170,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Death receptor",
+      "zh-Hant": "死亡受體"
+     },
+     "sub": {
+      "en": "Fas (CD95), DR4, DR5",
+      "zh-Hant": "Fas（CD95）、DR4、DR5"
+     },
+     "text": {
+      "en": "A member of the death receptor family in the plasma membrane. When the ligand binds, it recruits the adaptor FADD.",
+      "zh-Hant": "位於細胞膜的死亡受體家族成員。配體結合後，它招募接合蛋白 FADD。"
+     },
+     "cite": ["micheau-2002"]
+    },
+    {
+     "id": "fadd",
+     "kind": "box",
+     "x": 60,
+     "y": 190,
+     "w": 170,
+     "h": 46,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "FADD + procaspase-8",
+      "zh-Hant": "FADD + 前 caspase-8"
+     },
+     "sub": {
+      "en": "forms the DISC",
+      "zh-Hant": "形成 DISC"
+     },
+     "text": {
+      "en": "The adaptor FADD and initiator procaspase-8 are recruited to the receptor and form the death-inducing signaling complex (DISC). Procaspase-8 is activated there by cleavage.",
+      "zh-Hant": "接合蛋白 FADD 與啟動型前 caspase-8 被招募到受體，形成死亡誘導訊號複合體（DISC），前 caspase-8 在此經切割而活化。"
+     },
+     "cite": ["micheau-2002", "scaffidi-1999"]
+    },
+    {
+     "id": "casp8",
+     "kind": "box",
+     "x": 60,
+     "y": 270,
+     "w": 170,
+     "h": 46,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Caspase-8",
+      "zh-Hant": "Caspase-8"
+     },
+     "sub": {
+      "en": "initiator caspase",
+      "zh-Hant": "啟動型 caspase"
+     },
+     "text": {
+      "en": "Active caspase-8 is released from the DISC. In type I cells it cleaves caspase-3 directly. In type II cells it cleaves BID and so engages the mitochondrial branch.",
+      "zh-Hant": "活性 caspase-8 由 DISC 釋出。在 I 型細胞中它直接切割 caspase-3；在 II 型細胞中它切割 BID，從而啟動線粒體分支。"
+     },
+     "cite": ["scaffidi-1999"]
+    },
+    {
+     "id": "bid",
+     "kind": "box",
+     "x": 250,
+     "y": 330,
+     "w": 110,
+     "h": 38,
+     "color": "#A8481A",
+     "name": {
+      "en": "BID → tBID",
+      "zh-Hant": "BID → tBID"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Caspase-8 cleaves BID to tBID, a BH3-only protein. This links the extrinsic pathway to the mitochondria in type II cells, and Bcl-2 or Bcl-xL can block it.",
+      "zh-Hant": "Caspase-8 把 BID 切割成 tBID（僅含 BH3 的蛋白），在 II 型細胞中把外在途徑連到線粒體，而 Bcl-2 或 Bcl-xL 可阻斷。"
+     },
+     "cite": ["scaffidi-1999", "chipuk-2008"]
+    },
+    {
+     "id": "stress",
+     "kind": "box",
+     "x": 560,
+     "y": 176,
+     "w": 220,
+     "h": 38,
+     "color": "#A8481A",
+     "name": {
+      "en": "Intracellular stress",
+      "zh-Hant": "細胞內壓力"
+     },
+     "sub": {
+      "en": "DNA damage, growth factor loss",
+      "zh-Hant": "DNA 損傷、缺乏生長因子"
+     },
+     "text": {
+      "en": "Signals from inside the cell, such as DNA damage or loss of growth factors, start the intrinsic (mitochondrial) pathway.",
+      "zh-Hant": "細胞內部的訊號，例如 DNA 損傷或缺乏生長因子，啟動內在（線粒體）途徑。"
+     },
+     "cite": ["kalkavan-2017"]
+    },
+    {
+     "id": "bh3",
+     "kind": "box",
+     "x": 560,
+     "y": 236,
+     "w": 220,
+     "h": 38,
+     "color": "#A8481A",
+     "name": {
+      "en": "BH3-only proteins",
+      "zh-Hant": "僅含 BH3 的蛋白"
+     },
+     "sub": {
+      "en": "BIM, tBID, BIK",
+      "zh-Hant": "BIM、tBID、BIK"
+     },
+     "text": {
+      "en": "Sensors of stress in the BCL-2 family. They engage BAX and BAK and neutralise anti-apoptotic BCL-2 proteins, and both actions help trigger MOMP.",
+      "zh-Hant": "BCL-2 家族中感應壓力的蛋白，啟動 BAX 與 BAK 並中和抗凋亡的 BCL-2 蛋白，兩者都有助觸發 MOMP。"
+     },
+     "cite": ["chipuk-2008"]
+    },
+    {
+     "id": "bcl2",
+     "kind": "box",
+     "x": 490,
+     "y": 314,
+     "w": 160,
+     "h": 40,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "BCL-2, BCL-XL, MCL-1",
+      "zh-Hant": "BCL-2、BCL-XL、MCL-1"
+     },
+     "sub": {
+      "en": "anti-apoptotic",
+      "zh-Hant": "抗凋亡"
+     },
+     "text": {
+      "en": "Anti-apoptotic members of the BCL-2 family. They hold back BAX and BAK and are neutralised by BH3-only proteins. Structures in the atlas: BCL-2 (1G5M), BCL-XL (1MAZ) and MCL-1 with a Bim BH3 peptide (2PQK).",
+      "zh-Hant": "BCL-2 家族的抗凋亡成員，抑制 BAX 與 BAK，並被僅含 BH3 的蛋白中和。圖譜內的結構：BCL-2（1G5M）、BCL-XL（1MAZ）及與 Bim BH3 肽結合的 MCL-1（2PQK）。"
+     },
+     "cite": ["chipuk-2008"],
+     "links": ["pdb:1G5M", "pdb:1MAZ", "pdb:2PQK"]
+    },
+    {
+     "id": "baxbak",
+     "kind": "box",
+     "x": 685,
+     "y": 314,
+     "w": 140,
+     "h": 40,
+     "color": "#A02A2A",
+     "name": {
+      "en": "BAX, BAK",
+      "zh-Hant": "BAX、BAK"
+     },
+     "sub": {
+      "en": "pore formers",
+      "zh-Hant": "成孔蛋白"
+     },
+     "text": {
+      "en": "Pro-apoptotic effectors that permeabilise the outer mitochondrial membrane. Structures in the atlas: BAX (1F16) and BAK (2IMS).",
+      "zh-Hant": "使線粒體外膜通透化的促凋亡效應蛋白。圖譜內的結構：BAX（1F16）及 BAK（2IMS）。"
+     },
+     "cite": ["chipuk-2008"],
+     "links": ["pdb:1F16", "pdb:2IMS"]
+    },
+    {
+     "id": "momp",
+     "kind": "box",
+     "x": 570,
+     "y": 386,
+     "w": 170,
+     "h": 40,
+     "color": "#A02A2A",
+     "name": {
+      "en": "MOMP",
+      "zh-Hant": "MOMP"
+     },
+     "sub": {
+      "en": "outer membrane permeabilised",
+      "zh-Hant": "外膜通透化"
+     },
+     "text": {
+      "en": "Mitochondrial outer membrane permeabilization, the point of no return of the intrinsic pathway. It releases cytochrome c and other intermembrane space proteins.",
+      "zh-Hant": "線粒體外膜通透化，是內在途徑的不歸點，釋出細胞色素 c 及其他膜間腔蛋白。"
+     },
+     "cite": ["kalkavan-2017", "chipuk-2008"]
+    },
+    {
+     "id": "cytc",
+     "kind": "carrier",
+     "x": 655,
+     "y": 488,
+     "rx": 60,
+     "ry": 18,
+     "color": "#A8481A",
+     "name": {
+      "en": "Cytochrome c",
+      "zh-Hant": "細胞色素 c"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "In healthy cells it shuttles electrons in the respiratory chain. Released into the cytosol, it activates Apaf-1.",
+      "zh-Hant": "在健康細胞中它在呼吸鏈中傳遞電子；釋入細胞質後，它活化 Apaf-1。"
+     },
+     "cite": ["garrido-2006"]
+    },
+    {
+     "id": "apopto",
+     "kind": "box",
+     "x": 560,
+     "y": 526,
+     "w": 190,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Apoptosome",
+      "zh-Hant": "凋亡體"
+     },
+     "sub": {
+      "en": "Apaf-1 + cytochrome c",
+      "zh-Hant": "Apaf-1 + 細胞色素 c"
+     },
+     "text": {
+      "en": "The Apaf-1 apoptosome is the adaptor complex that activates the initiator caspase-9.",
+      "zh-Hant": "Apaf-1 凋亡體是活化啟動型 caspase-9 的接合蛋白複合體。"
+     },
+     "cite": ["bao-2007", "garrido-2006"]
+    },
+    {
+     "id": "casp9",
+     "kind": "box",
+     "x": 560,
+     "y": 586,
+     "w": 190,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Caspase-9",
+      "zh-Hant": "Caspase-9"
+     },
+     "sub": {
+      "en": "initiator caspase",
+      "zh-Hant": "啟動型 caspase"
+     },
+     "text": {
+      "en": "Initiator caspase of the intrinsic pathway. Once activated on the apoptosome it matures caspase-3.",
+      "zh-Hant": "內在途徑的啟動型 caspase，在凋亡體上活化後使 caspase-3 成熟。"
+     },
+     "cite": ["bao-2007", "garrido-2006"]
+    },
+    {
+     "id": "exec",
+     "kind": "box",
+     "x": 300,
+     "y": 586,
+     "w": 160,
+     "h": 40,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Caspase-3, -6, -7",
+      "zh-Hant": "Caspase-3、-6、-7"
+     },
+     "sub": {
+      "en": "executioner caspases",
+      "zh-Hant": "執行型 caspase"
+     },
+     "text": {
+      "en": "Both pathways meet here. Executioner caspases are cleaved and activated by initiator caspases, and they cleave hundreds of cell proteins.",
+      "zh-Hant": "兩條途徑在此匯合。執行型 caspase 被啟動型 caspase 切割而活化，並切割數以百計的細胞蛋白。"
+     },
+     "cite": ["scaffidi-1999", "garrido-2006"]
+    },
+    {
+     "id": "death",
+     "kind": "box",
+     "x": 240,
+     "y": 660,
+     "w": 280,
+     "h": 44,
+     "color": "#555B66",
+     "name": {
+      "en": "Cell dismantled",
+      "zh-Hant": "細胞被拆解"
+     },
+     "sub": {
+      "en": "blebbing, DNA fragmentation, apoptotic bodies",
+      "zh-Hant": "起泡、DNA 斷裂、凋亡小體"
+     },
+     "text": {
+      "en": "Apoptosis ends with characteristic morphological changes and energy-dependent biochemical events. The cell is cleared with little damage to its surroundings.",
+      "zh-Hant": "細胞凋亡以特徵性的形態改變及耗能的生化事件完結，細胞被清除，對周圍組織損害極小。"
+     },
+     "cite": ["elmore-2007", "garrido-2006"]
+    }
+   ]
   }
  ]
 }

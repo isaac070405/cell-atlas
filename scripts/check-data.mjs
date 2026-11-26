@@ -39,7 +39,7 @@ for (const d of dgs.diagrams) {
   const ids = d.nodes.map(n => n.id);
   if (new Set(ids).size !== ids.length) bad(`diagram ${d.id}: duplicate node id`);
   for (const c of [...(d.cite ?? []), ...d.nodes.flatMap(n => n.cite ?? [])]) if (!citations[c]) bad(`diagram ${d.id}: cite ${c} missing`);
-  for (const n of d.nodes) if (n.link && !links.targets[n.link.split(':')[0]]) bad(`diagram ${d.id} ${n.id}: link ${n.link}`);
+  for (const n of d.nodes) for (const l of n.links ?? (n.link ? [n.link] : [])) if (!links.targets[l.split(':')[0]]) bad(`diagram ${d.id} ${n.id}: link ${l}`);
   for (const e of d.edges) for (const [x, y] of e.pts) if (x < 0 || y < 0 || x > d.viewBox[0] || y > d.viewBox[1]) bad(`diagram ${d.id}: edge point ${x},${y} outside the viewBox`);
 }
 for (const e of links.edges) for (const k of [e.from, ...e.to]) if (k.startsWith('diag:') && !dgs.diagrams.some(d => d.id === k.slice(5))) bad(`link ${k}: no diagram`);

@@ -1175,6 +1175,90 @@
       "year": 2018,
       "url": "https://doi.org/10.1084/jem.20171868",
       "status": "verified"
+    },
+    "elmore-2007": {
+      "source": "Elmore (2007) Toxicol Pathol 35:495–516",
+      "detail": {
+        "en": "Review of apoptosis, programmed cell death: its morphology, biochemistry, role in health and disease, and detection methods",
+        "zh-Hant": "細胞凋亡（程序性細胞死亡）綜述：形態、生化、在健康與疾病中的角色及檢測方法"
+      },
+      "species": "Animals, mainly mammals",
+      "method": "Review",
+      "year": 2007,
+      "url": "https://doi.org/10.1080/01926230701320337",
+      "status": "verified"
+    },
+    "scaffidi-1999": {
+      "source": "Scaffidi et al. (1999) J Biol Chem 274:22532–22538",
+      "detail": {
+        "en": "In CD95 (Fas) type I cells, active caspase-8 formed at the DISC directly cleaves caspase-3. In type II cells, little DISC forms and the mitochondrial branch is engaged through BID cleavage, which Bcl-2 or Bcl-xL can block",
+        "zh-Hant": "在 CD95（Fas）I 型細胞中，DISC 形成的活性 caspase-8 直接切割 caspase-3；在 II 型細胞中，DISC 很少，經 BID 切割啟動線粒體分支，而 Bcl-2 或 Bcl-xL 可阻斷"
+      },
+      "species": "Human cell lines",
+      "method": "Cell culture experiments",
+      "year": 1999,
+      "url": "https://doi.org/10.1074/jbc.274.32.22532",
+      "status": "verified"
+    },
+    "micheau-2002": {
+      "source": "Micheau et al. (2002) J Biol Chem 277:45162–45171",
+      "detail": {
+        "en": "Death ligands such as FasL bind Fas, which recruits the adaptor FADD and the initiator caspases-8 and -10 to form the death-inducing signaling complex (DISC), where procaspase-8 is activated by cleavage",
+        "zh-Hant": "FasL 等死亡配體結合 Fas，招募接合蛋白 FADD 及啟動型 caspase-8 與 -10，形成死亡誘導訊號複合體（DISC），procaspase-8 在此經切割而活化"
+      },
+      "species": "Human cell lines",
+      "method": "Cell culture experiments",
+      "year": 2002,
+      "url": "https://doi.org/10.1074/jbc.m206882200",
+      "status": "verified"
+    },
+    "chipuk-2008": {
+      "source": "Chipuk & Green (2008) Trends Cell Biol 18:157–164",
+      "detail": {
+        "en": "Review of how BCL-2 family proteins control mitochondrial outer membrane permeabilization (MOMP): BH3-only proteins engage BAX and BAK and neutralise anti-apoptotic BCL-2 proteins",
+        "zh-Hant": "BCL-2 家族蛋白如何控制線粒體外膜通透化（MOMP）綜述：僅含 BH3 的蛋白啟動 BAX 與 BAK，並中和抗凋亡的 BCL-2 蛋白"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2008,
+      "url": "https://doi.org/10.1016/j.tcb.2008.01.007",
+      "status": "verified"
+    },
+    "kalkavan-2017": {
+      "source": "Kalkavan & Green (2017) Cell Death Differ 25:46–55",
+      "detail": {
+        "en": "Review of MOMP, which defines the mitochondrial (intrinsic) pathway: cytochrome c and SMAC release lead to caspase activation and protein substrate cleavage, under control of the BCL-2 family",
+        "zh-Hant": "MOMP 綜述，MOMP 定義線粒體（內在）途徑：細胞色素 c 與 SMAC 釋出，導致 caspase 活化及蛋白底物被切割，並受 BCL-2 家族控制"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2017,
+      "url": "https://doi.org/10.1038/cdd.2017.179",
+      "status": "verified"
+    },
+    "garrido-2006": {
+      "source": "Garrido et al. (2006) Cell Death Differ 13:1423–1433",
+      "detail": {
+        "en": "Review of cytochrome c release from mitochondria: in the cytosol it activates Apaf-1, which is required for maturation of caspase-9 and caspase-3, and activated caspases dismantle the cell",
+        "zh-Hant": "細胞色素 c 由線粒體釋出綜述：在細胞質中它活化 Apaf-1，而 Apaf-1 是 caspase-9 與 caspase-3 成熟所必需，活化的 caspase 其後拆解細胞"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2006,
+      "url": "https://doi.org/10.1038/sj.cdd.4401950",
+      "status": "verified"
+    },
+    "bao-2007": {
+      "source": "Bao & Shi (2007) Cell Death Differ 14:56–65",
+      "detail": {
+        "en": "Review of apoptosomes: the Apaf-1 apoptosome is the adaptor protein complex that activates the initiator caspase-9, as the DISC does for caspase-8",
+        "zh-Hant": "凋亡體綜述：Apaf-1 凋亡體是活化啟動型 caspase-9 的接合蛋白複合體，與 DISC 活化 caspase-8 的角色相似"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2007,
+      "url": "https://doi.org/10.1038/sj.cdd.4402028",
+      "status": "verified"
     }
   }
 }

@@ -323,3 +323,9 @@ body.bare .panels { display: none; }
 
 .dg-nav { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2); margin: 0 0 var(--s3); font: 12px var(--font-label); color: var(--ink-soft); }
 .dg-nav button[aria-pressed="true"] { border-color: var(--select); box-shadow: inset 3px 0 0 var(--select); }
+
+.dg-ext { stroke: #3B4F9C; } .dg-int { stroke: #A8481A; } .dg-inhibit { stroke: #B3261E; }
+.dg-head-ext { fill: #3B4F9C; } .dg-head-int { fill: #A8481A; } .dg-head-inhibit { stroke: #B3261E; stroke-width: 3; fill: none; }
+.dg-key-ext { border-color: #3B4F9C; } .dg-key-int { border-color: #A8481A; } .dg-key-inhibit { border-color: #B3261E; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .dg-ext { stroke: #8FA6EE; } :root:not([data-theme="light"]) .dg-head-ext { fill: #8FA6EE; } :root:not([data-theme="light"]) .dg-int { stroke: #E88B5C; } :root:not([data-theme="light"]) .dg-head-int { fill: #E88B5C; } :root:not([data-theme="light"]) .dg-inhibit, :root:not([data-theme="light"]) .dg-head-inhibit { stroke: #F07A72; } }
+:root[data-theme="dark"] .dg-ext { stroke: #8FA6EE; } :root[data-theme="dark"] .dg-head-ext { fill: #8FA6EE; } :root[data-theme="dark"] .dg-int { stroke: #E88B5C; } :root[data-theme="dark"] .dg-head-int { fill: #E88B5C; } :root[data-theme="dark"] .dg-inhibit, :root[data-theme="dark"] .dg-head-inhibit { stroke: #F07A72; }
