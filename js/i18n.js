@@ -4,7 +4,9 @@ let mode = 'en';
 const KEY = 'hb.lang';
 
 export async function loadStrings() {
-  strings = (await (await fetch('data/i18n.json')).json()).strings;
+  const r = await fetch('data/i18n.json');
+  if (!r.ok) throw new Error(`data/i18n.json: HTTP ${r.status}`);
+  strings = (await r.json()).strings;
   try { mode = localStorage.getItem(KEY) || 'en'; } catch { mode = 'en'; }
   return mode;
 }

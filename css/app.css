@@ -285,3 +285,7 @@ body.bare .panels { display: none; }
   .mol { height: clamp(260px, 44vh, 480px); }
   .cut input { height: 44px; }
 }
+
+/* Long names (Latin binomials, compound names, long translations) wrap instead of overflowing */
+.hud-title, .viewport-title, .panel-body, .queue button, .chip { overflow-wrap: anywhere; }
+.queue button { min-width: 0; }

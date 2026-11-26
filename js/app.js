@@ -5,10 +5,22 @@ import { initCompare, renderCompare, renderChart, columnCells, resolve, valueTex
 import { buildModel, crowded } from './cellmodel.js';
 import { showStructure } from './molview.js';
 
-const load = p => fetch(p).then(r => r.json());
-const [catalog, { citations }, links, tours, anatomy, tissues, organelles, atoms, ploc, bcl2] = await Promise.all([
-  load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'), load('data/anatomy.json'), load('data/tissues.json'), load('data/organelles.json'), load('data/atoms.json'), load('data/protein-location.json'), load('data/bcl2-compare.json'),
-]);
+const load = p => fetch(p).then(r => { if (!r.ok) throw new Error(`${p}: HTTP ${r.status}`); return r.json(); });
+// Data files come from one origin; a failed one leaves nothing to draw, so say so instead of showing a blank page
+function bootFailed(err) {
+  console.error('Cell Atlas data failed to load', err);
+  const el = document.getElementById('vp-empty');
+  if (!el) return;
+  el.setAttribute('role', 'alert');
+  el.innerHTML = 'Cell Atlas could not load its data. Check your connection and reload the page.<br>細胞圖譜無法載入資料。請檢查網絡連線後重新載入頁面。';
+}
+let data;
+try {
+  data = await Promise.all([
+    load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'), load('data/anatomy.json'), load('data/tissues.json'), load('data/organelles.json'), load('data/atoms.json'), load('data/protein-location.json'), load('data/bcl2-compare.json'),
+  ]);
+} catch (err) { bootFailed(err); throw err; }
+const [catalog, { citations }, links, tours, anatomy, tissues, organelles, atoms, ploc, bcl2] = data;
 const $ = id => document.getElementById(id);
 // Cell types: colour is the --kind-* token, group is the domain-level class
 const KINDS = [
@@ -30,7 +42,7 @@ $('theme-btn').addEventListener('click', () => {
 });
 
 // Language
-setLang(await loadStrings());
+try { setLang(await loadStrings()); } catch (err) { bootFailed(err); throw err; }
 // the embedded 3D Anatomy Model follows the language switch (anatomy/zh-hant.js reads it)
 const sendLang = () => { const f = $('vp-anatomy'); if (f && f.contentWindow) f.contentWindow.postMessage({ type: 'lang', lang: getLang() }, location.origin); };
 document.querySelectorAll('[data-lang-set]').forEach(b => b.addEventListener('click', () => {
