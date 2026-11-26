@@ -2853,6 +2853,1506 @@
      "links": ["diag:etc-pathway"]
     }
    ]
+  },
+  {
+   "id": "protein-synthesis",
+   "name": {
+    "en": "Protein synthesis: transcription and translation",
+    "zh-Hant": "蛋白質合成：轉錄與轉譯"
+   },
+   "summary": {
+    "en": "In the nucleus RNA polymerase II copies a gene into pre-mRNA, which is cleaved at the poly(A) signal, capped, spliced and tailed to make a mature mRNA. The mRNA leaves through a nuclear pore, and in the cytosol the ribosome reads it in three stages: initiation, elongation and termination.",
+    "zh-Hant": "在細胞核中，RNA 聚合酶 II 把基因複製成前 mRNA，前 mRNA 在 poly(A) 訊號處被切開，再經加帽、剪接與加尾成為成熟 mRNA。mRNA 經核孔離開，在細胞質中由核糖體分起始、延伸與終止三個階段讀取。"
+   },
+   "cite": ["hsin-2012", "proudfoot-2016", "jackson-2010"],
+   "viewBox": [
+    1060,
+    640
+   ],
+   "bands": [
+    {
+     "id": "cell",
+     "y": 0,
+     "h": 640
+    }
+   ],
+   "labels": [
+    {
+     "x": 262,
+     "y": 540,
+     "anchor": "start",
+     "text": {
+      "en": "export through the nuclear pore",
+      "zh-Hant": "經核孔輸出"
+     }
+    },
+    {
+     "x": 1020,
+     "y": 36,
+     "anchor": "end",
+     "text": {
+      "en": "Translation",
+      "zh-Hant": "轉譯"
+     }
+    },
+    {
+     "x": 470,
+     "y": 36,
+     "anchor": "end",
+     "text": {
+      "en": "Transcription",
+      "zh-Hant": "轉錄"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "type": "tx",
+     "pts": [
+      [
+       140,
+       94
+      ],
+      [
+       140,
+       140
+      ]
+     ]
+    },
+    {
+     "type": "tx",
+     "pts": [
+      [
+       140,
+       184
+      ],
+      [
+       140,
+       230
+      ]
+     ]
+    },
+    {
+     "type": "tx",
+     "pts": [
+      [
+       140,
+       274
+      ],
+      [
+       140,
+       320
+      ]
+     ]
+    },
+    {
+     "type": "tx",
+     "pts": [
+      [
+       140,
+       364
+      ],
+      [
+       140,
+       410
+      ]
+     ]
+    },
+    {
+     "type": "tx",
+     "pts": [
+      [
+       140,
+       454
+      ],
+      [
+       140,
+       500
+      ]
+     ]
+    },
+    {
+     "type": "exp",
+     "pts": [
+      [
+       240,
+       522
+      ],
+      [
+       520,
+       522
+      ],
+      [
+       520,
+       72
+      ],
+      [
+       558,
+       72
+      ]
+     ]
+    },
+    {
+     "type": "tl",
+     "pts": [
+      [
+       690,
+       94
+      ],
+      [
+       690,
+       140
+      ]
+     ]
+    },
+    {
+     "type": "tl",
+     "pts": [
+      [
+       690,
+       184
+      ],
+      [
+       690,
+       230
+      ]
+     ]
+    },
+    {
+     "type": "tl",
+     "pts": [
+      [
+       690,
+       274
+      ],
+      [
+       690,
+       320
+      ]
+     ]
+    },
+    {
+     "type": "tl",
+     "pts": [
+      [
+       690,
+       364
+      ],
+      [
+       690,
+       410
+      ]
+     ]
+    },
+    {
+     "type": "tl",
+     "pts": [
+      [
+       690,
+       454
+      ],
+      [
+       690,
+       500
+      ]
+     ]
+    },
+    {
+     "type": "side",
+     "pts": [
+      [
+       850,
+       122
+      ],
+      [
+       820,
+       122
+      ]
+     ]
+    },
+    {
+     "type": "side",
+     "pts": [
+      [
+       850,
+       342
+      ],
+      [
+       820,
+       342
+      ]
+     ]
+    },
+    {
+     "type": "side",
+     "pts": [
+      [
+       850,
+       432
+      ],
+      [
+       820,
+       432
+      ]
+     ]
+    },
+    {
+     "type": "side",
+     "pts": [
+      [
+       270,
+       202
+      ],
+      [
+       240,
+       202
+      ]
+     ]
+    }
+   ],
+   "legend": [
+    {
+     "type": "tx",
+     "label": {
+      "en": "Transcription and RNA processing",
+      "zh-Hant": "轉錄與 RNA 加工"
+     }
+    },
+    {
+     "type": "exp",
+     "label": {
+      "en": "mRNA export",
+      "zh-Hant": "mRNA 輸出"
+     }
+    },
+    {
+     "type": "tl",
+     "label": {
+      "en": "Translation",
+      "zh-Hant": "轉譯"
+     }
+    }
+   ],
+   "nodes": [
+    {
+     "id": "nucleus",
+     "kind": "region",
+     "x": 20,
+     "y": 20,
+     "w": 470,
+     "h": 600,
+     "tx": 35,
+     "ty": 608,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Transcription and RNA processing take place in the nucleus. The product is a mature mRNA.",
+      "zh-Hant": "轉錄與 RNA 加工在細胞核進行，產物是成熟的 mRNA。"
+     },
+     "cite": ["proudfoot-2016"]
+    },
+    {
+     "id": "cytosol",
+     "kind": "region",
+     "x": 500,
+     "y": 20,
+     "w": 540,
+     "h": 600,
+     "tx": 515,
+     "ty": 608,
+     "color": "#C39A2E",
+     "name": {
+      "en": "Cytosol",
+      "zh-Hant": "細胞質"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Translation takes place on ribosomes in the cytosol (and on the rough endoplasmic reticulum for secreted and membrane proteins).",
+      "zh-Hant": "轉譯在細胞質的核糖體進行（分泌蛋白與膜蛋白則在粗面內質網上）。"
+     },
+     "cite": ["jackson-2010"]
+    },
+    {
+     "id": "dna",
+     "kind": "box",
+     "x": 40,
+     "y": 50,
+     "w": 200,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "DNA (gene)",
+      "zh-Hant": "DNA（基因）"
+     },
+     "sub": {
+      "en": "template strand",
+      "zh-Hant": "模板股"
+     },
+     "text": {
+      "en": "A gene is a stretch of DNA from the promoter to the terminator. RNA polymerase reads the template strand and makes an RNA copy.",
+      "zh-Hant": "基因是由啟動子至終止子的一段 DNA。RNA 聚合酶讀取模板股並製成 RNA 副本。"
+     },
+     "cite": ["hsin-2012", "proudfoot-2016"]
+    },
+    {
+     "id": "init",
+     "kind": "box",
+     "x": 40,
+     "y": 140,
+     "w": 200,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Initiation",
+      "zh-Hant": "起始"
+     },
+     "sub": {
+      "en": "Pol II + factors at the promoter",
+      "zh-Hant": "Pol II 與因子結合啟動子"
+     },
+     "text": {
+      "en": "RNA polymerase II and general transcription factors assemble at the promoter and start RNA synthesis. After initiation, Pol II pauses near the promoter until it receives a signal to continue.",
+      "zh-Hant": "RNA 聚合酶 II 與一般轉錄因子在啟動子組裝並開始合成 RNA。起始後 Pol II 在啟動子附近暫停，直至收到繼續的訊號。"
+     },
+     "cite": ["zhou-2012", "hsin-2012"]
+    },
+    {
+     "id": "elong",
+     "kind": "box",
+     "x": 40,
+     "y": 230,
+     "w": 200,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Elongation",
+      "zh-Hant": "延伸"
+     },
+     "sub": {
+      "en": "pre-mRNA made 5′ → 3′",
+      "zh-Hant": "前 mRNA 由 5′ 向 3′ 合成"
+     },
+     "text": {
+      "en": "P-TEFb releases paused Pol II into productive elongation. The polymerase adds nucleotides along the template and makes a full-length pre-mRNA that is processed as it is made.",
+      "zh-Hant": "P-TEFb 令暫停的 Pol II 進入有效延伸。聚合酶沿模板加入核苷酸，產生完整的前 mRNA，並邊合成邊加工。"
+     },
+     "cite": ["zhou-2012"]
+    },
+    {
+     "id": "term",
+     "kind": "box",
+     "x": 40,
+     "y": 320,
+     "w": 200,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Termination",
+      "zh-Hant": "終止"
+     },
+     "sub": {
+      "en": "cleavage at the poly(A) signal",
+      "zh-Hant": "在 poly(A) 訊號處切開"
+     },
+     "text": {
+      "en": "At the end of the gene the transcript is cleaved at the poly(A) signal, which releases the messenger RNA. The remaining RNA is degraded, and this triggers Pol II to stop.",
+      "zh-Hant": "在基因末端，轉錄本於 poly(A) 訊號處被切開，釋出信使 RNA。其餘 RNA 被降解，並促使 Pol II 停止。"
+     },
+     "cite": ["proudfoot-2016"]
+    },
+    {
+     "id": "proc",
+     "kind": "box",
+     "x": 40,
+     "y": 410,
+     "w": 200,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "RNA processing",
+      "zh-Hant": "RNA 加工"
+     },
+     "sub": {
+      "en": "5′ cap, splicing, poly(A) tail",
+      "zh-Hant": "5′ 帽、剪接、poly(A) 尾"
+     },
+     "text": {
+      "en": "The pre-mRNA gets a 5′ cap, introns are spliced out, and a poly(A) tail is added. Splicing can be alternative, so one gene can give several mRNAs. Processing is coupled to transcription through the Pol II CTD.",
+      "zh-Hant": "前 mRNA 加上 5′ 帽，內含子被剪除，並加上 poly(A) 尾。剪接可以是選擇性的，因此一個基因可產生多種 mRNA。加工透過 Pol II 的 CTD 與轉錄偶聯。"
+     },
+     "cite": ["proudfoot-2016", "kornblihtt-2013", "hsin-2012"]
+    },
+    {
+     "id": "mrna",
+     "kind": "box",
+     "x": 40,
+     "y": 500,
+     "w": 200,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Mature mRNA",
+      "zh-Hant": "成熟 mRNA"
+     },
+     "sub": {
+      "en": "exported through a nuclear pore",
+      "zh-Hant": "經核孔輸出"
+     },
+     "text": {
+      "en": "A mature eukaryotic mRNA is monocistronic: a 5′ cap, a 5′ untranslated region, one coding region and a longer 3′ untranslated region. It leaves the nucleus through a nuclear pore.",
+      "zh-Hant": "成熟的真核 mRNA 為單順反子：5′ 帽、5′ 非轉譯區、一個編碼區及較長的 3′ 非轉譯區，經核孔離開細胞核。"
+     },
+     "cite": ["proudfoot-2016"]
+    },
+    {
+     "id": "pol2",
+     "kind": "box",
+     "x": 270,
+     "y": 180,
+     "w": 190,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "RNA polymerase II",
+      "zh-Hant": "RNA 聚合酶 II"
+     },
+     "sub": {
+      "en": "12 subunits, Rpb1 CTD",
+      "zh-Hant": "12 個次單位，Rpb1 CTD"
+     },
+     "text": {
+      "en": "The polymerase that makes all mRNA. It has 12 polypeptides, and the largest, Rpb1, carries the C-terminal domain (CTD), whose phosphorylation state coordinates transcription and RNA processing.",
+      "zh-Hant": "製造所有 mRNA 的聚合酶，有 12 個多肽，最大的 Rpb1 帶有 C 端結構域（CTD），其磷酸化狀態協調轉錄與 RNA 加工。"
+     },
+     "cite": ["hsin-2012"]
+    },
+    {
+     "id": "c1",
+     "kind": "box",
+     "x": 560,
+     "y": 50,
+     "w": 260,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "43S complex binds mRNA",
+      "zh-Hant": "43S 複合體結合 mRNA"
+     },
+     "sub": {
+      "en": "40S + eIF2·Met-tRNAi + eIF3, at the cap",
+      "zh-Hant": "40S + eIF2·Met-tRNAi + eIF3，於帽處"
+     },
+     "text": {
+      "en": "The cap-binding complex eIF4F recognises the 5′ cap. The 43S complex (40S subunit, eIF2·GTP·Met-tRNAi and eIF3) then binds the mRNA at its 5′ end.",
+      "zh-Hant": "帽結合複合體 eIF4F 辨認 5′ 帽，43S 複合體（40S 次單位、eIF2·GTP·Met-tRNAi 與 eIF3）隨後結合 mRNA 的 5′ 端。"
+     },
+     "cite": ["pestova-2001", "jackson-2010"]
+    },
+    {
+     "id": "c2",
+     "kind": "box",
+     "x": 560,
+     "y": 140,
+     "w": 260,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "Scanning to the start codon",
+      "zh-Hant": "掃描至起始密碼子"
+     },
+     "sub": {
+      "en": "48S complex at AUG",
+      "zh-Hant": "AUG 處的 48S 複合體"
+     },
+     "text": {
+      "en": "The bound complex scans along the 5′ untranslated region to the initiation codon, where the codon pairs with the anticodon of the initiator tRNA. This is the 48S initiation complex.",
+      "zh-Hant": "結合的複合體沿 5′ 非轉譯區掃描至起始密碼子，密碼子與起始 tRNA 的反密碼子配對，形成 48S 起始複合體。"
+     },
+     "cite": ["pestova-2001"]
+    },
+    {
+     "id": "c3",
+     "kind": "box",
+     "x": 560,
+     "y": 230,
+     "w": 260,
+     "h": 44,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "80S ribosome assembles",
+      "zh-Hant": "組裝 80S 核糖體"
+     },
+     "sub": {
+      "en": "60S joins (eIF5B)",
+      "zh-Hant": "60S 加入（eIF5B）"
+     },
+     "text": {
+      "en": "The 60S subunit joins with the help of eIF5B and forms the 80S ribosome, with Met-tRNAi in the P site at the start codon. The atlas has a structure of the human 80S ribosome (4UG0).",
+      "zh-Hant": "60S 次單位在 eIF5B 協助下加入，形成 80S 核糖體，Met-tRNAi 位於起始密碼子的 P 位。圖譜內有人類 80S 核糖體的結構（4UG0）。"
+     },
+     "cite": ["pestova-2001", "cate-2012"],
+     "links": ["pdb:4UG0"]
+    },
+    {
+     "id": "c4",
+     "kind": "box",
+     "x": 560,
+     "y": 320,
+     "w": 260,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "Elongation",
+      "zh-Hant": "延伸"
+     },
+     "sub": {
+      "en": "tRNA enters, peptide bond, translocation",
+      "zh-Hant": "tRNA 進入、形成肽鍵、移位"
+     },
+     "text": {
+      "en": "Aminoacyl-tRNAs that match the codon enter the ribosome, the ribosome forms a peptide bond, and the ribosome moves one codon along the mRNA. The cycle repeats and the polypeptide grows.",
+      "zh-Hant": "與密碼子配對的氨酰 tRNA 進入核糖體，核糖體形成肽鍵並沿 mRNA 移動一個密碼子。這個循環重複，多肽鏈便延長。"
+     },
+     "cite": ["dever-2012"]
+    },
+    {
+     "id": "c5",
+     "kind": "box",
+     "x": 560,
+     "y": 410,
+     "w": 260,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "Termination",
+      "zh-Hant": "終止"
+     },
+     "sub": {
+      "en": "stop codon, release factors",
+      "zh-Hant": "終止密碼子、釋放因子"
+     },
+     "text": {
+      "en": "When a stop codon reaches the ribosome, release factors release the finished polypeptide. The ribosome is then recycled.",
+      "zh-Hant": "終止密碼子到達核糖體時，釋放因子把完成的多肽鏈釋出，核糖體隨後被回收。"
+     },
+     "cite": ["dever-2012"]
+    },
+    {
+     "id": "c6",
+     "kind": "box",
+     "x": 560,
+     "y": 500,
+     "w": 260,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "Polypeptide → protein",
+      "zh-Hant": "多肽 → 蛋白質"
+     },
+     "sub": {
+      "en": "folds, may be modified",
+      "zh-Hant": "摺疊，可能被修飾"
+     },
+     "text": {
+      "en": "The polypeptide folds into its three-dimensional structure and may be modified, then goes to its place in the cell.",
+      "zh-Hant": "多肽摺疊成三維結構，可能被修飾，然後前往它在細胞內的位置。"
+     },
+     "cite": ["dever-2012"]
+    },
+    {
+     "id": "eif",
+     "kind": "box",
+     "x": 850,
+     "y": 100,
+     "w": 170,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Initiation factors",
+      "zh-Hant": "起始因子"
+     },
+     "sub": {
+      "en": "at least 12 eIFs",
+      "zh-Hant": "至少 12 個 eIF"
+     },
+     "text": {
+      "en": "Translation initiation needs at least 12 initiation factors. Protein synthesis is mainly regulated at initiation, so these factors and the pathways that control them are central targets of regulation.",
+      "zh-Hant": "轉譯起始需要至少 12 個起始因子。蛋白質合成主要在起始階段受調控，因此這些因子及控制它們的途徑是主要的調控目標。"
+     },
+     "cite": ["hinnebusch-2012", "jackson-2010"]
+    },
+    {
+     "id": "trna",
+     "kind": "box",
+     "x": 850,
+     "y": 320,
+     "w": 170,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Aminoacyl-tRNAs",
+      "zh-Hant": "氨酰 tRNA"
+     },
+     "sub": {
+      "en": "decode the codons",
+      "zh-Hant": "解讀密碼子"
+     },
+     "text": {
+      "en": "Each tRNA carries an amino acid and reads one mRNA codon with its anticodon. This is how the nucleotide sequence is translated into an amino acid sequence.",
+      "zh-Hant": "每個 tRNA 攜帶一個胺基酸，以反密碼子讀取 mRNA 的一個密碼子，核苷酸序列因此被轉譯成胺基酸序列。"
+     },
+     "cite": ["dever-2012"]
+    },
+    {
+     "id": "rf",
+     "kind": "box",
+     "x": 850,
+     "y": 410,
+     "w": 170,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Release factors",
+      "zh-Hant": "釋放因子"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Release factors recognise the stop codon and release the polypeptide from the last tRNA.",
+      "zh-Hant": "釋放因子辨認終止密碼子，把多肽鏈從最後的 tRNA 釋出。"
+     },
+     "cite": ["dever-2012"]
+    }
+   ]
+  },
+  {
+   "id": "adrenergic",
+   "name": {
+    "en": "Adrenergic receptor signalling",
+    "zh-Hant": "腎上腺素受體訊號傳遞"
+   },
+   "summary": {
+    "en": "Norepinephrine and epinephrine bind three classes of adrenergic receptor. α1 couples to Gq/11 and raises Ca²⁺ and PKC, α2 couples to Gi/o and lowers cAMP, and β couples to Gs and raises cAMP and PKA. After activation, GRK and β-arrestin end the G protein signal and start internalisation and G protein-independent signalling.",
+    "zh-Hant": "去甲腎上腺素與腎上腺素結合三類腎上腺素受體。α1 偶聯 Gq/11，使 Ca²⁺ 與 PKC 上升；α2 偶聯 Gi/o，使 cAMP 下降；β 偶聯 Gs，使 cAMP 與 PKA 上升。受體活化後，GRK 與 β-arrestin 終止 G 蛋白訊號，並啟動內吞及不依賴 G 蛋白的訊號。"
+   },
+   "cite": ["bylund-2021", "hoffman-2004", "shenoy-2011"],
+   "viewBox": [
+    1040,
+    540
+   ],
+   "bands": [
+    {
+     "id": "lumen",
+     "y": 0,
+     "h": 110
+    },
+    {
+     "id": "mem",
+     "y": 110,
+     "h": 42
+    },
+    {
+     "id": "cell",
+     "y": 152,
+     "h": 388
+    }
+   ],
+   "labels": [
+    {
+     "x": 20,
+     "y": 22,
+     "anchor": "start",
+     "text": {
+      "en": "Extracellular",
+      "zh-Hant": "細胞外"
+     }
+    },
+    {
+     "x": 310,
+     "y": 136,
+     "anchor": "middle",
+     "text": {
+      "en": "Membrane",
+      "zh-Hant": "細胞膜"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "type": "lig",
+     "pts": [
+      [
+       400,
+       80
+      ],
+      [
+       400,
+       94
+      ],
+      [
+       160,
+       94
+      ],
+      [
+       160,
+       108
+      ]
+     ]
+    },
+    {
+     "type": "lig",
+     "pts": [
+      [
+       460,
+       80
+      ],
+      [
+       460,
+       108
+      ]
+     ]
+    },
+    {
+     "type": "lig",
+     "pts": [
+      [
+       640,
+       80
+      ],
+      [
+       640,
+       94
+      ],
+      [
+       760,
+       94
+      ],
+      [
+       760,
+       108
+      ]
+     ]
+    },
+    {
+     "type": "a1",
+     "pts": [
+      [
+       160,
+       152
+      ],
+      [
+       160,
+       190
+      ]
+     ]
+    },
+    {
+     "type": "a1",
+     "pts": [
+      [
+       160,
+       230
+      ],
+      [
+       160,
+       260
+      ]
+     ]
+    },
+    {
+     "type": "a1",
+     "pts": [
+      [
+       160,
+       300
+      ],
+      [
+       160,
+       330
+      ]
+     ]
+    },
+    {
+     "type": "a1",
+     "pts": [
+      [
+       160,
+       370
+      ],
+      [
+       160,
+       400
+      ]
+     ]
+    },
+    {
+     "type": "a2",
+     "pts": [
+      [
+       460,
+       152
+      ],
+      [
+       460,
+       190
+      ]
+     ]
+    },
+    {
+     "type": "inhibit",
+     "pts": [
+      [
+       460,
+       230
+      ],
+      [
+       460,
+       260
+      ]
+     ]
+    },
+    {
+     "type": "a2",
+     "pts": [
+      [
+       460,
+       300
+      ],
+      [
+       460,
+       330
+      ]
+     ]
+    },
+    {
+     "type": "a2",
+     "pts": [
+      [
+       560,
+       210
+      ],
+      [
+       585,
+       210
+      ],
+      [
+       585,
+       422
+      ],
+      [
+       562,
+       422
+      ]
+     ]
+    },
+    {
+     "type": "b",
+     "pts": [
+      [
+       760,
+       152
+      ],
+      [
+       760,
+       190
+      ]
+     ]
+    },
+    {
+     "type": "b",
+     "pts": [
+      [
+       760,
+       230
+      ],
+      [
+       760,
+       260
+      ]
+     ]
+    },
+    {
+     "type": "b",
+     "pts": [
+      [
+       760,
+       300
+      ],
+      [
+       760,
+       330
+      ]
+     ]
+    },
+    {
+     "type": "b",
+     "pts": [
+      [
+       760,
+       370
+      ],
+      [
+       760,
+       400
+      ]
+     ]
+    },
+    {
+     "type": "b",
+     "pts": [
+      [
+       760,
+       444
+      ],
+      [
+       760,
+       470
+      ]
+     ]
+    },
+    {
+     "type": "arr",
+     "pts": [
+      [
+       860,
+       130
+      ],
+      [
+       960,
+       130
+      ],
+      [
+       960,
+       190
+      ]
+     ]
+    },
+    {
+     "type": "arr",
+     "pts": [
+      [
+       960,
+       230
+      ],
+      [
+       960,
+       270
+      ]
+     ]
+    },
+    {
+     "type": "arr",
+     "pts": [
+      [
+       1030,
+       210
+      ],
+      [
+       1038,
+       210
+      ],
+      [
+       1038,
+       372
+      ],
+      [
+       1032,
+       372
+      ]
+     ]
+    }
+   ],
+   "legend": [
+    {
+     "type": "a1",
+     "label": {
+      "en": "α1 (Gq/11)",
+      "zh-Hant": "α1（Gq/11）"
+     }
+    },
+    {
+     "type": "a2",
+     "label": {
+      "en": "α2 (Gi/o)",
+      "zh-Hant": "α2（Gi/o）"
+     }
+    },
+    {
+     "type": "b",
+     "label": {
+      "en": "β (Gs)",
+      "zh-Hant": "β（Gs）"
+     }
+    },
+    {
+     "type": "arr",
+     "label": {
+      "en": "β-arrestin",
+      "zh-Hant": "β-arrestin"
+     }
+    },
+    {
+     "type": "inhibit",
+     "label": {
+      "en": "Inhibition",
+      "zh-Hant": "抑制"
+     }
+    }
+   ],
+   "nodes": [
+    {
+     "id": "lig",
+     "kind": "box",
+     "x": 380,
+     "y": 36,
+     "w": 280,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Norepinephrine, epinephrine",
+      "zh-Hant": "去甲腎上腺素、腎上腺素"
+     },
+     "sub": {
+      "en": "catecholamines",
+      "zh-Hant": "兒茶酚胺"
+     },
+     "text": {
+      "en": "The sympathetic signals. Both catecholamines bind adrenergic receptors on the surface of target cells, and the receptor subtype decides which pathway the cell uses.",
+      "zh-Hant": "交感神經的訊號。兩種兒茶酚胺都結合目標細胞表面的腎上腺素受體，受體亞型決定細胞使用哪條途徑。"
+     },
+     "cite": ["bylund-2021", "hoffman-2004"]
+    },
+    {
+     "id": "ra1",
+     "kind": "box",
+     "x": 60,
+     "y": 108,
+     "w": 200,
+     "h": 44,
+     "color": "#2F6F6F",
+     "name": {
+      "en": "α1 receptor",
+      "zh-Hant": "α1 受體"
+     },
+     "sub": {
+      "en": "3 subtypes, Gq/11",
+      "zh-Hant": "3 個亞型，Gq/11"
+     },
+     "text": {
+      "en": "The α1 class of adrenergic receptors has three subtypes. It is a G protein-coupled receptor that couples to Gq/11.",
+      "zh-Hant": "腎上腺素受體的 α1 類有三個亞型，是偶聯 Gq/11 的 G 蛋白偶聯受體。"
+     },
+     "cite": ["bylund-2021", "hoffman-2004"]
+    },
+    {
+     "id": "ra2",
+     "kind": "box",
+     "x": 360,
+     "y": 108,
+     "w": 200,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "α2 receptor",
+      "zh-Hant": "α2 受體"
+     },
+     "sub": {
+      "en": "3 subtypes, Gi/o",
+      "zh-Hant": "3 個亞型，Gi/o"
+     },
+     "text": {
+      "en": "The α2 class has three subtypes and couples to Gi/o. It lowers cAMP, and its effects include blood pressure control and sedation.",
+      "zh-Hant": "α2 類有三個亞型，偶聯 Gi/o，使 cAMP 下降，作用包括調節血壓與鎮靜。"
+     },
+     "cite": ["bylund-2021", "hoffman-2004"]
+    },
+    {
+     "id": "rb",
+     "kind": "box",
+     "x": 660,
+     "y": 108,
+     "w": 200,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "β receptor",
+      "zh-Hant": "β 受體"
+     },
+     "sub": {
+      "en": "3 subtypes, Gs",
+      "zh-Hant": "3 個亞型，Gs"
+     },
+     "text": {
+      "en": "The β class has three subtypes (β1, β2, β3) and couples to Gs. In the heart β1 is mainly responsible for positive chronotropic and inotropic effects. The β2 receptor is the model for GPCR activation, and its structure with Gs is known.",
+      "zh-Hant": "β 類有三個亞型（β1、β2、β3），偶聯 Gs。在心臟，β1 主要負責正性變時與變力作用。β2 受體是 GPCR 活化的模型，其與 Gs 的複合體結構已知。"
+     },
+     "cite": ["lohse-2003", "rasmussen-2011", "bylund-2021"]
+    },
+    {
+     "id": "gq",
+     "kind": "box",
+     "x": 60,
+     "y": 190,
+     "w": 200,
+     "h": 40,
+     "color": "#2F6F6F",
+     "name": {
+      "en": "Gq/11",
+      "zh-Hant": "Gq/11"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "The G protein of α1 receptors. It activates phospholipase C.",
+      "zh-Hant": "α1 受體的 G 蛋白，活化磷脂酶 C。"
+     },
+     "cite": ["bylund-2021", "hoffman-2004"]
+    },
+    {
+     "id": "plc",
+     "kind": "box",
+     "x": 60,
+     "y": 260,
+     "w": 200,
+     "h": 40,
+     "color": "#2F6F6F",
+     "name": {
+      "en": "Phospholipase C",
+      "zh-Hant": "磷脂酶 C"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Cleaves a membrane phospholipid into IP₃ and DAG.",
+      "zh-Hant": "把膜磷脂切成 IP₃ 與 DAG。"
+     },
+     "cite": ["hoffman-2004"]
+    },
+    {
+     "id": "ipdag",
+     "kind": "box",
+     "x": 60,
+     "y": 330,
+     "w": 200,
+     "h": 40,
+     "color": "#2F6F6F",
+     "name": {
+      "en": "IP₃ + DAG",
+      "zh-Hant": "IP₃ + DAG"
+     },
+     "sub": {
+      "en": "second messengers",
+      "zh-Hant": "第二信使"
+     },
+     "text": {
+      "en": "IP₃ releases Ca²⁺ from internal stores, and DAG activates protein kinase C.",
+      "zh-Hant": "IP₃ 使內部貯存的 Ca²⁺ 釋出，DAG 則活化蛋白激酶 C。"
+     },
+     "cite": ["hoffman-2004"]
+    },
+    {
+     "id": "ca",
+     "kind": "box",
+     "x": 60,
+     "y": 400,
+     "w": 200,
+     "h": 44,
+     "color": "#2F6F6F",
+     "name": {
+      "en": "↑ Ca²⁺ and PKC",
+      "zh-Hant": "↑ Ca²⁺ 與 PKC"
+     },
+     "sub": {
+      "en": "also MAPK, PLD, PI3K/Ras",
+      "zh-Hant": "亦涉及 MAPK、PLD、PI3K/Ras"
+     },
+     "text": {
+      "en": "Raised intracellular Ca²⁺ and PKC are the main α1 outputs. α1 receptors are also linked to MAPK, phospholipase D, arachidonic acid release and, in some cells, PI3K and Ras.",
+      "zh-Hant": "細胞內 Ca²⁺ 上升與 PKC 是 α1 的主要輸出。α1 受體亦與 MAPK、磷脂酶 D、花生四烯酸釋出相關，在某些細胞還涉及 PI3K 與 Ras。"
+     },
+     "cite": ["hoffman-2004", "bylund-2021"]
+    },
+    {
+     "id": "gi",
+     "kind": "box",
+     "x": 360,
+     "y": 190,
+     "w": 200,
+     "h": 40,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Gi/o",
+      "zh-Hant": "Gi/o"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "The G protein of α2 receptors. Its α subunit inhibits adenylyl cyclase, and its βγ subunits act on ion channels.",
+      "zh-Hant": "α2 受體的 G 蛋白，α 次單位抑制腺苷酸環化酶，βγ 次單位作用於離子通道。"
+     },
+     "cite": ["bylund-2021", "hoffman-2004"]
+    },
+    {
+     "id": "ac2",
+     "kind": "box",
+     "x": 360,
+     "y": 260,
+     "w": 200,
+     "h": 40,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Adenylyl cyclase",
+      "zh-Hant": "腺苷酸環化酶"
+     },
+     "sub": {
+      "en": "inhibited",
+      "zh-Hant": "被抑制"
+     },
+     "text": {
+      "en": "The enzyme that makes cAMP from ATP. Gi/o inhibits it.",
+      "zh-Hant": "由 ATP 製造 cAMP 的酶，Gi/o 抑制它。"
+     },
+     "cite": ["hoffman-2004"]
+    },
+    {
+     "id": "camp2",
+     "kind": "box",
+     "x": 360,
+     "y": 330,
+     "w": 200,
+     "h": 40,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "↓ cAMP",
+      "zh-Hant": "↓ cAMP"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Less adenylyl cyclase activity lowers cAMP, which opposes β receptor signalling in the same cell.",
+      "zh-Hant": "腺苷酸環化酶活性下降使 cAMP 減少，與同一細胞的 β 受體訊號相反。"
+     },
+     "cite": ["hoffman-2004"]
+    },
+    {
+     "id": "gbg",
+     "kind": "box",
+     "x": 360,
+     "y": 400,
+     "w": 200,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Gβγ",
+      "zh-Hant": "Gβγ"
+     },
+     "sub": {
+      "en": "K⁺ channels open, Ca²⁺ channels close",
+      "zh-Hant": "K⁺ 通道開啟、Ca²⁺ 通道關閉"
+     },
+     "text": {
+      "en": "The βγ subunits released from Gi/o activate K⁺ channels and inhibit Ca²⁺ channels. In some cells they also activate PLCβ and MAPK.",
+      "zh-Hant": "由 Gi/o 釋出的 βγ 次單位活化 K⁺ 通道並抑制 Ca²⁺ 通道，在某些細胞還活化 PLCβ 與 MAPK。"
+     },
+     "cite": ["hoffman-2004", "bylund-2021"]
+    },
+    {
+     "id": "gs",
+     "kind": "box",
+     "x": 660,
+     "y": 190,
+     "w": 200,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Gs",
+      "zh-Hant": "Gs"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "The stimulatory G protein of β receptors. It activates adenylyl cyclase.",
+      "zh-Hant": "β 受體的刺激型 G 蛋白，活化腺苷酸環化酶。"
+     },
+     "cite": ["rasmussen-2011", "bylund-2021"]
+    },
+    {
+     "id": "ac3",
+     "kind": "box",
+     "x": 660,
+     "y": 260,
+     "w": 200,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Adenylyl cyclase",
+      "zh-Hant": "腺苷酸環化酶"
+     },
+     "sub": {
+      "en": "activated",
+      "zh-Hant": "被活化"
+     },
+     "text": {
+      "en": "Gs stimulates adenylyl cyclase to make cAMP from ATP.",
+      "zh-Hant": "Gs 刺激腺苷酸環化酶，由 ATP 製造 cAMP。"
+     },
+     "cite": ["rasmussen-2011"]
+    },
+    {
+     "id": "camp3",
+     "kind": "box",
+     "x": 660,
+     "y": 330,
+     "w": 200,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "↑ cAMP",
+      "zh-Hant": "↑ cAMP"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Raised cAMP is the main β second messenger.",
+      "zh-Hant": "cAMP 上升是 β 受體的主要第二信使。"
+     },
+     "cite": ["hoffman-2004"]
+    },
+    {
+     "id": "pka",
+     "kind": "box",
+     "x": 660,
+     "y": 400,
+     "w": 200,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "PKA / EPAC",
+      "zh-Hant": "PKA / EPAC"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "cAMP activates protein kinase A and EPAC. PKA can also phosphorylate the β2 receptor itself and switch its coupling from Gs to Gi, which sends signals to MAP kinase through Gβγ, Src and Ras.",
+      "zh-Hant": "cAMP 活化蛋白激酶 A 與 EPAC。PKA 也可磷酸化 β2 受體本身，使其由偶聯 Gs 轉為偶聯 Gi，經 Gβγ、Src 與 Ras 把訊號送往 MAP 激酶。"
+     },
+     "cite": ["hoffman-2004", "daaka-1997"]
+    },
+    {
+     "id": "down",
+     "kind": "box",
+     "x": 660,
+     "y": 470,
+     "w": 200,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "CREB, Ca²⁺ handling",
+      "zh-Hant": "CREB、Ca²⁺ 處理"
+     },
+     "sub": {
+      "en": "ERK/MAPK, AKT in some cells",
+      "zh-Hant": "某些細胞有 ERK/MAPK、AKT"
+     },
+     "text": {
+      "en": "Downstream effects include gene transcription through CREB and changes in Ca²⁺ handling. In some contexts ERK/MAPK and AKT are also engaged.",
+      "zh-Hant": "下游作用包括經 CREB 的基因轉錄及 Ca²⁺ 處理的改變，在某些情況下亦涉及 ERK/MAPK 與 AKT。"
+     },
+     "cite": ["hoffman-2004", "lohse-2003"]
+    },
+    {
+     "id": "grk",
+     "kind": "box",
+     "x": 890,
+     "y": 190,
+     "w": 140,
+     "h": 40,
+     "color": "#555B66",
+     "name": {
+      "en": "GRK + β-arrestin",
+      "zh-Hant": "GRK + β-arrestin"
+     },
+     "sub": {
+      "en": "after activation",
+      "zh-Hant": "活化後"
+     },
+     "text": {
+      "en": "After activation the receptor is phosphorylated by a G protein-coupled receptor kinase, and β-arrestin binds it. β-arrestin blocks further G protein signalling.",
+      "zh-Hant": "受體活化後被 G 蛋白偶聯受體激酶磷酸化，β-arrestin 隨即結合，並阻斷進一步的 G 蛋白訊號。"
+     },
+     "cite": ["goodman-1996", "shenoy-2011"]
+    },
+    {
+     "id": "endo",
+     "kind": "box",
+     "x": 890,
+     "y": 270,
+     "w": 140,
+     "h": 44,
+     "color": "#555B66",
+     "name": {
+      "en": "Internalisation",
+      "zh-Hant": "內吞"
+     },
+     "sub": {
+      "en": "clathrin adaptor",
+      "zh-Hant": "網格蛋白接合蛋白"
+     },
+     "text": {
+      "en": "β-arrestin binds clathrin and acts as an adaptor in endocytosis of the β2 receptor, which ends the surface signal (desensitisation).",
+      "zh-Hant": "β-arrestin 結合網格蛋白，作為 β2 受體內吞的接合蛋白，使表面訊號終止（脫敏）。"
+     },
+     "cite": ["goodman-1996"]
+    },
+    {
+     "id": "erk",
+     "kind": "box",
+     "x": 890,
+     "y": 350,
+     "w": 140,
+     "h": 44,
+     "color": "#555B66",
+     "name": {
+      "en": "ERK / MAPK",
+      "zh-Hant": "ERK / MAPK"
+     },
+     "sub": {
+      "en": "β-arrestin signalling",
+      "zh-Hant": "β-arrestin 訊號"
+     },
+     "text": {
+      "en": "β-arrestins are not only brakes. They also promote alternate downstream signalling, such as MAPK, that does not depend on G proteins.",
+      "zh-Hant": "β-arrestin 不只是煞車，它也促進不依賴 G 蛋白的其他下游訊號，例如 MAPK。"
+     },
+     "cite": ["shenoy-2011"]
+    }
+   ]
   }
  ]
 }

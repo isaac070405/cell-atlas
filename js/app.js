@@ -375,8 +375,8 @@ function render(s) {
   if (compare && s.cmp === 'bcl2') ids.add(bcl2.cite);
   else if (compare) columnCells(s.muscle).forEach(c => c.data && ids.add(c.data));
   if (A && cell?.data) ids.add(cell.data);
-  if (B && pdb?.cite) ids.add(pdb.cite);
-  if (B && pdb) Object.values(ploc.genes).filter(e => e.structure === pdb.id || (point && ploc.genes[point.subunit] === e)).forEach(e => ids.add(e.source === 'uniprot' ? ploc.citeUniprot : ploc.cite));
+  if (B && pdb?.cite) [].concat(pdb.cite).forEach(id => ids.add(id));
+  if (B && pdb) Object.values(ploc.genes).filter(e => hasStructure(e, pdb.id) || (point && ploc.genes[point.subunit] === e)).forEach(e => ids.add(e.source === 'uniprot' ? ploc.citeUniprot : ploc.cite));
   if (A && !compare && cell?.id === 'hepatocyte') ids.add('bnid-105782');
   if (O || M) (sm ? modelCites(sm, s.level) : []).forEach(id => ids.add(id));
   const partCites = sm && !(O || M) ? sm.parts?.find(p => p.id === s.selection)?.cite ?? [] : [];
@@ -458,6 +458,8 @@ async function sync3dMol(id, point) {
 }
 
 // Human Protein Atlas location for one gene, or a count and the commonest locations for a whole structure
+// A gene may have more than one structure: `structure` is the main one and `also` lists the others
+const hasStructure = (e, id) => e.structure === id || (e.also ?? []).includes(id);
 const locName = n => html(ploc.locations[n] ?? { en: n, 'zh-Hant': n });
 function locRows(g) {
   const e = ploc.genes[g];
@@ -470,9 +472,9 @@ function locCard(rows, note = true) {
   return rows ? `<h4 class="card-sub">${html('card.loc')}</h4><dl class="kv">${rows}</dl>${note ? `<p class="muted" style="font-size:12.5px">${html('card.loc.note')}</p>` : ''}` : '';
 }
 function structureLoc(id) {
-  const gs = Object.values(ploc.genes).filter(e => e.structure === id);
+  const gs = Object.values(ploc.genes).filter(e => hasStructure(e, id));
   if (!gs.length) return '';
-  if (gs.length === 1) return getState().tour ? '' : locCard(locRows(Object.keys(ploc.genes).find(g => ploc.genes[g].structure === id)));
+  if (gs.length === 1) return getState().tour ? '' : locCard(locRows(Object.keys(ploc.genes).find(g => hasStructure(ploc.genes[g], id))));
   const n = {};
   gs.forEach(e => e.main.forEach(m => { n[m] = (n[m] ?? 0) + 1; }));
   const top = Object.entries(n).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([m, c]) => `${locName(m)} ${c}`).join(', ');

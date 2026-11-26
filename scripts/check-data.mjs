@@ -20,7 +20,7 @@ for (const c of cat.cells.filter(c => !c.schematic || c.fractions)) {
   const sum = (c.fractions ?? []).filter(f => !f.negligible && !f.text).reduce((s, f) => s + target(f), 0);
   if (sum > 100.5) bad(`${c.id}: fractions sum to ${sum.toFixed(1)}%`);
 }
-for (const s of cat.structures) if (!citations[s.cite]) bad(`${s.id}: cite ${s.cite} missing`);
+for (const s of cat.structures) for (const k of [].concat(s.cite)) if (!citations[k]) bad(`${s.id}: cite ${k} missing`);
 for (const e of links.edges) for (const k of [e.from, ...e.to]) if (!links.targets[k.split(':')[0]]) bad(`link key ${k}`);
 
 // Organelle and atom models: citations resolve, parts unique, bond indices valid, bond length matches the covalent-radius sum

@@ -1319,6 +1319,222 @@
       "year": 2018,
       "url": "https://doi.org/10.1038/s41556-018-0124-1",
       "status": "verified"
+    },
+    "williams-2004": {
+      "source": "Williams et al. (2004) Science 305:683–686",
+      "detail": {
+        "en": "Three crystal structures of human CYP3A4: unliganded (PDB 1W0E, 2.80 Å), with the inhibitor metyrapone and with the substrate progesterone. The active site is surprisingly small, and a peripheral binding site sits above a phenylalanine cluster",
+        "zh-Hant": "人類 CYP3A4 的三個晶體結構：無配體（PDB 1W0E，2.80 Å）、與抑制劑 metyrapone 結合，及與底物黃體酮結合。活性位點出乎意料地小，苯丙胺酸簇上方有一個外周結合位點"
+      },
+      "species": "Human",
+      "method": "X-ray crystallography, 2.80 Å",
+      "year": 2004,
+      "url": "https://doi.org/10.1126/science.1099736",
+      "status": "verified"
+    },
+    "sevrioukova-2013": {
+      "source": "Sevrioukova & Poulos (2013) Dalton Trans 42:3116–3126",
+      "detail": {
+        "en": "Review of CYP3A4: the most abundant human P450 and the one that metabolises the majority of administered drugs, with extreme substrate promiscuity and cooperative binding that cause drug-drug interactions",
+        "zh-Hant": "CYP3A4 綜述：人類含量最多的 P450，代謝大部分藥物，底物極為混雜且有協同結合，因而引致藥物相互作用"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2013,
+      "url": "https://doi.org/10.1039/c2dt31833d",
+      "status": "verified"
+    },
+    "hsin-2012": {
+      "source": "Hsin & Manley (2012) Genes Dev 26:2119–2137",
+      "detail": {
+        "en": "Review of RNA polymerase II (12 polypeptides, Rpb1 with the C-terminal domain, CTD): the CTD couples transcription to RNA processing and plays roles in elongation and termination",
+        "zh-Hant": "RNA 聚合酶 II（12 個多肽，Rpb1 帶有 C 端結構域 CTD）綜述：CTD 把轉錄與 RNA 加工偶聯，並在延伸與終止中發揮作用"
+      },
+      "species": "Eukaryotes, mainly human",
+      "method": "Review",
+      "year": 2012,
+      "url": "https://doi.org/10.1101/gad.200303.112",
+      "status": "verified"
+    },
+    "zhou-2012": {
+      "source": "Zhou, Li & Price (2012) Annu Rev Biochem 81:119–143",
+      "detail": {
+        "en": "Review of RNA polymerase II elongation control: after initiation Pol II pauses near the promoter, and P-TEFb releases it into productive elongation to make full-length, properly processed mRNAs",
+        "zh-Hant": "RNA 聚合酶 II 延伸調控綜述：起始後 Pol II 在啟動子附近暫停，P-TEFb 令它進入有效延伸，產生完整且加工正確的 mRNA"
+      },
+      "species": "Eukaryotes, mainly human",
+      "method": "Review",
+      "year": 2012,
+      "url": "https://doi.org/10.1146/annurev-biochem-052610-095910",
+      "status": "verified"
+    },
+    "proudfoot-2016": {
+      "source": "Proudfoot (2016) Science 352:aad9926",
+      "detail": {
+        "en": "Review of transcription termination in mammals: the transcript is cleaved at the poly(A) signal to release the mRNA, and the remaining RNA is degraded. Eukaryotic mRNAs are monocistronic with a 5′ cap and 5′ and 3′ untranslated regions",
+        "zh-Hant": "哺乳動物轉錄終止綜述：轉錄本在 poly(A) 訊號處被切開以釋出 mRNA，其餘 RNA 被降解。真核 mRNA 為單順反子，帶 5′ 帽及 5′ 與 3′ 非轉譯區"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2016,
+      "url": "https://doi.org/10.1126/science.aad9926",
+      "status": "verified"
+    },
+    "kornblihtt-2013": {
+      "source": "Kornblihtt et al. (2013) Nat Rev Mol Cell Biol 14:153–165",
+      "detail": {
+        "en": "Review of alternative splicing as a step between eukaryotic transcription and translation, affected by transcription factors and chromatin structure",
+        "zh-Hant": "選擇性剪接綜述：它位於真核轉錄與轉譯之間，受轉錄因子與染色質結構影響"
+      },
+      "species": "Eukaryotes, mainly human",
+      "method": "Review",
+      "year": 2013,
+      "url": "https://doi.org/10.1038/nrm3525",
+      "status": "verified"
+    },
+    "pestova-2001": {
+      "source": "Pestova et al. (2001) Proc Natl Acad Sci USA 98:7029–7036",
+      "detail": {
+        "en": "Review of eukaryotic translation initiation: eIF4F recognises the capped 5′ end, the 43S complex (40S, eIF2·GTP·Met-tRNAi, eIF3) binds and scans to the initiation codon to form the 48S complex, then the 60S subunit joins (eIF5B) to make the 80S ribosome",
+        "zh-Hant": "真核轉譯起始綜述：eIF4F 辨認帶帽的 5′ 端，43S 複合體（40S、eIF2·GTP·Met-tRNAi、eIF3）結合並掃描至起始密碼子形成 48S 複合體，60S 次單位再加入（eIF5B）形成 80S 核糖體"
+      },
+      "species": "Eukaryotes",
+      "method": "Review",
+      "year": 2001,
+      "url": "https://doi.org/10.1073/pnas.111145798",
+      "status": "verified"
+    },
+    "jackson-2010": {
+      "source": "Jackson, Hellen & Pestova (2010) Nat Rev Mol Cell Biol 11:113–127",
+      "detail": {
+        "en": "Review of eukaryotic translation initiation: protein synthesis is mainly regulated at initiation, through initiation factors, RNA-binding proteins and microRNAs",
+        "zh-Hant": "真核轉譯起始綜述：蛋白質合成主要在起始階段受調控，途徑包括起始因子、RNA 結合蛋白與 microRNA"
+      },
+      "species": "Eukaryotes",
+      "method": "Review",
+      "year": 2010,
+      "url": "https://doi.org/10.1038/nrm2838",
+      "status": "verified"
+    },
+    "hinnebusch-2012": {
+      "source": "Hinnebusch & Lorsch (2012) Cold Spring Harb Perspect Biol 4:a011544",
+      "detail": {
+        "en": "Review of eukaryotic translation initiation, which needs at least 12 initiation factors and is a target of regulatory pathways",
+        "zh-Hant": "真核轉譯起始綜述：起始需要至少 12 個起始因子，亦是多條調控途徑的目標"
+      },
+      "species": "Eukaryotes",
+      "method": "Review",
+      "year": 2012,
+      "url": "https://doi.org/10.1101/cshperspect.a011544",
+      "status": "verified"
+    },
+    "dever-2012": {
+      "source": "Dever & Green (2012) Cold Spring Harb Perspect Biol 4:a013706",
+      "detail": {
+        "en": "Review of the elongation, termination and recycling phases of translation in eukaryotes",
+        "zh-Hant": "真核轉譯延伸、終止與回收階段綜述"
+      },
+      "species": "Eukaryotes",
+      "method": "Review",
+      "year": 2012,
+      "url": "https://doi.org/10.1101/cshperspect.a013706",
+      "status": "verified"
+    },
+    "cate-2012": {
+      "source": "Cate (2012) Cold Spring Harb Perspect Biol 4:a011536",
+      "detail": {
+        "en": "Review of the structure of the eukaryotic ribosome (40S, 60S and 80S) and what it shows about eukaryotic translation",
+        "zh-Hant": "真核核糖體結構（40S、60S 與 80S）及其對真核轉譯機制的啟示綜述"
+      },
+      "species": "Eukaryotes",
+      "method": "Review",
+      "year": 2012,
+      "url": "https://doi.org/10.1101/cshperspect.a011536",
+      "status": "verified"
+    },
+    "bylund-2021": {
+      "source": "Bylund (2021) Encyclopedia of Biological Chemistry, 3rd ed., Receptors: Adrenergic receptors",
+      "detail": {
+        "en": "Encyclopedia chapter: adrenergic receptors are G protein-coupled receptors for norepinephrine and epinephrine, in three classes (α1, α2, β) with three subtypes each, coupling to Gq/11, Gi/o and Gs",
+        "zh-Hant": "百科全書章節：腎上腺素受體是去甲腎上腺素與腎上腺素的 G 蛋白偶聯受體，分 α1、α2、β 三類，各有三個亞型，分別偶聯 Gq/11、Gi/o 與 Gs"
+      },
+      "species": "Human",
+      "method": "Encyclopedia chapter",
+      "year": 2021,
+      "url": "https://doi.org/10.1016/B978-0-12-819460-7.00503-X",
+      "status": "verified"
+    },
+    "hoffman-2004": {
+      "source": "Hoffman (2004) Encyclopedia of Endocrine Diseases, Catecholamines",
+      "detail": {
+        "en": "Encyclopedia chapter on catecholamines and their adrenergic receptors and second-messenger pathways",
+        "zh-Hant": "兒茶酚胺及其腎上腺素受體與第二信使途徑的百科全書章節"
+      },
+      "species": "Human",
+      "method": "Encyclopedia chapter",
+      "year": 2004,
+      "url": "https://doi.org/10.1016/B0-12-475570-4/00258-4",
+      "status": "verified"
+    },
+    "rasmussen-2011": {
+      "source": "Rasmussen et al. (2011) Nature 477:549–555",
+      "detail": {
+        "en": "Crystal structure of the agonist-bound β2 adrenergic receptor with nucleotide-free Gs, the stimulatory G protein for adenylyl cyclase",
+        "zh-Hant": "激動劑結合的 β2 腎上腺素受體與無核苷酸 Gs（腺苷酸環化酶的刺激型 G 蛋白）複合體的晶體結構"
+      },
+      "species": "Human",
+      "method": "X-ray crystallography",
+      "year": 2011,
+      "url": "https://doi.org/10.1038/nature10361",
+      "status": "verified"
+    },
+    "lohse-2003": {
+      "source": "Lohse, Engelhardt & Eschenhagen (2003) Circ Res 93:896–906",
+      "detail": {
+        "en": "Review of β-adrenergic receptors in cardiac function and failure: β1 is mainly responsible for positive chronotropic and inotropic effects, and β2 can also activate nonclassical pathways",
+        "zh-Hant": "心臟 β 腎上腺素受體綜述：β1 主要負責正性變時與變力作用，β2 亦可活化非經典途徑"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2003,
+      "url": "https://doi.org/10.1161/01.RES.0000102042.83024.CA",
+      "status": "verified"
+    },
+    "daaka-1997": {
+      "source": "Daaka, Luttrell & Lefkowitz (1997) Nature 390:88–91",
+      "detail": {
+        "en": "PKA phosphorylation switches the coupling of the β2-adrenergic receptor from Gs to Gi, which activates MAP kinase through Gβγ, c-Src and Ras",
+        "zh-Hant": "PKA 磷酸化使 β2 腎上腺素受體由偶聯 Gs 轉為偶聯 Gi，再經 Gβγ、c-Src 與 Ras 活化 MAP 激酶"
+      },
+      "species": "Human cell line",
+      "method": "Cell culture experiments",
+      "year": 1997,
+      "url": "https://doi.org/10.1038/36362",
+      "status": "verified"
+    },
+    "goodman-1996": {
+      "source": "Goodman et al. (1996) Nature 383:447–450",
+      "detail": {
+        "en": "β-arrestin binds phosphorylated β2AR and clathrin, acting as an adaptor in receptor endocytosis, which attenuates signalling (desensitisation)",
+        "zh-Hant": "β-arrestin 結合磷酸化的 β2AR 與網格蛋白，作為受體內吞的接合蛋白，使訊號減弱（脫敏）"
+      },
+      "species": "Human cell line",
+      "method": "Cell culture experiments",
+      "year": 1996,
+      "url": "https://doi.org/10.1038/383447a0",
+      "status": "verified"
+    },
+    "shenoy-2011": {
+      "source": "Shenoy & Lefkowitz (2011) Trends Pharmacol Sci 32:521–533",
+      "detail": {
+        "en": "Review of β-arrestins: endocytic adaptors for seven-transmembrane receptors that inhibit G protein signalling and promote alternate downstream signalling",
+        "zh-Hant": "β-arrestin 綜述：七次跨膜受體的內吞接合蛋白，抑制 G 蛋白訊號並促進其他下游訊號"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2011,
+      "url": "https://doi.org/10.1016/j.tips.2011.05.002",
+      "status": "verified"
     }
   }
 }

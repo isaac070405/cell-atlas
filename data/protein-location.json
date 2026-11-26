@@ -185,24 +185,9 @@
    "ensembl": "ENSG00000169252",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Plasma membrane"
-   ],
-   "additional": [
-    "Basal body",
-    "Cytokinetic bridge",
-    "Microtubules",
-    "Mitotic spindle",
-    "Primary cilium"
-   ],
-   "go": [
-    "Basal body (GO:0036064)",
-    "Cytokinetic bridge (GO:0045171)",
-    "Microtubules (GO:0015630)",
-    "Mitotic spindle (GO:0072686)",
-    "Plasma membrane (GO:0005886)",
-    "Primary cilium (GO:0005929)"
-   ],
+   "main": ["Plasma membrane"],
+   "additional": ["Basal body", "Cytokinetic bridge", "Microtubules", "Mitotic spindle", "Primary cilium"],
+   "go": ["Basal body (GO:0036064)", "Cytokinetic bridge (GO:0045171)", "Microtubules (GO:0015630)", "Mitotic spindle (GO:0072686)", "Plasma membrane (GO:0005886)", "Primary cilium (GO:0005929)"],
    "source": "hpa"
   },
   "ALDH2": {
@@ -210,9 +195,7 @@
    "accession": "P05091",
    "structure": "1ZUM",
    "reliability": "Experimental",
-   "main": [
-    "Mitochondrion"
-   ],
+   "main": ["Mitochondrion"],
    "additional": [],
    "go": []
   },
@@ -221,9 +204,7 @@
    "accession": "P20648",
    "structure": "candidate",
    "reliability": "Experimental",
-   "main": [
-    "Apical cell membrane"
-   ],
+   "main": ["Apical cell membrane"],
    "additional": [],
    "go": []
   },
@@ -231,42 +212,27 @@
    "ensembl": "ENSG00000186009",
    "structure": "candidate",
    "reliability": "Approved",
-   "main": [
-    "Plasma membrane"
-   ],
+   "main": ["Plasma membrane"],
    "additional": [],
-   "go": [
-    "Plasma membrane (GO:0005886)"
-   ],
+   "go": ["Plasma membrane (GO:0005886)"],
    "source": "hpa"
   },
   "ATP5F1A": {
    "ensembl": "ENSG00000152234",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "End piece"
-   ],
-   "go": [
-    "End piece (GO:0097229)",
-    "Mitochondria (GO:0005739)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["End piece"],
+   "go": ["End piece (GO:0097229)", "Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "ATP5F1B": {
    "ensembl": "ENSG00000110955",
    "structure": "candidate",
    "reliability": "Enhanced",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "ATP5F1C": {
@@ -274,9 +240,7 @@
    "accession": "P36542",
    "structure": "candidate",
    "reliability": "Annotated",
-   "main": [
-    "Mitochondrion inner membrane"
-   ],
+   "main": ["Mitochondrion inner membrane"],
    "additional": [],
    "go": []
   },
@@ -284,20 +248,9 @@
    "ensembl": "ENSG00000099624",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria",
-    "Principal piece"
-   ],
-   "additional": [
-    "Connecting piece",
-    "Flagellar centriole"
-   ],
-   "go": [
-    "Connecting piece (GO:0120212)",
-    "Flagellar centriole (GO:0005814)",
-    "Mitochondria (GO:0005739)",
-    "Principal piece (GO:0097228)"
-   ],
+   "main": ["Mitochondria", "Principal piece"],
+   "additional": ["Connecting piece", "Flagellar centriole"],
+   "go": ["Connecting piece (GO:0120212)", "Flagellar centriole (GO:0005814)", "Mitochondria (GO:0005739)", "Principal piece (GO:0097228)"],
    "source": "hpa"
   },
   "ATP5F1E": {
@@ -305,10 +258,7 @@
    "accession": "P56381",
    "structure": "candidate",
    "reliability": "Annotated",
-   "main": [
-    "Mitochondrion",
-    "Mitochondrion inner membrane"
-   ],
+   "main": ["Mitochondrion", "Mitochondrion inner membrane"],
    "additional": [],
    "go": []
   },
@@ -316,13 +266,9 @@
    "ensembl": "ENSG00000130770",
    "structure": "candidate",
    "reliability": "Enhanced",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "ATP5MC1": {
@@ -330,9 +276,7 @@
    "accession": "P05496",
    "structure": "candidate",
    "reliability": "Annotated",
-   "main": [
-    "Mitochondrion membrane"
-   ],
+   "main": ["Mitochondrion membrane"],
    "additional": [],
    "go": []
   },
@@ -341,9 +285,7 @@
    "accession": "Q06055",
    "structure": "candidate",
    "reliability": "Annotated",
-   "main": [
-    "Mitochondrion membrane"
-   ],
+   "main": ["Mitochondrion membrane"],
    "additional": [],
    "go": []
   },
@@ -352,9 +294,7 @@
    "accession": "P48201",
    "structure": "candidate",
    "reliability": "Annotated",
-   "main": [
-    "Mitochondrion membrane"
-   ],
+   "main": ["Mitochondrion membrane"],
    "additional": [],
    "go": []
   },
@@ -362,147 +302,90 @@
    "ensembl": "ENSG00000169020",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "ATP5MF": {
    "ensembl": "ENSG00000241468",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Nuclear membrane"
-   ],
-   "go": [
-    "Mitochondria (GO:0005739)",
-    "Nuclear membrane (GO:0031965)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Nuclear membrane"],
+   "go": ["Mitochondria (GO:0005739)", "Nuclear membrane (GO:0031965)"],
    "source": "hpa"
   },
   "ATP5MG": {
    "ensembl": "ENSG00000167283",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Principal piece"
-   ],
-   "go": [
-    "Mitochondria (GO:0005739)",
-    "Principal piece (GO:0097228)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Principal piece"],
+   "go": ["Mitochondria (GO:0005739)", "Principal piece (GO:0097228)"],
    "source": "hpa"
   },
   "ATP5MGL": {
    "ensembl": "ENSG00000249222",
    "structure": "candidate",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Principal piece"
-   ],
-   "go": [
-    "Mitochondria (GO:0005739)",
-    "Principal piece (GO:0097228)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Principal piece"],
+   "go": ["Mitochondria (GO:0005739)", "Principal piece (GO:0097228)"],
    "source": "hpa"
   },
   "ATP5MJ": {
    "ensembl": "ENSG00000156411",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Nucleoli fibrillar center"
-   ],
-   "go": [
-    "Mitochondria (GO:0005739)",
-    "Nucleoli fibrillar center (GO:0001650)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Nucleoli fibrillar center"],
+   "go": ["Mitochondria (GO:0005739)", "Nucleoli fibrillar center (GO:0001650)"],
    "source": "hpa"
   },
   "ATP5MK": {
    "ensembl": "ENSG00000173915",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "ATP5PB": {
    "ensembl": "ENSG00000116459",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "ATP5PD": {
    "ensembl": "ENSG00000167863",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "ATP5PF": {
    "ensembl": "ENSG00000154723",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "End piece",
-    "Flagellar centriole"
-   ],
-   "go": [
-    "End piece (GO:0097229)",
-    "Flagellar centriole (GO:0005814)",
-    "Mitochondria (GO:0005739)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["End piece", "Flagellar centriole"],
+   "go": ["End piece (GO:0097229)", "Flagellar centriole (GO:0005814)", "Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "ATP5PO": {
    "ensembl": "ENSG00000241837",
    "structure": "candidate",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "BAK1": {
@@ -510,9 +393,7 @@
    "accession": "Q16611",
    "structure": "2IMS",
    "reliability": "Experimental",
-   "main": [
-    "Mitochondrion outer membrane"
-   ],
+   "main": ["Mitochondrion outer membrane"],
    "additional": [],
    "go": []
   },
@@ -520,47 +401,27 @@
    "ensembl": "ENSG00000087088",
    "structure": "1F16",
    "reliability": "Approved",
-   "main": [
-    "Vesicles"
-   ],
-   "additional": [
-    "Plasma membrane"
-   ],
-   "go": [
-    "Plasma membrane (GO:0005886)",
-    "Vesicles (GO:0043231)"
-   ],
+   "main": ["Vesicles"],
+   "additional": ["Plasma membrane"],
+   "go": ["Plasma membrane (GO:0005886)", "Vesicles (GO:0043231)"],
    "source": "hpa"
   },
   "BCL2": {
    "ensembl": "ENSG00000171791",
    "structure": "1G5M",
    "reliability": "Enhanced",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "BCL2L1": {
    "ensembl": "ENSG00000171552",
    "structure": "1MAZ",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Acrosome",
-    "Nucleoli fibrillar center"
-   ],
-   "go": [
-    "Acrosome (GO:0001669)",
-    "Mitochondria (GO:0005739)",
-    "Nucleoli fibrillar center (GO:0001650)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Acrosome", "Nucleoli fibrillar center"],
+   "go": ["Acrosome (GO:0001669)", "Mitochondria (GO:0005739)", "Nucleoli fibrillar center (GO:0001650)"],
    "source": "hpa"
   },
   "COL1A1": {
@@ -568,9 +429,7 @@
    "accession": "P02452",
    "structure": "1CAG",
    "reliability": "Annotated",
-   "main": [
-    "Secreted, extracellular space, extracellular matrix"
-   ],
+   "main": ["Secreted, extracellular space, extracellular matrix"],
    "additional": [],
    "go": []
   },
@@ -579,9 +438,7 @@
    "accession": "P08123",
    "structure": "1CAG",
    "reliability": "Annotated",
-   "main": [
-    "Secreted, extracellular space, extracellular matrix"
-   ],
+   "main": ["Secreted, extracellular space, extracellular matrix"],
    "additional": [],
    "go": []
   },
@@ -590,9 +447,7 @@
    "accession": "P02458",
    "structure": "1CAG",
    "reliability": "Annotated",
-   "main": [
-    "Secreted, extracellular space, extracellular matrix"
-   ],
+   "main": ["Secreted, extracellular space, extracellular matrix"],
    "additional": [],
    "go": []
   },
@@ -601,9 +456,7 @@
    "accession": "P02461",
    "structure": "1CAG",
    "reliability": "Annotated",
-   "main": [
-    "Secreted, extracellular space, extracellular matrix"
-   ],
+   "main": ["Secreted, extracellular space, extracellular matrix"],
    "additional": [],
    "go": []
   },
@@ -611,38 +464,19 @@
    "ensembl": "ENSG00000160868",
    "structure": "1TQN",
    "reliability": "Approved",
-   "main": [
-    "Cytosol"
-   ],
-   "additional": [
-    "Vesicles"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Vesicles (GO:0043231)"
-   ],
-   "source": "hpa"
+   "main": ["Cytosol"],
+   "additional": ["Vesicles"],
+   "go": ["Cytosol (GO:0005829)", "Vesicles (GO:0043231)"],
+   "source": "hpa",
+   "also": ["1W0E"]
   },
   "DYNC1H1": {
    "ensembl": "ENSG00000197102",
    "structure": "candidate",
    "reliability": "Approved",
-   "main": [
-    "Cytosol"
-   ],
-   "additional": [
-    "Annulus",
-    "Centrosome",
-    "Flagellar centriole",
-    "Mid piece"
-   ],
-   "go": [
-    "Annulus (GO:0097227)",
-    "Centrosome (GO:0005813)",
-    "Cytosol (GO:0005829)",
-    "Flagellar centriole (GO:0005814)",
-    "Mid piece (GO:0097225)"
-   ],
+   "main": ["Cytosol"],
+   "additional": ["Annulus", "Centrosome", "Flagellar centriole", "Mid piece"],
+   "go": ["Annulus (GO:0097227)", "Centrosome (GO:0005813)", "Cytosol (GO:0005829)", "Flagellar centriole (GO:0005814)", "Mid piece (GO:0097225)"],
    "source": "hpa"
   },
   "ELN": {
@@ -650,9 +484,7 @@
    "accession": "P15502",
    "structure": "candidate",
    "reliability": "Experimental",
-   "main": [
-    "Secreted, extracellular space, extracellular matrix"
-   ],
+   "main": ["Secreted, extracellular space, extracellular matrix"],
    "additional": [],
    "go": []
   },
@@ -661,10 +493,7 @@
    "accession": "P04035",
    "structure": "candidate",
    "reliability": "Experimental",
-   "main": [
-    "Endoplasmic reticulum membrane",
-    "Peroxisome membrane"
-   ],
+   "main": ["Endoplasmic reticulum membrane", "Peroxisome membrane"],
    "additional": [],
    "go": []
   },
@@ -673,9 +502,7 @@
    "accession": "P09848",
    "structure": "candidate",
    "reliability": "Experimental",
-   "main": [
-    "Apical cell membrane"
-   ],
+   "main": ["Apical cell membrane"],
    "additional": [],
    "go": []
   },
@@ -683,484 +510,279 @@
    "ensembl": "ENSG00000143384",
    "structure": "2PQK",
    "reliability": "Enhanced",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "MT-ND3": {
    "ensembl": "ENSG00000198840",
    "structure": "5XTD",
    "reliability": "Uncertain",
-   "main": [
-    "Cytosol"
-   ],
+   "main": ["Cytosol"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)"
-   ],
+   "go": ["Cytosol (GO:0005829)"],
    "source": "hpa"
   },
   "MT-ND4": {
    "ensembl": "ENSG00000198886",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "MT-ND4L": {
    "ensembl": "ENSG00000212907",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Centrosome",
-    "Cytosol"
-   ],
-   "go": [
-    "Centrosome (GO:0005813)",
-    "Cytosol (GO:0005829)",
-    "Mitochondria (GO:0005739)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Centrosome", "Cytosol"],
+   "go": ["Centrosome (GO:0005813)", "Cytosol (GO:0005829)", "Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFA1": {
    "ensembl": "ENSG00000125356",
    "structure": "5XTD",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Mitochondria"
-   ],
+   "main": ["Cytosol", "Mitochondria"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFA10": {
    "ensembl": "ENSG00000130414",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFA11": {
    "ensembl": "ENSG00000174886",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "End piece",
-    "Mitochondria"
-   ],
-   "additional": [
-    "Perinuclear theca",
-    "Principal piece"
-   ],
-   "go": [
-    "End piece (GO:0097229)",
-    "Mitochondria (GO:0005739)",
-    "Perinuclear theca (GO:0033011)",
-    "Principal piece (GO:0097228)"
-   ],
+   "main": ["End piece", "Mitochondria"],
+   "additional": ["Perinuclear theca", "Principal piece"],
+   "go": ["End piece (GO:0097229)", "Mitochondria (GO:0005739)", "Perinuclear theca (GO:0033011)", "Principal piece (GO:0097228)"],
    "source": "hpa"
   },
   "NDUFA12": {
    "ensembl": "ENSG00000184752",
    "structure": "5XTD",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Cytosol"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Mitochondria (GO:0005739)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Cytosol"],
+   "go": ["Cytosol (GO:0005829)", "Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFA13": {
    "ensembl": "ENSG00000186010",
    "structure": "5XTD",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFA2": {
    "ensembl": "ENSG00000131495",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFA4": {
    "ensembl": "ENSG00000189043",
    "structure": "5XTD",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFA5": {
    "ensembl": "ENSG00000128609",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFA6": {
    "ensembl": "ENSG00000184983",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "End piece",
-    "Nucleoplasm"
-   ],
-   "additional": [
-    "Mid piece",
-    "Vesicles"
-   ],
-   "go": [
-    "End piece (GO:0097229)",
-    "Mid piece (GO:0097225)",
-    "Nucleoplasm (GO:0005654)",
-    "Vesicles (GO:0043231)"
-   ],
+   "main": ["End piece", "Nucleoplasm"],
+   "additional": ["Mid piece", "Vesicles"],
+   "go": ["End piece (GO:0097229)", "Mid piece (GO:0097225)", "Nucleoplasm (GO:0005654)", "Vesicles (GO:0043231)"],
    "source": "hpa"
   },
   "NDUFA7": {
    "ensembl": "ENSG00000267855",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFA8": {
    "ensembl": "ENSG00000119421",
    "structure": "5XTD",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "End piece",
-    "Mid piece",
-    "Principal piece"
-   ],
-   "go": [
-    "End piece (GO:0097229)",
-    "Mid piece (GO:0097225)",
-    "Mitochondria (GO:0005739)",
-    "Principal piece (GO:0097228)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["End piece", "Mid piece", "Principal piece"],
+   "go": ["End piece (GO:0097229)", "Mid piece (GO:0097225)", "Mitochondria (GO:0005739)", "Principal piece (GO:0097228)"],
    "source": "hpa"
   },
   "NDUFA9": {
    "ensembl": "ENSG00000139180",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Nucleoplasm"
-   ],
-   "go": [
-    "Mitochondria (GO:0005739)",
-    "Nucleoplasm (GO:0005654)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Nucleoplasm"],
+   "go": ["Mitochondria (GO:0005739)", "Nucleoplasm (GO:0005654)"],
    "source": "hpa"
   },
   "NDUFAB1": {
    "ensembl": "ENSG00000004779",
    "structure": "5XTD",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFB1": {
    "ensembl": "ENSG00000183648",
    "structure": "5XTD",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Nuclear speckles"
-   ],
-   "go": [
-    "Mitochondria (GO:0005739)",
-    "Nuclear speckles (GO:0016607)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Nuclear speckles"],
+   "go": ["Mitochondria (GO:0005739)", "Nuclear speckles (GO:0016607)"],
    "source": "hpa"
   },
   "NDUFB11": {
    "ensembl": "ENSG00000147123",
    "structure": "5XTD",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Acrosome",
-    "Connecting piece",
-    "Equatorial segment",
-    "Mid piece",
-    "Principal piece"
-   ],
-   "go": [
-    "Acrosome (GO:0001669)",
-    "Connecting piece (GO:0120212)",
-    "Equatorial segment ()",
-    "Mid piece (GO:0097225)",
-    "Mitochondria (GO:0005739)",
-    "Principal piece (GO:0097228)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Acrosome", "Connecting piece", "Equatorial segment", "Mid piece", "Principal piece"],
+   "go": ["Acrosome (GO:0001669)", "Connecting piece (GO:0120212)", "Equatorial segment ()", "Mid piece (GO:0097225)", "Mitochondria (GO:0005739)", "Principal piece (GO:0097228)"],
    "source": "hpa"
   },
   "NDUFB2": {
    "ensembl": "ENSG00000090266",
    "structure": "5XTD",
    "reliability": "Uncertain",
-   "main": [
-    "Nucleoplasm"
-   ],
-   "additional": [
-    "Mitochondria"
-   ],
-   "go": [
-    "Mitochondria (GO:0005739)",
-    "Nucleoplasm (GO:0005654)"
-   ],
+   "main": ["Nucleoplasm"],
+   "additional": ["Mitochondria"],
+   "go": ["Mitochondria (GO:0005739)", "Nucleoplasm (GO:0005654)"],
    "source": "hpa"
   },
   "NDUFB4": {
    "ensembl": "ENSG00000065518",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Nuclear membrane",
-    "Nucleoplasm",
-    "Principal piece"
-   ],
-   "go": [
-    "Mitochondria (GO:0005739)",
-    "Nuclear membrane (GO:0031965)",
-    "Nucleoplasm (GO:0005654)",
-    "Principal piece (GO:0097228)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Nuclear membrane", "Nucleoplasm", "Principal piece"],
+   "go": ["Mitochondria (GO:0005739)", "Nuclear membrane (GO:0031965)", "Nucleoplasm (GO:0005654)", "Principal piece (GO:0097228)"],
    "source": "hpa"
   },
   "NDUFB5": {
    "ensembl": "ENSG00000136521",
    "structure": "5XTD",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Nucleoplasm"
-   ],
-   "go": [
-    "Mitochondria (GO:0005739)",
-    "Nucleoplasm (GO:0005654)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Nucleoplasm"],
+   "go": ["Mitochondria (GO:0005739)", "Nucleoplasm (GO:0005654)"],
    "source": "hpa"
   },
   "NDUFB6": {
    "ensembl": "ENSG00000165264",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Nucleoplasm"
-   ],
-   "go": [
-    "Mitochondria (GO:0005739)",
-    "Nucleoplasm (GO:0005654)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Nucleoplasm"],
+   "go": ["Mitochondria (GO:0005739)", "Nucleoplasm (GO:0005654)"],
    "source": "hpa"
   },
   "NDUFB8": {
    "ensembl": "ENSG00000166136",
    "structure": "5XTD",
    "reliability": "Enhanced",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFB9": {
    "ensembl": "ENSG00000147684",
    "structure": "5XTD",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFC1": {
    "ensembl": "ENSG00000109390",
    "structure": "5XTD",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFC2": {
    "ensembl": "ENSG00000151366",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFS1": {
    "ensembl": "ENSG00000023228",
    "structure": "5XTD",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFS2": {
    "ensembl": "ENSG00000158864",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Calyx",
-    "Connecting piece"
-   ],
-   "go": [
-    "Calyx (GO:0120238)",
-    "Connecting piece (GO:0120212)",
-    "Mitochondria (GO:0005739)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Calyx", "Connecting piece"],
+   "go": ["Calyx (GO:0120238)", "Connecting piece (GO:0120212)", "Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFS3": {
    "ensembl": "ENSG00000213619",
    "structure": "5XTD",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Nuclear bodies",
-    "Principal piece"
-   ],
-   "go": [
-    "Mitochondria (GO:0005739)",
-    "Nuclear bodies (GO:0016604)",
-    "Principal piece (GO:0097228)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Nuclear bodies", "Principal piece"],
+   "go": ["Mitochondria (GO:0005739)", "Nuclear bodies (GO:0016604)", "Principal piece (GO:0097228)"],
    "source": "hpa"
   },
   "NDUFS4": {
    "ensembl": "ENSG00000164258",
    "structure": "5XTD",
    "reliability": "Supported",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Calyx",
-    "Equatorial segment",
-    "Perinuclear theca"
-   ],
-   "go": [
-    "Calyx (GO:0120238)",
-    "Equatorial segment ()",
-    "Mitochondria (GO:0005739)",
-    "Perinuclear theca (GO:0033011)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Calyx", "Equatorial segment", "Perinuclear theca"],
+   "go": ["Calyx (GO:0120238)", "Equatorial segment ()", "Mitochondria (GO:0005739)", "Perinuclear theca (GO:0033011)"],
    "source": "hpa"
   },
   "NDUFS7": {
@@ -1168,9 +790,7 @@
    "accession": "O75251",
    "structure": "5XTD",
    "reliability": "Annotated",
-   "main": [
-    "Mitochondrion inner membrane"
-   ],
+   "main": ["Mitochondrion inner membrane"],
    "additional": [],
    "go": []
   },
@@ -1178,117 +798,72 @@
    "ensembl": "ENSG00000110717",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFV1": {
    "ensembl": "ENSG00000167792",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Cytosol"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Mitochondria (GO:0005739)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Cytosol"],
+   "go": ["Cytosol (GO:0005829)", "Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NDUFV2": {
    "ensembl": "ENSG00000178127",
    "structure": "5XTD",
    "reliability": "Approved",
-   "main": [
-    "Mitochondria"
-   ],
-   "additional": [
-    "Cytosol",
-    "Nucleoplasm"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Mitochondria (GO:0005739)",
-    "Nucleoplasm (GO:0005654)"
-   ],
+   "main": ["Mitochondria"],
+   "additional": ["Cytosol", "Nucleoplasm"],
+   "go": ["Cytosol (GO:0005829)", "Mitochondria (GO:0005739)", "Nucleoplasm (GO:0005654)"],
    "source": "hpa"
   },
   "NDUFV3": {
    "ensembl": "ENSG00000160194",
    "structure": "5XTD",
    "reliability": "Enhanced",
-   "main": [
-    "Mitochondria"
-   ],
+   "main": ["Mitochondria"],
    "additional": [],
-   "go": [
-    "Mitochondria (GO:0005739)"
-   ],
+   "go": ["Mitochondria (GO:0005739)"],
    "source": "hpa"
   },
   "NUP107": {
    "ensembl": "ENSG00000111581",
    "structure": "candidate",
    "reliability": "Uncertain",
-   "main": [
-    "Nucleoplasm"
-   ],
-   "additional": [
-    "Centrosome",
-    "Nuclear membrane"
-   ],
-   "go": [
-    "Centrosome (GO:0005813)",
-    "Nuclear membrane (GO:0031965)",
-    "Nucleoplasm (GO:0005654)"
-   ],
+   "main": ["Nucleoplasm"],
+   "additional": ["Centrosome", "Nuclear membrane"],
+   "go": ["Centrosome (GO:0005813)", "Nuclear membrane (GO:0031965)", "Nucleoplasm (GO:0005654)"],
    "source": "hpa"
   },
   "NUP133": {
    "ensembl": "ENSG00000069248",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Nuclear membrane"
-   ],
+   "main": ["Nuclear membrane"],
    "additional": [],
-   "go": [
-    "Nuclear membrane (GO:0031965)"
-   ],
+   "go": ["Nuclear membrane (GO:0031965)"],
    "source": "hpa"
   },
   "NUP153": {
    "ensembl": "ENSG00000124789",
    "structure": "candidate",
    "reliability": "Enhanced",
-   "main": [
-    "Nuclear membrane"
-   ],
+   "main": ["Nuclear membrane"],
    "additional": [],
-   "go": [
-    "Nuclear membrane (GO:0031965)"
-   ],
+   "go": ["Nuclear membrane (GO:0031965)"],
    "source": "hpa"
   },
   "NUP155": {
    "ensembl": "ENSG00000113569",
    "structure": "candidate",
    "reliability": "Enhanced",
-   "main": [
-    "Nuclear membrane"
-   ],
+   "main": ["Nuclear membrane"],
    "additional": [],
-   "go": [
-    "Nuclear membrane (GO:0031965)"
-   ],
+   "go": ["Nuclear membrane (GO:0031965)"],
    "source": "hpa"
   },
   "NUP188": {
@@ -1296,9 +871,7 @@
    "accession": "Q5SRE5",
    "structure": "candidate",
    "reliability": "Annotated",
-   "main": [
-    "Nucleus, nuclear pore complex"
-   ],
+   "main": ["Nucleus, nuclear pore complex"],
    "additional": [],
    "go": []
   },
@@ -1307,10 +880,7 @@
    "accession": "Q92621",
    "structure": "candidate",
    "reliability": "Experimental",
-   "main": [
-    "Nucleus membrane",
-    "Nucleus, nuclear pore complex"
-   ],
+   "main": ["Nucleus membrane", "Nucleus, nuclear pore complex"],
    "additional": [],
    "go": []
   },
@@ -1319,9 +889,7 @@
    "accession": "P35658",
    "structure": "candidate",
    "reliability": "Experimental",
-   "main": [
-    "Nucleus, nuclear pore complex"
-   ],
+   "main": ["Nucleus, nuclear pore complex"],
    "additional": [],
    "go": []
   },
@@ -1330,10 +898,7 @@
    "accession": "Q8NFH5",
    "structure": "candidate",
    "reliability": "Experimental",
-   "main": [
-    "Nucleus, nuclear pore complex",
-    "Nucleus membrane"
-   ],
+   "main": ["Nucleus, nuclear pore complex", "Nucleus membrane"],
    "additional": [],
    "go": []
   },
@@ -1342,11 +907,7 @@
    "accession": "Q7Z3B4",
    "structure": "candidate",
    "reliability": "Annotated",
-   "main": [
-    "Nucleus, nuclear pore complex",
-    "Nucleus membrane",
-    "Nucleus membrane"
-   ],
+   "main": ["Nucleus, nuclear pore complex", "Nucleus membrane", "Nucleus membrane"],
    "additional": [],
    "go": []
   },
@@ -1354,38 +915,18 @@
    "ensembl": "ENSG00000213024",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Nuclear membrane"
-   ],
-   "additional": [
-    "Nucleoplasm"
-   ],
-   "go": [
-    "Nuclear membrane (GO:0031965)",
-    "Nucleoplasm (GO:0005654)"
-   ],
+   "main": ["Nuclear membrane"],
+   "additional": ["Nucleoplasm"],
+   "go": ["Nuclear membrane (GO:0031965)", "Nucleoplasm (GO:0005654)"],
    "source": "hpa"
   },
   "NUP85": {
    "ensembl": "ENSG00000125450",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Nucleoplasm"
-   ],
-   "additional": [
-    "Actin filaments",
-    "Basal body",
-    "Cytosol",
-    "Vesicles"
-   ],
-   "go": [
-    "Actin filaments (GO:0015629)",
-    "Basal body (GO:0036064)",
-    "Cytosol (GO:0005829)",
-    "Nucleoplasm (GO:0005654)",
-    "Vesicles (GO:0043231)"
-   ],
+   "main": ["Nucleoplasm"],
+   "additional": ["Actin filaments", "Basal body", "Cytosol", "Vesicles"],
+   "go": ["Actin filaments (GO:0015629)", "Basal body (GO:0036064)", "Cytosol (GO:0005829)", "Nucleoplasm (GO:0005654)", "Vesicles (GO:0043231)"],
    "source": "hpa"
   },
   "NUP88": {
@@ -1393,9 +934,7 @@
    "accession": "Q99567",
    "structure": "candidate",
    "reliability": "Experimental",
-   "main": [
-    "Nucleus, nuclear pore complex"
-   ],
+   "main": ["Nucleus, nuclear pore complex"],
    "additional": [],
    "go": []
   },
@@ -1404,11 +943,7 @@
    "accession": "Q8N1F7",
    "structure": "candidate",
    "reliability": "Experimental",
-   "main": [
-    "Nucleus membrane",
-    "Nucleus, nuclear pore complex",
-    "Nucleus envelope"
-   ],
+   "main": ["Nucleus membrane", "Nucleus, nuclear pore complex", "Nucleus envelope"],
    "additional": [],
    "go": []
   },
@@ -1417,12 +952,7 @@
    "accession": "P52948",
    "structure": "candidate",
    "reliability": "Experimental",
-   "main": [
-    "Nucleus membrane",
-    "Nucleus, nuclear pore complex",
-    "Nucleus, nucleoplasm",
-    "Nucleus membrane"
-   ],
+   "main": ["Nucleus membrane", "Nucleus, nuclear pore complex", "Nucleus, nucleoplasm", "Nucleus membrane"],
    "additional": [],
    "go": []
   },
@@ -1430,1233 +960,693 @@
    "ensembl": "ENSG00000204628",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Nucleoplasm"
-   ],
-   "additional": [
-    "Cytosol"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Nucleoplasm (GO:0005654)"
-   ],
+   "main": ["Nucleoplasm"],
+   "additional": ["Cytosol"],
+   "go": ["Cytosol (GO:0005829)", "Nucleoplasm (GO:0005654)"],
    "source": "hpa"
   },
   "RPL10": {
    "ensembl": "ENSG00000147403",
    "structure": "4UG0",
    "reliability": "Enhanced",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPL10A": {
    "ensembl": "ENSG00000198755",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum",
-    "Nucleoli"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum", "Nucleoli"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPL12": {
    "ensembl": "ENSG00000197958",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Golgi apparatus"
-   ],
-   "additional": [
-    "Vesicles"
-   ],
-   "go": [
-    "Golgi apparatus (GO:0005794)",
-    "Vesicles (GO:0043231)"
-   ],
+   "main": ["Golgi apparatus"],
+   "additional": ["Vesicles"],
+   "go": ["Golgi apparatus (GO:0005794)", "Vesicles (GO:0043231)"],
    "source": "hpa"
   },
   "RPL13": {
    "ensembl": "ENSG00000167526",
    "structure": "4UG0",
    "reliability": "Enhanced",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum",
-    "Nucleoli"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum", "Nucleoli"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPL13A": {
    "ensembl": "ENSG00000142541",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol",
-    "Nucleoli"
-   ],
+   "main": ["Cytosol", "Nucleoli"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPL14": {
    "ensembl": "ENSG00000188846",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPL17": {
    "ensembl": "ENSG00000265681",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPL18": {
    "ensembl": "ENSG00000063177",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
-   "additional": [
-    "Nucleoli"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
+   "additional": ["Nucleoli"],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPL18A": {
    "ensembl": "ENSG00000105640",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Nucleoli"
-   ],
-   "additional": [
-    "Cytosol",
-    "Nucleoplasm"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Nucleoli (GO:0005730)",
-    "Nucleoplasm (GO:0005654)"
-   ],
+   "main": ["Nucleoli"],
+   "additional": ["Cytosol", "Nucleoplasm"],
+   "go": ["Cytosol (GO:0005829)", "Nucleoli (GO:0005730)", "Nucleoplasm (GO:0005654)"],
    "source": "hpa"
   },
   "RPL19": {
    "ensembl": "ENSG00000108298",
    "structure": "4UG0",
    "reliability": "Enhanced",
-   "main": [
-    "Cytosol",
-    "Nucleoli"
-   ],
+   "main": ["Cytosol", "Nucleoli"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPL21": {
    "ensembl": "ENSG00000122026",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum",
-    "Nucleoli fibrillar center"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum", "Nucleoli fibrillar center"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli fibrillar center (GO:0001650)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli fibrillar center (GO:0001650)"],
    "source": "hpa"
   },
   "RPL22": {
    "ensembl": "ENSG00000116251",
    "structure": "4UG0",
    "reliability": "Uncertain",
-   "main": [
-    "Nucleoli"
-   ],
-   "additional": [
-    "Nucleoplasm"
-   ],
-   "go": [
-    "Nucleoli (GO:0005730)",
-    "Nucleoplasm (GO:0005654)"
-   ],
+   "main": ["Nucleoli"],
+   "additional": ["Nucleoplasm"],
+   "go": ["Nucleoli (GO:0005730)", "Nucleoplasm (GO:0005654)"],
    "source": "hpa"
   },
   "RPL23": {
    "ensembl": "ENSG00000125691",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol"
-   ],
+   "main": ["Cytosol"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)"
-   ],
+   "go": ["Cytosol (GO:0005829)"],
    "source": "hpa"
   },
   "RPL23A": {
    "ensembl": "ENSG00000198242",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum",
-    "Nucleoli fibrillar center"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum", "Nucleoli fibrillar center"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli fibrillar center (GO:0001650)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli fibrillar center (GO:0001650)"],
    "source": "hpa"
   },
   "RPL24": {
    "ensembl": "ENSG00000114391",
    "structure": "4UG0",
    "reliability": "Enhanced",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPL26": {
    "ensembl": "ENSG00000161970",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
-   "additional": [
-    "Nucleoli"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
+   "additional": ["Nucleoli"],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPL27": {
    "ensembl": "ENSG00000131469",
    "structure": "4UG0",
    "reliability": "Enhanced",
-   "main": [
-    "Nucleoli"
-   ],
-   "additional": [
-    "Nucleoplasm"
-   ],
-   "go": [
-    "Nucleoli (GO:0005730)",
-    "Nucleoplasm (GO:0005654)"
-   ],
+   "main": ["Nucleoli"],
+   "additional": ["Nucleoplasm"],
+   "go": ["Nucleoli (GO:0005730)", "Nucleoplasm (GO:0005654)"],
    "source": "hpa"
   },
   "RPL27A": {
    "ensembl": "ENSG00000166441",
    "structure": "4UG0",
    "reliability": "Enhanced",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPL28": {
    "ensembl": "ENSG00000108107",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPL29": {
    "ensembl": "ENSG00000162244",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum",
-    "Nucleoli"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum", "Nucleoli"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPL3": {
    "ensembl": "ENSG00000100316",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Nucleoli"
-   ],
+   "main": ["Cytosol", "Nucleoli"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPL30": {
    "ensembl": "ENSG00000156482",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPL32": {
    "ensembl": "ENSG00000144713",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPL34": {
    "ensembl": "ENSG00000109475",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
-   "additional": [
-    "Nucleoli"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
+   "additional": ["Nucleoli"],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPL35": {
    "ensembl": "ENSG00000136942",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPL36": {
    "ensembl": "ENSG00000130255",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol"
-   ],
+   "main": ["Cytosol"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)"
-   ],
+   "go": ["Cytosol (GO:0005829)"],
    "source": "hpa"
   },
   "RPL36A": {
    "ensembl": "ENSG00000241343",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
-   "additional": [
-    "Plasma membrane"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Plasma membrane (GO:0005886)"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
+   "additional": ["Plasma membrane"],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Plasma membrane (GO:0005886)"],
    "source": "hpa"
   },
   "RPL37A": {
    "ensembl": "ENSG00000197756",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPL38": {
    "ensembl": "ENSG00000172809",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPL4": {
    "ensembl": "ENSG00000174444",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
-   "additional": [
-    "Nuclear bodies",
-    "Nucleoli"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nuclear bodies (GO:0016604)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
+   "additional": ["Nuclear bodies", "Nucleoli"],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nuclear bodies (GO:0016604)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPL41": {
    "ensembl": "ENSG00000229117",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPL5": {
    "ensembl": "ENSG00000122406",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
-   "additional": [
-    "Nucleoli",
-    "Nucleoli rim"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)",
-    "Nucleoli rim (GO:0005730)"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
+   "additional": ["Nucleoli", "Nucleoli rim"],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)", "Nucleoli rim (GO:0005730)"],
    "source": "hpa"
   },
   "RPL7": {
    "ensembl": "ENSG00000147604",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
-   "additional": [
-    "Nucleoli"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
+   "additional": ["Nucleoli"],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPL7A": {
    "ensembl": "ENSG00000148303",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Nucleoli"
-   ],
-   "additional": [
-    "Vesicles"
-   ],
-   "go": [
-    "Nucleoli (GO:0005730)",
-    "Vesicles (GO:0043231)"
-   ],
+   "main": ["Nucleoli"],
+   "additional": ["Vesicles"],
+   "go": ["Nucleoli (GO:0005730)", "Vesicles (GO:0043231)"],
    "source": "hpa"
   },
   "RPL8": {
    "ensembl": "ENSG00000161016",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum",
-    "Nucleoli"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum", "Nucleoli"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPL9": {
    "ensembl": "ENSG00000163682",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
-   "additional": [
-    "Nucleoli"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
+   "additional": ["Nucleoli"],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPLP0": {
    "ensembl": "ENSG00000089157",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPLP1": {
    "ensembl": "ENSG00000137818",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPLP2": {
    "ensembl": "ENSG00000177600",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol",
-    "Nuclear speckles"
-   ],
-   "additional": [
-    "Mitotic spindle"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Mitotic spindle (GO:0072686)",
-    "Nuclear speckles (GO:0016607)"
-   ],
+   "main": ["Cytosol", "Nuclear speckles"],
+   "additional": ["Mitotic spindle"],
+   "go": ["Cytosol (GO:0005829)", "Mitotic spindle (GO:0072686)", "Nuclear speckles (GO:0016607)"],
    "source": "hpa"
   },
   "RPS10": {
    "ensembl": "ENSG00000124614",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol"
-   ],
+   "main": ["Cytosol"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)"
-   ],
+   "go": ["Cytosol (GO:0005829)"],
    "source": "hpa"
   },
   "RPS11": {
    "ensembl": "ENSG00000142534",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol"
-   ],
-   "additional": [
-    "Endoplasmic reticulum",
-    "Nucleoli"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "main": ["Cytosol"],
+   "additional": ["Endoplasmic reticulum", "Nucleoli"],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPS12": {
    "ensembl": "ENSG00000112306",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol"
-   ],
-   "additional": [
-    "Golgi apparatus",
-    "Vesicles"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Golgi apparatus (GO:0005794)",
-    "Vesicles (GO:0043231)"
-   ],
+   "main": ["Cytosol"],
+   "additional": ["Golgi apparatus", "Vesicles"],
+   "go": ["Cytosol (GO:0005829)", "Golgi apparatus (GO:0005794)", "Vesicles (GO:0043231)"],
    "source": "hpa"
   },
   "RPS13": {
    "ensembl": "ENSG00000110700",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPS14": {
    "ensembl": "ENSG00000164587",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPS15": {
    "ensembl": "ENSG00000115268",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPS16": {
    "ensembl": "ENSG00000105193",
    "structure": "4UG0",
    "reliability": "Enhanced",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPS17": {
    "ensembl": "ENSG00000182774",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
-   "additional": [
-    "Nucleoli"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
+   "additional": ["Nucleoli"],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPS18": {
    "ensembl": "ENSG00000231500",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol"
-   ],
+   "main": ["Cytosol"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)"
-   ],
+   "go": ["Cytosol (GO:0005829)"],
    "source": "hpa"
   },
   "RPS19": {
    "ensembl": "ENSG00000105372",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Nucleoplasm"
-   ],
+   "main": ["Nucleoplasm"],
    "additional": [],
-   "go": [
-    "Nucleoplasm (GO:0005654)"
-   ],
+   "go": ["Nucleoplasm (GO:0005654)"],
    "source": "hpa"
   },
   "RPS2": {
    "ensembl": "ENSG00000140988",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPS20": {
    "ensembl": "ENSG00000008988",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPS21": {
    "ensembl": "ENSG00000171858",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPS23": {
    "ensembl": "ENSG00000186468",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol"
-   ],
-   "additional": [
-    "Endoplasmic reticulum"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "main": ["Cytosol"],
+   "additional": ["Endoplasmic reticulum"],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPS24": {
    "ensembl": "ENSG00000138326",
    "structure": "4UG0",
    "reliability": "Enhanced",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPS25": {
    "ensembl": "ENSG00000118181",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
-   "additional": [
-    "Nucleoli"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
+   "additional": ["Nucleoli"],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPS26": {
    "ensembl": "ENSG00000197728",
    "structure": "4UG0",
    "reliability": "Enhanced",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
-   "additional": [
-    "Nucleoli"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
+   "additional": ["Nucleoli"],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPS27": {
    "ensembl": "ENSG00000177954",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
-   "additional": [
-    "Nucleoli"
-   ],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
+   "additional": ["Nucleoli"],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPS27A": {
    "ensembl": "ENSG00000143947",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum",
-    "Nucleoli"
-   ],
-   "additional": [
-    "Acrosome",
-    "Equatorial segment"
-   ],
-   "go": [
-    "Acrosome (GO:0001669)",
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Equatorial segment ()",
-    "Nucleoli (GO:0005730)"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum", "Nucleoli"],
+   "additional": ["Acrosome", "Equatorial segment"],
+   "go": ["Acrosome (GO:0001669)", "Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Equatorial segment ()", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPS28": {
    "ensembl": "ENSG00000233927",
    "structure": "4UG0",
    "reliability": "Approved",
-   "main": [
-    "Cytosol"
-   ],
+   "main": ["Cytosol"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)"
-   ],
+   "go": ["Cytosol (GO:0005829)"],
    "source": "hpa"
   },
   "RPS29": {
    "ensembl": "ENSG00000213741",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPS3": {
    "ensembl": "ENSG00000149273",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPS3A": {
    "ensembl": "ENSG00000145425",
    "structure": "4UG0",
    "reliability": "Enhanced",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum",
-    "Nucleoli"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum", "Nucleoli"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)",
-    "Nucleoli (GO:0005730)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)", "Nucleoli (GO:0005730)"],
    "source": "hpa"
   },
   "RPS5": {
    "ensembl": "ENSG00000083845",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPS6": {
    "ensembl": "ENSG00000137154",
    "structure": "4UG0",
    "reliability": "Enhanced",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPS7": {
    "ensembl": "ENSG00000171863",
    "structure": "4UG0",
    "reliability": "Supported",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "RPS8": {
    "ensembl": "ENSG00000142937",
    "structure": "4UG0",
    "reliability": "Enhanced",
-   "main": [
-    "Cytosol",
-    "Endoplasmic reticulum"
-   ],
+   "main": ["Cytosol", "Endoplasmic reticulum"],
    "additional": [],
-   "go": [
-    "Cytosol (GO:0005829)",
-    "Endoplasmic reticulum (GO:0005783)"
-   ],
+   "go": ["Cytosol (GO:0005829)", "Endoplasmic reticulum (GO:0005783)"],
    "source": "hpa"
   },
   "SCN10A": {
    "ensembl": "ENSG00000185313",
    "structure": "candidate",
    "reliability": "Approved",
-   "main": [
-    "Connecting piece",
-    "Flagellar centriole"
-   ],
+   "main": ["Connecting piece", "Flagellar centriole"],
    "additional": [],
-   "go": [
-    "Connecting piece (GO:0120212)",
-    "Flagellar centriole (GO:0005814)"
-   ],
+   "go": ["Connecting piece (GO:0120212)", "Flagellar centriole (GO:0005814)"],
    "source": "hpa"
   },
   "SCN1A": {
    "ensembl": "ENSG00000144285",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Nucleoplasm",
-    "Plasma membrane"
-   ],
-   "additional": [
-    "Nuclear bodies"
-   ],
-   "go": [
-    "Nuclear bodies (GO:0016604)",
-    "Nucleoplasm (GO:0005654)",
-    "Plasma membrane (GO:0005886)"
-   ],
+   "main": ["Nucleoplasm", "Plasma membrane"],
+   "additional": ["Nuclear bodies"],
+   "go": ["Nuclear bodies (GO:0016604)", "Nucleoplasm (GO:0005654)", "Plasma membrane (GO:0005886)"],
    "source": "hpa"
   },
   "SCN4A": {
    "ensembl": "ENSG00000007314",
    "structure": "candidate",
    "reliability": "Uncertain",
-   "main": [
-    "Golgi apparatus"
-   ],
+   "main": ["Golgi apparatus"],
    "additional": [],
-   "go": [
-    "Golgi apparatus (GO:0005794)"
-   ],
+   "go": ["Golgi apparatus (GO:0005794)"],
    "source": "hpa"
   },
   "SCN5A": {
    "ensembl": "ENSG00000183873",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Plasma membrane"
-   ],
-   "additional": [
-    "Nucleoli",
-    "Nucleoplasm"
-   ],
-   "go": [
-    "Nucleoli (GO:0005730)",
-    "Nucleoplasm (GO:0005654)",
-    "Plasma membrane (GO:0005886)"
-   ],
+   "main": ["Plasma membrane"],
+   "additional": ["Nucleoli", "Nucleoplasm"],
+   "go": ["Nucleoli (GO:0005730)", "Nucleoplasm (GO:0005654)", "Plasma membrane (GO:0005886)"],
    "source": "hpa"
   },
   "SCN7A": {
    "ensembl": "ENSG00000136546",
    "structure": "candidate",
    "reliability": "Approved",
-   "main": [
-    "Plasma membrane"
-   ],
+   "main": ["Plasma membrane"],
    "additional": [],
-   "go": [
-    "Plasma membrane (GO:0005886)"
-   ],
+   "go": ["Plasma membrane (GO:0005886)"],
    "source": "hpa"
   },
   "SCN8A": {
    "ensembl": "ENSG00000196876",
    "structure": "candidate",
    "reliability": "Approved",
-   "main": [
-    "Plasma membrane"
-   ],
-   "additional": [
-    "Cell Junctions",
-    "Vesicles"
-   ],
-   "go": [
-    "Cell Junctions (GO:0030054)",
-    "Plasma membrane (GO:0005886)",
-    "Vesicles (GO:0043231)"
-   ],
+   "main": ["Plasma membrane"],
+   "additional": ["Cell Junctions", "Vesicles"],
+   "go": ["Cell Junctions (GO:0030054)", "Plasma membrane (GO:0005886)", "Vesicles (GO:0043231)"],
    "source": "hpa"
   },
   "SCN9A": {
    "ensembl": "ENSG00000169432",
    "structure": "candidate",
    "reliability": "Approved",
-   "main": [
-    "Actin filaments",
-    "Focal adhesion sites",
-    "Plasma membrane"
-   ],
+   "main": ["Actin filaments", "Focal adhesion sites", "Plasma membrane"],
    "additional": [],
-   "go": [
-    "Actin filaments (GO:0015629)",
-    "Focal adhesion sites (GO:0005925)",
-    "Plasma membrane (GO:0005886)"
-   ],
+   "go": ["Actin filaments (GO:0015629)", "Focal adhesion sites (GO:0005925)", "Plasma membrane (GO:0005886)"],
    "source": "hpa"
   },
   "SLC2A2": {
    "ensembl": "ENSG00000163581",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Mid piece",
-    "Plasma membrane",
-    "Principal piece"
-   ],
+   "main": ["Mid piece", "Plasma membrane", "Principal piece"],
    "additional": [],
-   "go": [
-    "Mid piece (GO:0097225)",
-    "Plasma membrane (GO:0005886)",
-    "Principal piece (GO:0097228)"
-   ],
+   "go": ["Mid piece (GO:0097225)", "Plasma membrane (GO:0005886)", "Principal piece (GO:0097228)"],
    "source": "hpa"
   },
   "SLC2A5": {
    "ensembl": "ENSG00000142583",
    "structure": "candidate",
    "reliability": "Supported",
-   "main": [
-    "Plasma membrane"
-   ],
-   "additional": [
-    "Mid piece",
-    "Principal piece"
-   ],
-   "go": [
-    "Mid piece (GO:0097225)",
-    "Plasma membrane (GO:0005886)",
-    "Principal piece (GO:0097228)"
-   ],
+   "main": ["Plasma membrane"],
+   "additional": ["Mid piece", "Principal piece"],
+   "go": ["Mid piece (GO:0097225)", "Plasma membrane (GO:0005886)", "Principal piece (GO:0097228)"],
    "source": "hpa"
   },
   "SLC5A1": {
    "ensembl": "ENSG00000100170",
    "structure": "candidate",
    "reliability": "Approved",
-   "main": [
-    "Golgi apparatus",
-    "Plasma membrane"
-   ],
-   "additional": [
-    "Nuclear membrane"
-   ],
-   "go": [
-    "Golgi apparatus (GO:0005794)",
-    "Nuclear membrane (GO:0031965)",
-    "Plasma membrane (GO:0005886)"
-   ],
+   "main": ["Golgi apparatus", "Plasma membrane"],
+   "additional": ["Nuclear membrane"],
+   "go": ["Golgi apparatus (GO:0005794)", "Nuclear membrane (GO:0031965)", "Plasma membrane (GO:0005886)"],
    "source": "hpa"
   },
   "UCP1": {
@@ -2664,9 +1654,7 @@
    "accession": "P25874",
    "structure": "candidate",
    "reliability": "Annotated",
-   "main": [
-    "Mitochondrion inner membrane"
-   ],
+   "main": ["Mitochondrion inner membrane"],
    "additional": [],
    "go": []
   }

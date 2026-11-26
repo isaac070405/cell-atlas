@@ -684,6 +684,59 @@
           }
         }
       ]
+    },
+    "1W0E": {
+      "cite": "williams-2004",
+      "points": [
+        {
+          "id": "heme",
+          "label": {
+            "en": "Heme (substrate oxidation)",
+            "zh-Hant": "血基質（氧化底物）"
+          },
+          "kind": "cofactor",
+          "comp": "HEM",
+          "chain": "B",
+          "authChain": "A",
+          "subunit": "CYP3A4",
+          "xyz": [
+            54.5,
+            78.7,
+            10.5
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "B"
+          }
+        },
+        {
+          "id": "cys442",
+          "label": {
+            "en": "Cys442 (heme iron ligand)",
+            "zh-Hant": "Cys442（血基質鐵配位體）"
+          },
+          "kind": "ligand",
+          "comp": "CYS",
+          "chain": "A",
+          "authChain": "A",
+          "subunit": "CYP3A4",
+          "residue": {
+            "authSeqId": 442,
+            "atom": "SG"
+          },
+          "xyz": [
+            52.6,
+            77.1,
+            11.0
+          ],
+          "basis": "computed",
+          "support": "The deposited file lists a Cys442 SG to heme Fe bond of 2.47 Å.",
+          "select": {
+            "label_asym_id": "A",
+            "auth_seq_id": 442
+          }
+        }
+      ]
     }
   }
 }
