@@ -16,7 +16,7 @@ Cell Atlas is the cell and molecule section of the Human Biology platform. It co
 One log-scale navigator (2 m to 0.6 Å) joins every level, and every number on screen carries a source chip with species, cell type and method. Molecular models are experimental PDB / EMDB structures, never AI predictions. Cell models are to-scale schematics.
 
 ## Operating Context
-Static site on GitHub Pages (https://isaac070405.github.io/cell-atlas/). Three.js r187 and Mol* 5.13.1 are self-hosted in `vendor/`. Data lives in `data/*.json`. State is driven by `js/state.js`. Deep links use query parameters such as `?cell=`, `?level=`, `?pdb=` and `?view=compare`. The embedded 3D Anatomy Model in `anatomy/` is desktop only.
+Laptop and desktop only (decided 2026-11-26): the layout holds from 1024px wide, and narrower windows scroll sideways under a notice. Phones and tablets are out of scope. Touchscreen laptops still get 44px touch targets. Static site on GitHub Pages (https://isaac070405.github.io/cell-atlas/). Three.js r187 and Mol* 5.13.1 are self-hosted in `vendor/`. Data lives in `data/*.json`. State is driven by `js/state.js`. Deep links use query parameters such as `?cell=`, `?level=`, `?pdb=` and `?view=compare`. The embedded 3D Anatomy Model in `anatomy/` is also desktop only.
 
 ## Capabilities and Constraints
 - Eight levels, a compare view (including the Bcl-2 family table), Module B tour points and a protein subcellular location table.

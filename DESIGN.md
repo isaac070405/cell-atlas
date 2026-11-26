@@ -66,15 +66,6 @@ typography:
     fontFamily: "Source Serif 4, Noto Serif TC, Georgia, serif"
     fontSize: "15px"
     lineHeight: 1.6
-  body-mobile:
-    fontFamily: "Source Serif 4, Noto Serif TC, Georgia, serif"
-    fontSize: "16px"
-    lineHeight: 1.6
-  title-mobile:
-    fontFamily: "Source Serif 4, Noto Serif TC, Georgia, serif"
-    fontSize: "24px"
-    fontWeight: 600
-    lineHeight: 1.1
   caption:
     fontFamily: "Source Serif 4, Noto Serif TC, Georgia, serif"
     fontSize: "13px"
@@ -83,10 +74,6 @@ typography:
     fontFamily: "JetBrains Mono, ui-monospace, monospace"
     fontSize: "11px"
     lineHeight: 1.3
-  label-xs:
-    fontFamily: "JetBrains Mono, ui-monospace, monospace"
-    fontSize: "10px"
-    lineHeight: 1
   label:
     fontFamily: "JetBrains Mono, ui-monospace, monospace"
     fontSize: "12px"
@@ -193,18 +180,18 @@ A restrained paper and ink palette with two stain accents, plus fixed categorica
 **Character:** A textbook serif for explanation and a lab-instrument monospace for every measurement, id and unit.
 
 ### Hierarchy
-- **Title** (600, 30px, 1.1, -0.01em): the HUD title; 24px under 760px.
+- **Title** (600, 30px, 1.1, -0.01em): the HUD title.
 - **Headline** (600, 22px): viewport titles.
 - **Body** (400, 17px, 1.6): reading text; panel body 15px; max line length 60 to 72ch.
-- **Body small** (400, 14 to 15px): panel text (15px), key-value rows, source lists, compare table (14px). **Caption** (13px): link-site names. **Body mobile** (16px) and **Title mobile** (24px) apply under 760px.
-- **Label** (500, 12 to 13px, mono; 11px small, 10px for mobile ruler ticks): HUD readouts, panel headings, ruler bands, ids, chips.
+- **Body small** (400, 14 to 15px): panel text (15px), key-value rows, source lists, compare table (14px). **Caption** (13px): link-site names.
+- **Label** (500, 12 to 13px, mono; 11px small): HUD readouts, panel headings, ruler bands, ids, chips.
 
 ### Named Rules
 **The Mono Is Data Rule.** Anything measured, identified or sourced (values, units, PDB ids, chips) sets in the monospace.
 
 ## Layout
 
-A three-row page: HUD, scale ruler, then stage. The stage is a viewport over three info panels (columns 1fr 1fr 1.2fr) divided by hairlines. Spacing uses a 4px base scale (4, 8, 12, 16, 24, 32, 48). On coarse pointers, controls are 44px tall, chips 36px, and 3D canvases shorter so the page still scrolls. Under 760px the ruler pins to the bottom edge, the HUD readout drops to its own row, and panels become a horizontal scroll-snap strip at 86% width.
+A three-row page: HUD, scale ruler, then stage. The stage is a viewport over three info panels (columns 1fr 1fr 1.2fr) divided by hairlines. Spacing uses a 4px base scale (4, 8, 12, 16, 24, 32, 48). On coarse pointers, controls are 44px tall, chips 36px, and 3D canvases shorter so the page still scrolls. Laptop and desktop only: the page holds a 1024px minimum width, and narrower windows scroll sideways under a bilingual notice. Phone layouts are out of scope.
 
 ## Elevation & Depth
 
@@ -234,7 +221,7 @@ One corner radius, 3px, on buttons, chips, badges and segmented controls. Border
 - **Style:** mono 11px, outlined in currentColor, green for verified, amber for pending.
 
 ### Scale ruler
-- **Style:** under 760px band labels clip with an ellipsis so narrow levels (Body, System) never overprint their neighbours. SVG axis with ink ticks, mono tick labels, blue bands at 8% opacity that rise to 90% when selected (0.25s).
+- **Style:** SVG axis with ink ticks, mono tick labels, blue bands at 8% opacity that rise to 90% when selected (0.25s).
 
 ### Compare table
 - **Style:** hairline row dividers at 55% rule colour, mono corner header, eosin inset underline on the active column. Unmeasured cells show a dash.

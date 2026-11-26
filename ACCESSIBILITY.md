@@ -14,6 +14,7 @@ Cell Atlas aims to meet WCAG 2.2 level AA. It has not had a formal audit, so con
 
 ## Known limits
 
+- The site is built for laptop and desktop screens (1024 px or wider). Phone layouts are not supported, and narrower windows scroll sideways.
 - The 3D views (cell, tissue, Mol* structures) are visual. There is no full text alternative for the model, and the data cards and compare view hold the same numbers as text.
 - Orbit, cutting plane and organelle picking need a pointer. Keyboard control of the 3D canvas is limited.
 - The embedded 3D Anatomy Model in `anatomy/` is desktop only and has no design-system accessibility work.

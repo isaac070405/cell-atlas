@@ -6,7 +6,7 @@ Cell Atlas is the cell and molecule section of the Human Biology platform. It co
 
 Every number on screen carries a source chip with species, cell type and method. Cell models are to-scale schematics. Molecular models are experimental PDB / EMDB structures, never AI predictions.
 
-Live site: https://isaac070405.github.io/cell-atlas/
+Live site: https://isaac070405.github.io/cell-atlas/ (laptop and desktop screens, 1024 px or wider; phones are not supported)
 
 ## Current state
 

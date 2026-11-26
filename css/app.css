@@ -113,23 +113,10 @@ html[data-lang="both"] .ruler-bands button { line-height: 1.1; padding-top: 2px;
 .badge.verified { color: var(--ok); border: 1px solid currentColor; }
 .badge.pending { color: var(--warn); border: 1px solid currentColor; }
 
-/* Mobile: full-width viewer, swipeable panels, ruler pinned to the bottom */
-@media (max-width: 760px) {
-  body { font-size: 16px; grid-template-rows: auto 1fr; padding-bottom: 96px; }
-  .hud { grid-template-columns: 1fr auto; padding: var(--s3) var(--s4); gap: var(--s3); }
-  .hud-readout { grid-column: 1 / -1; grid-row: 2; justify-self: start; gap: var(--s5); }
-  .hud-title { font-size: 24px; }
-  .ruler { position: fixed; left: 0; right: 0; bottom: 0; background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 0; z-index: 5; padding: var(--s2) var(--s4) var(--s1); }
-  .ruler-bands { left: var(--s4); right: var(--s4); }
-  .ruler-ticklabels span { font-size: 10px; }
-  .ruler-ticklabels span:nth-child(even) { display: none; }
-  .ruler-bands button { font-size: 12px; }
-  .viewport { padding: var(--s3); min-height: 52vh; }
-  .viewport-frame { padding: var(--s4); }
-  .schematic { right: var(--s5); bottom: var(--s4); }
-  .panels { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
-  .panel { flex: 0 0 86%; scroll-snap-align: start; }
-}
+/* Desktop and laptop only: the layout holds from 1024px up. Narrower windows scroll sideways and show a notice. */
+body { min-width: 1024px; }
+.desktop-note { display: none; }
+@media (max-width: 1023px) { .desktop-note { display: block; position: fixed; left: 0; bottom: 0; z-index: 6; margin: 0; padding: var(--s2) var(--s4); background: var(--paper-raised); border-bottom: 1px solid var(--edge); font: 12px/1.5 var(--font-label); color: var(--ink); width: 100vw; box-sizing: border-box; } }
 
 
 /* Viewport header with the Cells / Compare switch */
@@ -177,7 +164,6 @@ html[data-lang="both"] .ruler-bands button { line-height: 1.1; padding-top: 2px;
 .link-group + .link-group { margin-top: var(--s3); }
 .link-site { font-size: 13px; padding-top: 3px; }
 .link-group .chips { margin-top: 0; }
-@media (max-width: 760px) { .link-group { grid-template-columns: 1fr; gap: 2px; } }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 .ruler-bands button[aria-selected="true"] .t-zh { color: inherit; }
