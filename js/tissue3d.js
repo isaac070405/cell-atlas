@@ -129,7 +129,7 @@ export async function createTissueView(host, { onPick, elements }) {
         const top = 1.9;
         if (role === 0) for (let k = 0; k < 9; k++) {
           const a = r() * Math.PI * 2, d = Math.sqrt(r()) * 0.32, h = 0.55 - 0.18 * (d / 0.32);
-          put(new THREE.CylinderGeometry(0.03, 0.03, h, 6), '#8EC5F0', 'stereocilia').position.set(x + Math.cos(a) * d, top + h / 2, z + Math.sin(a) * d);
+          put(new THREE.CylinderGeometry(0.03, 0.03, h, 6), '#4A8FD6', 'stereocilia').position.set(x + Math.cos(a) * d, top + h / 2, z + Math.sin(a) * d);
         } else if (role === 2) for (let k = 0; k < 6; k++) {
           const a = (k / 6) * Math.PI * 2 + 0.3, d = 0.26 * (k % 2 ? 1 : 0.5), tx = x + Math.cos(a) * d, tz = z + Math.sin(a) * d, lean = 0.12;
           const pts = [[tx, top, tz], [tx + Math.cos(a) * lean * 0.4, top + 0.35, tz + Math.sin(a) * lean * 0.4], [tx + Math.cos(a) * lean, top + 0.7, tz + Math.sin(a) * lean]];
