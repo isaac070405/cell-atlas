@@ -1,6 +1,9 @@
 // Three.js view of one schematic tissue: orbit, click a part to pick it.
 // Shapes are drawn from textbook-style reference figures, not measured data. Three.js loads from vendor/three on first use.
 
+// Schematic model colours for tissue figures. Documented in DESIGN.md as model material colours.
+const TUBULIN_BETA = '#E8A33D', RIBOSOME = '#2F5FA8', TUBULIN_ALPHA = '#2E7D9A', SURFACE_LAYER = '#E8A33D', BASAL_LAYER = '#D98E2B', MIDDLE_LAYER = '#E0B15C', RIBOSOME_NEURON = '#60a5fa';
+
 export async function createTissueView(host, { onPick, elements }) {
   const THREE = await import('three');
   const { OrbitControls } = await import('three/addons/OrbitControls.js');
@@ -17,6 +20,21 @@ export async function createTissueView(host, { onPick, elements }) {
   scene.add(sun);
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.addEventListener('change', draw);
+
+  // Keyboard orbit for people without a pointer: arrows rotate 10 degrees, + and - zoom
+  if (!host.hasAttribute('tabindex')) host.tabIndex = 0;
+  host.setAttribute('aria-keyshortcuts', 'ArrowLeft ArrowRight ArrowUp ArrowDown + -');
+  host.addEventListener('keydown', e => {
+    const step = Math.PI / 18, turn = { ArrowLeft: [-step, 0], ArrowRight: [step, 0], ArrowUp: [0, -step], ArrowDown: [0, step] }[e.key];
+    const zoom = { '+': 0.9, '=': 0.9, '-': 1.1 }[e.key];
+    if (!turn && !zoom) return;
+    e.preventDefault();
+    const off = camera.position.clone().sub(controls.target), sph = new THREE.Spherical().setFromVector3(off);
+    if (turn) { sph.theta += turn[0]; sph.phi = Math.min(Math.PI - 0.05, Math.max(0.05, sph.phi + turn[1])); }
+    if (zoom) sph.radius = Math.min(controls.maxDistance, Math.max(controls.minDistance, sph.radius * zoom));
+    camera.position.copy(controls.target).add(off.setFromSpherical(sph));
+    controls.update();
+  });
   const group = new THREE.Group();
   scene.add(group);
   const ray = new THREE.Raycaster();
@@ -95,7 +113,7 @@ export async function createTissueView(host, { onPick, elements }) {
       tube([[-0.4, -1.1, 0.9], [-0.2, -0.3, 0.8], [0.0, 0.3, 0.7], [0.1, 0.8, 0.6]], 0.035, '#E6C34A', 'nerve');
       for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
         const x = (i - (cols - 1) / 2) * pitch + (j % 2) * 0.25 - 0.12, z = (j - (rows - 1) / 2) * pitch;
-        put(new THREE.CylinderGeometry(0.44, 0.4, 1.5, 6), '#E8A33D', 'cell').position.set(x, 1.15, z);
+        put(new THREE.CylinderGeometry(0.44, 0.4, 1.5, 6), SURFACE_LAYER, 'cell').position.set(x, 1.15, z);
         ball([x, 0.78, z], 0.3, '#8E5DB0', 'nucleus', [0.9, 1.15, 0.9]);
         const ring = put(new THREE.TorusGeometry(0.42, 0.03, 8, 24), '#3FA7A7', 'junction'); ring.rotation.x = Math.PI / 2; ring.position.set(x, 1.72, z);
         for (let k = 0; k < 12; k++) {
@@ -337,7 +355,7 @@ export async function createTissueView(host, { onPick, elements }) {
         g.computeVertexNormals();
         const m = put(g, '#6C7F3A', 'cisternae'); m.rotation.x = -Math.PI / 2; m.position.y = k * 0.38 - 0.76;
         if (k < 4) { const l = put(new THREE.BoxGeometry(3.3, 0.22, 2.1), '#D6DEB0', 'lumen', { opacity: 0.18 }); l.position.y = k * 0.38 - 0.57; }
-        const ribo = new THREE.InstancedMesh(new THREE.SphereGeometry(0.055, 8, 6), new THREE.MeshStandardMaterial({ color: '#2F5FA8', roughness: 0.5 }), 90), d = new THREE.Object3D();
+        const ribo = new THREE.InstancedMesh(new THREE.SphereGeometry(0.055, 8, 6), new THREE.MeshStandardMaterial({ color: RIBOSOME, roughness: 0.5 }), 90), d = new THREE.Object3D();
         for (let i = 0; i < 90; i++) { d.position.set((r() - 0.5) * 3.2, k * 0.38 - 0.76 + 0.09, (r() - 0.5) * 2.0); d.updateMatrix(); ribo.setMatrixAt(i, d.matrix); }
         ribo.userData.part = 'ribosome'; ribo.userData.base = 1; group.add(ribo); meshes.push(ribo);
       }
@@ -352,7 +370,7 @@ export async function createTissueView(host, { onPick, elements }) {
       const r = rng(15);
       for (let i = 0; i < 14; i++) {
         const low = i < 7, a = r() * Math.PI * 2, d = 0.8 + r() * 0.5;
-        ball([Math.cos(a) * d, low ? -0.95 + r() * 0.2 : 0.75 + r() * 0.5, Math.sin(a) * d * 0.7], 0.08, '#E8A33D', 'vesicles');
+        ball([Math.cos(a) * d, low ? -0.95 + r() * 0.2 : 0.75 + r() * 0.5, Math.sin(a) * d * 0.7], 0.08, SURFACE_LAYER, 'vesicles');
       }
     },
 
@@ -360,7 +378,7 @@ export async function createTissueView(host, { onPick, elements }) {
       put(new THREE.SphereGeometry(1.4, 36, 24), '#7A4A8C', 'membrane', { opacity: 0.3 });
       put(new THREE.SphereGeometry(1.32, 32, 20), '#C9B0D6', 'lumen', { opacity: 0.18 });
       const r = rng(31);
-      for (let i = 0; i < 70; i++) { const v = V(r() - 0.5, r() - 0.5, r() - 0.5).normalize().multiplyScalar(Math.cbrt(r()) * 1.1); ball(v.toArray(), 0.07, '#E8A33D', 'enzymes'); }
+      for (let i = 0; i < 70; i++) { const v = V(r() - 0.5, r() - 0.5, r() - 0.5).normalize().multiplyScalar(Math.cbrt(r()) * 1.1); ball(v.toArray(), 0.07, SURFACE_LAYER, 'enzymes'); }
     },
 
     perox() {
@@ -389,7 +407,7 @@ export async function createTissueView(host, { onPick, elements }) {
 
     microtubule() {     // 13 protofilaments of alternating alpha and beta tubulin
       const N = 13, rows = 14, R = 0.9, dim = 0.26, geo = new THREE.SphereGeometry(0.13, 12, 8);
-      const mats = { alpha: new THREE.MeshStandardMaterial({ color: '#2E7D9A', roughness: 0.5 }), beta: new THREE.MeshStandardMaterial({ color: '#E8A33D', roughness: 0.5 }) };
+      const mats = { alpha: new THREE.MeshStandardMaterial({ color: TUBULIN_ALPHA, roughness: 0.5 }), beta: new THREE.MeshStandardMaterial({ color: TUBULIN_BETA, roughness: 0.5 }) };
       const inst = { alpha: new THREE.InstancedMesh(geo, mats.alpha, N * rows), beta: new THREE.InstancedMesh(geo, mats.beta, N * rows) }, d = new THREE.Object3D();
       let ia = 0, ib = 0;
       for (let p = 0; p < N; p++) for (let k = 0; k < rows * 2; k++) {
@@ -416,15 +434,15 @@ export async function createTissueView(host, { onPick, elements }) {
       for (let i = 0; i < 60; i++) { const v = V(r() - 0.5, r() - 0.5, r() - 0.5).normalize().multiplyScalar(1.15 + r() * 0.3); ball(v.toArray(), 0.05, '#E8A8A0', 'pcm'); }
       for (let k = 0; k < 9; k++) {
         const v = V(r() - 0.5, r() - 0.5, r() - 0.5).normalize(), w = v.clone().multiplyScalar(1.4), e = v.clone().multiplyScalar(3.2 + r() * 0.8);
-        tube([w.toArray(), w.clone().lerp(e, 0.5).add(V(0, 0.1, 0)).toArray(), e.toArray()], 0.04, '#2E7D9A', 'mt');
+        tube([w.toArray(), w.clone().lerp(e, 0.5).add(V(0, 0.1, 0)).toArray(), e.toArray()], 0.04, TUBULIN_ALPHA, 'mt');
       }
     },
 
     // ── Epithelial subtypes: one sheet of cells on a basement membrane, built from per-layer specs ──
-    'simple-squamous'() { epi([{ part: 'cell', color: '#E8A33D', r: 0.5, h: 0.1, y: 0 }]); },
-    'simple-cuboidal'() { epi([{ part: 'cell', color: '#E8A33D', r: 0.4, h: 0.7, y: 0 }]); },
+    'simple-squamous'() { epi([{ part: 'cell', color: SURFACE_LAYER, r: 0.5, h: 0.1, y: 0 }]); },
+    'simple-cuboidal'() { epi([{ part: 'cell', color: SURFACE_LAYER, r: 0.4, h: 0.7, y: 0 }]); },
     'simple-columnar'() {
-      epi([{ part: 'cell', color: '#E8A33D', r: 0.38, h: 1.5, y: 0, nuc: 0.22, skip: [5, 12] }]);
+      epi([{ part: 'cell', color: SURFACE_LAYER, r: 0.38, h: 1.5, y: 0, nuc: 0.22, skip: [5, 12] }]);
       const cols = 6, rows = 3, pitch = 0.85;
       for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
         const x = (i - (cols - 1) / 2) * pitch + (j % 2) * 0.25 - 0.12, z = (j - (rows - 1) / 2) * pitch, k = i * rows + j;
@@ -434,14 +452,14 @@ export async function createTissueView(host, { onPick, elements }) {
       }
     },
     'stratified-squamous'() {
-      epi([{ part: 'basal', color: '#D98E2B', r: 0.4, h: 0.5, y: 0 }, { part: 'intermediate', color: '#E0B15C', r: 0.44, h: 0.4, y: 0.5 }, { part: 'intermediate', color: '#E0B15C', r: 0.46, h: 0.3, y: 0.9 },
-        { part: 'surface', color: '#E8A33D', r: 0.5, h: 0.1, y: 1.2 }, { part: 'surface', color: '#E8A33D', r: 0.5, h: 0.1, y: 1.32, shift: 0.3 }]);
+      epi([{ part: 'basal', color: BASAL_LAYER, r: 0.4, h: 0.5, y: 0 }, { part: 'intermediate', color: MIDDLE_LAYER, r: 0.44, h: 0.4, y: 0.5 }, { part: 'intermediate', color: MIDDLE_LAYER, r: 0.46, h: 0.3, y: 0.9 },
+        { part: 'surface', color: SURFACE_LAYER, r: 0.5, h: 0.1, y: 1.2 }, { part: 'surface', color: SURFACE_LAYER, r: 0.5, h: 0.1, y: 1.32, shift: 0.3 }]);
     },
     'stratified-cuboidal'() {
-      epi([{ part: 'basal', color: '#D98E2B', r: 0.4, h: 0.55, y: 0 }, { part: 'surface', color: '#E8A33D', r: 0.4, h: 0.55, y: 0.55, shift: 0.2 }]);
+      epi([{ part: 'basal', color: BASAL_LAYER, r: 0.4, h: 0.55, y: 0 }, { part: 'surface', color: SURFACE_LAYER, r: 0.4, h: 0.55, y: 0.55, shift: 0.2 }]);
     },
     'stratified-columnar'() {
-      epi([{ part: 'basal', color: '#D98E2B', r: 0.4, h: 0.5, y: 0 }, { part: 'surface', color: '#E8A33D', r: 0.38, h: 1.1, y: 0.5, every: 1, shift: 0.2 }]);
+      epi([{ part: 'basal', color: BASAL_LAYER, r: 0.4, h: 0.5, y: 0 }, { part: 'surface', color: SURFACE_LAYER, r: 0.38, h: 1.1, y: 0.5, every: 1, shift: 0.2 }]);
     },
     pseudostratified() {
       const r = rng(8), cols = 6, rows = 3, pitch = 0.85;
@@ -450,7 +468,7 @@ export async function createTissueView(host, { onPick, elements }) {
         const x = (i - (cols - 1) / 2) * pitch + (j % 2) * 0.25 - 0.12, z = (j - (rows - 1) / 2) * pitch, k = i * rows + j, short = k % 3 === 1, goblet = k === 5 || k === 14;
         const h = short ? 0.55 : 1.7;
         if (goblet) { ball([x, 1.15, z], 0.34, '#6FC3DF', 'goblet', [1, 1.7, 1]); ball([x, 0.4, z], 0.18, '#8E5DB0', 'nucleus'); continue; }
-        const c = put(new THREE.CylinderGeometry(short ? 0.32 : 0.28, 0.3, h, 6), short ? '#D98E2B' : '#E8A33D', short ? 'basal-cell' : 'ciliated'); c.position.set(x, 0.05 + h / 2, z);
+        const c = put(new THREE.CylinderGeometry(short ? 0.32 : 0.28, 0.3, h, 6), short ? BASAL_LAYER : SURFACE_LAYER, short ? 'basal-cell' : 'ciliated'); c.position.set(x, 0.05 + h / 2, z);
         ball([x, 0.25 + r() * (short ? 0.2 : 0.95), z], 0.17, '#8E5DB0', 'nucleus', [0.9, 1.3, 0.9]);
         if (!short) for (let m = 0; m < 7; m++) { const a = m / 7 * Math.PI * 2, d = m ? 0.17 : 0; put(new THREE.CylinderGeometry(0.012, 0.012, 0.26, 5), '#7C8FB0', 'cilia').position.set(x + Math.cos(a) * d, 1.9, z + Math.sin(a) * d); }
       }
@@ -461,13 +479,13 @@ export async function createTissueView(host, { onPick, elements }) {
       const cols = 6, rows = 3, pitch = 0.85;
       for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
         const x = (i - (cols - 1) / 2) * pitch + (j % 2) * 0.25 - 0.12, z = (j - (rows - 1) / 2) * pitch;
-        const b = put(new THREE.CylinderGeometry(0.3, 0.3, 0.4, 6), '#D98E2B', 'basal'); b.position.set(x, 0.3, z);
+        const b = put(new THREE.CylinderGeometry(0.3, 0.3, 0.4, 6), BASAL_LAYER, 'basal'); b.position.set(x, 0.3, z);
         ball([x, 0.3, z], 0.14, '#8E5DB0', 'nucleus');
-        const m = put(new THREE.ConeGeometry(0.36, 0.7, 6), '#E0B15C', 'intermediate'); m.position.set(x, 0.85, z);
+        const m = put(new THREE.ConeGeometry(0.36, 0.7, 6), MIDDLE_LAYER, 'intermediate'); m.position.set(x, 0.85, z);
         ball([x, 0.8, z], 0.13, '#8E5DB0', 'nucleus');
       }
       for (const [x, z] of [[-1.6, -0.6], [-0.1, -0.6], [1.4, -0.6], [-0.9, 0.7], [0.6, 0.7], [2.0, 0.7]]) {
-        const d = ball([x, 1.15, z], 0.68, '#E8A33D', 'umbrella', [1, 0.55, 1]);
+        const d = ball([x, 1.15, z], 0.68, SURFACE_LAYER, 'umbrella', [1, 0.55, 1]);
         ball([x, 1.2, z], 0.17, '#8E5DB0', 'nucleus');
       }
     },
@@ -503,7 +521,7 @@ export async function createTissueView(host, { onPick, elements }) {
       const cols = 6, rows = 3, pitch = 0.85;
       for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
         const x = (i - (cols - 1) / 2) * pitch, z = (j - 1) * 0.85;
-        const c = put(new THREE.CylinderGeometry(0.38, 0.36, 0.9, 6), '#E8A33D', 'cells'); c.position.set(x, -0.1, z);
+        const c = put(new THREE.CylinderGeometry(0.38, 0.36, 0.9, 6), SURFACE_LAYER, 'cells'); c.position.set(x, -0.1, z);
         ball([x, -0.3, z], 0.17, '#8E5DB0', 'nucleus');
         for (let m = 0; m < 6; m++) { const a = m / 6 * Math.PI * 2, d = m ? 0.17 : 0; put(new THREE.CylinderGeometry(0.014, 0.014, 0.5, 5), '#7C8FB0', 'cilia').position.set(x + Math.cos(a) * d, 0.6, z + Math.sin(a) * d); }
       }
@@ -636,7 +654,7 @@ export async function createTissueView(host, { onPick, elements }) {
         const p = put(new THREE.TorusGeometry(0.3, 0.03, 8, 24), '#facc15', 'plasmid');
         p.position.set((r() - 0.5) * 3.0, (r() - 0.5) * 1.2, (r() - 0.5) * 1.2); p.rotation.set(r() * Math.PI, r() * Math.PI, 0);
       }
-      const ribo = new THREE.InstancedMesh(new THREE.SphereGeometry(0.06, 8, 6), new THREE.MeshStandardMaterial({ color: '#60a5fa', roughness: 0.5 }), 150), d = new THREE.Object3D();
+      const ribo = new THREE.InstancedMesh(new THREE.SphereGeometry(0.06, 8, 6), new THREE.MeshStandardMaterial({ color: RIBOSOME_NEURON, roughness: 0.5 }), 150), d = new THREE.Object3D();
       for (let k = 0; k < 150; k++) { d.position.set((r() - 0.5) * 3.4, (r() - 0.5) * 1.5, (r() - 0.5) * 1.5); d.updateMatrix(); ribo.setMatrixAt(k, d.matrix); }
       ribo.userData.part = 'ribosome'; ribo.userData.base = 1; group.add(ribo); meshes.push(ribo);
       const pos = body.attributes.position, nor = body.attributes.normal, up = V(0, 1, 0), n = V(0, 0, 0);

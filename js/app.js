@@ -5,18 +5,30 @@ import { initCompare, renderCompare, renderChart, columnCells, resolve, valueTex
 import { buildModel, crowded } from './cellmodel.js';
 import { showStructure } from './molview.js';
 
-const load = p => fetch(p).then(r => r.json());
-const [catalog, { citations }, links, tours, anatomy, tissues, organelles, atoms, ploc, bcl2] = await Promise.all([
-  load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'), load('data/anatomy.json'), load('data/tissues.json'), load('data/organelles.json'), load('data/atoms.json'), load('data/protein-location.json'), load('data/bcl2-compare.json'),
-]);
+const load = p => fetch(p).then(r => { if (!r.ok) throw new Error(`${p}: HTTP ${r.status}`); return r.json(); });
+// Data files come from one origin; a failed one leaves nothing to draw, so say so instead of showing a blank page
+function bootFailed(err) {
+  console.error('Cell Atlas data failed to load', err);
+  const el = document.getElementById('vp-empty');
+  if (!el) return;
+  el.setAttribute('role', 'alert');
+  el.innerHTML = 'Cell Atlas could not load its data. Check your connection and reload the page.<br>細胞圖譜無法載入資料。請檢查網絡連線後重新載入頁面。';
+}
+let data;
+try {
+  data = await Promise.all([
+    load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'), load('data/anatomy.json'), load('data/tissues.json'), load('data/organelles.json'), load('data/atoms.json'), load('data/protein-location.json'), load('data/bcl2-compare.json'),
+  ]);
+} catch (err) { bootFailed(err); throw err; }
+const [catalog, { citations }, links, tours, anatomy, tissues, organelles, atoms, ploc, bcl2] = data;
 const $ = id => document.getElementById(id);
 // Cell types: colour is the --kind-* token, group is the domain-level class
 const KINDS = [
   { id: 'animal', hex: '#C62828', group: 'eukaryote' }, { id: 'plant', hex: '#2E7D32', group: 'eukaryote' }, { id: 'fungal', hex: '#795548', group: 'eukaryote' }, { id: 'protist', hex: '#FFB300', group: 'eukaryote' },
-  { id: 'bacterial', hex: '#00ACC1', group: 'prokaryote' }, { id: 'archaeal', hex: '#E64A19', group: 'prokaryote' }, { id: 'virus', hex: '#8E24AA', group: 'noncellular' },
+  { id: 'bacterial', hex: '#00ACC1', group: 'prokaryote' }, { id: 'archaeal', hex: '#E96035', group: 'prokaryote' }, { id: 'virus', hex: '#8E24AA', group: 'noncellular' },
 ];
 const GROUPS = ['noncellular', 'prokaryote', 'eukaryote'];
-const kindLegend = () => `<h4>${html('legend.title')}</h4>` + GROUPS.map(g => `<div class="kl-group"><span>${html('group.' + g)}</span>${KINDS.filter(k => k.group === g).map(k => `<span class="kl-item" style="--k:var(--kind-${k.id})"><span class="sw"></span>${html('kind.' + k.id)}</span>`).join('')}</div>`).join('');
+const kindLegend = () => `<h3>${html('legend.title')}</h3>` + GROUPS.map(g => `<div class="kl-group"><span>${html('group.' + g)}</span>${KINDS.filter(k => k.group === g).map(k => `<span class="kl-item" style="--k:var(--kind-${k.id})"><span class="sw"></span>${html('kind.' + k.id)}</span>`).join('')}</div>`).join('');
 initCompare(catalog, bcl2);
 
 // Theme: follows the system until the person picks one
@@ -30,7 +42,7 @@ $('theme-btn').addEventListener('click', () => {
 });
 
 // Language
-setLang(await loadStrings());
+try { setLang(await loadStrings()); } catch (err) { bootFailed(err); throw err; }
 // the embedded 3D Anatomy Model follows the language switch (anatomy/zh-hant.js reads it)
 const sendLang = () => { const f = $('vp-anatomy'); if (f && f.contentWindow) f.contentWindow.postMessage({ type: 'lang', lang: getLang() }, location.origin); };
 document.querySelectorAll('[data-lang-set]').forEach(b => b.addEventListener('click', () => {
@@ -168,7 +180,7 @@ function renderDirections(sm) {
   const d = sm?.directions, el = $('tissue-dir');
   el.hidden = !d;
   if (!d) return;
-  el.innerHTML = `<h4>${html(d.title)}</h4>${d.items.map(i => `<div class="dir-row"><span class="dir-arrow" aria-hidden="true">${i.arrow}</span><div><strong>${html(i.name)}</strong><br><span class="muted">${html(i.text)}</span></div></div>`).join('')}<p class="muted dir-note">${html(d.note)}</p>`;
+  el.innerHTML = `<h3>${html(d.title)}</h3>${d.items.map(i => `<div class="dir-row"><span class="dir-arrow" aria-hidden="true">${i.arrow}</span><div><strong>${html(i.name)}</strong><br><span class="muted">${html(i.text)}</span></div></div>`).join('')}<p class="muted dir-note">${html(d.note)}</p>`;
 }
 // Organelle and atom models: part card plus sizes and function from the catalog compartment, links to structures
 const modelCites = (m, level) => level === 'atom' ? m.cites : (() => { const k = comp(m.compartment); return [...(k?.sizes ?? []).map(z => z.cite), k?.function?.cite].filter(Boolean); })();
@@ -259,6 +271,7 @@ function render(s) {
   const point = points.find(p => p.id === s.tour);
   const showMol = B && !!pdb;
   $('vp-empty').hidden = compare || showMol || C;
+  $('onboard-try').hidden = !(A && !s.cell && !compare);
   document.body.classList.toggle('level-c', C);
   const fr = $('vp-anatomy');
   fr.hidden = !C;

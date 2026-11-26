@@ -10,6 +10,8 @@ body {
 }
 html[data-lang="zh-Hant"] body { font-family: var(--font-zh); line-height: 1.75; }
 button { font: inherit; color: inherit; }
+/* Control edges need 3:1 on paper (WCAG 1.4.11); --rule stays for hairline dividers */
+:root { --edge: color-mix(in srgb, var(--ink-soft) 75%, var(--paper)); }
 :focus-visible { outline: 2px solid var(--select); outline-offset: 2px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .skip { position: absolute; left: -999px; }
@@ -36,14 +38,14 @@ button { font: inherit; color: inherit; }
 .hud-readout dt { font: 12px/1.2 var(--font-label); color: var(--ink-soft); }
 .hud-readout dd { margin: 2px 0 0; font: 500 14px/1.3 var(--font-label); }
 .hud-controls { display: flex; gap: var(--s2); align-items: center; }
-.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
+.seg { display: inline-flex; border: 1px solid var(--edge); border-radius: var(--radius); overflow: hidden; }
 .seg button { background: none; border: 0; padding: 6px 10px; font: 13px/1 var(--font-label); cursor: pointer; }
-.seg button + button { border-left: 1px solid var(--rule); }
+.seg button + button { border-left: 1px solid var(--edge); }
 .seg button[aria-checked="true"] { background: var(--stain); color: var(--paper); }
-.icon-btn { background: none; border: 1px solid var(--rule); border-radius: var(--radius); padding: 5px 7px; cursor: pointer; display: grid; place-items: center; }
+.icon-btn { background: none; border: 1px solid var(--edge); border-radius: var(--radius); padding: 5px 7px; cursor: pointer; display: grid; place-items: center; }
 
 /* Scale ruler: the one bold element */
-.ruler { position: relative; padding: var(--s3) var(--s5) var(--s2); border-bottom: 1px solid var(--rule); }
+.ruler { min-height: 90px; position: relative; padding: var(--s3) var(--s5) var(--s2); border-bottom: 1px solid var(--rule); }
 #ruler-svg { display: block; width: 100%; height: 52px; overflow: visible; }
 #ruler-svg .tick { stroke: var(--ink); stroke-width: 1; vector-effect: non-scaling-stroke; }
 #ruler-svg .tick-minor { stroke: var(--ink-soft); stroke-width: 1; vector-effect: non-scaling-stroke; }
@@ -57,7 +59,7 @@ button { font: inherit; color: inherit; }
   position: absolute; top: 0; height: 34px;
   background: none; border: 0; cursor: pointer;
   font: 500 13px/34px var(--font-label); color: var(--ink);
-  text-align: center; white-space: nowrap;
+  text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 2px;
 }
 .ruler-bands button[aria-selected="true"] { color: var(--paper); }
 .ruler-bands button .t-zh { font-family: var(--font-zh); }
@@ -81,10 +83,11 @@ html[data-lang="both"] .ruler-bands button { line-height: 1.1; padding-top: 2px;
 .queue { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s2); }
 .queue button {
   display: flex; align-items: baseline; gap: var(--s2);
-  background: var(--paper); border: 1px solid var(--rule); border-radius: var(--radius);
+  background: var(--paper); border: 1px solid var(--edge); border-radius: var(--radius);
   padding: var(--s2) var(--s3); cursor: pointer; text-align: left;
 }
 .queue button:hover { border-color: var(--stain); }
+.queue button[aria-pressed="true"] > span:last-child { text-decoration: underline; text-underline-offset: 3px; }
 .queue button[aria-pressed="true"] { border-color: var(--select); box-shadow: inset 3px 0 0 var(--select); }
 .queue .id { font: 500 13px/1 var(--font-label); color: var(--stain); }
 .schematic { position: absolute; right: calc(var(--s5) + var(--s3)); bottom: calc(var(--s5) + var(--s2)); margin: 0; font: 11px/1 var(--font-label); color: var(--ink-soft); }
@@ -101,7 +104,7 @@ html[data-lang="both"] .ruler-bands button { line-height: 1.1; padding-top: 2px;
 .kv dt { font: 12px/1.6 var(--font-label); color: var(--ink-soft); }
 .kv dd { margin: 0; }
 .chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: var(--s2); }
-.chip { font: 12px/1 var(--font-label); padding: 4px 6px; border: 1px solid var(--rule); border-radius: var(--radius); color: var(--stain); text-decoration: none; }
+.chip { font: 12px/1 var(--font-label); padding: 6px 8px; border: 1px solid var(--rule); border-radius: var(--radius); color: var(--stain); text-decoration: none; }
 .chip[aria-disabled="true"] { color: var(--ink-soft); border-style: dashed; }
 .sources { margin: 0; padding-left: 1.4em; font-size: 14px; }
 .sources li + li { margin-top: var(--s2); }
@@ -110,23 +113,10 @@ html[data-lang="both"] .ruler-bands button { line-height: 1.1; padding-top: 2px;
 .badge.verified { color: var(--ok); border: 1px solid currentColor; }
 .badge.pending { color: var(--warn); border: 1px solid currentColor; }
 
-/* Mobile: full-width viewer, swipeable panels, ruler pinned to the bottom */
-@media (max-width: 760px) {
-  body { font-size: 16px; grid-template-rows: auto 1fr; padding-bottom: 96px; }
-  .hud { grid-template-columns: 1fr auto; padding: var(--s3) var(--s4); gap: var(--s3); }
-  .hud-readout { grid-column: 1 / -1; grid-row: 2; justify-self: start; gap: var(--s5); }
-  .hud-title { font-size: 24px; }
-  .ruler { position: fixed; left: 0; right: 0; bottom: 0; background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 0; z-index: 5; padding: var(--s2) var(--s4) var(--s1); }
-  .ruler-bands { left: var(--s4); right: var(--s4); }
-  .ruler-ticklabels span { font-size: 10px; }
-  .ruler-ticklabels span:nth-child(even) { display: none; }
-  .ruler-bands button { font-size: 12px; }
-  .viewport { padding: var(--s3); min-height: 52vh; }
-  .viewport-frame { padding: var(--s4); }
-  .schematic { right: var(--s5); bottom: var(--s4); }
-  .panels { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
-  .panel { flex: 0 0 86%; scroll-snap-align: start; }
-}
+/* Desktop and laptop only: the layout holds from 1024px up. Narrower windows scroll sideways and show a notice. */
+body { min-width: 1024px; }
+.desktop-note { display: none; }
+@media (max-width: 1023px) { .desktop-note { display: block; position: fixed; left: 0; bottom: 0; z-index: 6; margin: 0; padding: var(--s2) var(--s4); background: var(--paper-raised); border-bottom: 1px solid var(--edge); font: 12px/1.5 var(--font-label); color: var(--ink); width: 100vw; box-sizing: border-box; } }
 
 
 /* Viewport header with the Cells / Compare switch */
@@ -156,10 +146,10 @@ html[data-lang="both"] .ruler-bands button { line-height: 1.1; padding-top: 2px;
 .chip-jump { padding: 2px 5px; font-size: 11px; vertical-align: 1px; }
 
 /* Bars */
-.swatch { display: inline-block; width: 9px; height: 9px; border-radius: 2px; background: var(--c); margin-right: var(--s2); vertical-align: 0; }
-.bar-track { position: relative; display: block; height: 8px; border-radius: 2px; background: color-mix(in srgb, var(--rule) 45%, transparent); }
-.bar-fill { position: absolute; left: 0; top: 0; bottom: 0; min-width: 2px; border-radius: 2px; background: var(--c); }
-.bar-range { position: absolute; top: 0; bottom: 0; min-width: 3px; border: 1.5px solid var(--c); border-radius: 2px; background: color-mix(in srgb, var(--c) 30%, transparent); }
+.swatch { display: inline-block; width: 9px; height: 9px; border-radius: var(--radius); background: var(--c); margin-right: var(--s2); vertical-align: 0; }
+.bar-track { position: relative; display: block; height: 8px; border-radius: var(--radius); background: color-mix(in srgb, var(--rule) 45%, transparent); }
+.bar-fill { position: absolute; left: 0; top: 0; bottom: 0; min-width: 2px; border-radius: var(--radius); background: var(--c); }
+.bar-range { position: absolute; top: 0; bottom: 0; min-width: 3px; border: 1.5px solid var(--c); border-radius: var(--radius); background: color-mix(in srgb, var(--c) 30%, transparent); }
 
 /* Chart panel */
 .chart-basis { margin: 0 0 var(--s2) !important; font: 11.5px/1.4 var(--font-label); }
@@ -170,9 +160,10 @@ html[data-lang="both"] .ruler-bands button { line-height: 1.1; padding-top: 2px;
 /* Card links */
 .card-sub { margin: var(--s4) 0 var(--s1); font: 500 12px/1.3 var(--font-label); color: var(--ink-soft); }
 .link-group { display: grid; grid-template-columns: 9.5em 1fr; gap: var(--s2); align-items: start; margin-top: var(--s1); }
+/* Chips inside a site group sit 4px apart; the groups themselves sit 12px apart so the grouping reads */
+.link-group + .link-group { margin-top: var(--s3); }
 .link-site { font-size: 13px; padding-top: 3px; }
 .link-group .chips { margin-top: 0; }
-@media (max-width: 760px) { .link-group { grid-template-columns: 1fr; gap: 2px; } }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 .ruler-bands button[aria-selected="true"] .t-zh { color: inherit; }
@@ -220,8 +211,9 @@ body.level-c .queue:empty { display: none; }
 
 /* Cell kind marks (see the legend under the cell list) (selected cell button and the Cell band on the ruler) */
 .queue button[data-kind="cell"][aria-pressed="true"] { border-color: var(--k); box-shadow: inset 3px 0 0 var(--k); }
-html[data-kind] #ruler-svg .band[data-level="cell"].on { fill: var(--k-now); }
-html[data-kind="animal"] { --k-now: var(--kind-animal); } html[data-kind="plant"] { --k-now: var(--kind-plant); } html[data-kind="bacterial"] { --k-now: var(--kind-bacterial); } html[data-kind="archaeal"] { --k-now: var(--kind-archaeal); } html[data-kind="virus"] { --k-now: var(--kind-virus); } html[data-kind="fungal"] { --k-now: var(--kind-fungal); } html[data-kind="protist"] { --k-now: var(--kind-protist); } 
+html[data-kind] #ruler-svg .band[data-level="cell"].on { fill: var(--k-now); opacity: 1; }
+html[data-kind] .ruler-bands button[data-level="cell"][aria-selected="true"] { color: var(--k-on-now); }
+html[data-kind="animal"] { --k-now: var(--kind-animal); --k-on-now: var(--kind-on-animal); } html[data-kind="plant"] { --k-now: var(--kind-plant); --k-on-now: var(--kind-on-plant); } html[data-kind="bacterial"] { --k-now: var(--kind-bacterial); --k-on-now: var(--kind-on-bacterial); } html[data-kind="archaeal"] { --k-now: var(--kind-archaeal); --k-on-now: var(--kind-on-archaeal); } html[data-kind="virus"] { --k-now: var(--kind-virus); --k-on-now: var(--kind-on-virus); } html[data-kind="fungal"] { --k-now: var(--kind-fungal); --k-on-now: var(--kind-on-fungal); } html[data-kind="protist"] { --k-now: var(--kind-protist); --k-on-now: var(--kind-on-protist); } 
 /* Six compare columns are narrow: let the muscle-type switch wrap instead of overflowing */
 .compare .seg-sm { flex-wrap: wrap; max-width: 100%; }
 .compare .seg-sm button { padding: 3px 6px; font-size: 11px; }
@@ -230,7 +222,7 @@ html[data-kind="animal"] { --k-now: var(--kind-animal); } html[data-kind="plant"
 #vp-tissue { position: relative; }
 .tissue-dir { position: absolute; top: var(--s3); right: var(--s3); width: min(280px, 38%); padding: var(--s3); background: color-mix(in srgb, var(--paper-raised) 92%, transparent); border: 1px solid var(--rule); border-radius: var(--radius); font-size: 13.5px; line-height: 1.45; }
 .tissue-dir[hidden] { display: none; }
-.tissue-dir h4 { margin: 0 0 var(--s2); font: 500 12px/1.3 var(--font-label); color: var(--ink-soft); }
+.tissue-dir h3 { margin: 0 0 var(--s2); font: 500 12px/1.3 var(--font-label); color: var(--ink-soft); }
 .dir-row { display: flex; gap: var(--s2); align-items: flex-start; margin-top: var(--s2); }
 .dir-arrow { font: 500 20px/1 var(--font-label); color: var(--stain); flex: none; width: 1.4em; }
 .dir-note { margin: var(--s2) 0 0; font-size: 12.5px; }
@@ -238,7 +230,7 @@ html[data-kind="animal"] { --k-now: var(--kind-animal); } html[data-kind="plant"
 /* Cell cross-section panel beside the 3D cell (replaces the cutting plane slider) */
 .cell3d-main { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: var(--s4); align-items: start; }
 .xsec { display: flex; flex-direction: column; gap: var(--s2); padding: var(--s3); border: 1px solid var(--rule); background: var(--paper-raised); border-radius: var(--radius); }
-.xsec h4 { margin: 0; font: 500 12px/1.3 var(--font-label); color: var(--ink-soft); }
+.xsec h3 { margin: 0; font: 500 12px/1.3 var(--font-label); color: var(--ink-soft); }
 #xsec-canvas { display: block; width: 100%; aspect-ratio: 4 / 3; border: 1px solid var(--rule); background: var(--paper-raised); }
 .xsec input[type="range"] { width: 100%; accent-color: var(--stain); }
 .xsec-ends { display: flex; justify-content: space-between; font: 11px/1.3 var(--font-label); color: var(--ink-soft); }
@@ -251,11 +243,11 @@ body.bare .panels { display: none; }
 
 /* Cell type legend: one row per group */
 .kind-legend { display: grid; gap: var(--s2); padding: var(--s3) 0 0; font-size: 13px; }
-.kind-legend h4 { margin: 0; font: 11px/1 var(--font-label); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.kind-legend h3 { margin: 0; font: 11px/1 var(--font-label); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
 .kind-legend .kl-group { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s1) var(--s4); }
 .kind-legend .kl-group > span:first-child { min-width: 7.5em; font: 12px/1.4 var(--font-label); color: var(--ink-soft); }
 .kind-legend .kl-item { display: inline-flex; align-items: center; gap: 6px; }
-.kind-legend .sw { width: 12px; height: 12px; border-radius: 2px; background: var(--k); flex: none; }
+.kind-legend .sw { width: 12px; height: 12px; border-radius: var(--radius); background: var(--k); border: 1px solid var(--ink-soft); flex: none; }
 .kind-legend code { font: 11.5px var(--font-label); color: var(--ink-soft); }
 
 /* Tissue viewer: view buttons and cross-section (same panel style as the cell view) */
@@ -273,3 +265,26 @@ body.bare .panels { display: none; }
 .queue .qh { flex-basis: 100%; margin-top: var(--s2); font: 500 11px/1.3 var(--font-label); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
 .queue .qh:first-child { margin-top: 0; }
 .queue .qh2 { padding-left: var(--s3); text-transform: none; letter-spacing: 0; }
+
+/* Touch: 44px targets for controls, wider chip spacing, and shorter 3D canvases so a swipe above or below one still scrolls the page */
+@media (pointer: coarse) {
+  .seg button, .icon-btn, .tour button, .queue button { min-height: 44px; }
+  .seg button, .icon-btn { min-width: 44px; }
+  .chip { display: inline-flex; align-items: center; min-height: 36px; padding: 6px 12px; }
+  .chips { gap: var(--s2); }
+  .cell3d { height: clamp(260px, 42vh, 460px); }
+  .mol { height: clamp(260px, 44vh, 480px); }
+  .cut input { height: 44px; }
+}
+
+/* Long names (Latin binomials, compound names, long translations) wrap instead of overflowing */
+.hud-title, .viewport-title, .panel-body, .queue button, .chip { overflow-wrap: anywhere; }
+.queue button { min-width: 0; }
+
+/* Motion: feedback only. Controls acknowledge hover and press in 120ms; the ruler label colour follows the band fade (.25s) so the label never sits pale-on-pale mid-change. Reduced motion turns every transition off (rule above), and each state still changes at once. */
+.seg button, .icon-btn, .queue button, .chip, .tour button { transition: background-color .12s cubic-bezier(.16, 1, .3, 1), border-color .12s cubic-bezier(.16, 1, .3, 1), color .12s cubic-bezier(.16, 1, .3, 1), box-shadow .12s cubic-bezier(.16, 1, .3, 1); }
+.ruler-bands button { transition: color .25s cubic-bezier(.16, 1, .3, 1); }
+
+/* First-run path: three source-linked links, shown only on the empty Cell view */
+.onboard-try { margin: var(--s3) 0 0; font-size: 14px; color: var(--ink-soft); max-width: 60ch; }
+.onboard-try .chip { margin: 0 2px; }

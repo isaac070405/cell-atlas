@@ -394,8 +394,8 @@
       "zh-Hant": "重設視角"
     },
     "cell3d.hint": {
-      "en": "Drag to rotate, scroll to zoom, click a compartment to read its data.",
-      "zh-Hant": "拖曳旋轉、滾輪縮放，點選區室查看數據。"
+      "en": "Drag or use the arrow keys to rotate, scroll or press + and - to zoom, click a compartment to read its data.",
+      "zh-Hant": "拖曳或按方向鍵旋轉，滾輪或按 + 與 - 縮放，點選區室查看數據。"
     },
     "cell3d.crowded": {
       "en": "Crowded outline: the schematic cannot fit every compartment without overlap, so drawn shares differ from the data for some compartments. Volumes quoted on the card are the data.",
@@ -704,6 +704,22 @@
     "tissue.cat.grp.other": {
       "en": "Vessels and nerves",
       "zh-Hant": "血管同神經"
+    },
+    "onboard.try": {
+      "en": "Try this path, one number at a time:",
+      "zh-Hant": "試試這條路線，逐個數字查看："
+    },
+    "onboard.try.cell": {
+      "en": "Hepatocyte",
+      "zh-Hant": "肝細胞"
+    },
+    "onboard.try.org": {
+      "en": "Mitochondrion",
+      "zh-Hant": "粒線體"
+    },
+    "onboard.try.pdb": {
+      "en": "Complex I (5XTD)",
+      "zh-Hant": "Complex I（5XTD）"
     }
   }
 }
