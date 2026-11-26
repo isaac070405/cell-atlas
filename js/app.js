@@ -25,7 +25,7 @@ const $ = id => document.getElementById(id);
 // Cell types: colour is the --kind-* token, group is the domain-level class
 const KINDS = [
   { id: 'animal', hex: '#C62828', group: 'eukaryote' }, { id: 'plant', hex: '#2E7D32', group: 'eukaryote' }, { id: 'fungal', hex: '#795548', group: 'eukaryote' }, { id: 'protist', hex: '#FFB300', group: 'eukaryote' },
-  { id: 'bacterial', hex: '#00ACC1', group: 'prokaryote' }, { id: 'archaeal', hex: '#E64A19', group: 'prokaryote' }, { id: 'virus', hex: '#8E24AA', group: 'noncellular' },
+  { id: 'bacterial', hex: '#00ACC1', group: 'prokaryote' }, { id: 'archaeal', hex: '#E96035', group: 'prokaryote' }, { id: 'virus', hex: '#8E24AA', group: 'noncellular' },
 ];
 const GROUPS = ['noncellular', 'prokaryote', 'eukaryote'];
 const kindLegend = () => `<h3>${html('legend.title')}</h3>` + GROUPS.map(g => `<div class="kl-group"><span>${html('group.' + g)}</span>${KINDS.filter(k => k.group === g).map(k => `<span class="kl-item" style="--k:var(--kind-${k.id})"><span class="sw"></span>${html('kind.' + k.id)}</span>`).join('')}</div>`).join('');

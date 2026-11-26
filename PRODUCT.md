@@ -23,7 +23,7 @@ Static site on GitHub Pages (https://isaac070405.github.io/cell-atlas/). Three.j
 - Language switch EN / 繁 / 雙語, remembered per browser, strings in `data/i18n.json`.
 - Light and dark themes from `css/tokens.css`.
 - Every number needs a source chip. Unmeasured values show a dash, never an estimate.
-- Cell-type colours (animal #C62828, plant #2E7D32, fungal #795548, protist #FFB300, bacterial #00ACC1, archaeal #E64A19, viral #8E24AA) and the fixed organelle colours are shared across the platform.
+- Cell-type colours (animal #C62828, plant #2E7D32, fungal #795548, protist #FFB300, bacterial #00ACC1, archaeal #E96035, viral #8E24AA) and the fixed organelle colours are shared across the platform.
 
 ## Brand Commitments
 Name "Cell Atlas · 細胞圖譜". Part of the Human Biology platform. Tone is academic and source-first.

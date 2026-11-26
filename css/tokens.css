@@ -8,7 +8,7 @@
   --stain: #24489A;        /* methylene blue: structure, links, active level */
   --select: #B8336A;       /* eosin: the one selection highlight */
   /* cell kind marks, one per cell type in the legend */
-  --kind-animal: #C62828; --kind-plant: #2E7D32; --kind-bacterial: #00ACC1; --kind-archaeal: #E64A19; --kind-virus: #8E24AA; --kind-fungal: #795548; --kind-protist: #FFB300;
+  --kind-animal: #C62828; --kind-plant: #2E7D32; --kind-bacterial: #00ACC1; --kind-archaeal: #E96035; --kind-virus: #8E24AA; --kind-fungal: #795548; --kind-protist: #FFB300;
   --ok: #2F6B4F;
   --warn: #8A5A12;
   /* label colour on a filled kind mark; each pair is at least 4:1 */

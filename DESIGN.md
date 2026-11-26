@@ -24,7 +24,7 @@ colors:
   kind-fungal: "#795548"
   kind-protist: "#FFB300"
   kind-bacterial: "#00ACC1"
-  kind-archaeal: "#E64A19"
+  kind-archaeal: "#E96035"
   kind-virus: "#8E24AA"
   kind-on-light: "#FFFFFF"
   org-nucleus: "#3B4F9C"
@@ -141,7 +141,7 @@ A restrained paper and ink palette with two stain accents, plus fixed categorica
 - **Verified Green** (#2F6B4F, dark #6FBF96) and **Pending Amber** (#8A5A12, dark #D9A75A): source badges, always outlined and paired with text.
 
 ### Categorical (fixed across the platform)
-- **Cell kinds:** animal #C62828, plant #2E7D32, fungal #795548, protist #FFB300, bacterial #00ACC1, archaeal #E64A19, viral #8E24AA. Lighter tones in dark mode.
+- **Cell kinds:** animal #C62828, plant #2E7D32, fungal #795548, protist #FFB300, bacterial #00ACC1, archaeal #E96035, viral #8E24AA. Lighter tones in dark mode.
 - **Organelles:** 17 fixed tokens (`--org-*`), identical on every page and in both themes. Frontmatter lists the six most used; the rest live in `css/tokens.css`.
 
 ### Named Rules
