@@ -756,6 +756,10 @@
     "diagram.source": {
       "en": "Sources for this diagram",
       "zh-Hant": "此圖解的來源"
+    },
+    "diagram.nav": {
+      "en": "Diagrams",
+      "zh-Hant": "圖解"
     }
   }
 }

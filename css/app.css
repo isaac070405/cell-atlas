@@ -300,13 +300,13 @@ body.bare .panels { display: none; }
 .dg-region:hover rect { stroke: var(--ink); }
 .dg-region[aria-pressed="true"] rect, .dg-region:focus-visible rect { stroke: var(--select); stroke-width: 3; }
 .dg-label { font: 12px var(--font-label); fill: var(--ink-soft); }
-.dg-name { font: 600 13px var(--font-label); fill: #fff; pointer-events: none; }
-.dg-sub { font: 11px var(--font-label); fill: #fff; opacity: 0.92; pointer-events: none; }
+.dg-name { font: 600 12px var(--font-label); fill: #fff; pointer-events: none; }
+.dg-sub { font: 10px var(--font-label); fill: #fff; opacity: 0.92; pointer-events: none; }
 .dg-node { cursor: pointer; }
 .dg-node:hover rect, .dg-node:hover ellipse { stroke: var(--ink); stroke-width: 2; }
 .dg-node:focus-visible { outline: none; }
 .dg-node:focus-visible rect, .dg-node:focus-visible ellipse, .dg-node[aria-pressed="true"] rect, .dg-node[aria-pressed="true"] ellipse { stroke: var(--select); stroke-width: 4; }
-.dg-edge { fill: none; stroke-width: 2.5; }
+.dg-edge { fill: none; stroke-width: 2; pointer-events: none; }
 .dg-electron { stroke: #B8741A; }
 .dg-proton { stroke: var(--stain); stroke-dasharray: 6 4; }
 .dg-flow { stroke: var(--ink-soft); }
@@ -320,3 +320,6 @@ body.bare .panels { display: none; }
 
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .dg-carb { stroke: #E88B5C; } :root:not([data-theme="light"]) .dg-head-carb { fill: #E88B5C; } :root:not([data-theme="light"]) .dg-prot { stroke: #B896E6; } :root:not([data-theme="light"]) .dg-head-prot { fill: #B896E6; } :root:not([data-theme="light"]) .dg-fat { stroke: #D9B24A; } :root:not([data-theme="light"]) .dg-head-fat { fill: #D9B24A; } }
 :root[data-theme="dark"] .dg-carb { stroke: #E88B5C; } :root[data-theme="dark"] .dg-head-carb { fill: #E88B5C; } :root[data-theme="dark"] .dg-prot { stroke: #B896E6; } :root[data-theme="dark"] .dg-head-prot { fill: #B896E6; } :root[data-theme="dark"] .dg-fat { stroke: #D9B24A; } :root[data-theme="dark"] .dg-head-fat { fill: #D9B24A; }
+
+.dg-nav { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2); margin: 0 0 var(--s3); font: 12px var(--font-label); color: var(--ink-soft); }
+.dg-nav button[aria-pressed="true"] { border-color: var(--select); box-shadow: inset 3px 0 0 var(--select); }

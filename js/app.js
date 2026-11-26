@@ -244,6 +244,16 @@ function tissueCard(t, sel) {
 
 // Pathway diagram: replaces the viewport and the three panels until the person goes back
 const DIAGRAM_HIDE = ['vp-empty', 'onboard-try', 'vp-queue', 'kind-legend', 'vp-cell', 'vp-mol', 'vp-tissue', 'vp-anatomy', 'vp-compare', 'vp-switch'];
+// Menu of diagrams, always visible; the open one is marked
+function renderDiagramNav(s) {
+  const nav = $('dg-nav');
+  nav.querySelectorAll('button').forEach(b => b.remove());
+  nav.insertAdjacentHTML('beforeend', diagrams.diagrams.map(d => `<button class="chip" data-diagram-open="${esc(d.id)}" aria-pressed="${d.id === s.diagram}">${html(d.name)}</button>`).join(''));
+}
+$('dg-nav').addEventListener('click', e => {
+  const b = e.target.closest('button[data-diagram-open]');
+  if (b) setState({ diagram: getState().diagram === b.dataset.diagramOpen ? null : b.dataset.diagramOpen });
+});
 function renderDiagramView(s) {
   const dg = diagrams.diagrams.find(d => d.id === s.diagram);
   $('vp-diagram').hidden = !dg;
@@ -278,6 +288,7 @@ function render(s) {
   applyStatic();
   document.querySelectorAll('[data-lang-set]').forEach(b => b.setAttribute('aria-checked', b.dataset.langSet === getLang()));
   renderRuler(s);
+  renderDiagramNav(s);
   if (renderDiagramView(s)) return;
 
   const lv = levelInfo(s.level);
