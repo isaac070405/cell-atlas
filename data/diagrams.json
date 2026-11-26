@@ -3995,10 +3995,11 @@
       "zh-Hant": "3 個亞型，Gs"
      },
      "text": {
-      "en": "The β class has three subtypes (β1, β2, β3) and couples to Gs. In the heart β1 is mainly responsible for positive chronotropic and inotropic effects. The β2 receptor is the model for GPCR activation, and its structure with Gs is known.",
-      "zh-Hant": "β 類有三個亞型（β1、β2、β3），偶聯 Gs。在心臟，β1 主要負責正性變時與變力作用。β2 受體是 GPCR 活化的模型，其與 Gs 的複合體結構已知。"
+      "en": "The β class has three subtypes (β1, β2, β3) and couples to Gs. In the heart β1 is mainly responsible for positive chronotropic and inotropic effects. The β2 receptor is the model for GPCR activation, and its structure with Gs is in the atlas (3SN6).",
+      "zh-Hant": "β 類有三個亞型（β1、β2、β3），偶聯 Gs。在心臟，β1 主要負責正性變時與變力作用。β2 受體是 GPCR 活化的模型，圖譜內有其與 Gs 的複合體結構（3SN6）。"
      },
-     "cite": ["lohse-2003", "rasmussen-2011", "bylund-2021"]
+     "cite": ["lohse-2003", "rasmussen-2011", "bylund-2021"],
+     "links": ["pdb:3SN6"]
     },
     {
      "id": "gq",
@@ -4196,7 +4197,8 @@
       "en": "The stimulatory G protein of β receptors. It activates adenylyl cyclase.",
       "zh-Hant": "β 受體的刺激型 G 蛋白，活化腺苷酸環化酶。"
      },
-     "cite": ["rasmussen-2011", "bylund-2021"]
+     "cite": ["rasmussen-2011", "bylund-2021"],
+     "links": ["pdb:3SN6"]
     },
     {
      "id": "ac3",

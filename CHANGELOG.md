@@ -7,6 +7,7 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 ## Unreleased
 
 ### Added
+- Module B structure 3SN6 (human β2 adrenergic receptor with Gs, X-ray 3.2 Å, Rasmussen et al. 2011) with four preset views read from the deposited coordinates (agonist BI-167107, Asp113, the receptor and Gαs), linked both ways with the adrenergic receptor diagram (β receptor and Gs parts).
 - Protein synthesis diagram (`?diagram=protein-synthesis`): transcription (initiation, elongation, termination, RNA processing, mature mRNA) in the nucleus and translation (43S complex, scanning, 80S assembly, elongation, termination) in the cytosol, with the 80S ribosome part linked to PDB 4UG0 and 4UG0 linked back. Adds 9 verified citations.
 - Adrenergic receptor signalling diagram (`?diagram=adrenergic`): α1 (Gq/11, phospholipase C, IP3 and DAG, Ca²⁺ and PKC), α2 (Gi/o, adenylyl cyclase inhibition, Gβγ) and β (Gs, cAMP, PKA and EPAC), plus GRK and β-arrestin internalisation and signalling. Adds 7 verified citations.
 - Module B structure 1W0E (human cytochrome P450 3A4, ligand-free, X-ray 2.8 Å, Williams et al. 2004) with heme and Cys442 tour points read from the deposited coordinates, location data shared with 1TQN (`also` in `protein-location.json`), and two citations (Williams 2004, Sevrioukova & Poulos 2013). A structure's `cite` may now be a list.

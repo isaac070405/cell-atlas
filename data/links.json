@@ -118,6 +118,12 @@
       ]
     },
     {
+      "from": "pdb:3SN6",
+      "to": [
+        "diag:adrenergic"
+      ]
+    },
+    {
       "from": "pdb:1ZUM",
       "to": [
         "cell:hepatocyte",

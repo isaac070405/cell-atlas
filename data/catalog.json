@@ -771,6 +771,17 @@
       "from": "model peptide for extracellular collagen",
       "release": 1,
       "cite": "bella-1994"
+    },
+    {
+      "id": "3SN6",
+      "name": {
+        "en": "Human β2 adrenergic receptor–Gs complex",
+        "zh-Hant": "人類 β2 腎上腺素受體–Gs 複合體"
+      },
+      "method": "X-ray, 3.2 Å",
+      "from": "plasma membrane",
+      "release": 1,
+      "cite": "rasmussen-2011"
     }
   ]
 }
