@@ -14,7 +14,7 @@
    "parts": [
     {
      "id": "apical",
-     "color": "#7C8FB0",
+     "color": "#8EC5F0",
      "name": {
       "en": "Microvilli",
       "zh-Hant": "微絨毛"
@@ -355,7 +355,7 @@
     },
     {
      "id": "apical",
-     "color": "#7C8FB0",
+     "color": "#8EC5F0",
      "name": {
       "en": "Microvilli",
       "zh-Hant": "微絨毛"

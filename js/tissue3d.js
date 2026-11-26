@@ -137,7 +137,7 @@ export async function createTissueView(host, { onPick, elements }) {
           for (const [ox, oz] of [[0, 0], [0.015, 0.012], [-0.015, 0.012], [0, -0.018]]) tube(pts.map(q => [q[0] + ox, q[1], q[2] + oz]), 0.008, '#E8A33D', 'microtubule');
         } else for (let k = 0; k < 12; k++) {
           const a = r() * Math.PI * 2, d = Math.sqrt(r()) * 0.34;
-          put(new THREE.CylinderGeometry(0.018, 0.018, 0.24, 5), '#7C8FB0', 'apical').position.set(x + Math.cos(a) * d, 1.99, z + Math.sin(a) * d);
+          put(new THREE.CylinderGeometry(0.018, 0.018, 0.24, 5), '#8EC5F0', 'apical').position.set(x + Math.cos(a) * d, 1.99, z + Math.sin(a) * d);
         }
         // Microtubules running apex to base inside the cell: drawn on the cell wall so they show through the cell
         for (const a of [1.0, 3.2]) tube([[x + Math.cos(a) * 0.2, 0.5, z + Math.sin(a) * 0.2], [x + Math.cos(a) * 0.3, 1.2, z + Math.sin(a) * 0.3], [x + Math.cos(a) * 0.2, 1.85, z + Math.sin(a) * 0.2]], 0.012, '#E8A33D', 'microtubule', { opacity: 0.9 });
@@ -474,8 +474,8 @@ export async function createTissueView(host, { onPick, elements }) {
       for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
         const x = (i - (cols - 1) / 2) * pitch + (j % 2) * 0.25 - 0.12, z = (j - (rows - 1) / 2) * pitch, k = i * rows + j;
         if (k === 5 || k === 12) { const g = ball([x, 1.0, z], 0.36, '#6FC3DF', 'goblet', [1, 1.5, 1]); ball([x, 0.35, z], 0.2, '#8E5DB0', 'nucleus'); continue; }
-        for (let m = 0; m < 6; m++) { const a = m / 6 * Math.PI * 2; put(new THREE.CylinderGeometry(0.014, 0.014, 0.2, 5), '#7C8FB0', 'apical').position.set(x + Math.cos(a) * 0.17, 1.6, z + Math.sin(a) * 0.17); }
-        put(new THREE.CylinderGeometry(0.014, 0.014, 0.2, 5), '#7C8FB0', 'apical').position.set(x, 1.6, z);
+        for (let m = 0; m < 6; m++) { const a = m / 6 * Math.PI * 2; put(new THREE.CylinderGeometry(0.014, 0.014, 0.2, 5), '#8EC5F0', 'apical').position.set(x + Math.cos(a) * 0.17, 1.6, z + Math.sin(a) * 0.17); }
+        put(new THREE.CylinderGeometry(0.014, 0.014, 0.2, 5), '#8EC5F0', 'apical').position.set(x, 1.6, z);
       }
     },
     'stratified-squamous'() {
