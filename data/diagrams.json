@@ -1350,7 +1350,7 @@
      "y": 420,
      "w": 290,
      "h": 70,
-     "color": "#2F6B4F",
+     "color": "#E8D9A8",
      "name": {
       "en": "Lacteal",
       "zh-Hant": "乳糜管"
@@ -1363,7 +1363,8 @@
       "en": "Lymphatic capillary in the core of the villus. Chylomicrons are too large to enter blood capillaries, so they pass into the lacteal and travel in lymph.",
       "zh-Hant": "絨毛中央的淋巴微管。乳糜微粒太大，無法進入血液微血管，故進入乳糜管並隨淋巴運行。"
      },
-     "cite": ["iqbal-2009", "petrova-2018"]
+     "cite": ["iqbal-2009", "petrova-2018"],
+     "textColor": "#1D232B"
     }
    ]
   }
