@@ -173,6 +173,8 @@ html[data-lang="both"] .ruler-bands button { line-height: 1.1; padding-top: 2px;
 /* Card links */
 .card-sub { margin: var(--s4) 0 var(--s1); font: 500 12px/1.3 var(--font-label); color: var(--ink-soft); }
 .link-group { display: grid; grid-template-columns: 9.5em 1fr; gap: var(--s2); align-items: start; margin-top: var(--s1); }
+/* Chips inside a site group sit 4px apart; the groups themselves sit 12px apart so the grouping reads */
+.link-group + .link-group { margin-top: var(--s3); }
 .link-site { font-size: 13px; padding-top: 3px; }
 .link-group .chips { margin-top: 0; }
 @media (max-width: 760px) { .link-group { grid-template-columns: 1fr; gap: 2px; } }
