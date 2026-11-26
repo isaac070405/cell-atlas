@@ -1259,6 +1259,66 @@
       "year": 2007,
       "url": "https://doi.org/10.1038/sj.cdd.4402028",
       "status": "verified"
+    },
+    "pajak-2019": {
+      "source": "Pająk et al. (2019) Int J Mol Sci 21:234",
+      "detail": {
+        "en": "Review of 2-deoxy-D-glucose, with an overview of glucose metabolism: glycolysis turns glucose into two pyruvate and a net 2 ATP, pyruvate is oxidised to acetyl-CoA by the pyruvate dehydrogenase complex, the Krebs cycle yields NADH and FADH2, and the respiratory chain reoxidises them",
+        "zh-Hant": "2-脫氧-D-葡萄糖綜述，並概述葡萄糖代謝：糖解把葡萄糖變成兩個丙酮酸並淨得 2 個 ATP，丙酮酸經丙酮酸脫氫酶複合體氧化成乙醯輔酶 A，克雷布斯循環產生 NADH 與 FADH₂，再由呼吸鏈氧化回復"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2019,
+      "url": "https://doi.org/10.3390/ijms21010234",
+      "status": "verified"
+    },
+    "gray-2013": {
+      "source": "Gray, Tompkins & Taylor (2013) Cell Mol Life Sci 71:2577–2604",
+      "detail": {
+        "en": "Review of pyruvate metabolism: pyruvate is the end product of glycolysis and is transported into mitochondria (by the mitochondrial pyruvate carrier) as a fuel input for citric acid cycle carbon flux, with pyruvate dehydrogenase as a regulated step",
+        "zh-Hant": "丙酮酸代謝綜述：丙酮酸是糖解的終產物，經線粒體丙酮酸載體運入線粒體，作為檸檬酸循環碳流的燃料，丙酮酸脫氫酶是受調控的一步"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2013,
+      "url": "https://doi.org/10.1007/s00018-013-1539-2",
+      "status": "verified"
+    },
+    "saunier-2015": {
+      "source": "Saunier et al. (2015) Int J Cancer 138:809–817",
+      "detail": {
+        "en": "Review of the pyruvate dehydrogenase complex, which links glycolysis to the Krebs cycle by irreversible decarboxylation of pyruvate into acetyl-CoA, regulated by PDK and PDP phosphorylation",
+        "zh-Hant": "丙酮酸脫氫酶複合體綜述：它把丙酮酸不可逆地脫羧成乙醯輔酶 A，連接糖解與克雷布斯循環，並受 PDK 與 PDP 的磷酸化調控"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2015,
+      "url": "https://doi.org/10.1002/ijc.29564",
+      "status": "verified"
+    },
+    "anderson-2018": {
+      "source": "Anderson et al. (2018) Protein Cell 9:216–237",
+      "detail": {
+        "en": "Review of the tricarboxylic acid (TCA) cycle as a central route for oxidative phosphorylation that meets bioenergetic, biosynthetic and redox needs",
+        "zh-Hant": "三羧酸（TCA）循環綜述：它是氧化磷酸化的核心途徑，滿足能量、生物合成及氧化還原的需求"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2018,
+      "url": "https://doi.org/10.1007/s13238-017-0451-1",
+      "status": "verified"
+    },
+    "spinelli-2018": {
+      "source": "Spinelli & Haigis (2018) Nat Cell Biol 20:745–754",
+      "detail": {
+        "en": "Review of mitochondrial metabolism: mitochondria catabolise nutrients for energy, make biosynthetic precursors and compartmentalise metabolites",
+        "zh-Hant": "線粒體代謝綜述：線粒體分解養分以產生能量、製造生物合成前體，並把代謝物分隔"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2018,
+      "url": "https://doi.org/10.1038/s41556-018-0124-1",
+      "status": "verified"
     }
   }
 }

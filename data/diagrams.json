@@ -295,7 +295,7 @@
       "zh-Hant": "接收 NADH 的電子並傳給輔酶 Q，釋出的能量用於把質子由基質泵入膜間腔。人類結構為 PDB 5XTD。"
      },
      "cite": ["guo-2017", "fernandez-vizarra-2020"],
-     "link": "pdb:5XTD"
+     "links": ["pdb:5XTD", "diag:respiration"]
     },
     {
      "id": "cII",
@@ -2072,6 +2072,785 @@
       "zh-Hant": "細胞凋亡以特徵性的形態改變及耗能的生化事件完結，細胞被清除，對周圍組織損害極小。"
      },
      "cite": ["elmore-2007", "garrido-2006"]
+    }
+   ]
+  },
+  {
+   "id": "respiration",
+   "name": {
+    "en": "Cellular respiration: glycolysis and the TCA cycle",
+    "zh-Hant": "細胞呼吸：糖解與 TCA 循環"
+   },
+   "summary": {
+    "en": "Glycolysis in the cytosol turns one glucose into two pyruvate, with a net 2 ATP and 2 NADH. Pyruvate enters the mitochondrial matrix, where the pyruvate dehydrogenase complex makes acetyl-CoA and the TCA cycle oxidises it. The NADH and FADH₂ made on the way go to the electron transport chain.",
+    "zh-Hant": "細胞質內的糖解把一個葡萄糖變成兩個丙酮酸，淨得 2 個 ATP 與 2 個 NADH。丙酮酸進入線粒體基質，由丙酮酸脫氫酶複合體製成乙醯輔酶 A，再由 TCA 循環氧化。過程中產生的 NADH 與 FADH₂ 送往電子傳遞鏈。"
+   },
+   "cite": ["pajak-2019", "gray-2013", "anderson-2018"],
+   "viewBox": [
+    1000,
+    660
+   ],
+   "bands": [
+    {
+     "id": "cell",
+     "y": 0,
+     "h": 660
+    }
+   ],
+   "labels": [
+    {
+     "x": 230,
+     "y": 492,
+     "anchor": "start",
+     "text": {
+      "en": "enters the matrix",
+      "zh-Hant": "進入基質"
+     }
+    },
+    {
+     "x": 40,
+     "y": 560,
+     "anchor": "start",
+     "text": {
+      "en": "net: 2 ATP + 2 NADH",
+      "zh-Hant": "淨得：2 ATP + 2 NADH"
+     }
+    },
+    {
+     "x": 40,
+     "y": 578,
+     "anchor": "start",
+     "text": {
+      "en": "per glucose",
+      "zh-Hant": "每個葡萄糖"
+     }
+    },
+    {
+     "x": 760,
+     "y": 395,
+     "anchor": "middle",
+     "text": {
+      "en": "TCA cycle",
+      "zh-Hant": "TCA 循環"
+     }
+    },
+    {
+     "x": 578,
+     "y": 466,
+     "anchor": "end",
+     "text": {
+      "en": "CO₂, NADH",
+      "zh-Hant": "CO₂、NADH"
+     }
+    },
+    {
+     "x": 566,
+     "y": 392,
+     "anchor": "end",
+     "text": {
+      "en": "CO₂, NADH",
+      "zh-Hant": "CO₂、NADH"
+     }
+    },
+    {
+     "x": 652,
+     "y": 322,
+     "anchor": "end",
+     "text": {
+      "en": "GTP / ATP",
+      "zh-Hant": "GTP / ATP"
+     }
+    },
+    {
+     "x": 852,
+     "y": 326,
+     "anchor": "start",
+     "text": {
+      "en": "FADH₂",
+      "zh-Hant": "FADH₂"
+     }
+    },
+    {
+     "x": 962,
+     "y": 474,
+     "anchor": "end",
+     "text": {
+      "en": "NADH",
+      "zh-Hant": "NADH"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "type": "gly",
+     "pts": [
+      [
+       125,
+       90
+      ],
+      [
+       125,
+       190
+      ]
+     ]
+    },
+    {
+     "type": "gly",
+     "pts": [
+      [
+       125,
+       230
+      ],
+      [
+       125,
+       330
+      ]
+     ]
+    },
+    {
+     "type": "gly",
+     "pts": [
+      [
+       125,
+       370
+      ],
+      [
+       125,
+       480
+      ]
+     ]
+    },
+    {
+     "type": "gly",
+     "pts": [
+      [
+       210,
+       500
+      ],
+      [
+       395,
+       500
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       487,
+       522
+      ],
+      [
+       487,
+       590
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       610,
+       607
+      ],
+      [
+       735,
+       607
+      ],
+      [
+       735,
+       558
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       707,
+       526
+      ],
+      [
+       693,
+       522
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       628,
+       489
+      ],
+      [
+       602,
+       449
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       602,
+       411
+      ],
+      [
+       628,
+       371
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       693,
+       338
+      ],
+      [
+       707,
+       334
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       813,
+       334
+      ],
+      [
+       827,
+       338
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       892,
+       371
+      ],
+      [
+       918,
+       411
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       918,
+       449
+      ],
+      [
+       892,
+       489
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       827,
+       522
+      ],
+      [
+       813,
+       526
+      ]
+     ]
+    }
+   ],
+   "legend": [
+    {
+     "type": "gly",
+     "label": {
+      "en": "Glycolysis and pyruvate transport",
+      "zh-Hant": "糖解與丙酮酸運輸"
+     }
+    },
+    {
+     "type": "tca",
+     "label": {
+      "en": "Acetyl-CoA and the TCA cycle",
+      "zh-Hant": "乙醯輔酶 A 與 TCA 循環"
+     }
+    }
+   ],
+   "nodes": [
+    {
+     "id": "cytosol",
+     "kind": "region",
+     "x": 20,
+     "y": 20,
+     "w": 340,
+     "h": 620,
+     "tx": 35,
+     "ty": 628,
+     "color": "#C39A2E",
+     "name": {
+      "en": "Cytosol",
+      "zh-Hant": "細胞質"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Glycolysis takes place in the cytosol and does not need oxygen. It turns one glucose into two pyruvate.",
+      "zh-Hant": "糖解在細胞質進行，不需要氧氣，把一個葡萄糖變成兩個丙酮酸。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "matrix",
+     "kind": "region",
+     "x": 380,
+     "y": 270,
+     "w": 620,
+     "h": 380,
+     "tx": 395,
+     "ty": 292,
+     "color": "#B0563A",
+     "name": {
+      "en": "Mitochondrial matrix",
+      "zh-Hant": "線粒體基質"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Pyruvate oxidation and the TCA cycle take place in the matrix. Pyruvate is transported into the mitochondrion before it is oxidised.",
+      "zh-Hant": "丙酮酸氧化與 TCA 循環在基質進行。丙酮酸先運入線粒體，才被氧化。"
+     },
+     "cite": ["gray-2013", "spinelli-2018"]
+    },
+    {
+     "id": "glc",
+     "kind": "box",
+     "x": 40,
+     "y": 50,
+     "w": 170,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Glucose",
+      "zh-Hant": "葡萄糖"
+     },
+     "sub": {
+      "en": "6 carbons",
+      "zh-Hant": "6 個碳"
+     },
+     "text": {
+      "en": "The fuel of glycolysis. Glucose enters the cell and is trapped there by phosphorylation, which is the first step of glycolysis.",
+      "zh-Hant": "糖解的燃料。葡萄糖進入細胞後經磷酸化被困在細胞內，這是糖解的第一步。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "hkpfk",
+     "kind": "box",
+     "x": 235,
+     "y": 118,
+     "w": 115,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Hexokinase, PFK-1",
+      "zh-Hant": "己糖激酶、PFK-1"
+     },
+     "sub": {
+      "en": "use 2 ATP",
+      "zh-Hant": "消耗 2 ATP"
+     },
+     "text": {
+      "en": "Hexokinase and phosphofructokinase-1 each add a phosphate from ATP, so the investment phase uses 2 ATP. 2-deoxyglucose blocks hexokinase.",
+      "zh-Hant": "己糖激酶與磷酸果糖激酶-1 各自從 ATP 取得一個磷酸，因此投入期消耗 2 個 ATP。2-脫氧葡萄糖會阻斷己糖激酶。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "f16",
+     "kind": "box",
+     "x": 40,
+     "y": 190,
+     "w": 170,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Fructose 1,6-bisphosphate",
+      "zh-Hant": "果糖 1,6-二磷酸"
+     },
+     "sub": {
+      "en": "6 carbons",
+      "zh-Hant": "6 個碳"
+     },
+     "text": {
+      "en": "A six-carbon sugar with two phosphates. It is the product of the investment phase.",
+      "zh-Hant": "帶兩個磷酸的六碳糖，是投入期的產物。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "ald",
+     "kind": "box",
+     "x": 235,
+     "y": 248,
+     "w": 115,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Aldolase",
+      "zh-Hant": "醛縮酶"
+     },
+     "sub": {
+      "en": "splits into 2 × 3C",
+      "zh-Hant": "分成 2 個三碳"
+     },
+     "text": {
+      "en": "Aldolase splits the six-carbon sugar into two three-carbon sugars, so everything after this step happens twice per glucose.",
+      "zh-Hant": "醛縮酶把六碳糖分成兩個三碳糖，因此之後每一步每個葡萄糖都發生兩次。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "g3p",
+     "kind": "box",
+     "x": 40,
+     "y": 330,
+     "w": 170,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Glyceraldehyde 3-phosphate",
+      "zh-Hant": "甘油醛 3-磷酸"
+     },
+     "sub": {
+      "en": "2 molecules, 3 carbons",
+      "zh-Hant": "2 個分子，各 3 個碳"
+     },
+     "text": {
+      "en": "The three-carbon sugar that enters the payoff phase. Two molecules form from each glucose.",
+      "zh-Hant": "進入回報期的三碳糖，每個葡萄糖產生兩個分子。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "gapdh",
+     "kind": "box",
+     "x": 235,
+     "y": 376,
+     "w": 115,
+     "h": 36,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "GAPDH",
+      "zh-Hant": "GAPDH"
+     },
+     "sub": {
+      "en": "makes 2 NADH",
+      "zh-Hant": "產生 2 NADH"
+     },
+     "text": {
+      "en": "Glyceraldehyde 3-phosphate dehydrogenase reduces NAD⁺ to NADH. Two NADH form per glucose. Several steps between this one and pyruvate kinase are not drawn.",
+      "zh-Hant": "甘油醛 3-磷酸脫氫酶把 NAD⁺ 還原成 NADH，每個葡萄糖產生 2 個 NADH。此步與丙酮酸激酶之間的數步沒有畫出。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "pk",
+     "kind": "box",
+     "x": 235,
+     "y": 426,
+     "w": 115,
+     "h": 36,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Pyruvate kinase",
+      "zh-Hant": "丙酮酸激酶"
+     },
+     "sub": {
+      "en": "makes 4 ATP",
+      "zh-Hant": "產生 4 ATP"
+     },
+     "text": {
+      "en": "The payoff phase makes 4 ATP per glucose. Subtracting the 2 ATP spent earlier, glycolysis nets 2 ATP.",
+      "zh-Hant": "回報期每個葡萄糖產生 4 個 ATP，減去先前消耗的 2 個，糖解淨得 2 個 ATP。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "pyr",
+     "kind": "box",
+     "x": 40,
+     "y": 480,
+     "w": 170,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Pyruvate",
+      "zh-Hant": "丙酮酸"
+     },
+     "sub": {
+      "en": "2 molecules, 3 carbons",
+      "zh-Hant": "2 個分子，各 3 個碳"
+     },
+     "text": {
+      "en": "The end product of glycolysis. It is transported into mitochondria through the mitochondrial pyruvate carrier as the fuel input of the citric acid cycle. Without oxygen it is reduced to lactate instead.",
+      "zh-Hant": "糖解的終產物，經線粒體丙酮酸載體運入線粒體，作為檸檬酸循環的燃料。缺氧時它會改為還原成乳酸。"
+     },
+     "cite": ["gray-2013", "pajak-2019"]
+    },
+    {
+     "id": "pdh",
+     "kind": "box",
+     "x": 395,
+     "y": 478,
+     "w": 185,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Pyruvate dehydrogenase",
+      "zh-Hant": "丙酮酸脫氫酶"
+     },
+     "sub": {
+      "en": "pyruvate → acetyl-CoA + CO₂ + NADH",
+      "zh-Hant": "丙酮酸 → 乙醯輔酶 A + CO₂ + NADH"
+     },
+     "text": {
+      "en": "The pyruvate dehydrogenase complex links glycolysis to the Krebs cycle. It decarboxylates pyruvate into acetyl-CoA irreversibly, and is regulated by phosphorylation (PDK and PDP).",
+      "zh-Hant": "丙酮酸脫氫酶複合體連接糖解與克雷布斯循環，把丙酮酸不可逆地脫羧成乙醯輔酶 A，並受磷酸化（PDK 與 PDP）調控。"
+     },
+     "cite": ["saunier-2015", "gray-2013"]
+    },
+    {
+     "id": "acoa",
+     "kind": "box",
+     "x": 480,
+     "y": 590,
+     "w": 130,
+     "h": 34,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Acetyl-CoA",
+      "zh-Hant": "乙醯輔酶 A"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "The two-carbon fuel of the TCA cycle. It joins oxaloacetate to make citrate.",
+      "zh-Hant": "TCA 循環的二碳燃料，與草醯乙酸結合成檸檬酸。"
+     },
+     "cite": ["pajak-2019", "saunier-2015"]
+    },
+    {
+     "id": "cit",
+     "kind": "box",
+     "x": 710,
+     "y": 524,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Citrate",
+      "zh-Hant": "檸檬酸"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Formed from acetyl-CoA and oxaloacetate. The first step of the TCA cycle.",
+      "zh-Hant": "由乙醯輔酶 A 與草醯乙酸生成，是 TCA 循環的第一步。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "iso",
+     "kind": "box",
+     "x": 590,
+     "y": 492,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Isocitrate",
+      "zh-Hant": "異檸檬酸"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "An isomer of citrate. The cycle then removes carbon from it.",
+      "zh-Hant": "檸檬酸的異構物，循環其後從它移走碳。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "akg",
+     "kind": "box",
+     "x": 540,
+     "y": 414,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "α-Ketoglutarate",
+      "zh-Hant": "α-酮戊二酸"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Five-carbon intermediate. Its formation from isocitrate releases CO₂ and makes NADH.",
+      "zh-Hant": "五碳中間物，由異檸檬酸生成時釋出 CO₂ 並產生 NADH。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "scoa",
+     "kind": "box",
+     "x": 590,
+     "y": 336,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Succinyl-CoA",
+      "zh-Hant": "琥珀醯輔酶 A"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Four-carbon intermediate. Its formation from α-ketoglutarate releases a second CO₂ and makes NADH.",
+      "zh-Hant": "四碳中間物，由 α-酮戊二酸生成時釋出第二個 CO₂ 並產生 NADH。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "suc",
+     "kind": "box",
+     "x": 710,
+     "y": 304,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Succinate",
+      "zh-Hant": "琥珀酸"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Formed from succinyl-CoA with the release of GTP or ATP.",
+      "zh-Hant": "由琥珀醯輔酶 A 生成，並釋出 GTP 或 ATP。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "fum",
+     "kind": "box",
+     "x": 830,
+     "y": 336,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Fumarate",
+      "zh-Hant": "延胡索酸"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Formed from succinate. This step makes FADH₂.",
+      "zh-Hant": "由琥珀酸生成，此步產生 FADH₂。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "mal",
+     "kind": "box",
+     "x": 880,
+     "y": 414,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Malate",
+      "zh-Hant": "蘋果酸"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Formed from fumarate by adding water.",
+      "zh-Hant": "由延胡索酸加水生成。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "oaa",
+     "kind": "box",
+     "x": 830,
+     "y": 492,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Oxaloacetate",
+      "zh-Hant": "草醯乙酸"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Made from malate with NADH. It condenses with acetyl-CoA to start the next turn, so the cycle regenerates its own starting molecule.",
+      "zh-Hant": "由蘋果酸生成並產生 NADH。它與乙醯輔酶 A 縮合，開始下一圈，因此循環會重新生成起始分子。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "carry",
+     "kind": "box",
+     "x": 665,
+     "y": 408,
+     "w": 190,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "NADH + FADH₂",
+      "zh-Hant": "NADH + FADH₂"
+     },
+     "sub": {
+      "en": "to the electron transport chain",
+      "zh-Hant": "送往電子傳遞鏈"
+     },
+     "text": {
+      "en": "Glycolysis, pyruvate oxidation and the TCA cycle load electron carriers with electrons. The respiratory chain reoxidises them and makes ATP. See the electron transport chain diagram.",
+      "zh-Hant": "糖解、丙酮酸氧化與 TCA 循環把電子載入電子載體，呼吸鏈再把它們氧化並製造 ATP。見電子傳遞鏈圖解。"
+     },
+     "cite": ["pajak-2019", "anderson-2018"],
+     "links": ["diag:etc-pathway"]
     }
    ]
   }

@@ -329,3 +329,9 @@ body.bare .panels { display: none; }
 .dg-key-ext { border-color: #3B4F9C; } .dg-key-int { border-color: #A8481A; } .dg-key-inhibit { border-color: #B3261E; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .dg-ext { stroke: #8FA6EE; } :root:not([data-theme="light"]) .dg-head-ext { fill: #8FA6EE; } :root:not([data-theme="light"]) .dg-int { stroke: #E88B5C; } :root:not([data-theme="light"]) .dg-head-int { fill: #E88B5C; } :root:not([data-theme="light"]) .dg-inhibit, :root:not([data-theme="light"]) .dg-head-inhibit { stroke: #F07A72; } }
 :root[data-theme="dark"] .dg-ext { stroke: #8FA6EE; } :root[data-theme="dark"] .dg-head-ext { fill: #8FA6EE; } :root[data-theme="dark"] .dg-int { stroke: #E88B5C; } :root[data-theme="dark"] .dg-head-int { fill: #E88B5C; } :root[data-theme="dark"] .dg-inhibit, :root[data-theme="dark"] .dg-head-inhibit { stroke: #F07A72; }
+
+.dg-gly { stroke: #A8481A; } .dg-tca { stroke: #2F6B4F; }
+.dg-head-gly { fill: #A8481A; } .dg-head-tca { fill: #2F6B4F; }
+.dg-key-gly { border-color: #A8481A; } .dg-key-tca { border-color: #2F6B4F; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .dg-gly { stroke: #E88B5C; } :root:not([data-theme="light"]) .dg-head-gly { fill: #E88B5C; } :root:not([data-theme="light"]) .dg-tca { stroke: #6FBF96; } :root:not([data-theme="light"]) .dg-head-tca { fill: #6FBF96; } }
+:root[data-theme="dark"] .dg-gly { stroke: #E88B5C; } :root[data-theme="dark"] .dg-head-gly { fill: #E88B5C; } :root[data-theme="dark"] .dg-tca { stroke: #6FBF96; } :root[data-theme="dark"] .dg-head-tca { fill: #6FBF96; }
