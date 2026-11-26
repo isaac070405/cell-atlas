@@ -704,6 +704,22 @@
     "tissue.cat.grp.other": {
       "en": "Vessels and nerves",
       "zh-Hant": "血管同神經"
+    },
+    "onboard.try": {
+      "en": "Try this path, one number at a time:",
+      "zh-Hant": "試試這條路線，逐個數字查看："
+    },
+    "onboard.try.cell": {
+      "en": "Hepatocyte",
+      "zh-Hant": "肝細胞"
+    },
+    "onboard.try.org": {
+      "en": "Mitochondrion",
+      "zh-Hant": "粒線體"
+    },
+    "onboard.try.pdb": {
+      "en": "Complex I (5XTD)",
+      "zh-Hant": "Complex I（5XTD）"
     }
   }
 }

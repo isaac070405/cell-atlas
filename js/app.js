@@ -271,6 +271,7 @@ function render(s) {
   const point = points.find(p => p.id === s.tour);
   const showMol = B && !!pdb;
   $('vp-empty').hidden = compare || showMol || C;
+  $('onboard-try').hidden = !(A && !s.cell && !compare);
   document.body.classList.toggle('level-c', C);
   const fr = $('vp-anatomy');
   fr.hidden = !C;

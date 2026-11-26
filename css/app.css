@@ -284,3 +284,7 @@ body.bare .panels { display: none; }
 /* Motion: feedback only. Controls acknowledge hover and press in 120ms; the ruler label colour follows the band fade (.25s) so the label never sits pale-on-pale mid-change. Reduced motion turns every transition off (rule above), and each state still changes at once. */
 .seg button, .icon-btn, .queue button, .chip, .tour button { transition: background-color .12s cubic-bezier(.16, 1, .3, 1), border-color .12s cubic-bezier(.16, 1, .3, 1), color .12s cubic-bezier(.16, 1, .3, 1), box-shadow .12s cubic-bezier(.16, 1, .3, 1); }
 .ruler-bands button { transition: color .25s cubic-bezier(.16, 1, .3, 1); }
+
+/* First-run path: three source-linked links, shown only on the empty Cell view */
+.onboard-try { margin: var(--s3) 0 0; font-size: 14px; color: var(--ink-soft); max-width: 60ch; }
+.onboard-try .chip { margin: 0 2px; }
