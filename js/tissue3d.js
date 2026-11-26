@@ -107,19 +107,40 @@ export async function createTissueView(host, { onPick, elements }) {
     epithelial() {
       const cols = 5, rows = 3, pitch = 0.95, r = rng(3);
       put(new THREE.BoxGeometry(5.2, 1.5, 3.2), '#E7A99E', 'connective').position.set(0, -0.45, 0);
-      put(new THREE.BoxGeometry(5.2, 0.1, 3.2), '#B7A7C9', 'basal').position.set(0, 0.35, 0);
+      // Basal lamina in two layers: dark lamina densa on the connective tissue, pale lamina lucida under the cells
+      put(new THREE.BoxGeometry(5.2, 0.07, 3.2), '#6F5A92', 'densa').position.set(0, 0.33, 0);
+      put(new THREE.BoxGeometry(5.2, 0.05, 3.2), '#D8CCEA', 'lucida').position.set(0, 0.385, 0);
       tube([[-2.6, -0.55, 0.3], [-1.2, -0.45, 0.2], [0.3, -0.6, 0.35], [1.6, -0.5, 0.25], [2.6, -0.55, 0.3]], 0.17, '#B23A3A', 'capillary');
       tube([[-1.9, -1.1, -0.8], [-1.6, -0.4, -0.7], [-1.45, 0.3, -0.6], [-1.3, 0.9, -0.55]], 0.035, '#E6C34A', 'nerve');
       tube([[-0.4, -1.1, 0.9], [-0.2, -0.3, 0.8], [0.0, 0.3, 0.7], [0.1, 0.8, 0.6]], 0.035, '#E6C34A', 'nerve');
       for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
-        const x = (i - (cols - 1) / 2) * pitch + (j % 2) * 0.25 - 0.12, z = (j - (rows - 1) / 2) * pitch;
+        const x = (i - (cols - 1) / 2) * pitch + (j % 2) * 0.25 - 0.12, z = (j - (rows - 1) / 2) * pitch, role = (i * rows + j) % 5;
         put(new THREE.CylinderGeometry(0.44, 0.4, 1.5, 6), SURFACE_LAYER, 'cell').position.set(x, 1.15, z);
         ball([x, 0.78, z], 0.3, '#8E5DB0', 'nucleus', [0.9, 1.15, 0.9]);
-        const ring = put(new THREE.TorusGeometry(0.42, 0.03, 8, 24), '#3FA7A7', 'junction'); ring.rotation.x = Math.PI / 2; ring.position.set(x, 1.72, z);
-        for (let k = 0; k < 12; k++) {
+        // Junctions: tight belt at the apex, adherens belt below it, then desmosome spots and gap junction dots on the sides
+        const belt = (y, rad, color, part) => { const m = put(new THREE.TorusGeometry(rad, 0.03, 8, 24), color, part); m.rotation.x = Math.PI / 2; m.position.set(x, y, z); };
+        belt(1.8, 0.42, '#3FA7A7', 'tight'); belt(1.66, 0.43, '#E86C5D', 'adherens');
+        const side = (a, y, geom, color, part, rad = 0.43) => { const m = put(geom, color, part); m.position.set(x + Math.cos(a) * rad, y, z + Math.sin(a) * rad); m.rotation.set(0, -a, Math.PI / 2); return m; };
+        for (const a of [0.4, 2.5, 4.4]) side(a, 1.28, new THREE.CylinderGeometry(0.09, 0.09, 0.04, 14), '#D9A441', 'desmosome');
+        for (const a of [1.4, 3.5, 5.4]) for (const [dy, da] of [[0.9, 0], [1.0, 0.1], [0.9, 0.2]]) side(a + da, dy, new THREE.SphereGeometry(0.035, 10, 8), '#8BC34A', 'gap', 0.44);
+        // Hemidesmosomes: half-discs on the basal surface, anchoring the cell to the lamina lucida
+        for (const a of [0.3, 2.4, 4.5]) { const m = ball([x + Math.cos(a) * 0.27, 0.42, z + Math.sin(a) * 0.27], 0.085, '#C2569B', 'hemidesmosome', [1, 0.4, 1]); m.position.y = 0.41; }
+        // Apical surface: stereocilia, cilia (with an inner microtubule core) or microvilli, by cell
+        const top = 1.9;
+        if (role === 0) for (let k = 0; k < 9; k++) {
+          const a = r() * Math.PI * 2, d = Math.sqrt(r()) * 0.32, h = 0.55 - 0.18 * (d / 0.32);
+          put(new THREE.CylinderGeometry(0.03, 0.03, h, 6), '#9AA7C7', 'stereocilia').position.set(x + Math.cos(a) * d, top + h / 2, z + Math.sin(a) * d);
+        } else if (role === 2) for (let k = 0; k < 6; k++) {
+          const a = (k / 6) * Math.PI * 2 + 0.3, d = 0.26 * (k % 2 ? 1 : 0.5), tx = x + Math.cos(a) * d, tz = z + Math.sin(a) * d, lean = 0.12;
+          const pts = [[tx, top, tz], [tx + Math.cos(a) * lean * 0.4, top + 0.35, tz + Math.sin(a) * lean * 0.4], [tx + Math.cos(a) * lean, top + 0.7, tz + Math.sin(a) * lean]];
+          tube(pts, 0.04, '#5FB3A1', 'cilia', { opacity: 0.55 });
+          for (const [ox, oz] of [[0, 0], [0.015, 0.012], [-0.015, 0.012], [0, -0.018]]) tube(pts.map(q => [q[0] + ox, q[1], q[2] + oz]), 0.008, '#E8A33D', 'microtubule');
+        } else for (let k = 0; k < 12; k++) {
           const a = r() * Math.PI * 2, d = Math.sqrt(r()) * 0.34;
           put(new THREE.CylinderGeometry(0.018, 0.018, 0.24, 5), '#7C8FB0', 'apical').position.set(x + Math.cos(a) * d, 1.99, z + Math.sin(a) * d);
         }
+        // Microtubules running apex to base inside the cell: drawn on the cell wall so they show through the cell
+        for (const a of [1.0, 3.2]) tube([[x + Math.cos(a) * 0.2, 0.5, z + Math.sin(a) * 0.2], [x + Math.cos(a) * 0.3, 1.2, z + Math.sin(a) * 0.3], [x + Math.cos(a) * 0.2, 1.85, z + Math.sin(a) * 0.2]], 0.012, '#E8A33D', 'microtubule', { opacity: 0.9 });
       }
     },
 
@@ -146,6 +167,12 @@ export async function createTissueView(host, { onPick, elements }) {
       }
       ball([-1.9, 0.4, 0.9], 0.3, '#C96F5A', 'macrophage', [1, 1, 1], { opacity: 0.85 }); ball([-1.9, 0.4, 0.9], 0.11, '#E59AB8', 'macrophage');
       ball([1.8, 0.9, 0.9], 0.22, '#7B5FB5', 'plasma'); ball([1.84, 0.93, 1.0], 0.1, '#D7A8E8', 'plasma');
+      // Mast cell: round, granule-filled, beside the capillary
+      ball([1.2, 0.0, -0.6], 0.3, '#2F8F9D', 'mast', [1, 1, 1], { opacity: 0.6 }); ball([1.2, 0.0, -0.6], 0.12, '#1F5E73', 'mast');
+      for (let k = 0; k < 14; k++) { const a = r() * Math.PI * 2, b = Math.acos(2 * r() - 1), d = 0.2 + r() * 0.08; ball([1.2 + Math.sin(b) * Math.cos(a) * d, Math.cos(b) * d, -0.6 + Math.sin(b) * Math.sin(a) * d], 0.04, '#0F3F52', 'mast'); }
+      // Mesenchymal stem cell: small spindle with a few short processes
+      { const m = ball([-0.2, -0.1, -0.4], 0.32, '#C9A0DC', 'msc', [1, 0.3, 0.45]); m.rotation.y = -0.5; const n = ball([-0.2, -0.1, -0.4], 0.12, '#7E4FA0', 'msc', [1.1, 0.8, 1]); n.rotation.y = -0.5;
+        tube([[-0.5, -0.1, -0.25], [-0.75, -0.05, -0.1]], 0.025, '#C9A0DC', 'msc'); tube([[0.1, -0.1, -0.55], [0.3, -0.05, -0.7]], 0.025, '#C9A0DC', 'msc'); }
       for (const [x, y, z, rr] of [[0.2, -1.0, 0.8, 0.36], [0.7, -0.85, 0.5, 0.3], [0.1, -0.7, 1.15, 0.28], [0.7, -1.1, 1.05, 0.3]]) ball([x, y, z], rr, '#F3E27A', 'fat', [1, 1, 1], { opacity: 0.75 });
       tube([[-2.5, -0.2, -1.0], [-1.0, -0.1, -0.9], [0.2, 0.3, -1.1], [1.4, 0.1, -1.0]], 0.15, '#C8312E', 'capillary');
       tube([[0.6, -1.3, -0.2], [1.2, -0.8, 0.1], [1.7, -0.6, 0.0], [2.3, -0.4, 0.3]], 0.1, '#E8C93C', 'nerve');
