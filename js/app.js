@@ -259,7 +259,9 @@ function renderDiagramView(s) {
   $('vp-diagram').hidden = !dg;
   if (!dg) return false;
   DIAGRAM_HIDE.forEach(id => { $(id).hidden = true; });
-  document.querySelector('.schematic').hidden = false;
+  const note = document.querySelector('.schematic');
+  note.hidden = false;
+  note.innerHTML = html('diagram.note');  // a pathway is not a to-scale picture; applyStatic restores the usual note on the next render
   document.body.classList.remove('level-c', 'bare');
   $('vp-title').innerHTML = html(dg.name);
   $('ro-view').innerHTML = html(dg.name);
