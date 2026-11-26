@@ -7,7 +7,8 @@ colors:
   ink: "#1D232B"
   ink-soft: "#5A6270"
   rule: "#C9C4B6"
-  control-edge: "#8A8F94"
+  control-edge: "#7F848C"
+  control-edge-dark: "#777F89"
   stain: "#24489A"
   select: "#B8336A"
   ok: "#2F6B4F"
@@ -61,6 +62,31 @@ typography:
     fontSize: "14px"
     fontWeight: 400
     lineHeight: 1.6
+  body-panel:
+    fontFamily: "Source Serif 4, Noto Serif TC, Georgia, serif"
+    fontSize: "15px"
+    lineHeight: 1.6
+  body-mobile:
+    fontFamily: "Source Serif 4, Noto Serif TC, Georgia, serif"
+    fontSize: "16px"
+    lineHeight: 1.6
+  title-mobile:
+    fontFamily: "Source Serif 4, Noto Serif TC, Georgia, serif"
+    fontSize: "24px"
+    fontWeight: 600
+    lineHeight: 1.1
+  caption:
+    fontFamily: "Source Serif 4, Noto Serif TC, Georgia, serif"
+    fontSize: "13px"
+    lineHeight: 1.5
+  label-sm:
+    fontFamily: "JetBrains Mono, ui-monospace, monospace"
+    fontSize: "11px"
+    lineHeight: 1.3
+  label-xs:
+    fontFamily: "JetBrains Mono, ui-monospace, monospace"
+    fontSize: "10px"
+    lineHeight: 1
   label:
     fontFamily: "JetBrains Mono, ui-monospace, monospace"
     fontSize: "12px"
@@ -141,7 +167,7 @@ A restrained paper and ink palette with two stain accents, plus fixed categorica
 - **Ink** (#1D232B, dark #E3E1D9): body text and ruler ticks.
 - **Soft Ink** (#5A6270, dark #98A0AC): labels, units, secondary text.
 - **Rule Grey** (#C9C4B6, dark #2E3946): hairlines, dividers, grid lines.
-- **Control Edge** (soft ink at 75% over paper, about #8A8F94 in light mode, 3.1:1): borders of buttons and segmented controls, `--edge`.
+- **Control Edge** (soft ink at 75% over paper: #7F848C light 3.1:1, #777F89 dark 4.3:1): borders of buttons and segmented controls, `--edge`.
 
 ### Status
 - **Verified Green** (#2F6B4F, dark #6FBF96) and **Pending Amber** (#8A5A12, dark #D9A75A): source badges, always outlined and paired with text.
@@ -170,8 +196,8 @@ A restrained paper and ink palette with two stain accents, plus fixed categorica
 - **Title** (600, 30px, 1.1, -0.01em): the HUD title; 24px under 760px.
 - **Headline** (600, 22px): viewport titles.
 - **Body** (400, 17px, 1.6): reading text; panel body 15px; max line length 60 to 72ch.
-- **Body small** (400, 14 to 15px): panel text, key-value rows, source lists, compare table.
-- **Label** (500, 11 to 13px, mono): HUD readouts, panel headings, ruler bands, ids, chips.
+- **Body small** (400, 14 to 15px): panel text (15px), key-value rows, source lists, compare table (14px). **Caption** (13px): link-site names. **Body mobile** (16px) and **Title mobile** (24px) apply under 760px.
+- **Label** (500, 12 to 13px, mono; 11px small, 10px for mobile ruler ticks): HUD readouts, panel headings, ruler bands, ids, chips.
 
 ### Named Rules
 **The Mono Is Data Rule.** Anything measured, identified or sourced (values, units, PDB ids, chips) sets in the monospace.
@@ -208,7 +234,7 @@ One corner radius, 3px, on buttons, chips, badges and segmented controls. Border
 - **Style:** mono 11px, outlined in currentColor, green for verified, amber for pending.
 
 ### Scale ruler
-- **Style:** SVG axis with ink ticks, mono tick labels, blue bands at 8% opacity that rise to 90% when selected (0.25s).
+- **Style:** under 760px band labels clip with an ellipsis so narrow levels (Body, System) never overprint their neighbours. SVG axis with ink ticks, mono tick labels, blue bands at 8% opacity that rise to 90% when selected (0.25s).
 
 ### Compare table
 - **Style:** hairline row dividers at 55% rule colour, mono corner header, eosin inset underline on the active column. Unmeasured cells show a dash.

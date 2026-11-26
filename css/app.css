@@ -59,7 +59,7 @@ button { font: inherit; color: inherit; }
   position: absolute; top: 0; height: 34px;
   background: none; border: 0; cursor: pointer;
   font: 500 13px/34px var(--font-label); color: var(--ink);
-  text-align: center; white-space: nowrap;
+  text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 2px;
 }
 .ruler-bands button[aria-selected="true"] { color: var(--paper); }
 .ruler-bands button .t-zh { font-family: var(--font-zh); }
