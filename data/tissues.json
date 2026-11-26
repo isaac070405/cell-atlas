@@ -32,9 +32,10 @@
       "zh-Hant": "靜纖毛"
      },
      "text": {
-      "en": "Long, stiff, non-motile projections on the apical surface, built on actin filaments like very long microvilli. They are not true cilia. They absorb fluid in the epididymis and sense movement in the hair cells of the inner ear.",
-      "zh-Hant": "頂端表面又長又硬的不能運動突起，以肌動蛋白絲構成，結構如超長的微絨毛，並非真正的纖毛。它們在附睪吸收液體，並在內耳毛細胞感應運動。"
-     }
+      "en": "Long, stiff, non-motile projections on the apical surface, built on actin filaments like very long microvilli. They are not true cilia. In inner-ear hair cells, bundles of stereocilia help convert sound vibrations into electrical signals.",
+      "zh-Hant": "頂端表面又長又硬的不能運動突起，以肌動蛋白絲構成，結構如超長的微絨毛，並非真正的纖毛。在內耳毛細胞中，靜纖毛束協助把聲音振動轉成電訊號。"
+     },
+     "cite": ["schwander-2010"]
     },
     {
      "id": "cilia",
@@ -44,9 +45,10 @@
       "zh-Hant": "纖毛"
      },
      "text": {
-      "en": "Motile projections of the apical surface, 5 to 10 µm long, with a 9+2 microtubule core (axoneme). They beat together to move mucus or fluid across the surface, as in the airways and the uterine tube.",
-      "zh-Hant": "頂端表面可運動的突起，長約 5 至 10 µm，核心為 9+2 微管結構（軸絲）。它們協調擺動，推動黏液或液體越過表面，例如呼吸道與輸卵管。"
-     }
+      "en": "Motile projections of the apical surface with a 9+2 microtubule core (axoneme). They beat together to move mucus or fluid across the surface, as in the airways and the uterine tube. Primary cilia have a 9+0 core and sense signals.",
+      "zh-Hant": "頂端表面可運動的突起，核心為 9+2 微管結構（軸絲）。它們協調擺動，推動黏液或液體越過表面，例如呼吸道與輸卵管。初級纖毛為 9+0 結構，負責感應訊號。"
+     },
+     "cite": ["satir-2008"]
     },
     {
      "id": "microtubule",
@@ -56,9 +58,10 @@
       "zh-Hant": "微管"
      },
      "text": {
-      "en": "Hollow tubes of α- and β-tubulin about 25 nm wide. In cilia, nine outer doublets and two central singlets form the axoneme, and dynein arms between doublets drive the bend. In the cell body, microtubules run from apex to base and carry vesicles.",
-      "zh-Hant": "由 α 與 β 微管蛋白組成的中空管，直徑約 25 nm。纖毛內九組外周雙微管與兩條中央單微管構成軸絲，雙微管之間的動力蛋白臂驅動彎曲。在細胞體內，微管由頂端伸向基底，運送囊泡。"
-     }
+      "en": "Hollow tubes of α- and β-tubulin. In cilia, nine outer doublets and two central singlets form the 9+2 axoneme, and dynein arms between doublets drive the bend. In the cell body, microtubules run from apex to base and carry vesicles.",
+      "zh-Hant": "由 α 與 β 微管蛋白組成的中空管。纖毛內九組外周雙微管與兩條中央單微管構成 9+2 軸絲，雙微管之間的動力蛋白臂驅動彎曲。在細胞體內，微管由頂端伸向基底，運送囊泡。"
+     },
+     "cite": ["satir-2008"]
     },
     {
      "id": "cell",
@@ -94,7 +97,8 @@
      "text": {
       "en": "A belt of claudin and occludin strands just below the apical surface. It seals the gap between neighbouring cells, blocks leakage between them, and separates the apical from the basolateral membrane.",
       "zh-Hant": "位於頂端表面下方的 claudin 與 occludin 蛋白條帶環繞細胞，封閉相鄰細胞之間的空隙，阻止物質從細胞間滲漏，並分隔頂端與基底外側細胞膜。"
-     }
+     },
+     "cite": ["schneeberger-2004"]
     },
     {
      "id": "adherens",
@@ -106,7 +110,8 @@
      "text": {
       "en": "An adhesion belt under the tight junction. Cadherins bind neighbouring cells, and their tails link to actin filaments inside each cell. It gives mechanical strength and lets the sheet change shape.",
       "zh-Hant": "位於緊密連接下方的黏著帶。鈣黏蛋白連接相鄰細胞，其胞內尾部與肌動蛋白絲相連，提供機械強度，並讓上皮層改變形狀。"
-     }
+     },
+     "cite": ["niessen-2008"]
     },
     {
      "id": "desmosome",
@@ -118,7 +123,8 @@
      "text": {
       "en": "A spot weld between cells. Desmosomal cadherins join the membranes, and plaques inside the cell anchor intermediate (keratin) filaments. Desmosomes resist shearing and are most common in tissues under strain, such as skin.",
       "zh-Hant": "細胞之間的點狀焊接。橋粒鈣黏蛋白連接細胞膜，胞內斑塊錨定中間絲（角蛋白）。橋粒抵抗剪切力，在皮膚等受力組織中最為常見。"
-     }
+     },
+     "cite": ["simpson-2011"]
     },
     {
      "id": "gap",
@@ -128,9 +134,10 @@
       "zh-Hant": "間隙連接"
      },
      "text": {
-      "en": "A cluster of channels made of connexin hexamers (connexons). The channels link the cytoplasm of two cells and let ions and molecules under about 1 kDa pass, which coordinates activity between cells.",
-      "zh-Hant": "由連接蛋白六聚體（連接子）組成的通道群。通道連通兩個細胞的細胞質，讓離子及約 1 kDa 以下的小分子通過，協調細胞之間的活動。"
-     }
+      "en": "A cluster of channels made of connexin hexamers (connexons). The channels link the cytoplasm of two cells and let ions and small regulatory molecules pass, which coordinates activity between cells.",
+      "zh-Hant": "由連接蛋白六聚體（連接子）組成的通道群。通道連通兩個細胞的細胞質，讓離子及小型調節分子通過，協調細胞之間的活動。"
+     },
+     "cite": ["laird-2006"]
     },
     {
      "id": "lucida",
@@ -140,9 +147,10 @@
       "zh-Hant": "透明層"
      },
      "text": {
-      "en": "The pale layer of the basal lamina next to the epithelial cells, about 20 to 40 nm thick. Laminin and integrin-linked filaments cross it. It looks clear in electron micrographs.",
-      "zh-Hant": "基底層中緊貼上皮細胞的淺色層，厚約 20 至 40 nm，有層黏連蛋白與連接整合素的細絲橫越。在電子顯微鏡下顯得透明。"
-     }
+      "en": "The pale layer of the basal lamina next to the epithelial cells. Laminin and integrin-linked filaments cross it. It looks clear in electron micrographs.",
+      "zh-Hant": "基底層中緊貼上皮細胞的淺色層，有層黏連蛋白與連接整合素的細絲橫越。在電子顯微鏡下顯得透明。"
+     },
+     "cite": ["torricelli-2013"]
     },
     {
      "id": "densa",
@@ -152,9 +160,10 @@
       "zh-Hant": "緻密層"
      },
      "text": {
-      "en": "The dark layer of the basal lamina below the lamina lucida, about 20 to 100 nm thick. It is a sheet of type IV collagen and perlecan. Reticular fibres of the connective tissue below anchor to it.",
-      "zh-Hant": "基底層中位於透明層下方的深色層，厚約 20 至 100 nm，由 IV 型膠原蛋白與基底膜聚醣組成的薄片。下方結締組織的網狀纖維錨定於此。"
-     }
+      "en": "The dark layer of the basal lamina below the lamina lucida. It is a sheet of type IV collagen, laminin and heparan sulfate proteoglycan such as perlecan. Reticular fibres of the connective tissue below anchor to it.",
+      "zh-Hant": "基底層中位於透明層下方的深色層，由 IV 型膠原蛋白、層黏連蛋白與硫酸肝素蛋白聚醣（如基底膜聚醣）組成的薄片。下方結締組織的網狀纖維錨定於此。"
+     },
+     "cite": ["leblond-1989"]
     },
     {
      "id": "hemidesmosome",
@@ -166,7 +175,8 @@
      "text": {
       "en": "An anchor on the basal surface that fixes the cell to the basal lamina. Integrin α6β4 binds laminin in the lamina, and a plaque inside the cell anchors keratin filaments. It looks like half a desmosome.",
       "zh-Hant": "位於基底表面的錨點，把細胞固定於基底層。整合素 α6β4 與基底層的層黏連蛋白結合，胞內斑塊錨定角蛋白絲，外形似半個橋粒。"
-     }
+     },
+     "cite": ["borradori-1999"]
     },
     {
      "id": "connective",
@@ -758,10 +768,11 @@
       "zh-Hant": "基質"
      },
      "text": {
-      "en": "Gel-like material that fills the space between cells and fibres. It is made of glycosaminoglycans (such as hyaluronic acid), proteoglycans and adhesion glycoproteins, holds water, and lets nutrients and wastes diffuse.",
-      "zh-Hant": "填滿細胞與纖維之間空間的膠狀物質，由糖胺聚醣（如透明質酸）、蛋白聚醣與黏附糖蛋白組成，能保水，並讓養分與廢物擴散。"
+      "en": "Gel-like material that fills the space between cells and fibres. Proteoglycans with glycosaminoglycan chains give it hydration and swelling pressure, which lets the tissue resist compression, and they help regulate collagen fibril formation.",
+      "zh-Hant": "填滿細胞與纖維之間空間的膠狀物質。帶糖胺聚醣鏈的蛋白聚醣提供水合與膨壓，使組織抵抗壓縮，並協助調節膠原纖維形成。"
      },
-     "group": "ground"
+     "group": "ground",
+     "cite": ["yanagishita-1993"]
     },
     {
      "id": "collagen",
@@ -799,10 +810,11 @@
       "zh-Hant": "網狀纖維"
      },
      "text": {
-      "en": "Fine, branching fibres of type III collagen that form a supporting mesh around cells, vessels and basal laminae. They are abundant in lymph nodes, spleen, liver and bone marrow, and stain with silver (argyrophilic).",
-      "zh-Hant": "由 III 型膠原蛋白構成的幼細分支纖維，在細胞、血管與基底層周圍形成支持網。它們在淋巴結、脾、肝與骨髓中很豐富，可被銀染（嗜銀）。"
+      "en": "Fine, branching fibres of type III collagen that form a supporting mesh around cells, vessels and basal laminae. In human lymph nodes they also contain the basement membrane proteins laminin and type IV collagen.",
+      "zh-Hant": "由 III 型膠原蛋白構成的幼細分支纖維，在細胞、血管與基底層周圍形成支持網。在人類淋巴結中，它們亦含基底膜蛋白層黏連蛋白與 IV 型膠原蛋白。"
      },
-     "group": "fibers"
+     "group": "fibers",
+     "cite": ["karttunen-1989"]
     },
     {
      "id": "fibroblast",
@@ -851,10 +863,11 @@
       "zh-Hant": "肥大細胞"
      },
      "text": {
-      "en": "Round cell next to small vessels, packed with dark granules of histamine and heparin. IgE bound to its surface triggers granule release in allergy and in defence against parasites.",
-      "zh-Hant": "小血管旁的圓形細胞，充滿含組織胺與肝素的深色顆粒。表面結合的 IgE 在過敏及抵禦寄生蟲時觸發顆粒釋放。"
+      "en": "Round cell packed with granules, found mainly where tissue meets the external environment. It acts as a first responder: on stimulation it releases biologically active mediators in allergy and in innate and adaptive immunity.",
+      "zh-Hant": "充滿顆粒的圓形細胞，主要見於組織與外界相接之處。它是第一線反應細胞，受刺激時釋出生物活性介質，參與過敏及先天與適應性免疫。"
      },
-     "group": "cells"
+     "group": "cells",
+     "cite": ["dasilva-2014"]
     },
     {
      "id": "msc",
@@ -864,10 +877,11 @@
       "zh-Hant": "間質幹細胞"
      },
      "text": {
-      "en": "Spindle-shaped, multipotent cell that stays in the tissue. It renews itself and can differentiate into fibroblasts, adipocytes, osteoblasts and chondrocytes.",
-      "zh-Hant": "梭形的多能細胞，駐留於組織中。它能自我更新，並可分化為纖維母細胞、脂肪細胞、成骨細胞與軟骨細胞。"
+      "en": "Spindle-shaped, multipotent cell first found in bone marrow and later in many tissues. No single surface marker identifies it (Stro-1, SSEA-4, CD271 and CD146 are candidates), and it may have a fibroblast or pericyte origin.",
+      "zh-Hant": "梭形的多能細胞，最先在骨髓發現，後來亦見於多種組織。沒有單一表面標記可確認它（Stro-1、SSEA-4、CD271 與 CD146 為候選），其來源可能是纖維母細胞或周細胞。"
      },
-     "group": "cells"
+     "group": "cells",
+     "cite": ["lv-2014"]
     },
     {
      "id": "fat",

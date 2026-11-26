@@ -899,6 +899,162 @@
       "year": 2008,
       "url": "https://doi.org/10.2215/CJN.04151206",
       "status": "verified"
+    },
+    "schneeberger-2004": {
+      "source": "Schneeberger & Lynch (2004) Am J Physiol Cell Physiol 286:C1213–C1228",
+      "detail": {
+        "en": "Review of the tight junction: occludin, claudins and junction adhesion molecules, plaque proteins, paracellular barrier and cell polarity",
+        "zh-Hant": "緊密連接綜述：occludin、claudin 與連接黏附分子、斑塊蛋白、細胞旁屏障與細胞極性"
+      },
+      "species": "Animals, mainly mammals",
+      "method": "Review",
+      "year": 2004,
+      "url": "https://doi.org/10.1152/ajpcell.00558.2003",
+      "status": "verified"
+    },
+    "niessen-2008": {
+      "source": "Niessen & Gottardi (2008) Biochim Biophys Acta 1778:562–571",
+      "detail": {
+        "en": "Review of adherens junction components: transmembrane adhesion receptors and their actin-binding and regulatory partners",
+        "zh-Hant": "黏著連接組成綜述：跨膜黏附受體及其肌動蛋白結合與調節蛋白"
+      },
+      "species": "Animals, mainly mammals",
+      "method": "Review",
+      "year": 2008,
+      "url": "https://doi.org/10.1016/j.bbamem.2007.12.015",
+      "status": "verified"
+    },
+    "simpson-2011": {
+      "source": "Simpson, Patel & Green (2011) Nat Rev Mol Cell Biol 12:565–580",
+      "detail": {
+        "en": "Review of cell junctions and the cytoskeleton in the epidermis, and how keratinocytes reorganise them while moving toward the cornified layers",
+        "zh-Hant": "表皮細胞連接與細胞骨架綜述，及角質形成細胞向角質層移動時如何重組"
+      },
+      "species": "Mammals, mainly human and mouse",
+      "method": "Review",
+      "year": 2011,
+      "url": "https://doi.org/10.1038/nrm3175",
+      "status": "verified"
+    },
+    "laird-2006": {
+      "source": "Laird (2006) Biochem J 394:527–543",
+      "detail": {
+        "en": "Review of connexins, the gap junction proteins: channel assembly, short half-lives, turnover and disease-linked mutations",
+        "zh-Hant": "連接蛋白（間隙連接蛋白）綜述：通道組裝、半衰期短、更新及與疾病相關的突變"
+      },
+      "species": "Animals, mainly human",
+      "method": "Review",
+      "year": 2006,
+      "url": "https://doi.org/10.1042/bj20051922",
+      "status": "verified"
+    },
+    "borradori-1999": {
+      "source": "Borradori & Sonnenberg (1999) J Invest Dermatol 112:411–418",
+      "detail": {
+        "en": "Review of hemidesmosomes: α6β4 integrin, attachment of epithelial cells to the basement membrane, assembly and blistering diseases",
+        "zh-Hant": "半橋粒綜述：α6β4 整合素、上皮細胞與基底膜的附著、組裝及水皰病"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 1999,
+      "url": "https://doi.org/10.1046/j.1523-1747.1999.00546.x",
+      "status": "verified"
+    },
+    "leblond-1989": {
+      "source": "Leblond & Inoué (1989) Am J Anat 185:367–390",
+      "detail": {
+        "en": "Basement membrane cords contain collagen IV, laminin, heparan sulfate proteoglycan, entactin and fibronectin. Mixing collagen IV, laminin and proteoglycan in vitro forms sheets like the lamina densa",
+        "zh-Hant": "基底膜的索狀結構含 IV 型膠原蛋白、層黏連蛋白、硫酸肝素蛋白聚醣、entactin 與纖連蛋白。體外混合 IV 型膠原蛋白、層黏連蛋白與蛋白聚醣可形成類似緻密層的薄片"
+      },
+      "species": "Mammals",
+      "method": "Electron microscopy and in vitro assembly",
+      "year": 1989,
+      "url": "https://doi.org/10.1002/aja.1001850403",
+      "status": "verified"
+    },
+    "torricelli-2013": {
+      "source": "Torricelli et al. (2013) Invest Ophthalmol Vis Sci 54:6390",
+      "detail": {
+        "en": "Review of the corneal epithelial basement membrane between basal epithelial cells and stroma: collagens, laminins, heparan sulfate proteoglycans and nidogens",
+        "zh-Hant": "角膜上皮基底膜綜述：位於基底上皮細胞與基質之間，由膠原蛋白、層黏連蛋白、硫酸肝素蛋白聚醣與 nidogen 組成"
+      },
+      "species": "Mammals, mainly human",
+      "method": "Review",
+      "year": 2013,
+      "url": "https://doi.org/10.1167/iovs.13-12547",
+      "status": "verified"
+    },
+    "satir-2008": {
+      "source": "Satir & Christensen (2008) Histochem Cell Biol 129:687–693",
+      "detail": {
+        "en": "Review of 9+2 motile and 9+0 primary cilia: structure from electron microscopy, sensory and signalling roles",
+        "zh-Hant": "9+2 運動纖毛與 9+0 初級纖毛綜述：電子顯微鏡所見結構、感覺與訊號傳遞功能"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2008,
+      "url": "https://doi.org/10.1007/s00418-008-0416-9",
+      "status": "verified"
+    },
+    "schwander-2010": {
+      "source": "Schwander, Kachar & Müller (2010) J Cell Biol 190:9–20",
+      "detail": {
+        "en": "Review of inner-ear hair cells, which convert sound-induced vibrations into electrical signals, and deafness genes that control their development",
+        "zh-Hant": "內耳毛細胞綜述：毛細胞把聲音振動轉成電訊號，及控制其發育的失聰基因"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2010,
+      "url": "https://doi.org/10.1083/jcb.201001138",
+      "status": "verified"
+    },
+    "karttunen-1989": {
+      "source": "Karttunen, Sormunen & Risteli (1989) J Histochem Cytochem 37:279–286",
+      "detail": {
+        "en": "Reticular fibres of normal human lymph nodes contain type III collagen with its amino terminal pro-peptide, plus laminin and type IV collagen",
+        "zh-Hant": "正常人類淋巴結的網狀纖維含保留胺基端前肽的 III 型膠原蛋白，以及層黏連蛋白與 IV 型膠原蛋白"
+      },
+      "species": "Human",
+      "method": "Immunoelectron microscopy",
+      "year": 1989,
+      "url": "https://doi.org/10.1177/37.3.2918219",
+      "status": "verified"
+    },
+    "yanagishita-1993": {
+      "source": "Yanagishita (1993) Acta Pathol Jpn 43:283–293",
+      "detail": {
+        "en": "Review of proteoglycans in connective tissue matrices: glycosaminoglycans give hydration and swelling pressure, and proteoglycans regulate collagen fibril formation",
+        "zh-Hant": "結締組織基質中蛋白聚醣綜述：糖胺聚醣提供水合與膨壓，蛋白聚醣調節膠原纖維形成"
+      },
+      "species": "Animals",
+      "method": "Review",
+      "year": 1993,
+      "url": "https://doi.org/10.1111/j.1440-1827.1993.tb02569.x",
+      "status": "verified"
+    },
+    "dasilva-2014": {
+      "source": "da Silva et al. (2014) J Histochem Cytochem 62:698–738",
+      "detail": {
+        "en": "Review of mast cell function: first responders at the host-environment interface that release biologically active mediators in allergy and in innate and adaptive immunity",
+        "zh-Hant": "肥大細胞功能綜述：位於宿主與外界界面的第一線反應細胞，在過敏及先天與適應性免疫中釋出生物活性介質"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2014,
+      "url": "https://doi.org/10.1369/0022155414545334",
+      "status": "verified"
+    },
+    "lv-2014": {
+      "source": "Lv, Tuan & Cheung (2014) Stem Cells 32:1408–1419",
+      "detail": {
+        "en": "Review of surface markers of human mesenchymal stem cells (Stro-1, SSEA-4, CD271, CD146) and their possible fibroblast or pericyte origin",
+        "zh-Hant": "人類間質幹細胞表面標記（Stro-1、SSEA-4、CD271、CD146）及其可能的纖維母細胞或周細胞來源綜述"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2014,
+      "url": "https://doi.org/10.1002/stem.1681",
+      "status": "verified"
     }
   }
 }
