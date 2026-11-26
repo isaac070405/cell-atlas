@@ -7,6 +7,7 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 ## Unreleased
 
 ### Added
+- Diagram view (`?diagram=etc-pathway`) for the Diagram Workspace link: a clickable SVG of the electron transport chain (complexes I to IV, coenzyme Q, cytochrome c, ATP synthase, electron and proton flow) with a card and sources per part, opened from the `diag:etc-pathway` chip on PDB 5XTD. Adds `data/diagrams.json`, `js/diagram.js` and three verified citations.
 - Epithelial overview model: lamina lucida, lamina densa, tight junction, adherens junction, desmosome, gap junction, hemidesmosome, stereocilia, cilia and microtubule as separate clickable parts. They replace the combined cell junction and basal lamina parts, and the apical part is now microvilli only. Connective tissue model: mast cell and mesenchymal stem cell (`data/tissues.json`, `js/tissue3d.js`). Reticular fibre and ground substance parts already existed and have longer descriptions. 13 verified review and primary papers (Scite check) are cited on 14 of these parts, and descriptions were trimmed to what the cited abstracts support.
 - Tissue models for blood (plasma, red cells, five white cell types, platelets), white, brown and beige adipocytes, fibroblast and osteocyte, listed under connective tissue (`data/tissues.json`, `js/tissue3d.js`).
 - BID, BIM, BIK and BOK in the Bcl-2 family table in Compare, with a new "BH3 peptide only" row. None has a Module B structure yet, so their headers are not links. BIK has no PDB entries and shows dashes for resolution and years.

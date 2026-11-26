@@ -32,6 +32,18 @@ for (const t of tis.tissues) {
   for (const [k, v] of Object.entries(t.aliases ?? {})) if (!t.parts.some(p => p.id === v)) bad(`tissue ${t.id}: alias ${k} -> ${v} not a part`);
 }
 for (const e of links.edges) for (const k of [e.from, ...e.to]) if (k.startsWith('tis:') && !tis.tissues.some(t => t.id === k.slice(4) || t.aliases?.[k.slice(4)])) bad(`link ${k}: no tissue model`);
+
+// Pathway diagrams: node ids unique, citations resolve, link keys use a known site prefix, edges stay inside the viewBox
+const dgs = read('diagrams.json');
+for (const d of dgs.diagrams) {
+  const ids = d.nodes.map(n => n.id);
+  if (new Set(ids).size !== ids.length) bad(`diagram ${d.id}: duplicate node id`);
+  for (const c of [...(d.cite ?? []), ...d.nodes.flatMap(n => n.cite ?? [])]) if (!citations[c]) bad(`diagram ${d.id}: cite ${c} missing`);
+  for (const n of d.nodes) if (n.link && !links.targets[n.link.split(':')[0]]) bad(`diagram ${d.id} ${n.id}: link ${n.link}`);
+  for (const e of d.edges) for (const [x, y] of e.pts) if (x < 0 || y < 0 || x > d.viewBox[0] || y > d.viewBox[1]) bad(`diagram ${d.id}: edge point ${x},${y} outside the viewBox`);
+}
+for (const e of links.edges) for (const k of [e.from, ...e.to]) if (k.startsWith('diag:') && !dgs.diagrams.some(d => d.id === k.slice(5))) bad(`link ${k}: no diagram`);
+console.log(`diagrams: ${dgs.diagrams.length}`);
 const loc = read('protein-location.json');
 if (!citations[loc.cite]) bad(`protein-location: cite ${loc.cite} missing`);
 for (const [g, e] of Object.entries(loc.genes)) if (!citations[loc.citeUniprot]) bad(`protein-location: cite ${loc.citeUniprot} missing`);

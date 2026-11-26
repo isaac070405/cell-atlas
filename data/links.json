@@ -28,8 +28,8 @@
     },
     "diag": {
       "label": "Diagram Workspace",
-      "url": null,
-      "deepLink": false
+      "url": "./?diagram={id}",
+      "deepLink": true
     },
     "ent": {
       "label": "Human Biology entry",

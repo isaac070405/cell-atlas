@@ -288,3 +288,26 @@ body.bare .panels { display: none; }
 /* First-run path: three source-linked links, shown only on the empty Cell view */
 .onboard-try { margin: var(--s3) 0 0; font-size: 14px; color: var(--ink-soft); max-width: 60ch; }
 .onboard-try .chip { margin: 0 2px; }
+
+/* Pathway diagram (js/diagram.js): part colours come from data/diagrams.json, lines and bands use tokens */
+.diagram { padding: var(--s3) 0; }
+.dg-svg { width: 100%; height: auto; max-height: 62vh; display: block; }
+.dg-band { fill: var(--paper-raised); stroke: none; }
+.dg-band-mem { fill: var(--rule); opacity: 0.55; }
+.dg-label { font: 12px var(--font-label); fill: var(--ink-soft); }
+.dg-name { font: 600 13px var(--font-label); fill: #fff; pointer-events: none; }
+.dg-sub { font: 11px var(--font-label); fill: #fff; opacity: 0.92; pointer-events: none; }
+.dg-node { cursor: pointer; }
+.dg-node:hover rect, .dg-node:hover ellipse { stroke: var(--ink); stroke-width: 2; }
+.dg-node:focus-visible { outline: none; }
+.dg-node:focus-visible rect, .dg-node:focus-visible ellipse, .dg-node[aria-pressed="true"] rect, .dg-node[aria-pressed="true"] ellipse { stroke: var(--select); stroke-width: 4; }
+.dg-edge { fill: none; stroke-width: 2.5; }
+.dg-electron { stroke: #B8741A; }
+.dg-proton { stroke: var(--stain); stroke-dasharray: 6 4; }
+.dg-flow { stroke: var(--ink-soft); }
+.dg-head-electron { fill: #B8741A; } .dg-head-proton { fill: var(--stain); } .dg-head-flow { fill: var(--ink-soft); }
+.dg-legend { list-style: none; display: flex; gap: var(--s4); margin: var(--s2) 0 0; padding: 0; font: 12px var(--font-label); color: var(--ink-soft); }
+.dg-key { display: inline-block; width: 22px; border-top: 3px solid; margin-right: 6px; vertical-align: middle; }
+.dg-key-electron { border-color: #B8741A; } .dg-key-proton { border-top-style: dashed; border-color: var(--stain); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .dg-electron { stroke: #E8A33D; } :root:not([data-theme="light"]) .dg-head-electron { fill: #E8A33D; } }
+:root[data-theme="dark"] .dg-electron { stroke: #E8A33D; } :root[data-theme="dark"] .dg-head-electron { fill: #E8A33D; }

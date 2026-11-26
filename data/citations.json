@@ -1055,6 +1055,42 @@
       "year": 2014,
       "url": "https://doi.org/10.1002/stem.1681",
       "status": "verified"
+    },
+    "fernandez-vizarra-2020": {
+      "source": "Fernández-Vizarra & Zeviani (2020) FEBS Lett 595:1062–1106",
+      "detail": {
+        "en": "Review of the OXPHOS system: the electron transport chain is four multimeric enzymes and two mobile electron carriers, and it makes the proton motive force that complex V uses to make ATP",
+        "zh-Hant": "氧化磷酸化系統綜述：電子傳遞鏈由四個多聚體酶與兩個移動電子載體組成，產生質子動力，供複合體 V 合成 ATP"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2020,
+      "url": "https://doi.org/10.1002/1873-3468.13995",
+      "status": "verified"
+    },
+    "michel-1998": {
+      "source": "Michel, Behr & Harrenga (1998) Annu Rev Biophys Biomol Struct 27:329–356",
+      "detail": {
+        "en": "Review of cytochrome c oxidase: it passes electrons from cytochrome c to oxygen, reducing it to water, and the transfer is coupled to proton translocation across the membrane",
+        "zh-Hant": "細胞色素 c 氧化酶綜述：把電子由細胞色素 c 傳給氧並還原成水，電子傳遞與質子跨膜轉運偶聯"
+      },
+      "species": "Animals and bacteria",
+      "method": "Review",
+      "year": 1998,
+      "url": "https://doi.org/10.1146/annurev.biophys.27.1.329",
+      "status": "verified"
+    },
+    "jonckheere-2012": {
+      "source": "Jonckheere, Smeitink & Rodenburg (2012) J Inherit Metab Dis 35:211–225",
+      "detail": {
+        "en": "Review of human mitochondrial ATP synthase (complex V): F1 in the matrix, Fo in the inner membrane, and the proton electrochemical gradient drives ADP phosphorylation",
+        "zh-Hant": "人類線粒體 ATP 合酶（複合體 V）綜述：F1 位於基質，Fo 位於內膜，質子電化學梯度驅動 ADP 磷酸化"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2012,
+      "url": "https://doi.org/10.1007/s10545-011-9382-9",
+      "status": "verified"
     }
   }
 }

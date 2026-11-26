@@ -1,0 +1,431 @@
+{
+ "_note": "Schematic pathway drawn after textbook figures. No measured values. Layout is in SVG units (viewBox). Each node can cite a verified source and link to another site key.",
+ "diagrams": [
+  {
+   "id": "etc-pathway",
+   "name": {
+    "en": "Electron transport chain",
+    "zh-Hant": "電子傳遞鏈"
+   },
+   "summary": {
+    "en": "Electrons from NADH and succinate pass through complexes I to IV in the inner mitochondrial membrane. Complexes I, III and IV pump protons into the intermembrane space, and ATP synthase uses the returning protons to make ATP.",
+    "zh-Hant": "NADH 與琥珀酸的電子經內膜上的複合體 I 至 IV 傳遞。複合體 I、III、IV 把質子泵入膜間腔，ATP 合酶利用回流的質子合成 ATP。"
+   },
+   "cite": ["fernandez-vizarra-2020"],
+   "viewBox": [
+    860,
+    430
+   ],
+   "bands": [
+    {
+     "id": "ims",
+     "y": 0,
+     "h": 180
+    },
+    {
+     "id": "mem",
+     "y": 180,
+     "h": 90
+    },
+    {
+     "id": "matrix",
+     "y": 270,
+     "h": 160
+    }
+   ],
+   "labels": [
+    {
+     "x": 20,
+     "y": 36,
+     "anchor": "start",
+     "text": {
+      "en": "Intermembrane space",
+      "zh-Hant": "膜間腔"
+     }
+    },
+    {
+     "x": 20,
+     "y": 412,
+     "anchor": "start",
+     "text": {
+      "en": "Matrix",
+      "zh-Hant": "基質"
+     }
+    },
+    {
+     "x": 840,
+     "y": 222,
+     "anchor": "end",
+     "text": {
+      "en": "Inner membrane",
+      "zh-Hant": "內膜"
+     }
+    },
+    {
+     "x": 105,
+     "y": 348,
+     "anchor": "middle",
+     "text": {
+      "en": "NADH",
+      "zh-Hant": "NADH"
+     }
+    },
+    {
+     "x": 230,
+     "y": 348,
+     "anchor": "middle",
+     "text": {
+      "en": "Succinate",
+      "zh-Hant": "琥珀酸"
+     }
+    },
+    {
+     "x": 580,
+     "y": 348,
+     "anchor": "middle",
+     "text": {
+      "en": "½ O₂ → H₂O",
+      "zh-Hant": "½ O₂ → H₂O"
+     }
+    },
+    {
+     "x": 755,
+     "y": 372,
+     "anchor": "middle",
+     "text": {
+      "en": "ADP + Pi → ATP",
+      "zh-Hant": "ADP + Pi → ATP"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "type": "electron",
+     "pts": [
+      [
+       105,
+       338
+      ],
+      [
+       105,
+       278
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       230,
+       338
+      ],
+      [
+       230,
+       278
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       160,
+       214
+      ],
+      [
+       289,
+       214
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       270,
+       236
+      ],
+      [
+       296,
+       230
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       339,
+       222
+      ],
+      [
+       354,
+       222
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       430,
+       168
+      ],
+      [
+       477,
+       134
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       517,
+       134
+      ],
+      [
+       560,
+       168
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       580,
+       278
+      ],
+      [
+       580,
+       336
+      ]
+     ]
+    },
+    {
+     "type": "proton",
+     "pts": [
+      [
+       75,
+       262
+      ],
+      [
+       75,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "proton",
+     "pts": [
+      [
+       385,
+       262
+      ],
+      [
+       385,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "proton",
+     "pts": [
+      [
+       560,
+       262
+      ],
+      [
+       560,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "proton",
+     "pts": [
+      [
+       730,
+       92
+      ],
+      [
+       730,
+       300
+      ]
+     ]
+    },
+    {
+     "type": "flow",
+     "pts": [
+      [
+       755,
+       338
+      ],
+      [
+       755,
+       358
+      ]
+     ]
+    }
+   ],
+   "nodes": [
+    {
+     "id": "cI",
+     "kind": "complex",
+     "x": 50,
+     "y": 165,
+     "w": 110,
+     "h": 110,
+     "color": "#B0563A",
+     "name": {
+      "en": "Complex I",
+      "zh-Hant": "複合體 I"
+     },
+     "sub": {
+      "en": "NADH dehydrogenase",
+      "zh-Hant": "NADH 脫氫酶"
+     },
+     "text": {
+      "en": "Takes electrons from NADH and passes them on to coenzyme Q. The energy released is used to pump protons from the matrix into the intermembrane space. The human structure is PDB 5XTD.",
+      "zh-Hant": "接收 NADH 的電子並傳給輔酶 Q，釋出的能量用於把質子由基質泵入膜間腔。人類結構為 PDB 5XTD。"
+     },
+     "cite": ["guo-2017", "fernandez-vizarra-2020"],
+     "link": "pdb:5XTD"
+    },
+    {
+     "id": "cII",
+     "kind": "complex",
+     "x": 190,
+     "y": 190,
+     "w": 80,
+     "h": 85,
+     "color": "#8A5A12",
+     "name": {
+      "en": "Complex II",
+      "zh-Hant": "複合體 II"
+     },
+     "sub": {
+      "en": "Succinate dehydrogenase",
+      "zh-Hant": "琥珀酸脫氫酶"
+     },
+     "text": {
+      "en": "One of the four multimeric enzymes of the chain. It passes electrons from succinate to coenzyme Q and, unlike complexes I, III and IV, does not pump protons.",
+      "zh-Hant": "電子傳遞鏈四個多聚體酶之一，把琥珀酸的電子傳給輔酶 Q。與複合體 I、III、IV 不同，它不泵質子。"
+     },
+     "cite": ["fernandez-vizarra-2020"]
+    },
+    {
+     "id": "cQ",
+     "kind": "carrier",
+     "x": 315,
+     "y": 222,
+     "rx": 24,
+     "ry": 17,
+     "color": "#55662B",
+     "name": {
+      "en": "Coenzyme Q",
+      "zh-Hant": "輔酶 Q"
+     },
+     "sub": {
+      "en": "Ubiquinone",
+      "zh-Hant": "泛醌"
+     },
+     "text": {
+      "en": "A mobile electron carrier that moves within the inner membrane. It carries electrons from complexes I and II to complex III.",
+      "zh-Hant": "在內膜內移動的電子載體，把複合體 I 與 II 的電子運到複合體 III。"
+     },
+     "cite": ["fernandez-vizarra-2020"]
+    },
+    {
+     "id": "cIII",
+     "kind": "complex",
+     "x": 355,
+     "y": 165,
+     "w": 100,
+     "h": 110,
+     "color": "#7A4A8C",
+     "name": {
+      "en": "Complex III",
+      "zh-Hant": "複合體 III"
+     },
+     "sub": {
+      "en": "Cytochrome bc1",
+      "zh-Hant": "細胞色素 bc1"
+     },
+     "text": {
+      "en": "Takes electrons from coenzyme Q and passes them to cytochrome c. It also pumps protons into the intermembrane space.",
+      "zh-Hant": "接收輔酶 Q 的電子並傳給細胞色素 c，同時把質子泵入膜間腔。"
+     },
+     "cite": ["fernandez-vizarra-2020"]
+    },
+    {
+     "id": "cC",
+     "kind": "carrier",
+     "x": 495,
+     "y": 120,
+     "rx": 24,
+     "ry": 18,
+     "color": "#2F6F6F",
+     "name": {
+      "en": "Cytochrome c",
+      "zh-Hant": "細胞色素 c"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "A small mobile electron carrier in the intermembrane space. It carries electrons from complex III to complex IV.",
+      "zh-Hant": "膜間腔內的小型移動電子載體，把複合體 III 的電子運到複合體 IV。"
+     },
+     "cite": ["fernandez-vizarra-2020"]
+    },
+    {
+     "id": "cIV",
+     "kind": "complex",
+     "x": 535,
+     "y": 165,
+     "w": 90,
+     "h": 110,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Complex IV",
+      "zh-Hant": "複合體 IV"
+     },
+     "sub": {
+      "en": "Cytochrome c oxidase",
+      "zh-Hant": "細胞色素 c 氧化酶"
+     },
+     "text": {
+      "en": "Passes electrons from cytochrome c to oxygen and reduces the oxygen to water. The electron transfer is coupled to proton translocation across the membrane.",
+      "zh-Hant": "把細胞色素 c 的電子傳給氧，並把氧還原成水。電子傳遞與質子跨膜轉運偶聯。"
+     },
+     "cite": ["michel-1998"]
+    },
+    {
+     "id": "cV",
+     "kind": "synthase",
+     "x": 700,
+     "y": 165,
+     "w": 110,
+     "h": 170,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "ATP synthase",
+      "zh-Hant": "ATP 合酶"
+     },
+     "sub": {
+      "en": "Complex V",
+      "zh-Hant": "複合體 V"
+     },
+     "text": {
+      "en": "F1 sits in the matrix and Fo in the inner membrane. Protons flow back through it from the intermembrane space, and the energy of this proton gradient drives the phosphorylation of ADP to ATP.",
+      "zh-Hant": "F1 位於基質，Fo 位於內膜。質子由膜間腔經它流回基質，此質子梯度的能量驅動 ADP 磷酸化成 ATP。"
+     },
+     "cite": ["jonckheere-2012"]
+    }
+   ]
+  }
+ ]
+}
