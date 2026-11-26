@@ -101,7 +101,7 @@ html[data-lang="both"] .ruler-bands button { line-height: 1.1; padding-top: 2px;
 .kv dt { font: 12px/1.6 var(--font-label); color: var(--ink-soft); }
 .kv dd { margin: 0; }
 .chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: var(--s2); }
-.chip { font: 12px/1 var(--font-label); padding: 4px 6px; border: 1px solid var(--rule); border-radius: var(--radius); color: var(--stain); text-decoration: none; }
+.chip { font: 12px/1 var(--font-label); padding: 6px 8px; border: 1px solid var(--rule); border-radius: var(--radius); color: var(--stain); text-decoration: none; }
 .chip[aria-disabled="true"] { color: var(--ink-soft); border-style: dashed; }
 .sources { margin: 0; padding-left: 1.4em; font-size: 14px; }
 .sources li + li { margin-top: var(--s2); }
@@ -274,3 +274,14 @@ body.bare .panels { display: none; }
 .queue .qh { flex-basis: 100%; margin-top: var(--s2); font: 500 11px/1.3 var(--font-label); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
 .queue .qh:first-child { margin-top: 0; }
 .queue .qh2 { padding-left: var(--s3); text-transform: none; letter-spacing: 0; }
+
+/* Touch: 44px targets for controls, wider chip spacing, and shorter 3D canvases so a swipe above or below one still scrolls the page */
+@media (pointer: coarse) {
+  .seg button, .icon-btn, .tour button, .queue button { min-height: 44px; }
+  .seg button, .icon-btn { min-width: 44px; }
+  .chip { display: inline-flex; align-items: center; min-height: 36px; padding: 6px 12px; }
+  .chips { gap: var(--s2); }
+  .cell3d { height: clamp(260px, 42vh, 460px); }
+  .mol { height: clamp(260px, 44vh, 480px); }
+  .cut input { height: 44px; }
+}
