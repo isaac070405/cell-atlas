@@ -15,7 +15,7 @@ function label(o, x, y, cls, anchor = 'middle', gap = 15) {
 }
 const shape = n => n.kind === 'carrier'
   ? `<ellipse cx="${n.x}" cy="${n.y}" rx="${n.rx}" ry="${n.ry}" fill="${n.color}"/>`
-  : `<rect x="${n.x}" y="${n.y}" width="${n.w}" height="${n.h}" rx="10" fill="${n.color}"/>`;
+  : `<rect x="${n.x}" y="${n.y}" width="${n.w}" height="${n.h}" rx="${n.kind === 'region' ? 16 : 10}" fill="${n.color}"${n.kind === 'region' ? ' fill-opacity="0.16" stroke-opacity="0.7"' : ''}/>`;
 const center = n => n.kind === 'carrier' ? [n.x, n.y] : [n.x + n.w / 2, n.y + n.h / 2];
 
 export function drawDiagram(dg, selected) {
@@ -23,9 +23,11 @@ export function drawDiagram(dg, selected) {
   const bands = dg.bands.map(b => `<rect class="dg-band dg-band-${b.id}" x="0" y="${b.y}" width="${W}" height="${b.h}"/>`).join('');
   const edges = dg.edges.map(e => `<polyline class="dg-edge dg-${e.type}" points="${e.pts.map(p => p.join(',')).join(' ')}" marker-end="url(#dg-arrow-${e.type})"/>`).join('');
   const labels = dg.labels.map(l => label(l.text, l.x, l.y, 'dg-label', l.anchor)).join('');
-  const nodes = dg.nodes.map(n => {
+  const nodes = [...dg.nodes].sort((a, b) => (b.kind === 'region') - (a.kind === 'region')).map(n => {
     const [cx, cy] = center(n), on = n.id === selected;
     const name = lines(n.name), sub = lines(n.sub);
+    // A region (a whole cell) is a backdrop: its name sits at the corner given by tx, ty and it needs no centre text
+    if (n.kind === 'region') return `<g class="dg-node dg-region" role="button" tabindex="0" data-node="${esc(n.id)}" aria-pressed="${on}" aria-label="${esc(name.join(' / '))}">${shape(n)}${label(n.name, n.tx, n.ty, 'dg-region-name', 'start')}</g>`;
     const ty = n.kind === 'carrier' ? cy - ((name.length + sub.length) - 1) * 6 + 4 : cy - (name.length + sub.length - 1) * 8;
     const nameSvg = `<text class="dg-name" text-anchor="middle">${name.map((t, i) => `<tspan x="${cx}" y="${ty + i * 15}">${esc(t)}</tspan>`).join('')}</text>`;
     const subSvg = sub.length ? `<text class="dg-sub" text-anchor="middle">${sub.map((t, i) => `<tspan x="${cx}" y="${ty + (name.length + i) * 15}">${esc(t)}</tspan>`).join('')}</text>` : '';
@@ -33,6 +35,6 @@ export function drawDiagram(dg, selected) {
   }).join('');
   const marker = t => `<marker id="dg-arrow-${t}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-head dg-head-${t}"/></marker>`;
   return `<svg class="dg-svg" viewBox="0 ${-PAD} ${W} ${H + PAD * 2}" role="group" aria-label="${esc(text('diagram.label'))}: ${esc(text(dg.name))}">
-    <defs>${['electron', 'proton', 'flow'].map(marker).join('')}</defs>${bands}${labels}${edges}${nodes}</svg>
-    <ul class="dg-legend"><li><span class="dg-key dg-key-electron"></span>${html('diagram.legend.electron')}</li><li><span class="dg-key dg-key-proton"></span>${html('diagram.legend.proton')}</li></ul>`;
+    <defs>${[...new Set(dg.edges.map(e => e.type))].map(marker).join('')}</defs>${bands}${labels}${edges}${nodes}</svg>
+    <ul class="dg-legend">${(dg.legend ?? []).map(l => `<li><span class="dg-key dg-key-${esc(l.type)}"></span>${html(l.label)}</li>`).join('')}</ul>`;
 }

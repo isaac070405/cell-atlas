@@ -379,15 +379,15 @@
       "status": "verified"
     },
     "wang-2013": {
-      "source": "Wang, Smith & Davis (2013) The cytosol and cytoskeleton, Oxford University Press",
+      "source": "Wang, Liu & Portincasa (2013) Eur J Clin Invest 43:1203–1223",
       "detail": {
-        "en": "The cytosol is the gel-like, semifluid material around the organelles, where many metabolic reactions, protein synthesis and signal transduction take place and metabolites are transported",
-        "zh-Hant": "胞質溶膠是圍繞細胞器的凝膠狀半流體物質，許多代謝反應、蛋白質合成和訊號傳遞在此進行，代謝物也在此運輸"
+        "en": "Review of intestinal fatty acid absorption: fatty acid uptake across the brush border depends largely on membrane-associated fatty acid transporters on the apical membrane of enterocytes",
+        "zh-Hant": "腸道脂肪酸吸收綜述：脂肪酸經刷狀緣吸收，主要依賴腸細胞頂端膜上與膜結合的脂肪酸轉運蛋白"
       },
-      "species": "Eukaryotic cells (textbook chapter)",
-      "method": "Book chapter",
+      "species": "Mammals",
+      "method": "Review",
       "year": 2013,
-      "url": "https://doi.org/10.1093/hesc/9780199697328.003.0007",
+      "url": "https://doi.org/10.1111/eci.12161",
       "status": "verified"
     },
     "fahrenkrog-2023": {
@@ -1090,6 +1090,90 @@
       "method": "Review",
       "year": 2012,
       "url": "https://doi.org/10.1007/s10545-011-9382-9",
+      "status": "verified"
+    },
+    "drozdowski-2006": {
+      "source": "Drozdowski (2006) World J Gastroenterol 12:1657",
+      "detail": {
+        "en": "Review of intestinal sugar transport: amylases digest starch, brush border disaccharidases (lactase-phloridzin hydrolase, sucrase-isomaltase) make monosaccharides, and enterocyte transporters take them up",
+        "zh-Hant": "腸道糖類轉運綜述：澱粉酶消化澱粉，刷狀緣雙糖酶（乳糖酶-根皮苷水解酶、蔗糖酶-異麥芽糖酶）生成單糖，腸細胞轉運蛋白將其吸收"
+      },
+      "species": "Animals, mainly mammals",
+      "method": "Review",
+      "year": 2006,
+      "url": "https://doi.org/10.3748/wjg.v12.i11.1657",
+      "status": "verified"
+    },
+    "rieg-2018": {
+      "source": "Rieg & Vallon (2018) Diabetologia 61:2079–2086",
+      "detail": {
+        "en": "Review of SGLT1 and SGLT2: SGLT1 accounts for most dietary glucose uptake in the intestine, and SLC5A1 mutations cause glucose/galactose malabsorption",
+        "zh-Hant": "SGLT1 與 SGLT2 綜述：SGLT1 負責腸道大部分膳食葡萄糖吸收，SLC5A1 突變導致葡萄糖／半乳糖吸收不良"
+      },
+      "species": "Human and mouse",
+      "method": "Review",
+      "year": 2018,
+      "url": "https://doi.org/10.1007/s00125-018-4654-7",
+      "status": "verified"
+    },
+    "wright-2007": {
+      "source": "Wright, Hirayama & Loo (2007) J Intern Med 261:32–43",
+      "detail": {
+        "en": "Review of secondary active glucose transport by SGLT1 and SGLT2 in intestinal glucose absorption and renal reabsorption",
+        "zh-Hant": "SGLT1 與 SGLT2 繼發性主動葡萄糖轉運綜述：腸道葡萄糖吸收與腎臟重吸收"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2007,
+      "url": "https://doi.org/10.1111/j.1365-2796.2006.01746.x",
+      "status": "verified"
+    },
+    "smith-2013": {
+      "source": "Smith, Clémençon & Hediger (2013) Mol Aspects Med 34:323–336",
+      "detail": {
+        "en": "Review of the SLC15 peptide transporters: PepT1 takes up di- and tripeptides by proton-coupled symport and absorbs dietary protein digestion products in the intestine",
+        "zh-Hant": "SLC15 肽轉運蛋白綜述：PepT1 以質子偶聯同向轉運吸收二肽與三肽，負責腸道吸收膳食蛋白質消化產物"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2013,
+      "url": "https://doi.org/10.1016/j.mam.2012.11.003",
+      "status": "verified"
+    },
+    "miner-williams-2014": {
+      "source": "Miner-Williams, Stevens & Moughan (2014) Nutr Res Rev 27:308–329",
+      "detail": {
+        "en": "Review of peptide absorption: di- and tripeptides enter the enterocyte through PepT1, most are hydrolysed in the cytosol, and little evidence shows longer peptides entering the hepatic portal system intact",
+        "zh-Hant": "肽吸收綜述：二肽與三肽經 PepT1 進入腸細胞，大部分在細胞質內水解，較長的肽完整進入肝門脈系統的證據不多"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2014,
+      "url": "https://doi.org/10.1017/s0954422414000225",
+      "status": "verified"
+    },
+    "iqbal-2009": {
+      "source": "Iqbal & Hussain (2009) Am J Physiol Endocrinol Metab 296:E1183–E1194",
+      "detail": {
+        "en": "Review of intestinal lipid absorption: uptake of hydrolysis products, resynthesis into neutral lipids in the endoplasmic reticulum, assembly of apoB lipoproteins (chylomicrons) and export into the lymphatic system",
+        "zh-Hant": "腸道脂質吸收綜述：水解產物的攝取、在內質網重新合成中性脂質、組裝 apoB 脂蛋白（乳糜微粒）並輸出至淋巴系統"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2009,
+      "url": "https://doi.org/10.1152/ajpendo.90899.2008",
+      "status": "verified"
+    },
+    "petrova-2018": {
+      "source": "Petrova & Koh (2018) J Exp Med 215:35–49",
+      "detail": {
+        "en": "Review of organ-specific lymphatic vasculature, including the mechanisms that control dietary fat uptake by intestinal lacteals",
+        "zh-Hant": "器官特異性淋巴管綜述，包括控制小腸乳糜管吸收膳食脂肪的機制"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2018,
+      "url": "https://doi.org/10.1084/jem.20171868",
       "status": "verified"
     }
   }

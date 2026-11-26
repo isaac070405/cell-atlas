@@ -65,6 +65,7 @@
     {
       "from": "cell:enterocyte",
       "to": [
+        "diag:nutrient-absorption",
         "anat:Jejunum",
         "tis:simple-columnar",
         "ent:NUT-01",

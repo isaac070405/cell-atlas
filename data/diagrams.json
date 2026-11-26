@@ -425,6 +425,942 @@
      },
      "cite": ["jonckheere-2012"]
     }
+   ],
+   "legend": [
+    {
+     "type": "electron",
+     "label": {
+      "en": "Electron flow",
+      "zh-Hant": "電子流向"
+     }
+    },
+    {
+     "type": "proton",
+     "label": {
+      "en": "Proton flow (H⁺)",
+      "zh-Hant": "質子流向（H⁺）"
+     }
+    }
+   ]
+  },
+  {
+   "id": "nutrient-absorption",
+   "name": {
+    "en": "Digestion and absorption in the small intestine",
+    "zh-Hant": "小腸的消化與吸收"
+   },
+   "summary": {
+    "en": "Carbohydrate, protein and fat are digested in the lumen and at the brush border, taken up by enterocytes, and leave through the basolateral side. Sugars and amino acids enter the blood capillary and go to the liver. Fat leaves as chylomicrons into the lacteal.",
+    "zh-Hant": "碳水化合物、蛋白質與脂肪在腸腔及刷狀緣被消化，由腸細胞吸收，再從基底外側離開。糖與胺基酸進入血液微血管並運往肝臟，脂肪則以乳糜微粒形式進入乳糜管。"
+   },
+   "cite": ["drozdowski-2006", "miner-williams-2014", "iqbal-2009"],
+   "viewBox": [
+    860,
+    520
+   ],
+   "bands": [
+    {
+     "id": "lumen",
+     "y": 0,
+     "h": 152
+    },
+    {
+     "id": "cell",
+     "y": 152,
+     "h": 224
+    },
+    {
+     "id": "lamina",
+     "y": 376,
+     "h": 144
+    }
+   ],
+   "labels": [
+    {
+     "x": 840,
+     "y": 20,
+     "anchor": "end",
+     "text": {
+      "en": "Lumen of the small intestine",
+      "zh-Hant": "小腸腔"
+     }
+    },
+    {
+     "x": 840,
+     "y": 148,
+     "anchor": "end",
+     "text": {
+      "en": "Apical membrane",
+      "zh-Hant": "頂端膜"
+     }
+    },
+    {
+     "x": 840,
+     "y": 344,
+     "anchor": "end",
+     "text": {
+      "en": "Basolateral membrane",
+      "zh-Hant": "基底外側膜"
+     }
+    },
+    {
+     "x": 840,
+     "y": 398,
+     "anchor": "end",
+     "text": {
+      "en": "Lamina propria",
+      "zh-Hant": "固有層"
+     }
+    },
+    {
+     "x": 105,
+     "y": 12,
+     "anchor": "middle",
+     "text": {
+      "en": "Starch",
+      "zh-Hant": "澱粉"
+     }
+    },
+    {
+     "x": 385,
+     "y": 12,
+     "anchor": "middle",
+     "text": {
+      "en": "Protein",
+      "zh-Hant": "蛋白質"
+     }
+    },
+    {
+     "x": 635,
+     "y": 12,
+     "anchor": "middle",
+     "text": {
+      "en": "Dietary fat",
+      "zh-Hant": "膳食脂肪"
+     }
+    },
+    {
+     "x": 66,
+     "y": 240,
+     "anchor": "start",
+     "text": {
+      "en": "glucose",
+      "zh-Hant": "葡萄糖"
+     }
+    },
+    {
+     "x": 162,
+     "y": 222,
+     "anchor": "start",
+     "text": {
+      "en": "fructose",
+      "zh-Hant": "果糖"
+     }
+    },
+    {
+     "x": 428,
+     "y": 400,
+     "anchor": "start",
+     "text": {
+      "en": "amino acids",
+      "zh-Hant": "胺基酸"
+     }
+    },
+    {
+     "x": 650,
+     "y": 400,
+     "anchor": "start",
+     "text": {
+      "en": "in lymph",
+      "zh-Hant": "於淋巴中"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "type": "carb",
+     "pts": [
+      [
+       105,
+       26
+      ],
+      [
+       105,
+       36
+      ]
+     ]
+    },
+    {
+     "type": "carb",
+     "pts": [
+      [
+       105,
+       82
+      ],
+      [
+       105,
+       98
+      ]
+     ]
+    },
+    {
+     "type": "carb",
+     "pts": [
+      [
+       60,
+       138
+      ],
+      [
+       60,
+       158
+      ]
+     ]
+    },
+    {
+     "type": "carb",
+     "pts": [
+      [
+       155,
+       138
+      ],
+      [
+       155,
+       158
+      ]
+     ]
+    },
+    {
+     "type": "carb",
+     "pts": [
+      [
+       60,
+       194
+      ],
+      [
+       60,
+       318
+      ]
+     ]
+    },
+    {
+     "type": "carb",
+     "pts": [
+      [
+       155,
+       194
+      ],
+      [
+       155,
+       250
+      ],
+      [
+       100,
+       250
+      ],
+      [
+       100,
+       318
+      ]
+     ]
+    },
+    {
+     "type": "carb",
+     "pts": [
+      [
+       75,
+       354
+      ],
+      [
+       75,
+       420
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       385,
+       26
+      ],
+      [
+       385,
+       36
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       385,
+       82
+      ],
+      [
+       385,
+       98
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       335,
+       138
+      ],
+      [
+       335,
+       158
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       435,
+       138
+      ],
+      [
+       435,
+       158
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       340,
+       194
+      ],
+      [
+       340,
+       225
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       400,
+       265
+      ],
+      [
+       400,
+       318
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       450,
+       194
+      ],
+      [
+       450,
+       318
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       420,
+       354
+      ],
+      [
+       420,
+       420
+      ]
+     ]
+    },
+    {
+     "type": "fat",
+     "pts": [
+      [
+       635,
+       26
+      ],
+      [
+       635,
+       36
+      ]
+     ]
+    },
+    {
+     "type": "fat",
+     "pts": [
+      [
+       635,
+       82
+      ],
+      [
+       635,
+       101
+      ]
+     ]
+    },
+    {
+     "type": "fat",
+     "pts": [
+      [
+       635,
+       135
+      ],
+      [
+       635,
+       158
+      ]
+     ]
+    },
+    {
+     "type": "fat",
+     "pts": [
+      [
+       635,
+       194
+      ],
+      [
+       635,
+       215
+      ]
+     ]
+    },
+    {
+     "type": "fat",
+     "pts": [
+      [
+       635,
+       261
+      ],
+      [
+       635,
+       275
+      ]
+     ]
+    },
+    {
+     "type": "fat",
+     "pts": [
+      [
+       635,
+       313
+      ],
+      [
+       635,
+       333
+      ]
+     ]
+    },
+    {
+     "type": "fat",
+     "pts": [
+      [
+       635,
+       363
+      ],
+      [
+       635,
+       420
+      ]
+     ]
+    }
+   ],
+   "legend": [
+    {
+     "type": "carb",
+     "label": {
+      "en": "Carbohydrate",
+      "zh-Hant": "碳水化合物"
+     }
+    },
+    {
+     "type": "prot",
+     "label": {
+      "en": "Protein",
+      "zh-Hant": "蛋白質"
+     }
+    },
+    {
+     "type": "fat",
+     "label": {
+      "en": "Fat",
+      "zh-Hant": "脂肪"
+     }
+    }
+   ],
+   "nodes": [
+    {
+     "id": "enterocyte",
+     "kind": "region",
+     "x": 20,
+     "y": 152,
+     "w": 820,
+     "h": 224,
+     "tx": 30,
+     "ty": 366,
+     "color": "#8C97C4",
+     "name": {
+      "en": "Enterocyte",
+      "zh-Hant": "腸細胞"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "The absorptive epithelial cell of the small intestine. Its apical brush border faces the lumen, and its basolateral membrane faces the lamina propria. Nutrients cross the cell and leave through the basolateral side.",
+      "zh-Hant": "小腸的吸收性上皮細胞。頂端的刷狀緣面向腸腔，基底外側膜面向固有層。養分穿過細胞，由基底外側離開。"
+     },
+     "cite": ["drozdowski-2006"],
+     "link": "cell:enterocyte"
+    },
+    {
+     "id": "amy",
+     "kind": "box",
+     "x": 30,
+     "y": 36,
+     "w": 150,
+     "h": 46,
+     "color": "#A8481A",
+     "name": {
+      "en": "Amylase",
+      "zh-Hant": "澱粉酶"
+     },
+     "sub": {
+      "en": "starch → smaller sugars",
+      "zh-Hant": "澱粉 → 較小的糖"
+     },
+     "text": {
+      "en": "Salivary and pancreatic amylases digest starch in the lumen into smaller sugars.",
+      "zh-Hant": "唾液與胰澱粉酶在腸腔內把澱粉消化成較小的糖。"
+     },
+     "cite": ["drozdowski-2006"]
+    },
+    {
+     "id": "bbcarb",
+     "kind": "box",
+     "x": 30,
+     "y": 98,
+     "w": 150,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Disaccharidases",
+      "zh-Hant": "雙糖酶"
+     },
+     "sub": {
+      "en": "maltase, sucrase, lactase",
+      "zh-Hant": "麥芽糖酶、蔗糖酶、乳糖酶"
+     },
+     "text": {
+      "en": "Enzymes of the brush border membrane split disaccharides such as lactose and sucrose into monosaccharides (glucose, galactose, fructose) right at the cell surface.",
+      "zh-Hant": "刷狀緣膜上的酶在細胞表面把乳糖、蔗糖等雙糖分解成單糖（葡萄糖、半乳糖、果糖）。"
+     },
+     "cite": ["drozdowski-2006"]
+    },
+    {
+     "id": "sglt1",
+     "kind": "box",
+     "x": 30,
+     "y": 158,
+     "w": 80,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "SGLT1",
+      "zh-Hant": "SGLT1"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Sodium-glucose cotransporter in the apical membrane. It takes up glucose and galactose together with sodium, and it accounts for most dietary glucose uptake in the intestine. Mutations cause glucose/galactose malabsorption.",
+      "zh-Hant": "頂端膜上的鈉-葡萄糖共轉運蛋白，與鈉一併攝入葡萄糖與半乳糖，負責腸道大部分膳食葡萄糖吸收。突變會導致葡萄糖／半乳糖吸收不良。"
+     },
+     "cite": ["rieg-2018", "wright-2007"]
+    },
+    {
+     "id": "glut5",
+     "kind": "box",
+     "x": 120,
+     "y": 158,
+     "w": 70,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "GLUT5",
+      "zh-Hant": "GLUT5"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Apical uniporter for fructose. It moves fructose into the cell down its concentration gradient, without sodium.",
+      "zh-Hant": "頂端膜上的果糖單向轉運蛋白，順濃度梯度把果糖運入細胞，不需要鈉。"
+     },
+     "cite": ["drozdowski-2006"]
+    },
+    {
+     "id": "glut2",
+     "kind": "box",
+     "x": 30,
+     "y": 318,
+     "w": 90,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "GLUT2",
+      "zh-Hant": "GLUT2"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Basolateral uniporter that lets glucose, galactose and fructose leave the cell down their gradients. The sugars then enter the capillary.",
+      "zh-Hant": "基底外側的單向轉運蛋白，讓葡萄糖、半乳糖與果糖順梯度離開細胞，再進入微血管。"
+     },
+     "cite": ["drozdowski-2006"]
+    },
+    {
+     "id": "nak",
+     "kind": "box",
+     "x": 190,
+     "y": 318,
+     "w": 100,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Na⁺/K⁺ ATPase",
+      "zh-Hant": "鈉鉀 ATP 酶"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Basolateral pump that keeps intracellular sodium low. The sodium gradient it maintains drives sodium-coupled uptake by SGLT1.",
+      "zh-Hant": "基底外側的泵，維持細胞內低鈉。它維持的鈉梯度驅動 SGLT1 的鈉偶聯攝取。"
+     },
+     "cite": ["wright-2007"]
+    },
+    {
+     "id": "prot",
+     "kind": "box",
+     "x": 300,
+     "y": 36,
+     "w": 170,
+     "h": 46,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Pepsin, trypsin",
+      "zh-Hant": "胃蛋白酶、胰蛋白酶"
+     },
+     "sub": {
+      "en": "protein → peptides",
+      "zh-Hant": "蛋白質 → 肽"
+     },
+     "text": {
+      "en": "Gastric and pancreatic proteases cut dietary protein into peptides in the lumen.",
+      "zh-Hant": "胃與胰蛋白酶在腸腔內把膳食蛋白質切成肽。"
+     },
+     "cite": ["miner-williams-2014"]
+    },
+    {
+     "id": "bbprot",
+     "kind": "box",
+     "x": 300,
+     "y": 98,
+     "w": 170,
+     "h": 40,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Brush border peptidases",
+      "zh-Hant": "刷狀緣肽酶"
+     },
+     "sub": {
+      "en": "peptides → di/tripeptides, AA",
+      "zh-Hant": "肽 → 二／三肽、胺基酸"
+     },
+     "text": {
+      "en": "Peptidases on the brush border shorten peptides to amino acids and to di- and tripeptides, the forms the enterocyte takes up.",
+      "zh-Hant": "刷狀緣上的肽酶把肽縮短成胺基酸及二肽、三肽，即腸細胞攝取的形式。"
+     },
+     "cite": ["miner-williams-2014"]
+    },
+    {
+     "id": "pept1",
+     "kind": "box",
+     "x": 300,
+     "y": 158,
+     "w": 85,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "PepT1",
+      "zh-Hant": "PepT1"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Proton-coupled symporter for di- and tripeptides. It is the main route for peptide uptake and absorbs the products of dietary protein digestion in the intestine.",
+      "zh-Hant": "二肽與三肽的質子偶聯同向轉運蛋白，是肽攝取的主要途徑，負責吸收腸道內膳食蛋白質的消化產物。"
+     },
+     "cite": ["smith-2013", "miner-williams-2014"]
+    },
+    {
+     "id": "aat",
+     "kind": "box",
+     "x": 395,
+     "y": 158,
+     "w": 85,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "AA carriers",
+      "zh-Hant": "胺基酸載體"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Apical transporters for free amino acids. Amino acids enter the cell this way as well as inside peptides.",
+      "zh-Hant": "頂端膜上的游離胺基酸轉運蛋白。胺基酸可經此進入細胞，亦可以肽的形式進入。"
+     },
+     "cite": ["miner-williams-2014"]
+    },
+    {
+     "id": "pepcyt",
+     "kind": "box",
+     "x": 300,
+     "y": 225,
+     "w": 130,
+     "h": 40,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Cytosolic peptidases",
+      "zh-Hant": "細胞質肽酶"
+     },
+     "sub": {
+      "en": "di/tripeptides → AA",
+      "zh-Hant": "二／三肽 → 胺基酸"
+     },
+     "text": {
+      "en": "Most di- and tripeptides are hydrolysed to amino acids in the cytosol. Some can cross the basolateral membrane intact.",
+      "zh-Hant": "大部分二肽與三肽在細胞質內水解成胺基酸，部分可完整穿過基底外側膜。"
+     },
+     "cite": ["miner-williams-2014"]
+    },
+    {
+     "id": "aatb",
+     "kind": "box",
+     "x": 360,
+     "y": 318,
+     "w": 125,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Basolateral AA carriers",
+      "zh-Hant": "基底外側胺基酸載體"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Basolateral transporters that release amino acids toward the capillary, which carries them into the hepatic portal system.",
+      "zh-Hant": "基底外側的轉運蛋白，把胺基酸釋向微血管，再經肝門脈系統運走。"
+     },
+     "cite": ["miner-williams-2014"]
+    },
+    {
+     "id": "lip",
+     "kind": "box",
+     "x": 560,
+     "y": 36,
+     "w": 150,
+     "h": 46,
+     "color": "#6B5200",
+     "name": {
+      "en": "Bile salts + lipase",
+      "zh-Hant": "膽鹽 + 脂肪酶"
+     },
+     "sub": {
+      "en": "fat → MG + fatty acids",
+      "zh-Hant": "脂肪 → 單酸甘油酯 + 脂肪酸"
+     },
+     "text": {
+      "en": "Bile emulsifies dietary fat and pancreatic lipase hydrolyses triglyceride into fatty acids and monoglycerides.",
+      "zh-Hant": "膽汁把膳食脂肪乳化，胰脂肪酶把三酸甘油酯水解成脂肪酸與單酸甘油酯。"
+     },
+     "cite": ["iqbal-2009"]
+    },
+    {
+     "id": "micelle",
+     "kind": "carrier",
+     "x": 635,
+     "y": 118,
+     "rx": 46,
+     "ry": 17,
+     "color": "#6B5200",
+     "name": {
+      "en": "Micelle",
+      "zh-Hant": "微胞"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Bile salts gather the hydrolysis products into micelles, which carry the water-insoluble lipids to the brush border.",
+      "zh-Hant": "膽鹽把水解產物聚成微胞，把不溶於水的脂質運到刷狀緣。"
+     },
+     "cite": ["iqbal-2009"]
+    },
+    {
+     "id": "fatup",
+     "kind": "box",
+     "x": 560,
+     "y": 158,
+     "w": 150,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Fatty acid uptake",
+      "zh-Hant": "脂肪酸攝取"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Fatty acids enter the enterocyte by protein-mediated and protein-independent processes. Fatty acid transporters on the apical membrane dominate.",
+      "zh-Hant": "脂肪酸經由蛋白介導與非蛋白介導的過程進入腸細胞，以頂端膜上的脂肪酸轉運蛋白為主。"
+     },
+     "cite": ["iqbal-2009", "wang-2013"]
+    },
+    {
+     "id": "ser",
+     "kind": "box",
+     "x": 560,
+     "y": 215,
+     "w": 150,
+     "h": 46,
+     "color": "#6B5200",
+     "name": {
+      "en": "Endoplasmic reticulum",
+      "zh-Hant": "內質網"
+     },
+     "sub": {
+      "en": "resynthesis of triglyceride",
+      "zh-Hant": "重新合成三酸甘油酯"
+     },
+     "text": {
+      "en": "Fatty acids and monoglycerides reach the endoplasmic reticulum and are resynthesised into neutral lipids, then used to build lipoproteins with apoB and MTP.",
+      "zh-Hant": "脂肪酸與單酸甘油酯進入內質網，重新合成中性脂質，再與 apoB 及 MTP 組裝成脂蛋白。"
+     },
+     "cite": ["iqbal-2009"]
+    },
+    {
+     "id": "golgi",
+     "kind": "box",
+     "x": 560,
+     "y": 275,
+     "w": 150,
+     "h": 38,
+     "color": "#6B5200",
+     "name": {
+      "en": "Golgi apparatus",
+      "zh-Hant": "高爾基體"
+     },
+     "sub": {
+      "en": "chylomicron packaging",
+      "zh-Hant": "包裝乳糜微粒"
+     },
+     "text": {
+      "en": "Lipoproteins are packaged for secretion from the basolateral side of the enterocyte.",
+      "zh-Hant": "脂蛋白被包裝，由腸細胞的基底外側分泌。"
+     },
+     "cite": ["iqbal-2009"]
+    },
+    {
+     "id": "chylo",
+     "kind": "carrier",
+     "x": 635,
+     "y": 348,
+     "rx": 44,
+     "ry": 15,
+     "color": "#6B5200",
+     "name": {
+      "en": "Chylomicron",
+      "zh-Hant": "乳糜微粒"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Large apoB-containing lipoprotein particle. Enterocytes secrete chylomicrons from the basolateral side, and they export dietary fat into the lymphatic system.",
+      "zh-Hant": "含 apoB 的大型脂蛋白顆粒。腸細胞由基底外側分泌乳糜微粒，把膳食脂肪輸出至淋巴系統。"
+     },
+     "cite": ["iqbal-2009"]
+    },
+    {
+     "id": "cap",
+     "kind": "box",
+     "x": 30,
+     "y": 420,
+     "w": 480,
+     "h": 70,
+     "color": "#A02A2A",
+     "name": {
+      "en": "Capillary",
+      "zh-Hant": "微血管"
+     },
+     "sub": {
+      "en": "blood vessel, to the hepatic portal vein",
+      "zh-Hant": "血管，通往肝門靜脈"
+     },
+     "text": {
+      "en": "Blood capillary of the lamina propria. It takes up sugars and amino acids from the enterocyte and carries them to the liver by the hepatic portal system.",
+      "zh-Hant": "固有層的血液微血管，從腸細胞吸收糖與胺基酸，經肝門脈系統運往肝臟。"
+     },
+     "cite": ["miner-williams-2014"]
+    },
+    {
+     "id": "lac",
+     "kind": "box",
+     "x": 540,
+     "y": 420,
+     "w": 290,
+     "h": 70,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Lacteal",
+      "zh-Hant": "乳糜管"
+     },
+     "sub": {
+      "en": "lymphatic capillary",
+      "zh-Hant": "淋巴微管"
+     },
+     "text": {
+      "en": "Lymphatic capillary in the core of the villus. Chylomicrons are too large to enter blood capillaries, so they pass into the lacteal and travel in lymph.",
+      "zh-Hant": "絨毛中央的淋巴微管。乳糜微粒太大，無法進入血液微血管，故進入乳糜管並隨淋巴運行。"
+     },
+     "cite": ["iqbal-2009", "petrova-2018"]
+    }
    ]
   }
  ]

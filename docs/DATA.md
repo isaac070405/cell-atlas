@@ -48,7 +48,7 @@ Preset views for Module B (5XTD, 4UG0, 1TQN, 1ZUM, 1MAZ, 1G5M, 2IMS, 1F16, 2PQK,
 
 ## `diagrams.json`
 
-Pathway diagrams for the Diagram view (`?diagram=etc-pathway`, optional `&sel=cI`). Each `diagrams[]` entry has `viewBox`, `bands` (membrane and compartment strips), `labels`, `edges` (`type` electron, proton or flow, as polylines in viewBox units) and `nodes` (complexes and carriers with position, colour, `text`, `cite` and an optional `link` such as `pdb:5XTD`). The first diagram is the electron transport chain, linked from `diag:etc-pathway` on the 5XTD edge in `links.json`. It is a textbook-style schematic with no measured values. `js/diagram.js` draws it as SVG, and `scripts/check-data.mjs` checks node ids, citations, link prefixes and edge points.
+Pathway diagrams for the Diagram view (`?diagram=etc-pathway`, optional `&sel=cI`). Each `diagrams[]` entry has `viewBox`, `bands` (membrane and compartment strips), `labels`, `edges` (`type` electron, proton or flow, as polylines in viewBox units) and `nodes` (complexes and carriers with position, colour, `text`, `cite` and an optional `link` such as `pdb:5XTD`). Each diagram sets its own `legend` (edge types electron, proton, flow, carb, prot, fat) and may hold a `region` node (a whole cell drawn as a backdrop, name placed at `tx`, `ty`). The diagrams are the electron transport chain (`diag:etc-pathway`, linked from the 5XTD edge in `links.json`) and nutrient digestion and absorption in the small intestine (`diag:nutrient-absorption`, linked from `cell:enterocyte`). It is a textbook-style schematic with no measured values. `js/diagram.js` draws it as SVG, and `scripts/check-data.mjs` checks node ids, citations, link prefixes and edge points.
 
 ## `bcl2-compare.json`
 
