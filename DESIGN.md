@@ -27,6 +27,12 @@ colors:
   kind-archaeal: "#E96035"
   kind-virus: "#8E24AA"
   kind-on-light: "#FFFFFF"
+  model-basal-layer: "#D98E2B"
+  model-middle-layer: "#E0B15C"
+  model-surface-layer: "#E8A33D"
+  model-ribosome: "#2F5FA8"
+  model-ribosome-free: "#60A5FA"
+  model-tubulin-alpha: "#2E7D9A"
   org-nucleus: "#3B4F9C"
   org-mito: "#B0563A"
   org-er-rough: "#6C7F3A"
@@ -143,6 +149,9 @@ A restrained paper and ink palette with two stain accents, plus fixed categorica
 ### Categorical (fixed across the platform)
 - **Cell kinds:** animal #C62828, plant #2E7D32, fungal #795548, protist #FFB300, bacterial #00ACC1, archaeal #E96035, viral #8E24AA. Lighter tones in dark mode.
 - **Organelles:** 17 fixed tokens (`--org-*`), identical on every page and in both themes. Frontmatter lists the six most used; the rest live in `css/tokens.css`.
+
+### Model materials
+- **Tissue figure colours** (`js/tissue3d.js`): epithelial basal #D98E2B, middle #E0B15C and surface #E8A33D layers, ribosomes #2F5FA8 and #60A5FA, alpha tubulin #2E7D9A (beta tubulin reuses the surface amber). They colour 3D schematic materials only and never appear in the interface chrome.
 
 ### Named Rules
 **The Two Stains Rule.** Blue means structure and the active level. Pink means the current selection. No third accent is added.

@@ -26,6 +26,21 @@ export async function createCellView(host, {
   controls.enableDamping = false;
   controls.addEventListener('change', draw);
 
+  // Keyboard orbit for people without a pointer: arrows rotate 10 degrees, + and - zoom
+  if (!host.hasAttribute('tabindex')) host.tabIndex = 0;
+  host.setAttribute('aria-keyshortcuts', 'ArrowLeft ArrowRight ArrowUp ArrowDown + -');
+  host.addEventListener('keydown', e => {
+    const step = Math.PI / 18, turn = { ArrowLeft: [-step, 0], ArrowRight: [step, 0], ArrowUp: [0, -step], ArrowDown: [0, step] }[e.key];
+    const zoom = { '+': 0.9, '=': 0.9, '-': 1.1 }[e.key];
+    if (!turn && !zoom) return;
+    e.preventDefault();
+    const off = camera.position.clone().sub(controls.target), sph = new THREE.Spherical().setFromVector3(off);
+    if (turn) { sph.theta += turn[0]; sph.phi = Math.min(Math.PI - 0.05, Math.max(0.05, sph.phi + turn[1])); }
+    if (zoom) sph.radius = Math.min(controls.maxDistance, Math.max(controls.minDistance, sph.radius * zoom));
+    camera.position.copy(controls.target).add(off.setFromSpherical(sph));
+    controls.update();
+  });
+
   const plane = new THREE.Plane(new THREE.Vector3(-1, 0, 0), 1e3);
   const group = new THREE.Group();
   scene.add(group);

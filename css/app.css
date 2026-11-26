@@ -159,10 +159,10 @@ html[data-lang="both"] .ruler-bands button { line-height: 1.1; padding-top: 2px;
 .chip-jump { padding: 2px 5px; font-size: 11px; vertical-align: 1px; }
 
 /* Bars */
-.swatch { display: inline-block; width: 9px; height: 9px; border-radius: 2px; background: var(--c); margin-right: var(--s2); vertical-align: 0; }
-.bar-track { position: relative; display: block; height: 8px; border-radius: 2px; background: color-mix(in srgb, var(--rule) 45%, transparent); }
-.bar-fill { position: absolute; left: 0; top: 0; bottom: 0; min-width: 2px; border-radius: 2px; background: var(--c); }
-.bar-range { position: absolute; top: 0; bottom: 0; min-width: 3px; border: 1.5px solid var(--c); border-radius: 2px; background: color-mix(in srgb, var(--c) 30%, transparent); }
+.swatch { display: inline-block; width: 9px; height: 9px; border-radius: var(--radius); background: var(--c); margin-right: var(--s2); vertical-align: 0; }
+.bar-track { position: relative; display: block; height: 8px; border-radius: var(--radius); background: color-mix(in srgb, var(--rule) 45%, transparent); }
+.bar-fill { position: absolute; left: 0; top: 0; bottom: 0; min-width: 2px; border-radius: var(--radius); background: var(--c); }
+.bar-range { position: absolute; top: 0; bottom: 0; min-width: 3px; border: 1.5px solid var(--c); border-radius: var(--radius); background: color-mix(in srgb, var(--c) 30%, transparent); }
 
 /* Chart panel */
 .chart-basis { margin: 0 0 var(--s2) !important; font: 11.5px/1.4 var(--font-label); }
@@ -259,7 +259,7 @@ body.bare .panels { display: none; }
 .kind-legend .kl-group { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s1) var(--s4); }
 .kind-legend .kl-group > span:first-child { min-width: 7.5em; font: 12px/1.4 var(--font-label); color: var(--ink-soft); }
 .kind-legend .kl-item { display: inline-flex; align-items: center; gap: 6px; }
-.kind-legend .sw { width: 12px; height: 12px; border-radius: 2px; background: var(--k); border: 1px solid var(--ink-soft); flex: none; }
+.kind-legend .sw { width: 12px; height: 12px; border-radius: var(--radius); background: var(--k); border: 1px solid var(--ink-soft); flex: none; }
 .kind-legend code { font: 11.5px var(--font-label); color: var(--ink-soft); }
 
 /* Tissue viewer: view buttons and cross-section (same panel style as the cell view) */
