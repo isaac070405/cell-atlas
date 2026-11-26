@@ -7,6 +7,7 @@ colors:
   ink: "#1D232B"
   ink-soft: "#5A6270"
   rule: "#C9C4B6"
+  control-edge: "#8A8F94"
   stain: "#24489A"
   select: "#B8336A"
   ok: "#2F6B4F"
@@ -25,6 +26,7 @@ colors:
   kind-bacterial: "#00ACC1"
   kind-archaeal: "#E64A19"
   kind-virus: "#8E24AA"
+  kind-on-light: "#FFFFFF"
   org-nucleus: "#3B4F9C"
   org-mito: "#B0563A"
   org-er-rough: "#6C7F3A"
@@ -132,7 +134,8 @@ A restrained paper and ink palette with two stain accents, plus fixed categorica
 - **Raised Paper** (#F5F3EC, dark #1B232C): viewport frame and skip link.
 - **Ink** (#1D232B, dark #E3E1D9): body text and ruler ticks.
 - **Soft Ink** (#5A6270, dark #98A0AC): labels, units, secondary text.
-- **Rule Grey** (#C9C4B6, dark #2E3946): hairlines, borders, grid lines.
+- **Rule Grey** (#C9C4B6, dark #2E3946): hairlines, dividers, grid lines.
+- **Control Edge** (soft ink at 75% over paper, about #8A8F94 in light mode, 3.1:1): borders of buttons and segmented controls, `--edge`.
 
 ### Status
 - **Verified Green** (#2F6B4F, dark #6FBF96) and **Pending Amber** (#8A5A12, dark #D9A75A): source badges, always outlined and paired with text.
@@ -144,7 +147,7 @@ A restrained paper and ink palette with two stain accents, plus fixed categorica
 ### Named Rules
 **The Two Stains Rule.** Blue means structure and the active level. Pink means the current selection. No third accent is added.
 
-**The Fixed Palette Rule.** Cell-kind and organelle colours never change per page, and never carry meaning without a text label.
+**The Fixed Palette Rule.** Cell-kind and organelle colours never change per page, and never carry meaning without a text label. Text on a kind fill uses `--kind-on-*`: white on animal, plant, viral and fungal, ink on bacterial, archaeal and protist.
 
 ## Typography
 
@@ -166,7 +169,7 @@ A restrained paper and ink palette with two stain accents, plus fixed categorica
 
 ## Layout
 
-A three-row page: HUD, scale ruler, then stage. The stage is a viewport over three info panels (columns 1fr 1fr 1.2fr) divided by hairlines. Spacing uses a 4px base scale (4, 8, 12, 16, 24, 32, 48). Under 760px the ruler pins to the bottom edge, the HUD readout drops to its own row, and panels become a horizontal scroll-snap strip at 86% width.
+A three-row page: HUD, scale ruler, then stage. The stage is a viewport over three info panels (columns 1fr 1fr 1.2fr) divided by hairlines. Spacing uses a 4px base scale (4, 8, 12, 16, 24, 32, 48). On coarse pointers, controls are 44px tall, chips 36px, and 3D canvases shorter so the page still scrolls. Under 760px the ruler pins to the bottom edge, the HUD readout drops to its own row, and panels become a horizontal scroll-snap strip at 86% width.
 
 ## Elevation & Depth
 
@@ -190,7 +193,7 @@ One corner radius, 3px, on buttons, chips, badges and segmented controls. Border
 - **Hover:** border turns methylene blue. **Pressed:** border and inset 3px bar in eosin (cell-kind colour for cells).
 
 ### Chips and source chips
-- **Style:** mono 12px, blue text, 1px rule border, 3px radius, 4px 6px padding. Disabled chips grey with a dashed border.
+- **Style:** mono 12px, blue text, 1px rule border, 3px radius, 6px 8px padding (about 26px tall). Disabled chips grey with a dashed border.
 
 ### Badges
 - **Style:** mono 11px, outlined in currentColor, green for verified, amber for pending.
