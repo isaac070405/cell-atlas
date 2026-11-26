@@ -220,8 +220,9 @@ body.level-c .queue:empty { display: none; }
 
 /* Cell kind marks (see the legend under the cell list) (selected cell button and the Cell band on the ruler) */
 .queue button[data-kind="cell"][aria-pressed="true"] { border-color: var(--k); box-shadow: inset 3px 0 0 var(--k); }
-html[data-kind] #ruler-svg .band[data-level="cell"].on { fill: var(--k-now); }
-html[data-kind="animal"] { --k-now: var(--kind-animal); } html[data-kind="plant"] { --k-now: var(--kind-plant); } html[data-kind="bacterial"] { --k-now: var(--kind-bacterial); } html[data-kind="archaeal"] { --k-now: var(--kind-archaeal); } html[data-kind="virus"] { --k-now: var(--kind-virus); } html[data-kind="fungal"] { --k-now: var(--kind-fungal); } html[data-kind="protist"] { --k-now: var(--kind-protist); } 
+html[data-kind] #ruler-svg .band[data-level="cell"].on { fill: var(--k-now); opacity: 1; }
+html[data-kind] .ruler-bands button[data-level="cell"][aria-selected="true"] { color: var(--k-on-now); }
+html[data-kind="animal"] { --k-now: var(--kind-animal); --k-on-now: var(--kind-on-animal); } html[data-kind="plant"] { --k-now: var(--kind-plant); --k-on-now: var(--kind-on-plant); } html[data-kind="bacterial"] { --k-now: var(--kind-bacterial); --k-on-now: var(--kind-on-bacterial); } html[data-kind="archaeal"] { --k-now: var(--kind-archaeal); --k-on-now: var(--kind-on-archaeal); } html[data-kind="virus"] { --k-now: var(--kind-virus); --k-on-now: var(--kind-on-virus); } html[data-kind="fungal"] { --k-now: var(--kind-fungal); --k-on-now: var(--kind-on-fungal); } html[data-kind="protist"] { --k-now: var(--kind-protist); --k-on-now: var(--kind-on-protist); } 
 /* Six compare columns are narrow: let the muscle-type switch wrap instead of overflowing */
 .compare .seg-sm { flex-wrap: wrap; max-width: 100%; }
 .compare .seg-sm button { padding: 3px 6px; font-size: 11px; }
@@ -255,7 +256,7 @@ body.bare .panels { display: none; }
 .kind-legend .kl-group { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s1) var(--s4); }
 .kind-legend .kl-group > span:first-child { min-width: 7.5em; font: 12px/1.4 var(--font-label); color: var(--ink-soft); }
 .kind-legend .kl-item { display: inline-flex; align-items: center; gap: 6px; }
-.kind-legend .sw { width: 12px; height: 12px; border-radius: 2px; background: var(--k); flex: none; }
+.kind-legend .sw { width: 12px; height: 12px; border-radius: 2px; background: var(--k); border: 1px solid var(--ink-soft); flex: none; }
 .kind-legend code { font: 11.5px var(--font-label); color: var(--ink-soft); }
 
 /* Tissue viewer: view buttons and cross-section (same panel style as the cell view) */
