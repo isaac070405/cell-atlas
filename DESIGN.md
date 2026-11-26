@@ -48,6 +48,11 @@ typography:
     fontSize: "17px"
     fontWeight: 400
     lineHeight: 1.6
+  body-sm:
+    fontFamily: "Source Serif 4, Noto Serif TC, Georgia, serif"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: 1.6
   label:
     fontFamily: "JetBrains Mono, ui-monospace, monospace"
     fontSize: "12px"
@@ -153,7 +158,8 @@ A restrained paper and ink palette with two stain accents, plus fixed categorica
 - **Title** (600, 30px, 1.1, -0.01em): the HUD title; 24px under 760px.
 - **Headline** (600, 22px): viewport titles.
 - **Body** (400, 17px, 1.6): reading text; panel body 15px; max line length 60 to 72ch.
-- **Label** (500, 12 to 13px, mono): HUD readouts, panel headings, ruler bands, ids, chips.
+- **Body small** (400, 14 to 15px): panel text, key-value rows, source lists, compare table.
+- **Label** (500, 11 to 13px, mono): HUD readouts, panel headings, ruler bands, ids, chips.
 
 ### Named Rules
 **The Mono Is Data Rule.** Anything measured, identified or sourced (values, units, PDB ids, chips) sets in the monospace.
@@ -167,7 +173,7 @@ A three-row page: HUD, scale ruler, then stage. The stage is a viewport over thr
 Flat by default. Depth comes from hairline rules, a raised-paper tone on the viewport frame and a faint 40px grid inside it. The only shadow-like device is an inset 3px bar (eosin, or the cell-kind colour) on the pressed queue button, and a 2px inset underline on the active compare column.
 
 ### Named Rules
-**The Flat Rule.** No drop shadows. State shows as an inset bar or a border colour change.
+**The Flat Rule.** No drop shadows. State shows as an inset bar or a border colour change, plus an underline on the pressed label so colour is not the only cue.
 
 ## Shapes
 
@@ -176,11 +182,11 @@ One corner radius, 3px, on buttons, chips, badges and segmented controls. Border
 ## Components
 
 ### Segmented control (language, view)
-- **Shape:** 1px rule border, 3px radius, buttons divided by a hairline.
+- **Shape:** 1px control-edge border, 3px radius, buttons divided by a control-edge hairline.
 - **Active:** methylene blue fill with paper text.
 
 ### Queue buttons (cell, organelle, tissue pickers)
-- **Style:** paper fill, 1px rule border, 8px 12px padding, mono id in blue.
+- **Style:** paper fill, 1px control-edge border (soft ink at 75% over paper, 3:1), 8px 12px padding, mono id in blue.
 - **Hover:** border turns methylene blue. **Pressed:** border and inset 3px bar in eosin (cell-kind colour for cells).
 
 ### Chips and source chips

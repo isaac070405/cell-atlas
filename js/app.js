@@ -28,7 +28,7 @@ const KINDS = [
   { id: 'bacterial', hex: '#00ACC1', group: 'prokaryote' }, { id: 'archaeal', hex: '#E64A19', group: 'prokaryote' }, { id: 'virus', hex: '#8E24AA', group: 'noncellular' },
 ];
 const GROUPS = ['noncellular', 'prokaryote', 'eukaryote'];
-const kindLegend = () => `<h4>${html('legend.title')}</h4>` + GROUPS.map(g => `<div class="kl-group"><span>${html('group.' + g)}</span>${KINDS.filter(k => k.group === g).map(k => `<span class="kl-item" style="--k:var(--kind-${k.id})"><span class="sw"></span>${html('kind.' + k.id)}</span>`).join('')}</div>`).join('');
+const kindLegend = () => `<h3>${html('legend.title')}</h3>` + GROUPS.map(g => `<div class="kl-group"><span>${html('group.' + g)}</span>${KINDS.filter(k => k.group === g).map(k => `<span class="kl-item" style="--k:var(--kind-${k.id})"><span class="sw"></span>${html('kind.' + k.id)}</span>`).join('')}</div>`).join('');
 initCompare(catalog, bcl2);
 
 // Theme: follows the system until the person picks one
@@ -180,7 +180,7 @@ function renderDirections(sm) {
   const d = sm?.directions, el = $('tissue-dir');
   el.hidden = !d;
   if (!d) return;
-  el.innerHTML = `<h4>${html(d.title)}</h4>${d.items.map(i => `<div class="dir-row"><span class="dir-arrow" aria-hidden="true">${i.arrow}</span><div><strong>${html(i.name)}</strong><br><span class="muted">${html(i.text)}</span></div></div>`).join('')}<p class="muted dir-note">${html(d.note)}</p>`;
+  el.innerHTML = `<h3>${html(d.title)}</h3>${d.items.map(i => `<div class="dir-row"><span class="dir-arrow" aria-hidden="true">${i.arrow}</span><div><strong>${html(i.name)}</strong><br><span class="muted">${html(i.text)}</span></div></div>`).join('')}<p class="muted dir-note">${html(d.note)}</p>`;
 }
 // Organelle and atom models: part card plus sizes and function from the catalog compartment, links to structures
 const modelCites = (m, level) => level === 'atom' ? m.cites : (() => { const k = comp(m.compartment); return [...(k?.sizes ?? []).map(z => z.cite), k?.function?.cite].filter(Boolean); })();
