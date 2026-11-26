@@ -1,0 +1,4360 @@
+{
+ "_note": "Schematic pathway drawn after textbook figures. No measured values. Layout is in SVG units (viewBox). Each node can cite a verified source and link to another site key.",
+ "diagrams": [
+  {
+   "id": "etc-pathway",
+   "name": {
+    "en": "Electron transport chain",
+    "zh-Hant": "電子傳遞鏈"
+   },
+   "summary": {
+    "en": "Electrons from NADH and succinate pass through complexes I to IV in the inner mitochondrial membrane. Complexes I, III and IV pump protons into the intermembrane space, and ATP synthase uses the returning protons to make ATP.",
+    "zh-Hant": "NADH 與琥珀酸的電子經內膜上的複合體 I 至 IV 傳遞。複合體 I、III、IV 把質子泵入膜間腔，ATP 合酶利用回流的質子合成 ATP。"
+   },
+   "cite": ["fernandez-vizarra-2020"],
+   "viewBox": [
+    860,
+    430
+   ],
+   "bands": [
+    {
+     "id": "ims",
+     "y": 0,
+     "h": 180
+    },
+    {
+     "id": "mem",
+     "y": 180,
+     "h": 90
+    },
+    {
+     "id": "matrix",
+     "y": 270,
+     "h": 160
+    }
+   ],
+   "labels": [
+    {
+     "x": 20,
+     "y": 36,
+     "anchor": "start",
+     "text": {
+      "en": "Intermembrane space",
+      "zh-Hant": "膜間腔"
+     }
+    },
+    {
+     "x": 20,
+     "y": 412,
+     "anchor": "start",
+     "text": {
+      "en": "Matrix",
+      "zh-Hant": "基質"
+     }
+    },
+    {
+     "x": 305,
+     "y": 262,
+     "anchor": "middle",
+     "text": {
+      "en": "Inner membrane",
+      "zh-Hant": "內膜"
+     }
+    },
+    {
+     "x": 90,
+     "y": 352,
+     "anchor": "middle",
+     "text": {
+      "en": "NADH",
+      "zh-Hant": "NADH"
+     }
+    },
+    {
+     "x": 210,
+     "y": 352,
+     "anchor": "middle",
+     "text": {
+      "en": "Succinate",
+      "zh-Hant": "琥珀酸"
+     }
+    },
+    {
+     "x": 605,
+     "y": 352,
+     "anchor": "middle",
+     "text": {
+      "en": "½ O₂ → H₂O",
+      "zh-Hant": "½ O₂ → H₂O"
+     }
+    },
+    {
+     "x": 765,
+     "y": 372,
+     "anchor": "middle",
+     "text": {
+      "en": "ADP + Pi → ATP",
+      "zh-Hant": "ADP + Pi → ATP"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "type": "electron",
+     "pts": [
+      [
+       90,
+       338
+      ],
+      [
+       90,
+       278
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       210,
+       338
+      ],
+      [
+       210,
+       278
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       140,
+       180
+      ],
+      [
+       305,
+       180
+      ],
+      [
+       305,
+       203
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       250,
+       232
+      ],
+      [
+       269,
+       230
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       341,
+       222
+      ],
+      [
+       374,
+       222
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       440,
+       168
+      ],
+      [
+       498,
+       133
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       542,
+       133
+      ],
+      [
+       595,
+       168
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       605,
+       278
+      ],
+      [
+       605,
+       336
+      ]
+     ]
+    },
+    {
+     "type": "proton",
+     "pts": [
+      [
+       65,
+       262
+      ],
+      [
+       65,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "proton",
+     "pts": [
+      [
+       400,
+       262
+      ],
+      [
+       400,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "proton",
+     "pts": [
+      [
+       580,
+       262
+      ],
+      [
+       580,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "proton",
+     "pts": [
+      [
+       740,
+       92
+      ],
+      [
+       740,
+       163
+      ]
+     ]
+    },
+    {
+     "type": "flow",
+     "pts": [
+      [
+       765,
+       338
+      ],
+      [
+       765,
+       358
+      ]
+     ]
+    }
+   ],
+   "nodes": [
+    {
+     "id": "cI",
+     "kind": "complex",
+     "x": 40,
+     "y": 165,
+     "w": 100,
+     "h": 110,
+     "color": "#B0563A",
+     "name": {
+      "en": "Complex I",
+      "zh-Hant": "複合體 I"
+     },
+     "sub": {
+      "en": "NADH dehydrogenase",
+      "zh-Hant": "NADH 脫氫酶"
+     },
+     "text": {
+      "en": "Takes electrons from NADH and passes them on to coenzyme Q. The energy released is used to pump protons from the matrix into the intermembrane space. The human structure is PDB 5XTD.",
+      "zh-Hant": "接收 NADH 的電子並傳給輔酶 Q，釋出的能量用於把質子由基質泵入膜間腔。人類結構為 PDB 5XTD。"
+     },
+     "cite": ["guo-2017", "fernandez-vizarra-2020"],
+     "links": ["pdb:5XTD", "diag:respiration"]
+    },
+    {
+     "id": "cII",
+     "kind": "complex",
+     "x": 170,
+     "y": 190,
+     "w": 80,
+     "h": 85,
+     "color": "#8A5A12",
+     "name": {
+      "en": "Complex II",
+      "zh-Hant": "複合體 II"
+     },
+     "sub": {
+      "en": "Succinate dehydrogenase",
+      "zh-Hant": "琥珀酸脫氫酶"
+     },
+     "text": {
+      "en": "One of the four multimeric enzymes of the chain. It passes electrons from succinate to coenzyme Q and, unlike complexes I, III and IV, does not pump protons.",
+      "zh-Hant": "電子傳遞鏈四個多聚體酶之一，把琥珀酸的電子傳給輔酶 Q。與複合體 I、III、IV 不同，它不泵質子。"
+     },
+     "cite": ["fernandez-vizarra-2020"]
+    },
+    {
+     "id": "cQ",
+     "kind": "carrier",
+     "x": 305,
+     "y": 222,
+     "rx": 36,
+     "ry": 18,
+     "color": "#55662B",
+     "name": {
+      "en": "Coenzyme Q",
+      "zh-Hant": "輔酶 Q"
+     },
+     "sub": {
+      "en": "Ubiquinone",
+      "zh-Hant": "泛醌"
+     },
+     "text": {
+      "en": "A mobile electron carrier that moves within the inner membrane. It carries electrons from complexes I and II to complex III.",
+      "zh-Hant": "在內膜內移動的電子載體，把複合體 I 與 II 的電子運到複合體 III。"
+     },
+     "cite": ["fernandez-vizarra-2020"]
+    },
+    {
+     "id": "cIII",
+     "kind": "complex",
+     "x": 375,
+     "y": 165,
+     "w": 90,
+     "h": 110,
+     "color": "#7A4A8C",
+     "name": {
+      "en": "Complex III",
+      "zh-Hant": "複合體 III"
+     },
+     "sub": {
+      "en": "Cytochrome bc1",
+      "zh-Hant": "細胞色素 bc1"
+     },
+     "text": {
+      "en": "Takes electrons from coenzyme Q and passes them to cytochrome c. It also pumps protons into the intermembrane space.",
+      "zh-Hant": "接收輔酶 Q 的電子並傳給細胞色素 c，同時把質子泵入膜間腔。"
+     },
+     "cite": ["fernandez-vizarra-2020"]
+    },
+    {
+     "id": "cC",
+     "kind": "carrier",
+     "x": 520,
+     "y": 120,
+     "rx": 42,
+     "ry": 20,
+     "color": "#2F6F6F",
+     "name": {
+      "en": "Cytochrome c",
+      "zh-Hant": "細胞色素 c"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "A small mobile electron carrier in the intermembrane space. It carries electrons from complex III to complex IV.",
+      "zh-Hant": "膜間腔內的小型移動電子載體，把複合體 III 的電子運到複合體 IV。"
+     },
+     "cite": ["fernandez-vizarra-2020"]
+    },
+    {
+     "id": "cIV",
+     "kind": "complex",
+     "x": 560,
+     "y": 165,
+     "w": 90,
+     "h": 110,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Complex IV",
+      "zh-Hant": "複合體 IV"
+     },
+     "sub": {
+      "en": "Cytochrome c oxidase",
+      "zh-Hant": "細胞色素 c 氧化酶"
+     },
+     "text": {
+      "en": "Passes electrons from cytochrome c to oxygen and reduces the oxygen to water. The electron transfer is coupled to proton translocation across the membrane.",
+      "zh-Hant": "把細胞色素 c 的電子傳給氧，並把氧還原成水。電子傳遞與質子跨膜轉運偶聯。"
+     },
+     "cite": ["michel-1998"]
+    },
+    {
+     "id": "cV",
+     "kind": "synthase",
+     "x": 710,
+     "y": 165,
+     "w": 110,
+     "h": 170,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "ATP synthase",
+      "zh-Hant": "ATP 合酶"
+     },
+     "sub": {
+      "en": "Complex V",
+      "zh-Hant": "複合體 V"
+     },
+     "text": {
+      "en": "F1 sits in the matrix and Fo in the inner membrane. Protons flow back through it from the intermembrane space, and the energy of this proton gradient drives the phosphorylation of ADP to ATP.",
+      "zh-Hant": "F1 位於基質，Fo 位於內膜。質子由膜間腔經它流回基質，此質子梯度的能量驅動 ADP 磷酸化成 ATP。"
+     },
+     "cite": ["jonckheere-2012"]
+    }
+   ],
+   "legend": [
+    {
+     "type": "electron",
+     "label": {
+      "en": "Electron flow",
+      "zh-Hant": "電子流向"
+     }
+    },
+    {
+     "type": "proton",
+     "label": {
+      "en": "Proton flow (H⁺)",
+      "zh-Hant": "質子流向（H⁺）"
+     }
+    }
+   ]
+  },
+  {
+   "id": "nutrient-absorption",
+   "name": {
+    "en": "Digestion and absorption in the small intestine",
+    "zh-Hant": "小腸的消化與吸收"
+   },
+   "summary": {
+    "en": "Carbohydrate, protein and fat are digested in the lumen and at the brush border, taken up by enterocytes, and leave through the basolateral side. Sugars and amino acids enter the blood capillary and go to the liver. Fat leaves as chylomicrons into the lacteal.",
+    "zh-Hant": "碳水化合物、蛋白質與脂肪在腸腔及刷狀緣被消化，由腸細胞吸收，再從基底外側離開。糖與胺基酸進入血液微血管並運往肝臟，脂肪則以乳糜微粒形式進入乳糜管。"
+   },
+   "cite": ["drozdowski-2006", "miner-williams-2014", "iqbal-2009"],
+   "viewBox": [
+    860,
+    520
+   ],
+   "bands": [
+    {
+     "id": "lumen",
+     "y": 0,
+     "h": 152
+    },
+    {
+     "id": "cell",
+     "y": 152,
+     "h": 224
+    },
+    {
+     "id": "lamina",
+     "y": 376,
+     "h": 144
+    }
+   ],
+   "labels": [
+    {
+     "x": 840,
+     "y": 20,
+     "anchor": "end",
+     "text": {
+      "en": "Lumen",
+      "zh-Hant": "腸腔"
+     }
+    },
+    {
+     "x": 840,
+     "y": 148,
+     "anchor": "end",
+     "text": {
+      "en": "Apical membrane",
+      "zh-Hant": "頂端膜"
+     }
+    },
+    {
+     "x": 840,
+     "y": 344,
+     "anchor": "end",
+     "text": {
+      "en": "Basolateral membrane",
+      "zh-Hant": "基底外側膜"
+     }
+    },
+    {
+     "x": 840,
+     "y": 398,
+     "anchor": "end",
+     "text": {
+      "en": "Lamina propria",
+      "zh-Hant": "固有層"
+     }
+    },
+    {
+     "x": 105,
+     "y": 12,
+     "anchor": "middle",
+     "text": {
+      "en": "Starch",
+      "zh-Hant": "澱粉"
+     }
+    },
+    {
+     "x": 385,
+     "y": 12,
+     "anchor": "middle",
+     "text": {
+      "en": "Protein",
+      "zh-Hant": "蛋白質"
+     }
+    },
+    {
+     "x": 635,
+     "y": 12,
+     "anchor": "middle",
+     "text": {
+      "en": "Dietary fat",
+      "zh-Hant": "膳食脂肪"
+     }
+    },
+    {
+     "x": 66,
+     "y": 240,
+     "anchor": "start",
+     "text": {
+      "en": "glucose",
+      "zh-Hant": "葡萄糖"
+     }
+    },
+    {
+     "x": 162,
+     "y": 222,
+     "anchor": "start",
+     "text": {
+      "en": "fructose",
+      "zh-Hant": "果糖"
+     }
+    },
+    {
+     "x": 428,
+     "y": 400,
+     "anchor": "start",
+     "text": {
+      "en": "amino acids",
+      "zh-Hant": "胺基酸"
+     }
+    },
+    {
+     "x": 650,
+     "y": 400,
+     "anchor": "start",
+     "text": {
+      "en": "in lymph",
+      "zh-Hant": "於淋巴中"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "type": "carb",
+     "pts": [
+      [
+       105,
+       26
+      ],
+      [
+       105,
+       36
+      ]
+     ]
+    },
+    {
+     "type": "carb",
+     "pts": [
+      [
+       105,
+       82
+      ],
+      [
+       105,
+       98
+      ]
+     ]
+    },
+    {
+     "type": "carb",
+     "pts": [
+      [
+       60,
+       138
+      ],
+      [
+       60,
+       158
+      ]
+     ]
+    },
+    {
+     "type": "carb",
+     "pts": [
+      [
+       155,
+       138
+      ],
+      [
+       155,
+       158
+      ]
+     ]
+    },
+    {
+     "type": "carb",
+     "pts": [
+      [
+       60,
+       194
+      ],
+      [
+       60,
+       318
+      ]
+     ]
+    },
+    {
+     "type": "carb",
+     "pts": [
+      [
+       155,
+       194
+      ],
+      [
+       155,
+       250
+      ],
+      [
+       100,
+       250
+      ],
+      [
+       100,
+       318
+      ]
+     ]
+    },
+    {
+     "type": "carb",
+     "pts": [
+      [
+       75,
+       354
+      ],
+      [
+       75,
+       420
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       385,
+       26
+      ],
+      [
+       385,
+       36
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       385,
+       82
+      ],
+      [
+       385,
+       98
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       335,
+       138
+      ],
+      [
+       335,
+       158
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       435,
+       138
+      ],
+      [
+       435,
+       158
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       340,
+       194
+      ],
+      [
+       340,
+       225
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       400,
+       265
+      ],
+      [
+       400,
+       318
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       450,
+       194
+      ],
+      [
+       450,
+       318
+      ]
+     ]
+    },
+    {
+     "type": "prot",
+     "pts": [
+      [
+       420,
+       354
+      ],
+      [
+       420,
+       420
+      ]
+     ]
+    },
+    {
+     "type": "fat",
+     "pts": [
+      [
+       635,
+       26
+      ],
+      [
+       635,
+       36
+      ]
+     ]
+    },
+    {
+     "type": "fat",
+     "pts": [
+      [
+       635,
+       82
+      ],
+      [
+       635,
+       101
+      ]
+     ]
+    },
+    {
+     "type": "fat",
+     "pts": [
+      [
+       635,
+       135
+      ],
+      [
+       635,
+       158
+      ]
+     ]
+    },
+    {
+     "type": "fat",
+     "pts": [
+      [
+       635,
+       194
+      ],
+      [
+       635,
+       215
+      ]
+     ]
+    },
+    {
+     "type": "fat",
+     "pts": [
+      [
+       635,
+       261
+      ],
+      [
+       635,
+       275
+      ]
+     ]
+    },
+    {
+     "type": "fat",
+     "pts": [
+      [
+       635,
+       313
+      ],
+      [
+       635,
+       333
+      ]
+     ]
+    },
+    {
+     "type": "fat",
+     "pts": [
+      [
+       635,
+       363
+      ],
+      [
+       635,
+       420
+      ]
+     ]
+    }
+   ],
+   "legend": [
+    {
+     "type": "carb",
+     "label": {
+      "en": "Carbohydrate",
+      "zh-Hant": "碳水化合物"
+     }
+    },
+    {
+     "type": "prot",
+     "label": {
+      "en": "Protein",
+      "zh-Hant": "蛋白質"
+     }
+    },
+    {
+     "type": "fat",
+     "label": {
+      "en": "Fat",
+      "zh-Hant": "脂肪"
+     }
+    }
+   ],
+   "nodes": [
+    {
+     "id": "enterocyte",
+     "kind": "region",
+     "x": 20,
+     "y": 152,
+     "w": 820,
+     "h": 224,
+     "tx": 205,
+     "ty": 262,
+     "color": "#8C97C4",
+     "name": {
+      "en": "Enterocyte",
+      "zh-Hant": "腸細胞"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "The absorptive epithelial cell of the small intestine. Its apical brush border faces the lumen, and its basolateral membrane faces the lamina propria. Nutrients cross the cell and leave through the basolateral side.",
+      "zh-Hant": "小腸的吸收性上皮細胞。頂端的刷狀緣面向腸腔，基底外側膜面向固有層。養分穿過細胞，由基底外側離開。"
+     },
+     "cite": ["drozdowski-2006"],
+     "link": "cell:enterocyte"
+    },
+    {
+     "id": "amy",
+     "kind": "box",
+     "x": 30,
+     "y": 36,
+     "w": 150,
+     "h": 46,
+     "color": "#A8481A",
+     "name": {
+      "en": "Amylase",
+      "zh-Hant": "澱粉酶"
+     },
+     "sub": {
+      "en": "starch → smaller sugars",
+      "zh-Hant": "澱粉 → 較小的糖"
+     },
+     "text": {
+      "en": "Salivary and pancreatic amylases digest starch in the lumen into smaller sugars.",
+      "zh-Hant": "唾液與胰澱粉酶在腸腔內把澱粉消化成較小的糖。"
+     },
+     "cite": ["drozdowski-2006"]
+    },
+    {
+     "id": "bbcarb",
+     "kind": "box",
+     "x": 30,
+     "y": 98,
+     "w": 150,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Disaccharidases",
+      "zh-Hant": "雙糖酶"
+     },
+     "sub": {
+      "en": "maltase, sucrase",
+      "zh-Hant": "麥芽糖酶、蔗糖酶"
+     },
+     "text": {
+      "en": "Enzymes of the brush border membrane split disaccharides such as lactose and sucrose into monosaccharides (glucose, galactose, fructose) right at the cell surface.",
+      "zh-Hant": "刷狀緣膜上的酶在細胞表面把乳糖、蔗糖等雙糖分解成單糖（葡萄糖、半乳糖、果糖）。"
+     },
+     "cite": ["drozdowski-2006"]
+    },
+    {
+     "id": "sglt1",
+     "kind": "box",
+     "x": 30,
+     "y": 158,
+     "w": 80,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "SGLT1",
+      "zh-Hant": "SGLT1"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Sodium-glucose cotransporter in the apical membrane. It takes up glucose and galactose together with sodium, and it accounts for most dietary glucose uptake in the intestine. Mutations cause glucose/galactose malabsorption.",
+      "zh-Hant": "頂端膜上的鈉-葡萄糖共轉運蛋白，與鈉一併攝入葡萄糖與半乳糖，負責腸道大部分膳食葡萄糖吸收。突變會導致葡萄糖／半乳糖吸收不良。"
+     },
+     "cite": ["rieg-2018", "wright-2007"]
+    },
+    {
+     "id": "glut5",
+     "kind": "box",
+     "x": 120,
+     "y": 158,
+     "w": 70,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "GLUT5",
+      "zh-Hant": "GLUT5"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Apical uniporter for fructose. It moves fructose into the cell down its concentration gradient, without sodium.",
+      "zh-Hant": "頂端膜上的果糖單向轉運蛋白，順濃度梯度把果糖運入細胞，不需要鈉。"
+     },
+     "cite": ["drozdowski-2006"]
+    },
+    {
+     "id": "glut2",
+     "kind": "box",
+     "x": 30,
+     "y": 318,
+     "w": 90,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "GLUT2",
+      "zh-Hant": "GLUT2"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Basolateral uniporter that lets glucose, galactose and fructose leave the cell down their gradients. The sugars then enter the capillary.",
+      "zh-Hant": "基底外側的單向轉運蛋白，讓葡萄糖、半乳糖與果糖順梯度離開細胞，再進入微血管。"
+     },
+     "cite": ["drozdowski-2006"]
+    },
+    {
+     "id": "nak",
+     "kind": "box",
+     "x": 190,
+     "y": 318,
+     "w": 100,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Na⁺/K⁺ ATPase",
+      "zh-Hant": "鈉鉀 ATP 酶"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Basolateral pump that keeps intracellular sodium low. The sodium gradient it maintains drives sodium-coupled uptake by SGLT1.",
+      "zh-Hant": "基底外側的泵，維持細胞內低鈉。它維持的鈉梯度驅動 SGLT1 的鈉偶聯攝取。"
+     },
+     "cite": ["wright-2007"]
+    },
+    {
+     "id": "prot",
+     "kind": "box",
+     "x": 300,
+     "y": 36,
+     "w": 170,
+     "h": 46,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Pepsin, trypsin",
+      "zh-Hant": "胃蛋白酶、胰蛋白酶"
+     },
+     "sub": {
+      "en": "protein → peptides",
+      "zh-Hant": "蛋白質 → 肽"
+     },
+     "text": {
+      "en": "Gastric and pancreatic proteases cut dietary protein into peptides in the lumen.",
+      "zh-Hant": "胃與胰蛋白酶在腸腔內把膳食蛋白質切成肽。"
+     },
+     "cite": ["miner-williams-2014"]
+    },
+    {
+     "id": "bbprot",
+     "kind": "box",
+     "x": 300,
+     "y": 98,
+     "w": 170,
+     "h": 40,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Brush border peptidases",
+      "zh-Hant": "刷狀緣肽酶"
+     },
+     "sub": {
+      "en": "peptides → di/tripeptides",
+      "zh-Hant": "肽 → 二／三肽"
+     },
+     "text": {
+      "en": "Peptidases on the brush border shorten peptides to amino acids and to di- and tripeptides, the forms the enterocyte takes up.",
+      "zh-Hant": "刷狀緣上的肽酶把肽縮短成胺基酸及二肽、三肽，即腸細胞攝取的形式。"
+     },
+     "cite": ["miner-williams-2014"]
+    },
+    {
+     "id": "pept1",
+     "kind": "box",
+     "x": 300,
+     "y": 158,
+     "w": 85,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "PepT1",
+      "zh-Hant": "PepT1"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Proton-coupled symporter for di- and tripeptides. It is the main route for peptide uptake and absorbs the products of dietary protein digestion in the intestine.",
+      "zh-Hant": "二肽與三肽的質子偶聯同向轉運蛋白，是肽攝取的主要途徑，負責吸收腸道內膳食蛋白質的消化產物。"
+     },
+     "cite": ["smith-2013", "miner-williams-2014"]
+    },
+    {
+     "id": "aat",
+     "kind": "box",
+     "x": 395,
+     "y": 158,
+     "w": 85,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "AA carriers",
+      "zh-Hant": "胺基酸載體"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Apical transporters for free amino acids. Amino acids enter the cell this way as well as inside peptides.",
+      "zh-Hant": "頂端膜上的游離胺基酸轉運蛋白。胺基酸可經此進入細胞，亦可以肽的形式進入。"
+     },
+     "cite": ["miner-williams-2014"]
+    },
+    {
+     "id": "pepcyt",
+     "kind": "box",
+     "x": 300,
+     "y": 225,
+     "w": 130,
+     "h": 40,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Cytosolic peptidases",
+      "zh-Hant": "細胞質肽酶"
+     },
+     "sub": {
+      "en": "di/tripeptides → AA",
+      "zh-Hant": "二／三肽 → 胺基酸"
+     },
+     "text": {
+      "en": "Most di- and tripeptides are hydrolysed to amino acids in the cytosol. Some can cross the basolateral membrane intact.",
+      "zh-Hant": "大部分二肽與三肽在細胞質內水解成胺基酸，部分可完整穿過基底外側膜。"
+     },
+     "cite": ["miner-williams-2014"]
+    },
+    {
+     "id": "aatb",
+     "kind": "box",
+     "x": 360,
+     "y": 318,
+     "w": 125,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Basolateral AA carriers",
+      "zh-Hant": "基底外側胺基酸載體"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Basolateral transporters that release amino acids toward the capillary, which carries them into the hepatic portal system.",
+      "zh-Hant": "基底外側的轉運蛋白，把胺基酸釋向微血管，再經肝門脈系統運走。"
+     },
+     "cite": ["miner-williams-2014"]
+    },
+    {
+     "id": "lip",
+     "kind": "box",
+     "x": 560,
+     "y": 36,
+     "w": 150,
+     "h": 46,
+     "color": "#6B5200",
+     "name": {
+      "en": "Bile salts + lipase",
+      "zh-Hant": "膽鹽 + 脂肪酶"
+     },
+     "sub": {
+      "en": "fat → MG + fatty acids",
+      "zh-Hant": "脂肪 → 單酸甘油酯 + 脂肪酸"
+     },
+     "text": {
+      "en": "Bile emulsifies dietary fat and pancreatic lipase hydrolyses triglyceride into fatty acids and monoglycerides.",
+      "zh-Hant": "膽汁把膳食脂肪乳化，胰脂肪酶把三酸甘油酯水解成脂肪酸與單酸甘油酯。"
+     },
+     "cite": ["iqbal-2009"]
+    },
+    {
+     "id": "micelle",
+     "kind": "carrier",
+     "x": 635,
+     "y": 118,
+     "rx": 46,
+     "ry": 17,
+     "color": "#6B5200",
+     "name": {
+      "en": "Micelle",
+      "zh-Hant": "微胞"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Bile salts gather the hydrolysis products into micelles, which carry the water-insoluble lipids to the brush border.",
+      "zh-Hant": "膽鹽把水解產物聚成微胞，把不溶於水的脂質運到刷狀緣。"
+     },
+     "cite": ["iqbal-2009"]
+    },
+    {
+     "id": "fatup",
+     "kind": "box",
+     "x": 560,
+     "y": 158,
+     "w": 150,
+     "h": 36,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Fatty acid uptake",
+      "zh-Hant": "脂肪酸攝取"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Fatty acids enter the enterocyte by protein-mediated and protein-independent processes. Fatty acid transporters on the apical membrane dominate.",
+      "zh-Hant": "脂肪酸經由蛋白介導與非蛋白介導的過程進入腸細胞，以頂端膜上的脂肪酸轉運蛋白為主。"
+     },
+     "cite": ["iqbal-2009", "wang-2013"]
+    },
+    {
+     "id": "ser",
+     "kind": "box",
+     "x": 560,
+     "y": 215,
+     "w": 150,
+     "h": 46,
+     "color": "#6B5200",
+     "name": {
+      "en": "Endoplasmic reticulum",
+      "zh-Hant": "內質網"
+     },
+     "sub": {
+      "en": "resynthesis of triglyceride",
+      "zh-Hant": "重新合成三酸甘油酯"
+     },
+     "text": {
+      "en": "Fatty acids and monoglycerides reach the endoplasmic reticulum and are resynthesised into neutral lipids, then used to build lipoproteins with apoB and MTP.",
+      "zh-Hant": "脂肪酸與單酸甘油酯進入內質網，重新合成中性脂質，再與 apoB 及 MTP 組裝成脂蛋白。"
+     },
+     "cite": ["iqbal-2009"]
+    },
+    {
+     "id": "golgi",
+     "kind": "box",
+     "x": 560,
+     "y": 275,
+     "w": 150,
+     "h": 38,
+     "color": "#6B5200",
+     "name": {
+      "en": "Golgi apparatus",
+      "zh-Hant": "高爾基體"
+     },
+     "sub": {
+      "en": "chylomicron packaging",
+      "zh-Hant": "包裝乳糜微粒"
+     },
+     "text": {
+      "en": "Lipoproteins are packaged for secretion from the basolateral side of the enterocyte.",
+      "zh-Hant": "脂蛋白被包裝，由腸細胞的基底外側分泌。"
+     },
+     "cite": ["iqbal-2009"]
+    },
+    {
+     "id": "chylo",
+     "kind": "carrier",
+     "x": 635,
+     "y": 348,
+     "rx": 44,
+     "ry": 15,
+     "color": "#6B5200",
+     "name": {
+      "en": "Chylomicron",
+      "zh-Hant": "乳糜微粒"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Large apoB-containing lipoprotein particle. Enterocytes secrete chylomicrons from the basolateral side, and they export dietary fat into the lymphatic system.",
+      "zh-Hant": "含 apoB 的大型脂蛋白顆粒。腸細胞由基底外側分泌乳糜微粒，把膳食脂肪輸出至淋巴系統。"
+     },
+     "cite": ["iqbal-2009"]
+    },
+    {
+     "id": "cap",
+     "kind": "box",
+     "x": 30,
+     "y": 420,
+     "w": 480,
+     "h": 70,
+     "color": "#F2B8B5",
+     "name": {
+      "en": "Capillary",
+      "zh-Hant": "微血管"
+     },
+     "sub": {
+      "en": "blood vessel, to the hepatic portal vein",
+      "zh-Hant": "血管，通往肝門靜脈"
+     },
+     "text": {
+      "en": "Blood capillary of the lamina propria. It takes up sugars and amino acids from the enterocyte and carries them to the liver by the hepatic portal system.",
+      "zh-Hant": "固有層的血液微血管，從腸細胞吸收糖與胺基酸，經肝門脈系統運往肝臟。"
+     },
+     "cite": ["miner-williams-2014"],
+     "textColor": "#1D232B"
+    },
+    {
+     "id": "lac",
+     "kind": "box",
+     "x": 540,
+     "y": 420,
+     "w": 290,
+     "h": 70,
+     "color": "#E8D9A8",
+     "name": {
+      "en": "Lacteal",
+      "zh-Hant": "乳糜管"
+     },
+     "sub": {
+      "en": "lymphatic capillary",
+      "zh-Hant": "淋巴微管"
+     },
+     "text": {
+      "en": "Lymphatic capillary in the core of the villus. Chylomicrons are too large to enter blood capillaries, so they pass into the lacteal and travel in lymph.",
+      "zh-Hant": "絨毛中央的淋巴微管。乳糜微粒太大，無法進入血液微血管，故進入乳糜管並隨淋巴運行。"
+     },
+     "cite": ["iqbal-2009", "petrova-2018"],
+     "textColor": "#1D232B"
+    }
+   ]
+  },
+  {
+   "id": "apoptosis",
+   "name": {
+    "en": "Apoptosis: extrinsic and intrinsic pathways",
+    "zh-Hant": "細胞凋亡：外在與內在途徑"
+   },
+   "summary": {
+    "en": "The extrinsic pathway starts at a death receptor, forms the DISC and activates caspase-8. The intrinsic pathway starts with cell stress, is controlled by the BCL-2 family at the mitochondrion, and releases cytochrome c to activate caspase-9. Both pathways meet at the executioner caspases.",
+    "zh-Hant": "外在途徑由死亡受體開始，形成 DISC 並活化 caspase-8。內在途徑由細胞壓力開始，在線粒體受 BCL-2 家族控制，釋出細胞色素 c 以活化 caspase-9。兩條途徑在執行型 caspase 匯合。"
+   },
+   "cite": ["elmore-2007", "scaffidi-1999", "kalkavan-2017"],
+   "viewBox": [
+    860,
+    720
+   ],
+   "bands": [
+    {
+     "id": "lumen",
+     "y": 0,
+     "h": 110
+    },
+    {
+     "id": "mem",
+     "y": 110,
+     "h": 42
+    },
+    {
+     "id": "cell",
+     "y": 152,
+     "h": 568
+    }
+   ],
+   "labels": [
+    {
+     "x": 840,
+     "y": 22,
+     "anchor": "end",
+     "text": {
+      "en": "Extracellular",
+      "zh-Hant": "細胞外"
+     }
+    },
+    {
+     "x": 840,
+     "y": 138,
+     "anchor": "end",
+     "text": {
+      "en": "Plasma membrane",
+      "zh-Hant": "細胞膜"
+     }
+    },
+    {
+     "x": 145,
+     "y": 22,
+     "anchor": "middle",
+     "text": {
+      "en": "Extrinsic pathway",
+      "zh-Hant": "外在途徑"
+     }
+    },
+    {
+     "x": 670,
+     "y": 166,
+     "anchor": "middle",
+     "text": {
+      "en": "Intrinsic pathway",
+      "zh-Hant": "內在途徑"
+     }
+    },
+    {
+     "x": 312,
+     "y": 282,
+     "anchor": "start",
+     "text": {
+      "en": "cleaves BID",
+      "zh-Hant": "切割 BID"
+     }
+    },
+    {
+     "x": 372,
+     "y": 343,
+     "anchor": "start",
+     "text": {
+      "en": "tBID",
+      "zh-Hant": "tBID"
+     }
+    },
+    {
+     "x": 155,
+     "y": 470,
+     "anchor": "start",
+     "text": {
+      "en": "type I cells: direct",
+      "zh-Hant": "I 型細胞：直接"
+     }
+    },
+    {
+     "x": 155,
+     "y": 486,
+     "anchor": "start",
+     "text": {
+      "en": "cleavage of caspase-3",
+      "zh-Hant": "切割 caspase-3"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "type": "ext",
+     "pts": [
+      [
+       145,
+       82
+      ],
+      [
+       145,
+       108
+      ]
+     ]
+    },
+    {
+     "type": "ext",
+     "pts": [
+      [
+       145,
+       152
+      ],
+      [
+       145,
+       190
+      ]
+     ]
+    },
+    {
+     "type": "ext",
+     "pts": [
+      [
+       145,
+       236
+      ],
+      [
+       145,
+       270
+      ]
+     ]
+    },
+    {
+     "type": "ext",
+     "pts": [
+      [
+       145,
+       316
+      ],
+      [
+       145,
+       606
+      ],
+      [
+       300,
+       606
+      ]
+     ]
+    },
+    {
+     "type": "ext",
+     "pts": [
+      [
+       230,
+       293
+      ],
+      [
+       305,
+       293
+      ],
+      [
+       305,
+       330
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       360,
+       349
+      ],
+      [
+       468,
+       349
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       670,
+       214
+      ],
+      [
+       670,
+       236
+      ]
+     ]
+    },
+    {
+     "type": "inhibit",
+     "pts": [
+      [
+       570,
+       274
+      ],
+      [
+       570,
+       314
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       740,
+       274
+      ],
+      [
+       740,
+       314
+      ]
+     ]
+    },
+    {
+     "type": "inhibit",
+     "pts": [
+      [
+       650,
+       334
+      ],
+      [
+       685,
+       334
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       720,
+       354
+      ],
+      [
+       720,
+       386
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       665,
+       426
+      ],
+      [
+       665,
+       470
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       655,
+       506
+      ],
+      [
+       655,
+       526
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       655,
+       566
+      ],
+      [
+       655,
+       586
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       560,
+       606
+      ],
+      [
+       460,
+       606
+      ]
+     ]
+    },
+    {
+     "type": "int",
+     "pts": [
+      [
+       380,
+       626
+      ],
+      [
+       380,
+       660
+      ]
+     ]
+    }
+   ],
+   "legend": [
+    {
+     "type": "ext",
+     "label": {
+      "en": "Extrinsic pathway",
+      "zh-Hant": "外在途徑"
+     }
+    },
+    {
+     "type": "int",
+     "label": {
+      "en": "Intrinsic pathway",
+      "zh-Hant": "內在途徑"
+     }
+    },
+    {
+     "type": "inhibit",
+     "label": {
+      "en": "Inhibition",
+      "zh-Hant": "抑制"
+     }
+    }
+   ],
+   "nodes": [
+    {
+     "id": "mito",
+     "kind": "region",
+     "x": 470,
+     "y": 294,
+     "w": 370,
+     "h": 160,
+     "tx": 480,
+     "ty": 446,
+     "color": "#B0563A",
+     "name": {
+      "en": "Mitochondrion",
+      "zh-Hant": "線粒體"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "The BCL-2 family controls the outer membrane of the mitochondrion. When it is permeabilised (MOMP), proteins from the intermembrane space such as cytochrome c and SMAC are released into the cytosol.",
+      "zh-Hant": "BCL-2 家族控制線粒體外膜。外膜通透化（MOMP）後，膜間腔的蛋白質如細胞色素 c 與 SMAC 會釋入細胞質。"
+     },
+     "cite": ["kalkavan-2017"]
+    },
+    {
+     "id": "ligand",
+     "kind": "box",
+     "x": 60,
+     "y": 40,
+     "w": 170,
+     "h": 42,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Death ligand",
+      "zh-Hant": "死亡配體"
+     },
+     "sub": {
+      "en": "FasL, TNF, TRAIL",
+      "zh-Hant": "FasL、TNF、TRAIL"
+     },
+     "text": {
+      "en": "An extracellular signal that starts the extrinsic pathway. Death ligands such as FasL bind their receptors on the target cell.",
+      "zh-Hant": "啟動外在途徑的細胞外訊號。FasL 等死亡配體與目標細胞上的受體結合。"
+     },
+     "cite": ["micheau-2002"]
+    },
+    {
+     "id": "receptor",
+     "kind": "box",
+     "x": 60,
+     "y": 108,
+     "w": 170,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Death receptor",
+      "zh-Hant": "死亡受體"
+     },
+     "sub": {
+      "en": "Fas (CD95), DR4, DR5",
+      "zh-Hant": "Fas（CD95）、DR4、DR5"
+     },
+     "text": {
+      "en": "A member of the death receptor family in the plasma membrane. When the ligand binds, it recruits the adaptor FADD.",
+      "zh-Hant": "位於細胞膜的死亡受體家族成員。配體結合後，它招募接合蛋白 FADD。"
+     },
+     "cite": ["micheau-2002"]
+    },
+    {
+     "id": "fadd",
+     "kind": "box",
+     "x": 60,
+     "y": 190,
+     "w": 170,
+     "h": 46,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "FADD + procaspase-8",
+      "zh-Hant": "FADD + 前 caspase-8"
+     },
+     "sub": {
+      "en": "forms the DISC",
+      "zh-Hant": "形成 DISC"
+     },
+     "text": {
+      "en": "The adaptor FADD and initiator procaspase-8 are recruited to the receptor and form the death-inducing signaling complex (DISC). Procaspase-8 is activated there by cleavage.",
+      "zh-Hant": "接合蛋白 FADD 與啟動型前 caspase-8 被招募到受體，形成死亡誘導訊號複合體（DISC），前 caspase-8 在此經切割而活化。"
+     },
+     "cite": ["micheau-2002", "scaffidi-1999"]
+    },
+    {
+     "id": "casp8",
+     "kind": "box",
+     "x": 60,
+     "y": 270,
+     "w": 170,
+     "h": 46,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Caspase-8",
+      "zh-Hant": "Caspase-8"
+     },
+     "sub": {
+      "en": "initiator caspase",
+      "zh-Hant": "啟動型 caspase"
+     },
+     "text": {
+      "en": "Active caspase-8 is released from the DISC. In type I cells it cleaves caspase-3 directly. In type II cells it cleaves BID and so engages the mitochondrial branch.",
+      "zh-Hant": "活性 caspase-8 由 DISC 釋出。在 I 型細胞中它直接切割 caspase-3；在 II 型細胞中它切割 BID，從而啟動線粒體分支。"
+     },
+     "cite": ["scaffidi-1999"]
+    },
+    {
+     "id": "bid",
+     "kind": "box",
+     "x": 250,
+     "y": 330,
+     "w": 110,
+     "h": 38,
+     "color": "#A8481A",
+     "name": {
+      "en": "BID → tBID",
+      "zh-Hant": "BID → tBID"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Caspase-8 cleaves BID to tBID, a BH3-only protein. This links the extrinsic pathway to the mitochondria in type II cells, and Bcl-2 or Bcl-xL can block it.",
+      "zh-Hant": "Caspase-8 把 BID 切割成 tBID（僅含 BH3 的蛋白），在 II 型細胞中把外在途徑連到線粒體，而 Bcl-2 或 Bcl-xL 可阻斷。"
+     },
+     "cite": ["scaffidi-1999", "chipuk-2008"]
+    },
+    {
+     "id": "stress",
+     "kind": "box",
+     "x": 560,
+     "y": 176,
+     "w": 220,
+     "h": 38,
+     "color": "#A8481A",
+     "name": {
+      "en": "Intracellular stress",
+      "zh-Hant": "細胞內壓力"
+     },
+     "sub": {
+      "en": "DNA damage, growth factor loss",
+      "zh-Hant": "DNA 損傷、缺乏生長因子"
+     },
+     "text": {
+      "en": "Signals from inside the cell, such as DNA damage or loss of growth factors, start the intrinsic (mitochondrial) pathway.",
+      "zh-Hant": "細胞內部的訊號，例如 DNA 損傷或缺乏生長因子，啟動內在（線粒體）途徑。"
+     },
+     "cite": ["kalkavan-2017"]
+    },
+    {
+     "id": "bh3",
+     "kind": "box",
+     "x": 560,
+     "y": 236,
+     "w": 220,
+     "h": 38,
+     "color": "#A8481A",
+     "name": {
+      "en": "BH3-only proteins",
+      "zh-Hant": "僅含 BH3 的蛋白"
+     },
+     "sub": {
+      "en": "BIM, tBID, BIK",
+      "zh-Hant": "BIM、tBID、BIK"
+     },
+     "text": {
+      "en": "Sensors of stress in the BCL-2 family. They engage BAX and BAK and neutralise anti-apoptotic BCL-2 proteins, and both actions help trigger MOMP.",
+      "zh-Hant": "BCL-2 家族中感應壓力的蛋白，啟動 BAX 與 BAK 並中和抗凋亡的 BCL-2 蛋白，兩者都有助觸發 MOMP。"
+     },
+     "cite": ["chipuk-2008"]
+    },
+    {
+     "id": "bcl2",
+     "kind": "box",
+     "x": 490,
+     "y": 314,
+     "w": 160,
+     "h": 40,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "BCL-2, BCL-XL, MCL-1",
+      "zh-Hant": "BCL-2、BCL-XL、MCL-1"
+     },
+     "sub": {
+      "en": "anti-apoptotic",
+      "zh-Hant": "抗凋亡"
+     },
+     "text": {
+      "en": "Anti-apoptotic members of the BCL-2 family. They hold back BAX and BAK and are neutralised by BH3-only proteins. Structures in the atlas: BCL-2 (1G5M), BCL-XL (1MAZ) and MCL-1 with a Bim BH3 peptide (2PQK).",
+      "zh-Hant": "BCL-2 家族的抗凋亡成員，抑制 BAX 與 BAK，並被僅含 BH3 的蛋白中和。圖譜內的結構：BCL-2（1G5M）、BCL-XL（1MAZ）及與 Bim BH3 肽結合的 MCL-1（2PQK）。"
+     },
+     "cite": ["chipuk-2008"],
+     "links": ["pdb:1G5M", "pdb:1MAZ", "pdb:2PQK"]
+    },
+    {
+     "id": "baxbak",
+     "kind": "box",
+     "x": 685,
+     "y": 314,
+     "w": 140,
+     "h": 40,
+     "color": "#A02A2A",
+     "name": {
+      "en": "BAX, BAK",
+      "zh-Hant": "BAX、BAK"
+     },
+     "sub": {
+      "en": "pore formers",
+      "zh-Hant": "成孔蛋白"
+     },
+     "text": {
+      "en": "Pro-apoptotic effectors that permeabilise the outer mitochondrial membrane. Structures in the atlas: BAX (1F16) and BAK (2IMS).",
+      "zh-Hant": "使線粒體外膜通透化的促凋亡效應蛋白。圖譜內的結構：BAX（1F16）及 BAK（2IMS）。"
+     },
+     "cite": ["chipuk-2008"],
+     "links": ["pdb:1F16", "pdb:2IMS"]
+    },
+    {
+     "id": "momp",
+     "kind": "box",
+     "x": 570,
+     "y": 386,
+     "w": 170,
+     "h": 40,
+     "color": "#A02A2A",
+     "name": {
+      "en": "MOMP",
+      "zh-Hant": "MOMP"
+     },
+     "sub": {
+      "en": "outer membrane permeabilised",
+      "zh-Hant": "外膜通透化"
+     },
+     "text": {
+      "en": "Mitochondrial outer membrane permeabilization, the point of no return of the intrinsic pathway. It releases cytochrome c and other intermembrane space proteins.",
+      "zh-Hant": "線粒體外膜通透化，是內在途徑的不歸點，釋出細胞色素 c 及其他膜間腔蛋白。"
+     },
+     "cite": ["kalkavan-2017", "chipuk-2008"]
+    },
+    {
+     "id": "cytc",
+     "kind": "carrier",
+     "x": 655,
+     "y": 488,
+     "rx": 60,
+     "ry": 18,
+     "color": "#A8481A",
+     "name": {
+      "en": "Cytochrome c",
+      "zh-Hant": "細胞色素 c"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "In healthy cells it shuttles electrons in the respiratory chain. Released into the cytosol, it activates Apaf-1.",
+      "zh-Hant": "在健康細胞中它在呼吸鏈中傳遞電子；釋入細胞質後，它活化 Apaf-1。"
+     },
+     "cite": ["garrido-2006"]
+    },
+    {
+     "id": "apopto",
+     "kind": "box",
+     "x": 560,
+     "y": 526,
+     "w": 190,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Apoptosome",
+      "zh-Hant": "凋亡體"
+     },
+     "sub": {
+      "en": "Apaf-1 + cytochrome c",
+      "zh-Hant": "Apaf-1 + 細胞色素 c"
+     },
+     "text": {
+      "en": "The Apaf-1 apoptosome is the adaptor complex that activates the initiator caspase-9.",
+      "zh-Hant": "Apaf-1 凋亡體是活化啟動型 caspase-9 的接合蛋白複合體。"
+     },
+     "cite": ["bao-2007", "garrido-2006"]
+    },
+    {
+     "id": "casp9",
+     "kind": "box",
+     "x": 560,
+     "y": 586,
+     "w": 190,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Caspase-9",
+      "zh-Hant": "Caspase-9"
+     },
+     "sub": {
+      "en": "initiator caspase",
+      "zh-Hant": "啟動型 caspase"
+     },
+     "text": {
+      "en": "Initiator caspase of the intrinsic pathway. Once activated on the apoptosome it matures caspase-3.",
+      "zh-Hant": "內在途徑的啟動型 caspase，在凋亡體上活化後使 caspase-3 成熟。"
+     },
+     "cite": ["bao-2007", "garrido-2006"]
+    },
+    {
+     "id": "exec",
+     "kind": "box",
+     "x": 300,
+     "y": 586,
+     "w": 160,
+     "h": 40,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Caspase-3, -6, -7",
+      "zh-Hant": "Caspase-3、-6、-7"
+     },
+     "sub": {
+      "en": "executioner caspases",
+      "zh-Hant": "執行型 caspase"
+     },
+     "text": {
+      "en": "Both pathways meet here. Executioner caspases are cleaved and activated by initiator caspases, and they cleave hundreds of cell proteins.",
+      "zh-Hant": "兩條途徑在此匯合。執行型 caspase 被啟動型 caspase 切割而活化，並切割數以百計的細胞蛋白。"
+     },
+     "cite": ["scaffidi-1999", "garrido-2006"]
+    },
+    {
+     "id": "death",
+     "kind": "box",
+     "x": 240,
+     "y": 660,
+     "w": 280,
+     "h": 44,
+     "color": "#555B66",
+     "name": {
+      "en": "Cell dismantled",
+      "zh-Hant": "細胞被拆解"
+     },
+     "sub": {
+      "en": "blebbing, DNA fragmentation, apoptotic bodies",
+      "zh-Hant": "起泡、DNA 斷裂、凋亡小體"
+     },
+     "text": {
+      "en": "Apoptosis ends with characteristic morphological changes and energy-dependent biochemical events. The cell is cleared with little damage to its surroundings.",
+      "zh-Hant": "細胞凋亡以特徵性的形態改變及耗能的生化事件完結，細胞被清除，對周圍組織損害極小。"
+     },
+     "cite": ["elmore-2007", "garrido-2006"]
+    }
+   ]
+  },
+  {
+   "id": "respiration",
+   "name": {
+    "en": "Cellular respiration: glycolysis and the TCA cycle",
+    "zh-Hant": "細胞呼吸：糖解與 TCA 循環"
+   },
+   "summary": {
+    "en": "Glycolysis in the cytosol turns one glucose into two pyruvate, with a net 2 ATP and 2 NADH. Pyruvate enters the mitochondrial matrix, where the pyruvate dehydrogenase complex makes acetyl-CoA and the TCA cycle oxidises it. The NADH and FADH₂ made on the way go to the electron transport chain.",
+    "zh-Hant": "細胞質內的糖解把一個葡萄糖變成兩個丙酮酸，淨得 2 個 ATP 與 2 個 NADH。丙酮酸進入線粒體基質，由丙酮酸脫氫酶複合體製成乙醯輔酶 A，再由 TCA 循環氧化。過程中產生的 NADH 與 FADH₂ 送往電子傳遞鏈。"
+   },
+   "cite": ["pajak-2019", "gray-2013", "anderson-2018"],
+   "viewBox": [
+    1000,
+    660
+   ],
+   "bands": [
+    {
+     "id": "cell",
+     "y": 0,
+     "h": 660
+    }
+   ],
+   "labels": [
+    {
+     "x": 230,
+     "y": 492,
+     "anchor": "start",
+     "text": {
+      "en": "enters the matrix",
+      "zh-Hant": "進入基質"
+     }
+    },
+    {
+     "x": 40,
+     "y": 560,
+     "anchor": "start",
+     "text": {
+      "en": "net: 2 ATP + 2 NADH",
+      "zh-Hant": "淨得：2 ATP + 2 NADH"
+     }
+    },
+    {
+     "x": 40,
+     "y": 578,
+     "anchor": "start",
+     "text": {
+      "en": "per glucose",
+      "zh-Hant": "每個葡萄糖"
+     }
+    },
+    {
+     "x": 760,
+     "y": 395,
+     "anchor": "middle",
+     "text": {
+      "en": "TCA cycle",
+      "zh-Hant": "TCA 循環"
+     }
+    },
+    {
+     "x": 578,
+     "y": 466,
+     "anchor": "end",
+     "text": {
+      "en": "CO₂, NADH",
+      "zh-Hant": "CO₂、NADH"
+     }
+    },
+    {
+     "x": 566,
+     "y": 392,
+     "anchor": "end",
+     "text": {
+      "en": "CO₂, NADH",
+      "zh-Hant": "CO₂、NADH"
+     }
+    },
+    {
+     "x": 652,
+     "y": 322,
+     "anchor": "end",
+     "text": {
+      "en": "GTP / ATP",
+      "zh-Hant": "GTP / ATP"
+     }
+    },
+    {
+     "x": 852,
+     "y": 326,
+     "anchor": "start",
+     "text": {
+      "en": "FADH₂",
+      "zh-Hant": "FADH₂"
+     }
+    },
+    {
+     "x": 962,
+     "y": 474,
+     "anchor": "end",
+     "text": {
+      "en": "NADH",
+      "zh-Hant": "NADH"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "type": "gly",
+     "pts": [
+      [
+       125,
+       90
+      ],
+      [
+       125,
+       190
+      ]
+     ]
+    },
+    {
+     "type": "gly",
+     "pts": [
+      [
+       125,
+       230
+      ],
+      [
+       125,
+       330
+      ]
+     ]
+    },
+    {
+     "type": "gly",
+     "pts": [
+      [
+       125,
+       370
+      ],
+      [
+       125,
+       480
+      ]
+     ]
+    },
+    {
+     "type": "gly",
+     "pts": [
+      [
+       210,
+       500
+      ],
+      [
+       395,
+       500
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       487,
+       522
+      ],
+      [
+       487,
+       590
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       610,
+       607
+      ],
+      [
+       735,
+       607
+      ],
+      [
+       735,
+       558
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       707,
+       526
+      ],
+      [
+       693,
+       522
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       628,
+       489
+      ],
+      [
+       602,
+       449
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       602,
+       411
+      ],
+      [
+       628,
+       371
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       693,
+       338
+      ],
+      [
+       707,
+       334
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       813,
+       334
+      ],
+      [
+       827,
+       338
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       892,
+       371
+      ],
+      [
+       918,
+       411
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       918,
+       449
+      ],
+      [
+       892,
+       489
+      ]
+     ]
+    },
+    {
+     "type": "tca",
+     "pts": [
+      [
+       827,
+       522
+      ],
+      [
+       813,
+       526
+      ]
+     ]
+    }
+   ],
+   "legend": [
+    {
+     "type": "gly",
+     "label": {
+      "en": "Glycolysis and pyruvate transport",
+      "zh-Hant": "糖解與丙酮酸運輸"
+     }
+    },
+    {
+     "type": "tca",
+     "label": {
+      "en": "Acetyl-CoA and the TCA cycle",
+      "zh-Hant": "乙醯輔酶 A 與 TCA 循環"
+     }
+    }
+   ],
+   "nodes": [
+    {
+     "id": "cytosol",
+     "kind": "region",
+     "x": 20,
+     "y": 20,
+     "w": 340,
+     "h": 620,
+     "tx": 35,
+     "ty": 628,
+     "color": "#C39A2E",
+     "name": {
+      "en": "Cytosol",
+      "zh-Hant": "細胞質"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Glycolysis takes place in the cytosol and does not need oxygen. It turns one glucose into two pyruvate.",
+      "zh-Hant": "糖解在細胞質進行，不需要氧氣，把一個葡萄糖變成兩個丙酮酸。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "matrix",
+     "kind": "region",
+     "x": 380,
+     "y": 270,
+     "w": 620,
+     "h": 380,
+     "tx": 395,
+     "ty": 292,
+     "color": "#B0563A",
+     "name": {
+      "en": "Mitochondrial matrix",
+      "zh-Hant": "線粒體基質"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Pyruvate oxidation and the TCA cycle take place in the matrix. Pyruvate is transported into the mitochondrion before it is oxidised.",
+      "zh-Hant": "丙酮酸氧化與 TCA 循環在基質進行。丙酮酸先運入線粒體，才被氧化。"
+     },
+     "cite": ["gray-2013", "spinelli-2018"]
+    },
+    {
+     "id": "glc",
+     "kind": "box",
+     "x": 40,
+     "y": 50,
+     "w": 170,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Glucose",
+      "zh-Hant": "葡萄糖"
+     },
+     "sub": {
+      "en": "6 carbons",
+      "zh-Hant": "6 個碳"
+     },
+     "text": {
+      "en": "The fuel of glycolysis. Glucose enters the cell and is trapped there by phosphorylation, which is the first step of glycolysis.",
+      "zh-Hant": "糖解的燃料。葡萄糖進入細胞後經磷酸化被困在細胞內，這是糖解的第一步。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "hkpfk",
+     "kind": "box",
+     "x": 235,
+     "y": 118,
+     "w": 115,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Hexokinase, PFK-1",
+      "zh-Hant": "己糖激酶、PFK-1"
+     },
+     "sub": {
+      "en": "use 2 ATP",
+      "zh-Hant": "消耗 2 ATP"
+     },
+     "text": {
+      "en": "Hexokinase and phosphofructokinase-1 each add a phosphate from ATP, so the investment phase uses 2 ATP. 2-deoxyglucose blocks hexokinase.",
+      "zh-Hant": "己糖激酶與磷酸果糖激酶-1 各自從 ATP 取得一個磷酸，因此投入期消耗 2 個 ATP。2-脫氧葡萄糖會阻斷己糖激酶。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "f16",
+     "kind": "box",
+     "x": 40,
+     "y": 190,
+     "w": 170,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Fructose 1,6-bisphosphate",
+      "zh-Hant": "果糖 1,6-二磷酸"
+     },
+     "sub": {
+      "en": "6 carbons",
+      "zh-Hant": "6 個碳"
+     },
+     "text": {
+      "en": "A six-carbon sugar with two phosphates. It is the product of the investment phase.",
+      "zh-Hant": "帶兩個磷酸的六碳糖，是投入期的產物。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "ald",
+     "kind": "box",
+     "x": 235,
+     "y": 248,
+     "w": 115,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Aldolase",
+      "zh-Hant": "醛縮酶"
+     },
+     "sub": {
+      "en": "splits into 2 × 3C",
+      "zh-Hant": "分成 2 個三碳"
+     },
+     "text": {
+      "en": "Aldolase splits the six-carbon sugar into two three-carbon sugars, so everything after this step happens twice per glucose.",
+      "zh-Hant": "醛縮酶把六碳糖分成兩個三碳糖，因此之後每一步每個葡萄糖都發生兩次。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "g3p",
+     "kind": "box",
+     "x": 40,
+     "y": 330,
+     "w": 170,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Glyceraldehyde 3-phosphate",
+      "zh-Hant": "甘油醛 3-磷酸"
+     },
+     "sub": {
+      "en": "2 molecules, 3 carbons",
+      "zh-Hant": "2 個分子，各 3 個碳"
+     },
+     "text": {
+      "en": "The three-carbon sugar that enters the payoff phase. Two molecules form from each glucose.",
+      "zh-Hant": "進入回報期的三碳糖，每個葡萄糖產生兩個分子。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "gapdh",
+     "kind": "box",
+     "x": 235,
+     "y": 376,
+     "w": 115,
+     "h": 36,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "GAPDH",
+      "zh-Hant": "GAPDH"
+     },
+     "sub": {
+      "en": "makes 2 NADH",
+      "zh-Hant": "產生 2 NADH"
+     },
+     "text": {
+      "en": "Glyceraldehyde 3-phosphate dehydrogenase reduces NAD⁺ to NADH. Two NADH form per glucose. Several steps between this one and pyruvate kinase are not drawn.",
+      "zh-Hant": "甘油醛 3-磷酸脫氫酶把 NAD⁺ 還原成 NADH，每個葡萄糖產生 2 個 NADH。此步與丙酮酸激酶之間的數步沒有畫出。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "pk",
+     "kind": "box",
+     "x": 235,
+     "y": 426,
+     "w": 115,
+     "h": 36,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Pyruvate kinase",
+      "zh-Hant": "丙酮酸激酶"
+     },
+     "sub": {
+      "en": "makes 4 ATP",
+      "zh-Hant": "產生 4 ATP"
+     },
+     "text": {
+      "en": "The payoff phase makes 4 ATP per glucose. Subtracting the 2 ATP spent earlier, glycolysis nets 2 ATP.",
+      "zh-Hant": "回報期每個葡萄糖產生 4 個 ATP，減去先前消耗的 2 個，糖解淨得 2 個 ATP。"
+     },
+     "cite": ["pajak-2019"]
+    },
+    {
+     "id": "pyr",
+     "kind": "box",
+     "x": 40,
+     "y": 480,
+     "w": 170,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Pyruvate",
+      "zh-Hant": "丙酮酸"
+     },
+     "sub": {
+      "en": "2 molecules, 3 carbons",
+      "zh-Hant": "2 個分子，各 3 個碳"
+     },
+     "text": {
+      "en": "The end product of glycolysis. It is transported into mitochondria through the mitochondrial pyruvate carrier as the fuel input of the citric acid cycle. Without oxygen it is reduced to lactate instead.",
+      "zh-Hant": "糖解的終產物，經線粒體丙酮酸載體運入線粒體，作為檸檬酸循環的燃料。缺氧時它會改為還原成乳酸。"
+     },
+     "cite": ["gray-2013", "pajak-2019"]
+    },
+    {
+     "id": "pdh",
+     "kind": "box",
+     "x": 395,
+     "y": 478,
+     "w": 185,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Pyruvate dehydrogenase",
+      "zh-Hant": "丙酮酸脫氫酶"
+     },
+     "sub": {
+      "en": "pyruvate → acetyl-CoA + CO₂ + NADH",
+      "zh-Hant": "丙酮酸 → 乙醯輔酶 A + CO₂ + NADH"
+     },
+     "text": {
+      "en": "The pyruvate dehydrogenase complex links glycolysis to the Krebs cycle. It decarboxylates pyruvate into acetyl-CoA irreversibly, and is regulated by phosphorylation (PDK and PDP).",
+      "zh-Hant": "丙酮酸脫氫酶複合體連接糖解與克雷布斯循環，把丙酮酸不可逆地脫羧成乙醯輔酶 A，並受磷酸化（PDK 與 PDP）調控。"
+     },
+     "cite": ["saunier-2015", "gray-2013"]
+    },
+    {
+     "id": "acoa",
+     "kind": "box",
+     "x": 480,
+     "y": 590,
+     "w": 130,
+     "h": 34,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Acetyl-CoA",
+      "zh-Hant": "乙醯輔酶 A"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "The two-carbon fuel of the TCA cycle. It joins oxaloacetate to make citrate.",
+      "zh-Hant": "TCA 循環的二碳燃料，與草醯乙酸結合成檸檬酸。"
+     },
+     "cite": ["pajak-2019", "saunier-2015"]
+    },
+    {
+     "id": "cit",
+     "kind": "box",
+     "x": 710,
+     "y": 524,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Citrate",
+      "zh-Hant": "檸檬酸"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Formed from acetyl-CoA and oxaloacetate. The first step of the TCA cycle.",
+      "zh-Hant": "由乙醯輔酶 A 與草醯乙酸生成，是 TCA 循環的第一步。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "iso",
+     "kind": "box",
+     "x": 590,
+     "y": 492,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Isocitrate",
+      "zh-Hant": "異檸檬酸"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "An isomer of citrate. The cycle then removes carbon from it.",
+      "zh-Hant": "檸檬酸的異構物，循環其後從它移走碳。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "akg",
+     "kind": "box",
+     "x": 540,
+     "y": 414,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "α-Ketoglutarate",
+      "zh-Hant": "α-酮戊二酸"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Five-carbon intermediate. Its formation from isocitrate releases CO₂ and makes NADH.",
+      "zh-Hant": "五碳中間物，由異檸檬酸生成時釋出 CO₂ 並產生 NADH。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "scoa",
+     "kind": "box",
+     "x": 590,
+     "y": 336,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Succinyl-CoA",
+      "zh-Hant": "琥珀醯輔酶 A"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Four-carbon intermediate. Its formation from α-ketoglutarate releases a second CO₂ and makes NADH.",
+      "zh-Hant": "四碳中間物，由 α-酮戊二酸生成時釋出第二個 CO₂ 並產生 NADH。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "suc",
+     "kind": "box",
+     "x": 710,
+     "y": 304,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Succinate",
+      "zh-Hant": "琥珀酸"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Formed from succinyl-CoA with the release of GTP or ATP.",
+      "zh-Hant": "由琥珀醯輔酶 A 生成，並釋出 GTP 或 ATP。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "fum",
+     "kind": "box",
+     "x": 830,
+     "y": 336,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Fumarate",
+      "zh-Hant": "延胡索酸"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Formed from succinate. This step makes FADH₂.",
+      "zh-Hant": "由琥珀酸生成，此步產生 FADH₂。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "mal",
+     "kind": "box",
+     "x": 880,
+     "y": 414,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Malate",
+      "zh-Hant": "蘋果酸"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Formed from fumarate by adding water.",
+      "zh-Hant": "由延胡索酸加水生成。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "oaa",
+     "kind": "box",
+     "x": 830,
+     "y": 492,
+     "w": 100,
+     "h": 32,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "Oxaloacetate",
+      "zh-Hant": "草醯乙酸"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Made from malate with NADH. It condenses with acetyl-CoA to start the next turn, so the cycle regenerates its own starting molecule.",
+      "zh-Hant": "由蘋果酸生成並產生 NADH。它與乙醯輔酶 A 縮合，開始下一圈，因此循環會重新生成起始分子。"
+     },
+     "cite": ["anderson-2018"]
+    },
+    {
+     "id": "carry",
+     "kind": "box",
+     "x": 665,
+     "y": 408,
+     "w": 190,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "NADH + FADH₂",
+      "zh-Hant": "NADH + FADH₂"
+     },
+     "sub": {
+      "en": "to the electron transport chain",
+      "zh-Hant": "送往電子傳遞鏈"
+     },
+     "text": {
+      "en": "Glycolysis, pyruvate oxidation and the TCA cycle load electron carriers with electrons. The respiratory chain reoxidises them and makes ATP. See the electron transport chain diagram.",
+      "zh-Hant": "糖解、丙酮酸氧化與 TCA 循環把電子載入電子載體，呼吸鏈再把它們氧化並製造 ATP。見電子傳遞鏈圖解。"
+     },
+     "cite": ["pajak-2019", "anderson-2018"],
+     "links": ["diag:etc-pathway"]
+    }
+   ]
+  },
+  {
+   "id": "protein-synthesis",
+   "name": {
+    "en": "Protein synthesis: transcription and translation",
+    "zh-Hant": "蛋白質合成：轉錄與轉譯"
+   },
+   "summary": {
+    "en": "In the nucleus RNA polymerase II copies a gene into pre-mRNA, which is cleaved at the poly(A) signal, capped, spliced and tailed to make a mature mRNA. The mRNA leaves through a nuclear pore, and in the cytosol the ribosome reads it in three stages: initiation, elongation and termination.",
+    "zh-Hant": "在細胞核中，RNA 聚合酶 II 把基因複製成前 mRNA，前 mRNA 在 poly(A) 訊號處被切開，再經加帽、剪接與加尾成為成熟 mRNA。mRNA 經核孔離開，在細胞質中由核糖體分起始、延伸與終止三個階段讀取。"
+   },
+   "cite": ["hsin-2012", "proudfoot-2016", "jackson-2010"],
+   "viewBox": [
+    1060,
+    640
+   ],
+   "bands": [
+    {
+     "id": "cell",
+     "y": 0,
+     "h": 640
+    }
+   ],
+   "labels": [
+    {
+     "x": 262,
+     "y": 540,
+     "anchor": "start",
+     "text": {
+      "en": "export through the nuclear pore",
+      "zh-Hant": "經核孔輸出"
+     }
+    },
+    {
+     "x": 1020,
+     "y": 36,
+     "anchor": "end",
+     "text": {
+      "en": "Translation",
+      "zh-Hant": "轉譯"
+     }
+    },
+    {
+     "x": 470,
+     "y": 36,
+     "anchor": "end",
+     "text": {
+      "en": "Transcription",
+      "zh-Hant": "轉錄"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "type": "tx",
+     "pts": [
+      [
+       140,
+       94
+      ],
+      [
+       140,
+       140
+      ]
+     ]
+    },
+    {
+     "type": "tx",
+     "pts": [
+      [
+       140,
+       184
+      ],
+      [
+       140,
+       230
+      ]
+     ]
+    },
+    {
+     "type": "tx",
+     "pts": [
+      [
+       140,
+       274
+      ],
+      [
+       140,
+       320
+      ]
+     ]
+    },
+    {
+     "type": "tx",
+     "pts": [
+      [
+       140,
+       364
+      ],
+      [
+       140,
+       410
+      ]
+     ]
+    },
+    {
+     "type": "tx",
+     "pts": [
+      [
+       140,
+       454
+      ],
+      [
+       140,
+       500
+      ]
+     ]
+    },
+    {
+     "type": "exp",
+     "pts": [
+      [
+       240,
+       522
+      ],
+      [
+       520,
+       522
+      ],
+      [
+       520,
+       72
+      ],
+      [
+       558,
+       72
+      ]
+     ]
+    },
+    {
+     "type": "tl",
+     "pts": [
+      [
+       690,
+       94
+      ],
+      [
+       690,
+       140
+      ]
+     ]
+    },
+    {
+     "type": "tl",
+     "pts": [
+      [
+       690,
+       184
+      ],
+      [
+       690,
+       230
+      ]
+     ]
+    },
+    {
+     "type": "tl",
+     "pts": [
+      [
+       690,
+       274
+      ],
+      [
+       690,
+       320
+      ]
+     ]
+    },
+    {
+     "type": "tl",
+     "pts": [
+      [
+       690,
+       364
+      ],
+      [
+       690,
+       410
+      ]
+     ]
+    },
+    {
+     "type": "tl",
+     "pts": [
+      [
+       690,
+       454
+      ],
+      [
+       690,
+       500
+      ]
+     ]
+    },
+    {
+     "type": "side",
+     "pts": [
+      [
+       850,
+       122
+      ],
+      [
+       820,
+       122
+      ]
+     ]
+    },
+    {
+     "type": "side",
+     "pts": [
+      [
+       850,
+       342
+      ],
+      [
+       820,
+       342
+      ]
+     ]
+    },
+    {
+     "type": "side",
+     "pts": [
+      [
+       850,
+       432
+      ],
+      [
+       820,
+       432
+      ]
+     ]
+    },
+    {
+     "type": "side",
+     "pts": [
+      [
+       270,
+       202
+      ],
+      [
+       240,
+       202
+      ]
+     ]
+    }
+   ],
+   "legend": [
+    {
+     "type": "tx",
+     "label": {
+      "en": "Transcription and RNA processing",
+      "zh-Hant": "轉錄與 RNA 加工"
+     }
+    },
+    {
+     "type": "exp",
+     "label": {
+      "en": "mRNA export",
+      "zh-Hant": "mRNA 輸出"
+     }
+    },
+    {
+     "type": "tl",
+     "label": {
+      "en": "Translation",
+      "zh-Hant": "轉譯"
+     }
+    }
+   ],
+   "nodes": [
+    {
+     "id": "nucleus",
+     "kind": "region",
+     "x": 20,
+     "y": 20,
+     "w": 470,
+     "h": 600,
+     "tx": 35,
+     "ty": 608,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Nucleus",
+      "zh-Hant": "細胞核"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Transcription and RNA processing take place in the nucleus. The product is a mature mRNA.",
+      "zh-Hant": "轉錄與 RNA 加工在細胞核進行，產物是成熟的 mRNA。"
+     },
+     "cite": ["proudfoot-2016"]
+    },
+    {
+     "id": "cytosol",
+     "kind": "region",
+     "x": 500,
+     "y": 20,
+     "w": 540,
+     "h": 600,
+     "tx": 515,
+     "ty": 608,
+     "color": "#C39A2E",
+     "name": {
+      "en": "Cytosol",
+      "zh-Hant": "細胞質"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Translation takes place on ribosomes in the cytosol (and on the rough endoplasmic reticulum for secreted and membrane proteins).",
+      "zh-Hant": "轉譯在細胞質的核糖體進行（分泌蛋白與膜蛋白則在粗面內質網上）。"
+     },
+     "cite": ["jackson-2010"]
+    },
+    {
+     "id": "dna",
+     "kind": "box",
+     "x": 40,
+     "y": 50,
+     "w": 200,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "DNA (gene)",
+      "zh-Hant": "DNA（基因）"
+     },
+     "sub": {
+      "en": "template strand",
+      "zh-Hant": "模板股"
+     },
+     "text": {
+      "en": "A gene is a stretch of DNA from the promoter to the terminator. RNA polymerase reads the template strand and makes an RNA copy.",
+      "zh-Hant": "基因是由啟動子至終止子的一段 DNA。RNA 聚合酶讀取模板股並製成 RNA 副本。"
+     },
+     "cite": ["hsin-2012", "proudfoot-2016"]
+    },
+    {
+     "id": "init",
+     "kind": "box",
+     "x": 40,
+     "y": 140,
+     "w": 200,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Initiation",
+      "zh-Hant": "起始"
+     },
+     "sub": {
+      "en": "Pol II + factors at the promoter",
+      "zh-Hant": "Pol II 與因子結合啟動子"
+     },
+     "text": {
+      "en": "RNA polymerase II and general transcription factors assemble at the promoter and start RNA synthesis. After initiation, Pol II pauses near the promoter until it receives a signal to continue.",
+      "zh-Hant": "RNA 聚合酶 II 與一般轉錄因子在啟動子組裝並開始合成 RNA。起始後 Pol II 在啟動子附近暫停，直至收到繼續的訊號。"
+     },
+     "cite": ["zhou-2012", "hsin-2012"]
+    },
+    {
+     "id": "elong",
+     "kind": "box",
+     "x": 40,
+     "y": 230,
+     "w": 200,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Elongation",
+      "zh-Hant": "延伸"
+     },
+     "sub": {
+      "en": "pre-mRNA made 5′ → 3′",
+      "zh-Hant": "前 mRNA 由 5′ 向 3′ 合成"
+     },
+     "text": {
+      "en": "P-TEFb releases paused Pol II into productive elongation. The polymerase adds nucleotides along the template and makes a full-length pre-mRNA that is processed as it is made.",
+      "zh-Hant": "P-TEFb 令暫停的 Pol II 進入有效延伸。聚合酶沿模板加入核苷酸，產生完整的前 mRNA，並邊合成邊加工。"
+     },
+     "cite": ["zhou-2012"]
+    },
+    {
+     "id": "term",
+     "kind": "box",
+     "x": 40,
+     "y": 320,
+     "w": 200,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Termination",
+      "zh-Hant": "終止"
+     },
+     "sub": {
+      "en": "cleavage at the poly(A) signal",
+      "zh-Hant": "在 poly(A) 訊號處切開"
+     },
+     "text": {
+      "en": "At the end of the gene the transcript is cleaved at the poly(A) signal, which releases the messenger RNA. The remaining RNA is degraded, and this triggers Pol II to stop.",
+      "zh-Hant": "在基因末端，轉錄本於 poly(A) 訊號處被切開，釋出信使 RNA。其餘 RNA 被降解，並促使 Pol II 停止。"
+     },
+     "cite": ["proudfoot-2016"]
+    },
+    {
+     "id": "proc",
+     "kind": "box",
+     "x": 40,
+     "y": 410,
+     "w": 200,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "RNA processing",
+      "zh-Hant": "RNA 加工"
+     },
+     "sub": {
+      "en": "5′ cap, splicing, poly(A) tail",
+      "zh-Hant": "5′ 帽、剪接、poly(A) 尾"
+     },
+     "text": {
+      "en": "The pre-mRNA gets a 5′ cap, introns are spliced out, and a poly(A) tail is added. Splicing can be alternative, so one gene can give several mRNAs. Processing is coupled to transcription through the Pol II CTD.",
+      "zh-Hant": "前 mRNA 加上 5′ 帽，內含子被剪除，並加上 poly(A) 尾。剪接可以是選擇性的，因此一個基因可產生多種 mRNA。加工透過 Pol II 的 CTD 與轉錄偶聯。"
+     },
+     "cite": ["proudfoot-2016", "kornblihtt-2013", "hsin-2012"]
+    },
+    {
+     "id": "mrna",
+     "kind": "box",
+     "x": 40,
+     "y": 500,
+     "w": 200,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Mature mRNA",
+      "zh-Hant": "成熟 mRNA"
+     },
+     "sub": {
+      "en": "exported through a nuclear pore",
+      "zh-Hant": "經核孔輸出"
+     },
+     "text": {
+      "en": "A mature eukaryotic mRNA is monocistronic: a 5′ cap, a 5′ untranslated region, one coding region and a longer 3′ untranslated region. It leaves the nucleus through a nuclear pore.",
+      "zh-Hant": "成熟的真核 mRNA 為單順反子：5′ 帽、5′ 非轉譯區、一個編碼區及較長的 3′ 非轉譯區，經核孔離開細胞核。"
+     },
+     "cite": ["proudfoot-2016"]
+    },
+    {
+     "id": "pol2",
+     "kind": "box",
+     "x": 270,
+     "y": 180,
+     "w": 190,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "RNA polymerase II",
+      "zh-Hant": "RNA 聚合酶 II"
+     },
+     "sub": {
+      "en": "12 subunits, Rpb1 CTD",
+      "zh-Hant": "12 個次單位，Rpb1 CTD"
+     },
+     "text": {
+      "en": "The polymerase that makes all mRNA. It has 12 polypeptides, and the largest, Rpb1, carries the C-terminal domain (CTD), whose phosphorylation state coordinates transcription and RNA processing.",
+      "zh-Hant": "製造所有 mRNA 的聚合酶，有 12 個多肽，最大的 Rpb1 帶有 C 端結構域（CTD），其磷酸化狀態協調轉錄與 RNA 加工。"
+     },
+     "cite": ["hsin-2012"]
+    },
+    {
+     "id": "c1",
+     "kind": "box",
+     "x": 560,
+     "y": 50,
+     "w": 260,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "43S complex binds mRNA",
+      "zh-Hant": "43S 複合體結合 mRNA"
+     },
+     "sub": {
+      "en": "40S + eIF2·Met-tRNAi + eIF3, at the cap",
+      "zh-Hant": "40S + eIF2·Met-tRNAi + eIF3，於帽處"
+     },
+     "text": {
+      "en": "The cap-binding complex eIF4F recognises the 5′ cap. The 43S complex (40S subunit, eIF2·GTP·Met-tRNAi and eIF3) then binds the mRNA at its 5′ end.",
+      "zh-Hant": "帽結合複合體 eIF4F 辨認 5′ 帽，43S 複合體（40S 次單位、eIF2·GTP·Met-tRNAi 與 eIF3）隨後結合 mRNA 的 5′ 端。"
+     },
+     "cite": ["pestova-2001", "jackson-2010"]
+    },
+    {
+     "id": "c2",
+     "kind": "box",
+     "x": 560,
+     "y": 140,
+     "w": 260,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "Scanning to the start codon",
+      "zh-Hant": "掃描至起始密碼子"
+     },
+     "sub": {
+      "en": "48S complex at AUG",
+      "zh-Hant": "AUG 處的 48S 複合體"
+     },
+     "text": {
+      "en": "The bound complex scans along the 5′ untranslated region to the initiation codon, where the codon pairs with the anticodon of the initiator tRNA. This is the 48S initiation complex.",
+      "zh-Hant": "結合的複合體沿 5′ 非轉譯區掃描至起始密碼子，密碼子與起始 tRNA 的反密碼子配對，形成 48S 起始複合體。"
+     },
+     "cite": ["pestova-2001"]
+    },
+    {
+     "id": "c3",
+     "kind": "box",
+     "x": 560,
+     "y": 230,
+     "w": 260,
+     "h": 44,
+     "color": "#2F6B4F",
+     "name": {
+      "en": "80S ribosome assembles",
+      "zh-Hant": "組裝 80S 核糖體"
+     },
+     "sub": {
+      "en": "60S joins (eIF5B)",
+      "zh-Hant": "60S 加入（eIF5B）"
+     },
+     "text": {
+      "en": "The 60S subunit joins with the help of eIF5B and forms the 80S ribosome, with Met-tRNAi in the P site at the start codon. The atlas has a structure of the human 80S ribosome (4UG0).",
+      "zh-Hant": "60S 次單位在 eIF5B 協助下加入，形成 80S 核糖體，Met-tRNAi 位於起始密碼子的 P 位。圖譜內有人類 80S 核糖體的結構（4UG0）。"
+     },
+     "cite": ["pestova-2001", "cate-2012"],
+     "links": ["pdb:4UG0"]
+    },
+    {
+     "id": "c4",
+     "kind": "box",
+     "x": 560,
+     "y": 320,
+     "w": 260,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "Elongation",
+      "zh-Hant": "延伸"
+     },
+     "sub": {
+      "en": "tRNA enters, peptide bond, translocation",
+      "zh-Hant": "tRNA 進入、形成肽鍵、移位"
+     },
+     "text": {
+      "en": "Aminoacyl-tRNAs that match the codon enter the ribosome, the ribosome forms a peptide bond, and the ribosome moves one codon along the mRNA. The cycle repeats and the polypeptide grows.",
+      "zh-Hant": "與密碼子配對的氨酰 tRNA 進入核糖體，核糖體形成肽鍵並沿 mRNA 移動一個密碼子。這個循環重複，多肽鏈便延長。"
+     },
+     "cite": ["dever-2012"]
+    },
+    {
+     "id": "c5",
+     "kind": "box",
+     "x": 560,
+     "y": 410,
+     "w": 260,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "Termination",
+      "zh-Hant": "終止"
+     },
+     "sub": {
+      "en": "stop codon, release factors",
+      "zh-Hant": "終止密碼子、釋放因子"
+     },
+     "text": {
+      "en": "When a stop codon reaches the ribosome, release factors release the finished polypeptide. The ribosome is then recycled.",
+      "zh-Hant": "終止密碼子到達核糖體時，釋放因子把完成的多肽鏈釋出，核糖體隨後被回收。"
+     },
+     "cite": ["dever-2012"]
+    },
+    {
+     "id": "c6",
+     "kind": "box",
+     "x": 560,
+     "y": 500,
+     "w": 260,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "Polypeptide → protein",
+      "zh-Hant": "多肽 → 蛋白質"
+     },
+     "sub": {
+      "en": "folds, may be modified",
+      "zh-Hant": "摺疊，可能被修飾"
+     },
+     "text": {
+      "en": "The polypeptide folds into its three-dimensional structure and may be modified, then goes to its place in the cell.",
+      "zh-Hant": "多肽摺疊成三維結構，可能被修飾，然後前往它在細胞內的位置。"
+     },
+     "cite": ["dever-2012"]
+    },
+    {
+     "id": "eif",
+     "kind": "box",
+     "x": 850,
+     "y": 100,
+     "w": 170,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Initiation factors",
+      "zh-Hant": "起始因子"
+     },
+     "sub": {
+      "en": "at least 12 eIFs",
+      "zh-Hant": "至少 12 個 eIF"
+     },
+     "text": {
+      "en": "Translation initiation needs at least 12 initiation factors. Protein synthesis is mainly regulated at initiation, so these factors and the pathways that control them are central targets of regulation.",
+      "zh-Hant": "轉譯起始需要至少 12 個起始因子。蛋白質合成主要在起始階段受調控，因此這些因子及控制它們的途徑是主要的調控目標。"
+     },
+     "cite": ["hinnebusch-2012", "jackson-2010"]
+    },
+    {
+     "id": "trna",
+     "kind": "box",
+     "x": 850,
+     "y": 320,
+     "w": 170,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Aminoacyl-tRNAs",
+      "zh-Hant": "氨酰 tRNA"
+     },
+     "sub": {
+      "en": "decode the codons",
+      "zh-Hant": "解讀密碼子"
+     },
+     "text": {
+      "en": "Each tRNA carries an amino acid and reads one mRNA codon with its anticodon. This is how the nucleotide sequence is translated into an amino acid sequence.",
+      "zh-Hant": "每個 tRNA 攜帶一個胺基酸，以反密碼子讀取 mRNA 的一個密碼子，核苷酸序列因此被轉譯成胺基酸序列。"
+     },
+     "cite": ["dever-2012"]
+    },
+    {
+     "id": "rf",
+     "kind": "box",
+     "x": 850,
+     "y": 410,
+     "w": 170,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Release factors",
+      "zh-Hant": "釋放因子"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Release factors recognise the stop codon and release the polypeptide from the last tRNA.",
+      "zh-Hant": "釋放因子辨認終止密碼子，把多肽鏈從最後的 tRNA 釋出。"
+     },
+     "cite": ["dever-2012"]
+    }
+   ]
+  },
+  {
+   "id": "adrenergic",
+   "name": {
+    "en": "Adrenergic receptor signalling",
+    "zh-Hant": "腎上腺素受體訊號傳遞"
+   },
+   "summary": {
+    "en": "Norepinephrine and epinephrine bind three classes of adrenergic receptor. α1 couples to Gq/11 and raises Ca²⁺ and PKC, α2 couples to Gi/o and lowers cAMP, and β couples to Gs and raises cAMP and PKA. After activation, GRK and β-arrestin end the G protein signal and start internalisation and G protein-independent signalling.",
+    "zh-Hant": "去甲腎上腺素與腎上腺素結合三類腎上腺素受體。α1 偶聯 Gq/11，使 Ca²⁺ 與 PKC 上升；α2 偶聯 Gi/o，使 cAMP 下降；β 偶聯 Gs，使 cAMP 與 PKA 上升。受體活化後，GRK 與 β-arrestin 終止 G 蛋白訊號，並啟動內吞及不依賴 G 蛋白的訊號。"
+   },
+   "cite": ["bylund-2021", "hoffman-2004", "shenoy-2011"],
+   "viewBox": [
+    1040,
+    540
+   ],
+   "bands": [
+    {
+     "id": "lumen",
+     "y": 0,
+     "h": 110
+    },
+    {
+     "id": "mem",
+     "y": 110,
+     "h": 42
+    },
+    {
+     "id": "cell",
+     "y": 152,
+     "h": 388
+    }
+   ],
+   "labels": [
+    {
+     "x": 20,
+     "y": 22,
+     "anchor": "start",
+     "text": {
+      "en": "Extracellular",
+      "zh-Hant": "細胞外"
+     }
+    },
+    {
+     "x": 310,
+     "y": 136,
+     "anchor": "middle",
+     "text": {
+      "en": "Membrane",
+      "zh-Hant": "細胞膜"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "type": "lig",
+     "pts": [
+      [
+       400,
+       80
+      ],
+      [
+       400,
+       94
+      ],
+      [
+       160,
+       94
+      ],
+      [
+       160,
+       108
+      ]
+     ]
+    },
+    {
+     "type": "lig",
+     "pts": [
+      [
+       460,
+       80
+      ],
+      [
+       460,
+       108
+      ]
+     ]
+    },
+    {
+     "type": "lig",
+     "pts": [
+      [
+       640,
+       80
+      ],
+      [
+       640,
+       94
+      ],
+      [
+       760,
+       94
+      ],
+      [
+       760,
+       108
+      ]
+     ]
+    },
+    {
+     "type": "a1",
+     "pts": [
+      [
+       160,
+       152
+      ],
+      [
+       160,
+       190
+      ]
+     ]
+    },
+    {
+     "type": "a1",
+     "pts": [
+      [
+       160,
+       230
+      ],
+      [
+       160,
+       260
+      ]
+     ]
+    },
+    {
+     "type": "a1",
+     "pts": [
+      [
+       160,
+       300
+      ],
+      [
+       160,
+       330
+      ]
+     ]
+    },
+    {
+     "type": "a1",
+     "pts": [
+      [
+       160,
+       370
+      ],
+      [
+       160,
+       400
+      ]
+     ]
+    },
+    {
+     "type": "a2",
+     "pts": [
+      [
+       460,
+       152
+      ],
+      [
+       460,
+       190
+      ]
+     ]
+    },
+    {
+     "type": "inhibit",
+     "pts": [
+      [
+       460,
+       230
+      ],
+      [
+       460,
+       260
+      ]
+     ]
+    },
+    {
+     "type": "a2",
+     "pts": [
+      [
+       460,
+       300
+      ],
+      [
+       460,
+       330
+      ]
+     ]
+    },
+    {
+     "type": "a2",
+     "pts": [
+      [
+       560,
+       210
+      ],
+      [
+       585,
+       210
+      ],
+      [
+       585,
+       422
+      ],
+      [
+       562,
+       422
+      ]
+     ]
+    },
+    {
+     "type": "b",
+     "pts": [
+      [
+       760,
+       152
+      ],
+      [
+       760,
+       190
+      ]
+     ]
+    },
+    {
+     "type": "b",
+     "pts": [
+      [
+       760,
+       230
+      ],
+      [
+       760,
+       260
+      ]
+     ]
+    },
+    {
+     "type": "b",
+     "pts": [
+      [
+       760,
+       300
+      ],
+      [
+       760,
+       330
+      ]
+     ]
+    },
+    {
+     "type": "b",
+     "pts": [
+      [
+       760,
+       370
+      ],
+      [
+       760,
+       400
+      ]
+     ]
+    },
+    {
+     "type": "b",
+     "pts": [
+      [
+       760,
+       444
+      ],
+      [
+       760,
+       470
+      ]
+     ]
+    },
+    {
+     "type": "arr",
+     "pts": [
+      [
+       860,
+       130
+      ],
+      [
+       960,
+       130
+      ],
+      [
+       960,
+       190
+      ]
+     ]
+    },
+    {
+     "type": "arr",
+     "pts": [
+      [
+       960,
+       230
+      ],
+      [
+       960,
+       270
+      ]
+     ]
+    },
+    {
+     "type": "arr",
+     "pts": [
+      [
+       1030,
+       210
+      ],
+      [
+       1038,
+       210
+      ],
+      [
+       1038,
+       372
+      ],
+      [
+       1032,
+       372
+      ]
+     ]
+    }
+   ],
+   "legend": [
+    {
+     "type": "a1",
+     "label": {
+      "en": "α1 (Gq/11)",
+      "zh-Hant": "α1（Gq/11）"
+     }
+    },
+    {
+     "type": "a2",
+     "label": {
+      "en": "α2 (Gi/o)",
+      "zh-Hant": "α2（Gi/o）"
+     }
+    },
+    {
+     "type": "b",
+     "label": {
+      "en": "β (Gs)",
+      "zh-Hant": "β（Gs）"
+     }
+    },
+    {
+     "type": "arr",
+     "label": {
+      "en": "β-arrestin",
+      "zh-Hant": "β-arrestin"
+     }
+    },
+    {
+     "type": "inhibit",
+     "label": {
+      "en": "Inhibition",
+      "zh-Hant": "抑制"
+     }
+    }
+   ],
+   "nodes": [
+    {
+     "id": "lig",
+     "kind": "box",
+     "x": 380,
+     "y": 36,
+     "w": 280,
+     "h": 44,
+     "color": "#3B4F9C",
+     "name": {
+      "en": "Norepinephrine, epinephrine",
+      "zh-Hant": "去甲腎上腺素、腎上腺素"
+     },
+     "sub": {
+      "en": "catecholamines",
+      "zh-Hant": "兒茶酚胺"
+     },
+     "text": {
+      "en": "The sympathetic signals. Both catecholamines bind adrenergic receptors on the surface of target cells, and the receptor subtype decides which pathway the cell uses.",
+      "zh-Hant": "交感神經的訊號。兩種兒茶酚胺都結合目標細胞表面的腎上腺素受體，受體亞型決定細胞使用哪條途徑。"
+     },
+     "cite": ["bylund-2021", "hoffman-2004"]
+    },
+    {
+     "id": "ra1",
+     "kind": "box",
+     "x": 60,
+     "y": 108,
+     "w": 200,
+     "h": 44,
+     "color": "#2F6F6F",
+     "name": {
+      "en": "α1 receptor",
+      "zh-Hant": "α1 受體"
+     },
+     "sub": {
+      "en": "3 subtypes, Gq/11",
+      "zh-Hant": "3 個亞型，Gq/11"
+     },
+     "text": {
+      "en": "The α1 class of adrenergic receptors has three subtypes. It is a G protein-coupled receptor that couples to Gq/11.",
+      "zh-Hant": "腎上腺素受體的 α1 類有三個亞型，是偶聯 Gq/11 的 G 蛋白偶聯受體。"
+     },
+     "cite": ["bylund-2021", "hoffman-2004"]
+    },
+    {
+     "id": "ra2",
+     "kind": "box",
+     "x": 360,
+     "y": 108,
+     "w": 200,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "α2 receptor",
+      "zh-Hant": "α2 受體"
+     },
+     "sub": {
+      "en": "3 subtypes, Gi/o",
+      "zh-Hant": "3 個亞型，Gi/o"
+     },
+     "text": {
+      "en": "The α2 class has three subtypes and couples to Gi/o. It lowers cAMP, and its effects include blood pressure control and sedation.",
+      "zh-Hant": "α2 類有三個亞型，偶聯 Gi/o，使 cAMP 下降，作用包括調節血壓與鎮靜。"
+     },
+     "cite": ["bylund-2021", "hoffman-2004"]
+    },
+    {
+     "id": "rb",
+     "kind": "box",
+     "x": 660,
+     "y": 108,
+     "w": 200,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "β receptor",
+      "zh-Hant": "β 受體"
+     },
+     "sub": {
+      "en": "3 subtypes, Gs",
+      "zh-Hant": "3 個亞型，Gs"
+     },
+     "text": {
+      "en": "The β class has three subtypes (β1, β2, β3) and couples to Gs. In the heart β1 is mainly responsible for positive chronotropic and inotropic effects. The β2 receptor is the model for GPCR activation, and its structure with Gs is in the atlas (3SN6).",
+      "zh-Hant": "β 類有三個亞型（β1、β2、β3），偶聯 Gs。在心臟，β1 主要負責正性變時與變力作用。β2 受體是 GPCR 活化的模型，圖譜內有其與 Gs 的複合體結構（3SN6）。"
+     },
+     "cite": ["lohse-2003", "rasmussen-2011", "bylund-2021"],
+     "links": ["pdb:3SN6"]
+    },
+    {
+     "id": "gq",
+     "kind": "box",
+     "x": 60,
+     "y": 190,
+     "w": 200,
+     "h": 40,
+     "color": "#2F6F6F",
+     "name": {
+      "en": "Gq/11",
+      "zh-Hant": "Gq/11"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "The G protein of α1 receptors. It activates phospholipase C.",
+      "zh-Hant": "α1 受體的 G 蛋白，活化磷脂酶 C。"
+     },
+     "cite": ["bylund-2021", "hoffman-2004"]
+    },
+    {
+     "id": "plc",
+     "kind": "box",
+     "x": 60,
+     "y": 260,
+     "w": 200,
+     "h": 40,
+     "color": "#2F6F6F",
+     "name": {
+      "en": "Phospholipase C",
+      "zh-Hant": "磷脂酶 C"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Cleaves a membrane phospholipid into IP₃ and DAG.",
+      "zh-Hant": "把膜磷脂切成 IP₃ 與 DAG。"
+     },
+     "cite": ["hoffman-2004"]
+    },
+    {
+     "id": "ipdag",
+     "kind": "box",
+     "x": 60,
+     "y": 330,
+     "w": 200,
+     "h": 40,
+     "color": "#2F6F6F",
+     "name": {
+      "en": "IP₃ + DAG",
+      "zh-Hant": "IP₃ + DAG"
+     },
+     "sub": {
+      "en": "second messengers",
+      "zh-Hant": "第二信使"
+     },
+     "text": {
+      "en": "IP₃ releases Ca²⁺ from internal stores, and DAG activates protein kinase C.",
+      "zh-Hant": "IP₃ 使內部貯存的 Ca²⁺ 釋出，DAG 則活化蛋白激酶 C。"
+     },
+     "cite": ["hoffman-2004"]
+    },
+    {
+     "id": "ca",
+     "kind": "box",
+     "x": 60,
+     "y": 400,
+     "w": 200,
+     "h": 44,
+     "color": "#2F6F6F",
+     "name": {
+      "en": "↑ Ca²⁺ and PKC",
+      "zh-Hant": "↑ Ca²⁺ 與 PKC"
+     },
+     "sub": {
+      "en": "also MAPK, PLD, PI3K/Ras",
+      "zh-Hant": "亦涉及 MAPK、PLD、PI3K/Ras"
+     },
+     "text": {
+      "en": "Raised intracellular Ca²⁺ and PKC are the main α1 outputs. α1 receptors are also linked to MAPK, phospholipase D, arachidonic acid release and, in some cells, PI3K and Ras.",
+      "zh-Hant": "細胞內 Ca²⁺ 上升與 PKC 是 α1 的主要輸出。α1 受體亦與 MAPK、磷脂酶 D、花生四烯酸釋出相關，在某些細胞還涉及 PI3K 與 Ras。"
+     },
+     "cite": ["hoffman-2004", "bylund-2021"]
+    },
+    {
+     "id": "gi",
+     "kind": "box",
+     "x": 360,
+     "y": 190,
+     "w": 200,
+     "h": 40,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Gi/o",
+      "zh-Hant": "Gi/o"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "The G protein of α2 receptors. Its α subunit inhibits adenylyl cyclase, and its βγ subunits act on ion channels.",
+      "zh-Hant": "α2 受體的 G 蛋白，α 次單位抑制腺苷酸環化酶，βγ 次單位作用於離子通道。"
+     },
+     "cite": ["bylund-2021", "hoffman-2004"]
+    },
+    {
+     "id": "ac2",
+     "kind": "box",
+     "x": 360,
+     "y": 260,
+     "w": 200,
+     "h": 40,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Adenylyl cyclase",
+      "zh-Hant": "腺苷酸環化酶"
+     },
+     "sub": {
+      "en": "inhibited",
+      "zh-Hant": "被抑制"
+     },
+     "text": {
+      "en": "The enzyme that makes cAMP from ATP. Gi/o inhibits it.",
+      "zh-Hant": "由 ATP 製造 cAMP 的酶，Gi/o 抑制它。"
+     },
+     "cite": ["hoffman-2004"]
+    },
+    {
+     "id": "camp2",
+     "kind": "box",
+     "x": 360,
+     "y": 330,
+     "w": 200,
+     "h": 40,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "↓ cAMP",
+      "zh-Hant": "↓ cAMP"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Less adenylyl cyclase activity lowers cAMP, which opposes β receptor signalling in the same cell.",
+      "zh-Hant": "腺苷酸環化酶活性下降使 cAMP 減少，與同一細胞的 β 受體訊號相反。"
+     },
+     "cite": ["hoffman-2004"]
+    },
+    {
+     "id": "gbg",
+     "kind": "box",
+     "x": 360,
+     "y": 400,
+     "w": 200,
+     "h": 44,
+     "color": "#5C3A8C",
+     "name": {
+      "en": "Gβγ",
+      "zh-Hant": "Gβγ"
+     },
+     "sub": {
+      "en": "K⁺ channels open, Ca²⁺ channels close",
+      "zh-Hant": "K⁺ 通道開啟、Ca²⁺ 通道關閉"
+     },
+     "text": {
+      "en": "The βγ subunits released from Gi/o activate K⁺ channels and inhibit Ca²⁺ channels. In some cells they also activate PLCβ and MAPK.",
+      "zh-Hant": "由 Gi/o 釋出的 βγ 次單位活化 K⁺ 通道並抑制 Ca²⁺ 通道，在某些細胞還活化 PLCβ 與 MAPK。"
+     },
+     "cite": ["hoffman-2004", "bylund-2021"]
+    },
+    {
+     "id": "gs",
+     "kind": "box",
+     "x": 660,
+     "y": 190,
+     "w": 200,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Gs",
+      "zh-Hant": "Gs"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "The stimulatory G protein of β receptors. It activates adenylyl cyclase.",
+      "zh-Hant": "β 受體的刺激型 G 蛋白，活化腺苷酸環化酶。"
+     },
+     "cite": ["rasmussen-2011", "bylund-2021"],
+     "links": ["pdb:3SN6"]
+    },
+    {
+     "id": "ac3",
+     "kind": "box",
+     "x": 660,
+     "y": 260,
+     "w": 200,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "Adenylyl cyclase",
+      "zh-Hant": "腺苷酸環化酶"
+     },
+     "sub": {
+      "en": "activated",
+      "zh-Hant": "被活化"
+     },
+     "text": {
+      "en": "Gs stimulates adenylyl cyclase to make cAMP from ATP.",
+      "zh-Hant": "Gs 刺激腺苷酸環化酶，由 ATP 製造 cAMP。"
+     },
+     "cite": ["rasmussen-2011"]
+    },
+    {
+     "id": "camp3",
+     "kind": "box",
+     "x": 660,
+     "y": 330,
+     "w": 200,
+     "h": 40,
+     "color": "#A8481A",
+     "name": {
+      "en": "↑ cAMP",
+      "zh-Hant": "↑ cAMP"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "Raised cAMP is the main β second messenger.",
+      "zh-Hant": "cAMP 上升是 β 受體的主要第二信使。"
+     },
+     "cite": ["hoffman-2004"]
+    },
+    {
+     "id": "pka",
+     "kind": "box",
+     "x": 660,
+     "y": 400,
+     "w": 200,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "PKA / EPAC",
+      "zh-Hant": "PKA / EPAC"
+     },
+     "sub": {
+      "en": "",
+      "zh-Hant": ""
+     },
+     "text": {
+      "en": "cAMP activates protein kinase A and EPAC. PKA can also phosphorylate the β2 receptor itself and switch its coupling from Gs to Gi, which sends signals to MAP kinase through Gβγ, Src and Ras.",
+      "zh-Hant": "cAMP 活化蛋白激酶 A 與 EPAC。PKA 也可磷酸化 β2 受體本身，使其由偶聯 Gs 轉為偶聯 Gi，經 Gβγ、Src 與 Ras 把訊號送往 MAP 激酶。"
+     },
+     "cite": ["hoffman-2004", "daaka-1997"]
+    },
+    {
+     "id": "down",
+     "kind": "box",
+     "x": 660,
+     "y": 470,
+     "w": 200,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "CREB, Ca²⁺ handling",
+      "zh-Hant": "CREB、Ca²⁺ 處理"
+     },
+     "sub": {
+      "en": "ERK/MAPK, AKT in some cells",
+      "zh-Hant": "某些細胞有 ERK/MAPK、AKT"
+     },
+     "text": {
+      "en": "Downstream effects include gene transcription through CREB and changes in Ca²⁺ handling. In some contexts ERK/MAPK and AKT are also engaged.",
+      "zh-Hant": "下游作用包括經 CREB 的基因轉錄及 Ca²⁺ 處理的改變，在某些情況下亦涉及 ERK/MAPK 與 AKT。"
+     },
+     "cite": ["hoffman-2004", "lohse-2003"]
+    },
+    {
+     "id": "grk",
+     "kind": "box",
+     "x": 890,
+     "y": 190,
+     "w": 140,
+     "h": 40,
+     "color": "#555B66",
+     "name": {
+      "en": "GRK + β-arrestin",
+      "zh-Hant": "GRK + β-arrestin"
+     },
+     "sub": {
+      "en": "after activation",
+      "zh-Hant": "活化後"
+     },
+     "text": {
+      "en": "After activation the receptor is phosphorylated by a G protein-coupled receptor kinase, and β-arrestin binds it. β-arrestin blocks further G protein signalling.",
+      "zh-Hant": "受體活化後被 G 蛋白偶聯受體激酶磷酸化，β-arrestin 隨即結合，並阻斷進一步的 G 蛋白訊號。"
+     },
+     "cite": ["goodman-1996", "shenoy-2011"]
+    },
+    {
+     "id": "endo",
+     "kind": "box",
+     "x": 890,
+     "y": 270,
+     "w": 140,
+     "h": 44,
+     "color": "#555B66",
+     "name": {
+      "en": "Internalisation",
+      "zh-Hant": "內吞"
+     },
+     "sub": {
+      "en": "clathrin adaptor",
+      "zh-Hant": "網格蛋白接合蛋白"
+     },
+     "text": {
+      "en": "β-arrestin binds clathrin and acts as an adaptor in endocytosis of the β2 receptor, which ends the surface signal (desensitisation).",
+      "zh-Hant": "β-arrestin 結合網格蛋白，作為 β2 受體內吞的接合蛋白，使表面訊號終止（脫敏）。"
+     },
+     "cite": ["goodman-1996"]
+    },
+    {
+     "id": "erk",
+     "kind": "box",
+     "x": 890,
+     "y": 350,
+     "w": 140,
+     "h": 44,
+     "color": "#555B66",
+     "name": {
+      "en": "ERK / MAPK",
+      "zh-Hant": "ERK / MAPK"
+     },
+     "sub": {
+      "en": "β-arrestin signalling",
+      "zh-Hant": "β-arrestin 訊號"
+     },
+     "text": {
+      "en": "β-arrestins are not only brakes. They also promote alternate downstream signalling, such as MAPK, that does not depend on G proteins.",
+      "zh-Hant": "β-arrestin 不只是煞車，它也促進不依賴 G 蛋白的其他下游訊號，例如 MAPK。"
+     },
+     "cite": ["shenoy-2011"]
+    }
+   ]
+  }
+ ]
+}

@@ -14,7 +14,7 @@
    "parts": [
     {
      "id": "apical",
-     "color": "#7C8FB0",
+     "color": "#8EC5F0",
      "name": {
       "en": "Microvilli",
       "zh-Hant": "微絨毛"
@@ -26,7 +26,7 @@
     },
     {
      "id": "stereocilia",
-     "color": "#9AA7C7",
+     "color": "#4A8FD6",
      "name": {
       "en": "Stereocilia",
       "zh-Hant": "靜纖毛"
@@ -39,7 +39,7 @@
     },
     {
      "id": "cilia",
-     "color": "#5FB3A1",
+     "color": "#8EC5F0",
      "name": {
       "en": "Cilia",
       "zh-Hant": "纖毛"
@@ -355,7 +355,7 @@
     },
     {
      "id": "apical",
-     "color": "#7C8FB0",
+     "color": "#8EC5F0",
      "name": {
       "en": "Microvilli",
       "zh-Hant": "微絨毛"
@@ -615,7 +615,7 @@
     },
     {
      "id": "cilia",
-     "color": "#7C8FB0",
+     "color": "#8EC5F0",
      "name": {
       "en": "Cilia",
       "zh-Hant": "纖毛"
@@ -1817,7 +1817,7 @@
     },
     {
      "id": "cilia",
-     "color": "#7C8FB0",
+     "color": "#8EC5F0",
      "name": {
       "en": "Cilia",
       "zh-Hant": "纖毛"

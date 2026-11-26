@@ -15,18 +15,19 @@ export const LEVELS = [
 
 const bus = new EventTarget();
 export const MUSCLES = ['skeletal-myocyte', 'cardiomyocyte', 'smooth-myocyte'];
-const state = { level: 'cell', cell: null, pdb: null, tour: null, selection: null, anat: null, lang: 'en', view: 'cells', cmp: 'cells', muscle: MUSCLES[0] };
+const state = { level: 'cell', cell: null, pdb: null, tour: null, selection: null, anat: null, lang: 'en', view: 'cells', cmp: 'cells', muscle: MUSCLES[0], diagram: null };
 
 export const getState = () => ({ ...state });
 export const levelInfo = (id = state.level) => LEVELS.find(l => l.id === id);
 export const onChange = fn => bus.addEventListener('change', e => fn(e.detail));
 
 export function setState(patch) {
-  const before = state.cell, beforeLevel = state.level;
+  const before = state.cell, beforeLevel = state.level, beforeDiagram = state.diagram;
   Object.assign(state, patch);
   if ('pdb' in patch && !('tour' in patch)) state.tour = null;
   if ('cell' in patch && patch.cell !== before && !('selection' in patch)) state.selection = null;
   if ('anat' in patch && !('selection' in patch)) state.selection = null;
+  if ('diagram' in patch && patch.diagram !== beforeDiagram && !('selection' in patch)) state.selection = null;
   // Picking a structure means Module B; picking a cell means Module A.
   if ('pdb' in patch && patch.pdb && levelInfo().module !== 'B') state.level = 'complex';
   if ('cell' in patch && patch.cell && !('level' in patch) && levelInfo().module !== 'A') state.level = 'cell';
@@ -38,7 +39,7 @@ export function setState(patch) {
 }
 
 // Deep links: ?cell=enterocyte, ?pdb=5XTD, ?level=organelle (same keys as links.json),
-// ?view=compare and &muscle=cardiomyocyte for the cell comparison, ?view=compare&cmp=bcl2 for the Bcl-2 family table,
+// ?diagram=etc-pathway&sel=cI for a pathway diagram, ?view=compare and &muscle=cardiomyocyte for the cell comparison, ?view=compare&cmp=bcl2 for the Bcl-2 family table,
 // ?level=organ&part=liver for a system or organ in the 3D Anatomy Model, ?level=organelle&part=mito&sel=cristae and ?level=atom&part=water&sel=O for the organelle and atom models, ?cell=hepatocyte&org=mito for a picked compartment, ?pdb=5XTD&tour=fes-n2 for a preset view
 export function readUrl() {
   const q = new URLSearchParams(location.search);
@@ -47,6 +48,7 @@ export function readUrl() {
   if (q.get('pdb')) patch.pdb = q.get('pdb').toUpperCase();
   if (q.get('tour')) patch.tour = q.get('tour');
   if (LEVELS.some(l => l.id === q.get('level'))) patch.level = q.get('level');
+  if (q.get('diagram')) patch.diagram = q.get('diagram');
   if (q.get('view') === 'compare') patch.view = 'compare';
   if (q.get('cmp') === 'bcl2') patch.cmp = 'bcl2';
   if (q.get('part')) patch.anat = q.get('part');
@@ -59,6 +61,13 @@ export function readUrl() {
 
 function writeUrl() {
   const q = new URLSearchParams();
+  // A diagram has its own page state: ?diagram=etc-pathway&sel=cI
+  if (state.diagram) {
+    q.set('diagram', state.diagram);
+    if (state.selection) q.set('sel', state.selection);
+    history.replaceState(null, '', `?${q}`);
+    return;
+  }
   if (state.cell) q.set('cell', state.cell);
   if (state.pdb) q.set('pdb', state.pdb);
   if (state.pdb && state.tour) q.set('tour', state.tour);

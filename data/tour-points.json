@@ -684,6 +684,154 @@
           }
         }
       ]
+    },
+    "1W0E": {
+      "cite": "williams-2004",
+      "points": [
+        {
+          "id": "heme",
+          "label": {
+            "en": "Heme (substrate oxidation)",
+            "zh-Hant": "血基質（氧化底物）"
+          },
+          "kind": "cofactor",
+          "comp": "HEM",
+          "chain": "B",
+          "authChain": "A",
+          "subunit": "CYP3A4",
+          "xyz": [
+            54.5,
+            78.7,
+            10.5
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "B"
+          }
+        },
+        {
+          "id": "cys442",
+          "label": {
+            "en": "Cys442 (heme iron ligand)",
+            "zh-Hant": "Cys442（血基質鐵配位體）"
+          },
+          "kind": "ligand",
+          "comp": "CYS",
+          "chain": "A",
+          "authChain": "A",
+          "subunit": "CYP3A4",
+          "residue": {
+            "authSeqId": 442,
+            "atom": "SG"
+          },
+          "xyz": [
+            52.6,
+            77.1,
+            11.0
+          ],
+          "basis": "computed",
+          "support": "The deposited file lists a Cys442 SG to heme Fe bond of 2.47 Å.",
+          "select": {
+            "label_asym_id": "A",
+            "auth_seq_id": 442
+          }
+        }
+      ]
+    },
+    "3SN6": {
+      "cite": "rasmussen-2011",
+      "points": [
+        {
+          "id": "agonist",
+          "label": {
+            "en": "Agonist BI-167107",
+            "zh-Hant": "激動劑 BI-167107"
+          },
+          "kind": "ligand",
+          "comp": "P0G",
+          "chain": "F",
+          "authChain": "R",
+          "subunit": "ADRB2",
+          "xyz": [
+            20.2,
+            5.8,
+            -10.8
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "F"
+          }
+        },
+        {
+          "id": "asp113",
+          "label": {
+            "en": "Asp113 (agonist-binding residue)",
+            "zh-Hant": "Asp113（結合激動劑的殘基）"
+          },
+          "kind": "ligand",
+          "comp": "ASP",
+          "chain": "D",
+          "authChain": "R",
+          "subunit": "ADRB2",
+          "residue": {
+            "authSeqId": 113,
+            "atom": "CG"
+          },
+          "xyz": [
+            24.4,
+            6.7,
+            -8.3
+          ],
+          "basis": "computed",
+          "support": "In the deposited file the Asp113 OD2 atom lies 2.68 Å from a nitrogen atom of the agonist.",
+          "select": {
+            "label_asym_id": "D",
+            "auth_seq_id": 113
+          }
+        },
+        {
+          "id": "receptor",
+          "label": {
+            "en": "β2 adrenergic receptor",
+            "zh-Hant": "β2 腎上腺素受體"
+          },
+          "kind": "subunit",
+          "comp": "",
+          "chain": "D",
+          "authChain": "R",
+          "subunit": "ADRB2",
+          "xyz": [
+            26.4,
+            18.1,
+            -12.0
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "D"
+          }
+        },
+        {
+          "id": "gas",
+          "label": {
+            "en": "Gαs (stimulatory G protein)",
+            "zh-Hant": "Gαs（刺激型 G 蛋白）"
+          },
+          "kind": "subunit",
+          "comp": "",
+          "chain": "A",
+          "authChain": "A",
+          "subunit": "GNAS",
+          "xyz": [
+            16.2,
+            -6.5,
+            41.1
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "A"
+          }
+        }
+      ]
     }
   }
 }

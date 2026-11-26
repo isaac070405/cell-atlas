@@ -379,15 +379,15 @@
       "status": "verified"
     },
     "wang-2013": {
-      "source": "Wang, Smith & Davis (2013) The cytosol and cytoskeleton, Oxford University Press",
+      "source": "Wang, Liu & Portincasa (2013) Eur J Clin Invest 43:1203–1223",
       "detail": {
-        "en": "The cytosol is the gel-like, semifluid material around the organelles, where many metabolic reactions, protein synthesis and signal transduction take place and metabolites are transported",
-        "zh-Hant": "胞質溶膠是圍繞細胞器的凝膠狀半流體物質，許多代謝反應、蛋白質合成和訊號傳遞在此進行，代謝物也在此運輸"
+        "en": "Review of intestinal fatty acid absorption: fatty acid uptake across the brush border depends largely on membrane-associated fatty acid transporters on the apical membrane of enterocytes",
+        "zh-Hant": "腸道脂肪酸吸收綜述：脂肪酸經刷狀緣吸收，主要依賴腸細胞頂端膜上與膜結合的脂肪酸轉運蛋白"
       },
-      "species": "Eukaryotic cells (textbook chapter)",
-      "method": "Book chapter",
+      "species": "Mammals",
+      "method": "Review",
       "year": 2013,
-      "url": "https://doi.org/10.1093/hesc/9780199697328.003.0007",
+      "url": "https://doi.org/10.1111/eci.12161",
       "status": "verified"
     },
     "fahrenkrog-2023": {
@@ -1054,6 +1054,486 @@
       "method": "Review",
       "year": 2014,
       "url": "https://doi.org/10.1002/stem.1681",
+      "status": "verified"
+    },
+    "fernandez-vizarra-2020": {
+      "source": "Fernández-Vizarra & Zeviani (2020) FEBS Lett 595:1062–1106",
+      "detail": {
+        "en": "Review of the OXPHOS system: the electron transport chain is four multimeric enzymes and two mobile electron carriers, and it makes the proton motive force that complex V uses to make ATP",
+        "zh-Hant": "氧化磷酸化系統綜述：電子傳遞鏈由四個多聚體酶與兩個移動電子載體組成，產生質子動力，供複合體 V 合成 ATP"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2020,
+      "url": "https://doi.org/10.1002/1873-3468.13995",
+      "status": "verified"
+    },
+    "michel-1998": {
+      "source": "Michel, Behr & Harrenga (1998) Annu Rev Biophys Biomol Struct 27:329–356",
+      "detail": {
+        "en": "Review of cytochrome c oxidase: it passes electrons from cytochrome c to oxygen, reducing it to water, and the transfer is coupled to proton translocation across the membrane",
+        "zh-Hant": "細胞色素 c 氧化酶綜述：把電子由細胞色素 c 傳給氧並還原成水，電子傳遞與質子跨膜轉運偶聯"
+      },
+      "species": "Animals and bacteria",
+      "method": "Review",
+      "year": 1998,
+      "url": "https://doi.org/10.1146/annurev.biophys.27.1.329",
+      "status": "verified"
+    },
+    "jonckheere-2012": {
+      "source": "Jonckheere, Smeitink & Rodenburg (2012) J Inherit Metab Dis 35:211–225",
+      "detail": {
+        "en": "Review of human mitochondrial ATP synthase (complex V): F1 in the matrix, Fo in the inner membrane, and the proton electrochemical gradient drives ADP phosphorylation",
+        "zh-Hant": "人類線粒體 ATP 合酶（複合體 V）綜述：F1 位於基質，Fo 位於內膜，質子電化學梯度驅動 ADP 磷酸化"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2012,
+      "url": "https://doi.org/10.1007/s10545-011-9382-9",
+      "status": "verified"
+    },
+    "drozdowski-2006": {
+      "source": "Drozdowski (2006) World J Gastroenterol 12:1657",
+      "detail": {
+        "en": "Review of intestinal sugar transport: amylases digest starch, brush border disaccharidases (lactase-phloridzin hydrolase, sucrase-isomaltase) make monosaccharides, and enterocyte transporters take them up",
+        "zh-Hant": "腸道糖類轉運綜述：澱粉酶消化澱粉，刷狀緣雙糖酶（乳糖酶-根皮苷水解酶、蔗糖酶-異麥芽糖酶）生成單糖，腸細胞轉運蛋白將其吸收"
+      },
+      "species": "Animals, mainly mammals",
+      "method": "Review",
+      "year": 2006,
+      "url": "https://doi.org/10.3748/wjg.v12.i11.1657",
+      "status": "verified"
+    },
+    "rieg-2018": {
+      "source": "Rieg & Vallon (2018) Diabetologia 61:2079–2086",
+      "detail": {
+        "en": "Review of SGLT1 and SGLT2: SGLT1 accounts for most dietary glucose uptake in the intestine, and SLC5A1 mutations cause glucose/galactose malabsorption",
+        "zh-Hant": "SGLT1 與 SGLT2 綜述：SGLT1 負責腸道大部分膳食葡萄糖吸收，SLC5A1 突變導致葡萄糖／半乳糖吸收不良"
+      },
+      "species": "Human and mouse",
+      "method": "Review",
+      "year": 2018,
+      "url": "https://doi.org/10.1007/s00125-018-4654-7",
+      "status": "verified"
+    },
+    "wright-2007": {
+      "source": "Wright, Hirayama & Loo (2007) J Intern Med 261:32–43",
+      "detail": {
+        "en": "Review of secondary active glucose transport by SGLT1 and SGLT2 in intestinal glucose absorption and renal reabsorption",
+        "zh-Hant": "SGLT1 與 SGLT2 繼發性主動葡萄糖轉運綜述：腸道葡萄糖吸收與腎臟重吸收"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2007,
+      "url": "https://doi.org/10.1111/j.1365-2796.2006.01746.x",
+      "status": "verified"
+    },
+    "smith-2013": {
+      "source": "Smith, Clémençon & Hediger (2013) Mol Aspects Med 34:323–336",
+      "detail": {
+        "en": "Review of the SLC15 peptide transporters: PepT1 takes up di- and tripeptides by proton-coupled symport and absorbs dietary protein digestion products in the intestine",
+        "zh-Hant": "SLC15 肽轉運蛋白綜述：PepT1 以質子偶聯同向轉運吸收二肽與三肽，負責腸道吸收膳食蛋白質消化產物"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2013,
+      "url": "https://doi.org/10.1016/j.mam.2012.11.003",
+      "status": "verified"
+    },
+    "miner-williams-2014": {
+      "source": "Miner-Williams, Stevens & Moughan (2014) Nutr Res Rev 27:308–329",
+      "detail": {
+        "en": "Review of peptide absorption: di- and tripeptides enter the enterocyte through PepT1, most are hydrolysed in the cytosol, and little evidence shows longer peptides entering the hepatic portal system intact",
+        "zh-Hant": "肽吸收綜述：二肽與三肽經 PepT1 進入腸細胞，大部分在細胞質內水解，較長的肽完整進入肝門脈系統的證據不多"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2014,
+      "url": "https://doi.org/10.1017/s0954422414000225",
+      "status": "verified"
+    },
+    "iqbal-2009": {
+      "source": "Iqbal & Hussain (2009) Am J Physiol Endocrinol Metab 296:E1183–E1194",
+      "detail": {
+        "en": "Review of intestinal lipid absorption: uptake of hydrolysis products, resynthesis into neutral lipids in the endoplasmic reticulum, assembly of apoB lipoproteins (chylomicrons) and export into the lymphatic system",
+        "zh-Hant": "腸道脂質吸收綜述：水解產物的攝取、在內質網重新合成中性脂質、組裝 apoB 脂蛋白（乳糜微粒）並輸出至淋巴系統"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2009,
+      "url": "https://doi.org/10.1152/ajpendo.90899.2008",
+      "status": "verified"
+    },
+    "petrova-2018": {
+      "source": "Petrova & Koh (2018) J Exp Med 215:35–49",
+      "detail": {
+        "en": "Review of organ-specific lymphatic vasculature, including the mechanisms that control dietary fat uptake by intestinal lacteals",
+        "zh-Hant": "器官特異性淋巴管綜述，包括控制小腸乳糜管吸收膳食脂肪的機制"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2018,
+      "url": "https://doi.org/10.1084/jem.20171868",
+      "status": "verified"
+    },
+    "elmore-2007": {
+      "source": "Elmore (2007) Toxicol Pathol 35:495–516",
+      "detail": {
+        "en": "Review of apoptosis, programmed cell death: its morphology, biochemistry, role in health and disease, and detection methods",
+        "zh-Hant": "細胞凋亡（程序性細胞死亡）綜述：形態、生化、在健康與疾病中的角色及檢測方法"
+      },
+      "species": "Animals, mainly mammals",
+      "method": "Review",
+      "year": 2007,
+      "url": "https://doi.org/10.1080/01926230701320337",
+      "status": "verified"
+    },
+    "scaffidi-1999": {
+      "source": "Scaffidi et al. (1999) J Biol Chem 274:22532–22538",
+      "detail": {
+        "en": "In CD95 (Fas) type I cells, active caspase-8 formed at the DISC directly cleaves caspase-3. In type II cells, little DISC forms and the mitochondrial branch is engaged through BID cleavage, which Bcl-2 or Bcl-xL can block",
+        "zh-Hant": "在 CD95（Fas）I 型細胞中，DISC 形成的活性 caspase-8 直接切割 caspase-3；在 II 型細胞中，DISC 很少，經 BID 切割啟動線粒體分支，而 Bcl-2 或 Bcl-xL 可阻斷"
+      },
+      "species": "Human cell lines",
+      "method": "Cell culture experiments",
+      "year": 1999,
+      "url": "https://doi.org/10.1074/jbc.274.32.22532",
+      "status": "verified"
+    },
+    "micheau-2002": {
+      "source": "Micheau et al. (2002) J Biol Chem 277:45162–45171",
+      "detail": {
+        "en": "Death ligands such as FasL bind Fas, which recruits the adaptor FADD and the initiator caspases-8 and -10 to form the death-inducing signaling complex (DISC), where procaspase-8 is activated by cleavage",
+        "zh-Hant": "FasL 等死亡配體結合 Fas，招募接合蛋白 FADD 及啟動型 caspase-8 與 -10，形成死亡誘導訊號複合體（DISC），procaspase-8 在此經切割而活化"
+      },
+      "species": "Human cell lines",
+      "method": "Cell culture experiments",
+      "year": 2002,
+      "url": "https://doi.org/10.1074/jbc.m206882200",
+      "status": "verified"
+    },
+    "chipuk-2008": {
+      "source": "Chipuk & Green (2008) Trends Cell Biol 18:157–164",
+      "detail": {
+        "en": "Review of how BCL-2 family proteins control mitochondrial outer membrane permeabilization (MOMP): BH3-only proteins engage BAX and BAK and neutralise anti-apoptotic BCL-2 proteins",
+        "zh-Hant": "BCL-2 家族蛋白如何控制線粒體外膜通透化（MOMP）綜述：僅含 BH3 的蛋白啟動 BAX 與 BAK，並中和抗凋亡的 BCL-2 蛋白"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2008,
+      "url": "https://doi.org/10.1016/j.tcb.2008.01.007",
+      "status": "verified"
+    },
+    "kalkavan-2017": {
+      "source": "Kalkavan & Green (2017) Cell Death Differ 25:46–55",
+      "detail": {
+        "en": "Review of MOMP, which defines the mitochondrial (intrinsic) pathway: cytochrome c and SMAC release lead to caspase activation and protein substrate cleavage, under control of the BCL-2 family",
+        "zh-Hant": "MOMP 綜述，MOMP 定義線粒體（內在）途徑：細胞色素 c 與 SMAC 釋出，導致 caspase 活化及蛋白底物被切割，並受 BCL-2 家族控制"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2017,
+      "url": "https://doi.org/10.1038/cdd.2017.179",
+      "status": "verified"
+    },
+    "garrido-2006": {
+      "source": "Garrido et al. (2006) Cell Death Differ 13:1423–1433",
+      "detail": {
+        "en": "Review of cytochrome c release from mitochondria: in the cytosol it activates Apaf-1, which is required for maturation of caspase-9 and caspase-3, and activated caspases dismantle the cell",
+        "zh-Hant": "細胞色素 c 由線粒體釋出綜述：在細胞質中它活化 Apaf-1，而 Apaf-1 是 caspase-9 與 caspase-3 成熟所必需，活化的 caspase 其後拆解細胞"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2006,
+      "url": "https://doi.org/10.1038/sj.cdd.4401950",
+      "status": "verified"
+    },
+    "bao-2007": {
+      "source": "Bao & Shi (2007) Cell Death Differ 14:56–65",
+      "detail": {
+        "en": "Review of apoptosomes: the Apaf-1 apoptosome is the adaptor protein complex that activates the initiator caspase-9, as the DISC does for caspase-8",
+        "zh-Hant": "凋亡體綜述：Apaf-1 凋亡體是活化啟動型 caspase-9 的接合蛋白複合體，與 DISC 活化 caspase-8 的角色相似"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2007,
+      "url": "https://doi.org/10.1038/sj.cdd.4402028",
+      "status": "verified"
+    },
+    "pajak-2019": {
+      "source": "Pająk et al. (2019) Int J Mol Sci 21:234",
+      "detail": {
+        "en": "Review of 2-deoxy-D-glucose, with an overview of glucose metabolism: glycolysis turns glucose into two pyruvate and a net 2 ATP, pyruvate is oxidised to acetyl-CoA by the pyruvate dehydrogenase complex, the Krebs cycle yields NADH and FADH2, and the respiratory chain reoxidises them",
+        "zh-Hant": "2-脫氧-D-葡萄糖綜述，並概述葡萄糖代謝：糖解把葡萄糖變成兩個丙酮酸並淨得 2 個 ATP，丙酮酸經丙酮酸脫氫酶複合體氧化成乙醯輔酶 A，克雷布斯循環產生 NADH 與 FADH₂，再由呼吸鏈氧化回復"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2019,
+      "url": "https://doi.org/10.3390/ijms21010234",
+      "status": "verified"
+    },
+    "gray-2013": {
+      "source": "Gray, Tompkins & Taylor (2013) Cell Mol Life Sci 71:2577–2604",
+      "detail": {
+        "en": "Review of pyruvate metabolism: pyruvate is the end product of glycolysis and is transported into mitochondria (by the mitochondrial pyruvate carrier) as a fuel input for citric acid cycle carbon flux, with pyruvate dehydrogenase as a regulated step",
+        "zh-Hant": "丙酮酸代謝綜述：丙酮酸是糖解的終產物，經線粒體丙酮酸載體運入線粒體，作為檸檬酸循環碳流的燃料，丙酮酸脫氫酶是受調控的一步"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2013,
+      "url": "https://doi.org/10.1007/s00018-013-1539-2",
+      "status": "verified"
+    },
+    "saunier-2015": {
+      "source": "Saunier et al. (2015) Int J Cancer 138:809–817",
+      "detail": {
+        "en": "Review of the pyruvate dehydrogenase complex, which links glycolysis to the Krebs cycle by irreversible decarboxylation of pyruvate into acetyl-CoA, regulated by PDK and PDP phosphorylation",
+        "zh-Hant": "丙酮酸脫氫酶複合體綜述：它把丙酮酸不可逆地脫羧成乙醯輔酶 A，連接糖解與克雷布斯循環，並受 PDK 與 PDP 的磷酸化調控"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2015,
+      "url": "https://doi.org/10.1002/ijc.29564",
+      "status": "verified"
+    },
+    "anderson-2018": {
+      "source": "Anderson et al. (2018) Protein Cell 9:216–237",
+      "detail": {
+        "en": "Review of the tricarboxylic acid (TCA) cycle as a central route for oxidative phosphorylation that meets bioenergetic, biosynthetic and redox needs",
+        "zh-Hant": "三羧酸（TCA）循環綜述：它是氧化磷酸化的核心途徑，滿足能量、生物合成及氧化還原的需求"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2018,
+      "url": "https://doi.org/10.1007/s13238-017-0451-1",
+      "status": "verified"
+    },
+    "spinelli-2018": {
+      "source": "Spinelli & Haigis (2018) Nat Cell Biol 20:745–754",
+      "detail": {
+        "en": "Review of mitochondrial metabolism: mitochondria catabolise nutrients for energy, make biosynthetic precursors and compartmentalise metabolites",
+        "zh-Hant": "線粒體代謝綜述：線粒體分解養分以產生能量、製造生物合成前體，並把代謝物分隔"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2018,
+      "url": "https://doi.org/10.1038/s41556-018-0124-1",
+      "status": "verified"
+    },
+    "williams-2004": {
+      "source": "Williams et al. (2004) Science 305:683–686",
+      "detail": {
+        "en": "Three crystal structures of human CYP3A4: unliganded (PDB 1W0E, 2.80 Å), with the inhibitor metyrapone and with the substrate progesterone. The active site is surprisingly small, and a peripheral binding site sits above a phenylalanine cluster",
+        "zh-Hant": "人類 CYP3A4 的三個晶體結構：無配體（PDB 1W0E，2.80 Å）、與抑制劑 metyrapone 結合，及與底物黃體酮結合。活性位點出乎意料地小，苯丙胺酸簇上方有一個外周結合位點"
+      },
+      "species": "Human",
+      "method": "X-ray crystallography, 2.80 Å",
+      "year": 2004,
+      "url": "https://doi.org/10.1126/science.1099736",
+      "status": "verified"
+    },
+    "sevrioukova-2013": {
+      "source": "Sevrioukova & Poulos (2013) Dalton Trans 42:3116–3126",
+      "detail": {
+        "en": "Review of CYP3A4: the most abundant human P450 and the one that metabolises the majority of administered drugs, with extreme substrate promiscuity and cooperative binding that cause drug-drug interactions",
+        "zh-Hant": "CYP3A4 綜述：人類含量最多的 P450，代謝大部分藥物，底物極為混雜且有協同結合，因而引致藥物相互作用"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2013,
+      "url": "https://doi.org/10.1039/c2dt31833d",
+      "status": "verified"
+    },
+    "hsin-2012": {
+      "source": "Hsin & Manley (2012) Genes Dev 26:2119–2137",
+      "detail": {
+        "en": "Review of RNA polymerase II (12 polypeptides, Rpb1 with the C-terminal domain, CTD): the CTD couples transcription to RNA processing and plays roles in elongation and termination",
+        "zh-Hant": "RNA 聚合酶 II（12 個多肽，Rpb1 帶有 C 端結構域 CTD）綜述：CTD 把轉錄與 RNA 加工偶聯，並在延伸與終止中發揮作用"
+      },
+      "species": "Eukaryotes, mainly human",
+      "method": "Review",
+      "year": 2012,
+      "url": "https://doi.org/10.1101/gad.200303.112",
+      "status": "verified"
+    },
+    "zhou-2012": {
+      "source": "Zhou, Li & Price (2012) Annu Rev Biochem 81:119–143",
+      "detail": {
+        "en": "Review of RNA polymerase II elongation control: after initiation Pol II pauses near the promoter, and P-TEFb releases it into productive elongation to make full-length, properly processed mRNAs",
+        "zh-Hant": "RNA 聚合酶 II 延伸調控綜述：起始後 Pol II 在啟動子附近暫停，P-TEFb 令它進入有效延伸，產生完整且加工正確的 mRNA"
+      },
+      "species": "Eukaryotes, mainly human",
+      "method": "Review",
+      "year": 2012,
+      "url": "https://doi.org/10.1146/annurev-biochem-052610-095910",
+      "status": "verified"
+    },
+    "proudfoot-2016": {
+      "source": "Proudfoot (2016) Science 352:aad9926",
+      "detail": {
+        "en": "Review of transcription termination in mammals: the transcript is cleaved at the poly(A) signal to release the mRNA, and the remaining RNA is degraded. Eukaryotic mRNAs are monocistronic with a 5′ cap and 5′ and 3′ untranslated regions",
+        "zh-Hant": "哺乳動物轉錄終止綜述：轉錄本在 poly(A) 訊號處被切開以釋出 mRNA，其餘 RNA 被降解。真核 mRNA 為單順反子，帶 5′ 帽及 5′ 與 3′ 非轉譯區"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2016,
+      "url": "https://doi.org/10.1126/science.aad9926",
+      "status": "verified"
+    },
+    "kornblihtt-2013": {
+      "source": "Kornblihtt et al. (2013) Nat Rev Mol Cell Biol 14:153–165",
+      "detail": {
+        "en": "Review of alternative splicing as a step between eukaryotic transcription and translation, affected by transcription factors and chromatin structure",
+        "zh-Hant": "選擇性剪接綜述：它位於真核轉錄與轉譯之間，受轉錄因子與染色質結構影響"
+      },
+      "species": "Eukaryotes, mainly human",
+      "method": "Review",
+      "year": 2013,
+      "url": "https://doi.org/10.1038/nrm3525",
+      "status": "verified"
+    },
+    "pestova-2001": {
+      "source": "Pestova et al. (2001) Proc Natl Acad Sci USA 98:7029–7036",
+      "detail": {
+        "en": "Review of eukaryotic translation initiation: eIF4F recognises the capped 5′ end, the 43S complex (40S, eIF2·GTP·Met-tRNAi, eIF3) binds and scans to the initiation codon to form the 48S complex, then the 60S subunit joins (eIF5B) to make the 80S ribosome",
+        "zh-Hant": "真核轉譯起始綜述：eIF4F 辨認帶帽的 5′ 端，43S 複合體（40S、eIF2·GTP·Met-tRNAi、eIF3）結合並掃描至起始密碼子形成 48S 複合體，60S 次單位再加入（eIF5B）形成 80S 核糖體"
+      },
+      "species": "Eukaryotes",
+      "method": "Review",
+      "year": 2001,
+      "url": "https://doi.org/10.1073/pnas.111145798",
+      "status": "verified"
+    },
+    "jackson-2010": {
+      "source": "Jackson, Hellen & Pestova (2010) Nat Rev Mol Cell Biol 11:113–127",
+      "detail": {
+        "en": "Review of eukaryotic translation initiation: protein synthesis is mainly regulated at initiation, through initiation factors, RNA-binding proteins and microRNAs",
+        "zh-Hant": "真核轉譯起始綜述：蛋白質合成主要在起始階段受調控，途徑包括起始因子、RNA 結合蛋白與 microRNA"
+      },
+      "species": "Eukaryotes",
+      "method": "Review",
+      "year": 2010,
+      "url": "https://doi.org/10.1038/nrm2838",
+      "status": "verified"
+    },
+    "hinnebusch-2012": {
+      "source": "Hinnebusch & Lorsch (2012) Cold Spring Harb Perspect Biol 4:a011544",
+      "detail": {
+        "en": "Review of eukaryotic translation initiation, which needs at least 12 initiation factors and is a target of regulatory pathways",
+        "zh-Hant": "真核轉譯起始綜述：起始需要至少 12 個起始因子，亦是多條調控途徑的目標"
+      },
+      "species": "Eukaryotes",
+      "method": "Review",
+      "year": 2012,
+      "url": "https://doi.org/10.1101/cshperspect.a011544",
+      "status": "verified"
+    },
+    "dever-2012": {
+      "source": "Dever & Green (2012) Cold Spring Harb Perspect Biol 4:a013706",
+      "detail": {
+        "en": "Review of the elongation, termination and recycling phases of translation in eukaryotes",
+        "zh-Hant": "真核轉譯延伸、終止與回收階段綜述"
+      },
+      "species": "Eukaryotes",
+      "method": "Review",
+      "year": 2012,
+      "url": "https://doi.org/10.1101/cshperspect.a013706",
+      "status": "verified"
+    },
+    "cate-2012": {
+      "source": "Cate (2012) Cold Spring Harb Perspect Biol 4:a011536",
+      "detail": {
+        "en": "Review of the structure of the eukaryotic ribosome (40S, 60S and 80S) and what it shows about eukaryotic translation",
+        "zh-Hant": "真核核糖體結構（40S、60S 與 80S）及其對真核轉譯機制的啟示綜述"
+      },
+      "species": "Eukaryotes",
+      "method": "Review",
+      "year": 2012,
+      "url": "https://doi.org/10.1101/cshperspect.a011536",
+      "status": "verified"
+    },
+    "bylund-2021": {
+      "source": "Bylund (2021) Encyclopedia of Biological Chemistry, 3rd ed., Receptors: Adrenergic receptors",
+      "detail": {
+        "en": "Encyclopedia chapter: adrenergic receptors are G protein-coupled receptors for norepinephrine and epinephrine, in three classes (α1, α2, β) with three subtypes each, coupling to Gq/11, Gi/o and Gs",
+        "zh-Hant": "百科全書章節：腎上腺素受體是去甲腎上腺素與腎上腺素的 G 蛋白偶聯受體，分 α1、α2、β 三類，各有三個亞型，分別偶聯 Gq/11、Gi/o 與 Gs"
+      },
+      "species": "Human",
+      "method": "Encyclopedia chapter",
+      "year": 2021,
+      "url": "https://doi.org/10.1016/B978-0-12-819460-7.00503-X",
+      "status": "verified"
+    },
+    "hoffman-2004": {
+      "source": "Hoffman (2004) Encyclopedia of Endocrine Diseases, Catecholamines",
+      "detail": {
+        "en": "Encyclopedia chapter on catecholamines and their adrenergic receptors and second-messenger pathways",
+        "zh-Hant": "兒茶酚胺及其腎上腺素受體與第二信使途徑的百科全書章節"
+      },
+      "species": "Human",
+      "method": "Encyclopedia chapter",
+      "year": 2004,
+      "url": "https://doi.org/10.1016/B0-12-475570-4/00258-4",
+      "status": "verified"
+    },
+    "rasmussen-2011": {
+      "source": "Rasmussen et al. (2011) Nature 477:549–555",
+      "detail": {
+        "en": "Crystal structure of the agonist-bound β2 adrenergic receptor with nucleotide-free Gs, the stimulatory G protein for adenylyl cyclase",
+        "zh-Hant": "激動劑結合的 β2 腎上腺素受體與無核苷酸 Gs（腺苷酸環化酶的刺激型 G 蛋白）複合體的晶體結構"
+      },
+      "species": "Human",
+      "method": "X-ray crystallography",
+      "year": 2011,
+      "url": "https://doi.org/10.1038/nature10361",
+      "status": "verified"
+    },
+    "lohse-2003": {
+      "source": "Lohse, Engelhardt & Eschenhagen (2003) Circ Res 93:896–906",
+      "detail": {
+        "en": "Review of β-adrenergic receptors in cardiac function and failure: β1 is mainly responsible for positive chronotropic and inotropic effects, and β2 can also activate nonclassical pathways",
+        "zh-Hant": "心臟 β 腎上腺素受體綜述：β1 主要負責正性變時與變力作用，β2 亦可活化非經典途徑"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2003,
+      "url": "https://doi.org/10.1161/01.RES.0000102042.83024.CA",
+      "status": "verified"
+    },
+    "daaka-1997": {
+      "source": "Daaka, Luttrell & Lefkowitz (1997) Nature 390:88–91",
+      "detail": {
+        "en": "PKA phosphorylation switches the coupling of the β2-adrenergic receptor from Gs to Gi, which activates MAP kinase through Gβγ, c-Src and Ras",
+        "zh-Hant": "PKA 磷酸化使 β2 腎上腺素受體由偶聯 Gs 轉為偶聯 Gi，再經 Gβγ、c-Src 與 Ras 活化 MAP 激酶"
+      },
+      "species": "Human cell line",
+      "method": "Cell culture experiments",
+      "year": 1997,
+      "url": "https://doi.org/10.1038/36362",
+      "status": "verified"
+    },
+    "goodman-1996": {
+      "source": "Goodman et al. (1996) Nature 383:447–450",
+      "detail": {
+        "en": "β-arrestin binds phosphorylated β2AR and clathrin, acting as an adaptor in receptor endocytosis, which attenuates signalling (desensitisation)",
+        "zh-Hant": "β-arrestin 結合磷酸化的 β2AR 與網格蛋白，作為受體內吞的接合蛋白，使訊號減弱（脫敏）"
+      },
+      "species": "Human cell line",
+      "method": "Cell culture experiments",
+      "year": 1996,
+      "url": "https://doi.org/10.1038/383447a0",
+      "status": "verified"
+    },
+    "shenoy-2011": {
+      "source": "Shenoy & Lefkowitz (2011) Trends Pharmacol Sci 32:521–533",
+      "detail": {
+        "en": "Review of β-arrestins: endocytic adaptors for seven-transmembrane receptors that inhibit G protein signalling and promote alternate downstream signalling",
+        "zh-Hant": "β-arrestin 綜述：七次跨膜受體的內吞接合蛋白，抑制 G 蛋白訊號並促進其他下游訊號"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2011,
+      "url": "https://doi.org/10.1016/j.tips.2011.05.002",
       "status": "verified"
     }
   }

@@ -720,6 +720,46 @@
     "onboard.try.pdb": {
       "en": "Complex I (5XTD)",
       "zh-Hant": "Complex I（5XTD）"
+    },
+    "moduleD.title": {
+      "en": "Diagram",
+      "zh-Hant": "圖解"
+    },
+    "diagram.back": {
+      "en": "Back to the atlas",
+      "zh-Hant": "返回圖譜"
+    },
+    "diagram.pick": {
+      "en": "Click a part of the diagram to read about it.",
+      "zh-Hant": "點擊圖解的部件閱讀說明。"
+    },
+    "diagram.note": {
+      "en": "Textbook-style schematic of the pathway. Parts are not to scale and show no measured values.",
+      "zh-Hant": "教科書式的途徑示意圖。部件並非按比例繪製，亦不含量度數值。"
+    },
+    "diagram.legend.electron": {
+      "en": "Electron flow",
+      "zh-Hant": "電子流向"
+    },
+    "diagram.legend.proton": {
+      "en": "Proton flow (H⁺)",
+      "zh-Hant": "質子流向（H⁺）"
+    },
+    "diagram.label": {
+      "en": "Pathway diagram",
+      "zh-Hant": "途徑圖解"
+    },
+    "panel.chart.d": {
+      "en": "Parts",
+      "zh-Hant": "部件"
+    },
+    "diagram.source": {
+      "en": "Sources for this diagram",
+      "zh-Hant": "此圖解的來源"
+    },
+    "diagram.nav": {
+      "en": "Diagrams",
+      "zh-Hant": "圖解"
     }
   }
 }

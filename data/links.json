@@ -28,8 +28,8 @@
     },
     "diag": {
       "label": "Diagram Workspace",
-      "url": null,
-      "deepLink": false
+      "url": "./?diagram={id}",
+      "deepLink": true
     },
     "ent": {
       "label": "Human Biology entry",
@@ -52,7 +52,7 @@
     },
     {
       "from": "pdb:4UG0",
-      "to": [
+      "to": ["diag:protein-synthesis", 
         "cell:hepatocyte",
         "cell:enterocyte",
         "tis:simple-columnar",
@@ -65,6 +65,7 @@
     {
       "from": "cell:enterocyte",
       "to": [
+        "diag:nutrient-absorption",
         "anat:Jejunum",
         "tis:simple-columnar",
         "ent:NUT-01",
@@ -109,6 +110,19 @@
         "cell:enterocyte"
       ]
     },
+{
+      "from": "pdb:1W0E",
+      "to": [
+        "cell:hepatocyte",
+        "cell:enterocyte"
+      ]
+    },
+    {
+      "from": "pdb:3SN6",
+      "to": [
+        "diag:adrenergic"
+      ]
+    },
     {
       "from": "pdb:1ZUM",
       "to": [
@@ -120,23 +134,23 @@
     },
     {
       "from": "pdb:1MAZ",
-      "to": ["cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
+      "to": ["diag:apoptosis", "cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
     },
     {
       "from": "pdb:1G5M",
-      "to": ["cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
+      "to": ["diag:apoptosis", "cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
     },
     {
       "from": "pdb:2IMS",
-      "to": ["cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
+      "to": ["diag:apoptosis", "cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
     },
     {
       "from": "pdb:1F16",
-      "to": ["cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
+      "to": ["diag:apoptosis", "cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
     },
     {
       "from": "pdb:2PQK",
-      "to": ["cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
+      "to": ["diag:apoptosis", "cell:hepatocyte", "cell:cardiomyocyte", "cell:skeletal-myocyte"]
     },
     {
       "from": "pdb:1CAG",

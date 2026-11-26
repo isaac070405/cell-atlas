@@ -4,6 +4,7 @@ import { buildRuler, renderRuler } from './ruler.js';
 import { initCompare, renderCompare, renderChart, columnCells, resolve, valueText, comp } from './compare.js';
 import { buildModel, crowded } from './cellmodel.js';
 import { showStructure } from './molview.js';
+import { drawDiagram } from './diagram.js';
 
 const load = p => fetch(p).then(r => { if (!r.ok) throw new Error(`${p}: HTTP ${r.status}`); return r.json(); });
 // Data files come from one origin; a failed one leaves nothing to draw, so say so instead of showing a blank page
@@ -17,10 +18,10 @@ function bootFailed(err) {
 let data;
 try {
   data = await Promise.all([
-    load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'), load('data/anatomy.json'), load('data/tissues.json'), load('data/organelles.json'), load('data/atoms.json'), load('data/protein-location.json'), load('data/bcl2-compare.json'),
+    load('data/catalog.json'), load('data/citations.json'), load('data/links.json'), load('data/tour-points.json'), load('data/anatomy.json'), load('data/tissues.json'), load('data/organelles.json'), load('data/atoms.json'), load('data/protein-location.json'), load('data/bcl2-compare.json'), load('data/diagrams.json'),
   ]);
 } catch (err) { bootFailed(err); throw err; }
-const [catalog, { citations }, links, tours, anatomy, tissues, organelles, atoms, ploc, bcl2] = data;
+const [catalog, { citations }, links, tours, anatomy, tissues, organelles, atoms, ploc, bcl2, diagrams] = data;
 const $ = id => document.getElementById(id);
 // Cell types: colour is the --kind-* token, group is the domain-level class
 const KINDS = [
@@ -67,7 +68,7 @@ $('vp-queue').addEventListener('click', e => {
   setState(b.dataset.kind === 'cell' ? { cell: b.dataset.id, pdb: null } : { pdb: b.dataset.id });
 });
 $('chart-body').addEventListener('click', e => {
-  const b = e.target.closest('button[data-kind="tpart"]');
+  const b = e.target.closest('button[data-kind="tpart"], button[data-kind="dnode"]');
   if (b) setState({ selection: getState().selection === b.dataset.id ? null : b.dataset.id });
 });
 $('vp-switch').addEventListener('click', e => {
@@ -89,9 +90,10 @@ $('vp-compare').addEventListener('click', e => {
 });
 // Card and compare chips that point inside this site change state instead of reloading
 document.addEventListener('click', e => {
-  const a = e.target.closest('a[data-pdb], a[data-cell], a[data-anat], a[data-tissue]');
+  const a = e.target.closest('a[data-pdb], a[data-cell], a[data-anat], a[data-tissue], a[data-diagram]');
   if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
   e.preventDefault();
+  if (a.dataset.diagram) return setState({ diagram: a.dataset.diagram });
   if (a.dataset.anat) return setState({ level: 'organ', anat: a.dataset.anat });
   if (a.dataset.tissue) return setState({ level: 'tissue', anat: a.dataset.tissue, selection: a.dataset.sel || null });
   setState(a.dataset.pdb ? { pdb: a.dataset.pdb } : { cell: a.dataset.cell, pdb: null });
@@ -240,10 +242,57 @@ function tissueCard(t, sel) {
     : `<p><strong>${html(t.name)}</strong></p><p>${html(t.summary)}</p><p class="muted" style="font-size:12.5px">${html('tissue.pick')}</p>`;
 }
 
+// Pathway diagram: replaces the viewport and the three panels until the person goes back
+const DIAGRAM_HIDE = ['vp-empty', 'onboard-try', 'vp-queue', 'kind-legend', 'vp-cell', 'vp-mol', 'vp-tissue', 'vp-anatomy', 'vp-compare', 'vp-switch'];
+// Menu of diagrams, always visible; the open one is marked
+function renderDiagramNav(s) {
+  const nav = $('dg-nav');
+  nav.querySelectorAll('button').forEach(b => b.remove());
+  nav.insertAdjacentHTML('beforeend', diagrams.diagrams.map(d => `<button class="chip" data-diagram-open="${esc(d.id)}" aria-pressed="${d.id === s.diagram}">${html(d.name)}</button>`).join(''));
+}
+$('dg-nav').addEventListener('click', e => {
+  const b = e.target.closest('button[data-diagram-open]');
+  if (b) setState({ diagram: getState().diagram === b.dataset.diagramOpen ? null : b.dataset.diagramOpen });
+});
+function renderDiagramView(s) {
+  const dg = diagrams.diagrams.find(d => d.id === s.diagram);
+  $('vp-diagram').hidden = !dg;
+  if (!dg) return false;
+  DIAGRAM_HIDE.forEach(id => { $(id).hidden = true; });
+  const note = document.querySelector('.schematic');
+  note.hidden = false;
+  note.innerHTML = html('diagram.note');  // a pathway is not a to-scale picture; applyStatic restores the usual note on the next render
+  document.body.classList.remove('level-c', 'bare');
+  $('vp-title').innerHTML = html(dg.name);
+  $('ro-view').innerHTML = html(dg.name);
+  $('vp-diagram').innerHTML = `<p><button class="chip" data-diagram-back>${html('diagram.back')}</button></p>${drawDiagram(dg, s.selection)}<p class="muted cell3d-note">${html('diagram.pick')}</p>`;
+  $('chart-title').innerHTML = html('panel.chart.d');
+  $('chart-body').innerHTML = `<ul class="queue parts">${dg.nodes.map(n => `<li><button data-kind="dnode" data-id="${esc(n.id)}" aria-pressed="${n.id === s.selection}"><span>${html(n.name)}</span></button></li>`).join('')}</ul>`;
+  const n = dg.nodes.find(x => x.id === s.selection);
+  const nl = n?.links ?? (n?.link ? [n.link] : []);
+  const out = nl.length ? `<h4 class="card-sub">${html('card.links')}</h4><div class="chips">${nl.map(linkChip).join('')}</div>` : '';
+  $('card-body').innerHTML = n ? `<p><strong>${html(n.name)}</strong>${n.sub?.en ? ` <span class="muted">${html(n.sub)}</span>` : ''}</p><p>${html(n.text)}</p>${out}`
+    : `<p><strong>${html(dg.name)}</strong></p><p>${html(dg.summary)}</p><p class="muted" style="font-size:12.5px">${html('diagram.pick')}</p>`;
+  const ids = n ? n.cite ?? [] : dg.cite ?? [];
+  $('sources-body').innerHTML = ids.map(id => source(citations[id])).join('') || `<li class="muted" style="list-style:none;margin-left:-1.4em">${html('status.nodata')}</li>`;
+  return true;
+}
+$('vp-diagram').addEventListener('click', e => {
+  if (e.target.closest('[data-diagram-back]')) return setState({ diagram: null });
+  const g = e.target.closest('[data-node]');
+  if (g) setState({ selection: getState().selection === g.dataset.node ? null : g.dataset.node });
+});
+$('vp-diagram').addEventListener('keydown', e => {
+  const g = e.target.closest('[data-node]');
+  if (g && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); g.dispatchEvent(new MouseEvent('click', { bubbles: true })); }
+});
+
 function render(s) {
   applyStatic();
   document.querySelectorAll('[data-lang-set]').forEach(b => b.setAttribute('aria-checked', b.dataset.langSet === getLang()));
   renderRuler(s);
+  renderDiagramNav(s);
+  if (renderDiagramView(s)) return;
 
   const lv = levelInfo(s.level);
   const cell = catalog.cells.find(c => c.id === s.cell);
@@ -328,8 +377,8 @@ function render(s) {
   if (compare && s.cmp === 'bcl2') ids.add(bcl2.cite);
   else if (compare) columnCells(s.muscle).forEach(c => c.data && ids.add(c.data));
   if (A && cell?.data) ids.add(cell.data);
-  if (B && pdb?.cite) ids.add(pdb.cite);
-  if (B && pdb) Object.values(ploc.genes).filter(e => e.structure === pdb.id || (point && ploc.genes[point.subunit] === e)).forEach(e => ids.add(e.source === 'uniprot' ? ploc.citeUniprot : ploc.cite));
+  if (B && pdb?.cite) [].concat(pdb.cite).forEach(id => ids.add(id));
+  if (B && pdb) Object.values(ploc.genes).filter(e => hasStructure(e, pdb.id) || (point && ploc.genes[point.subunit] === e)).forEach(e => ids.add(e.source === 'uniprot' ? ploc.citeUniprot : ploc.cite));
   if (A && !compare && cell?.id === 'hepatocyte') ids.add('bnid-105782');
   if (O || M) (sm ? modelCites(sm, s.level) : []).forEach(id => ids.add(id));
   const partCites = sm && !(O || M) ? sm.parts?.find(p => p.id === s.selection)?.cite ?? [] : [];
@@ -349,6 +398,7 @@ function linkChip(k) {
     const t = tissues.tissues.find(x => x.id === id || x.aliases?.[id]);
     if (t) { const sel = t.id === id ? '' : t.aliases[id]; return `<a class="chip" href="?level=tissue&part=${t.id}${sel ? `&sel=${sel}` : ''}" data-tissue="${t.id}" data-sel="${sel}">${esc(k)}</a>`; }
   }
+  if (p === 'diag' && diagrams.diagrams.some(d => d.id === id)) return `<a class="chip" href="?diagram=${encodeURIComponent(id)}" data-diagram="${esc(id)}">${esc(k)}</a>`;
   if (p === 'anat') {   // organs and systems built into the in-site 3D Anatomy Model open at the Organ level
     const organ = anatomy.organs.find(o => o.id === id.toLowerCase());
     if (organ) return `<a class="chip" href="?level=organ&part=${organ.id}" data-anat="${organ.id}">${esc(k)}</a>`;
@@ -410,6 +460,8 @@ async function sync3dMol(id, point) {
 }
 
 // Human Protein Atlas location for one gene, or a count and the commonest locations for a whole structure
+// A gene may have more than one structure: `structure` is the main one and `also` lists the others
+const hasStructure = (e, id) => e.structure === id || (e.also ?? []).includes(id);
 const locName = n => html(ploc.locations[n] ?? { en: n, 'zh-Hant': n });
 function locRows(g) {
   const e = ploc.genes[g];
@@ -422,9 +474,9 @@ function locCard(rows, note = true) {
   return rows ? `<h4 class="card-sub">${html('card.loc')}</h4><dl class="kv">${rows}</dl>${note ? `<p class="muted" style="font-size:12.5px">${html('card.loc.note')}</p>` : ''}` : '';
 }
 function structureLoc(id) {
-  const gs = Object.values(ploc.genes).filter(e => e.structure === id);
+  const gs = Object.values(ploc.genes).filter(e => hasStructure(e, id));
   if (!gs.length) return '';
-  if (gs.length === 1) return getState().tour ? '' : locCard(locRows(Object.keys(ploc.genes).find(g => ploc.genes[g].structure === id)));
+  if (gs.length === 1) return getState().tour ? '' : locCard(locRows(Object.keys(ploc.genes).find(g => hasStructure(ploc.genes[g], id))));
   const n = {};
   gs.forEach(e => e.main.forEach(m => { n[m] = (n[m] ?? 0) + 1; }));
   const top = Object.entries(n).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([m, c]) => `${locName(m)} ${c}`).join(', ');

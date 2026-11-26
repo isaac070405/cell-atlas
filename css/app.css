@@ -288,3 +288,58 @@ body.bare .panels { display: none; }
 /* First-run path: three source-linked links, shown only on the empty Cell view */
 .onboard-try { margin: var(--s3) 0 0; font-size: 14px; color: var(--ink-soft); max-width: 60ch; }
 .onboard-try .chip { margin: 0 2px; }
+
+/* Pathway diagram (js/diagram.js): part colours come from data/diagrams.json, lines and bands use tokens */
+.diagram { padding: var(--s3) 0; }
+.dg-svg { width: 100%; height: auto; max-height: 62vh; display: block; }
+.dg-band { fill: var(--paper-raised); stroke: none; }
+.dg-band-mem { fill: var(--rule); opacity: 0.55; }
+.dg-band-lumen { fill: var(--paper-raised); } .dg-band-cell { fill: var(--paper); } .dg-band-lamina { fill: var(--paper-raised); }
+.dg-region rect { stroke: var(--ink-soft); stroke-width: 1.5; }
+.dg-region-name { font: 600 12px var(--font-label); fill: var(--ink-soft); pointer-events: none; }
+.dg-region:hover rect { stroke: var(--ink); }
+.dg-region[aria-pressed="true"] rect, .dg-region:focus-visible rect { stroke: var(--select); stroke-width: 3; }
+.dg-label { font: 12px var(--font-label); fill: var(--ink-soft); }
+.dg-name { font: 600 12px var(--font-label); fill: #fff; pointer-events: none; }
+.dg-sub { font: 10px var(--font-label); fill: #fff; opacity: 0.92; pointer-events: none; }
+.dg-node { cursor: pointer; }
+.dg-node:hover rect, .dg-node:hover ellipse { stroke: var(--ink); stroke-width: 2; }
+.dg-node:focus-visible { outline: none; }
+.dg-node:focus-visible rect, .dg-node:focus-visible ellipse, .dg-node[aria-pressed="true"] rect, .dg-node[aria-pressed="true"] ellipse { stroke: var(--select); stroke-width: 4; }
+.dg-edge { fill: none; stroke-width: 2; pointer-events: none; }
+.dg-electron { stroke: #B8741A; }
+.dg-proton { stroke: var(--stain); stroke-dasharray: 6 4; }
+.dg-flow { stroke: var(--ink-soft); }
+.dg-carb { stroke: #A8481A; } .dg-prot { stroke: #7A4DB0; } .dg-fat { stroke: #8A6A12; }
+.dg-head-electron { fill: #B8741A; } .dg-head-proton { fill: var(--stain); } .dg-head-flow { fill: var(--ink-soft); } .dg-head-carb { fill: #A8481A; } .dg-head-prot { fill: #7A4DB0; } .dg-head-fat { fill: #8A6A12; }
+.dg-legend { list-style: none; display: flex; gap: var(--s4); margin: var(--s2) 0 0; padding: 0; font: 12px var(--font-label); color: var(--ink-soft); }
+.dg-key { display: inline-block; width: 22px; border-top: 3px solid; margin-right: 6px; vertical-align: middle; }
+.dg-key-electron { border-color: #B8741A; } .dg-key-carb { border-color: #A8481A; } .dg-key-prot { border-color: #7A4DB0; } .dg-key-fat { border-color: #8A6A12; } .dg-key-proton { border-top-style: dashed; border-color: var(--stain); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .dg-electron { stroke: #E8A33D; } :root:not([data-theme="light"]) .dg-head-electron { fill: #E8A33D; } }
+:root[data-theme="dark"] .dg-electron { stroke: #E8A33D; } :root[data-theme="dark"] .dg-head-electron { fill: #E8A33D; }
+
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .dg-carb { stroke: #E88B5C; } :root:not([data-theme="light"]) .dg-head-carb { fill: #E88B5C; } :root:not([data-theme="light"]) .dg-prot { stroke: #B896E6; } :root:not([data-theme="light"]) .dg-head-prot { fill: #B896E6; } :root:not([data-theme="light"]) .dg-fat { stroke: #D9B24A; } :root:not([data-theme="light"]) .dg-head-fat { fill: #D9B24A; } }
+:root[data-theme="dark"] .dg-carb { stroke: #E88B5C; } :root[data-theme="dark"] .dg-head-carb { fill: #E88B5C; } :root[data-theme="dark"] .dg-prot { stroke: #B896E6; } :root[data-theme="dark"] .dg-head-prot { fill: #B896E6; } :root[data-theme="dark"] .dg-fat { stroke: #D9B24A; } :root[data-theme="dark"] .dg-head-fat { fill: #D9B24A; }
+
+.dg-nav { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2); margin: 0 0 var(--s3); font: 12px var(--font-label); color: var(--ink-soft); }
+.dg-nav button[aria-pressed="true"] { border-color: var(--select); box-shadow: inset 3px 0 0 var(--select); }
+
+.dg-ext { stroke: #3B4F9C; } .dg-int { stroke: #A8481A; } .dg-inhibit { stroke: #B3261E; }
+.dg-head-ext { fill: #3B4F9C; } .dg-head-int { fill: #A8481A; } .dg-head-inhibit { stroke: #B3261E; stroke-width: 3; fill: none; }
+.dg-key-ext { border-color: #3B4F9C; } .dg-key-int { border-color: #A8481A; } .dg-key-inhibit { border-color: #B3261E; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .dg-ext { stroke: #8FA6EE; } :root:not([data-theme="light"]) .dg-head-ext { fill: #8FA6EE; } :root:not([data-theme="light"]) .dg-int { stroke: #E88B5C; } :root:not([data-theme="light"]) .dg-head-int { fill: #E88B5C; } :root:not([data-theme="light"]) .dg-inhibit, :root:not([data-theme="light"]) .dg-head-inhibit { stroke: #F07A72; } }
+:root[data-theme="dark"] .dg-ext { stroke: #8FA6EE; } :root[data-theme="dark"] .dg-head-ext { fill: #8FA6EE; } :root[data-theme="dark"] .dg-int { stroke: #E88B5C; } :root[data-theme="dark"] .dg-head-int { fill: #E88B5C; } :root[data-theme="dark"] .dg-inhibit, :root[data-theme="dark"] .dg-head-inhibit { stroke: #F07A72; }
+
+.dg-gly { stroke: #A8481A; } .dg-tca { stroke: #2F6B4F; }
+.dg-head-gly { fill: #A8481A; } .dg-head-tca { fill: #2F6B4F; }
+.dg-key-gly { border-color: #A8481A; } .dg-key-tca { border-color: #2F6B4F; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .dg-gly { stroke: #E88B5C; } :root:not([data-theme="light"]) .dg-head-gly { fill: #E88B5C; } :root:not([data-theme="light"]) .dg-tca { stroke: #6FBF96; } :root:not([data-theme="light"]) .dg-head-tca { fill: #6FBF96; } }
+:root[data-theme="dark"] .dg-gly { stroke: #E88B5C; } :root[data-theme="dark"] .dg-head-gly { fill: #E88B5C; } :root[data-theme="dark"] .dg-tca { stroke: #6FBF96; } :root[data-theme="dark"] .dg-head-tca { fill: #6FBF96; }
+
+.dg-tx { stroke: #3B4F9C; } .dg-tl { stroke: #A8481A; } .dg-exp { stroke: var(--ink); stroke-dasharray: 6 4; } .dg-side { stroke: var(--ink-soft); stroke-width: 1.5; }
+.dg-a1 { stroke: #2F6F6F; } .dg-a2 { stroke: #7A4DB0; } .dg-b { stroke: #A8481A; } .dg-arr { stroke: #555B66; } .dg-lig { stroke: #3B4F9C; }
+.dg-head-tx, .dg-head-lig { fill: #3B4F9C; } .dg-head-tl, .dg-head-b { fill: #A8481A; } .dg-head-exp { fill: var(--ink); } .dg-head-side { fill: var(--ink-soft); }
+.dg-head-a1 { fill: #2F6F6F; } .dg-head-a2 { fill: #7A4DB0; } .dg-head-arr { fill: #555B66; }
+.dg-key-tx, .dg-key-lig { border-color: #3B4F9C; } .dg-key-tl, .dg-key-b { border-color: #A8481A; } .dg-key-exp { border-top-style: dashed; border-color: var(--ink); } .dg-key-a1 { border-color: #2F6F6F; } .dg-key-a2 { border-color: #7A4DB0; } .dg-key-arr { border-color: #555B66; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .dg-tx, :root:not([data-theme="light"]) .dg-lig { stroke: #8FA6EE; } :root:not([data-theme="light"]) .dg-head-tx, :root:not([data-theme="light"]) .dg-head-lig { fill: #8FA6EE; } :root:not([data-theme="light"]) .dg-tl, :root:not([data-theme="light"]) .dg-b { stroke: #E88B5C; } :root:not([data-theme="light"]) .dg-head-tl, :root:not([data-theme="light"]) .dg-head-b { fill: #E88B5C; } :root:not([data-theme="light"]) .dg-a1 { stroke: #6FC4C4; } :root:not([data-theme="light"]) .dg-head-a1 { fill: #6FC4C4; } :root:not([data-theme="light"]) .dg-a2 { stroke: #B896E6; } :root:not([data-theme="light"]) .dg-head-a2 { fill: #B896E6; } :root:not([data-theme="light"]) .dg-arr { stroke: #A8B0BC; } :root:not([data-theme="light"]) .dg-head-arr { fill: #A8B0BC; } }
+:root[data-theme="dark"] .dg-tx, :root[data-theme="dark"] .dg-lig { stroke: #8FA6EE; } :root[data-theme="dark"] .dg-head-tx, :root[data-theme="dark"] .dg-head-lig { fill: #8FA6EE; } :root[data-theme="dark"] .dg-tl, :root[data-theme="dark"] .dg-b { stroke: #E88B5C; } :root[data-theme="dark"] .dg-head-tl, :root[data-theme="dark"] .dg-head-b { fill: #E88B5C; } :root[data-theme="dark"] .dg-a1 { stroke: #6FC4C4; } :root[data-theme="dark"] .dg-head-a1 { fill: #6FC4C4; } :root[data-theme="dark"] .dg-a2 { stroke: #B896E6; } :root[data-theme="dark"] .dg-head-a2 { fill: #B896E6; } :root[data-theme="dark"] .dg-arr { stroke: #A8B0BC; } :root[data-theme="dark"] .dg-head-arr { fill: #A8B0BC; }
