@@ -23,6 +23,8 @@ export const onChange = fn => bus.addEventListener('change', e => fn(e.detail));
 
 export function setState(patch) {
   const before = state.cell, beforeLevel = state.level, beforeDiagram = state.diagram;
+  // Opening a structure, cell or level leaves the diagram view; a patch that names the diagram keeps it
+  if (!('diagram' in patch) && (patch.pdb || patch.cell || 'level' in patch || 'anat' in patch)) patch = { ...patch, diagram: null };
   Object.assign(state, patch);
   if ('pdb' in patch && !('tour' in patch)) state.tour = null;
   if ('cell' in patch && patch.cell !== before && !('selection' in patch)) state.selection = null;

@@ -7,6 +7,8 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 ## Unreleased
 
 ### Added
+- Distances for complexes II, III and IV in the electron flow diagram, measured from deposited coordinates: complex II from porcine 1ZOY (6.9 to 11.0 Å edge to edge, plus heme b), the two b hemes of complex III from bovine 1BE3 (8.1 Å) and complex IV from bovine 1OCC (CuA to heme a 11.7 Å, heme a to a3 4.6 Å, heme a3 iron to CuB 4.7 Å). The Rieske head domain moves between crystal forms, so it has no distance. Adds Module B structures 1ZOY, 1BE3 and 1OCC with 14 tour points and two citations (Iwata 1998, Tsukihara 1996).
+- Electron flow diagram (`?diagram=electron-path`): the path of electrons centre by centre through complexes I to IV (NADH, FMN, N3, N1b, N4, N5, N6a, N6b, N2 and ubiquinone in complex I, with the N1a side branch; FAD and three Fe–S clusters in II; Rieske, heme c1, heme bL and bH and the Q cycle in III; cytochrome c, CuA, heme a and heme a3–CuB to oxygen in IV). The complex I distances (6.7 to 14.8 Å edge to edge) are measured from the 5XTD coordinates, and each centre links to its 5XTD tour point. Adds 9 citations, including the Bender chapter on oxidative phosphorylation.
 - Protein location for 3SN6: ADRB2 (HPA, Supported: plasma membrane) now points to this structure, and its Gs partners GNAS, GNB1 and GNG2 are filled from UniProt (annotated, mainly cell membrane). Four new location names have Traditional Chinese labels.
 - Module B structure 3SN6 (human β2 adrenergic receptor with Gs, X-ray 3.2 Å, Rasmussen et al. 2011) with four preset views read from the deposited coordinates (agonist BI-167107, Asp113, the receptor and Gαs), linked both ways with the adrenergic receptor diagram (β receptor and Gs parts).
 - Protein synthesis diagram (`?diagram=protein-synthesis`): transcription (initiation, elongation, termination, RNA processing, mature mRNA) in the nucleus and translation (43S complex, scanning, 80S assembly, elongation, termination) in the cytosol, with the 80S ribosome part linked to PDB 4UG0 and 4UG0 linked back. Adds 9 verified citations.
@@ -36,6 +38,9 @@ Pull request numbers refer to https://github.com/isaac070405/cell-atlas/pull/.
 - Organelle models: lysosome, peroxisome, microfilament, intermediate filament, microtubule, centrosome.
 - Atom models: ATP, ADP, NADH, xanthine, purine, pyrimidine (computed conformers) and a [4Fe-4S] cluster; NADH and the cluster link to PDB 5XTD.
 - `scripts/check-data.mjs` checks the new models.
+
+### Fixed
+- Opening a structure, cell or level from a diagram card now leaves the diagram view. Before, the structure chips in diagram cards changed state but the diagram stayed on screen.
 
 ### Changed
 - The "Histology" link target is now "Tissue" and `tis:` links open the Tissue level.

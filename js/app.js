@@ -96,7 +96,7 @@ document.addEventListener('click', e => {
   if (a.dataset.diagram) return setState({ diagram: a.dataset.diagram });
   if (a.dataset.anat) return setState({ level: 'organ', anat: a.dataset.anat });
   if (a.dataset.tissue) return setState({ level: 'tissue', anat: a.dataset.tissue, selection: a.dataset.sel || null });
-  setState(a.dataset.pdb ? { pdb: a.dataset.pdb } : { cell: a.dataset.cell, pdb: null });
+  setState(a.dataset.pdb ? { pdb: a.dataset.pdb, tour: a.dataset.tour || null } : { cell: a.dataset.cell, pdb: null });
 });
 
 // 3D cell: Three.js loads the first time a cell is shown
@@ -392,7 +392,10 @@ function render(s) {
 function linkChip(k) {
   const i = k.indexOf(':');
   const p = k.slice(0, i), id = k.slice(i + 1);
-  if (p === 'pdb') return `<a class="chip" href="?pdb=${encodeURIComponent(id)}" data-pdb="${esc(id)}">${esc(k)}</a>`;
+  if (p === 'pdb') {   // pdb:5XTD#fes-n3 opens structure 5XTD at its tour point fes-n3
+    const [pid, tour = ''] = id.split('#');
+    return `<a class="chip" href="?pdb=${encodeURIComponent(pid)}${tour ? `&tour=${encodeURIComponent(tour)}` : ''}" data-pdb="${esc(pid)}" data-tour="${esc(tour)}">${esc(k)}</a>`;
+  }
   if (p === 'cell') return `<a class="chip" href="?cell=${encodeURIComponent(id)}" data-cell="${esc(id)}">${esc(k)}</a>`;
   if (p === 'tis') {   // tissue models in the Tissue level; an alias points at one part of a tissue
     const t = tissues.tissues.find(x => x.id === id || x.aliases?.[id]);
@@ -517,7 +520,8 @@ function card(item, kind) {
 
 function source(c) {
   if (!c) return '';
-  return `<li><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.source)}</a>
+  const title = c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.source)}</a>` : esc(c.source);   // a source with no DOI or link is plain text
+  return `<li>${title}
     <span class="badge ${c.status}">${esc(text(`status.${c.status}`))}</span><br>
     <span>${html(c.detail)}</span><br>
     <span class="muted">${esc([c.species === 'n/a' ? '' : c.species, c.method].filter(Boolean).join(', '))}</span></li>`;
