@@ -832,6 +832,320 @@
           }
         }
       ]
+    },
+    "1ZOY": {
+      "cite": "sun-2005",
+      "points": [
+        {
+          "id": "fad",
+          "label": {
+            "en": "FAD (succinate oxidation)",
+            "zh-Hant": "FAD（氧化琥珀酸）"
+          },
+          "kind": "cofactor",
+          "comp": "FAD",
+          "chain": "E",
+          "authChain": "A",
+          "subunit": "SDHA",
+          "xyz": [
+            93.8,
+            55.7,
+            124.4
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "E"
+          }
+        },
+        {
+          "id": "fes-2fe",
+          "label": {
+            "en": "[2Fe–2S] cluster",
+            "zh-Hant": "[2Fe–2S] 簇"
+          },
+          "kind": "cofactor",
+          "comp": "FES",
+          "chain": "F",
+          "authChain": "B",
+          "subunit": "SDHB",
+          "xyz": [
+            94.9,
+            53.3,
+            110.1
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "F"
+          }
+        },
+        {
+          "id": "fes-4fe",
+          "label": {
+            "en": "[4Fe–4S] cluster",
+            "zh-Hant": "[4Fe–4S] 簇"
+          },
+          "kind": "cofactor",
+          "comp": "SF4",
+          "chain": "G",
+          "authChain": "B",
+          "subunit": "SDHB",
+          "xyz": [
+            84.8,
+            58.1,
+            104.5
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "G"
+          }
+        },
+        {
+          "id": "fes-3fe",
+          "label": {
+            "en": "[3Fe–4S] cluster",
+            "zh-Hant": "[3Fe–4S] 簇"
+          },
+          "kind": "cofactor",
+          "comp": "F3S",
+          "chain": "H",
+          "authChain": "B",
+          "subunit": "SDHB",
+          "xyz": [
+            80.2,
+            63.0,
+            94.6
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "H"
+          }
+        },
+        {
+          "id": "ubiquinone",
+          "label": {
+            "en": "Bound ubiquinone (UQ1)",
+            "zh-Hant": "結合的泛醌（UQ1）"
+          },
+          "kind": "ligand",
+          "comp": "UQ1",
+          "chain": "I",
+          "authChain": "B",
+          "subunit": "SDHB",
+          "xyz": [
+            86.1,
+            65.7,
+            85.4
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "I"
+          }
+        },
+        {
+          "id": "heme-b",
+          "label": {
+            "en": "Heme b (membrane subunit)",
+            "zh-Hant": "血基質 b（膜次單位）"
+          },
+          "kind": "cofactor",
+          "comp": "HEM",
+          "chain": "J",
+          "authChain": "C",
+          "subunit": "SDHC",
+          "xyz": [
+            71.1,
+            67.8,
+            80.3
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "J"
+          }
+        }
+      ]
+    },
+    "1BE3": {
+      "cite": "iwata-1998",
+      "points": [
+        {
+          "id": "heme-bl",
+          "label": {
+            "en": "Heme bL (named by position)",
+            "zh-Hant": "血基質 bL（按位置命名）"
+          },
+          "kind": "cofactor",
+          "comp": "HEM",
+          "chain": "L",
+          "authChain": "C",
+          "subunit": "MT-CYB",
+          "xyz": [
+            54.2,
+            102.4,
+            32.4
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "L"
+          },
+          "names": "by proximity to heme c1, the intermembrane space side"
+        },
+        {
+          "id": "heme-bh",
+          "label": {
+            "en": "Heme bH (named by position)",
+            "zh-Hant": "血基質 bH（按位置命名）"
+          },
+          "kind": "cofactor",
+          "comp": "HEM",
+          "chain": "M",
+          "authChain": "C",
+          "subunit": "MT-CYB",
+          "xyz": [
+            38.1,
+            115.8,
+            38.6
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "M"
+          },
+          "names": "the heme farther from heme c1"
+        },
+        {
+          "id": "heme-c1",
+          "label": {
+            "en": "Heme c1",
+            "zh-Hant": "血基質 c1"
+          },
+          "kind": "cofactor",
+          "comp": "HEC",
+          "chain": "N",
+          "authChain": "D",
+          "subunit": "CYC1",
+          "xyz": [
+            86.2,
+            100.2,
+            39.8
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "N"
+          }
+        },
+        {
+          "id": "fes-rieske",
+          "label": {
+            "en": "Rieske 2Fe–2S cluster",
+            "zh-Hant": "Rieske 2Fe–2S 簇"
+          },
+          "kind": "cofactor",
+          "comp": "FES",
+          "chain": "O",
+          "authChain": "E",
+          "subunit": "UQCRFS1",
+          "xyz": [
+            64.3,
+            65.3,
+            3.9
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "O"
+          },
+          "support": "Position of the Rieske head domain differs between crystal forms (Iwata 1998), so distances from it are not given."
+        }
+      ]
+    },
+    "1OCC": {
+      "cite": "tsukihara-1996",
+      "points": [
+        {
+          "id": "cua",
+          "label": {
+            "en": "CuA (copper pair)",
+            "zh-Hant": "CuA（銅對）"
+          },
+          "kind": "cofactor",
+          "comp": "CU",
+          "chain": "EA",
+          "authChain": "B",
+          "subunit": "MT-CO2",
+          "xyz": [
+            57.1,
+            320.4,
+            172.3
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "EA"
+          },
+          "support": "The two copper atoms of CuA are 2.4 Å apart; the position is their midpoint and the highlight marks one of them."
+        },
+        {
+          "id": "heme-a",
+          "label": {
+            "en": "Heme a",
+            "zh-Hant": "血基質 a"
+          },
+          "kind": "cofactor",
+          "comp": "HEA",
+          "chain": "CA",
+          "authChain": "A",
+          "subunit": "MT-CO1",
+          "xyz": [
+            51.6,
+            316.3,
+            194.2
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "CA"
+          }
+        },
+        {
+          "id": "heme-a3",
+          "label": {
+            "en": "Heme a3 (oxygen site)",
+            "zh-Hant": "血基質 a3（氧位點）"
+          },
+          "kind": "cofactor",
+          "comp": "HEA",
+          "chain": "DA",
+          "authChain": "A",
+          "subunit": "MT-CO1",
+          "xyz": [
+            63.6,
+            306.1,
+            191.9
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "DA"
+          },
+          "support": "The heme a3 iron lies 4.7 Å from CuB in the deposited file."
+        },
+        {
+          "id": "cub",
+          "label": {
+            "en": "CuB",
+            "zh-Hant": "CuB"
+          },
+          "kind": "cofactor",
+          "comp": "CU",
+          "chain": "AA",
+          "authChain": "A",
+          "subunit": "MT-CO1",
+          "xyz": [
+            67.2,
+            310.9,
+            190.2
+          ],
+          "basis": "computed",
+          "select": {
+            "label_asym_id": "AA"
+          }
+        }
+      ]
     }
   }
 }

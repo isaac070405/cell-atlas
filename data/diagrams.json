@@ -4366,10 +4366,10 @@
     "zh-Hant": "呼吸鏈中電子逐個中心的流動"
    },
    "summary": {
-    "en": "Electrons move through the respiratory complexes along a fixed chain of redox centres: flavin, iron-sulfur clusters, quinone, hemes and copper. In complex I the chain runs FMN, N3, N1b, N4, N5, N6a, N6b and N2, and the distances between neighbouring cofactors measured in PDB 5XTD are 6.7 to 14.8 Å, close to the 14 Å over which electrons tunnel between redox centres. Complexes II, III and IV are drawn by centre order only.",
-    "zh-Hant": "電子沿著由氧化還原中心組成的固定鏈穿過各呼吸複合體：黃素、鐵硫簇、醌、血基質與銅。在複合體 I，電子鏈依次為 FMN、N3、N1b、N4、N5、N6a、N6b 與 N2，PDB 5XTD 中相鄰輔因子的距離為 6.7 至 14.8 Å，接近電子在氧化還原中心之間穿隧的 14 Å 範圍。複合體 II、III、IV 只畫出中心的次序。"
+    "en": "Electrons move through the respiratory complexes along a fixed chain of redox centres: flavin, iron-sulfur clusters, quinone, hemes and copper. Distances between neighbouring cofactors were measured from deposited coordinates: PDB 5XTD for complex I (6.7 to 14.8 Å), 1ZOY for complex II (6.9 to 11.0 Å), 1BE3 for the two b hemes of complex III (8.1 Å) and 1OCC for complex IV (4.6 to 11.7 Å). Most are within the 14 Å over which electrons tunnel between redox centres. Structures other than 5XTD are porcine or bovine, and the Rieske head domain of complex III moves, so it has no single distance.",
+    "zh-Hant": "電子沿著由氧化還原中心組成的固定鏈穿過各呼吸複合體：黃素、鐵硫簇、醌、血基質與銅。相鄰輔因子之間的距離取自存檔座標：複合體 I 用 PDB 5XTD（6.7 至 14.8 Å），複合體 II 用 1ZOY（6.9 至 11.0 Å），複合體 III 兩個 b 血基質用 1BE3（8.1 Å），複合體 IV 用 1OCC（4.6 至 11.7 Å）。多數在電子於氧化還原中心之間穿隧的 14 Å 範圍內。5XTD 以外的結構來自豬或牛，而複合體 III 的 Rieske 頭部結構域會移動，因此沒有單一距離。"
    },
-   "cite": ["bender-2003", "page-1999", "guo-2017"],
+   "cite": ["bender-2003", "page-1999", "guo-2017", "sun-2005", "iwata-1998", "tsukihara-1996"],
    "viewBox": [
     1160,
     720
@@ -4387,8 +4387,8 @@
      "y": 40,
      "anchor": "start",
      "text": {
-      "en": "Complex I: NADH to ubiquinone. Edge to edge distances between cofactors, measured in PDB 5XTD",
-      "zh-Hant": "複合體 I：NADH 到泛醌。輔因子之間邊到邊的距離，取自 PDB 5XTD"
+      "en": "Complex I: NADH to ubiquinone. Edge to edge distances between cofactors, from PDB 5XTD (human)",
+      "zh-Hant": "複合體 I：NADH 到泛醌。輔因子之間邊到邊的距離，取自 PDB 5XTD（人類）"
      }
     },
     {
@@ -4396,8 +4396,8 @@
      "y": 244,
      "anchor": "start",
      "text": {
-      "en": "Complex II: succinate to ubiquinone",
-      "zh-Hant": "複合體 II：琥珀酸到泛醌"
+      "en": "Complex II: succinate to ubiquinone. PDB 1ZOY (porcine)",
+      "zh-Hant": "複合體 II：琥珀酸到泛醌。PDB 1ZOY（豬）"
      }
     },
     {
@@ -4405,17 +4405,17 @@
      "y": 408,
      "anchor": "start",
      "text": {
-      "en": "Complex III: ubiquinol to cytochrome c (Q cycle)",
-      "zh-Hant": "複合體 III：泛醇到細胞色素 c（Q 循環）"
+      "en": "Complex III: ubiquinol to cytochrome c (Q cycle). PDB 1BE3 (bovine)",
+      "zh-Hant": "複合體 III：泛醇到細胞色素 c（Q 循環）。PDB 1BE3（牛）"
      }
     },
     {
-     "x": 700,
+     "x": 640,
      "y": 624,
      "anchor": "start",
      "text": {
-      "en": "Complex IV: cytochrome c to oxygen",
-      "zh-Hant": "複合體 IV：細胞色素 c 到氧"
+      "en": "Complex IV: cytochrome c to oxygen. PDB 1OCC (bovine)",
+      "zh-Hant": "複合體 IV：細胞色素 c 到氧。PDB 1OCC（牛）"
      }
     },
     {
@@ -4497,6 +4497,87 @@
      "text": {
       "en": "10.3 Å",
       "zh-Hant": "10.3 Å"
+     }
+    },
+    {
+     "x": 244,
+     "y": 262,
+     "anchor": "middle",
+     "text": {
+      "en": "11.0 Å",
+      "zh-Hant": "11.0 Å"
+     }
+    },
+    {
+     "x": 356,
+     "y": 262,
+     "anchor": "middle",
+     "text": {
+      "en": "9.7 Å",
+      "zh-Hant": "9.7 Å"
+     }
+    },
+    {
+     "x": 468,
+     "y": 262,
+     "anchor": "middle",
+     "text": {
+      "en": "8.9 Å",
+      "zh-Hant": "8.9 Å"
+     }
+    },
+    {
+     "x": 580,
+     "y": 262,
+     "anchor": "middle",
+     "text": {
+      "en": "6.9 Å",
+      "zh-Hant": "6.9 Å"
+     }
+    },
+    {
+     "x": 356,
+     "y": 494,
+     "anchor": "middle",
+     "text": {
+      "en": "8.1 Å",
+      "zh-Hant": "8.1 Å"
+     }
+    },
+    {
+     "x": 804,
+     "y": 642,
+     "anchor": "middle",
+     "text": {
+      "en": "11.7 Å",
+      "zh-Hant": "11.7 Å"
+     }
+    },
+    {
+     "x": 916,
+     "y": 642,
+     "anchor": "middle",
+     "text": {
+      "en": "4.6 Å",
+      "zh-Hant": "4.6 Å"
+     }
+    },
+    {
+     "x": 580,
+     "y": 358,
+     "anchor": "start",
+     "text": {
+      "en": "8.8 Å to heme b, 6.1 Å from heme b to Q",
+      "zh-Hant": "到血基質 b 8.8 Å，血基質 b 到 Q 6.1 Å"
+     }
+    },
+    {
+     "x": 252,
+     "y": 586,
+     "anchor": "start",
+     "text": {
+      "en": "Rieske to c1: no single distance, the Rieske head domain changes position",
+      "zh-Hant": "Rieske 到 c1：沒有單一距離，Rieske 頭部結構域會改變位置"
      }
     }
    ],
@@ -4838,6 +4919,19 @@
        672
       ]
      ]
+    },
+    {
+     "type": "side",
+     "pts": [
+      [
+       524,
+       314
+      ],
+      [
+       524,
+       335
+      ]
+     ]
     }
    ],
    "legend": [
@@ -5142,10 +5236,11 @@
       "zh-Hant": "黃素"
      },
      "text": {
-      "en": "The flavin of the flavoprotein subunit takes electrons from succinate. A flavoprotein reduced this way gives electrons on to the iron-sulfur protein.",
-      "zh-Hant": "黃素蛋白次單位的黃素從琥珀酸接收電子，再傳給鐵硫蛋白。"
+      "en": "The flavin of the flavoprotein subunit takes electrons from succinate. A flavoprotein reduced this way gives electrons on to the iron-sulfur protein. In 1ZOY (porcine complex II, 2.4 Å) it is 11.0 Å (edge to edge) from the [2Fe–2S] cluster.",
+      "zh-Hant": "黃素蛋白次單位的黃素從琥珀酸接收電子，再傳給鐵硫蛋白。在 1ZOY（豬複合體 II，2.4 Å）中，它與 [2Fe–2S] 簇相距 11.0 Å（邊到邊）。"
      },
-     "cite": ["sun-2005", "bender-2003"]
+     "cite": ["sun-2005", "bender-2003", "page-1999"],
+     "links": ["pdb:1ZOY#fad"]
     },
     {
      "id": "s1",
@@ -5164,10 +5259,11 @@
       "zh-Hant": "鐵硫"
      },
      "text": {
-      "en": "First cluster of the iron-sulfur protein subunit. Complex II has three iron-sulfur clusters in a row.",
-      "zh-Hant": "鐵硫蛋白次單位的第一個簇。複合體 II 有三個依次排列的鐵硫簇。"
+      "en": "First cluster of the iron-sulfur protein subunit. Complex II has three iron-sulfur clusters in a row. It is 11.0 Å from FAD and 9.7 Å from the [4Fe–4S] cluster in 1ZOY (edge to edge).",
+      "zh-Hant": "鐵硫蛋白次單位的第一個簇。複合體 II 有三個依次排列的鐵硫簇。在 1ZOY 中，它與 FAD 相距 11.0 Å，與 [4Fe–4S] 簇相距 9.7 Å（邊到邊）。"
      },
-     "cite": ["sun-2005", "read-2021"]
+     "cite": ["sun-2005", "read-2021", "page-1999"],
+     "links": ["pdb:1ZOY#fes-2fe"]
     },
     {
      "id": "s2",
@@ -5186,10 +5282,11 @@
       "zh-Hant": "鐵硫"
      },
      "text": {
-      "en": "Second cluster of the row.",
-      "zh-Hant": "三個簇中的第二個。"
+      "en": "Second cluster of the row. It is 9.7 Å from the [2Fe–2S] cluster and 8.9 Å from the [3Fe–4S] cluster in 1ZOY (edge to edge).",
+      "zh-Hant": "三個簇中的第二個。在 1ZOY 中，它與 [2Fe–2S] 簇相距 9.7 Å，與 [3Fe–4S] 簇相距 8.9 Å（邊到邊）。"
      },
-     "cite": ["sun-2005", "read-2021"]
+     "cite": ["sun-2005", "read-2021", "page-1999"],
+     "links": ["pdb:1ZOY#fes-4fe"]
     },
     {
      "id": "s3",
@@ -5208,10 +5305,11 @@
       "zh-Hant": "鐵硫"
      },
      "text": {
-      "en": "Third cluster, next to the quinone site in the membrane subunits.",
-      "zh-Hant": "第三個簇，靠近膜內次單位的泛醌位點。"
+      "en": "Third cluster, next to the quinone site in the membrane subunits. It is 8.9 Å from the [4Fe–4S] cluster and 6.9 Å from the bound ubiquinone in 1ZOY (edge to edge). A b-type heme lies 8.8 Å from it, but this diagram does not claim a role for that heme.",
+      "zh-Hant": "第三個簇，靠近膜內次單位的泛醌位點。在 1ZOY 中，它與 [4Fe–4S] 簇相距 8.9 Å，與結合的泛醌相距 6.9 Å（邊到邊）。一個 b 型血基質與它相距 8.8 Å，但此圖解不宣稱該血基質的作用。"
      },
-     "cite": ["sun-2005", "read-2021"]
+     "cite": ["sun-2005", "read-2021", "page-1999"],
+     "links": ["pdb:1ZOY#fes-3fe"]
     },
     {
      "id": "q2",
@@ -5230,10 +5328,11 @@
       "zh-Hant": "Q → QH₂"
      },
      "text": {
-      "en": "Complex II reduces ubiquinone, as complex I does. Complex II does not pump protons.",
-      "zh-Hant": "複合體 II 與複合體 I 一樣還原泛醌。複合體 II 不泵質子。"
+      "en": "Complex II reduces ubiquinone, as complex I does. Complex II does not pump protons. The ubiquinone (UQ1) bound in 1ZOY is 6.9 Å from the [3Fe–4S] cluster.",
+      "zh-Hant": "複合體 II 與複合體 I 一樣還原泛醌。複合體 II 不泵質子。1ZOY 中結合的泛醌（UQ1）與 [3Fe–4S] 簇相距 6.9 Å。"
      },
-     "cite": ["sun-2005", "bender-2003"]
+     "cite": ["sun-2005", "bender-2003"],
+     "links": ["pdb:1ZOY#ubiquinone"]
     },
     {
      "id": "qh2",
@@ -5274,10 +5373,11 @@
       "zh-Hant": "高電位分支"
      },
      "text": {
-      "en": "The 2Fe–2S iron-sulfur protein of complex III. It takes the first electron from ubiquinol and passes it to cytochrome c1.",
-      "zh-Hant": "複合體 III 的 2Fe–2S 鐵硫蛋白。它從泛醇接收第一個電子並傳給細胞色素 c1。"
+      "en": "The 2Fe–2S iron-sulfur protein of complex III. It takes the first electron from ubiquinol and passes it to cytochrome c1. No distance is given from this cluster: the Rieske head domain changes position between crystal forms, and the 1BE3 file holds one monomer only.",
+      "zh-Hant": "複合體 III 的 2Fe–2S 鐵硫蛋白。它從泛醇接收第一個電子並傳給細胞色素 c1。此簇不給出距離：Rieske 頭部結構域在不同晶型中位置不同，而 1BE3 檔案只含一個單體。"
      },
-     "cite": ["trumpower-1990", "crofts-2004", "bender-2003"]
+     "cite": ["trumpower-1990", "crofts-2004", "bender-2003", "iwata-1998"],
+     "links": ["pdb:1BE3#fes-rieske"]
     },
     {
      "id": "c1",
@@ -5296,10 +5396,11 @@
       "zh-Hant": "細胞色素 c1"
      },
      "text": {
-      "en": "The covalently bound c-type heme of cytochrome c1. It passes the electron on to soluble cytochrome c.",
-      "zh-Hant": "細胞色素 c1 以共價結合的 c 型血基質，把電子傳給可溶的細胞色素 c。"
+      "en": "The covalently bound c-type heme of cytochrome c1. It passes the electron on to soluble cytochrome c. Heme c1 is on the intermembrane space side of cytochrome b, and the heme of cytochrome c is not in the structure, so no distance is given to it.",
+      "zh-Hant": "細胞色素 c1 以共價結合的 c 型血基質，把電子傳給可溶的細胞色素 c。血基質 c1 位於細胞色素 b 面向膜間腔的一側，而細胞色素 c 的血基質不在此結構中，因此不給出與它的距離。"
      },
-     "cite": ["trumpower-1990", "bender-2003"]
+     "cite": ["trumpower-1990", "bender-2003", "iwata-1998"],
+     "links": ["pdb:1BE3#heme-c1"]
     },
     {
      "id": "cytc1",
@@ -5341,10 +5442,11 @@
       "zh-Hant": "低電位分支"
      },
      "text": {
-      "en": "Cytochrome b holds two b hemes that differ in their optical and thermodynamic properties. Heme bL takes the second electron from ubiquinol.",
-      "zh-Hant": "細胞色素 b 含兩個 b 血基質，光學與熱力學性質各異。血基質 bL 從泛醇接收第二個電子。"
+      "en": "Cytochrome b holds two b hemes that differ in their optical and thermodynamic properties. Heme bL takes the second electron from ubiquinol. In 1BE3 (bovine bc1, 3.0 Å) it is 8.1 Å (edge to edge) and 21.8 Å (centre to centre) from heme bH. The two b hemes are named here by position: bL is the one nearer heme c1.",
+      "zh-Hant": "細胞色素 b 含兩個 b 血基質，光學與熱力學性質各異。血基質 bL 從泛醇接收第二個電子。在 1BE3（牛 bc1，3.0 Å）中，它與血基質 bH 相距 8.1 Å（邊到邊）及 21.8 Å（中心到中心）。兩個 b 血基質按位置命名：bL 是較靠近血基質 c1 的一個。"
      },
-     "cite": ["trumpower-1990", "crofts-2004"]
+     "cite": ["trumpower-1990", "crofts-2004", "iwata-1998", "page-1999"],
+     "links": ["pdb:1BE3#heme-bl"]
     },
     {
      "id": "bh",
@@ -5363,10 +5465,11 @@
       "zh-Hant": "細胞色素 b"
      },
      "text": {
-      "en": "The second b heme passes the electron to a ubiquinone at the other quinone site, which is how the Q cycle recycles quinone and builds up the proton gradient.",
-      "zh-Hant": "第二個 b 血基質把電子傳給另一個泛醌位點的泛醌，Q 循環因此回收泛醌並建立質子梯度。"
+      "en": "The second b heme passes the electron to a ubiquinone at the other quinone site, which is how the Q cycle recycles quinone and builds up the proton gradient. It is 8.1 Å from heme bL (edge to edge) in 1BE3.",
+      "zh-Hant": "第二個 b 血基質把電子傳給另一個泛醌位點的泛醌，Q 循環因此回收泛醌並建立質子梯度。在 1BE3 中，它與血基質 bL 相距 8.1 Å（邊到邊）。"
      },
-     "cite": ["trumpower-1990", "crofts-2004"]
+     "cite": ["trumpower-1990", "crofts-2004", "iwata-1998", "page-1999"],
+     "links": ["pdb:1BE3#heme-bh"]
     },
     {
      "id": "q3",
@@ -5429,10 +5532,11 @@
       "zh-Hant": "銅中心"
      },
      "text": {
-      "en": "The first acceptor in complex IV, a dinuclear copper centre. Copper, as well as iron, is a redox metal in cytochrome oxidase.",
-      "zh-Hant": "複合體 IV 的第一個電子受體，是雙核銅中心。在細胞色素氧化酶中，銅與鐵都是氧化還原金屬。"
+      "en": "The first acceptor in complex IV, a dinuclear copper centre. Copper, as well as iron, is a redox metal in cytochrome oxidase. In 1OCC (bovine cytochrome c oxidase, 2.8 Å) it is 11.7 Å (edge to edge) from heme a. A hydrogen-bonded path through a heme a propionate and a CuA ligand could carry the electron between them.",
+      "zh-Hant": "複合體 IV 的第一個電子受體，是雙核銅中心。在細胞色素氧化酶中，銅與鐵都是氧化還原金屬。在 1OCC（牛細胞色素 c 氧化酶，2.8 Å）中，它與血基質 a 相距 11.7 Å（邊到邊）。經由血基質 a 的丙酸基與 CuA 配位體的氫鍵路徑，可能負責它們之間的電子傳遞。"
      },
-     "cite": ["michel-1998", "bender-2003"]
+     "cite": ["michel-1998", "bender-2003", "tsukihara-1996", "page-1999"],
+     "links": ["pdb:1OCC#cua"]
     },
     {
      "id": "hema",
@@ -5451,10 +5555,11 @@
       "zh-Hant": "細胞色素 a"
      },
      "text": {
-      "en": "Heme A is anchored in the membrane by its hydrophobic side chain, in cytochromes a and a3, which together form cytochrome oxidase.",
-      "zh-Hant": "血基質 A 以其疏水側鏈錨定在膜內，存在於細胞色素 a 與 a3，兩者合起來構成細胞色素氧化酶。"
+      "en": "Heme A is anchored in the membrane by its hydrophobic side chain, in cytochromes a and a3, which together form cytochrome oxidase. In 1OCC it is 11.7 Å from CuA and 4.6 Å from heme a3 (edge to edge), which is 13.4 Å iron to iron.",
+      "zh-Hant": "血基質 A 以其疏水側鏈錨定在膜內，存在於細胞色素 a 與 a3，兩者合起來構成細胞色素氧化酶。在 1OCC 中，它與 CuA 相距 11.7 Å，與血基質 a3 相距 4.6 Å（邊到邊），鐵到鐵為 13.4 Å。"
      },
-     "cite": ["bender-2003", "michel-1998"]
+     "cite": ["bender-2003", "michel-1998", "tsukihara-1996", "page-1999"],
+     "links": ["pdb:1OCC#heme-a"]
     },
     {
      "id": "hema3",
@@ -5473,10 +5578,11 @@
       "zh-Hant": "氧位點"
      },
      "text": {
-      "en": "The binuclear site where oxygen binds. Electron transfer here is coupled to proton translocation across the membrane.",
-      "zh-Hant": "氧結合的雙核位點。這裡的電子傳遞與質子跨膜轉運偶聯。"
+      "en": "The binuclear site where oxygen binds. Electron transfer here is coupled to proton translocation across the membrane. In 1OCC the heme a3 iron is 4.7 Å from CuB, and the two hemes are 4.6 Å apart (edge to edge).",
+      "zh-Hant": "氧結合的雙核位點。這裡的電子傳遞與質子跨膜轉運偶聯。在 1OCC 中，血基質 a3 的鐵與 CuB 相距 4.7 Å，兩個血基質相距 4.6 Å（邊到邊）。"
      },
-     "cite": ["michel-1998", "bender-2003"]
+     "cite": ["michel-1998", "bender-2003", "tsukihara-1996", "page-1999"],
+     "links": ["pdb:1OCC#heme-a3", "pdb:1OCC#cub"]
     },
     {
      "id": "o2",
@@ -5500,6 +5606,29 @@
      },
      "cite": ["shoubridge-2001", "bender-2003"],
      "links": ["diag:etc-pathway"]
+    },
+    {
+     "id": "hemeb",
+     "kind": "box",
+     "x": 476,
+     "y": 335,
+     "w": 96,
+     "h": 40,
+     "color": "#A02A2A",
+     "name": {
+      "en": "Heme b",
+      "zh-Hant": "血基質 b"
+     },
+     "sub": {
+      "en": "membrane subunit",
+      "zh-Hant": "膜次單位"
+     },
+     "text": {
+      "en": "A b-type heme in the membrane subunits of complex II. In 1ZOY it is 8.8 Å (edge to edge) from the [3Fe–4S] cluster and 6.1 Å from the bound ubiquinone. It is drawn as a side node, because this diagram does not claim a role for it in the electron path.",
+      "zh-Hant": "複合體 II 膜次單位中的 b 型血基質。在 1ZOY 中，它與 [3Fe–4S] 簇相距 8.8 Å，與結合的泛醌相距 6.1 Å（邊到邊）。它畫成旁支節點，因為此圖解不宣稱它在電子路徑中的作用。"
+     },
+     "cite": ["sun-2005", "page-1999"],
+     "links": ["pdb:1ZOY#heme-b"]
     }
    ]
   }

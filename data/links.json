@@ -124,6 +124,24 @@
       ]
     },
     {
+      "from": "pdb:1ZOY",
+      "to": [
+        "diag:electron-path"
+      ]
+    },
+    {
+      "from": "pdb:1BE3",
+      "to": [
+        "diag:electron-path"
+      ]
+    },
+    {
+      "from": "pdb:1OCC",
+      "to": [
+        "diag:electron-path"
+      ]
+    },
+    {
       "from": "pdb:1ZUM",
       "to": [
         "cell:hepatocyte",

@@ -1642,6 +1642,30 @@
       "method": "Textbook chapter",
       "year": 2003,
       "status": "verified"
+    },
+    "iwata-1998": {
+      "source": "Iwata et al. (1998) Science 281:64–71",
+      "detail": {
+        "en": "Crystal structures of the 11-subunit bovine bc1 complex (PDB 1BE3 is the 3.0 Å one). The Rieske iron-sulfur protein shows significant conformational changes in different crystal forms, which suggests a new electron transport mechanism",
+        "zh-Hant": "11 個次單位的牛 bc1 複合體晶體結構（PDB 1BE3 為 3.0 Å 的一個）。Rieske 鐵硫蛋白在不同晶型中有顯著的構象變化，提示一種新的電子傳遞機制"
+      },
+      "species": "Cattle",
+      "method": "X-ray crystallography, 3.0 Å",
+      "year": 1998,
+      "url": "https://doi.org/10.1126/science.281.5373.64",
+      "status": "verified"
+    },
+    "tsukihara-1996": {
+      "source": "Tsukihara et al. (1996) Science 272:1136–1144",
+      "detail": {
+        "en": "Structure of bovine heart cytochrome c oxidase at 2.8 Å (PDB 1OCC): two hemes A, three copper, with a hydrogen-bonded path including a heme a propionate and a CuA ligand that could carry electrons from CuA to heme a",
+        "zh-Hant": "牛心細胞色素 c 氧化酶 2.8 Å 結構（PDB 1OCC）：兩個血基質 A 與三個銅，其中由血基質 a 的丙酸基與 CuA 配位體組成的氫鍵系統，可能是 CuA 到血基質 a 的電子傳遞路徑"
+      },
+      "species": "Cattle",
+      "method": "X-ray crystallography, 2.8 Å",
+      "year": 1996,
+      "url": "https://doi.org/10.1126/science.272.5265.1136",
+      "status": "verified"
     }
   }
 }
