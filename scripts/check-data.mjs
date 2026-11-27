@@ -42,6 +42,12 @@ for (const d of dgs.diagrams) {
   for (const n of d.nodes) for (const l of n.links ?? (n.link ? [n.link] : [])) if (!links.targets[l.split(':')[0]]) bad(`diagram ${d.id} ${n.id}: link ${l}`);
   for (const e of d.edges) for (const [x, y] of e.pts) if (x < 0 || y < 0 || x > d.viewBox[0] || y > d.viewBox[1]) bad(`diagram ${d.id}: edge point ${x},${y} outside the viewBox`);
 }
+// A diagram link pdb:ID#tour must name a tour point of that structure
+const tp = read('tour-points.json').structures;
+for (const d of dgs.diagrams) for (const n of d.nodes) for (const l of n.links ?? (n.link ? [n.link] : [])) {
+  const m = l.match(/^pdb:([^#]+)#(.+)$/);
+  if (m && !tp[m[1]]?.points.some(p => p.id === m[2])) bad(`diagram ${d.id} ${n.id}: ${l} has no such tour point`);
+}
 for (const e of links.edges) for (const k of [e.from, ...e.to]) if (k.startsWith('diag:') && !dgs.diagrams.some(d => d.id === k.slice(5))) bad(`link ${k}: no diagram`);
 console.log(`diagrams: ${dgs.diagrams.length}`);
 const loc = read('protein-location.json');

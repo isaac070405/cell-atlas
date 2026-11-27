@@ -295,7 +295,7 @@
       "zh-Hant": "接收 NADH 的電子並傳給輔酶 Q，釋出的能量用於把質子由基質泵入膜間腔。人類結構為 PDB 5XTD。"
      },
      "cite": ["guo-2017", "fernandez-vizarra-2020"],
-     "links": ["pdb:5XTD", "diag:respiration"]
+     "links": ["pdb:5XTD", "diag:respiration", "diag:electron-path"]
     },
     {
      "id": "cII",
@@ -317,7 +317,8 @@
       "en": "One of the four multimeric enzymes of the chain. It passes electrons from succinate to coenzyme Q and, unlike complexes I, III and IV, does not pump protons.",
       "zh-Hant": "電子傳遞鏈四個多聚體酶之一，把琥珀酸的電子傳給輔酶 Q。與複合體 I、III、IV 不同，它不泵質子。"
      },
-     "cite": ["fernandez-vizarra-2020"]
+     "cite": ["fernandez-vizarra-2020"],
+     "links": ["diag:electron-path"]
     },
     {
      "id": "cQ",
@@ -361,7 +362,8 @@
       "en": "Takes electrons from coenzyme Q and passes them to cytochrome c. It also pumps protons into the intermembrane space.",
       "zh-Hant": "接收輔酶 Q 的電子並傳給細胞色素 c，同時把質子泵入膜間腔。"
      },
-     "cite": ["fernandez-vizarra-2020"]
+     "cite": ["fernandez-vizarra-2020"],
+     "links": ["diag:electron-path"]
     },
     {
      "id": "cC",
@@ -405,7 +407,8 @@
       "en": "Passes electrons from cytochrome c to oxygen and reduces the oxygen to water. The electron transfer is coupled to proton translocation across the membrane.",
       "zh-Hant": "把細胞色素 c 的電子傳給氧，並把氧還原成水。電子傳遞與質子跨膜轉運偶聯。"
      },
-     "cite": ["michel-1998"]
+     "cite": ["michel-1998"],
+     "links": ["diag:electron-path"]
     },
     {
      "id": "cV",
@@ -4353,6 +4356,1150 @@
       "zh-Hant": "β-arrestin 不只是煞車，它也促進不依賴 G 蛋白的其他下游訊號，例如 MAPK。"
      },
      "cite": ["shenoy-2011"]
+    }
+   ]
+  },
+  {
+   "id": "electron-path",
+   "name": {
+    "en": "Electron flow through the respiratory chain, centre by centre",
+    "zh-Hant": "呼吸鏈中電子逐個中心的流動"
+   },
+   "summary": {
+    "en": "Electrons move through the respiratory complexes along a fixed chain of redox centres: flavin, iron-sulfur clusters, quinone, hemes and copper. In complex I the chain runs FMN, N3, N1b, N4, N5, N6a, N6b and N2, and the distances between neighbouring cofactors measured in PDB 5XTD are 6.7 to 14.8 Å, close to the 14 Å over which electrons tunnel between redox centres. Complexes II, III and IV are drawn by centre order only.",
+    "zh-Hant": "電子沿著由氧化還原中心組成的固定鏈穿過各呼吸複合體：黃素、鐵硫簇、醌、血基質與銅。在複合體 I，電子鏈依次為 FMN、N3、N1b、N4、N5、N6a、N6b 與 N2，PDB 5XTD 中相鄰輔因子的距離為 6.7 至 14.8 Å，接近電子在氧化還原中心之間穿隧的 14 Å 範圍。複合體 II、III、IV 只畫出中心的次序。"
+   },
+   "cite": ["bender-2003", "page-1999", "guo-2017"],
+   "viewBox": [
+    1160,
+    720
+   ],
+   "bands": [
+    {
+     "id": "cell",
+     "y": 0,
+     "h": 720
+    }
+   ],
+   "labels": [
+    {
+     "x": 28,
+     "y": 40,
+     "anchor": "start",
+     "text": {
+      "en": "Complex I: NADH to ubiquinone. Edge to edge distances between cofactors, measured in PDB 5XTD",
+      "zh-Hant": "複合體 I：NADH 到泛醌。輔因子之間邊到邊的距離，取自 PDB 5XTD"
+     }
+    },
+    {
+     "x": 28,
+     "y": 244,
+     "anchor": "start",
+     "text": {
+      "en": "Complex II: succinate to ubiquinone",
+      "zh-Hant": "複合體 II：琥珀酸到泛醌"
+     }
+    },
+    {
+     "x": 28,
+     "y": 408,
+     "anchor": "start",
+     "text": {
+      "en": "Complex III: ubiquinol to cytochrome c (Q cycle)",
+      "zh-Hant": "複合體 III：泛醇到細胞色素 c（Q 循環）"
+     }
+    },
+    {
+     "x": 700,
+     "y": 624,
+     "anchor": "start",
+     "text": {
+      "en": "Complex IV: cytochrome c to oxygen",
+      "zh-Hant": "複合體 IV：細胞色素 c 到氧"
+     }
+    },
+    {
+     "x": 306,
+     "y": 190,
+     "anchor": "start",
+     "text": {
+      "en": "12.2 Å, off the main path",
+      "zh-Hant": "12.2 Å，不在主路徑上"
+     }
+    },
+    {
+     "x": 252,
+     "y": 566,
+     "anchor": "start",
+     "text": {
+      "en": "low-potential branch",
+      "zh-Hant": "低電位分支"
+     }
+    },
+    {
+     "x": 244,
+     "y": 62,
+     "anchor": "middle",
+     "text": {
+      "en": "6.7 Å",
+      "zh-Hant": "6.7 Å"
+     }
+    },
+    {
+     "x": 356,
+     "y": 62,
+     "anchor": "middle",
+     "text": {
+      "en": "11.4 Å",
+      "zh-Hant": "11.4 Å"
+     }
+    },
+    {
+     "x": 468,
+     "y": 62,
+     "anchor": "middle",
+     "text": {
+      "en": "11.4 Å",
+      "zh-Hant": "11.4 Å"
+     }
+    },
+    {
+     "x": 580,
+     "y": 62,
+     "anchor": "middle",
+     "text": {
+      "en": "8.4 Å",
+      "zh-Hant": "8.4 Å"
+     }
+    },
+    {
+     "x": 692,
+     "y": 62,
+     "anchor": "middle",
+     "text": {
+      "en": "14.8 Å",
+      "zh-Hant": "14.8 Å"
+     }
+    },
+    {
+     "x": 804,
+     "y": 62,
+     "anchor": "middle",
+     "text": {
+      "en": "8.4 Å",
+      "zh-Hant": "8.4 Å"
+     }
+    },
+    {
+     "x": 916,
+     "y": 62,
+     "anchor": "middle",
+     "text": {
+      "en": "10.3 Å",
+      "zh-Hant": "10.3 Å"
+     }
+    }
+   ],
+   "edges": [
+    {
+     "type": "electron",
+     "pts": [
+      [
+       124,
+       92
+      ],
+      [
+       140,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       236,
+       92
+      ],
+      [
+       252,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       348,
+       92
+      ],
+      [
+       364,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       460,
+       92
+      ],
+      [
+       476,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       572,
+       92
+      ],
+      [
+       588,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       684,
+       92
+      ],
+      [
+       700,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       796,
+       92
+      ],
+      [
+       812,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       908,
+       92
+      ],
+      [
+       924,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       1020,
+       92
+      ],
+      [
+       1036,
+       92
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       208,
+       114
+      ],
+      [
+       238,
+       160
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       124,
+       292
+      ],
+      [
+       140,
+       292
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       236,
+       292
+      ],
+      [
+       252,
+       292
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       348,
+       292
+      ],
+      [
+       364,
+       292
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       460,
+       292
+      ],
+      [
+       476,
+       292
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       572,
+       292
+      ],
+      [
+       588,
+       292
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       124,
+       480
+      ],
+      [
+       250,
+       455
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       124,
+       500
+      ],
+      [
+       250,
+       522
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       348,
+       452
+      ],
+      [
+       364,
+       452
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       460,
+       452
+      ],
+      [
+       588,
+       452
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       348,
+       522
+      ],
+      [
+       364,
+       522
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       460,
+       522
+      ],
+      [
+       476,
+       522
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       636,
+       474
+      ],
+      [
+       636,
+       650
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       684,
+       672
+      ],
+      [
+       700,
+       672
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       796,
+       672
+      ],
+      [
+       812,
+       672
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       908,
+       672
+      ],
+      [
+       924,
+       672
+      ]
+     ]
+    },
+    {
+     "type": "electron",
+     "pts": [
+      [
+       1020,
+       672
+      ],
+      [
+       1036,
+       672
+      ]
+     ]
+    }
+   ],
+   "legend": [
+    {
+     "type": "electron",
+     "label": {
+      "en": "Electron path between redox centres",
+      "zh-Hant": "氧化還原中心之間的電子路徑"
+     }
+    }
+   ],
+   "nodes": [
+    {
+     "id": "nadh",
+     "kind": "box",
+     "x": 28,
+     "y": 70,
+     "w": 96,
+     "h": 44,
+     "color": "#555B66",
+     "name": {
+      "en": "NADH",
+      "zh-Hant": "NADH"
+     },
+     "sub": {
+      "en": "2 e⁻ + H⁺",
+      "zh-Hant": "2 e⁻ + H⁺"
+     },
+     "text": {
+      "en": "The electron donor of complex I. NAD is a hydrogen carrier that gives up two electrons together with a proton (a hydride) in one step. The NADH site is not resolved in PDB 5XTD, so no distance to the flavin is given.",
+      "zh-Hant": "複合體 I 的電子供體。NAD 是氫載體，一步放出兩個電子連同一個質子（氫負離子）。PDB 5XTD 沒有解出 NADH 位點，因此不給出它與黃素的距離。"
+     },
+     "cite": ["bender-2003", "guo-2017"],
+     "links": ["diag:etc-pathway", "diag:respiration"]
+    },
+    {
+     "id": "fmn",
+     "kind": "box",
+     "x": 140,
+     "y": 70,
+     "w": 96,
+     "h": 44,
+     "color": "#8A6A12",
+     "name": {
+      "en": "FMN",
+      "zh-Hant": "FMN"
+     },
+     "sub": {
+      "en": "flavin",
+      "zh-Hant": "黃素"
+     },
+     "text": {
+      "en": "Flavin mononucleotide takes the two electrons from NADH and passes them on one at a time. Flavins can be reduced in two single-electron steps through a semiquinone radical, which lets the two-electron donor feed a one-electron iron-sulfur chain. In 5XTD it is 6.7 Å (edge to edge) from the first cluster, N3.",
+      "zh-Hant": "黃素單核苷酸接收 NADH 的兩個電子，再一次傳出一個。黃素可經半醌自由基分兩個單電子步驟還原，使雙電子供體得以供應單電子的鐵硫鏈。在 5XTD 中，它與第一個鐵硫簇 N3 相距 6.7 Å（邊到邊）。"
+     },
+     "cite": ["guo-2017", "page-1999", "sazanov-2007", "bender-2003"],
+     "links": ["pdb:5XTD#fmn"]
+    },
+    {
+     "id": "n3",
+     "kind": "box",
+     "x": 252,
+     "y": 70,
+     "w": 96,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "N3",
+      "zh-Hant": "N3"
+     },
+     "sub": {
+      "en": "4Fe–4S",
+      "zh-Hant": "4Fe–4S"
+     },
+     "text": {
+      "en": "First iron-sulfur cluster of the chain (NDUFV1). Edge to edge it is 6.7 Å from FMN and 11.4 Å from N1b (centre to centre 13.4 and 14.6 Å, measured in 5XTD). In an iron-sulfur protein the iron is bound to the protein through the sulfur of cysteine, and the cluster carries one electron at a time.",
+      "zh-Hant": "鏈中第一個鐵硫簇（NDUFV1）。在 5XTD 中，它與 FMN 相距 6.7 Å，與 N1b 相距 11.4 Å（邊到邊；中心到中心為 13.4 與 14.6 Å）。鐵硫蛋白的鐵經半胱胺酸的硫與蛋白結合，簇一次傳遞一個電子。"
+     },
+     "cite": ["guo-2017", "page-1999", "sazanov-2007", "bender-2003"],
+     "links": ["pdb:5XTD#fes-n3"]
+    },
+    {
+     "id": "n1b",
+     "kind": "box",
+     "x": 364,
+     "y": 70,
+     "w": 96,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "N1b",
+      "zh-Hant": "N1b"
+     },
+     "sub": {
+      "en": "2Fe–2S",
+      "zh-Hant": "2Fe–2S"
+     },
+     "text": {
+      "en": "A 2Fe–2S cluster (NDUFS1) on the main path. It is 11.4 Å (edge to edge) from N3 and 11.4 Å from N4 in 5XTD.",
+      "zh-Hant": "主路徑上的 2Fe–2S 簇（NDUFS1）。在 5XTD 中，它與 N3 及 N4 都相距 11.4 Å（邊到邊）。"
+     },
+     "cite": ["guo-2017", "page-1999", "sazanov-2007"],
+     "links": ["pdb:5XTD#fes-n1b"]
+    },
+    {
+     "id": "n4",
+     "kind": "box",
+     "x": 476,
+     "y": 70,
+     "w": 96,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "N4",
+      "zh-Hant": "N4"
+     },
+     "sub": {
+      "en": "4Fe–4S",
+      "zh-Hant": "4Fe–4S"
+     },
+     "text": {
+      "en": "A 4Fe–4S cluster (NDUFS1). It is 11.4 Å from N1b and 8.4 Å from N5 in 5XTD (edge to edge).",
+      "zh-Hant": "4Fe–4S 簇（NDUFS1）。在 5XTD 中，它與 N1b 相距 11.4 Å，與 N5 相距 8.4 Å（邊到邊）。"
+     },
+     "cite": ["guo-2017", "page-1999", "sazanov-2007"],
+     "links": ["pdb:5XTD#fes-n4"]
+    },
+    {
+     "id": "n5",
+     "kind": "box",
+     "x": 588,
+     "y": 70,
+     "w": 96,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "N5",
+      "zh-Hant": "N5"
+     },
+     "sub": {
+      "en": "4Fe–4S",
+      "zh-Hant": "4Fe–4S"
+     },
+     "text": {
+      "en": "A 4Fe–4S cluster (NDUFS1). The next cluster, N6a, is 14.8 Å away (edge to edge), the longest gap on the path and slightly above the 14 Å limit seen in most redox proteins. The model is a 3.7 Å cryo-EM map, so the figure has an error of a few tenths of an ångström.",
+      "zh-Hant": "4Fe–4S 簇（NDUFS1）。下一個簇 N6a 相距 14.8 Å（邊到邊），是路徑上最長的間隔，略高於多數氧化還原蛋白的 14 Å 上限。此模型來自 3.7 Å 冷凍電鏡圖，數值有零點幾埃的誤差。"
+     },
+     "cite": ["guo-2017", "page-1999", "sazanov-2007"],
+     "links": ["pdb:5XTD#fes-n5"]
+    },
+    {
+     "id": "n6a",
+     "kind": "box",
+     "x": 700,
+     "y": 70,
+     "w": 96,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "N6a",
+      "zh-Hant": "N6a"
+     },
+     "sub": {
+      "en": "4Fe–4S",
+      "zh-Hant": "4Fe–4S"
+     },
+     "text": {
+      "en": "A 4Fe–4S cluster (NDUFS8), the one nearer to N5. It is named N6a here by its position in the chain, because the deposited model does not label which of its two clusters is N6a. It is 8.4 Å from N6b.",
+      "zh-Hant": "4Fe–4S 簇（NDUFS8），較接近 N5 的一個。由於存檔模型沒有標明兩個簇何者為 N6a，此處按其在鏈中的位置命名。它與 N6b 相距 8.4 Å。"
+     },
+     "cite": ["guo-2017", "page-1999", "sazanov-2007"],
+     "links": ["pdb:5XTD#fes-n6a"]
+    },
+    {
+     "id": "n6b",
+     "kind": "box",
+     "x": 812,
+     "y": 70,
+     "w": 96,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "N6b",
+      "zh-Hant": "N6b"
+     },
+     "sub": {
+      "en": "4Fe–4S",
+      "zh-Hant": "4Fe–4S"
+     },
+     "text": {
+      "en": "The second 4Fe–4S cluster of NDUFS8, named by position. It is 8.4 Å from N6a and 10.3 Å from N2.",
+      "zh-Hant": "NDUFS8 的第二個 4Fe–4S 簇，按位置命名。它與 N6a 相距 8.4 Å，與 N2 相距 10.3 Å。"
+     },
+     "cite": ["guo-2017", "page-1999", "sazanov-2007"],
+     "links": ["pdb:5XTD#fes-n6b"]
+    },
+    {
+     "id": "n2",
+     "kind": "box",
+     "x": 924,
+     "y": 70,
+     "w": 96,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "N2",
+      "zh-Hant": "N2"
+     },
+     "sub": {
+      "en": "4Fe–4S",
+      "zh-Hant": "4Fe–4S"
+     },
+     "text": {
+      "en": "The last cluster before ubiquinone (NDUFS7 holds it, and the Q-site is formed with NDUFS2). Fe–S centre N2 is the one that hands electrons to ubiquinone.",
+      "zh-Hant": "鏈上最後一個鐵硫簇，位於泛醌之前（由 NDUFS7 持有，Q 位點與 NDUFS2 共同構成）。鐵硫中心 N2 把電子交給泛醌。"
+     },
+     "cite": ["guo-2017", "page-1999", "sazanov-2007", "read-2021"],
+     "links": ["pdb:5XTD#fes-n2"]
+    },
+    {
+     "id": "q1",
+     "kind": "box",
+     "x": 1036,
+     "y": 70,
+     "w": 96,
+     "h": 44,
+     "color": "#55662B",
+     "name": {
+      "en": "Ubiquinone",
+      "zh-Hant": "泛醌"
+     },
+     "sub": {
+      "en": "Q → QH₂",
+      "zh-Hant": "Q → QH₂"
+     },
+     "text": {
+      "en": "Ubiquinone is a hydrogen carrier: it takes two electrons in two single-electron steps through a semiquinone, and two protons, to become ubiquinol. Ubiquinol then moves in the membrane. PDB 5XTD holds no quinone, so no distance from N2 is given.",
+      "zh-Hant": "泛醌是氫載體：它分兩個單電子步驟經半醌接收兩個電子與兩個質子，變成泛醇，再在膜內移動。PDB 5XTD 沒有泛醌，因此不給出它與 N2 的距離。"
+     },
+     "cite": ["bender-2003"]
+    },
+    {
+     "id": "n1a",
+     "kind": "box",
+     "x": 200,
+     "y": 160,
+     "w": 96,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "N1a",
+      "zh-Hant": "N1a"
+     },
+     "sub": {
+      "en": "2Fe–2S, side branch",
+      "zh-Hant": "2Fe–2S，旁支"
+     },
+     "text": {
+      "en": "A 2Fe–2S cluster (NDUFV2) beside FMN, 12.2 Å away (edge to edge) in 5XTD. It lies off the main path from FMN to N2.",
+      "zh-Hant": "FMN 旁的 2Fe–2S 簇（NDUFV2），在 5XTD 中相距 12.2 Å（邊到邊），不在 FMN 到 N2 的主路徑上。"
+     },
+     "cite": ["guo-2017", "page-1999", "sazanov-2007"],
+     "links": ["pdb:5XTD#fes-n1a"]
+    },
+    {
+     "id": "succ",
+     "kind": "box",
+     "x": 28,
+     "y": 270,
+     "w": 96,
+     "h": 44,
+     "color": "#555B66",
+     "name": {
+      "en": "Succinate",
+      "zh-Hant": "琥珀酸"
+     },
+     "sub": {
+      "en": "→ fumarate",
+      "zh-Hant": "→ 延胡索酸"
+     },
+     "text": {
+      "en": "The substrate of complex II. This is the same step as in the TCA cycle, so complex II is part of both the cycle and the respiratory chain.",
+      "zh-Hant": "複合體 II 的底物。這一步與 TCA 循環相同，因此複合體 II 同屬 TCA 循環與呼吸鏈。"
+     },
+     "cite": ["sun-2005", "bender-2003"],
+     "links": ["diag:respiration"]
+    },
+    {
+     "id": "fad",
+     "kind": "box",
+     "x": 140,
+     "y": 270,
+     "w": 96,
+     "h": 44,
+     "color": "#8A6A12",
+     "name": {
+      "en": "FAD",
+      "zh-Hant": "FAD"
+     },
+     "sub": {
+      "en": "flavin",
+      "zh-Hant": "黃素"
+     },
+     "text": {
+      "en": "The flavin of the flavoprotein subunit takes electrons from succinate. A flavoprotein reduced this way gives electrons on to the iron-sulfur protein.",
+      "zh-Hant": "黃素蛋白次單位的黃素從琥珀酸接收電子，再傳給鐵硫蛋白。"
+     },
+     "cite": ["sun-2005", "bender-2003"]
+    },
+    {
+     "id": "s1",
+     "kind": "box",
+     "x": 252,
+     "y": 270,
+     "w": 96,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "[2Fe–2S]",
+      "zh-Hant": "[2Fe–2S]"
+     },
+     "sub": {
+      "en": "iron-sulfur",
+      "zh-Hant": "鐵硫"
+     },
+     "text": {
+      "en": "First cluster of the iron-sulfur protein subunit. Complex II has three iron-sulfur clusters in a row.",
+      "zh-Hant": "鐵硫蛋白次單位的第一個簇。複合體 II 有三個依次排列的鐵硫簇。"
+     },
+     "cite": ["sun-2005", "read-2021"]
+    },
+    {
+     "id": "s2",
+     "kind": "box",
+     "x": 364,
+     "y": 270,
+     "w": 96,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "[4Fe–4S]",
+      "zh-Hant": "[4Fe–4S]"
+     },
+     "sub": {
+      "en": "iron-sulfur",
+      "zh-Hant": "鐵硫"
+     },
+     "text": {
+      "en": "Second cluster of the row.",
+      "zh-Hant": "三個簇中的第二個。"
+     },
+     "cite": ["sun-2005", "read-2021"]
+    },
+    {
+     "id": "s3",
+     "kind": "box",
+     "x": 476,
+     "y": 270,
+     "w": 96,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "[3Fe–4S]",
+      "zh-Hant": "[3Fe–4S]"
+     },
+     "sub": {
+      "en": "iron-sulfur",
+      "zh-Hant": "鐵硫"
+     },
+     "text": {
+      "en": "Third cluster, next to the quinone site in the membrane subunits.",
+      "zh-Hant": "第三個簇，靠近膜內次單位的泛醌位點。"
+     },
+     "cite": ["sun-2005", "read-2021"]
+    },
+    {
+     "id": "q2",
+     "kind": "box",
+     "x": 588,
+     "y": 270,
+     "w": 96,
+     "h": 44,
+     "color": "#55662B",
+     "name": {
+      "en": "Ubiquinone",
+      "zh-Hant": "泛醌"
+     },
+     "sub": {
+      "en": "Q → QH₂",
+      "zh-Hant": "Q → QH₂"
+     },
+     "text": {
+      "en": "Complex II reduces ubiquinone, as complex I does. Complex II does not pump protons.",
+      "zh-Hant": "複合體 II 與複合體 I 一樣還原泛醌。複合體 II 不泵質子。"
+     },
+     "cite": ["sun-2005", "bender-2003"]
+    },
+    {
+     "id": "qh2",
+     "kind": "box",
+     "x": 28,
+     "y": 465,
+     "w": 96,
+     "h": 44,
+     "color": "#55662B",
+     "name": {
+      "en": "Ubiquinol",
+      "zh-Hant": "泛醇"
+     },
+     "sub": {
+      "en": "QH₂ from the pool",
+      "zh-Hant": "來自泛醌池"
+     },
+     "text": {
+      "en": "Ubiquinol made by complexes I and II is oxidised by complex III. The bc1 complex oxidises ubihydroquinone and reduces cytochrome c through a Q cycle.",
+      "zh-Hant": "複合體 I 與 II 生成的泛醇由複合體 III 氧化。bc1 複合體氧化泛醇並經 Q 循環還原細胞色素 c。"
+     },
+     "cite": ["crofts-2004", "bender-2003"]
+    },
+    {
+     "id": "risk",
+     "kind": "box",
+     "x": 252,
+     "y": 430,
+     "w": 96,
+     "h": 44,
+     "color": "#A8481A",
+     "name": {
+      "en": "Rieske 2Fe–2S",
+      "zh-Hant": "Rieske 2Fe–2S"
+     },
+     "sub": {
+      "en": "high-potential branch",
+      "zh-Hant": "高電位分支"
+     },
+     "text": {
+      "en": "The 2Fe–2S iron-sulfur protein of complex III. It takes the first electron from ubiquinol and passes it to cytochrome c1.",
+      "zh-Hant": "複合體 III 的 2Fe–2S 鐵硫蛋白。它從泛醇接收第一個電子並傳給細胞色素 c1。"
+     },
+     "cite": ["trumpower-1990", "crofts-2004", "bender-2003"]
+    },
+    {
+     "id": "c1",
+     "kind": "box",
+     "x": 364,
+     "y": 430,
+     "w": 96,
+     "h": 44,
+     "color": "#A02A2A",
+     "name": {
+      "en": "Heme c1",
+      "zh-Hant": "血基質 c1"
+     },
+     "sub": {
+      "en": "cytochrome c1",
+      "zh-Hant": "細胞色素 c1"
+     },
+     "text": {
+      "en": "The covalently bound c-type heme of cytochrome c1. It passes the electron on to soluble cytochrome c.",
+      "zh-Hant": "細胞色素 c1 以共價結合的 c 型血基質，把電子傳給可溶的細胞色素 c。"
+     },
+     "cite": ["trumpower-1990", "bender-2003"]
+    },
+    {
+     "id": "cytc1",
+     "kind": "box",
+     "x": 588,
+     "y": 430,
+     "w": 96,
+     "h": 44,
+     "color": "#A02A2A",
+     "name": {
+      "en": "Cytochrome c",
+      "zh-Hant": "細胞色素 c"
+     },
+     "sub": {
+      "en": "mobile, heme c",
+      "zh-Hant": "可移動，血基質 c"
+     },
+     "text": {
+      "en": "A small soluble protein in the intermembrane space. Its heme iron cycles between Fe³⁺ and Fe²⁺, and it carries one electron at a time from complex III to complex IV.",
+      "zh-Hant": "膜間腔內的小型可溶蛋白，血基質的鐵在 Fe³⁺ 與 Fe²⁺ 之間轉換，一次把一個電子由複合體 III 帶到複合體 IV。"
+     },
+     "cite": ["bender-2003", "trumpower-1990"],
+     "links": ["diag:etc-pathway"]
+    },
+    {
+     "id": "bl",
+     "kind": "box",
+     "x": 252,
+     "y": 500,
+     "w": 96,
+     "h": 44,
+     "color": "#A02A2A",
+     "name": {
+      "en": "Heme bL",
+      "zh-Hant": "血基質 bL"
+     },
+     "sub": {
+      "en": "low-potential branch",
+      "zh-Hant": "低電位分支"
+     },
+     "text": {
+      "en": "Cytochrome b holds two b hemes that differ in their optical and thermodynamic properties. Heme bL takes the second electron from ubiquinol.",
+      "zh-Hant": "細胞色素 b 含兩個 b 血基質，光學與熱力學性質各異。血基質 bL 從泛醇接收第二個電子。"
+     },
+     "cite": ["trumpower-1990", "crofts-2004"]
+    },
+    {
+     "id": "bh",
+     "kind": "box",
+     "x": 364,
+     "y": 500,
+     "w": 96,
+     "h": 44,
+     "color": "#A02A2A",
+     "name": {
+      "en": "Heme bH",
+      "zh-Hant": "血基質 bH"
+     },
+     "sub": {
+      "en": "cytochrome b",
+      "zh-Hant": "細胞色素 b"
+     },
+     "text": {
+      "en": "The second b heme passes the electron to a ubiquinone at the other quinone site, which is how the Q cycle recycles quinone and builds up the proton gradient.",
+      "zh-Hant": "第二個 b 血基質把電子傳給另一個泛醌位點的泛醌，Q 循環因此回收泛醌並建立質子梯度。"
+     },
+     "cite": ["trumpower-1990", "crofts-2004"]
+    },
+    {
+     "id": "q3",
+     "kind": "box",
+     "x": 476,
+     "y": 500,
+     "w": 96,
+     "h": 44,
+     "color": "#55662B",
+     "name": {
+      "en": "Ubiquinone",
+      "zh-Hant": "泛醌"
+     },
+     "sub": {
+      "en": "Q cycle",
+      "zh-Hant": "Q 循環"
+     },
+     "text": {
+      "en": "Ubiquinone reduced at this site returns to the pool.",
+      "zh-Hant": "在此位點還原的泛醌回到泛醌池。"
+     },
+     "cite": ["crofts-2004", "trumpower-1990"]
+    },
+    {
+     "id": "cytc2",
+     "kind": "box",
+     "x": 588,
+     "y": 650,
+     "w": 96,
+     "h": 44,
+     "color": "#A02A2A",
+     "name": {
+      "en": "Cytochrome c",
+      "zh-Hant": "細胞色素 c"
+     },
+     "sub": {
+      "en": "from complex III",
+      "zh-Hant": "來自複合體 III"
+     },
+     "text": {
+      "en": "Reduced cytochrome c docks on complex IV and gives it one electron at a time.",
+      "zh-Hant": "還原型細胞色素 c 停靠在複合體 IV 上，一次交出一個電子。"
+     },
+     "cite": ["shoubridge-2001", "bender-2003"]
+    },
+    {
+     "id": "cua",
+     "kind": "box",
+     "x": 700,
+     "y": 650,
+     "w": 96,
+     "h": 44,
+     "color": "#2F6F6F",
+     "name": {
+      "en": "CuA",
+      "zh-Hant": "CuA"
+     },
+     "sub": {
+      "en": "copper centre",
+      "zh-Hant": "銅中心"
+     },
+     "text": {
+      "en": "The first acceptor in complex IV, a dinuclear copper centre. Copper, as well as iron, is a redox metal in cytochrome oxidase.",
+      "zh-Hant": "複合體 IV 的第一個電子受體，是雙核銅中心。在細胞色素氧化酶中，銅與鐵都是氧化還原金屬。"
+     },
+     "cite": ["michel-1998", "bender-2003"]
+    },
+    {
+     "id": "hema",
+     "kind": "box",
+     "x": 812,
+     "y": 650,
+     "w": 96,
+     "h": 44,
+     "color": "#A02A2A",
+     "name": {
+      "en": "Heme a",
+      "zh-Hant": "血基質 a"
+     },
+     "sub": {
+      "en": "cytochrome a",
+      "zh-Hant": "細胞色素 a"
+     },
+     "text": {
+      "en": "Heme A is anchored in the membrane by its hydrophobic side chain, in cytochromes a and a3, which together form cytochrome oxidase.",
+      "zh-Hant": "血基質 A 以其疏水側鏈錨定在膜內，存在於細胞色素 a 與 a3，兩者合起來構成細胞色素氧化酶。"
+     },
+     "cite": ["bender-2003", "michel-1998"]
+    },
+    {
+     "id": "hema3",
+     "kind": "box",
+     "x": 924,
+     "y": 650,
+     "w": 96,
+     "h": 44,
+     "color": "#A02A2A",
+     "name": {
+      "en": "Heme a3–CuB",
+      "zh-Hant": "血基質 a3–CuB"
+     },
+     "sub": {
+      "en": "oxygen site",
+      "zh-Hant": "氧位點"
+     },
+     "text": {
+      "en": "The binuclear site where oxygen binds. Electron transfer here is coupled to proton translocation across the membrane.",
+      "zh-Hant": "氧結合的雙核位點。這裡的電子傳遞與質子跨膜轉運偶聯。"
+     },
+     "cite": ["michel-1998", "bender-2003"]
+    },
+    {
+     "id": "o2",
+     "kind": "box",
+     "x": 1036,
+     "y": 650,
+     "w": 96,
+     "h": 44,
+     "color": "#555B66",
+     "name": {
+      "en": "O₂",
+      "zh-Hant": "O₂"
+     },
+     "sub": {
+      "en": "→ 2 H₂O",
+      "zh-Hant": "→ 2 H₂O"
+     },
+     "text": {
+      "en": "The final electron acceptor. Cytochrome oxidase reduces oxygen to water using four electrons.",
+      "zh-Hant": "最終電子受體。細胞色素氧化酶用四個電子把氧還原成水。"
+     },
+     "cite": ["shoubridge-2001", "bender-2003"],
+     "links": ["diag:etc-pathway"]
     }
    ]
   }

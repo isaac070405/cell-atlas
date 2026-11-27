@@ -1535,6 +1535,113 @@
       "year": 2011,
       "url": "https://doi.org/10.1016/j.tips.2011.05.002",
       "status": "verified"
+    },
+    "page-1999": {
+      "source": "Page et al. (1999) Nature 402:47–52",
+      "detail": {
+        "en": "Survey of proteins with known structures: electrons travel up to 14 Å between redox centres through protein, longer distances always use a chain of cofactors, and this spacing gives tunnelling rates far faster than the substrate reactions",
+        "zh-Hant": "對已知結構的蛋白質的調查：電子可穿過蛋白質在氧化還原中心之間傳遞達 14 Å，更長的距離必須經由輔因子鏈，而此間距產生的穿隧速率遠快於底物反應"
+      },
+      "species": "Many species",
+      "method": "Structure survey and theory",
+      "year": 1999,
+      "status": "verified",
+      "url": "https://doi.org/10.1038/46972"
+    },
+    "sazanov-2007": {
+      "source": "Sazanov (2007) Biochemistry 46:2275–2288",
+      "detail": {
+        "en": "Review of respiratory complex I: its hydrophilic domain (eight subunits, over half of the complex) contains all the redox centres",
+        "zh-Hant": "呼吸鏈複合體 I 綜述：其親水結構域（八個次單位，佔複合體一半以上）含有全部氧化還原中心"
+      },
+      "species": "Thermus thermophilus and mammals",
+      "method": "Review",
+      "year": 2007,
+      "status": "verified",
+      "url": "https://doi.org/10.1021/bi602508x"
+    },
+    "friedrich-1995": {
+      "source": "Friedrich, Steinmüller & Weiss (1995) FEBS Lett 367:107–111",
+      "detail": {
+        "en": "Review of complex I: the minimal 14-subunit form has one FMN and six to eight iron-sulfur clusters as prosthetic groups",
+        "zh-Hant": "複合體 I 綜述：由 14 個次單位組成的基本形式含一個 FMN 與六至八個鐵硫簇作為輔基"
+      },
+      "species": "Bacteria and mitochondria",
+      "method": "Review",
+      "year": 1995,
+      "status": "verified",
+      "url": "https://doi.org/10.1016/0014-5793(95)00548-n"
+    },
+    "read-2021": {
+      "source": "Read et al. (2021) Redox Biol 47:102164",
+      "detail": {
+        "en": "Review of mitochondrial iron-sulfur clusters: they carry electrons through complexes I, II and III to cytochrome c, and Ndufs2 holds the Fe–S centre N2",
+        "zh-Hant": "線粒體鐵硫簇綜述：鐵硫簇把電子經複合體 I、II、III 傳到細胞色素 c，而 Ndufs2 含有鐵硫中心 N2"
+      },
+      "species": "Mammals",
+      "method": "Review",
+      "year": 2021,
+      "status": "verified",
+      "url": "https://doi.org/10.1016/j.redox.2021.102164"
+    },
+    "sun-2005": {
+      "source": "Sun et al. (2005) Cell 121:1043–1057",
+      "detail": {
+        "en": "Crystal structure of porcine complex II (2.4 Å): flavoprotein, iron-sulfur protein and two membrane proteins, with the prosthetic groups that carry electrons from succinate to ubiquinone",
+        "zh-Hant": "豬心複合體 II 的晶體結構（2.4 Å）：黃素蛋白、鐵硫蛋白及兩個膜蛋白，其輔基把電子由琥珀酸傳給泛醌"
+      },
+      "species": "Pig",
+      "method": "X-ray crystallography, 2.4 Å",
+      "year": 2005,
+      "status": "verified",
+      "url": "https://doi.org/10.1016/j.cell.2005.05.025"
+    },
+    "trumpower-1990": {
+      "source": "Trumpower (1990) Microbiol Rev 54:101–129",
+      "detail": {
+        "en": "Review of cytochrome bc1 complexes: three electron transfer proteins with four redox groups (two b hemes, a c1 heme and a 2Fe–2S iron-sulfur protein), linked to proton translocation by the Q cycle",
+        "zh-Hant": "細胞色素 bc1 複合體綜述：三個電子傳遞蛋白含四個氧化還原基團（兩個 b 血基質、一個 c1 血基質與一個 2Fe–2S 鐵硫蛋白），經 Q 循環與質子轉運偶聯"
+      },
+      "species": "Microorganisms and mitochondria",
+      "method": "Review",
+      "year": 1990,
+      "status": "verified",
+      "url": "https://doi.org/10.1128/mr.54.2.101-129.1990"
+    },
+    "crofts-2004": {
+      "source": "Crofts (2004) Annu Rev Physiol 66:689–733",
+      "detail": {
+        "en": "Review of the bc1 complex: it oxidises ubihydroquinone and reduces cytochrome c through a Q-cycle mechanism that couples electron transfer to the proton gradient",
+        "zh-Hant": "bc1 複合體綜述：它氧化泛醇並還原細胞色素 c，經 Q 循環機制把電子傳遞與質子梯度偶聯"
+      },
+      "species": "Mammals and bacteria",
+      "method": "Review",
+      "year": 2004,
+      "status": "verified",
+      "url": "https://doi.org/10.1146/annurev.physiol.66.032102.150251"
+    },
+    "shoubridge-2001": {
+      "source": "Shoubridge (2001) Am J Med Genet 106:46–52",
+      "detail": {
+        "en": "Review of cytochrome c oxidase: the terminal enzyme of the respiratory chain, which transfers electrons from reduced cytochrome c to molecular oxygen, with 13 subunits",
+        "zh-Hant": "細胞色素 c 氧化酶綜述：呼吸鏈的末端酶，把還原型細胞色素 c 的電子傳給氧分子，共有 13 個次單位"
+      },
+      "species": "Human",
+      "method": "Review",
+      "year": 2001,
+      "status": "verified",
+      "url": "https://doi.org/10.1002/ajmg.1378"
+    },
+    "bender-2003": {
+      "source": "Bender (2003) Oxidative phosphorylation. Encyclopedia of Food Sciences and Nutrition, 2nd ed., pp. 4295–4301",
+      "detail": {
+        "en": "Chapter on oxidative phosphorylation: NAD, flavins and ubiquinone are hydrogen carriers, while cytochromes (hemes a, b, c) and nonheme iron (iron-sulfur) proteins carry single electrons. The carriers pass electrons in a fixed sequence through four complexes to oxygen",
+        "zh-Hant": "氧化磷酸化章節：NAD、黃素與泛醌是氫載體，細胞色素（血基質 a、b、c）與非血基質鐵（鐵硫）蛋白則傳遞單個電子。載體按固定次序經四個複合體把電子傳給氧"
+      },
+      "species": "Mammals",
+      "method": "Textbook chapter",
+      "year": 2003,
+      "status": "verified"
     }
   }
 }
