@@ -741,6 +741,7 @@
     },
     {
       "id": "1MAZ",
+      "domainMap": false,
       "name": {
         "en": "Human BCL-XL (anti-apoptotic)",
         "zh-Hant": "人類 BCL-XL（抗凋亡）"
@@ -752,6 +753,7 @@
     },
     {
       "id": "1G5M",
+      "domainMap": false,
       "name": {
         "en": "Human BCL-2 (anti-apoptotic, BCL-XL loop chimera)",
         "zh-Hant": "人類 BCL-2（抗凋亡，BCL-XL 環區嵌合體）"
@@ -763,6 +765,7 @@
     },
     {
       "id": "2IMS",
+      "domainMap": false,
       "name": {
         "en": "Human BAK homodimer (pore former, calpain-cleaved)",
         "zh-Hant": "人類 BAK 同源二聚體（成孔蛋白，鈣蛋白酶切割）"
@@ -774,6 +777,7 @@
     },
     {
       "id": "1F16",
+      "domainMap": false,
       "name": {
         "en": "Human BAX (pore former, full length)",
         "zh-Hant": "人類 BAX（成孔蛋白，全長）"
@@ -785,6 +789,7 @@
     },
     {
       "id": "2PQK",
+      "domainMap": false,
       "name": {
         "en": "Human MCL-1 with Bim BH3 peptide (anti-apoptotic)",
         "zh-Hant": "人類 MCL-1 與 Bim BH3 肽（抗凋亡）"
@@ -796,6 +801,7 @@
     },
     {
       "id": "1CAG",
+      "domainMap": false,
       "name": {
         "en": "Collagen-like triple helix peptide (Gly→Ala)",
         "zh-Hant": "類膠原三股螺旋肽（Gly→Ala）"

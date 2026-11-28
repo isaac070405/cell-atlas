@@ -1,5 +1,5 @@
 {
-  "_schema": "Preset views for Module B. Coordinates are Å in the deposited PDB frame (model 1, label_asym_id = mmCIF chain used by Mol*). cite points to data/citations.json. basis: computed = centroid or atom position read from the deposited coordinates; literature = stated in the cited paper. names: standard = usual Complex I cluster nomenclature, not named in Guo 2017. select = Mol* loci schema (label_asym_id, optional auth_seq_id) used to select and focus the point.",
+  "_schema": "Preset views for Module B. Coordinates are Å in the deposited PDB frame (model 1, label_asym_id = mmCIF chain used by Mol*). cite points to data/citations.json. basis: computed = centroid or atom position read from the deposited coordinates; literature = stated in the cited paper. names: standard = usual Complex I cluster nomenclature, not named in Guo 2017. select = Mol* loci schema (label_asym_id, optional auth_seq_id) used to select and focus the point. domains = optional residue ranges for the Module B domain map: items give chain (auth_asym_id), first and last auth_seq_id and a colour; residues outside every range stay grey.",
   "structures": {
     "5XTD": {
       "cite": "guo-2017",
@@ -361,7 +361,68 @@
             "label_asym_id": "UA"
           }
         }
-      ]
+      ],
+      "domains": {
+        "cite": "khatter-2015",
+        "basis": "computed",
+        "items": [
+          {
+            "id": "rrna-28s",
+            "label": {
+              "en": "28S rRNA (60S subunit)",
+              "zh-Hant": "28S rRNA（60S 亞基）"
+            },
+            "chain": "L5",
+            "first": 1,
+            "last": 99999,
+            "color": "#1E88E5"
+          },
+          {
+            "id": "rrna-58s",
+            "label": {
+              "en": "5.8S rRNA (60S subunit)",
+              "zh-Hant": "5.8S rRNA（60S 亞基）"
+            },
+            "chain": "L8",
+            "first": 1,
+            "last": 99999,
+            "color": "#6A1B9A"
+          },
+          {
+            "id": "rrna-5s",
+            "label": {
+              "en": "5S rRNA (60S subunit)",
+              "zh-Hant": "5S rRNA（60S 亞基）"
+            },
+            "chain": "L7",
+            "first": 1,
+            "last": 99999,
+            "color": "#43A047"
+          },
+          {
+            "id": "rrna-18s",
+            "label": {
+              "en": "18S rRNA (40S subunit)",
+              "zh-Hant": "18S rRNA（40S 亞基）"
+            },
+            "chain": "S2",
+            "first": 1,
+            "last": 99999,
+            "color": "#F9A825"
+          },
+          {
+            "id": "trna-e",
+            "label": {
+              "en": "E-site tRNA",
+              "zh-Hant": "E 位點 tRNA"
+            },
+            "chain": "S6",
+            "first": 1,
+            "last": 99999,
+            "color": "#C62828"
+          }
+        ]
+      }
     },
     "1TQN": {
       "cite": "yano-2004",
@@ -413,7 +474,46 @@
             "auth_seq_id": 442
           }
         }
-      ]
+      ],
+      "domains": {
+        "cite": "uniprot-cyp3a4-motifs",
+        "basis": "literature",
+        "items": [
+          {
+            "id": "helix-i",
+            "label": {
+              "en": "I helix (292–323)",
+              "zh-Hant": "I 螺旋（292–323）"
+            },
+            "chain": "A",
+            "first": 292,
+            "last": 323,
+            "color": "#1E88E5"
+          },
+          {
+            "id": "cys-loop",
+            "label": {
+              "en": "Heme-binding Cys442 loop (435–444)",
+              "zh-Hant": "結合血基質的 Cys442 環（435–444）"
+            },
+            "chain": "A",
+            "first": 435,
+            "last": 444,
+            "color": "#C62828"
+          },
+          {
+            "id": "helix-l",
+            "label": {
+              "en": "L helix (445–462)",
+              "zh-Hant": "L 螺旋（445–462）"
+            },
+            "chain": "A",
+            "first": 445,
+            "last": 462,
+            "color": "#43A047"
+          }
+        ]
+      }
     },
     "1ZUM": {
       "cite": "larson-2005",
@@ -496,7 +596,46 @@
             "auth_seq_id": 487
           }
         }
-      ]
+      ],
+      "domains": {
+        "cite": "uniprot-aldh2-sites",
+        "basis": "literature",
+        "items": [
+          {
+            "id": "glu268",
+            "label": {
+              "en": "Glu268 general base (266–270)",
+              "zh-Hant": "Glu268 一般鹼（266–270）"
+            },
+            "chain": "A",
+            "first": 266,
+            "last": 270,
+            "color": "#1E88E5"
+          },
+          {
+            "id": "cys302",
+            "label": {
+              "en": "Cys302 nucleophile (300–304)",
+              "zh-Hant": "Cys302 親核基（300–304）"
+            },
+            "chain": "A",
+            "first": 300,
+            "last": 304,
+            "color": "#C62828"
+          },
+          {
+            "id": "lys487",
+            "label": {
+              "en": "Lys487 ALDH2*2 variant site (485–489)",
+              "zh-Hant": "Lys487 ALDH2*2 變異位點（485–489）"
+            },
+            "chain": "A",
+            "first": 485,
+            "last": 489,
+            "color": "#F9A825"
+          }
+        ]
+      }
     },
     "1MAZ": {
       "cite": "muchmore-1996",
@@ -736,7 +875,46 @@
             "auth_seq_id": 442
           }
         }
-      ]
+      ],
+      "domains": {
+        "cite": "uniprot-cyp3a4-motifs",
+        "basis": "literature",
+        "items": [
+          {
+            "id": "helix-i",
+            "label": {
+              "en": "I helix (292–323)",
+              "zh-Hant": "I 螺旋（292–323）"
+            },
+            "chain": "A",
+            "first": 292,
+            "last": 323,
+            "color": "#1E88E5"
+          },
+          {
+            "id": "cys-loop",
+            "label": {
+              "en": "Heme-binding Cys442 loop (435–444)",
+              "zh-Hant": "結合血基質的 Cys442 環（435–444）"
+            },
+            "chain": "A",
+            "first": 435,
+            "last": 444,
+            "color": "#C62828"
+          },
+          {
+            "id": "helix-l",
+            "label": {
+              "en": "L helix (445–462)",
+              "zh-Hant": "L 螺旋（445–462）"
+            },
+            "chain": "A",
+            "first": 445,
+            "last": 462,
+            "color": "#43A047"
+          }
+        ]
+      }
     },
     "3SN6": {
       "cite": "rasmussen-2011",
@@ -831,7 +1009,90 @@
             "label_asym_id": "A"
           }
         }
-      ]
+      ],
+      "domains": {
+        "cite": "uniprot-adrb2-topology",
+        "basis": "literature",
+        "items": [
+          {
+            "id": "adrb2-tm",
+            "label": {
+              "en": "β2AR transmembrane helices 1–7 (30–326)",
+              "zh-Hant": "β2AR 跨膜螺旋 1–7（30–326）"
+            },
+            "chain": "R",
+            "first": 30,
+            "last": 326,
+            "color": "#C62828"
+          },
+          {
+            "id": "adrb2-nterm",
+            "label": {
+              "en": "β2AR N-terminus (1–29)",
+              "zh-Hant": "β2AR N 端（1–29）"
+            },
+            "chain": "R",
+            "first": 1,
+            "last": 29,
+            "color": "#EF9A9A"
+          },
+          {
+            "id": "adrb2-cterm",
+            "label": {
+              "en": "β2AR C-terminal region (327–413)",
+              "zh-Hant": "β2AR C 端區（327–413）"
+            },
+            "chain": "R",
+            "first": 327,
+            "last": 413,
+            "color": "#EF9A9A"
+          },
+          {
+            "id": "gas",
+            "label": {
+              "en": "Gαs (G protein alpha subunit)",
+              "zh-Hant": "Gαs（G 蛋白 α 次單位）"
+            },
+            "chain": "A",
+            "first": 1,
+            "last": 9999,
+            "color": "#F9A825"
+          },
+          {
+            "id": "gbeta",
+            "label": {
+              "en": "Gβ1",
+              "zh-Hant": "Gβ1"
+            },
+            "chain": "B",
+            "first": 1,
+            "last": 9999,
+            "color": "#2E7D32"
+          },
+          {
+            "id": "ggamma",
+            "label": {
+              "en": "Gγ2",
+              "zh-Hant": "Gγ2"
+            },
+            "chain": "G",
+            "first": 1,
+            "last": 9999,
+            "color": "#80CBC4"
+          },
+          {
+            "id": "nb35",
+            "label": {
+              "en": "Nanobody Nb35",
+              "zh-Hant": "奈米抗體 Nb35"
+            },
+            "chain": "N",
+            "first": 1,
+            "last": 9999,
+            "color": "#6A1B9A"
+          }
+        ]
+      }
     },
     "1ZOY": {
       "cite": "sun-2005",

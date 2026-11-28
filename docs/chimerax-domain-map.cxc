@@ -1,0 +1,35 @@
+# Domain-coloured cryo-EM density map (Maciag 2025, PNAS Fig. 1A style)
+# Run in UCSF ChimeraX: File > Open this file, or paste the lines into the command line.
+# Edit the marked blocks. Chain IDs and residue ranges are placeholders.
+
+close session
+
+# EDIT 1: EMDB ID of the map (becomes #1) and PDB ID of the fitted model (becomes #2)
+open emdb:XXXXX
+open pdb:XXXX
+hide #2 models
+
+# EDIT 2: contour level from the EMDB entry (recommended level)
+volume #1 style surface level 0.02 color gray
+
+# Fig. 1A look: white background, flat light, black outlines
+set bgColor white
+lighting flat
+graphics silhouettes true width 1.5 color black
+camera ortho
+
+# EDIT 3: colour the atoms of each domain. "color zone" paints map patches in the colour of the nearest atoms.
+color #2 gray
+color #2/A:1-205    yellow       # prodomain
+color #2/A:206-475  magenta      # metalloproteinase
+color #2/A:476-575  cyan         # disintegrin
+color #2/A:576-650  lime green   # cysteine-rich
+color #2/A:651-700  firebrick    # transmembrane
+color #2/B          tan          # partner protein (for example iRhom2)
+color #2/H,L        gray         # antibody Fab
+
+color zone #1 near #2 distance 4 sharpEdges true
+
+# View: front, then rotate 180 degrees about the vertical axis for the second view
+view
+turn y 180

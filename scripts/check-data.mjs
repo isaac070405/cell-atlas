@@ -44,6 +44,16 @@ for (const d of dgs.diagrams) {
 }
 // A diagram link pdb:ID#tour must name a tour point of that structure
 const tp = read('tour-points.json').structures;
+// Domain ranges: known citation, ordered ranges, hex colours, no overlap within a chain
+for (const [id, st] of Object.entries(tp)) {
+  if (!st.domains) continue;
+  if (!citations[st.domains.cite]) bad(`${id}: domains cite ${st.domains.cite} missing`);
+  const it = st.domains.items;
+  for (const d of it) {
+    if (!(d.first <= d.last) || !/^#[0-9A-Fa-f]{6}$/.test(d.color) || !d.chain) bad(`${id}: domain ${d.id} range, colour or chain`);
+    for (const o of it) if (o !== d && o.chain === d.chain && d.first <= o.last && o.first <= d.last) bad(`${id}: domains ${d.id} and ${o.id} overlap`);
+  }
+}
 for (const d of dgs.diagrams) for (const n of d.nodes) for (const l of n.links ?? (n.link ? [n.link] : [])) {
   const m = l.match(/^pdb:([^#]+)#(.+)$/);
   if (m && !tp[m[1]]?.points.some(p => p.id === m[2])) bad(`diagram ${d.id} ${n.id}: ${l} has no such tour point`);

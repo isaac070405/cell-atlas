@@ -3,7 +3,7 @@ import { loadStrings, setLang, getLang, applyStatic, html, text, esc } from './i
 import { buildRuler, renderRuler } from './ruler.js';
 import { initCompare, renderCompare, renderChart, columnCells, resolve, valueText, comp } from './compare.js';
 import { buildModel, crowded } from './cellmodel.js';
-import { showStructure } from './molview.js';
+import { showStructure, setDomainMap } from './molview.js';
 import { drawDiagram } from './diagram.js';
 
 const load = p => fetch(p).then(r => { if (!r.ok) throw new Error(`${p}: HTTP ${r.status}`); return r.json(); });
@@ -55,6 +55,7 @@ document.querySelectorAll('[data-lang-set]').forEach(b => b.addEventListener('cl
 buildRuler();
 onChange(render);
 
+$('mol-domain').addEventListener('change', e => setDomainMap($('mol'), e.target.checked).catch(err => console.warn('Mol* look failed', err)));
 $('tour-bar').addEventListener('click', e => {
   const b = e.target.closest('button[data-tour]');
   if (b) setState({ tour: b.dataset.tour || null });
@@ -348,7 +349,9 @@ function render(s) {
   if (showMol) {
     $('tour-bar').innerHTML = [{ id: '', label: { en: text('tour.whole') } }, ...points].map(p =>
       `<li><button data-tour="${esc(p.id)}" aria-pressed="${(p.id || null) === (s.tour || null) || (!p.id && !point)}">${p.id ? html(p.label) : html('tour.whole')}</button></li>`).join('');
-    sync3dMol(pdb.id, point);
+    const large = pdb.domainMap !== false;
+    $('mol-domain').closest('label').hidden = !large;
+    sync3dMol(pdb.id, point, tours.structures[pdb.id]?.domains?.items, large);
   }
   if (compare) {
     $('vp-compare').innerHTML = renderCompare(s);
@@ -448,13 +451,13 @@ function orgCard(cell, orgId) {
 
 // Preset view: show the structure in Mol* and select and focus the point, once per change
 let molKey = null;
-async function sync3dMol(id, point) {
+async function sync3dMol(id, point, domains, large) {
   const key = `${id}|${point?.id ?? ''}`;
   if (key === molKey) return;
   molKey = key;
   $('mol-note').innerHTML = html('mol.loading');
   try {
-    if (await showStructure($('mol'), id, point)) $('mol-note').textContent = '';
+    if (await showStructure($('mol'), id, point, domains, large)) $('mol-note').textContent = '';
   } catch (err) {
     molKey = null;
     console.warn('Mol* unavailable', err);
