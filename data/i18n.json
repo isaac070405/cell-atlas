@@ -449,6 +449,10 @@
       "en": "Streaming the structure from RCSB PDB…",
       "zh-Hant": "正在由 RCSB PDB 載入結構……"
     },
+    "mol.domain": {
+      "en": "Domain map (surface, one colour per chain)",
+      "zh-Hant": "結構域圖（表面，每條鏈一種顏色）"
+    },
     "mol.failed": {
       "en": "The structure could not be loaded. Mol* needs WebGL 2 and a connection to models.rcsb.org.",
       "zh-Hant": "結構載入失敗。Mol* 需要 WebGL 2，並要連線至 models.rcsb.org。"

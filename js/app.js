@@ -3,7 +3,7 @@ import { loadStrings, setLang, getLang, applyStatic, html, text, esc } from './i
 import { buildRuler, renderRuler } from './ruler.js';
 import { initCompare, renderCompare, renderChart, columnCells, resolve, valueText, comp } from './compare.js';
 import { buildModel, crowded } from './cellmodel.js';
-import { showStructure } from './molview.js';
+import { showStructure, setDomainMap } from './molview.js';
 import { drawDiagram } from './diagram.js';
 
 const load = p => fetch(p).then(r => { if (!r.ok) throw new Error(`${p}: HTTP ${r.status}`); return r.json(); });
@@ -55,6 +55,7 @@ document.querySelectorAll('[data-lang-set]').forEach(b => b.addEventListener('cl
 buildRuler();
 onChange(render);
 
+$('mol-domain').addEventListener('change', e => setDomainMap($('mol'), e.target.checked).catch(err => console.warn('Mol* look failed', err)));
 $('tour-bar').addEventListener('click', e => {
   const b = e.target.closest('button[data-tour]');
   if (b) setState({ tour: b.dataset.tour || null });
