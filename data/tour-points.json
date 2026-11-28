@@ -361,7 +361,68 @@
             "label_asym_id": "UA"
           }
         }
-      ]
+      ],
+      "domains": {
+        "cite": "khatter-2015",
+        "basis": "computed",
+        "items": [
+          {
+            "id": "rrna-28s",
+            "label": {
+              "en": "28S rRNA (60S subunit)",
+              "zh-Hant": "28S rRNA（60S 亞基）"
+            },
+            "chain": "L5",
+            "first": 1,
+            "last": 99999,
+            "color": "#1E88E5"
+          },
+          {
+            "id": "rrna-58s",
+            "label": {
+              "en": "5.8S rRNA (60S subunit)",
+              "zh-Hant": "5.8S rRNA（60S 亞基）"
+            },
+            "chain": "L8",
+            "first": 1,
+            "last": 99999,
+            "color": "#6A1B9A"
+          },
+          {
+            "id": "rrna-5s",
+            "label": {
+              "en": "5S rRNA (60S subunit)",
+              "zh-Hant": "5S rRNA（60S 亞基）"
+            },
+            "chain": "L7",
+            "first": 1,
+            "last": 99999,
+            "color": "#43A047"
+          },
+          {
+            "id": "rrna-18s",
+            "label": {
+              "en": "18S rRNA (40S subunit)",
+              "zh-Hant": "18S rRNA（40S 亞基）"
+            },
+            "chain": "S2",
+            "first": 1,
+            "last": 99999,
+            "color": "#F9A825"
+          },
+          {
+            "id": "trna-e",
+            "label": {
+              "en": "E-site tRNA",
+              "zh-Hant": "E 位點 tRNA"
+            },
+            "chain": "S6",
+            "first": 1,
+            "last": 99999,
+            "color": "#C62828"
+          }
+        ]
+      }
     },
     "1TQN": {
       "cite": "yano-2004",
