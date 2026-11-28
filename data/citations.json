@@ -1692,6 +1692,19 @@
       "url": "https://www.uniprot.org/uniprotkb/P08684",
       "status": "verified",
       "note": "Fetched from rest.uniprot.org on 2026-11-28 (release not recorded). Licence CC BY 4.0. The helix letters I and L are assigned from the conserved AGxxT motif and the Cys-ligand loop, not from UniProt. UniProt numbers equal the auth_seq_id numbers of chain A (Cys442 tour points of 1TQN and 1W0E)."
+    },
+    "uniprot-aldh2-sites": {
+      "source": "UniProtKB/Swiss-Prot P05091 (ALDH2), active-site and variant annotation",
+      "detail": {
+        "en": "Catalytic nucleophile Cys302, general base Glu268 and the ALDH2*2 variant site Lys487 of mitochondrial aldehyde dehydrogenase, used for the domain map (functional sites only, no domain boundaries)",
+        "zh-Hant": "粒線體乙醛脫氫酶的催化親核基 Cys302、一般鹼 Glu268 與 ALDH2*2 變異位點 Lys487，用於結構域圖（只標示功能位點，不含結構域邊界）"
+      },
+      "species": "Human",
+      "cellType": "n/a",
+      "method": "Curated annotation (UniProt feature table)",
+      "url": "https://www.uniprot.org/uniprotkb/P05091",
+      "status": "verified",
+      "note": "Fetched from rest.uniprot.org on 2026-11-28 (release not recorded). Licence CC BY 4.0. UniProt numbers include the 17-residue transit peptide, so PDB number = UniProt number minus 17: nucleophile 319 gives 302, proton acceptor 285 gives 268, variant E504K (allele ALDH2*2) gives 487. Each site is drawn with two flanking residues each side. Domain boundaries were not found in any source reachable here."
     }
   }
 }

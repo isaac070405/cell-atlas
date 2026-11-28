@@ -535,7 +535,46 @@
             "auth_seq_id": 487
           }
         }
-      ]
+      ],
+      "domains": {
+        "cite": "uniprot-aldh2-sites",
+        "basis": "literature",
+        "items": [
+          {
+            "id": "glu268",
+            "label": {
+              "en": "Glu268 general base (266–270)",
+              "zh-Hant": "Glu268 一般鹼（266–270）"
+            },
+            "chain": "A",
+            "first": 266,
+            "last": 270,
+            "color": "#1E88E5"
+          },
+          {
+            "id": "cys302",
+            "label": {
+              "en": "Cys302 nucleophile (300–304)",
+              "zh-Hant": "Cys302 親核基（300–304）"
+            },
+            "chain": "A",
+            "first": 300,
+            "last": 304,
+            "color": "#C62828"
+          },
+          {
+            "id": "lys487",
+            "label": {
+              "en": "Lys487 ALDH2*2 variant site (485–489)",
+              "zh-Hant": "Lys487 ALDH2*2 變異位點（485–489）"
+            },
+            "chain": "A",
+            "first": 485,
+            "last": 489,
+            "color": "#F9A825"
+          }
+        ]
+      }
     },
     "1MAZ": {
       "cite": "muchmore-1996",
