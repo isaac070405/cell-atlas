@@ -1,7 +1,7 @@
 // Module B viewer: Mol* loaded on first use, one viewer reused for every structure.
 // Structures stream as binary CIF from RCSB (the deposited coordinates, so data/tour-points.json lines up).
 const BASE = new URL('../vendor/molstar/', import.meta.url).href;
-let viewerP = null, shown = null, ticket = 0, domainMap = false;
+let viewerP = null, shown = null, ticket = 0, domainMap = false, domains = null;
 
 function loadAssets() {
   const css = document.createElement('link');
@@ -24,7 +24,8 @@ function getViewer(el) {
 }
 
 // Show one structure and, if given, select and focus one tour point. Resolves false when a newer call replaced this one.
-export async function showStructure(el, pdbId, point) {
+export async function showStructure(el, pdbId, point, ranges) {
+  domains = ranges?.length ? ranges : null;
   const mine = ++ticket;
   const viewer = await getViewer(el);
   if (mine !== ticket) return false;
@@ -49,15 +50,52 @@ export async function showStructure(el, pdbId, point) {
 }
 
 
-// Domain map look (Maciag 2025, Fig. 1A style): one Gaussian surface per chain in chain colours,
-// white background, black outlines, no ambient occlusion so the colours stay flat.
+// Domain map look (Maciag 2025, Fig. 1A style): Gaussian surface, white background, black outlines, flat colours.
+// With domain ranges (data/tour-points.json `domains`) each range is one surface in its colour and the rest is grey.
+// Without them each chain gets its chain colour.
+const hex = c => parseInt(c.replace('#', ''), 16);
+const GREY = 0x9AA0A6;
+const inRange = d => `(and (= atom.auth_asym_id ${d.chain}) (>= atom.auth_seq_id ${d.first}) (<= atom.auth_seq_id ${d.last}))`;
+const select = test => ({ language: 'mol-script', expression: `(sel.atom.atom-groups :residue-test ${test})` });
+
+async function addSurface(plugin, structRef, label, script, color) {
+  const { StateTransforms } = window.molstar.lib.plugin;
+  const b = plugin.state.data.build();
+  b.to(structRef).apply(StateTransforms.Model.StructureSelectionFromScript, { script, label }, { tags: ['domain-map'] })
+    .apply(StateTransforms.Representation.StructureRepresentation3D, {
+      type: { name: 'gaussian-surface', params: {} },
+      colorTheme: color == null ? { name: 'chain-id', params: {} } : { name: 'uniform', params: { value: color } },
+      sizeTheme: { name: 'physical', params: {} },
+    });
+  await b.commit();
+}
+
+async function clearDomainParts(plugin) {
+  const tagged = plugin.state.data.selectQ(q => q.root.subtree().filter(c => c.transform.tags?.includes('domain-map')));
+  if (!tagged.length) return;
+  const b = plugin.state.data.build();
+  tagged.forEach(c => b.delete(c.transform.ref));
+  await b.commit();
+}
+
 async function applyLook(viewer, on) {
   const { plugin } = viewer, mgr = plugin.managers.structure;
-  const comps = mgr.hierarchy.current.structures.flatMap(s => s.components);
-  if (comps.length) {
-    await mgr.component.removeRepresentations?.(comps);
-    await mgr.component.addRepresentation(comps, on ? 'gaussian-surface' : 'cartoon');
-    await mgr.component.updateRepresentationsTheme(comps, { color: on ? 'chain-id' : 'default' });
+  await clearDomainParts(plugin);
+  const structure = mgr.hierarchy.current.structures[0];
+  if (structure) {
+    const comps = structure.components.filter(c => !c.cell.transform.tags?.includes('domain-map'));
+    if (on) {
+      await mgr.component.removeRepresentations?.(comps);
+      const ref = structure.cell.transform.ref;
+      if (domains?.length) {
+        for (const d of domains) await addSurface(plugin, ref, d.label.en, select(inRange(d)), hex(d.color));
+        await addSurface(plugin, ref, 'Other residues', select(`(not (or ${domains.map(inRange).join(' ')}))`), GREY);
+      } else {
+        await addSurface(plugin, ref, 'Chains', select('(= 1 1)'), null);
+      }
+    } else {
+      await mgr.component.addRepresentation(comps, 'cartoon');
+    }
   }
   plugin.canvas3d?.setProps({
     renderer: { backgroundColor: 0xffffff },
