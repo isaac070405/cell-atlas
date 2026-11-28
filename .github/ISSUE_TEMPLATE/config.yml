@@ -3,3 +3,6 @@ contact_links:
   - name: Report a security vulnerability
     url: https://github.com/isaac070405/cell-atlas/security/advisories/new
     about: Report privately. Do not open a public issue.
+  - name: Ask a question or share an idea
+    url: https://github.com/isaac070405/cell-atlas/discussions
+    about: Open questions, ideas, source discussions and show and tell go to Discussions.

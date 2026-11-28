@@ -1,0 +1,26 @@
+title: "[Data] "
+labels: [data]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to ask how a number was sourced or to compare studies. A figure that is wrong goes in the Data or citation error issue form.
+  - type: input
+    id: url
+    attributes:
+      label: Page URL
+      description: Include the query string.
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Which value, which source chip, and what you want clarified.
+    validations:
+      required: true
+  - type: input
+    id: reference
+    attributes:
+      label: Reference
+      description: DOI, PMID or PDB entry you are comparing against.

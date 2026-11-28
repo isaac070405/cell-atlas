@@ -1,0 +1,19 @@
+title: "[Show] "
+labels: [show-and-tell]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What you made or used
+      description: A study note, assignment, lesson or tool that uses Cell Atlas.
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: Public link, if any. Do not share marked coursework.
+  - type: textarea
+    id: feedback
+    attributes:
+      label: What worked and what did not

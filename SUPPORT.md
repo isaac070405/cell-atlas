@@ -9,6 +9,7 @@ Cell Atlas is a small student-run project, so replies can take a few days.
 | Site does not load, a control fails, a 3D view looks wrong | [Bug report](https://github.com/isaac070405/cell-atlas/issues/new?template=bug_report.yml) |
 | A number, unit, source or translation looks wrong | [Data or citation error](https://github.com/isaac070405/cell-atlas/issues/new?template=data_error.yml) |
 | An idea for a new cell, structure or view | [Feature or data request](https://github.com/isaac070405/cell-atlas/issues/new?template=feature_request.yml) |
+| An open question, an idea to discuss, how a source was chosen, or something you built | [Discussions](https://github.com/isaac070405/cell-atlas/discussions) |
 | A security vulnerability | Private report described in `SECURITY.md` |
 | Conduct concern | Reporting steps in `CODE_OF_CONDUCT.md` |
 | Accessibility barrier | Feedback steps in `ACCESSIBILITY.md` |

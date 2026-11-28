@@ -51,7 +51,7 @@ The file schemas are in `docs/DATA.md`. Licences of copied libraries and models 
 
 Questions and setup help are covered in `SUPPORT.md`.
 
-Use the issue forms for a bug, a data or citation error, or a feature request. Report vulnerabilities through `SECURITY.md`.
+Use the issue forms for a bug, a data or citation error, or a feature request. Use [Discussions](https://github.com/isaac070405/cell-atlas/discussions) for open questions, ideas not ready to build, source debates and show and tell. A maintainer converts a confirmed bug or data error into an issue. Report vulnerabilities through `SECURITY.md`.
 
 ## Pull requests
 
