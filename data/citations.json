@@ -1679,6 +1679,19 @@
       "url": "https://www.uniprot.org/uniprotkb/P07550",
       "status": "verified",
       "note": "Fetched from rest.uniprot.org on 2026-11-28 (release not recorded). Licence CC BY 4.0. UniProt numbers equal the auth_seq_id numbers of chain R (Asp113 tour point). Chains A, B, G, N and R are Gαs, Gβ1, Gγ2, Nb35 and the receptor with T4L as deposited; letters A and R are confirmed by the existing tour points, B, G and N come from the PDB entry and are unchecked here."
+    },
+    "uniprot-cyp3a4-motifs": {
+      "source": "UniProtKB/Swiss-Prot P08684 (CYP3A4), helix and heme-binding annotation",
+      "detail": {
+        "en": "Ranges of the I helix (292–323, holding the conserved A305 to T309 motif), the heme-binding Cys442 loop (435–444, motif F-x-x-G-x-R-x-C-x-G) and the L helix (445–462) of cytochrome P450 3A4, used for the domain map",
+        "zh-Hant": "細胞色素 P450 3A4 的 I 螺旋（292–323，含保守的 A305 至 T309 模體）、結合血基質的 Cys442 環（435–444，F-x-x-G-x-R-x-C-x-G 模體）與 L 螺旋（445–462）範圍，用於結構域圖"
+      },
+      "species": "Human",
+      "cellType": "n/a",
+      "method": "Curated annotation (UniProt feature table, helices taken from PDB entries)",
+      "url": "https://www.uniprot.org/uniprotkb/P08684",
+      "status": "verified",
+      "note": "Fetched from rest.uniprot.org on 2026-11-28 (release not recorded). Licence CC BY 4.0. The helix letters I and L are assigned from the conserved AGxxT motif and the Cys-ligand loop, not from UniProt. UniProt numbers equal the auth_seq_id numbers of chain A (Cys442 tour points of 1TQN and 1W0E)."
     }
   }
 }

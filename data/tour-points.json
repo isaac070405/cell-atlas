@@ -413,7 +413,46 @@
             "auth_seq_id": 442
           }
         }
-      ]
+      ],
+      "domains": {
+        "cite": "uniprot-cyp3a4-motifs",
+        "basis": "literature",
+        "items": [
+          {
+            "id": "helix-i",
+            "label": {
+              "en": "I helix (292–323)",
+              "zh-Hant": "I 螺旋（292–323）"
+            },
+            "chain": "A",
+            "first": 292,
+            "last": 323,
+            "color": "#1E88E5"
+          },
+          {
+            "id": "cys-loop",
+            "label": {
+              "en": "Heme-binding Cys442 loop (435–444)",
+              "zh-Hant": "結合血基質的 Cys442 環（435–444）"
+            },
+            "chain": "A",
+            "first": 435,
+            "last": 444,
+            "color": "#C62828"
+          },
+          {
+            "id": "helix-l",
+            "label": {
+              "en": "L helix (445–462)",
+              "zh-Hant": "L 螺旋（445–462）"
+            },
+            "chain": "A",
+            "first": 445,
+            "last": 462,
+            "color": "#43A047"
+          }
+        ]
+      }
     },
     "1ZUM": {
       "cite": "larson-2005",
@@ -736,7 +775,46 @@
             "auth_seq_id": 442
           }
         }
-      ]
+      ],
+      "domains": {
+        "cite": "uniprot-cyp3a4-motifs",
+        "basis": "literature",
+        "items": [
+          {
+            "id": "helix-i",
+            "label": {
+              "en": "I helix (292–323)",
+              "zh-Hant": "I 螺旋（292–323）"
+            },
+            "chain": "A",
+            "first": 292,
+            "last": 323,
+            "color": "#1E88E5"
+          },
+          {
+            "id": "cys-loop",
+            "label": {
+              "en": "Heme-binding Cys442 loop (435–444)",
+              "zh-Hant": "結合血基質的 Cys442 環（435–444）"
+            },
+            "chain": "A",
+            "first": 435,
+            "last": 444,
+            "color": "#C62828"
+          },
+          {
+            "id": "helix-l",
+            "label": {
+              "en": "L helix (445–462)",
+              "zh-Hant": "L 螺旋（445–462）"
+            },
+            "chain": "A",
+            "first": 445,
+            "last": 462,
+            "color": "#43A047"
+          }
+        ]
+      }
     },
     "3SN6": {
       "cite": "rasmussen-2011",
