@@ -831,7 +831,90 @@
             "label_asym_id": "A"
           }
         }
-      ]
+      ],
+      "domains": {
+        "cite": "uniprot-adrb2-topology",
+        "basis": "literature",
+        "items": [
+          {
+            "id": "adrb2-tm",
+            "label": {
+              "en": "β2AR transmembrane helices 1–7 (30–326)",
+              "zh-Hant": "β2AR 跨膜螺旋 1–7（30–326）"
+            },
+            "chain": "R",
+            "first": 30,
+            "last": 326,
+            "color": "#C62828"
+          },
+          {
+            "id": "adrb2-nterm",
+            "label": {
+              "en": "β2AR N-terminus (1–29)",
+              "zh-Hant": "β2AR N 端（1–29）"
+            },
+            "chain": "R",
+            "first": 1,
+            "last": 29,
+            "color": "#EF9A9A"
+          },
+          {
+            "id": "adrb2-cterm",
+            "label": {
+              "en": "β2AR C-terminal region (327–413)",
+              "zh-Hant": "β2AR C 端區（327–413）"
+            },
+            "chain": "R",
+            "first": 327,
+            "last": 413,
+            "color": "#EF9A9A"
+          },
+          {
+            "id": "gas",
+            "label": {
+              "en": "Gαs (G protein alpha subunit)",
+              "zh-Hant": "Gαs（G 蛋白 α 次單位）"
+            },
+            "chain": "A",
+            "first": 1,
+            "last": 9999,
+            "color": "#F9A825"
+          },
+          {
+            "id": "gbeta",
+            "label": {
+              "en": "Gβ1",
+              "zh-Hant": "Gβ1"
+            },
+            "chain": "B",
+            "first": 1,
+            "last": 9999,
+            "color": "#2E7D32"
+          },
+          {
+            "id": "ggamma",
+            "label": {
+              "en": "Gγ2",
+              "zh-Hant": "Gγ2"
+            },
+            "chain": "G",
+            "first": 1,
+            "last": 9999,
+            "color": "#80CBC4"
+          },
+          {
+            "id": "nb35",
+            "label": {
+              "en": "Nanobody Nb35",
+              "zh-Hant": "奈米抗體 Nb35"
+            },
+            "chain": "N",
+            "first": 1,
+            "last": 9999,
+            "color": "#6A1B9A"
+          }
+        ]
+      }
     },
     "1ZOY": {
       "cite": "sun-2005",

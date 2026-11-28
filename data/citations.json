@@ -1666,6 +1666,19 @@
       "year": 1996,
       "url": "https://doi.org/10.1126/science.272.5265.1136",
       "status": "verified"
+    },
+    "uniprot-adrb2-topology": {
+      "source": "UniProtKB/Swiss-Prot P07550 (ADRB2) topology; chain roles of PDB 3SN6 from Rasmussen et al. (2011)",
+      "detail": {
+        "en": "Transmembrane helix 1 to 7 range of the β2 adrenergic receptor (residues 30 to 326), with Gαs, Gβ1, Gγ2 and Nb35 coloured as whole chains, for the domain map",
+        "zh-Hant": "β2 腎上腺素受體跨膜螺旋 1 至 7 的範圍（殘基 30 至 326），Gαs、Gβ1、Gγ2 與 Nb35 以整條鏈上色，用於結構域圖"
+      },
+      "species": "Human",
+      "cellType": "n/a",
+      "method": "Curated annotation (UniProt feature table) and X-ray crystallography",
+      "url": "https://www.uniprot.org/uniprotkb/P07550",
+      "status": "verified",
+      "note": "Fetched from rest.uniprot.org on 2026-11-28 (release not recorded). Licence CC BY 4.0. UniProt numbers equal the auth_seq_id numbers of chain R (Asp113 tour point). Chains A, B, G, N and R are Gαs, Gβ1, Gγ2, Nb35 and the receptor with T4L as deposited; letters A and R are confirmed by the existing tour points, B, G and N come from the PDB entry and are unchecked here."
     }
   }
 }
