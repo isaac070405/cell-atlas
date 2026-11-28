@@ -1,0 +1,20 @@
+title: "[Idea] "
+labels: [idea]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Idea
+      description: A new cell, structure, pathway diagram or view, in one or two sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it helps
+      description: The course, topic or question it serves.
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Papers (DOI or PMID) or PDB / EMDB entries behind the numbers. Every number on the site carries a source chip.
