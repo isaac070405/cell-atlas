@@ -1666,19 +1666,6 @@
       "year": 1996,
       "url": "https://doi.org/10.1126/science.272.5265.1136",
       "status": "verified"
-    },
-    "uniprot-bcl2-motifs": {
-      "source": "UniProtKB/Swiss-Prot, BH motif and transmembrane annotation",
-      "detail": {
-        "en": "BH4, BH3, BH1, BH2 and transmembrane ranges for BCL-XL (Q07817), BAX (Q07812) and BAK (Q16611), used for the domain map colours",
-        "zh-Hant": "BCL-XL（Q07817）、BAX（Q07812）與 BAK（Q16611）的 BH4、BH3、BH1、BH2 及跨膜區段範圍，用於結構域圖上色"
-      },
-      "species": "Human",
-      "cellType": "n/a",
-      "method": "Curated annotation (UniProt feature table)",
-      "url": "https://www.uniprot.org/",
-      "status": "verified",
-      "note": "Fetched from rest.uniprot.org on 2026-11-28 (release not recorded). Licence CC BY 4.0. Residue numbers are UniProt numbers, which equal the auth_seq_id numbering of these PDB entries (checked against the existing tour points Phe27 and Gly179)."
     }
   }
 }

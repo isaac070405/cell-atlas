@@ -1,7 +1,7 @@
 // Module B viewer: Mol* loaded on first use, one viewer reused for every structure.
 // Structures stream as binary CIF from RCSB (the deposited coordinates, so data/tour-points.json lines up).
 const BASE = new URL('../vendor/molstar/', import.meta.url).href;
-let viewerP = null, shown = null, ticket = 0, domainMap = false, domains = null;
+let viewerP = null, shown = null, ticket = 0, domainMap = false, eligible = true, looked = false, domains = null;
 
 function loadAssets() {
   const css = document.createElement('link');
@@ -24,8 +24,9 @@ function getViewer(el) {
 }
 
 // Show one structure and, if given, select and focus one tour point. Resolves false when a newer call replaced this one.
-export async function showStructure(el, pdbId, point, ranges) {
+export async function showStructure(el, pdbId, point, ranges, large = true) {
   domains = ranges?.length ? ranges : null;
+  eligible = large;
   const mine = ++ticket;
   const viewer = await getViewer(el);
   if (mine !== ticket) return false;
@@ -35,7 +36,7 @@ export async function showStructure(el, pdbId, point, ranges) {
     await viewer.loadStructureFromUrl(`https://models.rcsb.org/${pdbId}.bcif`, 'mmcif', true);
     if (mine !== ticket) return false;
     shown = pdbId;
-    if (domainMap) await applyLook(viewer, true);
+    if ((domainMap && eligible) || looked) await applyLook(viewer, domainMap && eligible);
   }
   if (point?.select) {
     viewer.structureInteractivity({
@@ -50,7 +51,7 @@ export async function showStructure(el, pdbId, point, ranges) {
 }
 
 
-// Domain map look (Maciag 2025, Fig. 1A style): Gaussian surface, white background, black outlines, flat colours.
+// Domain map look (Maciag 2025, Fig. 1A style), for large proteins only (data/catalog.json `domainMap: false` opts a small protein out): Gaussian surface, white background, black outlines, flat colours.
 // With domain ranges (data/tour-points.json `domains`) each range is one surface in its colour and the rest is grey.
 // Without them each chain gets its chain colour.
 const hex = c => parseInt(c.replace('#', ''), 16);
@@ -79,6 +80,7 @@ async function clearDomainParts(plugin) {
 }
 
 async function applyLook(viewer, on) {
+  looked = on;
   const { plugin } = viewer, mgr = plugin.managers.structure;
   await clearDomainParts(plugin);
   const structure = mgr.hierarchy.current.structures[0];
@@ -108,5 +110,5 @@ async function applyLook(viewer, on) {
 // Switch the domain map look on or off for the structure on screen, and for structures loaded later.
 export async function setDomainMap(el, on) {
   domainMap = on;
-  if (shown) await applyLook(await getViewer(el), on);
+  if (shown && eligible) await applyLook(await getViewer(el), on);
 }

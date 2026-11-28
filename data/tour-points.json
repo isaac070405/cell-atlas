@@ -527,57 +527,7 @@
             "auth_seq_id": 27
           }
         }
-      ],
-      "domains": {
-        "cite": "uniprot-bcl2-motifs",
-        "basis": "literature",
-        "items": [
-          {
-            "id": "bh4",
-            "label": {
-              "en": "BH4 (4–24)",
-              "zh-Hant": "BH4 (4–24)"
-            },
-            "chain": "A",
-            "first": 4,
-            "last": 24,
-            "color": "#E0A21B"
-          },
-          {
-            "id": "bh3",
-            "label": {
-              "en": "BH3 (86–100)",
-              "zh-Hant": "BH3 (86–100)"
-            },
-            "chain": "A",
-            "first": 86,
-            "last": 100,
-            "color": "#C2185B"
-          },
-          {
-            "id": "bh1",
-            "label": {
-              "en": "BH1 (129–148)",
-              "zh-Hant": "BH1 (129–148)"
-            },
-            "chain": "A",
-            "first": 129,
-            "last": 148,
-            "color": "#1E88E5"
-          },
-          {
-            "id": "bh2",
-            "label": {
-              "en": "BH2 (180–195)",
-              "zh-Hant": "BH2 (180–195)"
-            },
-            "chain": "A",
-            "first": 180,
-            "last": 195,
-            "color": "#43A047"
-          }
-        ]
-      }
+      ]
     },
     "1G5M": {
       "cite": "petros-2001",
@@ -640,46 +590,7 @@
             "auth_seq_id": 200
           }
         }
-      ],
-      "domains": {
-        "cite": "uniprot-bcl2-motifs",
-        "basis": "literature",
-        "items": [
-          {
-            "id": "bh3",
-            "label": {
-              "en": "BH3 (74–88)",
-              "zh-Hant": "BH3 (74–88)"
-            },
-            "chain": "A",
-            "first": 74,
-            "last": 88,
-            "color": "#C2185B"
-          },
-          {
-            "id": "bh1",
-            "label": {
-              "en": "BH1 (117–136)",
-              "zh-Hant": "BH1 (117–136)"
-            },
-            "chain": "A",
-            "first": 117,
-            "last": 136,
-            "color": "#1E88E5"
-          },
-          {
-            "id": "bh2",
-            "label": {
-              "en": "BH2 (169–184)",
-              "zh-Hant": "BH2 (169–184)"
-            },
-            "chain": "A",
-            "first": 169,
-            "last": 184,
-            "color": "#43A047"
-          }
-        ]
-      }
+      ]
     },
     "1F16": {
       "cite": "suzuki-2000",
@@ -710,57 +621,7 @@
             "auth_seq_id": 179
           }
         }
-      ],
-      "domains": {
-        "cite": "uniprot-bcl2-motifs",
-        "basis": "literature",
-        "items": [
-          {
-            "id": "bh3",
-            "label": {
-              "en": "BH3 (59–73)",
-              "zh-Hant": "BH3 (59–73)"
-            },
-            "chain": "A",
-            "first": 59,
-            "last": 73,
-            "color": "#C2185B"
-          },
-          {
-            "id": "bh1",
-            "label": {
-              "en": "BH1 (98–118)",
-              "zh-Hant": "BH1 (98–118)"
-            },
-            "chain": "A",
-            "first": 98,
-            "last": 118,
-            "color": "#1E88E5"
-          },
-          {
-            "id": "bh2",
-            "label": {
-              "en": "BH2 (150–165)",
-              "zh-Hant": "BH2 (150–165)"
-            },
-            "chain": "A",
-            "first": 150,
-            "last": 165,
-            "color": "#43A047"
-          },
-          {
-            "id": "tm",
-            "label": {
-              "en": "Transmembrane helix α9 (172–192)",
-              "zh-Hant": "Transmembrane helix α9 (172–192)"
-            },
-            "chain": "A",
-            "first": 172,
-            "last": 192,
-            "color": "#B71C1C"
-          }
-        ]
-      }
+      ]
     },
     "2PQK": {
       "cite": "fire-2010",

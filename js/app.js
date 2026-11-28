@@ -349,7 +349,9 @@ function render(s) {
   if (showMol) {
     $('tour-bar').innerHTML = [{ id: '', label: { en: text('tour.whole') } }, ...points].map(p =>
       `<li><button data-tour="${esc(p.id)}" aria-pressed="${(p.id || null) === (s.tour || null) || (!p.id && !point)}">${p.id ? html(p.label) : html('tour.whole')}</button></li>`).join('');
-    sync3dMol(pdb.id, point, tours.structures[pdb.id]?.domains?.items);
+    const large = pdb.domainMap !== false;
+    $('mol-domain').closest('label').hidden = !large;
+    sync3dMol(pdb.id, point, tours.structures[pdb.id]?.domains?.items, large);
   }
   if (compare) {
     $('vp-compare').innerHTML = renderCompare(s);
@@ -449,13 +451,13 @@ function orgCard(cell, orgId) {
 
 // Preset view: show the structure in Mol* and select and focus the point, once per change
 let molKey = null;
-async function sync3dMol(id, point, domains) {
+async function sync3dMol(id, point, domains, large) {
   const key = `${id}|${point?.id ?? ''}`;
   if (key === molKey) return;
   molKey = key;
   $('mol-note').innerHTML = html('mol.loading');
   try {
-    if (await showStructure($('mol'), id, point, domains)) $('mol-note').textContent = '';
+    if (await showStructure($('mol'), id, point, domains, large)) $('mol-note').textContent = '';
   } catch (err) {
     molKey = null;
     console.warn('Mol* unavailable', err);
