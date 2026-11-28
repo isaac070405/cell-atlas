@@ -1705,6 +1705,19 @@
       "url": "https://www.uniprot.org/uniprotkb/P05091",
       "status": "verified",
       "note": "Fetched from rest.uniprot.org on 2026-11-28 (release not recorded). Licence CC BY 4.0. UniProt numbers include the 17-residue transit peptide, so PDB number = UniProt number minus 17: nucleophile 319 gives 302, proton acceptor 285 gives 268, variant E504K (allele ALDH2*2) gives 487. Each site is drawn with two flanking residues each side. Domain boundaries were not found in any source reachable here."
+    },
+    "uniprot-4ug0-chains": {
+      "source": "UniProtKB cross-references to PDB 4UG0 (chain assignment of the ribosomal proteins)",
+      "detail": {
+        "en": "Author chain IDs of 42 60S and 32 40S ribosomal proteins in PDB 4UG0, read from the UniProt PDB cross-references and sorted by the chain-ID prefix L or S used in the entry, used for the domain map",
+        "zh-Hant": "PDB 4UG0 內 42 條 60S 與 32 條 40S 核糖體蛋白的作者鏈編號，取自 UniProt 的 PDB 交叉參照，按條目所用的鏈編號首字母 L 或 S 分類，用於結構域圖"
+      },
+      "species": "Human",
+      "cellType": "n/a",
+      "method": "Curated cross-reference (UniProt)",
+      "url": "https://www.uniprot.org/uniprotkb?query=xref:pdb-4UG0",
+      "status": "verified",
+      "note": "Fetched from rest.uniprot.org on 2026-11-28 (release not recorded). Licence CC BY 4.0. 75 proteins are listed for 4UG0. RPL41 (chain Ln, named eS32 in the current nomenclature but lettered L in the entry) is left grey because the two conventions disagree. Proteins UniProt does not link to 4UG0 also stay grey."
     }
   }
 }

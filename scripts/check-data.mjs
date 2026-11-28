@@ -47,11 +47,12 @@ const tp = read('tour-points.json').structures;
 // Domain ranges: known citation, ordered ranges, hex colours, no overlap within a chain
 for (const [id, st] of Object.entries(tp)) {
   if (!st.domains) continue;
-  if (!citations[st.domains.cite]) bad(`${id}: domains cite ${st.domains.cite} missing`);
+  for (const k of [].concat(st.domains.cite)) if (!citations[k]) bad(`${id}: domains cite ${k} missing`);
   const it = st.domains.items;
   for (const d of it) {
-    if (!(d.first <= d.last) || !/^#[0-9A-Fa-f]{6}$/.test(d.color) || !d.chain) bad(`${id}: domain ${d.id} range, colour or chain`);
-    for (const o of it) if (o !== d && o.chain === d.chain && d.first <= o.last && o.first <= d.last) bad(`${id}: domains ${d.id} and ${o.id} overlap`);
+    const chs = d.chains ?? [d.chain];
+    if (!(d.first <= d.last) || !/^#[0-9A-Fa-f]{6}$/.test(d.color) || !chs.length || chs.some(c => !c)) bad(`${id}: domain ${d.id} range, colour or chain`);
+    for (const o of it) if (o !== d && (o.chains ?? [o.chain]).some(c => chs.includes(c)) && d.first <= o.last && o.first <= d.last) bad(`${id}: domains ${d.id} and ${o.id} overlap`);
   }
 }
 for (const d of dgs.diagrams) for (const n of d.nodes) for (const l of n.links ?? (n.link ? [n.link] : [])) {

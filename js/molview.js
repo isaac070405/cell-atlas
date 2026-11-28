@@ -56,7 +56,8 @@ export async function showStructure(el, pdbId, point, ranges, large = true) {
 // Without them each chain gets its chain colour.
 const hex = c => parseInt(c.replace('#', ''), 16);
 const GREY = 0x9AA0A6;
-const inRange = d => `(and (= atom.auth_asym_id ${d.chain}) (>= atom.auth_seq_id ${d.first}) (<= atom.auth_seq_id ${d.last}))`;
+const chainTest = d => { const ids = (d.chains ?? [d.chain]).map(c => `(= atom.auth_asym_id ${c})`); return ids.length > 1 ? `(or ${ids.join(' ')})` : ids[0]; };
+const inRange = d => `(and ${chainTest(d)} (>= atom.auth_seq_id ${d.first ?? -9999}) (<= atom.auth_seq_id ${d.last ?? 99999}))`;
 const select = test => ({ language: 'mol-script', expression: `(sel.atom.atom-groups :residue-test ${test})` });
 
 async function addSurface(plugin, structRef, label, script, color) {

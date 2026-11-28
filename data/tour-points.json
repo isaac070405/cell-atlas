@@ -363,7 +363,10 @@
         }
       ],
       "domains": {
-        "cite": "khatter-2015",
+        "cite": [
+          "khatter-2015",
+          "uniprot-4ug0-chains"
+        ],
         "basis": "computed",
         "items": [
           {
@@ -420,6 +423,104 @@
             "first": 1,
             "last": 99999,
             "color": "#C62828"
+          },
+          {
+            "id": "protein-60s",
+            "label": {
+              "en": "60S ribosomal proteins (42 chains)",
+              "zh-Hant": "60S 核糖體蛋白（42 條鏈）"
+            },
+            "chains": [
+              "LA",
+              "LB",
+              "LC",
+              "LD",
+              "LE",
+              "LF",
+              "LG",
+              "LH",
+              "LI",
+              "LJ",
+              "LL",
+              "LM",
+              "LN",
+              "LO",
+              "LP",
+              "LQ",
+              "LR",
+              "LS",
+              "LT",
+              "LU",
+              "LV",
+              "LW",
+              "LX",
+              "LY",
+              "LZ",
+              "La",
+              "Lb",
+              "Lc",
+              "Ld",
+              "Le",
+              "Lf",
+              "Lg",
+              "Lh",
+              "Li",
+              "Lj",
+              "Lk",
+              "Ll",
+              "Lm",
+              "Lo",
+              "Lp",
+              "Lr",
+              "Lz"
+            ],
+            "first": 1,
+            "last": 99999,
+            "color": "#90CAF9"
+          },
+          {
+            "id": "protein-40s",
+            "label": {
+              "en": "40S ribosomal proteins (32 chains)",
+              "zh-Hant": "40S 核糖體蛋白（32 條鏈）"
+            },
+            "chains": [
+              "SA",
+              "SB",
+              "SC",
+              "SD",
+              "SE",
+              "SF",
+              "SG",
+              "SH",
+              "SI",
+              "SJ",
+              "SK",
+              "SL",
+              "SN",
+              "SO",
+              "SP",
+              "SQ",
+              "SR",
+              "SS",
+              "ST",
+              "SU",
+              "SV",
+              "SW",
+              "SX",
+              "SY",
+              "SZ",
+              "Sa",
+              "Sb",
+              "Sc",
+              "Sd",
+              "Se",
+              "Sf",
+              "Sg"
+            ],
+            "first": 1,
+            "last": 99999,
+            "color": "#FFE082"
           }
         ]
       }
